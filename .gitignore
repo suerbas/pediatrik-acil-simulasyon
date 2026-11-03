@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Streamlit
+.streamlit/secrets.toml
+rag_config.json
+
+# Databases & local caches
+chroma_db/
+
+# Large archives and temporary debug files
+kaggle.7z
+debug_ans.txt
+dispne_hybrid_test.txt
+test_ans.txt
+test_fentanil.txt
+
+# Backups
+_yedek_eski_vakalar/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.suo
+*.user
