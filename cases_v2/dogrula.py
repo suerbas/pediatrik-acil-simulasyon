@@ -103,6 +103,26 @@ SPOILER_KEYWORDS_BY_ID = {
     "Y38": ["demir zehirlenmesi", "demir intoksikasyonu", "deferoksamin"],
     "Y39": ["trisiklik", "tka", "amitriptilin"],
     "Y40": ["üre döngüsü", "hiperamonyemi", "amonyak"],
+    "G61": ["toksik sinovit", "transient sinovit", "geçici sinovit"],
+    "G62": ["migren", "aurasız migren"],
+    "G63": ["sistit", "alt idrar yolu"],
+    "G64": ["sıcak bitkinliği", "heat exhaustion"],
+    "G65": ["preseptal", "periorbital selülit"],
+    "G66": ["diskezi", "infant diskezi"],
+    "G67": ["labial füzyon", "sinekşi"],
+    "G68": ["gerilim tipi", "gerilim baş ağrısı"],
+    "G69": ["epistaksis", "kiesselbach"],
+    "G70": ["tinea", "korporis"],
+    "Y61": ["kawasaki", "mukokutanöz"],
+    "Y62": ["septik artrit", "eklem aspirasyonu"],
+    "Y63": ["poststreptokoksik", "apsgn", "glomerülonefrit"],
+    "Y64": ["nefrotik sendrom", "minimal değişiklik"],
+    "Y65": ["distoni", "distonik", "metoklopramid", "biperiden", "akineton"],
+    "Y66": ["febril nötropeni", "nötropenik"],
+    "Y67": ["orak hücre", "vazo-oklüzif", "daktilit"],
+    "Y68": ["hiperbilirubinemi", "bhutani"],
+    "Y69": ["konjenital adrenal", "adrenal kriz", "kah"],
+    "Y70": ["karbonmonoksit", "karboksihemoglobin"],
 }
 
 
@@ -118,12 +138,14 @@ def load_cases(filepath):
         "GREEN_CASES_PART4",
         "GREEN_CASES_PART5",
         "GREEN_CASES_PART6",
+        "GREEN_CASES_PART7",
         "YELLOW_CASES_PART1",
         "YELLOW_CASES_PART2",
         "YELLOW_CASES_PART3",
         "YELLOW_CASES_PART4",
         "YELLOW_CASES_PART5",
         "YELLOW_CASES_PART6",
+        "YELLOW_CASES_PART7",
     ):
         if hasattr(mod, attr):
             return getattr(mod, attr)
