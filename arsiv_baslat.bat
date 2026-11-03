@@ -4,5 +4,5 @@ echo ========================================================
 echo   Pediatrik Acil Vaka Arşivi (The Story Archive Modeli)
 echo ========================================================
 echo.
-streamlit run pediatrik_arsiv_sim.py
+python -m streamlit run pediatrik_arsiv_sim.py
 pause
