@@ -515,10 +515,27 @@ st.markdown(
     div[data-testid="stButton"] button {
         border-radius: 10px !important;
         font-weight: 500 !important;
-        padding: 10px 16px !important;
+        padding: 12px 16px !important;
         line-height: 1.45 !important;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
         border: 1px solid #cbd5e1 !important;
+        white-space: normal !important;
+        height: auto !important;
+        min-height: 48px !important;
+        text-align: left !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    div[data-testid="stButton"] button div,
+    div[data-testid="stButton"] button p {
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        text-align: left !important;
+        display: block !important;
+        line-height: 1.45 !important;
+        text-overflow: clip !important;
+        overflow: visible !important;
     }
     div[data-testid="stButton"] button:hover {
         transform: translateY(-1px) !important;

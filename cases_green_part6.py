@@ -471,7 +471,7 @@ GREEN_CASES_PART6 = [ { 'age': '4 Yaşında',
                'Son 6 aydır kilo alımı tamamen durdu, 75. persentilden 10. persentile geriledi. Karnı kurbağa karnı '
                "gibi şişiyor, bacakları ve poposu ip gibi eridi. Sürekli huysuz ve mutsuz, yemek seçiyor.'",
     'id': 'G54',
-    'steps': [ { 'options': [ { 'explanation': "Çölyak hastalığında persentil düşüşü, distandü batın ('kurbağa karnı') "
+    'steps': [ { 'options': [ { 'explanation': "Kronik enteropati ve malabsorpsiyon tablolarında persentil düşüşü, distandü batın ('kurbağa karnı') "
                                                've gluteal bölge kas erimesi (tabak popo) fizik muayenenin en '
                                                'karakteristik bulgularıdır.',
                                 'is_correct': True,
@@ -486,7 +486,7 @@ GREEN_CASES_PART6 = [ { 'age': '4 Yaşında',
                               { 'is_correct': False,
                                 'scenario_update': 'Muayenesiz cerrahi hazırlığı kronik malnütrisyonlu çocukta '
                                                    'gereksiz ameliyathane travması yarattı.',
-                                'teaching_point': 'Çölyaktaki karın distansiyonu kronik malabsorpsiyon ve hipotoniye '
+                                'teaching_point': 'Kronik malabsorpsiyondaki karın distansiyonu bağırsak hipotonisine ve gaz birikimine '
                                                   'bağlıdır; akut cerrahi batın değildir.',
                                 'text': 'Karın şişliğini akut cerrahi peritonit kabul edip çocuğu muayene etmeden acil '
                                         'laparotomiye hazırlamak'},
@@ -507,7 +507,7 @@ GREEN_CASES_PART6 = [ { 'age': '4 Yaşında',
                  'question': 'Ek gıda sonrası kronik ishal, karın şişliği ve kas erimesi olan bu çocukta ilk muayene '
                              'yaklaşımı nasıl olmalıdır?',
                  'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene'},
-               { 'options': [ { 'explanation': 'ESPGHAN kılavuzlarına göre çölyak taramasında ilk tercih Anti-tTG IgA '
+               { 'options': [ { 'explanation': 'ESPGHAN kılavuzlarına göre bu klinik tablonun taranmasında ilk tercih Anti-tTG IgA '
                                                "ve Total IgA'dır. Total IgA düzeyi, çölyaklılarda sık görülen selektif "
                                                'IgA eksikliğine bağlı yalancı negatiflikleri dışlamak için şarttır.',
                                 'is_correct': True,
@@ -520,16 +520,16 @@ GREEN_CASES_PART6 = [ { 'age': '4 Yaşında',
                               { 'is_correct': False,
                                 'scenario_update': 'Kolonoskopi normal geldi çünkü çölyak kolonu değil, ince '
                                                    'bağırsağın proksimalini (duodenum) tutar.',
-                                'teaching_point': 'Çölyak ince bağırsak hastalığıdır; kolonoskopi tanısal değildir, '
+                                'teaching_point': 'Bu enteropati ince bağırsak hastalığıdır; kolonoskopi tanısal değildir, '
                                                   'duodenal biyopsi gerekir.',
                                 'text': 'Antikor bakmadan hastaya derhal genel anestezi altında kolonoskopi yaparak '
                                         'kalın bağırsaktan biyopsi almak'},
                               { 'is_correct': False,
-                                'scenario_update': 'İdrar ve gaita testleri normal çıktı ancak çölyak serolojisi '
+                                'scenario_update': 'İdrar ve gaita testleri normal çıktı ancak spesifik seroloji '
                                                    'bakılmadığı için tanı atlandı.',
-                                'teaching_point': 'Çölyak serolojik antikorlarla taranır; idrar veya dışkı gizli kanı '
+                                'teaching_point': 'Kronik malabsorpsiyon serolojik antikorlarla taranır; idrar veya dışkı gizli kanı '
                                                   'tanı koydurmaz.',
-                                'text': 'Çölyak tanısı için sadece dışkıda gizli kan ve idrar kültürü bakarak hastayı '
+                                'text': 'Etiyolojiyi araştırmadan sadece dışkıda gizli kan ve idrar kültürü bakarak hastayı '
                                         'evine göndermek'},
                               { 'is_correct': False,
                                 'scenario_update': 'Test yapılmadan diyet verilen çocukta tanı serolojik olarak asla '
@@ -538,7 +538,7 @@ GREEN_CASES_PART6 = [ { 'age': '4 Yaşında',
                                                   'kılar; KESİNLİKLE YASAKTIR.',
                                 'text': 'Antikor istemeden hastaya doğrudan ömür boyu tüm tahılları, eti ve sütü '
                                         'yasaklayan katı diyet vermek'}],
-                 'question': 'Klasik çölyak şüphesi olan bu çocukta tanıyı doğrulamak için yapılması gereken altın '
+                 'question': 'Ek gıdaya geçiş sonrası kronik malabsorpsiyon ve persentil kaybı gelişen bu çocukta altın '
                              'standart tarama tetkiki hangisidir?',
                  'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
                { 'options': [ { 'explanation': 'Gluten sonrası kronik ishal, kas erimesi, persentil kaybı ve Anti-tTG '
