@@ -130,16 +130,23 @@ st.markdown(
     }
     .card-category-pill {
         font-family: 'JetBrains Mono', monospace;
-        font-size: 0.7rem;
-        font-weight: 600;
-        padding: 3px 8px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        padding: 2.5px 8px;
         border-radius: 12px;
         white-space: nowrap;
-        background: #047857;
+        background: #059669;
+        border: 1.5px solid #047857;
         color: #ffffff;
+        display: inline-block;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
+    .card-category-pill.pill-yellow,
     .pill-yellow {
-        background: #b45309 !important;
+        background: #facc15 !important;
+        border: 1.5px solid #ca8a04 !important;
+        color: #000000 !important;
+        font-weight: 700 !important;
     }
 
     .card-meta {
@@ -218,8 +225,14 @@ st.markdown(
         transform: translateY(-2px) !important;
         box-shadow: 3px 5px 0px rgba(0, 0, 0, 0.12) !important;
     }
+    div[class*="st-key-card_box_"]:hover {
+        border-color: #047857 !important;
+    }
     div[class*="st-key-card_box_yellow_"] {
-        border-color: #b45309 !important;
+        border-color: #ca8a04 !important;
+    }
+    div[class*="st-key-card_box_yellow_"]:hover {
+        border-color: #a16207 !important;
     }
 
     .card-top-row {
@@ -243,15 +256,22 @@ st.markdown(
     .card-category-pill {
         font-family: 'JetBrains Mono', monospace;
         font-size: 0.66rem;
-        font-weight: 600;
-        padding: 2px 6px;
+        font-weight: 700;
+        padding: 2px 7px;
         border-radius: 10px;
         white-space: nowrap;
-        background: #047857;
+        background: #059669;
+        border: 1.5px solid #047857;
         color: #ffffff;
+        display: inline-block;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
+    .card-category-pill.pill-yellow,
     .pill-yellow {
-        background: #b45309 !important;
+        background: #facc15 !important;
+        border: 1.5px solid #ca8a04 !important;
+        color: #000000 !important;
+        font-weight: 700 !important;
     }
     .card-meta-text {
         font-family: 'JetBrains Mono', monospace;
@@ -339,6 +359,28 @@ st.markdown(
     }
     div[class*="st-key-tag_"] button:hover p {
         color: #ffffff !important;
+    }
+
+    /* Üst Filtre Sekme Butonları (Yeşil Alan / Sarı Alan Teması) */
+    div[class*="st-key-tab_green"] button {
+        border: 1.5px solid #059669 !important;
+        color: #047857 !important;
+    }
+    div[class*="st-key-tab_green"] button[kind="primary"],
+    div[class*="st-key-tab_green"] button[data-testid="baseButton-primary"] {
+        background-color: #059669 !important;
+        border: 1.5px solid #047857 !important;
+        color: #ffffff !important;
+    }
+    div[class*="st-key-tab_yellow"] button {
+        border: 1.5px solid #ca8a04 !important;
+        color: #854d0e !important;
+    }
+    div[class*="st-key-tab_yellow"] button[kind="primary"],
+    div[class*="st-key-tab_yellow"] button[data-testid="baseButton-primary"] {
+        background-color: #facc15 !important;
+        border: 1.5px solid #ca8a04 !important;
+        color: #000000 !important;
     }
 
     /* Alt İncele & Çöz Butonu (Kartın En Altında Kesikli Çizgiyle Yer Alır) */
@@ -1049,6 +1091,7 @@ def render_drawer(case: dict):
     current_idx = st.session_state.drawer_step_idx
     is_yellow = cid.startswith("Y")
     zone_label = "🟡 Sarı Alan (Acil Gözlem)" if is_yellow else "🟢 Yeşil Alan (Poliklinik)"
+    pill_class = "pill-yellow" if is_yellow else ""
 
     # Üst Başlık (Sol) ve Zarif Kapat Butonu (Sağ - The Story Archive düzeni)
     title_c, close_c = st.columns([5, 0.8])
@@ -1058,8 +1101,11 @@ def render_drawer(case: dict):
             <div style="font-family:'JetBrains Mono', monospace; font-size:1.22rem; font-weight:800; color:#0f172a; line-height:1.25;">
                 {cid} • {case['age']} {case['gender']}
             </div>
-            <div style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:#64748b; margin-top:3px;">
-                {zone_label} • {case.get('category', 'Klinik Acil')}
+            <div style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:#64748b; margin-top:5px; display:flex; align-items:center; gap:8px;">
+                <span class="card-category-pill {pill_class}">
+                    {zone_label}
+                </span>
+                <span>• {case.get('category', 'Klinik Acil')}</span>
             </div>
             """,
             unsafe_allow_html=True,
