@@ -253,16 +253,35 @@ st.markdown(
         to { transform: translateX(0); }
     }
 
-    .story-backdrop {
+    /* Tıklanabilir Karartıcı Arka Plan (Click outside to close) */
+    div[class*="st-key-backdrop_container"] {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         width: 100vw !important;
         height: 100vh !important;
-        background: rgba(0, 0, 0, 0.22) !important;
-        z-index: 999990 !important;
-        backdrop-filter: blur(1.5px) !important;
-        pointer-events: none !important;
+        background: rgba(0, 0, 0, 0.24) !important;
+        backdrop-filter: blur(2px) !important;
+        z-index: 999980 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        cursor: pointer !important;
+    }
+    div[class*="st-key-backdrop_container"] div[class*="st-key-btn_backdrop_close"],
+    div[class*="st-key-backdrop_container"] div[data-testid="stButton"],
+    div[class*="st-key-backdrop_container"] button {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        opacity: 0 !important;
+        cursor: pointer !important;
+        z-index: 999980 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        background: transparent !important;
     }
 
     .drawer-header {
@@ -395,6 +414,54 @@ st.markdown(
     div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button[kind="primary"] {
         background: #1a1a1a !important;
         border-color: #1a1a1a !important;
+        color: #ffffff !important;
+    }
+
+    /* Kibar & Minimalist Dairesel Kapat Butonu (The Story Archive Stili) */
+    div[class*="st-key-slide_over_drawer"] div[class*="st-key-btn_close_drawer"] {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+    }
+    div[class*="st-key-slide_over_drawer"] div[class*="st-key-btn_close_drawer"] div[data-testid="stButton"] {
+        width: auto !important;
+    }
+    div[class*="st-key-slide_over_drawer"] div[class*="st-key-btn_close_drawer"] div[data-testid="stButton"] button {
+        width: 32px !important;
+        height: 32px !important;
+        min-height: 32px !important;
+        max-height: 32px !important;
+        border-radius: 50% !important;
+        border: 1px solid #cbd5e1 !important;
+        background: #ffffff !important;
+        color: #475569 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        margin: 0 0 0 auto !important;
+        cursor: pointer !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        transition: all 0.16s ease !important;
+    }
+    div[class*="st-key-slide_over_drawer"] div[class*="st-key-btn_close_drawer"] div[data-testid="stButton"] button p {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+        font-size: 1.05rem !important;
+        font-weight: 500 !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        color: #475569 !important;
+        text-align: center !important;
+    }
+    div[class*="st-key-slide_over_drawer"] div[class*="st-key-btn_close_drawer"] div[data-testid="stButton"] button:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+        transform: scale(1.08) !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+    }
+    div[class*="st-key-slide_over_drawer"] div[class*="st-key-btn_close_drawer"] div[data-testid="stButton"] button:hover p {
         color: #ffffff !important;
     }
 
@@ -663,8 +730,8 @@ def render_drawer(case: dict):
     is_yellow = cid.startswith("Y")
     zone_label = "🟡 Sarı Alan (Acil Gözlem)" if is_yellow else "🟢 Yeşil Alan (Poliklinik)"
 
-    # Üst Başlık (Sol) ve Kapat Butonu (Sağ - The Story Archive düzeni)
-    title_c, close_c = st.columns([4.2, 1.3])
+    # Üst Başlık (Sol) ve Zarif Kapat Butonu (Sağ - The Story Archive düzeni)
+    title_c, close_c = st.columns([5, 0.8])
     with title_c:
         st.markdown(
             f"""
@@ -678,7 +745,7 @@ def render_drawer(case: dict):
             unsafe_allow_html=True,
         )
     with close_c:
-        if st.button("✕ Kapat", key="btn_close_drawer", use_container_width=True):
+        if st.button("✕", key="btn_close_drawer", help="Kapat (veya sol alana tıkla)"):
             close_case()
             st.rerun()
 
@@ -879,8 +946,12 @@ def main():
     cases_dict = {c["id"]: c for c in all_cases}
 
     if drawer_id and drawer_id in cases_dict:
-        # Karartıcı / Odaklayıcı Arka Plan
-        st.markdown('<div class="story-backdrop"></div>', unsafe_allow_html=True)
+        # Tıklanabilir Karartıcı Arka Plan (Sol alana tıklandığında çekmeceyi kapatır)
+        with st.container(key="backdrop_container"):
+            if st.button("close_backdrop", key="btn_backdrop_close"):
+                close_case()
+                st.rerun()
+
         # Sağdan Kayan Sabit Çekmece Konteyneri
         with st.container(key="slide_over_drawer"):
             render_drawer(cases_dict[drawer_id])
