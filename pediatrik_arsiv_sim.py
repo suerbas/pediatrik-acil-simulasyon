@@ -208,7 +208,7 @@ st.markdown(
         background: #ffffff !important;
         border: 1.5px solid #059669 !important;
         border-radius: 10px !important;
-        padding: 14px 14px 8px 14px !important;
+        padding: 12px 14px 8px 14px !important;
         box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.06) !important;
         margin-bottom: 16px !important;
         position: relative !important;
@@ -300,12 +300,12 @@ st.markdown(
     div[class*="st-key-card_box_"] div[data-testid="stHorizontalBlock"] {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 4px !important;
-        margin-top: 6px !important;
+        gap: 4px 5px !important;
+        margin-top: 4px !important;
         margin-bottom: 2px !important;
-        height: 52px !important;
-        min-height: 52px !important;
-        max-height: 52px !important;
+        height: 58px !important;
+        min-height: 58px !important;
+        max-height: 58px !important;
         overflow: hidden !important;
         width: 100% !important;
         align-content: flex-start !important;
@@ -315,16 +315,20 @@ st.markdown(
         width: auto !important;
         min-width: 0 !important;
         padding: 0 !important;
+        margin: 0 !important;
+        height: 24px !important;
     }
 
     /* Kart İçi Etiket Butonları (The Story Archive Pill Teması) */
     div[class*="st-key-tag_"] {
         margin: 0 !important;
         padding: 0 !important;
+        height: 24px !important;
     }
     div[class*="st-key-tag_"] div[data-testid="stButton"] {
         margin: 0 !important;
         padding: 0 !important;
+        height: 24px !important;
     }
     div[class*="st-key-tag_"] button {
         background: #fbf8f3 !important;
@@ -337,8 +341,8 @@ st.markdown(
         height: 22px !important;
         min-height: 22px !important;
         max-height: 22px !important;
-        padding: 0 6px !important;
-        line-height: 1 !important;
+        padding: 0 7px !important;
+        line-height: 20px !important;
         white-space: nowrap !important;
         box-shadow: none !important;
         transition: all 0.15s ease !important;
@@ -1049,8 +1053,8 @@ def render_case_card(case: dict):
                     {zone_label}
                 </span>
             </div>
-            <div class="card-meta-text" title="{case.get('category', 'Klinik Acil')} • 4 Aşama">
-                {case.get('category', 'Klinik Acil')} • 4 Aşama
+            <div class="card-meta-text" title="{case.get('category', 'Klinik Acil')}">
+                {case.get('category', 'Klinik Acil')}
             </div>
             <div class="card-complaint-text" title="{case['complaint']}">
                 <b>Şikayet:</b> {case['complaint']}
