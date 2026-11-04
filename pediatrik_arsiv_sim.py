@@ -13,6 +13,7 @@ import random
 import time
 import importlib
 import re
+import urllib.parse
 import streamlit as st
 import streamlit.components.v1 as components
 
@@ -158,22 +159,37 @@ st.markdown(
         overflow: hidden;
     }
 
-    /* Etiket Çipleri (The Story Archive Tags) */
+    /* Etiket Çipleri (The Story Archive Tags - Tıklanabilir Keyword Filtresi) */
     .card-tags {
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
         margin-top: auto;
         padding-top: 8px;
+        position: relative !important;
+        z-index: 60 !important;
     }
     .tag-chip {
         font-family: 'JetBrains Mono', monospace;
         font-size: 0.68rem;
-        padding: 2px 7px;
+        padding: 2px 8px;
         border-radius: 10px;
         background: #fbf8f3;
         border: 1px solid #d4a373;
         color: #7f4f24;
+        text-decoration: none !important;
+        display: inline-block;
+        position: relative !important;
+        z-index: 60 !important;
+        cursor: pointer !important;
+        transition: all 0.16s ease;
+    }
+    .tag-chip:hover {
+        background: #0f172a !important;
+        color: #ffffff !important;
+        border-color: #0f172a !important;
+        transform: translateY(-1px) scale(1.05);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
     .card-click-hint {
@@ -250,6 +266,24 @@ st.markdown(
         flex-direction: column !important;
         animation: drawerSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
+
+    /* YATAY SCROLLBAR'I VE TAŞMALARI KESİN OLARAK ENGELLEME */
+    div[class*="st-key-slide_over_drawer"],
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stVerticalBlock"],
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stVerticalBlockBorderWrapper"],
+    div[class*="st-key-slide_over_drawer"] div[data-testid="element-container"],
+    div[class*="st-key-slide_over_drawer"] [data-testid="stExpander"],
+    div[class*="st-key-slide_over_drawer"] details {
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    div[class*="st-key-slide_over_drawer"]::-webkit-scrollbar:horizontal,
+    div[class*="st-key-slide_over_drawer"] *::-webkit-scrollbar:horizontal {
+        display: none !important;
+        height: 0px !important;
+        width: 0px !important;
+    }
     @keyframes drawerSlideIn {
         from { transform: translateX(100%); }
         to { transform: translateX(0); }
@@ -290,7 +324,10 @@ st.markdown(
         cursor: pointer !important;
         animation: backdropFadeIn 0.22s ease !important;
     }
-    iframe[title*="streamlit.components"] {
+    iframe[title*="streamlit.components"],
+    iframe.stIFrame,
+    div[data-testid="stIFrame"],
+    iframe[title*="st.iframe"] {
         position: absolute !important;
         width: 1px !important;
         height: 1px !important;
@@ -350,6 +387,18 @@ st.markdown(
         line-height: 1.65;
         margin-bottom: 14px;
         box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.04);
+        position: relative;
+    }
+    .vitals-chips-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 8px;
+        align-items: center;
+        margin-top: 6px;
+    }
+    .vital-chip-item {
+        display: inline-flex;
+        align-items: center;
     }
     .vitals-card-yellow {
         border-left-color: #b45309 !important;
@@ -512,13 +561,13 @@ st.markdown(
         color: #ffffff !important;
     }
 
-    /* Tooltip Stilleri (Arşiv Kağıdı ile Uyumlu) */
+    /* Tooltip Stilleri (Arşiv Kağıdı ile Uyumlu - Asla Kırpılmaz, Asla Taşmaz) */
     .med-val {
         position: relative;
         display: inline-block;
         font-weight: 700;
-        padding: 1px 6px;
-        margin: 0 2px;
+        padding: 2px 7px;
+        margin: 1px 2px;
         border-radius: 4px;
         cursor: help;
         border-bottom: 1.5px dashed;
@@ -540,32 +589,34 @@ st.markdown(
         border-bottom-color: #0284c7 !important;
     }
     .med-val .med-tooltip {
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        bottom: 125%;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #0f172a;
-        color: #f8fafc;
-        text-align: center;
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 0.78rem;
-        font-weight: 500;
-        max-width: 440px !important;
+        display: none !important;
+        position: absolute !important;
+        bottom: calc(100% + 6px) !important;
+        left: 0 !important;
+        transform: none !important;
+        background-color: #0f172a !important;
+        color: #f8fafc !important;
+        text-align: left !important;
+        padding: 6px 12px !important;
+        border-radius: 6px !important;
+        font-size: 0.78rem !important;
+        font-weight: 500 !important;
+        max-width: 320px !important;
         white-space: normal !important;
         width: max-content !important;
         box-sizing: border-box !important;
         line-height: 1.35 !important;
-        z-index: 9999999;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-        pointer-events: none;
-        transition: opacity 0.18s ease;
+        z-index: 9999999 !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+        pointer-events: none !important;
     }
     .med-val:hover .med-tooltip {
-        visibility: visible;
-        opacity: 1;
+        display: block !important;
+        animation: tooltipFadeIn 0.15s ease !important;
+    }
+    @keyframes tooltipFadeIn {
+        from { opacity: 0; transform: translateY(3px); }
+        to { opacity: 1; transform: translateY(0); }
     }
     </style>
     """,
@@ -725,7 +776,10 @@ def render_case_card(case: dict):
     is_solved = cid in st.session_state.solved_case_ids
 
     tags = extract_card_tags(case)
-    tags_html = "".join([f'<span class="tag-chip">{t}</span>' for t in tags])
+    tags_html = "".join([
+        f'<a href="?tag={urllib.parse.quote(t)}" target="_self" class="tag-chip" title="Bu anahtar kelimeye sahip vakaları filtrele">{t}</a>'
+        for t in tags
+    ])
     solved_badge = " ✓ Çözüldü" if is_solved else ""
     card_title = f"{case['age']} {case['gender']}"
 
@@ -814,7 +868,12 @@ def render_drawer(case: dict):
 
     # YENİLENEN VİTALLER (SİYAH KUTU KALDIRILDI - KREM/ARŞİV KAĞIT KARTI)
     raw_vitals = get_case_vitals(case)
-    vitals_html = annotate_clinical_text(raw_vitals, case["age"])
+    cleaned_v = re.sub(r'^(?:Vital Bulgular|Vitalleri|vital bulgular)[:]?\s*', '', raw_vitals, flags=re.IGNORECASE).strip()
+    raw_parts = [p.strip().rstrip(',') for p in cleaned_v.split(',') if p.strip()]
+    chips = []
+    for p in raw_parts:
+        chips.append(f'<span class="vital-chip-item">{annotate_clinical_text(p, case["age"])}</span>')
+    vitals_chips_html = "".join(chips)
     vitals_class = "drawer-vitals-card vitals-card-yellow" if is_yellow else "drawer-vitals-card"
     st.markdown(
         f"""
@@ -822,8 +881,8 @@ def render_drawer(case: dict):
             <div class="vitals-header">
                 <span>📋 ACİL GELİŞ VİTAL BULGULARI (TRİYAJ KAYDI):</span>
             </div>
-            <div>
-                {vitals_html}
+            <div class="vitals-chips-container">
+                {vitals_chips_html}
             </div>
         </div>
         """,
@@ -964,6 +1023,9 @@ def main():
 
     all_cases = get_all_cases()
 
+    # URL Query Parametrelerinden Aktif Etiketi Oku
+    active_tag = st.query_params.get("tag", "").strip()
+
     # Filtreleme
     filtered = all_cases
     tab = st.session_state.active_tab
@@ -972,6 +1034,17 @@ def main():
     elif tab == "YELLOW":
         filtered = [c for c in filtered if c["id"].startswith("Y")]
 
+    # Aktif Etiket Filtresi
+    if active_tag:
+        filtered = [
+            c for c in filtered
+            if any(active_tag.lower() == t.lower() for t in extract_card_tags(c))
+            or active_tag.lower() in c.get("complaint", "").lower()
+            or active_tag.lower() in c.get("category", "").lower()
+            or active_tag.lower() in c.get("age", "").lower()
+        ]
+
+    # Arama Kutusu Filtresi
     query = st.session_state.search_query.strip().lower()
     if query:
         filtered = [
@@ -980,7 +1053,21 @@ def main():
             or query in c.get("complaint", "").lower()
             or query in c.get("age", "").lower()
             or query in c.get("category", "").lower()
+            or any(query in t.lower() for t in extract_card_tags(c))
         ]
+
+    # Aktif Etiket Rozeti ve Temizleme Butonu
+    if active_tag:
+        st.markdown(
+            f'''
+            <div style="font-family:'JetBrains Mono', monospace; font-size:0.82rem; margin:4px 0 10px 0; display:flex; align-items:center; gap:8px;">
+                <span>🏷️ Seçili Anahtar Kelime:</span>
+                <span style="background:#0f172a; color:#ffffff; padding:2px 10px; border-radius:12px; font-weight:700;">{active_tag}</span>
+                <a href="?" target="_self" style="color:#ef4444; font-weight:700; text-decoration:none; margin-left:6px; font-size:0.8rem;">[✕ Filtreyi Temizle]</a>
+            </div>
+            ''',
+            unsafe_allow_html=True
+        )
 
     st.caption(f"Arşivde toplam **{len(filtered)}** vaka listeleniyor.")
 
@@ -1007,96 +1094,61 @@ def main():
         with st.container(key="slide_over_drawer"):
             render_drawer(cases_dict[drawer_id])
 
-    # Pürüzsüz Slide-Out (Soldan Sağa) Kapanış & Akıllı Tooltip JS Köprüsü (Deprecation-Free st.iframe)
+    # Pürüzsüz Slide-Out (Soldan Sağa) Kapanış Animasyonu JS Köprüsü (Deprecation-Free st.iframe)
     js_code = """
         <script>
         (function() {
-            const parentDoc = window.parent.document;
-            if (parentDoc.__slideClickHandler) {
-                parentDoc.removeEventListener('click', parentDoc.__slideClickHandler, true);
-            }
-            if (parentDoc.__tooltipHoverHandler) {
-                parentDoc.removeEventListener('mouseover', parentDoc.__tooltipHoverHandler, true);
-            }
+            try {
+                const parentDoc = window.parent.document;
+                if (!parentDoc) return;
 
-            // Dinamik Tooltip Akıllı Hizalama (Pencere dışına taşmayı ve kırpılmayı önler)
-            function adjustTooltip(medVal) {
-                const tooltip = medVal.querySelector('.med-tooltip');
-                const drawer = parentDoc.querySelector('div[class*="st-key-slide_over_drawer"]');
-                if (!tooltip || !drawer) return;
-
-                const drawerRect = drawer.getBoundingClientRect();
-                const valRect = medVal.getBoundingClientRect();
-                const tooltipWidth = tooltip.offsetWidth || 280;
-
-                const centerLeftInDrawer = (valRect.left - drawerRect.left) + (valRect.width / 2) - (tooltipWidth / 2);
-                const minAllowed = 16;
-                const maxAllowed = drawerRect.width - tooltipWidth - 16;
-
-                if (centerLeftInDrawer < minAllowed) {
-                    const shift = minAllowed - (valRect.left - drawerRect.left);
-                    tooltip.style.left = shift + 'px';
-                    tooltip.style.transform = 'none';
-                    tooltip.style.right = 'auto';
-                } else if (centerLeftInDrawer > maxAllowed) {
-                    tooltip.style.left = 'auto';
-                    tooltip.style.right = '0px';
-                    tooltip.style.transform = 'none';
-                } else {
-                    tooltip.style.left = '50%';
-                    tooltip.style.right = 'auto';
-                    tooltip.style.transform = 'translateX(-50%)';
+                if (parentDoc.__slideClickHandler) {
+                    parentDoc.removeEventListener('click', parentDoc.__slideClickHandler, true);
                 }
-            }
 
-            parentDoc.__tooltipHoverHandler = function(e) {
-                const medVal = e.target.closest('.med-val');
-                if (medVal) {
-                    adjustTooltip(medVal);
-                }
-            };
-            parentDoc.addEventListener('mouseover', parentDoc.__tooltipHoverHandler, true);
+                // Sağdan Sola Açılış / Soldan Sağa Kapanış (Çarpı butonu veya Boşluk / Backdrop tıklaması)
+                parentDoc.__slideClickHandler = function(e) {
+                    if (parentDoc.__isSlideClosing) return;
 
-            // Sağdan Sola Açılış / Soldan Sağa Kapanış (Çarpı butonu veya Boşluk / Backdrop tıklaması)
-            parentDoc.__slideClickHandler = function(e) {
-                if (parentDoc.__isSlideClosing) return;
+                    const drawer = parentDoc.querySelector('div[class*="st-key-slide_over_drawer"]');
+                    if (!drawer) return;
 
-                const drawer = parentDoc.querySelector('div[class*="st-key-slide_over_drawer"]');
-                if (!drawer) return;
+                    const isInsideDrawer = drawer.contains(e.target);
+                    const isCloseBtn = !!e.target.closest('div[class*="st-key-btn_close_drawer"]');
 
-                const isInsideDrawer = drawer.contains(e.target);
-                const isCloseBtn = !!e.target.closest('div[class*="st-key-btn_close_drawer"]');
+                    // Çekmecenin dışındaki boşluğa VEYA kapatma butonuna tıklandığında
+                    if (!isInsideDrawer || isCloseBtn) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        e.stopImmediatePropagation();
 
-                // Çekmecenin dışındaki boşluğa VEYA kapatma butonuna tıklandığında
-                if (!isInsideDrawer || isCloseBtn) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    e.stopImmediatePropagation();
-
-                    // Soldan sağa pürüzsüz kayarak kapanma keyframe animasyonu
-                    drawer.classList.add('drawer-slide-out');
-                    const backdrop = parentDoc.querySelector('div[class*="st-key-backdrop_container"]');
-                    if (backdrop) {
-                        backdrop.classList.add('backdrop-fade-out');
-                    }
-
-                    parentDoc.__isSlideClosing = true;
-                    setTimeout(function() {
-                        const btnToClick = isCloseBtn
-                            ? parentDoc.querySelector('div[class*="st-key-btn_close_drawer"] button')
-                            : parentDoc.querySelector('div[class*="st-key-btn_backdrop_close"] button');
-
-                        if (btnToClick) {
-                            btnToClick.click();
+                        // Soldan sağa pürüzsüz kayarak kapanma keyframe animasyonu
+                        drawer.classList.add('drawer-slide-out');
+                        const backdrop = parentDoc.querySelector('div[class*="st-key-backdrop_container"]');
+                        if (backdrop) {
+                            backdrop.classList.add('backdrop-fade-out');
                         }
-                        setTimeout(function() {
-                            parentDoc.__isSlideClosing = false;
-                        }, 400);
-                    }, 280);
-                }
-            };
 
-            parentDoc.addEventListener('click', parentDoc.__slideClickHandler, true);
+                        parentDoc.__isSlideClosing = true;
+                        setTimeout(function() {
+                            const btnToClick = isCloseBtn
+                                ? parentDoc.querySelector('div[class*="st-key-btn_close_drawer"] button')
+                                : parentDoc.querySelector('div[class*="st-key-btn_backdrop_close"] button');
+
+                            if (btnToClick) {
+                                btnToClick.click();
+                            }
+                            setTimeout(function() {
+                                parentDoc.__isSlideClosing = false;
+                            }, 400);
+                        }, 280);
+                    }
+                };
+
+                parentDoc.addEventListener('click', parentDoc.__slideClickHandler, true);
+            } catch (err) {
+                // cross-origin or sandbox fallback
+            }
         })();
         </script>
     """
