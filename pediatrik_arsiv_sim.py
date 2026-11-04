@@ -193,29 +193,31 @@ st.markdown(
         position: relative !important;
         margin-bottom: 18px !important;
     }
-    div[class*="st-key-card_box_"] div[data-testid="stButton"] {
+    div[class*="st-key-card_box_"] div[class*="st-key-btn_overlay_"],
+    div[class*="st-key-btn_overlay_"] {
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
         height: 100% !important;
-        z-index: 10 !important;
+        z-index: 50 !important;
         margin: 0 !important;
         padding: 0 !important;
     }
-    div[class*="st-key-card_box_"] div[data-testid="stButton"] button {
+    div[class*="st-key-btn_overlay_"] div[data-testid="stButton"],
+    div[class*="st-key-btn_overlay_"] button {
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
         height: 100% !important;
+        z-index: 50 !important;
+        margin: 0 !important;
+        padding: 0 !important;
         opacity: 0 !important;
         cursor: pointer !important;
-        z-index: 10 !important;
-        border: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
         background: transparent !important;
+        border: none !important;
     }
     div[class*="st-key-card_box_"]:hover .archive-card {
         transform: translateY(-2px);
@@ -228,6 +230,7 @@ st.markdown(
     /* Sayfada nerede olursanız olun ekranın sağında sabit açılır  */
     /* Layout'u bozmaz, yukarı scroll gerektirmez               */
     /* ======================================================== */
+    div[class*="st-key-slide_over_drawer"],
     div.st-key-slide_over_drawer,
     div[data-testid="stVerticalBlock"]:has(#drawer-anchor),
     div:has(> #drawer-anchor) {
@@ -357,6 +360,7 @@ st.markdown(
     }
 
     /* Çekmece İçindeki Butonlar: Çok Satırlı Sarma & Tam Metin (%100 Zoom Uyumlu) */
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button,
     div[data-testid="stVerticalBlock"]:has(#drawer-anchor) div[data-testid="stButton"] button {
         opacity: 1 !important;
         position: static !important;
@@ -376,6 +380,8 @@ st.markdown(
         display: flex !important;
         align-items: center !important;
     }
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button div,
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button p,
     div[data-testid="stVerticalBlock"]:has(#drawer-anchor) div[data-testid="stButton"] button div,
     div[data-testid="stVerticalBlock"]:has(#drawer-anchor) div[data-testid="stButton"] button p {
         white-space: normal !important;
@@ -387,11 +393,13 @@ st.markdown(
         text-overflow: clip !important;
         overflow: visible !important;
     }
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button:hover,
     div[data-testid="stVerticalBlock"]:has(#drawer-anchor) div[data-testid="stButton"] button:hover {
         border-color: #1a1a1a !important;
         background: #f8fafc !important;
         transform: translateY(-1px) !important;
     }
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button[kind="primary"],
     div[data-testid="stVerticalBlock"]:has(#drawer-anchor) div[data-testid="stButton"] button[kind="primary"] {
         background: #1a1a1a !important;
         border-color: #1a1a1a !important;
