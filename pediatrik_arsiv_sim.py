@@ -176,7 +176,7 @@ st.markdown(
         border-radius: 10px;
         background: #fbf8f3;
         border: 1px solid #d4a373;
-        color: #7f4f24;
+        color: #7f4f24 !important;
         text-decoration: none !important;
         display: inline-block;
         position: relative !important;
@@ -336,30 +336,7 @@ st.markdown(
         cursor: pointer !important;
         animation: backdropFadeIn 0.22s ease !important;
     }
-    /* Gizli Etiket İletişim Konteyneri */
-    div[class*="st-key-active_tag_field_container"],
-    div[class*="st-key-active_tag_field"] {
-        position: absolute !important;
-        width: 1px !important;
-        height: 1px !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        top: -9999px !important;
-        left: -9999px !important;
-    }
 
-    iframe[title*="streamlit.components"],
-    iframe.stIFrame,
-    div[data-testid="stIFrame"],
-    iframe[title*="st.iframe"] {
-        position: absolute !important;
-        width: 1px !important;
-        height: 1px !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
-        top: -9999px !important;
-        left: -9999px !important;
-    }
     div[class*="st-key-backdrop_container"] div[class*="st-key-btn_backdrop_close"],
     div[class*="st-key-backdrop_container"] div[data-testid="stButton"],
     div[class*="st-key-backdrop_container"] button {
@@ -845,9 +822,7 @@ def render_archive_header():
         unsafe_allow_html=True,
     )
 
-    # Gizli etiket aracı (JS etiket tıklamalarını bu alana aktarır, arama çubuğunu kirletmez)
-    with st.container(key="active_tag_field_container"):
-        st.text_input("hidden_tag", key="active_tag_field", label_visibility="collapsed")
+
 
     # Üst Filtre & Arama Satırı: Sekmeler + Serbest Arama Çubuğu + Ara Butonu
     c1, c2, c3, c_search, c_btn = st.columns([1.3, 1.3, 1.3, 4.4, 1.1])
@@ -892,7 +867,7 @@ def render_case_card(case: dict):
 
     tags = extract_card_tags(case)
     tags_html = "".join([
-        f'<span class="tag-chip" data-tag="{t}" title="Bu anahtar kelimeye sahip vakaları listele">{t}</span>'
+        f'<a href="?tag={urllib.parse.quote(t)}" target="_top" class="tag-chip" title="Bu anahtar kelimeye sahip vakaları filtrele">{t}</a>'
         for t in tags
     ])
     solved_badge = " ✓ Çözüldü" if is_solved else ""
@@ -1147,7 +1122,7 @@ def main():
         filtered = [c for c in filtered if c["id"].startswith("Y")]
 
     # 2. Anahtar Kelime Filtresi (Karttaki etiketlere tıklandığında anında devreye girer, arama çubuğunu kirletmez)
-    active_tag = st.session_state.get("active_tag_field", "").strip() or st.query_params.get("tag", "").strip()
+    active_tag = st.query_params.get("tag", "").strip()
     if active_tag:
         norm_tag = normalize_search_text(active_tag)
         filtered = [
@@ -1188,12 +1163,12 @@ def main():
                 unsafe_allow_html=True
             )
         with col_clear:
-            if st.button("✕ Filtreyi Kaldır", key="btn_clear_filter", use_container_width=True):
+            def clear_all_filters():
                 st.session_state["search_input_box"] = ""
-                st.session_state["active_tag_field"] = ""
                 if "tag" in st.query_params:
                     del st.query_params["tag"]
-                st.rerun()
+
+            st.button("✕ Filtreyi Kaldır", key="btn_clear_filter", on_click=clear_all_filters, use_container_width=True)
 
     st.caption(f"Arşivde toplam **{len(filtered)}** vaka listeleniyor.")
 
@@ -1219,100 +1194,6 @@ def main():
         # Sağdan Kayan Sabit Çekmece Konteyneri
         with st.container(key="slide_over_drawer"):
             render_drawer(cases_dict[drawer_id])
-
-    # Pürüzsüz Slide-Out Animasyonu & Tıklanabilir Etiket Köprüsü (Deprecation-Free st.iframe)
-    js_code = """
-        <script>
-        (function() {
-            try {
-                const parentDoc = window.parent.document;
-                if (!parentDoc) return;
-
-                if (parentDoc.__slideClickHandler) {
-                    parentDoc.removeEventListener('click', parentDoc.__slideClickHandler, true);
-                }
-                if (parentDoc.__tagClickHandler) {
-                    parentDoc.removeEventListener('click', parentDoc.__tagClickHandler, true);
-                }
-
-                // 1. Etiket Çipine Tıklanma (Capture Aşaması):
-                // Kartın çekmecesinin açılmasını KESİN olarak engeller.
-                // Arama çubuğunu KESİNLİKLE KİRLETMEDEN gizli etiket alanını günceller ve filtreyi anında tetikler!
-                parentDoc.__tagClickHandler = function(e) {
-                    const chip = e.target.closest('.tag-chip');
-                    if (!chip) return;
-
-                    e.preventDefault();
-                    e.stopPropagation();
-                    e.stopImmediatePropagation();
-
-                    const tagText = chip.getAttribute('data-tag') || chip.innerText.trim();
-                    const hiddenTagInput = parentDoc.querySelector('div[class*="st-key-active_tag_field"] input');
-                    if (hiddenTagInput) {
-                        const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-                        nativeSetter.call(hiddenTagInput, tagText);
-                        hiddenTagInput.dispatchEvent(new Event('input', { bubbles: true }));
-                        hiddenTagInput.dispatchEvent(new Event('change', { bubbles: true }));
-                    } else {
-                        const url = new URL(window.parent.location.href);
-                        url.searchParams.set('tag', tagText);
-                        window.parent.location.href = url.toString();
-                    }
-                };
-                parentDoc.addEventListener('click', parentDoc.__tagClickHandler, true);
-
-                // 2. Sağdan Sola Açılış / Soldan Sağa Kapanış (Çarpı butonu veya Boşluk / Backdrop tıklaması)
-                parentDoc.__slideClickHandler = function(e) {
-                    if (parentDoc.__isSlideClosing) return;
-
-                    const drawer = parentDoc.querySelector('div[class*="st-key-slide_over_drawer"]');
-                    if (!drawer) return;
-
-                    const isInsideDrawer = drawer.contains(e.target);
-                    const isCloseBtn = !!e.target.closest('div[class*="st-key-btn_close_drawer"]');
-
-                    // Çekmecenin dışındaki boşluğa VEYA kapatma butonuna tıklandığında
-                    if (!isInsideDrawer || isCloseBtn) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        e.stopImmediatePropagation();
-
-                        // Soldan sağa pürüzsüz kayarak kapanma keyframe animasyonu
-                        drawer.classList.add('drawer-slide-out');
-                        const backdrop = parentDoc.querySelector('div[class*="st-key-backdrop_container"]');
-                        if (backdrop) {
-                            backdrop.classList.add('backdrop-fade-out');
-                        }
-
-                        parentDoc.__isSlideClosing = true;
-                        setTimeout(function() {
-                            const btnToClick = isCloseBtn
-                                ? parentDoc.querySelector('div[class*="st-key-btn_close_drawer"] button')
-                                : parentDoc.querySelector('div[class*="st-key-btn_backdrop_close"] button');
-
-                            if (btnToClick) {
-                                btnToClick.click();
-                            }
-                            setTimeout(function() {
-                                parentDoc.__isSlideClosing = false;
-                            }, 400);
-                        }, 280);
-                    }
-                };
-
-                parentDoc.addEventListener('click', parentDoc.__slideClickHandler, true);
-            } catch (err) {
-                // cross-origin or sandbox fallback
-            }
-        })();
-        </script>
-    """
-
-    if hasattr(st, "iframe"):
-        st.iframe(js_code, width=1, height=1)
-    else:
-        components.html(js_code, height=0, width=0)
-
 
 if __name__ == "__main__":
     main()
