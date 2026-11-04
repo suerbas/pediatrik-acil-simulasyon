@@ -471,15 +471,30 @@ st.markdown(
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
         transition: all 0.16s ease !important;
     }
+    div[class*="st-key-slide_over_drawer"] div[class*="st-key-btn_close_drawer"] div[data-testid="stButton"] button div,
+    div[class*="st-key-slide_over_drawer"] div[class*="st-key-btn_close_drawer"] div[data-testid="stButton"] button span {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
     div[class*="st-key-slide_over_drawer"] div[class*="st-key-btn_close_drawer"] div[data-testid="stButton"] button p {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-        font-size: 1.05rem !important;
-        font-weight: 500 !important;
+        font-size: 1rem !important;
+        font-weight: 400 !important;
         line-height: 1 !important;
         margin: 0 !important;
         padding: 0 !important;
         color: #475569 !important;
         text-align: center !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
     }
     div[class*="st-key-slide_over_drawer"] div[class*="st-key-btn_close_drawer"] div[data-testid="stButton"] button:hover {
         background: #0f172a !important;
