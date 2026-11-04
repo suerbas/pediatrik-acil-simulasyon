@@ -210,6 +210,18 @@ st.markdown(
         position: relative !important;
         margin-bottom: 18px !important;
     }
+    div[class*="st-key-card_box_"] div[data-testid="stMarkdownContainer"] {
+        position: relative !important;
+        z-index: 10 !important;
+        pointer-events: none !important;
+    }
+    div[class*="st-key-card_box_"] .tag-chip,
+    div[class*="st-key-card_box_"] .card-tags {
+        pointer-events: auto !important;
+        position: relative !important;
+        z-index: 100 !important;
+        cursor: pointer !important;
+    }
     div[class*="st-key-card_box_"] div[class*="st-key-btn_overlay_"],
     div[class*="st-key-btn_overlay_"] {
         position: absolute !important;
@@ -217,7 +229,7 @@ st.markdown(
         left: 0 !important;
         width: 100% !important;
         height: 100% !important;
-        z-index: 50 !important;
+        z-index: 5 !important;
         margin: 0 !important;
         padding: 0 !important;
     }
@@ -228,7 +240,7 @@ st.markdown(
         left: 0 !important;
         width: 100% !important;
         height: 100% !important;
-        z-index: 50 !important;
+        z-index: 5 !important;
         margin: 0 !important;
         padding: 0 !important;
         opacity: 0 !important;
@@ -647,54 +659,93 @@ def get_all_cases():
     return GREEN_CASES + YELLOW_CASES
 
 
+def get_age_group(age_str: str) -> str:
+    age_lower = age_str.lower()
+    if "gün" in age_lower or "gun" in age_lower:
+        return "Yenidoğan"
+    if "hafta" in age_lower:
+        m = re.search(r'(\d+)', age_lower)
+        if m and int(m.group(1)) <= 4:
+            return "Yenidoğan"
+        return "Süt Çocuğu"
+    if "ay" in age_lower:
+        return "Süt Çocuğu"
+    m = re.search(r'(\d+(?:\.\d+)?)', age_lower)
+    if m:
+        val = float(m.group(1))
+        if val < 1.0:
+            return "Süt Çocuğu"
+        elif val < 6.0:
+            return "Oyun Çağı"
+        elif val < 12.0:
+            return "Okul Çocuğu"
+        else:
+            return "Adölesan"
+    return "Pediatrik"
+
+
 def extract_card_tags(case: dict) -> list:
-    tags = []
+    """
+    Tüm arşiv vakalarındaki ortak klinik noktaları, semptomları ve yaş gruplarını
+    kapsamlı bir şekilde tarayarak her vaka için 3-5 adet zengin anahtar kelime üretir.
+    """
+    tags = [get_age_group(case.get("age", ""))]
+
     comp = case.get("complaint", "").lower()
-    age_str = case.get("age", "")
-    if "gün" in age_str.lower():
-        tags.append("Yenidoğan")
-    elif "ay" in age_str.lower():
-        tags.append("Süt Çocuğu")
-    elif any(x in age_str for x in ["2 Yaş", "3 Yaş", "4 Yaş", "5 Yaş"]):
-        tags.append("Oyun Çağı")
-    else:
-        tags.append("Okul / Ergen")
+    cat = case.get("category", "").lower()
+    diag = case.get("final_diagnosis", "").lower()
 
-    keyword_map = [
-        ("ateş", "Ateş"),
-        ("kusma", "Kusma"),
-        ("ishal", "İshal"),
-        ("karın ağrı", "Karın Ağrısı"),
-        ("öksürük", "Öksürük"),
-        ("hırıltı", "Hırıltı"),
-        ("dispne", "Dispne"),
-        ("döküntü", "Döküntü"),
-        ("baş ağrı", "Baş Ağrısı"),
-        ("nöbet", "Konvülziyon"),
-        ("şişlik", "Ödem"),
-        ("sarılık", "Sarılık"),
-        ("idrar", "Üriner"),
-        ("ağlama", "Huzursuz Bebek"),
-        ("eklem", "Artralji"),
-        ("zehirlen", "Toksikoloji"),
+    # 1. Öncü Klinik Semptomlar (Öncelikli! Kullanıcılar semptomlara tıklar)
+    symptom_map = [
+        (["ateş", "febril", "sıcaklık"], "Ateş"),
+        (["kusma", "regürjit"], "Kusma"),
+        (["ishal", "diyare", "dışkılama"], "İshal"),
+        (["karın ağrı", "batın ağrı", "kolik"], "Karın Ağrısı"),
+        (["öksürük", "boğmaca"], "Öksürük"),
+        (["hırıltı", "wheezing", "hışıltı"], "Hırıltı"),
+        (["dispne", "nefes darlığı", "solunum sıkıntısı", "takipne", "stridor"], "Dispne"),
+        (["döküntü", "kızarıklık", "ürtiker", "peteşi", "purpura", "aft", "yara"], "Döküntü"),
+        (["nöbet", "konvülziyon", "kasılma"], "Konvülziyon"),
+        (["baş ağrı"], "Baş Ağrısı"),
+        (["baş dönmesi", "göz kararması", "senkop", "presenkop", "bayılma"], "Senkop / Baş Dönmesi"),
+        (["huzursuz", "ağlama", "katılma"], "Huzursuz Bebek"),
+        (["kulak ağrı", "kulak akınt", "otalji"], "Kulak Ağrısı"),
+        (["şişlik", "ödem", "lenfaden"], "Ödem"),
+        (["sarılık", "ikter"], "Sarılık"),
+        (["solukluk", "anemi", "halsizlik"], "Anemi / Solukluk"),
+        (["idrar", "işeme", "enürezis", "dizüri"], "Üriner / İdrar"),
+        (["kabız", "konstipasyon", "kaka yapamama"], "Konstipasyon"),
+        (["zehirlen", "toksik", "intoks", "ilaç alım"], "Zehirlenme"),
+        (["travma", "düşme", "çarpma", "burkulma", "kırık"], "Travma"),
+        (["dehidrat", "sıvı kaybı", "ağız kuruluğu"], "Dehidratasyon"),
     ]
-    for kw, label in keyword_map:
-        if kw in comp and label not in tags:
-            tags.append(label)
-        if len(tags) >= 4:
-            break
 
-    cat = case.get("category", "")
-    if "GİS" in cat and "Gastroenteroloji" not in tags:
-        tags.append("GİS")
-    elif "Solunum" in cat and "Solunum" not in tags:
-        tags.append("Respiratuar")
-    elif "Nörolojik" in cat and "Nöroloji" not in tags:
-        tags.append("Nöroloji")
-    elif "Enfeksiyon" in cat and "Enfeksiyon" not in tags:
-        tags.append("Enfeksiyon")
+    for keywords, label in symptom_map:
+        if any(k in comp or k in diag for k in keywords):
+            if label not in tags:
+                tags.append(label)
 
-    return tags[:4]
+    # 2. Sistem & Uzmanlık Alanı (GİS, Respiratuar, Enfeksiyon, Nöroloji, vb.)
+    system_map = [
+        (["gastro", "gi̇s", "apandisit", "invajinasyon", "reflü", "hepat", "karın"], "GİS"),
+        (["solunum", "respiratuar", "bronşiolit", "krup", "astım", "pnömoni"], "Respiratuar"),
+        (["enfeksiyon", "sepsis", "menenjit", "viral", "bakteriyel"], "Enfeksiyon"),
+        (["nöroloj", "epilep", "menenjit", "ensefalit"], "Nöroloji"),
+        (["alerji", "anafilaksi", "atopik", "anjioödem"], "Alerji"),
+        (["kbb", "otit", "tonsil", "boğaz", "rinit", "farenjit"], "KBB"),
+        (["göz", "oftalm", "konjonktiv"], "Göz"),
+        (["renal", "ürolo", "nefrit", "piyelonefrit", "torsiyon"], "Nefro / Üro"),
+        (["toksik", "zehirlen", "intoks"], "Toksikoloji"),
+        (["eklem", "artrit", "sinovit", "ortopedi", "dadı dirseği"], "Ortopedi"),
+        (["hematol", "itp", "anemi", "lösemi", "trombosit"], "Hematoloji"),
+    ]
+
+    for keywords, label in system_map:
+        if any(k in cat or k in diag or k in comp for k in keywords):
+            if label not in tags:
+                tags.append(label)
+
+    return tags[:5]
 
 
 def open_case(case_id: str):
@@ -777,7 +828,7 @@ def render_case_card(case: dict):
 
     tags = extract_card_tags(case)
     tags_html = "".join([
-        f'<a href="?tag={urllib.parse.quote(t)}" target="_self" class="tag-chip" title="Bu anahtar kelimeye sahip vakaları filtrele">{t}</a>'
+        f'<span class="tag-chip" data-tag="{t}" title="Bu anahtar kelimeye sahip vakaları listele">{t}</span>'
         for t in tags
     ])
     solved_badge = " ✓ Çözüldü" if is_solved else ""
@@ -1025,8 +1076,10 @@ def main():
 
     # URL Query Parametrelerinden Aktif Etiketi Oku
     active_tag = st.query_params.get("tag", "").strip()
+    query = st.session_state.search_query.strip().lower()
+    filter_term = query or active_tag.lower()
 
-    # Filtreleme
+    # Filtreleme (Alan Sekmesi)
     filtered = all_cases
     tab = st.session_state.active_tab
     if tab == "GREEN":
@@ -1034,40 +1087,38 @@ def main():
     elif tab == "YELLOW":
         filtered = [c for c in filtered if c["id"].startswith("Y")]
 
-    # Aktif Etiket Filtresi
-    if active_tag:
+    # Arama & Anahtar Kelime Filtresi
+    if filter_term:
         filtered = [
             c for c in filtered
-            if any(active_tag.lower() == t.lower() for t in extract_card_tags(c))
-            or active_tag.lower() in c.get("complaint", "").lower()
-            or active_tag.lower() in c.get("category", "").lower()
-            or active_tag.lower() in c.get("age", "").lower()
+            if filter_term in c["id"].lower()
+            or filter_term in c.get("complaint", "").lower()
+            or filter_term in c.get("age", "").lower()
+            or filter_term in c.get("category", "").lower()
+            or filter_term in c.get("final_diagnosis", "").lower()
+            or any(filter_term in t.lower() for t in extract_card_tags(c))
         ]
 
-    # Arama Kutusu Filtresi
-    query = st.session_state.search_query.strip().lower()
-    if query:
-        filtered = [
-            c for c in filtered
-            if query in c["id"].lower()
-            or query in c.get("complaint", "").lower()
-            or query in c.get("age", "").lower()
-            or query in c.get("category", "").lower()
-            or any(query in t.lower() for t in extract_card_tags(c))
-        ]
-
-    # Aktif Etiket Rozeti ve Temizleme Butonu
-    if active_tag:
-        st.markdown(
-            f'''
-            <div style="font-family:'JetBrains Mono', monospace; font-size:0.82rem; margin:4px 0 10px 0; display:flex; align-items:center; gap:8px;">
-                <span>🏷️ Seçili Anahtar Kelime:</span>
-                <span style="background:#0f172a; color:#ffffff; padding:2px 10px; border-radius:12px; font-weight:700;">{active_tag}</span>
-                <a href="?" target="_self" style="color:#ef4444; font-weight:700; text-decoration:none; margin-left:6px; font-size:0.8rem;">[✕ Filtreyi Temizle]</a>
-            </div>
-            ''',
-            unsafe_allow_html=True
-        )
+    # Aktif Filtre Rozeti ve Tek Tıkla Temizleme Butonu
+    if filter_term:
+        col_badge, col_clear = st.columns([5, 1.2])
+        with col_badge:
+            st.markdown(
+                f'''
+                <div style="font-family:'JetBrains Mono', monospace; font-size:0.84rem; margin:4px 0 10px 0; display:flex; align-items:center; gap:8px;">
+                    <span>🔍 Aktif Filtre:</span>
+                    <span style="background:#0f172a; color:#ffffff; padding:3px 10px; border-radius:12px; font-weight:700;">{filter_term}</span>
+                    <span style="color:#64748b; font-size:0.78rem;">({len(filtered)} vaka listelendi)</span>
+                </div>
+                ''',
+                unsafe_allow_html=True
+            )
+        with col_clear:
+            if st.button("✕ Filtreyi Kaldır", key="btn_clear_filter", use_container_width=True):
+                st.session_state.search_query = ""
+                if "tag" in st.query_params:
+                    del st.query_params["tag"]
+                st.rerun()
 
     st.caption(f"Arşivde toplam **{len(filtered)}** vaka listeleniyor.")
 
@@ -1094,7 +1145,7 @@ def main():
         with st.container(key="slide_over_drawer"):
             render_drawer(cases_dict[drawer_id])
 
-    # Pürüzsüz Slide-Out (Soldan Sağa) Kapanış Animasyonu JS Köprüsü (Deprecation-Free st.iframe)
+    # Pürüzsüz Slide-Out Animasyonu & Tıklanabilir Etiket Köprüsü (Deprecation-Free st.iframe)
     js_code = """
         <script>
         (function() {
@@ -1105,8 +1156,36 @@ def main():
                 if (parentDoc.__slideClickHandler) {
                     parentDoc.removeEventListener('click', parentDoc.__slideClickHandler, true);
                 }
+                if (parentDoc.__tagClickHandler) {
+                    parentDoc.removeEventListener('click', parentDoc.__tagClickHandler, true);
+                }
 
-                // Sağdan Sola Açılış / Soldan Sağa Kapanış (Çarpı butonu veya Boşluk / Backdrop tıklaması)
+                // 1. Etiket Çipine Tıklanma (Capture Aşaması):
+                // Kartın çekmecesinin açılmasını KESİN olarak engeller ve arama kutusuna etiketi aktarır
+                parentDoc.__tagClickHandler = function(e) {
+                    const chip = e.target.closest('.tag-chip');
+                    if (!chip) return;
+
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+
+                    const tagText = chip.getAttribute('data-tag') || chip.innerText.trim();
+                    const searchInput = parentDoc.querySelector('div[class*="st-key-search_input_field"] input');
+                    if (searchInput) {
+                        const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+                        nativeSetter.call(searchInput, tagText);
+                        searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+                        searchInput.dispatchEvent(new Event('change', { bubbles: true }));
+                    } else {
+                        const url = new URL(window.parent.location.href);
+                        url.searchParams.set('tag', tagText);
+                        window.parent.location.href = url.toString();
+                    }
+                };
+                parentDoc.addEventListener('click', parentDoc.__tagClickHandler, true);
+
+                // 2. Sağdan Sola Açılış / Soldan Sağa Kapanış (Çarpı butonu veya Boşluk / Backdrop tıklaması)
                 parentDoc.__slideClickHandler = function(e) {
                     if (parentDoc.__isSlideClosing) return;
 
