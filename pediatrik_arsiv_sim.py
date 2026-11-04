@@ -193,117 +193,102 @@ st.markdown(
     }
 
 
-    /* Yerel Etiket Butonları (Pill Tasarımı - Cloud ve Mobil Uyumlu) */
-    div[class*="st-key-tag_"] {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    div[class*="st-key-tag_"] div[data-testid="stButton"] {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    div[class*="st-key-tag_"] button {
-        background: #fbf8f3 !important;
-        border: 1px solid #d4a373 !important;
-        color: #7f4f24 !important;
-        border-radius: 12px !important;
-        font-family: 'JetBrains Mono', monospace !important;
-        font-size: 0.68rem !important;
-        font-weight: 500 !important;
-        height: 24px !important;
-        min-height: 24px !important;
-        max-height: 24px !important;
-        padding: 0 4px !important;
-        line-height: 1 !important;
-        white-space: nowrap !important;
-        box-shadow: none !important;
-        transition: all 0.15s ease !important;
-    }
-    div[class*="st-key-tag_"] button p {
-        font-size: 0.68rem !important;
-        line-height: 1 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        color: #7f4f24 !important;
-    }
-    div[class*="st-key-tag_"] button:hover {
-        background: #0f172a !important;
-        border-color: #0f172a !important;
-        color: #ffffff !important;
-        transform: translateY(-1px) scale(1.03);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important;
-    }
-    div[class*="st-key-tag_"] button:hover p {
-        color: #ffffff !important;
-    }
-
-    /* Alt İncele & Çöz Butonu */
-    div[class*="st-key-btn_hint_"] {
-        margin-top: 4px !important;
-    }
-    div[class*="st-key-btn_hint_"] button {
-        background: transparent !important;
-        border: none !important;
-        border-top: 1px dashed #e2e8f0 !important;
-        border-radius: 0 !important;
-        color: #0369a1 !important;
-        font-family: 'JetBrains Mono', monospace !important;
-        font-size: 0.72rem !important;
-        font-weight: 600 !important;
-        height: 28px !important;
-        min-height: 28px !important;
-        padding: 2px 4px !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        box-shadow: none !important;
-    }
-    div[class*="st-key-btn_hint_"] button:hover {
-        background: #f0f9ff !important;
-        color: #0284c7 !important;
-    }
-
-    .card-click-hint {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.72rem;
-        font-weight: 600;
-        color: #0369a1;
-        margin-top: 10px;
-        border-top: 1px dashed #e2e8f0;
-        padding-top: 6px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
     /* ======================================================== */
-    /* ENTEGRE KART TASARIMI (Tüm Elemanlar Kartın İÇİNDEDİR)    */
+    /* 4-KOLONLU SABİT VE EŞİT BOYUTLU KART TASARIMI           */
+    /* (The Story Archive Birebir Klonu - %100 Hizalı & Eşit)   */
     /* ======================================================== */
     div[class*="st-key-card_box_"] {
         background: #ffffff !important;
         border: 1.5px solid #059669 !important;
-        border-radius: 12px !important;
-        padding: 16px 18px 10px 18px !important;
-        box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.08) !important;
-        margin-bottom: 20px !important;
+        border-radius: 10px !important;
+        padding: 14px 14px 8px 14px !important;
+        box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.06) !important;
+        margin-bottom: 16px !important;
         position: relative !important;
+        height: 236px !important;
+        min-height: 236px !important;
+        max-height: 236px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        box-sizing: border-box !important;
         transition: transform 0.16s ease, box-shadow 0.16s ease !important;
     }
     div[class*="st-key-card_box_"]:hover {
         transform: translateY(-2px) !important;
-        box-shadow: 4px 6px 0px rgba(0, 0, 0, 0.14) !important;
+        box-shadow: 3px 5px 0px rgba(0, 0, 0, 0.12) !important;
     }
     div[class*="st-key-card_box_yellow_"] {
         border-color: #b45309 !important;
+    }
+
+    .card-top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+    .card-title-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.94rem;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.25;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1;
+        margin-right: 6px;
+    }
+    .card-category-pill {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.66rem;
+        font-weight: 600;
+        padding: 2px 6px;
+        border-radius: 10px;
+        white-space: nowrap;
+        background: #047857;
+        color: #ffffff;
+    }
+    .pill-yellow {
+        background: #b45309 !important;
+    }
+    .card-meta-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.72rem;
+        color: #64748b;
+        margin-bottom: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .card-complaint-text {
+        font-size: 0.82rem;
+        line-height: 1.38;
+        color: #334155;
+        height: 42px;
+        min-height: 42px;
+        max-height: 42px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
     }
 
     /* Etiket Satırı: Sütunları Doğal Genişliğe ve Sarmaya Ayarlama (Asla metin kesilmez!) */
     div[class*="st-key-card_box_"] div[data-testid="stHorizontalBlock"] {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 6px !important;
-        margin-top: 10px !important;
+        gap: 4px !important;
+        margin-top: 6px !important;
         margin-bottom: 2px !important;
+        height: 52px !important;
+        min-height: 52px !important;
+        max-height: 52px !important;
+        overflow: hidden !important;
         width: 100% !important;
+        align-content: flex-start !important;
     }
     div[class*="st-key-card_box_"] div[data-testid="stColumn"] {
         flex: 0 0 auto !important;
@@ -325,21 +310,21 @@ st.markdown(
         background: #fbf8f3 !important;
         border: 1px solid #d4a373 !important;
         color: #7f4f24 !important;
-        border-radius: 12px !important;
+        border-radius: 10px !important;
         font-family: 'JetBrains Mono', monospace !important;
-        font-size: 0.68rem !important;
+        font-size: 0.65rem !important;
         font-weight: 500 !important;
-        height: 24px !important;
-        min-height: 24px !important;
-        max-height: 24px !important;
-        padding: 0 8px !important;
+        height: 22px !important;
+        min-height: 22px !important;
+        max-height: 22px !important;
+        padding: 0 6px !important;
         line-height: 1 !important;
         white-space: nowrap !important;
         box-shadow: none !important;
         transition: all 0.15s ease !important;
     }
     div[class*="st-key-tag_"] button p {
-        font-size: 0.68rem !important;
+        font-size: 0.65rem !important;
         line-height: 1 !important;
         margin: 0 !important;
         padding: 0 !important;
@@ -350,7 +335,7 @@ st.markdown(
         border-color: #0f172a !important;
         color: #ffffff !important;
         transform: translateY(-1px) scale(1.03);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
     }
     div[class*="st-key-tag_"] button:hover p {
         color: #ffffff !important;
@@ -358,7 +343,7 @@ st.markdown(
 
     /* Alt İncele & Çöz Butonu (Kartın En Altında Kesikli Çizgiyle Yer Alır) */
     div[class*="st-key-btn_hint_"] {
-        margin-top: 8px !important;
+        margin-top: 4px !important;
         margin-bottom: 0 !important;
     }
     div[class*="st-key-btn_hint_"] button {
@@ -368,11 +353,11 @@ st.markdown(
         border-radius: 0 !important;
         color: #0369a1 !important;
         font-family: 'JetBrains Mono', monospace !important;
-        font-size: 0.72rem !important;
+        font-size: 0.70rem !important;
         font-weight: 600 !important;
-        height: 30px !important;
-        min-height: 30px !important;
-        padding: 6px 4px 0 4px !important;
+        height: 26px !important;
+        min-height: 26px !important;
+        padding: 4px 2px 0 2px !important;
         display: flex !important;
         justify-content: space-between !important;
         box-shadow: none !important;
@@ -390,7 +375,7 @@ st.markdown(
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
-        height: 120px !important;
+        height: 110px !important;
         z-index: 5 !important;
         margin: 0 !important;
         padding: 0 !important;
@@ -399,7 +384,6 @@ st.markdown(
         background: transparent !important;
         border: none !important;
     }
-
     /* ======================================================== */
     /* SABİT KAYAN ÇEKMECE (FIXED SLIDE-OVER DRAWER)              */
     /* Sayfada nerede olursanız olun ekranın sağında sabit açılır  */
@@ -1012,21 +996,21 @@ def render_case_card(case: dict):
     container_key = f"card_box_yellow_{cid}" if is_yellow else f"card_box_{cid}"
 
     with st.container(key=container_key):
-        # 1. Kart Başlığı, Kategori Rozeti ve Şikayet (Doğrudan Kartın İçinde)
+        # 1. Kart Başlığı, Kategori Rozeti ve Şikayet (Birebir Eşit Yükseklik)
         st.markdown(
             f'''
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
-                <div style="font-family:'JetBrains Mono', monospace; font-size:1.02rem; font-weight:700; color:#0f172a; line-height:1.35; flex:1; margin-right:8px;">
+            <div class="card-top-row">
+                <div class="card-title-text" title="{cid} • {card_title}{solved_badge}">
                     {cid} • {card_title}{solved_badge}
                 </div>
                 <span class="card-category-pill {pill_class}">
                     {zone_label}
                 </span>
             </div>
-            <div style="font-family:'JetBrains Mono', monospace; font-size:0.76rem; color:#64748b; margin-bottom:8px;">
+            <div class="card-meta-text" title="{case.get('category', 'Klinik Acil')} • 4 Aşama">
                 {case.get('category', 'Klinik Acil')} • 4 Aşama
             </div>
-            <div style="font-size:0.88rem; line-height:1.45; color:#334155; min-height:48px;">
+            <div class="card-complaint-text" title="{case['complaint']}">
                 <b>Şikayet:</b> {case['complaint']}
             </div>
             ''',
@@ -1038,7 +1022,7 @@ def render_case_card(case: dict):
             open_case(cid)
             st.rerun()
 
-        # 2. Kartın İÇİNDE Yer Alan Etiket Butonları (Doğal Sarma & Taşma Yok)
+        # 2. Kart İçi Etiket Butonları (Doğal Sarma & Taşma Önleme)
         t_cols = st.columns(len(tags))
         for idx, t in enumerate(tags):
             with t_cols[idx]:
@@ -1313,11 +1297,11 @@ def main():
 
     st.caption(f"Arşivde toplam **{len(filtered)}** vaka listeleniyor.")
 
-    # 3 Kolonlu Sabit Sayfa Gridi (The Story Archive görünümü)
+    # 4 Kolonlu Sabit Sayfa Gridi (The Story Archive orijinal görünümü)
     # Drawer açılsa dahi grid genişliği ve kolonları asla değişmez / bozulmaz!
-    cols = st.columns(3)
+    cols = st.columns(4)
     for idx, c in enumerate(filtered):
-        with cols[idx % 3]:
+        with cols[idx % 4]:
             render_case_card(c)
 
     # EĞER ÇEKMECE AÇIKSA:
