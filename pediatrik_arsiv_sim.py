@@ -244,6 +244,7 @@ st.markdown(
         box-shadow: -12px 0 40px rgba(0, 0, 0, 0.22) !important;
         z-index: 999999 !important;
         overflow-y: auto !important;
+        overflow-x: hidden !important;
         padding: 24px 22px !important;
         display: flex !important;
         flex-direction: column !important;
@@ -538,21 +539,25 @@ st.markdown(
         visibility: hidden;
         opacity: 0;
         position: absolute;
-        bottom: 130%;
+        bottom: 125%;
         left: 50%;
         transform: translateX(-50%);
         background-color: #0f172a;
         color: #f8fafc;
         text-align: center;
-        padding: 5px 10px;
+        padding: 6px 12px;
         border-radius: 6px;
         font-size: 0.78rem;
         font-weight: 500;
-        white-space: nowrap;
+        max-width: 440px !important;
+        white-space: normal !important;
+        width: max-content !important;
+        box-sizing: border-box !important;
+        line-height: 1.35 !important;
         z-index: 9999999;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
         pointer-events: none;
-        transition: opacity 0.2s ease;
+        transition: opacity 0.18s ease;
     }
     .med-val:hover .med-tooltip {
         visibility: visible;
@@ -1007,6 +1012,47 @@ def main():
             if (parentDoc.__slideClickHandler) {
                 parentDoc.removeEventListener('click', parentDoc.__slideClickHandler, true);
             }
+            if (parentDoc.__tooltipHoverHandler) {
+                parentDoc.removeEventListener('mouseover', parentDoc.__tooltipHoverHandler, true);
+            }
+
+            // Dinamik Tooltip Akıllı Hizalama (Pencere dışına taşmayı ve kırpılmayı önler)
+            function adjustTooltip(medVal) {
+                const tooltip = medVal.querySelector('.med-tooltip');
+                const drawer = parentDoc.querySelector('div[class*="st-key-slide_over_drawer"]');
+                if (!tooltip || !drawer) return;
+
+                const drawerRect = drawer.getBoundingClientRect();
+                const valRect = medVal.getBoundingClientRect();
+                const tooltipWidth = tooltip.offsetWidth || 280;
+
+                const centerLeftInDrawer = (valRect.left - drawerRect.left) + (valRect.width / 2) - (tooltipWidth / 2);
+                const minAllowed = 16;
+                const maxAllowed = drawerRect.width - tooltipWidth - 16;
+
+                if (centerLeftInDrawer < minAllowed) {
+                    const shift = minAllowed - (valRect.left - drawerRect.left);
+                    tooltip.style.left = shift + 'px';
+                    tooltip.style.transform = 'none';
+                    tooltip.style.right = 'auto';
+                } else if (centerLeftInDrawer > maxAllowed) {
+                    tooltip.style.left = 'auto';
+                    tooltip.style.right = '0px';
+                    tooltip.style.transform = 'none';
+                } else {
+                    tooltip.style.left = '50%';
+                    tooltip.style.right = 'auto';
+                    tooltip.style.transform = 'translateX(-50%)';
+                }
+            }
+
+            parentDoc.__tooltipHoverHandler = function(e) {
+                const medVal = e.target.closest('.med-val');
+                if (medVal) {
+                    adjustTooltip(medVal);
+                }
+            };
+            parentDoc.addEventListener('mouseover', parentDoc.__tooltipHoverHandler, true);
 
             parentDoc.__slideClickHandler = function(e) {
                 if (parentDoc.__isSlideClosing) return;
