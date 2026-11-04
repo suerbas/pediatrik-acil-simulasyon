@@ -230,10 +230,7 @@ st.markdown(
     /* Sayfada nerede olursanız olun ekranın sağında sabit açılır  */
     /* Layout'u bozmaz, yukarı scroll gerektirmez               */
     /* ======================================================== */
-    div[class*="st-key-slide_over_drawer"],
-    div.st-key-slide_over_drawer,
-    div[data-testid="stVerticalBlock"]:has(#drawer-anchor),
-    div:has(> #drawer-anchor) {
+    div[class*="st-key-slide_over_drawer"] {
         position: fixed !important;
         top: 0 !important;
         right: 0 !important;
@@ -360,8 +357,7 @@ st.markdown(
     }
 
     /* Çekmece İçindeki Butonlar: Çok Satırlı Sarma & Tam Metin (%100 Zoom Uyumlu) */
-    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button,
-    div[data-testid="stVerticalBlock"]:has(#drawer-anchor) div[data-testid="stButton"] button {
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button {
         opacity: 1 !important;
         position: static !important;
         background: #ffffff !important;
@@ -381,9 +377,7 @@ st.markdown(
         align-items: center !important;
     }
     div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button div,
-    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button p,
-    div[data-testid="stVerticalBlock"]:has(#drawer-anchor) div[data-testid="stButton"] button div,
-    div[data-testid="stVerticalBlock"]:has(#drawer-anchor) div[data-testid="stButton"] button p {
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button p {
         white-space: normal !important;
         word-break: break-word !important;
         overflow-wrap: break-word !important;
@@ -393,14 +387,12 @@ st.markdown(
         text-overflow: clip !important;
         overflow: visible !important;
     }
-    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button:hover,
-    div[data-testid="stVerticalBlock"]:has(#drawer-anchor) div[data-testid="stButton"] button:hover {
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button:hover {
         border-color: #1a1a1a !important;
         background: #f8fafc !important;
         transform: translateY(-1px) !important;
     }
-    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button[kind="primary"],
-    div[data-testid="stVerticalBlock"]:has(#drawer-anchor) div[data-testid="stButton"] button[kind="primary"] {
+    div[class*="st-key-slide_over_drawer"] div[data-testid="stButton"] button[kind="primary"] {
         background: #1a1a1a !important;
         border-color: #1a1a1a !important;
         color: #ffffff !important;
@@ -670,9 +662,6 @@ def render_drawer(case: dict):
     current_idx = st.session_state.drawer_step_idx
     is_yellow = cid.startswith("Y")
     zone_label = "🟡 Sarı Alan (Acil Gözlem)" if is_yellow else "🟢 Yeşil Alan (Poliklinik)"
-
-    # Çekmece DOM çıpası
-    st.markdown('<div id="drawer-anchor"></div>', unsafe_allow_html=True)
 
     # Üst Başlık (Sol) ve Kapat Butonu (Sağ - The Story Archive düzeni)
     title_c, close_c = st.columns([4.2, 1.3])
