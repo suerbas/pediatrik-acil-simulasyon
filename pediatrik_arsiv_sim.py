@@ -254,21 +254,25 @@ st.markdown(
         from { transform: translateX(100%); }
         to { transform: translateX(0); }
     }
+    @keyframes drawerSlideOut {
+        from { transform: translateX(0); }
+        to { transform: translateX(100%); }
+    }
     @keyframes backdropFadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
     }
+    @keyframes backdropFadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
 
     /* Kapanış (Slide-Out Soldan Sağa ve Arka Plan Fade-Out) Animasyon Sınıfları */
-    .drawer-slide-out {
-        transform: translateX(100%) !important;
-        transition: transform 0.24s cubic-bezier(0.4, 0, 0.6, 1) !important;
-        animation: none !important;
+    div[class*="st-key-slide_over_drawer"].drawer-slide-out {
+        animation: drawerSlideOut 0.3s cubic-bezier(0.32, 0, 0.67, 0) forwards !important;
     }
-    .backdrop-fade-out {
-        opacity: 0 !important;
-        transition: opacity 0.22s ease !important;
-        animation: none !important;
+    div[class*="st-key-backdrop_container"].backdrop-fade-out {
+        animation: backdropFadeOut 0.28s ease forwards !important;
     }
 
     /* Tıklanabilir Karartıcı Arka Plan (Click outside to close) */
@@ -1003,9 +1007,8 @@ def main():
         with st.container(key="slide_over_drawer"):
             render_drawer(cases_dict[drawer_id])
 
-    # Pürüzsüz Slide-Out (Soldan Sağa) Kapanış Animasyonu JS Köprüsü
-    components.html(
-        """
+    # Pürüzsüz Slide-Out (Soldan Sağa) Kapanış & Akıllı Tooltip JS Köprüsü (Deprecation-Free st.iframe)
+    js_code = """
         <script>
         (function() {
             const parentDoc = window.parent.document;
@@ -1054,52 +1057,54 @@ def main():
             };
             parentDoc.addEventListener('mouseover', parentDoc.__tooltipHoverHandler, true);
 
+            // Sağdan Sola Açılış / Soldan Sağa Kapanış (Çarpı butonu veya Boşluk / Backdrop tıklaması)
             parentDoc.__slideClickHandler = function(e) {
                 if (parentDoc.__isSlideClosing) return;
 
-                const btn = e.target.closest('button');
-                const isClose = !!(btn && btn.closest('div[class*="st-key-btn_close_drawer"]'));
-                const isBackdrop = !!(!isClose && e.target.closest('div[class*="st-key-backdrop_container"]') && !e.target.closest('div[class*="st-key-slide_over_drawer"]'));
+                const drawer = parentDoc.querySelector('div[class*="st-key-slide_over_drawer"]');
+                if (!drawer) return;
 
-                if (isClose || isBackdrop) {
-                    const drawer = parentDoc.querySelector('div[class*="st-key-slide_over_drawer"]');
+                const isInsideDrawer = drawer.contains(e.target);
+                const isCloseBtn = !!e.target.closest('div[class*="st-key-btn_close_drawer"]');
+
+                // Çekmecenin dışındaki boşluğa VEYA kapatma butonuna tıklandığında
+                if (!isInsideDrawer || isCloseBtn) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+
+                    // Soldan sağa pürüzsüz kayarak kapanma keyframe animasyonu
+                    drawer.classList.add('drawer-slide-out');
                     const backdrop = parentDoc.querySelector('div[class*="st-key-backdrop_container"]');
-
-                    if (drawer) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        e.stopImmediatePropagation();
-
-                        // Soldan sağa kayarak pürüzsüz kapanma animasyonu
-                        drawer.classList.add('drawer-slide-out');
-                        if (backdrop) {
-                            backdrop.classList.add('backdrop-fade-out');
-                        }
-
-                        parentDoc.__isSlideClosing = true;
-                        setTimeout(function() {
-                            const btnToClick = isClose
-                                ? parentDoc.querySelector('div[class*="st-key-btn_close_drawer"] button')
-                                : parentDoc.querySelector('div[class*="st-key-btn_backdrop_close"] button');
-
-                            if (btnToClick) {
-                                btnToClick.click();
-                            }
-                            setTimeout(function() {
-                                parentDoc.__isSlideClosing = false;
-                            }, 400);
-                        }, 230);
+                    if (backdrop) {
+                        backdrop.classList.add('backdrop-fade-out');
                     }
+
+                    parentDoc.__isSlideClosing = true;
+                    setTimeout(function() {
+                        const btnToClick = isCloseBtn
+                            ? parentDoc.querySelector('div[class*="st-key-btn_close_drawer"] button')
+                            : parentDoc.querySelector('div[class*="st-key-btn_backdrop_close"] button');
+
+                        if (btnToClick) {
+                            btnToClick.click();
+                        }
+                        setTimeout(function() {
+                            parentDoc.__isSlideClosing = false;
+                        }, 400);
+                    }, 280);
                 }
             };
 
             parentDoc.addEventListener('click', parentDoc.__slideClickHandler, true);
         })();
         </script>
-        """,
-        height=0,
-        width=0,
-    )
+    """
+
+    if hasattr(st, "iframe"):
+        st.iframe(js_code, width=1, height=1)
+    else:
+        components.html(js_code, height=0, width=0)
 
 
 if __name__ == "__main__":
