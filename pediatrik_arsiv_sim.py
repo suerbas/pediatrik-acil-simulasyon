@@ -283,12 +283,12 @@ st.markdown(
         text-overflow: ellipsis;
     }
     .card-complaint-text {
-        font-size: 0.82rem;
-        line-height: 1.38;
+        font-size: 0.80rem;
+        line-height: 18px;
         color: #334155;
-        height: 42px;
-        min-height: 42px;
-        max-height: 42px;
+        height: 36px;
+        min-height: 36px;
+        max-height: 36px;
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -1120,12 +1120,6 @@ def render_drawer(case: dict):
             <div style="font-family:'JetBrains Mono', monospace; font-size:1.22rem; font-weight:800; color:#0f172a; line-height:1.25;">
                 {cid} • {case['age']} {case['gender']}
             </div>
-            <div style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:#64748b; margin-top:5px; display:flex; align-items:center; gap:8px;">
-                <span class="card-category-pill {pill_class}">
-                    {zone_label}
-                </span>
-                <span>• {case.get('category', 'Klinik Acil')}</span>
-            </div>
             """,
             unsafe_allow_html=True,
         )
@@ -1134,7 +1128,19 @@ def render_drawer(case: dict):
             close_case()
             st.rerun()
 
-    st.markdown("<hr style='margin:10px 0 14px 0; border:none; border-top:1.5px solid #1a1a1a;'>", unsafe_allow_html=True)
+    # Kategori ve Alan Rozeti (Tam genişlikte, asla taşmaz, kesilmez veya çizgiyle çakışmaz)
+    st.markdown(
+        f"""
+        <div style="font-family:'JetBrains Mono', monospace; font-size:0.78rem; color:#64748b; margin-top:4px; margin-bottom:10px; display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
+            <span class="card-category-pill {pill_class}" style="font-size:0.72rem; padding:3px 8px; line-height:1.2; display:inline-flex; align-items:center;">
+                {zone_label}
+            </span>
+            <span style="font-weight:600;">• {case.get('category', 'Klinik Acil')}</span>
+        </div>
+        <hr style='margin:6px 0 14px 0; border:none; border-top:1.5px solid #1a1a1a; clear:both;'>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # Başvuru Şikayeti
     st.markdown(
