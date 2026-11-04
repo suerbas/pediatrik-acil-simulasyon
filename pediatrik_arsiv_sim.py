@@ -341,18 +341,33 @@ st.markdown(
         height: 22px !important;
         min-height: 22px !important;
         max-height: 22px !important;
-        padding: 0 7px !important;
-        line-height: 20px !important;
+        padding: 0 8px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         white-space: nowrap !important;
         box-shadow: none !important;
         transition: all 0.15s ease !important;
     }
+    div[class*="st-key-tag_"] button * {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+    }
     div[class*="st-key-tag_"] button p {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         font-size: 0.65rem !important;
         line-height: 1 !important;
         margin: 0 !important;
         padding: 0 !important;
         color: #7f4f24 !important;
+        height: 100% !important;
+        transform: translateY(-0.5px) !important;
     }
     div[class*="st-key-tag_"] button:hover {
         background: #0f172a !important;
