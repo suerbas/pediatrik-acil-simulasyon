@@ -336,6 +336,18 @@ st.markdown(
         cursor: pointer !important;
         animation: backdropFadeIn 0.22s ease !important;
     }
+    /* Gizli Etiket İletişim Konteyneri */
+    div[class*="st-key-active_tag_field_container"],
+    div[class*="st-key-active_tag_field"] {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        top: -9999px !important;
+        left: -9999px !important;
+    }
+
     iframe[title*="streamlit.components"],
     iframe.stIFrame,
     div[data-testid="stIFrame"],
@@ -748,6 +760,50 @@ def extract_card_tags(case: dict) -> list:
     return tags[:5]
 
 
+def normalize_search_text(text: str) -> str:
+    """Türkçe karakterleri ve büyük/küçük harfleri hatasız arama için normalize eder."""
+    if not text:
+        return ""
+    t = text.replace("İ", "i").replace("I", "ı").lower()
+    t = t.replace("ğ", "g").replace("ü", "u").replace("ş", "s").replace("ı", "i").replace("ö", "o").replace("ç", "c")
+    return t
+
+
+def build_case_search_corpus(case: dict) -> str:
+    """
+    Vakanın aranabilir tüm metin havuzunu (vaka kodu, yaş, tanı, şikayet, öykü,
+    vitaller, taburculuk/yatış, inci notları, aşama soruları ve seçenekleri) derler.
+    Kullanıcı 'yoğun bakım', 'Guillain', 'menenjit', 'aspirin' gibi herhangi bir klinik
+    ifade aradığında tüm içeriği kapsar.
+    """
+    parts = [
+        case.get("id", ""),
+        case.get("age", ""),
+        case.get("gender", ""),
+        case.get("category", ""),
+        case.get("complaint", ""),
+        case.get("history", ""),
+        case.get("vitals", ""),
+        case.get("final_diagnosis", ""),
+        case.get("disposition", ""),
+        case.get("case_pearl", ""),
+    ]
+    parts.extend(extract_card_tags(case))
+
+    for step in case.get("steps", []):
+        parts.append(step.get("stage_title", ""))
+        parts.append(step.get("question", ""))
+        for opt in step.get("options", []):
+            parts.append(opt.get("text", ""))
+            parts.append(opt.get("explanation", ""))
+            parts.append(opt.get("new_finding", ""))
+            parts.append(opt.get("scenario_update", ""))
+            parts.append(opt.get("teaching_point", ""))
+
+    raw_text = " ".join(p for p in parts if p)
+    return normalize_search_text(raw_text)
+
+
 def open_case(case_id: str):
     cases_dict = {c["id"]: c for c in get_all_cases()}
     chosen = cases_dict.get(case_id)
@@ -789,7 +845,12 @@ def render_archive_header():
         unsafe_allow_html=True,
     )
 
-    c1, c2, c3, c4 = st.columns([1.5, 1.5, 1.5, 5])
+    # Gizli etiket aracı (JS etiket tıklamalarını bu alana aktarır, arama çubuğunu kirletmez)
+    with st.container(key="active_tag_field_container"):
+        st.text_input("hidden_tag", key="active_tag_field", label_visibility="collapsed")
+
+    # Üst Filtre & Arama Satırı: Sekmeler + Serbest Arama Çubuğu + Ara Butonu
+    c1, c2, c3, c_search, c_btn = st.columns([1.3, 1.3, 1.3, 4.4, 1.1])
     with c1:
         if st.button("Tüm Vakalar (140)", key="tab_all", use_container_width=True,
                      type="primary" if st.session_state.active_tab == "ALL" else "secondary"):
@@ -805,13 +866,16 @@ def render_archive_header():
                      type="primary" if st.session_state.active_tab == "YELLOW" else "secondary"):
             st.session_state.active_tab = "YELLOW"
             st.rerun()
-    with c4:
-        st.session_state.search_query = st.text_input(
+    with c_search:
+        st.text_input(
             "Arşivde Ara:",
-            placeholder="🔍 Semptom, yaş, şikayet veya vaka kodu ara... (örn: ateş, öksürük, G54, Y12)",
+            placeholder="🔍 Tüm arşivde serbest ara (örn: Guillain, yoğun bakım, menenjit, kusma, G14...)",
             label_visibility="collapsed",
-            key="search_input_field",
+            key="search_input_box",
         )
+    with c_btn:
+        if st.button("🔍 Ara", key="btn_do_search", use_container_width=True, type="primary"):
+            st.rerun()
 
 
 def render_case_card(case: dict):
@@ -1074,12 +1138,7 @@ def main():
 
     all_cases = get_all_cases()
 
-    # URL Query Parametrelerinden Aktif Etiketi Oku
-    active_tag = st.query_params.get("tag", "").strip()
-    query = st.session_state.search_query.strip().lower()
-    filter_term = query or active_tag.lower()
-
-    # Filtreleme (Alan Sekmesi)
+    # 1. Alan Sekmesi Filtresi
     filtered = all_cases
     tab = st.session_state.active_tab
     if tab == "GREEN":
@@ -1087,35 +1146,51 @@ def main():
     elif tab == "YELLOW":
         filtered = [c for c in filtered if c["id"].startswith("Y")]
 
-    # Arama & Anahtar Kelime Filtresi
-    if filter_term:
+    # 2. Anahtar Kelime Filtresi (Karttaki etiketlere tıklandığında anında devreye girer, arama çubuğunu kirletmez)
+    active_tag = st.session_state.get("active_tag_field", "").strip() or st.query_params.get("tag", "").strip()
+    if active_tag:
+        norm_tag = normalize_search_text(active_tag)
         filtered = [
             c for c in filtered
-            if filter_term in c["id"].lower()
-            or filter_term in c.get("complaint", "").lower()
-            or filter_term in c.get("age", "").lower()
-            or filter_term in c.get("category", "").lower()
-            or filter_term in c.get("final_diagnosis", "").lower()
-            or any(filter_term in t.lower() for t in extract_card_tags(c))
+            if any(norm_tag in normalize_search_text(t) for t in extract_card_tags(c))
+            or norm_tag in normalize_search_text(c.get("complaint", ""))
+            or norm_tag in normalize_search_text(c.get("final_diagnosis", ""))
+            or norm_tag in normalize_search_text(c.get("category", ""))
         ]
 
-    # Aktif Filtre Rozeti ve Tek Tıkla Temizleme Butonu
-    if filter_term:
-        col_badge, col_clear = st.columns([5, 1.2])
+    # 3. Serbest Metin Arama Filtresi (Tüm vaka havuzunda derinlemesine arar: Guillain, yoğun bakım, vb.)
+    search_query = st.session_state.get("search_input_box", "").strip()
+    if search_query:
+        norm_q = normalize_search_text(search_query)
+        filtered = [
+            c for c in filtered
+            if norm_q in build_case_search_corpus(c)
+        ]
+
+    # 4. Aktif Filtre Rozetleri & Çalışan Temizleme Butonları
+    if active_tag or search_query:
+        col_badge, col_clear = st.columns([5, 1.4])
         with col_badge:
+            pills = []
+            if active_tag:
+                pills.append(f'<span>🏷️ Etiket: <b style="background:#0f172a; color:#fff; padding:2px 8px; border-radius:10px;">{active_tag}</b></span>')
+            if search_query:
+                pills.append(f'<span>🔍 Arama: <b style="background:#0369a1; color:#fff; padding:2px 8px; border-radius:10px;">"{search_query}"</b></span>')
+
+            pills_html = " &nbsp;&bull;&nbsp; ".join(pills)
             st.markdown(
                 f'''
                 <div style="font-family:'JetBrains Mono', monospace; font-size:0.84rem; margin:4px 0 10px 0; display:flex; align-items:center; gap:8px;">
-                    <span>🔍 Aktif Filtre:</span>
-                    <span style="background:#0f172a; color:#ffffff; padding:3px 10px; border-radius:12px; font-weight:700;">{filter_term}</span>
-                    <span style="color:#64748b; font-size:0.78rem;">({len(filtered)} vaka listelendi)</span>
+                    {pills_html}
+                    <span style="color:#64748b; font-size:0.78rem;">({len(filtered)} vaka eşleşti)</span>
                 </div>
                 ''',
                 unsafe_allow_html=True
             )
         with col_clear:
             if st.button("✕ Filtreyi Kaldır", key="btn_clear_filter", use_container_width=True):
-                st.session_state.search_query = ""
+                st.session_state["search_input_box"] = ""
+                st.session_state["active_tag_field"] = ""
                 if "tag" in st.query_params:
                     del st.query_params["tag"]
                 st.rerun()
@@ -1161,7 +1236,8 @@ def main():
                 }
 
                 // 1. Etiket Çipine Tıklanma (Capture Aşaması):
-                // Kartın çekmecesinin açılmasını KESİN olarak engeller ve arama kutusuna etiketi aktarır
+                // Kartın çekmecesinin açılmasını KESİN olarak engeller.
+                // Arama çubuğunu KESİNLİKLE KİRLETMEDEN gizli etiket alanını günceller ve filtreyi anında tetikler!
                 parentDoc.__tagClickHandler = function(e) {
                     const chip = e.target.closest('.tag-chip');
                     if (!chip) return;
@@ -1171,12 +1247,12 @@ def main():
                     e.stopImmediatePropagation();
 
                     const tagText = chip.getAttribute('data-tag') || chip.innerText.trim();
-                    const searchInput = parentDoc.querySelector('div[class*="st-key-search_input_field"] input');
-                    if (searchInput) {
+                    const hiddenTagInput = parentDoc.querySelector('div[class*="st-key-active_tag_field"] input');
+                    if (hiddenTagInput) {
                         const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
-                        nativeSetter.call(searchInput, tagText);
-                        searchInput.dispatchEvent(new Event('input', { bubbles: true }));
-                        searchInput.dispatchEvent(new Event('change', { bubbles: true }));
+                        nativeSetter.call(hiddenTagInput, tagText);
+                        hiddenTagInput.dispatchEvent(new Event('input', { bubbles: true }));
+                        hiddenTagInput.dispatchEvent(new Event('change', { bubbles: true }));
                     } else {
                         const url = new URL(window.parent.location.href);
                         url.searchParams.set('tag', tagText);
