@@ -192,6 +192,76 @@ st.markdown(
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
+
+    /* Yerel Etiket Butonları (Pill Tasarımı - Cloud ve Mobil Uyumlu) */
+    div[class*="st-key-tag_"] {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    div[class*="st-key-tag_"] div[data-testid="stButton"] {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    div[class*="st-key-tag_"] button {
+        background: #fbf8f3 !important;
+        border: 1px solid #d4a373 !important;
+        color: #7f4f24 !important;
+        border-radius: 12px !important;
+        font-family: 'JetBrains Mono', monospace !important;
+        font-size: 0.68rem !important;
+        font-weight: 500 !important;
+        height: 24px !important;
+        min-height: 24px !important;
+        max-height: 24px !important;
+        padding: 0 4px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+        box-shadow: none !important;
+        transition: all 0.15s ease !important;
+    }
+    div[class*="st-key-tag_"] button p {
+        font-size: 0.68rem !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        color: #7f4f24 !important;
+    }
+    div[class*="st-key-tag_"] button:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+        transform: translateY(-1px) scale(1.03);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15) !important;
+    }
+    div[class*="st-key-tag_"] button:hover p {
+        color: #ffffff !important;
+    }
+
+    /* Alt İncele & Çöz Butonu */
+    div[class*="st-key-btn_hint_"] {
+        margin-top: 4px !important;
+    }
+    div[class*="st-key-btn_hint_"] button {
+        background: transparent !important;
+        border: none !important;
+        border-top: 1px dashed #e2e8f0 !important;
+        border-radius: 0 !important;
+        color: #0369a1 !important;
+        font-family: 'JetBrains Mono', monospace !important;
+        font-size: 0.72rem !important;
+        font-weight: 600 !important;
+        height: 28px !important;
+        min-height: 28px !important;
+        padding: 2px 4px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        box-shadow: none !important;
+    }
+    div[class*="st-key-btn_hint_"] button:hover {
+        background: #f0f9ff !important;
+        color: #0284c7 !important;
+    }
+
     .card-click-hint {
         font-family: 'JetBrains Mono', monospace;
         font-size: 0.72rem;
@@ -854,10 +924,6 @@ def render_archive_header():
 
 
 def render_case_card(case: dict):
-    """
-    Kullanıcının kartın her yerine tıklayarak doğrudan sağ çekmeceyi açabileceği
-    tam entegre indeks kartı.
-    """
     cid = case["id"]
     is_yellow = cid.startswith("Y")
     card_class = "archive-card archive-card-yellow" if is_yellow else "archive-card"
@@ -866,14 +932,9 @@ def render_case_card(case: dict):
     is_solved = cid in st.session_state.solved_case_ids
 
     tags = extract_card_tags(case)
-    tags_html = "".join([
-        f'<a href="?tag={urllib.parse.quote(t)}" target="_top" class="tag-chip" title="Bu anahtar kelimeye sahip vakaları filtrele">{t}</a>'
-        for t in tags
-    ])
     solved_badge = " ✓ Çözüldü" if is_solved else ""
     card_title = f"{case['age']} {case['gender']}"
 
-    # Kart ve tıklama butonu için kapsayıcı container
     with st.container(key=f"card_box_{cid}"):
         st.markdown(
             f"""
@@ -891,23 +952,27 @@ def render_case_card(case: dict):
                             <b>Şikayet:</b> {case['complaint']}
                         </div>
                     </div>
-                    <div>
-                        <div class="card-tags">
-                            {tags_html}
-                        </div>
-                        <div class="card-click-hint">
-                            <span>📖 İncele & Çöz</span>
-                            <span>➔</span>
-                        </div>
-                    </div>
                 </div>
             </div>
             """,
             unsafe_allow_html=True,
         )
 
-        # Kartın üzerini tamamen kaplayan şeffaf buton (tüm kart tıklanabilir)
+        # Kart gövdesini kaplayan buton (vaka açar)
         if st.button(f"Aç_{cid}", key=f"btn_overlay_{cid}", use_container_width=True):
+            open_case(cid)
+            st.rerun()
+
+        # Doğrudan WebSocket üzerinden çalışan yerel etiket butonları (Cloud iframe uyumlu)
+        t_cols = st.columns([max(len(t), 3) for t in tags])
+        for idx, t in enumerate(tags):
+            with t_cols[idx]:
+                def make_tag_handler(selected_t=t):
+                    st.query_params["tag"] = selected_t
+
+                st.button(t, key=f"tag_{cid}_{idx}", on_click=make_tag_handler, use_container_width=True)
+
+        if st.button("📖 İncele & Çöz ➔", key=f"btn_hint_{cid}", use_container_width=True):
             open_case(cid)
             st.rerun()
 
