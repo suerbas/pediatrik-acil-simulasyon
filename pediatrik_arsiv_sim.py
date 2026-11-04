@@ -275,41 +275,122 @@ st.markdown(
         align-items: center;
     }
 
-    /* Kart Sarmalayıcısı ve Tıklanabilir Şeffaf Buton Overlay */
+    /* ======================================================== */
+    /* ENTEGRE KART TASARIMI (Tüm Elemanlar Kartın İÇİNDEDİR)    */
+    /* ======================================================== */
     div[class*="st-key-card_box_"] {
+        background: #ffffff !important;
+        border: 1.5px solid #059669 !important;
+        border-radius: 12px !important;
+        padding: 16px 18px 10px 18px !important;
+        box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.08) !important;
+        margin-bottom: 20px !important;
         position: relative !important;
-        margin-bottom: 18px !important;
+        transition: transform 0.16s ease, box-shadow 0.16s ease !important;
     }
-    div[class*="st-key-card_box_"] div[data-testid="stMarkdownContainer"] {
-        position: relative !important;
-        z-index: 10 !important;
-        pointer-events: none !important;
+    div[class*="st-key-card_box_"]:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 4px 6px 0px rgba(0, 0, 0, 0.14) !important;
     }
-    div[class*="st-key-card_box_"] .tag-chip,
-    div[class*="st-key-card_box_"] .card-tags {
-        pointer-events: auto !important;
-        position: relative !important;
-        z-index: 100 !important;
-        cursor: pointer !important;
+    div[class*="st-key-card_box_yellow_"] {
+        border-color: #b45309 !important;
     }
-    div[class*="st-key-card_box_"] div[class*="st-key-btn_overlay_"],
-    div[class*="st-key-btn_overlay_"] {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
+
+    /* Etiket Satırı: Sütunları Doğal Genişliğe ve Sarmaya Ayarlama (Asla metin kesilmez!) */
+    div[class*="st-key-card_box_"] div[data-testid="stHorizontalBlock"] {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        margin-top: 10px !important;
+        margin-bottom: 2px !important;
         width: 100% !important;
-        height: 100% !important;
-        z-index: 5 !important;
+    }
+    div[class*="st-key-card_box_"] div[data-testid="stColumn"] {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Kart İçi Etiket Butonları (The Story Archive Pill Teması) */
+    div[class*="st-key-tag_"] {
         margin: 0 !important;
         padding: 0 !important;
     }
+    div[class*="st-key-tag_"] div[data-testid="stButton"] {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    div[class*="st-key-tag_"] button {
+        background: #fbf8f3 !important;
+        border: 1px solid #d4a373 !important;
+        color: #7f4f24 !important;
+        border-radius: 12px !important;
+        font-family: 'JetBrains Mono', monospace !important;
+        font-size: 0.68rem !important;
+        font-weight: 500 !important;
+        height: 24px !important;
+        min-height: 24px !important;
+        max-height: 24px !important;
+        padding: 0 8px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+        box-shadow: none !important;
+        transition: all 0.15s ease !important;
+    }
+    div[class*="st-key-tag_"] button p {
+        font-size: 0.68rem !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        color: #7f4f24 !important;
+    }
+    div[class*="st-key-tag_"] button:hover {
+        background: #0f172a !important;
+        border-color: #0f172a !important;
+        color: #ffffff !important;
+        transform: translateY(-1px) scale(1.03);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15) !important;
+    }
+    div[class*="st-key-tag_"] button:hover p {
+        color: #ffffff !important;
+    }
+
+    /* Alt İncele & Çöz Butonu (Kartın En Altında Kesikli Çizgiyle Yer Alır) */
+    div[class*="st-key-btn_hint_"] {
+        margin-top: 8px !important;
+        margin-bottom: 0 !important;
+    }
+    div[class*="st-key-btn_hint_"] button {
+        background: transparent !important;
+        border: none !important;
+        border-top: 1px dashed #e2e8f0 !important;
+        border-radius: 0 !important;
+        color: #0369a1 !important;
+        font-family: 'JetBrains Mono', monospace !important;
+        font-size: 0.72rem !important;
+        font-weight: 600 !important;
+        height: 30px !important;
+        min-height: 30px !important;
+        padding: 6px 4px 0 4px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        box-shadow: none !important;
+    }
+    div[class*="st-key-btn_hint_"] button:hover {
+        background: #f0f9ff !important;
+        color: #0284c7 !important;
+    }
+
+    /* Kart Üst Gövde Şeffaf Tıklama Alanı (Vaka Açar) */
+    div[class*="st-key-btn_overlay_"],
     div[class*="st-key-btn_overlay_"] div[data-testid="stButton"],
     div[class*="st-key-btn_overlay_"] button {
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
-        height: 100% !important;
+        height: 120px !important;
         z-index: 5 !important;
         margin: 0 !important;
         padding: 0 !important;
@@ -317,11 +398,6 @@ st.markdown(
         cursor: pointer !important;
         background: transparent !important;
         border: none !important;
-    }
-    div[class*="st-key-card_box_"]:hover .archive-card {
-        transform: translateY(-2px);
-        box-shadow: 4px 6px 0px rgba(0, 0, 0, 0.16);
-        border-color: #1a1a1a !important;
     }
 
     /* ======================================================== */
@@ -926,45 +1002,44 @@ def render_archive_header():
 def render_case_card(case: dict):
     cid = case["id"]
     is_yellow = cid.startswith("Y")
-    card_class = "archive-card archive-card-yellow" if is_yellow else "archive-card"
-    pill_class = "pill-yellow" if is_yellow else ""
     zone_label = "Sarı Alan" if is_yellow else "Yeşil Alan"
+    pill_class = "pill-yellow" if is_yellow else ""
     is_solved = cid in st.session_state.solved_case_ids
 
     tags = extract_card_tags(case)
     solved_badge = " ✓ Çözüldü" if is_solved else ""
     card_title = f"{case['age']} {case['gender']}"
+    container_key = f"card_box_yellow_{cid}" if is_yellow else f"card_box_{cid}"
 
-    with st.container(key=f"card_box_{cid}"):
+    with st.container(key=container_key):
+        # 1. Kart Başlığı, Kategori Rozeti ve Şikayet (Doğrudan Kartın İçinde)
         st.markdown(
-            f"""
-            <div class="card-wrapper">
-                <div class="{card_class}">
-                    <div>
-                        <div class="card-top">
-                            <div class="card-title">{cid} • {card_title}{solved_badge}</div>
-                            <span class="card-category-pill {pill_class}">{zone_label}</span>
-                        </div>
-                        <div class="card-meta">
-                            {case.get('category', 'Klinik Acil')} • 4 Aşama
-                        </div>
-                        <div class="card-complaint">
-                            <b>Şikayet:</b> {case['complaint']}
-                        </div>
-                    </div>
+            f'''
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+                <div style="font-family:'JetBrains Mono', monospace; font-size:1.02rem; font-weight:700; color:#0f172a; line-height:1.35; flex:1; margin-right:8px;">
+                    {cid} • {card_title}{solved_badge}
                 </div>
+                <span class="card-category-pill {pill_class}">
+                    {zone_label}
+                </span>
             </div>
-            """,
+            <div style="font-family:'JetBrains Mono', monospace; font-size:0.76rem; color:#64748b; margin-bottom:8px;">
+                {case.get('category', 'Klinik Acil')} • 4 Aşama
+            </div>
+            <div style="font-size:0.88rem; line-height:1.45; color:#334155; min-height:48px;">
+                <b>Şikayet:</b> {case['complaint']}
+            </div>
+            ''',
             unsafe_allow_html=True,
         )
 
-        # Kart gövdesini kaplayan buton (vaka açar)
+        # Kart gövdesini kaplayan şeffaf buton (vaka açar)
         if st.button(f"Aç_{cid}", key=f"btn_overlay_{cid}", use_container_width=True):
             open_case(cid)
             st.rerun()
 
-        # Doğrudan WebSocket üzerinden çalışan yerel etiket butonları (Cloud iframe uyumlu)
-        t_cols = st.columns([max(len(t), 3) for t in tags])
+        # 2. Kartın İÇİNDE Yer Alan Etiket Butonları (Doğal Sarma & Taşma Yok)
+        t_cols = st.columns(len(tags))
         for idx, t in enumerate(tags):
             with t_cols[idx]:
                 def make_tag_handler(selected_t=t):
@@ -972,6 +1047,7 @@ def render_case_card(case: dict):
 
                 st.button(t, key=f"tag_{cid}_{idx}", on_click=make_tag_handler, use_container_width=True)
 
+        # 3. Kartın Altındaki Kesikli Çizgili "İncele & Çöz" Butonu
         if st.button("📖 İncele & Çöz ➔", key=f"btn_hint_{cid}", use_container_width=True):
             open_case(cid)
             st.rerun()
