@@ -38,3 +38,6 @@ Desktop.ini
 .idea/
 *.suo
 *.user
+
+# Scratch test scripts and captures
+scratch/

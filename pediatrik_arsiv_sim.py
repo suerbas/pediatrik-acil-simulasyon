@@ -21,10 +21,7 @@ from cases_green import GREEN_CASES
 from cases_yellow import YELLOW_CASES
 
 import pediatric_evaluator
-try:
-    importlib.reload(pediatric_evaluator)
-except Exception:
-    pass
+# importlib.reload kaldırıldı (performans ve yanıt hızını artırmak için)
 
 try:
     from pediatric_evaluator import annotate_clinical_text, get_case_vitals
@@ -836,7 +833,7 @@ def init_state():
 
 
 def get_all_cases():
-    return GREEN_CASES + YELLOW_CASES
+    return ALL_CASES
 
 
 def get_age_group(age_str: str) -> str:
@@ -972,9 +969,19 @@ def build_case_search_corpus(case: dict) -> str:
     return normalize_search_text(raw_text)
 
 
+# -------------------------------------------------------------
+# Önbelleğe Alınmış Hızlı Dizinler (High-Performance Caches)
+# Tüm 140 vaka için etiket ve arama metinleri uygulama başlarken
+# bir defa derlenir; her rerun'da anlık O(1) hızında erişilir.
+# -------------------------------------------------------------
+ALL_CASES = GREEN_CASES + YELLOW_CASES
+CASES_BY_ID = {c["id"]: c for c in ALL_CASES}
+TAGS_BY_CASE_ID = {c["id"]: extract_card_tags(c) for c in ALL_CASES}
+SEARCH_CORPUS_BY_CASE_ID = {c["id"]: build_case_search_corpus(c) for c in ALL_CASES}
+
+
 def open_case(case_id: str):
-    cases_dict = {c["id"]: c for c in get_all_cases()}
-    chosen = cases_dict.get(case_id)
+    chosen = CASES_BY_ID.get(case_id)
     if not chosen:
         return
     st.session_state.selected_case_id = case_id
@@ -987,7 +994,6 @@ def open_case(case_id: str):
         s_idx: random.sample(s["options"], len(s["options"]))
         for s_idx, s in enumerate(chosen["steps"])
     }
-
 
 def close_case():
     st.session_state.selected_case_id = None
@@ -1016,22 +1022,19 @@ def render_archive_header():
 
 
     # Üst Filtre & Arama Satırı: Sekmeler + Serbest Arama Çubuğu + Ara Butonu
+    def set_active_tab(tab_name: str):
+        st.session_state.active_tab = tab_name
+
     c1, c2, c3, c_search, c_btn = st.columns([1.3, 1.3, 1.3, 4.4, 1.1])
     with c1:
-        if st.button("Tüm Vakalar (140)", key="tab_all", use_container_width=True,
-                     type="primary" if st.session_state.active_tab == "ALL" else "secondary"):
-            st.session_state.active_tab = "ALL"
-            st.rerun()
+        st.button("Tüm Vakalar (140)", key="tab_all", on_click=set_active_tab, args=("ALL",), use_container_width=True,
+                  type="primary" if st.session_state.active_tab == "ALL" else "secondary")
     with c2:
-        if st.button("🟢 Yeşil Alan (70)", key="tab_green", use_container_width=True,
-                     type="primary" if st.session_state.active_tab == "GREEN" else "secondary"):
-            st.session_state.active_tab = "GREEN"
-            st.rerun()
+        st.button("🟢 Yeşil Alan (70)", key="tab_green", on_click=set_active_tab, args=("GREEN",), use_container_width=True,
+                  type="primary" if st.session_state.active_tab == "GREEN" else "secondary")
     with c3:
-        if st.button("🟡 Sarı Alan (70)", key="tab_yellow", use_container_width=True,
-                     type="primary" if st.session_state.active_tab == "YELLOW" else "secondary"):
-            st.session_state.active_tab = "YELLOW"
-            st.rerun()
+        st.button("🟡 Sarı Alan (70)", key="tab_yellow", on_click=set_active_tab, args=("YELLOW",), use_container_width=True,
+                  type="primary" if st.session_state.active_tab == "YELLOW" else "secondary")
     with c_search:
         st.text_input(
             "Arşivde Ara:",
@@ -1040,21 +1043,56 @@ def render_archive_header():
             key="search_input_box",
         )
     with c_btn:
-        if st.button("🔍 Ara", key="btn_do_search", use_container_width=True, type="primary"):
-            st.rerun()
+        st.button("🔍 Ara", key="btn_do_search", use_container_width=True, type="primary")
 
 
-def render_case_card(case: dict):
+def render_case_card(case: dict, is_drawer_open: bool = False):
     cid = case["id"]
     is_yellow = cid.startswith("Y")
     zone_label = "Sarı Alan" if is_yellow else "Yeşil Alan"
     pill_class = "pill-yellow" if is_yellow else ""
     is_solved = cid in st.session_state.solved_case_ids
 
-    tags = extract_card_tags(case)
+    tags = TAGS_BY_CASE_ID.get(cid) or extract_card_tags(case)
     solved_badge = " ✓ Çözüldü" if is_solved else ""
     card_title = f"{case['age']} {case['gender']}"
     container_key = f"card_box_yellow_{cid}" if is_yellow else f"card_box_{cid}"
+
+    if is_drawer_open:
+        # Çekmece açıkken arka plandaki kartlar için sıfır-widget hafif statik render:
+        # Birebir aynı boyut, border ve tipografi; ancak arka planda ekstra yüzlerce buton ağacı oluşturmaz.
+        tags_html = "".join([f'<span class="tag-chip">{t}</span>' for t in tags])
+        border_c = "#ca8a04" if is_yellow else "#059669"
+        st.markdown(
+            f'''
+            <div style="background:#ffffff; border:1.5px solid {border_c}; border-radius:10px; padding:12px 14px 8px 14px; height:236px; min-height:236px; max-height:236px; box-sizing:border-box; display:flex; flex-direction:column; justify-content:space-between; margin-bottom:16px;">
+                <div>
+                    <div class="card-top-row">
+                        <div class="card-title-text" title="{cid} • {card_title}{solved_badge}">
+                            {cid} • {card_title}{solved_badge}
+                        </div>
+                        <span class="card-category-pill {pill_class}">
+                            {zone_label}
+                        </span>
+                    </div>
+                    <div class="card-meta-text" title="{case.get('category', 'Klinik Acil')}">
+                        {case.get('category', 'Klinik Acil')}
+                    </div>
+                    <div class="card-complaint-text" title="{case['complaint']}">
+                        <b>Şikayet:</b> {case['complaint']}
+                    </div>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:4px 5px; height:58px; min-height:58px; max-height:58px; overflow:hidden; align-content:flex-start;">
+                    {tags_html}
+                </div>
+                <div style="border-top:1px dashed #e2e8f0; padding-top:4px; font-family:'JetBrains Mono',monospace; font-size:0.70rem; font-weight:600; color:#0369a1;">
+                    📖 İncele & Çöz ➔
+                </div>
+            </div>
+            ''',
+            unsafe_allow_html=True,
+        )
+        return
 
     with st.container(key=container_key):
         # 1. Kart Başlığı, Kategori Rozeti ve Şikayet (Birebir Eşit Yükseklik)
@@ -1078,10 +1116,8 @@ def render_case_card(case: dict):
             unsafe_allow_html=True,
         )
 
-        # Kart gövdesini kaplayan şeffaf buton (vaka açar)
-        if st.button(f"Aç_{cid}", key=f"btn_overlay_{cid}", use_container_width=True):
-            open_case(cid)
-            st.rerun()
+        # Kart gövdesini kaplayan şeffaf buton (vaka açar - on_click ile çift rerun tamamen engellendi!)
+        st.button(f"Aç_{cid}", key=f"btn_overlay_{cid}", on_click=open_case, args=(cid,), use_container_width=True)
 
         # 2. Kart İçi Etiket Butonları (Doğal Sarma & Taşma Önleme)
         t_cols = st.columns(len(tags))
@@ -1093,9 +1129,7 @@ def render_case_card(case: dict):
                 st.button(t, key=f"tag_{cid}_{idx}", on_click=make_tag_handler, use_container_width=True)
 
         # 3. Kartın Altındaki Kesikli Çizgili "İncele & Çöz" Butonu
-        if st.button("📖 İncele & Çöz ➔", key=f"btn_hint_{cid}", use_container_width=True):
-            open_case(cid)
-            st.rerun()
+        st.button("📖 İncele & Çöz ➔", key=f"btn_hint_{cid}", on_click=open_case, args=(cid,), use_container_width=True)
 
 
 def render_drawer(case: dict):
@@ -1124,9 +1158,7 @@ def render_drawer(case: dict):
             unsafe_allow_html=True,
         )
     with close_c:
-        if st.button("✕", key="btn_close_drawer", help="Kapat (veya sol alana tıkla)"):
-            close_case()
-            st.rerun()
+        st.button("✕", key="btn_close_drawer", on_click=close_case, help="Kapat (veya sol alana tıkla)")
 
     # Kategori ve Alan Rozeti (Tam genişlikte, asla taşmaz, kesilmez veya çizgiyle çakışmaz)
     st.markdown(
@@ -1211,9 +1243,7 @@ def render_drawer(case: dict):
         )
         st.info(f"**🎓 Klinik İnciler (Case Pearls):**\n\n{case['case_pearl']}")
 
-        if st.button("Arşive Dön", key="btn_completed_close_drawer", use_container_width=True, type="primary"):
-            close_case()
-            st.rerun()
+        st.button("Arşive Dön", key="btn_completed_close_drawer", on_click=close_case, use_container_width=True, type="primary")
         return
 
     # Stepper Göstergesi
@@ -1251,9 +1281,10 @@ def render_drawer(case: dict):
             """,
             unsafe_allow_html=True,
         )
-        if st.button("↩️ Kararı Değiştir ve Soruya Dön", key="btn_drawer_return", use_container_width=True, type="primary"):
+        def handle_return_detour():
             st.session_state.drawer_detour = None
-            st.rerun()
+
+        st.button("↩️ Kararı Değiştir ve Soruya Dön", key="btn_drawer_return", on_click=handle_return_detour, use_container_width=True, type="primary")
         return
 
     # Soru ve Çok Seçenekli Karar
@@ -1268,34 +1299,35 @@ def render_drawer(case: dict):
     for idx, opt in enumerate(current_opts):
         letter = chr(65 + idx)
         btn_label = f"[{letter}]  {opt['text']}"
-        if st.button(btn_label, key=f"d_opt_{current_idx}_{idx}", use_container_width=True):
-            if opt.get("is_correct"):
+        def handle_drawer_opt(chosen_opt=opt, st_title=step["stage_title"]):
+            if chosen_opt.get("is_correct"):
                 st.session_state.drawer_detour = None
                 st.session_state.drawer_show_hint = False
-                st.session_state.drawer_last_feedback = opt["explanation"]
-                if opt.get("new_finding"):
+                st.session_state.drawer_last_feedback = chosen_opt.get("explanation", "")
+                if chosen_opt.get("new_finding"):
                     st.session_state.drawer_logs.append({
-                        "stage": step["stage_title"],
-                        "finding": opt["new_finding"],
-                        "image": opt.get("image"),
-                        "image_caption": opt.get("image_caption", "Tetkik Bulgusu"),
+                        "stage": st_title,
+                        "finding": chosen_opt["new_finding"],
+                        "image": chosen_opt.get("image"),
+                        "image_caption": chosen_opt.get("image_caption", "Tetkik Bulgusu"),
                     })
                 st.session_state.drawer_step_idx += 1
-                st.rerun()
             else:
                 st.session_state.drawer_detour = {
-                    "selected_text": opt["text"],
-                    "scenario_update": opt["scenario_update"],
-                    "teaching_point": opt["teaching_point"],
+                    "selected_text": chosen_opt.get("text", ""),
+                    "scenario_update": chosen_opt.get("scenario_update", ""),
+                    "teaching_point": chosen_opt.get("teaching_point", ""),
                 }
-                st.rerun()
+
+        st.button(btn_label, key=f"d_opt_{current_idx}_{idx}", on_click=handle_drawer_opt, use_container_width=True)
 
     # İpucu Alanı
     st.write("")
     h_label = "🙈 İpucunu Gizle" if st.session_state.drawer_show_hint else "💡 Klinik İpucu Al"
-    if st.button(h_label, key=f"btn_drawer_hint_{current_idx}", use_container_width=True):
+    def toggle_hint():
         st.session_state.drawer_show_hint = not st.session_state.drawer_show_hint
-        st.rerun()
+
+    st.button(h_label, key=f"btn_drawer_hint_{current_idx}", on_click=toggle_hint, use_container_width=True)
 
     if st.session_state.drawer_show_hint:
         co = next((o for o in current_opts if o.get("is_correct")), None)
@@ -1307,7 +1339,7 @@ def main():
     init_state()
     render_archive_header()
 
-    all_cases = get_all_cases()
+    all_cases = ALL_CASES
 
     # 1. Alan Sekmesi Filtresi
     filtered = all_cases
@@ -1317,25 +1349,25 @@ def main():
     elif tab == "YELLOW":
         filtered = [c for c in filtered if c["id"].startswith("Y")]
 
-    # 2. Anahtar Kelime Filtresi (Karttaki etiketlere tıklandığında anında devreye girer, arama çubuğunu kirletmez)
+    # 2. Anahtar Kelime Filtresi (Önbelleğe alınmış etiketlerden anlık O(1) hızında filtreleme)
     active_tag = st.query_params.get("tag", "").strip()
     if active_tag:
         norm_tag = normalize_search_text(active_tag)
         filtered = [
             c for c in filtered
-            if any(norm_tag in normalize_search_text(t) for t in extract_card_tags(c))
+            if any(norm_tag in normalize_search_text(t) for t in TAGS_BY_CASE_ID.get(c["id"], []))
             or norm_tag in normalize_search_text(c.get("complaint", ""))
             or norm_tag in normalize_search_text(c.get("final_diagnosis", ""))
             or norm_tag in normalize_search_text(c.get("category", ""))
         ]
 
-    # 3. Serbest Metin Arama Filtresi (Tüm vaka havuzunda derinlemesine arar: Guillain, yoğun bakım, vb.)
+    # 3. Serbest Metin Arama Filtresi (Önbelleğe alınmış arama havuzunda anlık arama)
     search_query = st.session_state.get("search_input_box", "").strip()
     if search_query:
         norm_q = normalize_search_text(search_query)
         filtered = [
             c for c in filtered
-            if norm_q in build_case_search_corpus(c)
+            if norm_q in SEARCH_CORPUS_BY_CASE_ID.get(c["id"], "")
         ]
 
     # 4. Aktif Filtre Rozetleri & Çalışan Temizleme Butonları
@@ -1369,27 +1401,25 @@ def main():
     st.caption(f"Arşivde toplam **{len(filtered)}** vaka listeleniyor.")
 
     # 4 Kolonlu Sabit Sayfa Gridi (The Story Archive orijinal görünümü)
-    # Drawer açılsa dahi grid genişliği ve kolonları asla değişmez / bozulmaz!
+    # Drawer açıkken arka plandaki kartlar hafif statik render edilir; drawer kapalıyken tüm butonlar etkindir.
+    is_drawer_open = bool(st.session_state.selected_case_id)
     cols = st.columns(4)
     for idx, c in enumerate(filtered):
         with cols[idx % 4]:
-            render_case_card(c)
+            render_case_card(c, is_drawer_open=is_drawer_open)
 
     # EĞER ÇEKMECE AÇIKSA:
     # Sayfada nerede olursanız olun ekranın sağına sabitlenen (fixed) çekmece
     drawer_id = st.session_state.selected_case_id
-    cases_dict = {c["id"]: c for c in all_cases}
 
-    if drawer_id and drawer_id in cases_dict:
+    if drawer_id and drawer_id in CASES_BY_ID:
         # Tıklanabilir Karartıcı Arka Plan (Sol alana tıklandığında çekmeceyi kapatır)
         with st.container(key="backdrop_container"):
-            if st.button("close_backdrop", key="btn_backdrop_close"):
-                close_case()
-                st.rerun()
+            st.button("close_backdrop", key="btn_backdrop_close", on_click=close_case)
 
         # Sağdan Kayan Sabit Çekmece Konteyneri
         with st.container(key="slide_over_drawer"):
-            render_drawer(cases_dict[drawer_id])
+            render_drawer(CASES_BY_ID[drawer_id])
 
 if __name__ == "__main__":
     main()
