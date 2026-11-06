@@ -103,6 +103,26 @@ SPOILER_KEYWORDS_BY_ID = {
     "Y38": ["demir zehirlenmesi", "demir intoksikasyonu", "deferoksamin"],
     "Y39": ["trisiklik", "tka", "amitriptilin"],
     "Y40": ["üre döngüsü", "hiperamonyemi", "amonyak"],
+    "G41": ["gastroenterit", "rotavirüs", "norovirüs", "espghan"],
+    "G42": ["besin zehirlenmesi", "enterotoksin", "stafilokok"],
+    "G43": ["fonksiyonel kabızlık", "enkoprezis", "fekal impaksiyon", "taşma ishali", "overflow"],
+    "G44": ["infantil kolik", "wessel", "üçler kuralı", "3'ler kuralı"],
+    "G45": ["proktokolit", "fpiap", "inek sütü proteini alerjisi", "süt proteini alerjisi"],
+    "G46": ["giardia", "giardiazis", "lamblia"],
+    "G47": ["mezenterik lenfadenit", "lenfoid hiperplazi"],
+    "G48": ["toddler", "non-spesifik diyare", "nonspesifik diyare"],
+    "G49": ["reflü", "happy spitter", "mutlu kusan", "gastroözofageal"],
+    "G50": ["gastrit"],
+    "G51": ["asetonemik", "açlık ketozu", "ketotik kusma"],
+    "G52": ["piyelonefrit", "idrar yolu enfeksiyonu", "iye"],
+    "G53": ["fonksiyonel karın ağrısı", "roma iv", "okul kaygısı"],
+    "G54": ["çölyak", "gluten enteropati"],
+    "G55": ["pnömoni", "plörit", "konsolidasyon"],
+    "G56": ["hepatit a", "hav", "viral hepatit"],
+    "G57": ["laktoz", "laktaz"],
+    "G58": ["hareket hastalığı", "taşıt tutması", "kinetoz", "motion"],
+    "G59": ["kıl kurdu", "enterobi", "oksiyür", "selofan"],
+    "G60": ["streptokok", "agbhs", "tonsillofarenjit", "centor", "mcisaac"],
     "G61": ["toksik sinovit", "transient sinovit", "geçici sinovit"],
     "G62": ["migren", "aurasız migren"],
     "G63": ["sistit", "alt idrar yolu"],
@@ -113,6 +133,26 @@ SPOILER_KEYWORDS_BY_ID = {
     "G68": ["gerilim tipi", "gerilim baş ağrısı"],
     "G69": ["epistaksis", "kiesselbach"],
     "G70": ["tinea", "korporis"],
+    "Y41": ["apandisit", "mcburney", "rovsing", "apendiks", "apendikolit", "pas skoru"],
+    "Y42": ["invajinasyon", "intususepsiyon", "intussusepsiyon", "çilek jölesi", "hedef işareti", "target sign", "psödo-böbrek"],
+    "Y43": ["pilor", "pilorik"],
+    "Y44": ["gastroenterit", "hipovolemik şok", "ağır dehidratasyon"],
+    "Y45": ["diyabetik ketoasidoz", "dka", "ketoasidoz", "kussmaul", "tip 1 diyabet", "diabetes mellitus"],
+    "Y46": ["hemolitik üremik", "hüs", "stec", "o157", "shiga"],
+    "Y47": ["malrotasyon", "volvulus", "ladd", "corkscrew", "tirbüşon"],
+    "Y48": ["testis torsiyonu", "torsiyon", "prehn", "bell clapper"],
+    "Y49": ["henoch-schönlein", "henoch schönlein", "iga vasküliti", "hsp"],
+    "Y50": ["inkarsere", "fıtık", "herni", "taksis"],
+    "Y51": ["ileus", "adezyon", "bağırsak tıkanıklığı", "mekanik obstrüksiyon"],
+    "Y52": ["difficile", "psödomembran", "pseudomembran", "cdi"],
+    "Y53": ["pankreatit"],
+    "Y54": ["hirschsprung", "enterokolit", "haec", "aganglion"],
+    "Y55": ["karaciğer yetmezliği", "palf", "hepatik ensefalopati"],
+    "Y56": ["meckel", "divertikül"],
+    "Y57": ["hiponatremi", "su intoksikasyonu"],
+    "Y58": ["prerenal", "akut böbrek hasarı", "abh", "azotemi"],
+    "Y59": ["spontan bakteriyel peritonit", "sbp", "peritonit"],
+    "Y60": ["düğme pil", "button battery", "yabancı cisim"],
     "Y61": ["kawasaki", "mukokutanöz"],
     "Y62": ["septik artrit", "eklem aspirasyonu"],
     "Y63": ["poststreptokoksik", "apsgn", "glomerülonefrit"],
@@ -186,6 +226,22 @@ def validate_file(filepath):
                 break
 
         spoiler_words = SPOILER_KEYWORDS_BY_ID.get(cid, [])
+        if not spoiler_words:
+            errors.append(f"[{cid}] SPOILER_KEYWORDS_BY_ID içinde bu vaka için anahtar kelime tanımlı değil")
+
+        # Doğru seçenek konumu ve uzunluk ipucu (tanı adımı hariç)
+        non_diag = [stp for i, stp in enumerate(steps) if i != diag_step_idx and len(stp.get("options", [])) == 4]
+        correct_idx = [next((i for i, o in enumerate(stp["options"]) if o.get("is_correct")), -1) for stp in steps]
+        if len(set(correct_idx)) == 1:
+            errors.append(f"[{cid}] Ham veride doğru seçenek her adımda aynı indekste ({correct_idx[0]}); çeşitlendirin")
+        longest_hits = 0
+        for stp in non_diag:
+            L = [word_count(o["text"]) for o in stp["options"]]
+            ci = next((i for i, o in enumerate(stp["options"]) if o.get("is_correct")), -1)
+            if ci >= 0 and L[ci] == max(L) and L.count(max(L)) == 1:
+                longest_hits += 1
+        if non_diag and longest_hits > len(non_diag) // 2:
+            errors.append(f"[{cid}] Tanı dışı {len(non_diag)} adımın {longest_hits}'inde doğru seçenek tek başına en uzun")
 
         # Check complaint and history for spoilers (except when complaint itself is a general symptom)
         for field_name in ("complaint", "history"):

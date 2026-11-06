@@ -115,7 +115,7 @@ GREEN_CASES_PART2 = [{'id': 'G11',
                                   'araştırmak üzere gaitada gizli kan, gaita redüktan madde, gaita pH ve '
                                   'spesifik IgE paneli çalışmak',
                           'is_correct': False,
-                          'scenario_update': 'İshal, mukuslu-kanlı dışkılama veya атоpik egzama bulgusu '
+                          'scenario_update': 'İshal, mukuslu-kanlı dışkılama veya atopik egzama bulgusu '
                                              'olmayan bebekte tüm gaita ve spesifik IgE testleri negatif '
                                              'sonuçlandı.',
                           'teaching_point': 'Gaitada mukus/kan, kusma veya büyüme geriliği eşlik etmeyen '

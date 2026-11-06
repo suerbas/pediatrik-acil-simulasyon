@@ -188,7 +188,7 @@ CASES = [
                         ),
                         "is_correct": False,
                         "scenario_update": (
-                            "İshal, mukuslu-kanlı dışkılama veya атоpik egzama bulgusu olmayan bebekte "
+                            "İshal, mukuslu-kanlı dışkılama veya atopik egzama bulgusu olmayan bebekte "
                             "tüm gaita ve spesifik IgE testleri negatif sonuçlandı."
                         ),
                         "teaching_point": (

@@ -5,1515 +5,1477 @@ Odak: Bulantı, Kusma, Karın Ağrısı, İshal (GİS Acilleri - Yeşil Alan Aya
 Kılavuzlar: ESPGHAN, AAP, NASPGHAN, NICE, Centor/McIsaac
 """
 
-GREEN_CASES_PART6 = [ { 'age': '4 Yaşında',
-    'case_pearl': 'Asetonemik kusma (açlık ketozu), 2-7 yaş arası çocuklarda glikojen depolarının sınırlı olması '
-                  'nedeniyle ateş, enfeksiyon ve uzamış açlık sonrasında yağların hızla yakılmasıyla keton '
-                  'cisimciklerinin (asetoasetat, beta-hidroksibütirat) birikmesi sonucu gelişir. Ketonlar beyindeki '
-                  'kusma merkezini uyararak kısır bir döngü başlatır: Açlık -> Ketozis -> Kusma -> Daha çok açlık. En '
-                  'kritik ayırıcı tanı DİYABETİK KETOASİDOZDUR (DKA)! Açlık ketozunda kan şekeri normal veya düşüktür '
-                  '(60-95 mg/dL), venöz pH normaldir (>7.30). Tedavi bu kısır döngüyü kırmaktır: Damardan veya azar '
-                  'azar ağızdan şekerli sıvılar (tatlı çay, meyve suyu, glukozlu ORS) verilerek insülin salgılanması '
-                  'tetiklenir, lipoliz durur ve ketoz dakikalar içinde kırılır.',
-    'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-    'complaint': 'Ateşli hastalık sırasında bir gündür süren inatçı kusma, ağızda aseton kokusu ve halsizlik',
-    'disposition': 'Yeşil Alanda Yatak Başı Glukoz/Keton Doğrulaması, Şekerli Sıvı ile Ketozun Kırılması ve Taburculuk',
-    'final_diagnosis': 'Asetonemik Kusma / Açlık Ketozu (Ateş ve Açlığa Sekonder Benign Ketotik Kusma)',
-    'gender': 'Erkek',
-    'history': "Dört yaşındaki erkek çocuk annesi tarafından getiriliyor: 'İki gündür hafif ateşi ve boğaz ağrısı "
-               'vardı, iştahı tamamen kesildi ve hiçbir şey yemedi. Dün akşamdan beri bir yudum su içse bile '
-               'fışkırtarak kusuyor. Ağzından çürük elma veya aseton gibi bir koku geliyor. Çocuk halsiz, gözlerini '
-               "açmakta zorlanıyor. İdrarını bugün sadece bir kez az miktarda yaptı. Diyabetimiz yok ama çok korktuk.'",
-    'id': 'G51',
-    'steps': [ { 'options': [ { 'explanation': "Kussmaul solunumu (derin hızlı solunum) ve letarji DKA'yı gösterir. "
-                                               "DKA'yı ekarte etmek ve dehidratasyonu belirlemek ilk muayene "
-                                               'hedefidir.',
-                                'is_correct': True,
-                                'new_finding': 'Vital Bulgular: Ateş 37.2°C, KTA 108/dk, SS 22/dk (solunum paterni '
-                                               'doğal, takipne veya Kussmaul yok, ağızda hafif aseton kokusu), SpO2 '
-                                               '%99, TA 96/60 mmHg, KDZ 2 sn. Çocuk halsiz ancak seslenince gözlerini '
-                                               'açıyor, koopere. Ağız mukozası hafif kuru, ağlarken gözyaşı var. Batın '
-                                               'rahat, defans ve rebound yok.',
-                                'text': 'Bilinç durumunu, solunum derinliğini, periferik dolaşımı ve dehidratasyon '
-                                        'bulgularını sistemik muayene ile değerlendirmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Muayenesiz cerrahiye yönlendirilen hastada gereksiz laparotomi '
-                                                   'hazırlığı başlatıldı.',
-                                'teaching_point': 'Asetonemik kusmada batın rahattır; peritonit defansı bulunmaz, '
-                                                  'cerrahi akut batın değildir.',
-                                'text': 'Kusmayı apandisit perforasyonu kabul ederek fizik muayene yapmadan hastayı '
-                                        'derhal acil ameliyathaneye almak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Yağlı besin lipolizi ve keton üretimini artırarak çocuğun fışkırır '
-                                                   'tarzda kusmasını tetikledi.',
-                                'teaching_point': 'Açlık ketozunda yağlı besinler ketozu alevlendirir; basit '
-                                                  'karbonhidratlı şekerli sıvılar verilmelidir.',
-                                'text': 'Kusan çocuğa acil serviste zorla bir kase yağlı et çorbası içirerek kalori '
-                                        'açığını kapatmaya çalışmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Sistemik ketozisi fark edilmeyen çocuk evde dehidratasyona ve '
-                                                   'hipoglisemiye girdi.',
-                                'teaching_point': 'Aseton kokusu ketonemi göstergesidir; metabolik durum mutlaka kan '
-                                                  'şekeriyle taranmalıdır.',
-                                'text': 'Ağızdaki aseton kokusunu diş çürüğü sanarak hiçbir muayene yapmadan hastayı '
-                                        'diş hekimliğine sevk etmek'}],
-                 'question': 'Açlık sonrası inatçı kusması ve ağzında aseton kokusu olan bu çocukta ilk muayene '
-                             'yaklaşımı nasıl olmalıdır?',
-                 'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene'},
-               { 'options': [ { 'explanation': "DKA'da kan şekeri >200-300 mg/dL iken açlık ketozunda kan şekeri "
-                                               'normal veya hafif düşüktür (70-95 mg/dL). Her ikisinde de keton '
-                                               'pozitiftir; glukoz düzeyi ayırıcı tanıyı anında koydurur.',
-                                'is_correct': True,
-                                'new_finding': 'Yatak Başı Glukometre: Kan Şekeri 76 mg/dL (normoglisemik, DKA '
-                                               'dışlandı). İdrar Stix: Glukoz negatif, Keton (+++) pozitif. Venöz Kan '
-                                               'Gazı: pH 7.34, HCO3 19 mmol/L, Baz Açığı -3 (asidoz yok).',
-                                'text': 'Yatak başı kapiller kan şekeri ve idrar çubuğu ile keton bakarak metabolik '
-                                        'durumu hızla doğrulamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Kan şekeri 76 mg/dL olan çocuğa insülin yapılması derin '
-                                                   'hipoglisemik komaya ve konvülziyona yol açtı.',
-                                'teaching_point': 'Kan şekeri doğrulanmadan asla insülin verilemez; açlık ketozunda '
-                                                  'insülin ölümcül hipoglisemi yapar.',
-                                'text': 'Kan şekeri bakmadan hastaya acil koşullarda damardan yüksek doz intravenöz '
-                                        'regüler insülin puşelemek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Tomografi tamamen normal geldi; çocuk gereksiz yere yüksek doz '
-                                                   'kraniyal radyasyon aldı.',
-                                'teaching_point': 'Açlık ve enfeksiyon zeminindeki ketotik kusmada santral görüntüleme '
-                                                  'endike değildir.',
-                                'text': 'Kesin tanı koymak amacıyla hastaya genel anestezi altında acil kraniyal '
-                                        'bilgisayarlı tomografi çektirmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Aç bırakılan çocukta lipoliz daha da şiddetlendi ve derin '
-                                                   'hipoglisemi gelişti.',
-                                'teaching_point': 'Açlık ketozunun çözümü glukoz vermektir; aç bekletilmesi tabloyu '
-                                                  'derinleştirir.',
-                                'text': 'Tetkik istemeden hastayı 48 saat boyunca acil serviste tamamen aç ve susuz '
-                                        'şekilde bekletmek'}],
-                 'question': 'Asetonemik kusma ile DKA ayırıcı tanısını saniyeler içinde yapmak için en uygun tanısal '
-                             'yaklaşım hangisidir?',
-                 'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
-               { 'options': [ { 'explanation': 'Açlık sonrası inatçı kusma, normoglisemi (glukoz 76 mg/dL), ketonüri '
-                                               've normal kan gazı açlık ketozu (asetonemik kusma) tanısıdır.',
-                                'is_correct': True,
-                                'new_finding': 'Kesin Tanı: Açlık ve Enfeksiyona Sekonder Benign Ketotik Kusma '
-                                               '(Asetonemik Kusma).',
-                                'text': 'Asetonemik kusma açlık ketozu'},
-                              { 'is_correct': False,
-                                'scenario_update': "DKA'da hiperglisemi (>250 mg/dL), glukozüri ve derin asidoz (pH "
-                                                   "<7.20) olur; bu çocukta kan şekeri 76 mg/dL'dir.",
-                                'teaching_point': "Açlık ketozunda kan şekeri normaldir; DKA'daki hiperglisemi ve "
-                                                  'metabolik asidoz bulunmaz.',
-                                'text': 'Ağır diyabetik ketoasidoz koması'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Dizanteride yüksek ateş ve kanlı ishal olur; bu hastada ishal '
-                                                   'yoktur, tablo ketotik kusmadır.',
-                                'teaching_point': 'Dizanteri kolit tablosudur; izole açlık ketozu ve inatçı kusma '
-                                                  'yapmaz.',
-                                'text': 'Akut bakteriyel dizanteri enfeksiyonu'},
-                              { 'is_correct': False,
-                                'scenario_update': "KİBAS'ta sabah fışkırır kusmalar, baş ağrısı ve papilödem olur; "
-                                                   'enfeksiyon sonrası akut açlık ketonürisi yapmaz.',
-                                'teaching_point': 'Enfeksiyon ve açlıkla tetiklenen ketotik tablo intrakraniyal tümör '
-                                                  'değildir.',
-                                'text': 'Kafa içi kitle lezyonu'}],
-                 'question': 'Uzamış açlık, normal kan şekeri, idrarda masif ketonüri ve hafif dehidratasyon ile kesin '
-                             'tanınız nedir?',
-                 'stage_title': 'Klinik Tanı'},
-               { 'options': [ { 'explanation': 'Açlık ketozunun tedavisi glukoz vermektir. Verilen şeker insülin '
-                                               'salgısını tetikler, yağ yıkımını durdurur ve ketonemi 1-2 saatte '
-                                               'geriler. Tolere edemezse %5-10 Dekstrozlu IV hidrasyon verilir.',
-                                'is_correct': True,
-                                'new_finding': 'Çocuğa azar azar 100 mL tatlı elma suyu ve glukozlu ORS içirildi. '
-                                               'Çocuk kusmadı. 1 saat sonra halsizliği geçti, idrarında keton tek '
-                                               'pozitife geriledi ve şifayla taburcu edildi.',
-                                'text': 'Küçük yudumlarla tatlı çay, elma suyu veya şekerli oral rehidratasyon sıvısı '
-                                        'içirerek ketozu hızla kırmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Şekersiz saf su verilmesi keton üretimini durduramadı ve çocuk '
-                                                   'kusmaya devam etti.',
-                                'teaching_point': 'Açlık ketozunda sadece su vermek yetmez; ketogenezi durdurmak için '
-                                                  'mutlaka glukoz gereklidir.',
-                                'text': 'Ketozu kırmak için hastaya bol miktarda saf su içirip şekerli besinleri '
-                                        'kesinlikle yasaklamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Ağır sedatif ilaç çocukta derin hipotansiyon ve ekstrapiramidal '
-                                                   'distoniye yol açtı.',
-                                'teaching_point': 'Ketotik kusmada nöroleptik antiemetikler tehlikelidir; fizyolojik '
-                                                  'tedavi karbonhidrattır.',
-                                'text': 'Kusmayı durdurmak amacıyla 4 yaşındaki çocuğa intramüsküler yüksek doz '
-                                        'klorpromazin enjeksiyonu yapmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Aşırı tuz verilmesi hipernatremiye ve şiddetli mide yanmasına '
-                                                   'neden oldu.',
-                                'teaching_point': 'Ketoziste tuzlu salamura değil, tatlı içeceklerle insülin uyarısı '
-                                                  'yapılmalıdır.',
-                                'text': 'Hastaya oral yoldan yoğun tuzlu salamura suyu içirerek mideyi temizlemeye '
-                                        'çalışmak'}],
-                 'question': 'Açlık ketozu saptanan bu çocuğun kısır döngüsünü kırmak için en uygun tedavi yaklaşımı '
-                             'hangisidir?',
-                 'stage_title': 'Tedavi Yönetimi ve Taburculuk Planı'}]},
-  { 'age': '3 Yaşında',
-    'case_pearl': 'Küçük çocuklarda akut idrar yolu enfeksiyonu (özellikle piyelonefrit) sıklıkla dizüri yerine karın '
-                  'ağrısı, kusma, iştahsızlık ve açıklanamayan yüksek ateş ile prezante olur ve yanlışlıkla akut '
-                  'apandisit veya gastroenterit sanılır! Muayenede suprapubik hassasiyet ve tek taraflı kostovertebral '
-                  'açı (KVA) hassasiyeti saptanabilir. Tam idrar tahlilinde (TİT) lökosit esteraz ve nitrit '
-                  'pozitifliği, mikroskopide bol lökosit ve bakteri görülmesi tanıyı koydurur; kesin tanı idrar '
-                  'kültürüyle konur. Komplike olmayan, oral alabilen çocuklarda oral 3. kuşak sefalosporin (sefiksim 8 '
-                  'mg/kg/gün tek doz, 10 gün) İV tedavi kadar etkilidir. Tedavi sonrası üriner USG planlanmalıdır.',
-    'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-    'complaint': 'Karın ağrısı, kusma, iştahsızlık ve 3 gündür düşmeyen yüksek ateş',
-    'disposition': 'Yeşil Alandan İdrar Tahlili/Kültürü Doğrulaması, Oral Sefiksim Tedavisi ve Üriner USG Planıyla '
-                   'Taburculuk',
-    'final_diagnosis': 'Akut Piyelonefrit / İdrar Yolu Enfeksiyonuna İkincil Karın Ağrısı ve Kusma',
-    'gender': 'Kız',
-    'history': "Üç yaşındaki kız çocuk annesi tarafından getiriliyor: 'Üç gündür 39°C'ye varan ateşi var. Karnım "
-               'ağrıyor diye ağlıyor, iki gündür günde 3-4 kez kusuyor. İshal veya öksürük yok. Annesi çişini yaparken '
-               "ağladığını, son günlerde çok sık idrara gittiğini ve bezinin çok ağır koktuğunu söylüyor.'",
-    'id': 'G52',
-    'steps': [ { 'options': [ { 'explanation': 'Küçük çocuklarda İYE karın ağrısı ve kusmayla gelir. Suprapubik '
-                                               'hassasiyet, KVA hassasiyeti ve apandisit dışlaması muayenenin '
-                                               'odağıdır.',
-                                'is_correct': True,
-                                'new_finding': 'Vital Bulgular: Ateş 38.8°C, KTA 126/dk, SS 24/dk, SpO2 %99, TA 98/62 '
-                                               'mmHg. Genel durumu orta, huzursuz. Akciğer ve KBB muayenesi doğal. '
-                                               'Batında sağ alt kadranda hafif hassasiyet var ancak defans ve rebound '
-                                               'yok; suprapubik alanda belirgin hassasiyet ve sağ kostovertebral açıda '
-                                               'hassasiyet mevcut.',
-                                'text': 'Karın hassasiyetini, suprapubik bölgeyi, böbrek lojlarını ve eksternal '
-                                        'genital organları sistemik olarak muayene etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Muayenesiz cerrahiye alınan hastada gereksiz apendektomi yapıldı '
-                                                   've ateş ameliyat sonrası devam etti.',
-                                'teaching_point': 'Küçük kız çocuklarında ateş ve karın ağrısında idrar yolu '
-                                                  'enfeksiyonu dışlanmadan cerrahiye gidilemez.',
-                                'text': 'Karın ağrısını apandisit kabul edip idrar sorgulamadan çocuğu derhal acil '
-                                        'ameliyathaneye cerrahiye göndermek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Kas gevşetici verilmesi çocukta solunum zaafiyeti ve mesane '
-                                                   'atonisine yol açtı.',
-                                'teaching_point': 'Enfeksiyöz kusmada kas gevşetici ilaçların hiçbir yeri yoktur; odak '
-                                                  'tespit edilmelidir.',
-                                'text': 'Kusmayı durdurmak için hastaya fizik muayene yapmadan acil serviste yüksek '
-                                        'doz kas gevşetici vermek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Soğuk su küveti çocukta titreme ve periferik vazokonstriksiyona '
-                                                   'neden oldu.',
-                                'teaching_point': 'Ateşli çocukta fiziksel soğuk küvet uygulaması travmatiktir; '
-                                                  'enfeksiyon odağı araştırılmalıdır.',
-                                'text': 'Hastada ateş olduğu için batına hiç dokunmadan çocuğu derhal soğuk su '
-                                        'küvetine sokup bekletmek'}],
-                 'question': 'Ateş, karın ağrısı ve kusması olan 3 yaşındaki kız çocukta ilk muayene yaklaşımınız ne '
-                             'olmalıdır?',
-                 'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene'},
-               { 'options': [ { 'explanation': "TİT'te lökositüri ve nitrit pozitifliği hızlı tanı sağlar. Antibiyotik "
-                                               'öncesi steril idrar kültürü (orta akım veya kateterle) kesin tanı ve '
-                                               'duyarlılık için altın standarttır.',
-                                'is_correct': True,
-                                'new_finding': 'Tam İdrar Tahlili: Dansite 1.018, Lökosit Esteraz (+++), Nitrit (+), '
-                                               'Mikroskopi: Bol lökosit kümeleri, bol bakteri, eritrosit 3-4. İdrar '
-                                               'kültürü gönderildi. Tam Kan: Lökosit 14.800/mm³ (%78 nötrofil), CRP 42 '
-                                               'mg/L.',
-                                'text': 'Steril şartlarda tam idrar tahlili ve eş zamanlı kantitatif idrar kültürü '
-                                        'alarak piyüriyi incelemek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Tomografi böbrekte hafif ödem gösterdi ancak basit idrar testi '
-                                                   'yapılmadığı için kültür alınamadı.',
-                                'teaching_point': 'İYE tanısı tomografiyle değil, idrar analizi ve kültürüyle konur; '
-                                                  'BT aşırı radyasyondur.',
-                                'text': 'İdrar tahlili yapmadan hastaya derhal yüksek doz radyasyonlu tüm batın '
-                                        'bilgisayarlı tomografisi çektirmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Boğaz ve gaita testleri negatif geldi; idrar yolu enfeksiyonunun '
-                                                   'teşhisi 2 gün gecikti.',
-                                'teaching_point': 'Dizüri ve kokulu idrar tariflenen çocukta idrar tahlili birincil '
-                                                  'öncelikli testtir.',
-                                'text': 'İdrar tahlili istemeden sadece boğaz kültürü ve dışkıda parazit testi '
-                                        'göndererek sonucu beklemek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Akut enfeksiyon sırasında yapılan travmatik sistoskopi bakteriyemi '
-                                                   've ürosepsise yol açtı.',
-                                'teaching_point': 'Akut İYE sırasında invaziv sistoskopi KONTRENDİKEDİR; enfeksiyonu '
-                                                  'böbreğe yayabilir.',
-                                'text': 'Kesin tanı için çocuğu ameliyathaneye alıp acil rijit sistoskopi ve üreteral '
-                                        'kateterizasyon yapmak'}],
-                 'question': 'Suprapubik ve böbrek loju hassasiyeti olan bu çocukta tanıyı doğrulamak için en kritik '
-                             'tetkik hangisidir?',
-                 'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
-               { 'options': [ { 'explanation': "Yüksek ateş, kusma, karın ve KVA hassasiyeti ile TİT'te masif "
-                                               'lökositüri/nitrit akut piyelonefriti kanıtlar.',
-                                'is_correct': True,
-                                'new_finding': 'Kesin Tanı: Akut Piyelonefrit (Üst İdrar Yolu Enfeksiyonuna Sekonder '
-                                               'Karın Ağrısı ve Kusma).',
-                                'text': 'Akut piyelonefrit enfeksiyonu tablosu'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Apandisitte idrarda masif bakteri ve nitrit pozitifliği olmaz; '
-                                                   'tablo primer üriner sistem enfeksiyonudur.',
-                                'teaching_point': 'Apandisitte sekonder hafif lökositüri olabilir ancak nitrit ve '
-                                                  "bakteri varlığı primer İYE'yi gösterir.",
-                                'text': 'Akut cerrahi flegmonöz apandisit'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gastroenteritte ishal ön plandadır ve idrarda masif piyüri '
-                                                   'görülmez; bu hastada ishal yoktur.',
-                                'teaching_point': 'İshali olmayan kusan çocukta idrar tahlili yapılmadan gastroenterit '
-                                                  'tanısı konulamaz.',
-                                'text': 'Akut viral gastroenterit hastalığı'},
-                              { 'is_correct': False,
-                                'scenario_update': "Mezenterik lenfadenitte idrar tamamen temizdir; TİT'te nitrit ve "
-                                                   'bol bakteri piyelonefrite özgüdür.',
-                                'teaching_point': 'Mezenterik lenfadenit selim lenf nodu büyümesidir; idrar yolu '
-                                                  'enfeksiyonu bulguları yapmaz.',
-                                'text': 'Akut mezenterik adenit enfeksiyonu'}],
-                 'question': 'Yüksek ateş, kusma, KVA hassasiyeti, piyüri ve nitrit pozitifliği ile en olası klinik '
-                             'tanınız nedir?',
-                 'stage_title': 'Klinik Tanı'},
-               { 'options': [ { 'explanation': 'Genel durumu iyi, kusan ancak oral alabilen çocuklarda oral sefiksim '
-                                               '(8 mg/kg/gün, 10 gün) parenteral tedavi kadar etkilidir. Ateş ve ağrı '
-                                               'için parasetamol verilir. İlk febril İYE geçiren çocuklarda anatomik '
-                                               'anomali taraması için USG planlanır.',
-                                'is_correct': True,
-                                'new_finding': 'Oral sefiksim süspansiyon başlandı. 48 saat sonra ateşi tamamen düştü, '
-                                               'kusması kesildi. Kültürde 100.000 cfu/mL E. coli üredi (sefiksime '
-                                               'duyarlı). Tedavi sonrası çekilen üriner USG doğal bulundu.',
-                                'text': 'Oral üçüncü kuşak sefalosporin tedavisi başlamak, ateş düşürücü önermek ve '
-                                        'tedavi bitiminde üriner ultrasonografi planlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Piyelonefriti tedavi edilmeyen çocukta böbrek parankim absesi ve '
-                                                   'renal skar gelişti.',
-                                'teaching_point': 'Febril İYE / piyelonefrit mutlaka kanıta dayalı antibiyotikle '
-                                                  'tedavi edilmelidir; bitkisel sular yetersizdir.',
-                                'text': 'Antibiyotik vermeden hastaya sadece bol miktarda kızılcık suyu içirerek '
-                                        'enfeksiyonu kurutmaya çalışmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gereksiz takılan kateter hastada sekonder hastane kökenli dirençli '
-                                                   'süperenfeksiyon yarattı.',
-                                'teaching_point': 'Normal idrar yapan çocukta foley sonda endikasyonu yoktur; kateter '
-                                                  'enfeksiyon kaynağıdır.',
-                                'text': 'İdrar yolu enfeksiyonunu önlemek amacıyla hastaya acil koşullarda kalıcı '
-                                        'üretral foley sonda takıp taburcu etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Oral alabilen stabil hastanın haftalarca acilde tutulması gereksiz '
-                                                   'hastane enfeksiyonu riski doğurdu.',
-                                'teaching_point': 'Oral alabilen febril İYE olguları ayaktan güvenle tedavi '
-                                                  'edilebilir; uzamış acil yatışı gerekmez.',
-                                'text': 'Hastalık tamamen geçene kadar hastayı üç hafta boyunca acil serviste damardan '
-                                        'çift antibiyotikle yatırmak'}],
-                 'question': 'Oral alımı iyi, stabil akut piyelonefrit tanılı bu çocukta en uygun tedavi ve izlem '
-                             'planı hangisidir?',
-                 'stage_title': 'Tedavi Seçimi ve Taburculuk Stratejisi'}]},
-  { 'age': '8 Yaşında',
-    'case_pearl': 'Roma IV kriterlerine göre Fonksiyonel Karın Ağrısı: En az 2 aydır devam eden, ayda en az 4 kez '
-                  'görülen, organik bir hastalıkla açıklanamayan göbek çevresi karın ağrısıdır. En kritik basamak '
-                  'KIRMIZI BAYRAKLARIN (alarm bulguları) EKARTE EDİLMESİDİR: Kilo kaybı/büyüme geriliği, gece uykudan '
-                  'uyandıran ağrı, gastrointestinal kanama, açıklanamayan ateş, inatçı kusma, artrit, perianal '
-                  'hastalık ve ailede İBH öyküsü olmamalıdır. Kırmızı bayrak yoksa kapsamlı invaziv tetkik (endoskopi, '
-                  "BT) zararlıdır. Tedavide temel kural: Ağrının 'gerçek' olduğunu (numara yapmadığını) kabul etmek, "
-                  'organik hastalık olmadığını anlatmak ve EN ÖNEMLİSİ ÇOCUĞUN OKULA DÜZENLİ GİTMESİNİ SAĞLAMAKTIR '
-                  '(okuldan alıkoymak anksiyeteyi ve ağrıyı pekiştirir).',
-    'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-    'complaint': 'İki aydır hafta içi sabahları okula gitmeden önce başlayan göbek çevresinde karın ağrısı',
-    'disposition': 'Yeşil Alandan Organik Kırmızı Bayrakların Dışlanması, Aileye Güvence, Okul Devamlılığı ve '
-                   'Psikososyal Rehberlik',
-    'final_diagnosis': 'Fonksiyonel Karın Ağrısı (Roma IV / Okul Kaygısı İlişkili Karın Ağrısı)',
-    'gender': 'Kız',
-    'history': "Sekiz yaşındaki kız çocuğu ailesi tarafından getiriliyor: 'Yaklaşık iki aydır özellikle hafta içi "
-               'sabahları okula gitmeden önce göbeğini tutup kıvranıyor, midem bulanıyor diyor. Okula gitmeyip evde '
-               'kalınca veya hafta sonları tatilde ağrı tamamen kayboluyor. Gece ağrıyla hiç uyanmıyor. Kilo kaybı, '
-               'ateş veya ishali yok. Büyümesi ve ders başarısı çok iyi ama annesi okulda zorbalık veya öğretmen '
-               "kaygısı olabileceğinden şüpheleniyor.'",
-    'id': 'G53',
-    'steps': [ { 'options': [ { 'explanation': 'Büyüme eğrisinin korunmuş olması, gece ağrısının olmaması ve batın '
-                                               'muayenesinin rahatlığı fonksiyonel kökeni organik patolojilerden '
-                                               'ayıran temel adımdır.',
-                                'is_correct': True,
-                                'new_finding': 'Vital Bulgular: Ateş 36.8°C, KTA 84/dk, SS 18/dk, SpO2 %99, TA 102/64 '
-                                               'mmHg. Boy ve Tartı: 50. persentilde, büyüme eğrisi mükemmel. Genel '
-                                               'durumu rahat, neşeli. Batın yumuşak, organomegali yok; periumbilikal '
-                                               'alanda hafif non-spesifik hassasiyet tarifliyor ancak defans ve '
-                                               'rebound yok.',
-                                'text': 'Büyüme persentillerini incelemek, kırmızı bayrakları sorgulamak ve batın '
-                                        'muayenesinde peritonit olmadığını doğrulamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'İki aydır süren sabah ağrısına yapılan gereksiz cerrahi hazırlığı '
-                                                   'çocukta travmaya yol açtı.',
-                                'teaching_point': 'İki aydır sadece sabahları olan ağrı cerrahi akut batın değildir; '
-                                                  'fizik muayene ile defans olmadığı görülür.',
-                                'text': 'Karın ağrısını apandisit kabul edip fizik muayene yapmadan hastayı derhal '
-                                        'acil ameliyathaneye almak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Çocuğun anlaşılamadığı hissi kaygısını artırdı ve somatizasyon '
-                                                   'ağrıları daha da şiddetlendi.',
-                                'teaching_point': "Fonksiyonel ağrılar 'uydurma' değildir; beyin-bağırsak aksının "
-                                                  'hiperaljezisidir, ciddiye alınmalıdır.',
-                                'text': 'Ağrının numara olduğunu söyleyerek muayene etmeden çocuğu azarlayıp acil '
-                                        'servisten göndermek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Opioid verilmesi çocukta solunum depresyonu, bulantı ve bağırsak '
-                                                   'kabızlığına yol açtı.',
-                                'teaching_point': 'Fonksiyonel karın ağrısında opioidler KESİNLİKLE KONTRENDİKEDİR; '
-                                                  'bağımlılık ve dismotilite yapar.',
-                                'text': 'Ağrıyı kesmek amacıyla hastaya acil serviste intravenöz yüksek doz opioid '
-                                        'infüzyonu uygulamak'}],
-                 'question': 'Okul günleri sabahları karın ağrısı olan bu 8 yaşındaki çocukta ilk muayene yaklaşımı '
-                             'nasıl olmalıdır?',
-                 'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene'},
-               { 'options': [ { 'explanation': 'Roma IV kılavuzlarına göre kırmızı bayrağı olmayan (gece uyanma, kilo '
-                                               'kaybı vb. yok) fonksiyonel ağrılarda kolonoskopi, tomografi veya geniş '
-                                               'kan taramaları gereksizdir; hekim güvencesi tanı için yeterlidir.',
-                                'is_correct': True,
-                                'new_finding': 'Gereksiz invaziv girişim yapılmadı. Temel tarama amaçlı tam kan sayımı '
-                                               've tam idrar tahlili tamamen normal geldi. İleri endoskopik tetkike '
-                                               'gerek görülmedi.',
-                                'text': 'Kırmızı bayrak bulunmayan bu hastada gereksiz invaziv ve radyolojik '
-                                        'tetkiklerden kaçınarak klinik izlem planlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Endoskopi tamamen normal geldi ancak çocuk gereksiz invaziv travma '
-                                                   've anestezi riski yaşadı.',
-                                'teaching_point': 'Alarm bulgusu olmayan fonksiyonel karın ağrısında rutin endoskopi '
-                                                  'önerilmez; tanı klinik kriterlerle konur.',
-                                'text': 'Kesin organik odak bulmak amacıyla hastaya genel anestezi altında acil '
-                                        'kolonoskopi ve gastroskopi yapmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Tekrarlayan tomografiler 8 yaşındaki çocuğu yüksek iyonizan '
-                                                   'radyasyon kümülatif dozuna maruz bıraktı.',
-                                'teaching_point': 'Fonksiyonel karın ağrısında bilgisayarlı tomografinin kesinlikle '
-                                                  'yeri yoktur.',
-                                'text': 'Karnı ağrıdığı için hastaya her sabah acil serviste kontrastlı tüm batın '
-                                        'tomografisi çektirmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Hastaneye yatırılan çocuk okuldan tamamen koptu ve hastalık rolü '
-                                                   'pekişerek ağrıları kronikleşti.',
-                                'teaching_point': 'Fonksiyonel ağrılarda hastaneye yatış sakatlayıcıdır; çocuk normal '
-                                                  'hayatına devam etmelidir.',
-                                'text': 'Ağrının nedenini netleştirmek için hastayı 1 ay boyunca hastanede damardan '
-                                        'beslenmeye almak'}],
-                 'question': 'Kırmızı bayrak taşımayan, büyümesi normal bu çocukta tanısal tetkik stratejisi nasıl '
-                             'olmalıdır?',
-                 'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
-               { 'options': [ { 'explanation': 'Büyüme gelişmesi normal, organik alarm bulgusu olmayan ve okul '
-                                               'stresiyle tetiklenen göbek çevresi ağrı Fonksiyonel Karın Ağrısıdır.',
-                                'is_correct': True,
-                                'new_finding': 'Kesin Tanı: Fonksiyonel Karın Ağrısı (Roma IV Kriterleri Pozitif - '
-                                               'Okul Kaygısı İlişkili).',
-                                'text': 'Fonksiyonel karın ağrısı tablosu'},
-                              { 'is_correct': False,
-                                'scenario_update': "İBH'de kilo kaybı, anemi, kanlı ishal ve gece ağrıyla uyanma olur; "
-                                                   'bu hastada büyüme ve dışkılama tamamen doğaldır.',
-                                'teaching_point': 'İBH organik destrüktif hastalıktır; kilo kaybı ve gece semptomları '
-                                                  'olmadan düşünülmez.',
-                                'text': 'İnflamatuar bağırsak kronik hastalığı'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Peptik ülserde yemekle ilişkili epigastrik ağrı ve gece uyanma '
-                                                   'olur; okul sabahıyla sınırlı göbek çevresi ağrısı yapmaz.',
-                                'teaching_point': 'Ülser ağrısı gece uyandırır; fonksiyonel ağrı ise sadece uyanıkken '
-                                                  've stres anında hissedilir.',
-                                'text': 'Kronik gastrit peptik ülseri'},
-                              { 'is_correct': False,
-                                'scenario_update': 'İdrar tahlili tamamen temizdir; dizüri veya polaküri yoktur.',
-                                'teaching_point': 'İdrar tahlili normalse karın ağrısı idrar yolu enfeksiyonuna '
-                                                  'bağlanamaz.',
-                                'text': 'Kronik tekrarlayan idrar yolu'}],
-                 'question': 'Okul sabahları ağrı, hafta sonu rahatlama, normal büyüme ve kırmızı bayrak yokluğu ile '
-                             'tanınız nedir?',
-                 'stage_title': 'Klinik Tanı'},
-               { 'options': [ { 'explanation': 'En önemli kural okul devamlılığıdır (okula gitmemek anksiyete '
-                                               'döngüsünü besler). Aileye ve çocuğa beyin-bağırsak aksı anlatılır, '
-                                               'ağrı anında nefes egzersizleri ve dikkat dağıtma önerilir. '
-                                               'Gerektiğinde okul rehberliği ve psikoterapi planlanır.',
-                                'is_correct': True,
-                                'new_finding': 'Aileye ve çocuğa durum açıklandı. Çocuğun okula devamı sağlandı, okul '
-                                               'rehberlik servisiyle iletişime geçildi. 1 ay içinde sabah ağrıları '
-                                               'azalarak kayboldu ve çocuğun okul başarısı arttı.',
-                                'text': 'Ağrının gerçek olduğunu kabul etmek, organik hastalık olmadığını anlatmak ve '
-                                        'çocuğun okula düzenli devamını sağlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Okuldan alınan çocukta sosyal fobi, anksiyete derinleşmesi ve '
-                                                   'kronik sakatlık davranışı gelişti.',
-                                'teaching_point': 'Okuldan alıkoymak fonksiyonel ağrılarda en zararlı yaklaşımdır; '
-                                                  'okula devam tedavinin temel parçasıdır.',
-                                'text': 'Ağrı tamamen geçene kadar çocuğu altı ay boyunca okuldan tamamen alıp evde '
-                                        'yatak hapsinde tutmak'},
-                              { 'is_correct': False,
-                                'scenario_update': "İlaç verilmesi çocuğun 'ben hastayım' inancını pekiştirdi ve "
-                                                   'ağrıyı sonlandıramadı.',
-                                'teaching_point': 'Fonksiyonel ağrılarda asit baskılayıcıların yeri yoktur; plasebodan '
-                                                  'farksızdır ve yan etki riski taşır.',
-                                'text': 'Ağrıyı dindirmek için hastaya her sabah düzenli yüksek doz antiasit ve proton '
-                                        'pompa inhibitörü başlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Cerrahi yapılan hastada ameliyat sonrası ameliyat skarı bölgesinde '
-                                                   'somatizasyon ağrıları sürdü.',
-                                'teaching_point': 'Fonksiyonel karın ağrısına cerrahi girişim uygulanması '
-                                                  'kontrendikedir; cerrahi ağrıyı çözmez.',
-                                'text': 'Karın ağrısını yok etmek amacıyla hastaya acil cerrahi ile profilaktik '
-                                        'laparoskopik apendektomi yapmak'}],
-                 'question': 'Fonksiyonel karın ağrısı tanısı konulan bu hastada en uygun tedavi ve psikososyal '
-                             'yönetim hangisidir?',
-                 'stage_title': 'Tedavi, Aile Güvencesi ve Okul Devamlılığı'}]},
-  { 'age': '20 Aylık',
-    'case_pearl': 'Çölyak hastalığının klasik pediatrik formu genellikle buğday/arpa/çavdar (gluten) içeren ek '
-                  'gıdaların başlanmasından aylar sonra (9-24. aylar arasında) ortaya çıkar. Klasik triyad: Kronik '
-                  'malabsorptif ishal (açık renkli, hacimli, yağlı), karın distansiyonu ve belirgin kas erimesi '
-                  "(özellikle gluteal kas atrofisi / 'düz tabak popo' görünümü) ile persentil kaybıdır. ESPGHAN "
-                  'kılavuzlarına göre ilk basamak tarama testi: DOKU TRANSGLUTAMİNAZ IgA (Anti-tTG IgA) ve TOTAL IgA '
-                  'düzeyidir (IgA eksikliği varsa yanlış negatifliği önlemek için IgG bazlı testler istenir). EN '
-                  'KRİTİK KLİNİK KURAL: Tanı kesinleşene kadar (gerekirse endoskopi ve biyopsi tamamlanana kadar) '
-                  'ÇOCUĞUN DİYETİNDEN GLUTEN ASLA KESİLMEMELİDİR! Erken gluten kesilmesi serolojiyi ve biyopsiyi '
-                  'normale çevirerek tanıyı imkansız kılar.',
-    'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-    'complaint': 'Ek gıdaya geçtikten sonra giderek belirginleşen karın şişliği, açık renkli yağlı ishal ve popoda '
-                 'erime',
-    'disposition': 'Yeşil Alandan Serolojik Testler (Anti-tTG IgA + Total IgA) İstenmesi, Biyopsi Öncesi Gluten '
-                   'Kesilmeyerek Sevk',
-    'final_diagnosis': 'Çölyak Hastalığı (Klasik Malabsorptif Form / Gluten Enteropatisi)',
-    'gender': 'Erkek',
-    'history': "Yirmi aylık erkek bebek annesi tarafından getiriliyor: 'Sekiz aylıkken ek gıdaya (tahıllar, bisküvi, "
-               'ekmek) başlandıktan sonra dışkısı giderek cıvıklaştı, açık renkli, aşırı parlak ve kötü kokulu oldu. '
-               'Son 6 aydır kilo alımı tamamen durdu, 75. persentilden 10. persentile geriledi. Karnı kurbağa karnı '
-               "gibi şişiyor, bacakları ve poposu ip gibi eridi. Sürekli huysuz ve mutsuz, yemek seçiyor.'",
-    'id': 'G54',
-    'steps': [ { 'options': [ { 'explanation': "Kronik enteropati ve malabsorpsiyon tablolarında persentil düşüşü, distandü batın ('kurbağa karnı') "
-                                               've gluteal bölge kas erimesi (tabak popo) fizik muayenenin en '
-                                               'karakteristik bulgularıdır.',
-                                'is_correct': True,
-                                'new_finding': 'Vital Bulgular: Ateş 36.7°C, KTA 102/dk, SS 22/dk, SpO2 %99, TA 90/58 '
-                                               'mmHg. Tartı: 75. persentilden 10. persentilin altına düşmüş (kronik '
-                                               'malnütrisyon). Genel görünüm soluk, apatik ve mutsuz. Batın belirgin '
-                                               'distandü, timpanik, defans veya rebound yok. Bilateral gluteal kaslar '
-                                               "tamamen erimiş, deri kıvrımları sarkmış ('tabak popo' görünümü). "
-                                               'Pretibial ödem yok.',
-                                'text': 'Büyüme eğrisi kaybını, karın distansiyonunu, gluteal kas atrofisini ve '
-                                        'malnütrisyon bulgularını sistemik muayene etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Muayenesiz cerrahi hazırlığı kronik malnütrisyonlu çocukta '
-                                                   'gereksiz ameliyathane travması yarattı.',
-                                'teaching_point': 'Kronik malabsorpsiyondaki karın distansiyonu bağırsak hipotonisine ve gaz birikimine '
-                                                  'bağlıdır; akut cerrahi batın değildir.',
-                                'text': 'Karın şişliğini akut cerrahi peritonit kabul edip çocuğu muayene etmeden acil '
-                                        'laparotomiye hazırlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Loperamid verilmesi malabsorptif bağırsakta paralitik ileusa ve '
-                                                   'ağır distansiyona yol açtı.',
-                                'teaching_point': 'Malabsorpsiyonlu çocuklarda loperamid KESİNLİKLE KONTRENDİKEDİR; '
-                                                  'toksik ileus yapar.',
-                                'text': 'İshali hemen durdurmak için hastaya acil serviste yüksek doz motilite '
-                                        'baskılayıcı loperamid içirmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Nörolojik muayenesi doğal olan çocukta uygunsuz cerrahi '
-                                                   'konsültasyon süreci başlatıldı.',
-                                'teaching_point': 'Gluteal kas erimesi tipik malnütrisyon bulgusudur; nörolojik felç '
-                                                  'tablosu değildir.',
-                                'text': 'Kas erimesini felç sanarak hastaya fizik muayene yapmadan acil beyin ve '
-                                        'omurilik cerrahisi konsültasyonu istemek'}],
-                 'question': 'Ek gıda sonrası kronik ishal, karın şişliği ve kas erimesi olan bu çocukta ilk muayene '
-                             'yaklaşımı nasıl olmalıdır?',
-                 'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene'},
-               { 'options': [ { 'explanation': 'ESPGHAN kılavuzlarına göre bu klinik tablonun taranmasında ilk tercih Anti-tTG IgA '
-                                               "ve Total IgA'dır. Total IgA düzeyi, çölyaklılarda sık görülen selektif "
-                                               'IgA eksikliğine bağlı yalancı negatiflikleri dışlamak için şarttır.',
-                                'is_correct': True,
-                                'new_finding': 'Laboratuvar: Anti-tTG IgA: >200 U/mL (normal üst sınırın 10 katından '
-                                               'yüksek, >10x ULN). Total IgA: 68 mg/dL (yaşına göre normal, IgA '
-                                               'eksikliği yok). Hemogram: Hb 9.8 g/dL (hafif mikrositer demir '
-                                               'eksikliği anemisi), Ferritin 8 ng/mL (düşük).',
-                                'text': 'Kanda Doku Transglutaminaz IgA antikor düzeyi ile birlikte selektif eksikliği '
-                                        'dışlamak için Total IgA düzeyini istemek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Kolonoskopi normal geldi çünkü çölyak kolonu değil, ince '
-                                                   'bağırsağın proksimalini (duodenum) tutar.',
-                                'teaching_point': 'Bu enteropati ince bağırsak hastalığıdır; kolonoskopi tanısal değildir, '
-                                                  'duodenal biyopsi gerekir.',
-                                'text': 'Antikor bakmadan hastaya derhal genel anestezi altında kolonoskopi yaparak '
-                                        'kalın bağırsaktan biyopsi almak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'İdrar ve gaita testleri normal çıktı ancak spesifik seroloji '
-                                                   'bakılmadığı için tanı atlandı.',
-                                'teaching_point': 'Kronik malabsorpsiyon serolojik antikorlarla taranır; idrar veya dışkı gizli kanı '
-                                                  'tanı koydurmaz.',
-                                'text': 'Etiyolojiyi araştırmadan sadece dışkıda gizli kan ve idrar kültürü bakarak hastayı '
-                                        'evine göndermek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Test yapılmadan diyet verilen çocukta tanı serolojik olarak asla '
-                                                   'kanıtlanamaz hale geldi.',
-                                'teaching_point': 'Seroloji doğrulanmadan ampirik diyet başlanması tanıyı imkansız '
-                                                  'kılar; KESİNLİKLE YASAKTIR.',
-                                'text': 'Antikor istemeden hastaya doğrudan ömür boyu tüm tahılları, eti ve sütü '
-                                        'yasaklayan katı diyet vermek'}],
-                 'question': 'Ek gıdaya geçiş sonrası kronik malabsorpsiyon ve persentil kaybı gelişen bu çocukta altın '
-                             'standart tarama tetkiki hangisidir?',
-                 'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
-               { 'options': [ { 'explanation': 'Gluten sonrası kronik ishal, kas erimesi, persentil kaybı ve Anti-tTG '
-                                               "IgA'nın normalin 10 katını aşması klasik çölyak tanısıdır.",
-                                'is_correct': True,
-                                'new_finding': 'Kesin Tanı: Çölyak Hastalığı (Klasik Malabsorptif Form / Gluten '
-                                               'Enteropatisi).',
-                                'text': 'Klasik çölyak hastalığı malabsorpsiyonu'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Kistik fibroziste ter testi pozitiftir ve çölyak antikorları '
-                                                   'negatiftir; bu çocukta Anti-tTG masif yüksektir.',
-                                'teaching_point': 'Kistik fibrozis ter testiyle ayrılır; Anti-tTG IgA >10 kat '
-                                                  'yüksekliği çölyak için spesifiktir.',
-                                'text': 'Kistik fibrozis ekzokrin yetmezliği'},
-                              { 'is_correct': False,
-                                'scenario_update': 'İnek sütü enteropatisi erken süt çocukluğunda başlar; gluten ek '
-                                                   'gıdasıyla Anti-tTG antikoru üretmez.',
-                                'teaching_point': 'Süt alerjisinde tTG antikoru oluşmaz; tTG glutene spesifik '
-                                                  'otoantimikrobiyal yanıttır.',
-                                'text': 'İnek sütü proteini enteropatisi'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Giardiada dışkıda kistler olur; kronik otoimmün Anti-tTG IgA '
-                                                   'pozitifliği ve gluteal erime yapmaz.',
-                                'teaching_point': 'Giardia parazitozdur; masif çölyak seroloji pozitifliği oluşturmaz.',
-                                'text': 'Giardiazis paraziter malabsorpsiyon sendromu'}],
-                 'question': 'Gluten alımı sonrası malabsorpsiyon, persentil kaybı, gluteal erime ve Anti-tTG IgA >10 '
-                             'kat yüksekliği ile tanınız nedir?',
-                 'stage_title': 'Klinik Tanı'},
-               { 'options': [ { 'explanation': 'ESPGHAN kılavuzlarına göre kesin tanı gastroenterolog tarafından '
-                                               'endoskopik duodenal biyopsi ile (veya Anti-tTG >10x ULN + pozitif EMA '
-                                               'durumunda biyopsisiz protokolle) kesinleştirilene kadar GLUTEN '
-                                               'KESİLMEMELİDİR. Gluten kesilirse mukoza hızla iyileşir ve tanı '
-                                               'doğrulaması imkansızlaşır.',
-                                'is_correct': True,
-                                'new_finding': 'Aileye gastroenteroloji randevusuna kadar çocuğun ekmek/makarna yemeye '
-                                               'devam etmesi gerektiği açıklandı. Pediatrik Gastroenterolojiye '
-                                               'yönlendirildi; tanı doğrulanarak ömür boyu glutensiz diyet ve demir '
-                                               'tedavisi başlandı.',
-                                'text': 'Çocuk gastroenteroloji uzmanı değerlendirene kadar diyetten gluteni '
-                                        'kesinlikle kesmemek ve normal beslenmeyi sürdürmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gluteni erken kesilen çocukta 3 hafta sonra yapılan endoskopik '
-                                                   'biyopsi normal geldi ve kesin tanı konulamadı.',
-                                'teaching_point': 'Tanı kesinleşmeden glutenin kesilmesi mukoza biyopsisini yalancı '
-                                                  'negatif yapar; en sık yapılan klinik hatadır.',
-                                'text': 'Gastroenteroloji konsültasyonunu beklemeden hastanın diyetindeki tüm buğdayı '
-                                        've tahılları anında sıfırlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Antibiyotik verilmesi otoimmün enteropatiyi düzeltmedi; ek '
-                                                   'bağırsak florası hasarı yarattı.',
-                                'teaching_point': 'Çölyak bakteriyel enfeksiyon değildir; antibiyotiklerin hiçbir '
-                                                  'etkinliği yoktur.',
-                                'text': 'Çölyak hastalığını tamamen iyileştirmek amacıyla hastaya yüksek doz oral '
-                                        'geniş spektrumlu antibiyotik başlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Medikal diyetle tamamen düzelecek çölyak hastasına cerrahi '
-                                                   'düşünülmesi malpraktis oluşturdu.',
-                                'teaching_point': 'Çölyak hastalığı cerrahi bir antite değildir; tedavisi ömür boyu '
-                                                  'glutensiz diyettir.',
-                                'text': 'Hastaya acil cerrahi ile ince bağırsak rezeksiyonu ve ostomi açılması '
-                                        'planıyla yatış vermek'}],
-                 'question': 'Anti-tTG IgA düzeyi normalin 10 katından yüksek çıkan bu hastada yapılması gereken en '
-                             'kritik sevk ve beslenme kuralı hangisidir?',
-                 'stage_title': 'Kritik Klinik Kural ve Sevk Yönetimi'}]},
-  { 'age': '6 Yaşında',
-    'case_pearl': 'Pediatrik acilde sağ alt kadran karın ağrısı ve ateşle başvuran bir çocukta diafragmatik plörit '
-                  'kaynaklı YANSIYAN KARIN AĞRISI (Referred Pain - T8-T11 interkostal sinir irritasyonu) mutlaka akla '
-                  'gelmelidir! Sağ alt lob lober pnömonisi, apandisiti mükemmel taklit eder ve gereksiz laparotomilere '
-                  'yol açabilir. En kritik fizik muayene ipucu: Solunum sayısı (takipne), burun kanadı solunumu, '
-                  'inleme ve sağ bazal oskültasyonda tübüler solunum sesi (bronşiyal solunum) veya krepitan rallerdir. '
-                  'Karın muayenesinde defans yüzeyseldir, derin palpasyonda gerçek peritoneal rijidite ve rebound '
-                  'saptanmaz. Arka-ön akciğer grafisi tanıyı anında koydurur. Toplum kökenli tipik lober pnömonide ilk '
-                  'seçenek yüksek doz oral amoksisilindir (80-90 mg/kg/gün).',
-    'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-    'complaint': 'Sağ alt kadran karın ağrısı, kusma ve yüksek ateş',
-    'disposition': 'Yeşil Alandan Akciğer Grafisi ile Lober Konsolidasyon Doğrulaması, Oral Amoksisilin Tedavisi ile '
-                   'Taburculuk',
-    'final_diagnosis': 'Sağ Alt Lob Pnömokok Lober Pnömonisi (Diafragmatik Plörit / Yansıyan Karın Ağrısı)',
-    'gender': 'Erkek',
-    'history': "Altı yaşındaki erkek çocuk ailesi tarafından Sarı Alana/Yeşil Alana getiriliyor: 'İki gündür 39°C "
-               'ateşi ve karnının sağ tarafında şiddetli ağrısı var. İki kez kustu. Sağ kasığındaki ağrı nedeniyle dış '
-               'merkezden apandisit şüphesiyle acil servise sevk edilmiş. Ancak çocuk konuşurken nefes nefese kalıyor '
-               "ve hafif inliyor. Annesi dünden beri kuru kuru öksürdüğünü söylüyor.'",
-    'id': 'G55',
-    'steps': [ { 'options': [ { 'explanation': 'Yansıyan karın ağrısında takipne, burun kanadı solunumu ve akciğer '
-                                               'dinleme bulguları (tübüler ses/ral) karın ağrısının torakal kökenli '
-                                               'olduğunu ele verir.',
-                                'is_correct': True,
-                                'new_finding': 'Vital Bulgular: Ateş 39.1°C, KTA 134/dk, SS 42/dk (yaşa göre belirgin '
-                                               'takipneik), SpO2 %96 (oda havasında), TA 102/64 mmHg. Hafif burun '
-                                               'kanadı solunumu ve ekspiratuar inleme mevcut. Akciğer Oskültasyonu: '
-                                               'Sağ hemitoraks bazalinde solunum sesleri azalmış, bronşiyal tübüler '
-                                               'solunum sesi ve krepitan raller mevcut. Batın Muayenesi: Sağ üst ve '
-                                               'alt kadranda yüzeysel hassasiyet var ancak istemsiz gerçek defans veya '
-                                               'rebound saptanmadı.',
-                                'text': 'Solunum sayısını, göğüs çekilmelerini, akciğer taban seslerini ve batında '
-                                        'gerçek defans olup olmadığını muayene etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Pnömonisi olan çocuk ameliyata alındığında anestezi indüksiyonunda '
-                                                   'ağır hipoksemi ve bronkospazm gelişti.',
-                                'teaching_point': 'Karın ağrılı çocukta akciğer muayenesi ve solunum sayısı atlanırsa '
-                                                  'lober pnömoni apandisit sanılarak ameliyat edilir.',
-                                'text': 'Karın ağrısı sağda olduğu için akciğer oskültasyonu yapmadan çocuğu derhal '
-                                        'acil apendektomi ameliyatına almak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Pnömonik konsolidasyonu olan hipoksemik çocuğa kağıt torba '
-                                                   'solutulması hipoksik arrest tehlikesi yarattı.',
-                                'teaching_point': '39°C ateşli ve inleyen çocukta takipne solunum yolu enfeksiyonu '
-                                                  'bulgusudur; panik atak değildir.',
-                                'text': 'Hızlı solunumu panik atağa bağlayarak hastaya fizik muayene yapmadan acil '
-                                        'serviste kağıt torbadan solutmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gereksiz ilaç verilmesi hastanın solunum reflekslerini '
-                                                   'baskılayarak sekresyon birikimine yol açtı.',
-                                'teaching_point': 'Pnömonide kusma öksürük ve yüksek ateşe sekonderdir; motilite '
-                                                  'azaltıcı verilmez.',
-                                'text': 'Kusmayı durdurmak amacıyla 6 yaşındaki çocuğa acil serviste yüksek doz '
-                                        'motilite felç edici ilaç vermek'}],
-                 'question': 'Apandisit şüphesiyle sevk edilen, yüksek ateş ve inlemesi olan bu çocukta ilk muayene '
-                             'yaklaşımı nasıl olmalıdır?',
-                 'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene'},
-               { 'options': [ { 'explanation': 'Arka-ön akciğer grafisi sağ alt lobdaki lober konsolidasyonu ve hava '
-                                               'bronkogramlarını göstererek karın ağrısının plöritik yansıyan ağrı '
-                                               'olduğunu kanıtlar ve cerrahiyi önler.',
-                                'image': 'assets/images/cxr_lobar_pneumonia.png',
-                                'is_correct': True,
-                                'new_finding': 'Akciğer Grafisi (PA): Sağ akciğer alt lobunda homojen lober '
-                                               'konsolidasyon, hava bronkogramları ve silüet belirtisi izlendi; '
-                                               'plevral efüzyon veya pnömotoraks saptanmadı. Sol akciğer doğal. '
-                                               'Laboratuvar: Lökosit 16.400/mm³ (%82 nötrofil), CRP 68 mg/L.',
-                                'text': 'Lober konsolidasyonu ve olası plevral efüzyonu doğrulamak amacıyla arka-ön '
-                                        'akciğer grafisi çekilmesini planlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Laparoskopide apendiks tamamen normal bulundu; çocuk ameliyat '
-                                                   'sonrası pnömoni komplikasyonlarıyla servise çıktı.',
-                                'teaching_point': 'Takipnesi ve bazal dinleme bulgusu olan çocukta basit bir akciğer '
-                                                  'grafisi gereksiz batın cerrahisini önler.',
-                                'text': 'Akciğer grafisi çekmeden hastaya genel anestezi altında acil tanısal '
-                                        'laparoskopi operasyonu planlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Lober pnömonisi tedavi edilmeyen çocukta 24 saat içinde ampiyem ve '
-                                                   'solunum yetmezliği gelişti.',
-                                'teaching_point': 'Lober pnömoni acil antibiyoterapi gerektirir; taburcu edilerek '
-                                                  'bekletilemez.',
-                                'text': 'Grafi çekmek yerine sadece idrar tahlili alıp sonucu 24 saat sonra kontrol '
-                                        'etmek üzere hastayı taburcu etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Sintigrafi pnömoni tanısında hiçbir bilgi sağlamadı ve acil '
-                                                   'tedaviyi saatlerce geciktirdi.',
-                                'teaching_point': 'Akut solunum enfeksiyonunda sintigrafinin yeri yoktur; PA akciğer '
-                                                  'grafisi standarttır.',
-                                'text': 'Tanıyı radyolojik olarak koymak amacıyla hastaya acil koşullarda tüm vücut '
-                                        'kemik sintigrafisi planlamak'}],
-                 'question': 'Sağ bazalde ral ve tübüler ses saptanan bu takipneik çocukta tanıyı netleştirmek için en '
-                             'uygun tetkik hangisidir?',
-                 'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
-               { 'options': [ { 'explanation': 'Yüksek ateş, takipne, inleme ve grafide lober infiltrasyon ile '
-                                               'diafragmatik plöritik karın ağrısı lober pnömoni tanısıdır.',
-                                'is_correct': True,
-                                'new_finding': 'Kesin Tanı: Sağ Alt Lob Lober Pnömonisi (Diafragmatik Plörit Kaynaklı '
-                                               'Yansıyan Karın Ağrısı).',
-                                'text': 'Pnömokok lober pnömonisi konsolidasyonu'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Akciğer grafisinde belirgin lober konsolidasyon vardır; karın '
-                                                   'ağrısı plöritik yansıyan ağrıdır, apandisit dışlanmıştır.',
-                                'teaching_point': 'Pnömoniye sekonder yansıyan ağrıda gerçek peritoneal defans yoktur; '
-                                                  'pnömoni tedavi edilince karın ağrısı geçer.',
-                                'text': 'Akut cerrahi flegmonöz apandisit'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gastroenteritte lober akciğer konsolidasyonu ve tübüler ses olmaz; '
-                                                   'tablo alt solunum yolu parankim enfeksiyonudur.',
-                                'teaching_point': 'Gastroenterit akciğerde konsolidasyon yapmaz; ateş ve kusma '
-                                                  'pnömoniye ikincildir.',
-                                'text': 'Akut enfeksiyöz gastroenterit tablosu'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Kolesistitte safra kesesi duvar kalınlaşması olur; PA grafide '
-                                                   'lober akciğer tutulumu ve takipne beklenmez.',
-                                'teaching_point': 'Pnömoni torakal patolojidir; kolesistitle karıştırılmamalıdır.',
-                                'text': 'Akut taşlı kolesistit atağı'}],
-                 'question': 'Yüksek ateş, takipne, sağ bazalde tübüler solunum sesi ve PA grafide sağ alt lob '
-                             'konsolidasyonu ile tanınız nedir?',
-                 'stage_title': 'Klinik Tanı'},
-               { 'options': [ { 'explanation': 'Pediatrik IDSA ve NICE kılavuzlarına göre toplum kökenli tipik lober '
-                                               'pnömonide (Streptococcus pneumoniae) ilk basamak tedavi YÜKSEK DOZ '
-                                               'ORAL AMOKSİSİLİNDİR (80-90 mg/kg/gün 2-3 doza bölünerek, 7-10 gün). '
-                                               'Oral alabilen, hipoksemisi olmayan çocuk ayaktan güvenle tedavi '
-                                               'edilir.',
-                                'is_correct': True,
-                                'new_finding': 'Yüksek doz oral amoksisilin başlandı. 48 saat sonra ateşi tamamen '
-                                               'düştü, takipnesi geriledi ve akciğer konsolidasyonu açıldıkça yansıyan '
-                                               'karın ağrısı tamamen kayboldu.',
-                                'text': 'Yüksek doz oral amoksisilin başlamak, parasetamol önermek ve kırk sekiz saat '
-                                        'sonra kontrole çağırmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gereksiz cerrahi pnömonik hastada ağır postoperatif atelektazi ve '
-                                                   'solunum yetmezliği yarattı.',
-                                'teaching_point': 'Karın ağrısı pnömoni kaynaklıdır; cerrahi kesinlikle endike '
-                                                  'değildir, pnömoni antibiyotikle tedavi edilir.',
-                                'text': 'Hastayı ameliyathaneye alıp batın boşluğunu yıkamak amacıyla acil tanısal '
-                                        'batın cerrahisi uygulamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Tedavi edilmeyen bakteriyel lober pnömoni ampiyem ve nekrotizan '
-                                                   'pnömoniye ilerledi.',
-                                'teaching_point': 'Tipik lober pnömoni bakteriyeldir (S. pneumoniae); antibiyotiksiz '
-                                                  'takip fatal komplikasyonlar doğurur.',
-                                'text': 'Antibiyotik vermeden hastaya sadece evde sıcak buhar banyosu yaptırarak '
-                                        'ayaktan taburcu etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Aminoglikozidler oral yoldan kana emilmez; pnömoniye hiçbir etkisi '
-                                                   'olmadı.',
-                                'teaching_point': 'Oral aminoglikozid sistemik emilmez; solunum yolu enfeksiyonlarında '
-                                                  'yeri yoktur.',
-                                'text': 'Hastaya oral yoldan yüksek doz geniş spektrumlu aminoglikozid şurup verip '
-                                        'ayaktan takip etmek'}],
-                 'question': 'Genel durumu stabil, SpO2 %96 olan toplum kökenli lober pnömonili bu çocukta en uygun '
-                             'tedavi hangisidir?',
-                 'stage_title': 'Pnömoni ve Karın Ağrısının Tedavisi'}]},
-  { 'age': '11 Aylık',
-    'case_pearl': 'Dünya Sağlık Örgütü (DSÖ) ve UNICEF, akut gastroenteritli 6 ay - 5 yaş arası tüm çocuklara akut '
-                  'ishal tedavisinde ve sonraki 2-3 ay içindeki ishal nükslerini önlemede GÜNLÜK 20 MG ELEMENTAL ÇİNKO '
-                  'DESTEĞİNİN (6 ay altı: 10 mg/gün) 10-14 GÜN SÜREYLE verilmesini en yüksek kanıt düzeyiyle '
-                  'önermektedir. Çinko bağırsak mukozal rejenerasyonunu hızlandırır, fırçamsı kenar enzimlerini korur, '
-                  'hücresel immüniteyi güçlendirir ve ishal süresini/şiddetini anlamlı derecede azaltır. Sulu kansız '
-                  'ishalde rutin antibiyotik verilmemelidir.',
-    'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-    'complaint': 'Üç gündür günde 6 kez sulu sarı ishal, perianal bölgede asidik kızarıklık',
-    'disposition': 'Yeşil Alandan DSÖ/UNICEF Protokolüyle 20 mg Elemental Çinko Desteği, ORS ve Bariyer Kremle '
-                   'Taburculuk',
-    'final_diagnosis': 'Akut Viral İshalde Çinko Desteği ve Kanıta Dayalı Destek Tedavisi',
-    'gender': 'Erkek',
-    'history': "On bir aylık erkek bebek annesi tarafından getiriliyor: 'Üç gündür sulu sarı renkte kaka yapıyor. "
-               'Ateşi hafif, emmesi ve su içmesi gayet iyi. Komşumuz eczaneden antibiyotik şurup alıp içirmemizi '
-               'söyledi ancak size danışmak istedik. Bez bölgesinde dışkı asidine bağlı hafif kızarıklık başladı. '
-               "Kusması yok.'",
-    'id': 'G56',
-    'steps': [ { 'options': [ { 'explanation': 'Dehidratasyon derecesini derecelendirmek ve sık dışkılamaya sekonder '
-                                               'gelişen perianal dermatit varlığını değerlendirmek fizik muayenenin '
-                                               'temelidir.',
-                                'is_correct': True,
-                                'new_finding': 'Vital Bulgular: Ateş 37.4°C, KTA 114/dk, SS 26/dk, SpO2 %99, TA 88/54 '
-                                               'mmHg, KDZ 1.5 sn. Genel durumu iyi, çevreyle ilgili. Ağız mukozası '
-                                               'nemli, gözyaşı bol, deri turgoru anında geri dönüyor. Batın rahat, '
-                                               'bağırsak sesleri normoaktif. Perianal bölgede hafif eritematöz asidik '
-                                               'dışkı tahrişi mevcut.',
-                                'text': 'Hidrasyon durumunu, mukoza nemini, kapiller dolumu ve bez bölgesindeki asidik '
-                                        'eritemi muayene etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Dehidrate olmayan stabil bebeğe yoğun bakım ayrılması gereksiz '
-                                                   'yatak işgaline yol açtı.',
-                                'teaching_point': 'Genel durumu iyi, hidrasyonu tam olan bebekler Yeşil Alanda ayaktan '
-                                                  'izlenir.',
-                                'text': 'İshal sayısı altıyı aştığı için fizik muayene yapmadan hastayı derhal acil '
-                                        'yoğun bakıma yatırmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Travmatik kesi bebekte derin kanama ve sekonder bakteriyel '
-                                                   'enfeksiyona neden oldu.',
-                                'teaching_point': 'İshale bağlı perianal eritem asidik tahriştir; abse değildir, '
-                                                  'cerrahi drenaj yapılmaz.',
-                                'text': 'Pişik bölgesini enfekte abse kabul ederek acil serviste steril olmadan '
-                                        'bistüriyle insizyon yapmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Loperamid süt çocuğunda paralitik ileus ve karın distansiyonu '
-                                                   'tablosu yarattı.',
-                                'teaching_point': 'Süt çocuklarında motilite azaltıcı ajanlar kesinlikle '
-                                                  'KONTRENDİKEDİR.',
-                                'text': 'İshali hemen durdurmak için 11 aylık bebeğe ağızdan yüksek doz loperamid ve '
-                                        'opiat vermek'}],
-                 'question': 'Üç gündür sulu ishali olan 11 aylık bu bebekte ilk klinik değerlendirme nasıl olmalıdır?',
-                 'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene'},
-               { 'options': [ { 'explanation': 'DSÖ ve ESPGHAN kılavuzlarına göre hafif, kansız, oral toleransı iyi '
-                                               'akut ishallerde rutin dışkı kültürü veya biyokimya endike değildir; '
-                                               'klinik tanı yeterlidir.',
-                                'is_correct': True,
-                                'new_finding': 'Gereksiz invaziv girişim yapılmadı. Anneye kanıta dayalı destek '
-                                               'tedavisi anlatıldı.',
-                                'text': 'Klinik olarak hafif seyirli sulu ishalde gereksiz kan tahlili veya dışkı '
-                                        'kültürü istemeden takip planlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Genel anestezi ve invaziv işlem 11 aylık bebekte komplikasyon '
-                                                   'riski yarattı.',
-                                'teaching_point': 'Akut sulu ishalde endoskopik inceleme kesinlikle endike değildir; '
-                                                  'aşırı tetkiktir.',
-                                'text': 'İshali araştırmak için bebeğe genel anestezi altında acil kolonoskopi ve '
-                                        'rektoskopi yapmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gereksiz intravenöz antibiyotik bebeğin damar yapısını bozdu ve '
-                                                   'florasını tahrip etti.',
-                                'teaching_point': 'Basit sulu ishallerde geniş spektrumlu antibiyotiklerin yeri '
-                                                  'yoktur; viral kaynaklıdır.',
-                                'text': 'Dışkıyı sterilize etmek amacıyla hiçbir tahlil yapmadan damardan geniş '
-                                        'spektrumlu vankomisin başlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Tekrarlayan batın grafileri bebeği gereksiz yere yüksek radyasyon '
-                                                   'dozuna maruz bıraktı.',
-                                'teaching_point': 'Akut gastroenteritte direkt grafi endikasyonu yoktur; radyasyon '
-                                                  'zararlıdır.',
-                                'text': 'Karında gaz olup olmadığını görmek için bebeğe her saat başı seri direkt '
-                                        'batın grafisi çekmek'}],
-                 'question': 'Oral alımı iyi, hafif dehidratasyonu bile olmayan bu bebekte tetkik planı ne olmalıdır?',
-                 'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
-               { 'options': [ { 'explanation': 'Sulu dışkılama, stabil genel durum, hafif ateş ve asidik dışkı teması '
-                                               'tipik akut viral gastroenterittir.',
-                                'is_correct': True,
-                                'new_finding': 'Kesin Tanı: Akut Viral Gastroenterit (Hafif Seyirli / '
-                                               'Dehidratasyonsuz).',
-                                'text': 'Akut viral gastroenterit enfeksiyonu'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Kolerada pirinç suyu şeklinde masif şok dehidratasyonu olur; bu '
-                                                   'bebek normovolemiktir.',
-                                'teaching_point': 'Kolera ağır hipovolemik şokla seyreder; hafif seyirli kreş '
-                                                  'ishaliyle uyumlu değildir.',
-                                'text': 'Ağır kolera salgını dizanterisi'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Kronik malabsorpsiyon haftalarca sürer ve kilo kaybı yapar; 3 '
-                                                   'günlük akut tabloda düşünülmez.',
-                                'teaching_point': '3 günlük ishal akut tablodur; kronik malabsorpsiyon en az 2-4 hafta '
-                                                  'sürmelidir.',
-                                'text': 'Kronik malabsorpsiyon sendromu diyaresi'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Toksik megakolonda masif batın distansiyonu, peritonit ve septik '
-                                                   'şok olur; bu bebeğin karnı yumuşaktır.',
-                                'teaching_point': 'Toksik megakolon ölümcül bir komplikasyondur; stabil bebekte '
-                                                  'görülmez.',
-                                'text': 'Toksik megakolon dilatasyon tablosu'}],
-                 'question': 'Üç gündür süren sulu kansız ishal, iyi hidrasyon ve perianal asidik eritem ile tanınız '
-                             'nedir?',
-                 'stage_title': 'Klinik Tanı'},
-               { 'options': [ { 'explanation': 'DSÖ/UNICEF kanıta dayalı protokolü: >6 ay çocuklarda 10-14 gün süreyle '
-                                               'günlük 20 mg elemental çinko sülfat ishal süresini kısaltır, şiddetini '
-                                               'azaltır ve sonraki aylarda nüksü önler. Çinko oksitli pişik kremi '
-                                               'önerilir.',
-                                'is_correct': True,
-                                'new_finding': 'Günlük 20 mg çinko şurubu başlandı. Her dışkı sonrası ORS ve perianal '
-                                               'bölgeye çinko oksitli krem önerildi. 48 saat sonra ishal sıklığı '
-                                               'azaldı, 4. günde dışkı tamamen toparladı ve pişik geriledi.',
-                                'text': 'Günde yirmi miligram elemental çinko desteğini on ila on dört gün süreyle '
-                                        'vermek ve oral rehidratasyon sağlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Loperamid kullanımı sonrası bebekte bağırsak spazmı ve distansiyon '
-                                                   'gelişti.',
-                                'teaching_point': 'Çocukluk çağı ishallerinde loperamid ve gereksiz antibiyotik '
-                                                  'kontrendikedir; çinko ve ORS esastır.',
-                                'text': 'İshali hemen kesmek için hastaya oral antibiyotik şurup ve loperamid '
-                                        'kombinasyonu reçete etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Anne sütünün kesilmesi bebeğin immün savunmasını zayıflattı ve '
-                                                   'toparlanmayı geciktirdi.',
-                                'teaching_point': 'İshalde anne sütü ASLA kesilmez; bağırsak iyileşmesini sağlayan en '
-                                                  'değerli besindir.',
-                                'text': 'Anne sütünü tamamen kestirip bebeğe sadece kaynatılmış saf su ve un çorbası '
-                                        'içirmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Steroid verilmesi immünsüpresyona ve viral çoğalmanın uzamasına '
-                                                   'yol açtı.',
-                                'teaching_point': 'Basit gastroenteritte sistemik steroidlerin yeri yoktur; '
-                                                  'zararlıdır.',
-                                'text': 'Çinko yerine hastaya yüksek doz sistemik kortikosteroid ampulü içirerek '
-                                        'bağırsak mukozasını kurutmak'}],
-                 'question': 'DSÖ ve UNICEF kılavuzlarına göre bu bebeğin tedavisinde yer alması gereken kanıta dayalı '
-                             'en önemli destek tedavisi hangisidir?',
-                 'stage_title': 'Kanıta Dayalı Destek Tedavi Seçimi'}]},
-  { 'age': '15 Aylık',
-    'case_pearl': 'Rotavirüs ve diğer viral enteropatojenler ince bağırsak villus uçlarını enfekte ederek döker '
-                  '(villus atrofisi). Laktaz enzimi villusların en uç kısmında yer aldığı için hasardan en erken ve en '
-                  'ağır etkilenen enzimdir. Sindirilmemiş laktoz kolona geçer; bakterilerce fermente edilerek hidrojen '
-                  'gazı, metan ve laktik aside dönüşür. Sonuç: Aşırı gaz, distansiyon, kolik kramplar, patlayıcı '
-                  "köpüklü sulu dışkı ve asidik dışkıya bağlı ağır perianal pişik! Dışkı pH'sı <5.5'tir ve dışkıda "
-                  'redüktan madde POZİTİF saptanır. Bu durum kalıcı bir hastalık veya süt alerjisi DEĞİLDİR; sekonder '
-                  'geçici bir enzim yetmezliğidir. Tedavi: 2-4 hafta süreyle laktozsuz mama/süt kullanılmasıdır. '
-                  'Villuslar rejenere olunca laktoz yavaşça tekrar açılır.',
-    'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-    'complaint': 'Rotavirüs ishalinden sonra süt veya yoğurt yediğinde karnında aşırı gurultu, patlayıcı köpüklü sulu '
-                 'ishal ve pişik',
-    'disposition': 'Yeşil Alandan Geçici 2-4 Hafta Laktozsuz Diyet / Süt, Perianal Çinko Oksit Bariyer ve Diyet '
-                   'Yeniden Açma Eğitimi',
-    'final_diagnosis': 'Sekonder (Post-Enfeksiyöz) Laktoz İntoleransı (Rotavirüs Sonrası Geçici Laktaz Enzim '
-                       'Yetmezliği)',
-    'gender': 'Kız',
-    'history': "On beş aylık kız çocuk annesi tarafından getiriliyor: 'On gün önce rotavirüs ishali geçirdi, ateşi ve "
-               'kusması düzeldi. Ancak ne zaman inek sütü veya yoğurt yedirsem yarım saat sonra karnında fırtına '
-               'kopuyor, gurul gurul sesler geliyor ve bezinden fışkırır tarzda köpüklü, asidik, sapsarı sulu kaka '
-               'çıkıyor. Kakası poposunu anında yakıp kıpkırmızı yapıyor. Süt vermediğim zaman kakası düzeliyor gibi '
-               "ama süt içer içmez tekrar patlıyor.'",
-    'id': 'G57',
-    'steps': [ { 'options': [ { 'explanation': 'Asidik laktik asitli dışkının yaptığı perianal haşlanma benzeri '
-                                               'eritem, batında gaz distansiyonu ve hiperaktif sesler karbonhidrat '
-                                               'malabsorpsiyonunun tipik bulgularıdır.',
-                                'is_correct': True,
-                                'new_finding': 'Vital Bulgular: Ateş 36.8°C, KTA 104/dk, SS 22/dk, SpO2 %99, TA 94/58 '
-                                               'mmHg. Genel durumu iyi, neşeli. Batın hafif distandü, timpanik, '
-                                               'palpasyonla yaygın gaz gurultusu alınıyor; defans ve rebound yok. '
-                                               'Perianal bölgede asidik dışkı temas alanında belirgin parlak kırmızı, '
-                                               'yanık benzeri eritematöz pişik mevcut.',
-                                'text': 'Perianal asidik yanık eritemini, batın distansiyonunu, bağırsak seslerini ve '
-                                        'hidrasyon durumunu sistemik olarak muayene etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Asidik tahriş olan cilde yapılan cerrahi müdahale derin doku '
-                                                   'hasarı ve kanamaya yol açtı.',
-                                'teaching_point': 'Perianal eritem laktik asit tahrişidir; cerrahi debridman '
-                                                  'kesinlikle kontrendikedir.',
-                                'text': 'Perianal kızarıklığı cerrahi nekroz sanarak acil serviste steril olmadan '
-                                        'bölgeye geniş cerrahi debridman yapmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Loperamid verilmesi kolondaki laktoz fermantasyon gazını '
-                                                   'hapsederek masif karın ağrısı ve ileus yarattı.',
-                                'teaching_point': 'Karbonhidrat malabsorpsiyonunda motilite azaltıcılar gaz birikimini '
-                                                  've krampı fırlatır; KONTRENDİKEDİR.',
-                                'text': 'İshali hemen durdurmak için hastaya acil serviste yüksek doz motilite '
-                                        'baskılayıcı loperamid enjekte etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gereksiz antimalaryal ilaç çocukta hepatotoksisite ve kusma '
-                                                   'geliştirdi.',
-                                'teaching_point': 'Köpüklü asidik gaita fermente laktoz gazına bağlıdır; parazitoz '
-                                                  'değildir.',
-                                'text': 'Kakanın köpüklü olmasını parazit kabul edip hiçbir muayene yapmadan hastaya '
-                                        'oral klorokin başlamak'}],
-                 'question': 'Viral ishal sonrası sütle tetiklenen köpüklü asidik ishali olan bu çocukta ilk muayene '
-                             'yaklaşımı nasıl olmalıdır?',
-                 'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene'},
-               { 'options': [ { 'explanation': "Dışkı pH'sının <5.5 olması (asidik fermantasyon) ve Clinitest ile "
-                                               'dışkıda redüktan madde pozitifliği (sindirilmemiş laktoz) sekonder '
-                                               'laktoz intoleransı için basit ve kesin tanı koydurur.',
-                                'is_correct': True,
-                                'new_finding': 'Taze Dışkı Analizi: Dışkı pH: 5.0 (belirgin asidik), Dışkıda Redüktan '
-                                               'Madde: POZİTİF (++). Gaita Mikroskopisi: Lökosit yok, eritrosit yok, '
-                                               'parazit veya kist saptanmadı.',
-                                'text': 'Taze dışkıda pH ölçümü ve dışkıda redüktan madde testi yaparak karbonhidrat '
-                                        'malabsorpsiyonunu kanıtlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Çocuk basit bir geçici tablo için invaziv anestezi ve biyopsi '
-                                                   'riskine maruz bırakıldı.',
-                                'teaching_point': 'Sekonder laktoz intoleransında jejunal biyopsi gerekmez; dışkı pH '
-                                                  've redüktan madde yeterlidir.',
-                                'text': 'Kesin tanı için 15 aylık çocuğa genel anestezi altında jejunal biyopsi ve '
-                                        'mukozal enzim ölçümü yapmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Yüksek laktoz yüklemesi masif patlayıcı ishali tetikleyerek çocuğu '
-                                                   'dehidrate etti.',
-                                'teaching_point': 'Akut iyileşme evresindeki süt çocuğuna provokatif oral laktoz '
-                                                  'yüklemesi yapılması zararlıdır.',
-                                'text': 'Tanıyı dışlamak amacıyla hastaya oral yüksek doz laktoz içirip 24 saat acil '
-                                        'serviste bekletmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Genetik test gereksiz maliyet yarattı ve sonuç haftalar sonra '
-                                                   'normal olarak çıktı.',
-                                'teaching_point': 'Post-enfeksiyöz laktaz eksikliği edinseldir; genetik mutasyon '
-                                                  'aranmaz.',
-                                'text': 'Süt alerjisi olduğunu kanıtlamak için derhal kanda genetik kazein mutasyon '
-                                        'analizi istemek'}],
-                 'question': 'Sekonder laktoz intoleransı şüphesini doğrulamak için en uygun ve pratik tanısal test '
-                             'hangisidir?',
-                 'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
-               { 'options': [ { 'explanation': 'Viral enterit sonrası villus hasarına bağlı gelişen, sütle tetiklenen '
-                                               'asidik köpüklü ishal ve pozitif redüktan madde sekonder laktoz '
-                                               'intoleransıdır.',
-                                'is_correct': True,
-                                'new_finding': 'Kesin Tanı: Rotavirüs Enfeksiyonuna Sekonder Geçici Laktoz '
-                                               'İntoleransı.',
-                                'text': 'Sekonder post-enfeksiyöz laktoz intoleransı'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Primer konjenital eksiklik doğumun ilk gününden itibaren hayatı '
-                                                   'tehdit eden ishal yapar; 15 aylıkken enfeksiyon sonrası başlamaz.',
-                                'teaching_point': 'Primer konjenital laktaz eksikliği doğumda başlar ve çok nadirdir; '
-                                                  'enfeksiyon sonrası gelişen sekonderdir.',
-                                'text': 'Primer konjenital laktaz eksikliği'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Süt proteini alerjisi immünolojik bir reaksiyondur (mukus/kan); '
-                                                   'laktaz enzim eksikliğine bağlı redüktan madde pozitifliği yapmaz.',
-                                'teaching_point': 'Laktoz intoleransı enzim eksikliğidir; inek sütü alerjisi ise '
-                                                  'protein immün reaksiyonudur, ikisi farklıdır.',
-                                'text': 'İnek sütü proteini alerjisi'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Çölyak glutenle tetiklenir; izole süt alımından yarım saat sonra '
-                                                   'patlayıcı asidik köpüklü dışkılama yapmaz.',
-                                'teaching_point': 'Çölyak kronik gluten hasarıdır; post-viral süt intoleransıyla '
-                                                  'karışmaz.',
-                                'text': 'Çölyak otoimmün enteropatisi hastalığı'}],
-                 'question': "Gastroenterit sonrası süt alımıyla artan köpüklü ishal, asidik dışkı pH'sı ve pozitif "
-                             'redüktan madde ile tanınız nedir?',
-                 'stage_title': 'Klinik Tanı'},
-               { 'options': [ { 'explanation': 'Tedavi geçicidir: İnce bağırsak villuslarının ve laktaz enziminin '
-                                               'kendini yenilemesi için 2-4 hafta laktozsuz süt/mama verilir. Asidik '
-                                               'pişik için bariyer çinko oksit krem kullanılır. 3-4 hafta sonra normal '
-                                               'süt ürünleri yavaşça diyete yeniden eklenir; kalıcı diyet kısıtlaması '
-                                               'yapılmaz.',
-                                'is_correct': True,
-                                'new_finding': 'Laktozsuz süte geçildi, çinko oksitli krem başlandı. 48 saat içinde '
-                                               'patlayıcı ishal tamamen durdu, dışkı şekillendi ve pişik geriledi. 3 '
-                                               'hafta sonra normal yoğurt ve süt sorunsuz yeniden başlandı.',
-                                'text': 'İki ila dört hafta laktozsuz süte geçmek, çinko oksit uygulamak ve sonra '
-                                        'laktozu yavaşça açmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gereksiz ömür boyu kısıtlama çocukta kalsiyum eksikliği ve kemik '
-                                                   'mineralizasyon bozukluğu yarattı.',
-                                'teaching_point': 'Sekonder laktoz intoleransı geçicidir (2-4 hafta); ömür boyu süt '
-                                                  'kısıtlaması yapılmaz.',
-                                'text': 'Çocuğa ömür boyu tüm süt ve süt ürünlerini tamamen yasaklayarak katı vegan '
-                                        'beslenme başlatmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gereksiz antibiyotikler bağırsak villus hasarını uzatarak laktaz '
-                                                   'enziminin toparlanmasını geciktirdi.',
-                                'teaching_point': 'Enzim yetmezliğinde antibiyotiklerin yeri yoktur; mukozayı daha da '
-                                                  'tahriş eder.',
-                                'text': 'İshali hemen durdurmak amacıyla çocuğa acil antibiyotik ve antifungal '
-                                        'süspansiyon kombinasyonu başlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Aşırı laktoz yüklemesi masif asidik ishali ve derin cilt nekrozunu '
-                                                   'tetikledi.',
-                                'teaching_point': 'Akut evrede laktoz kısıtlanmazsa mukozal iyileşme gecikir ve ağır '
-                                                  'pişik devam eder.',
-                                'text': 'Diyete hiç dokunmayıp bağırsakların alışması için günde iki litre yağlı inek '
-                                        'sütü içirmeye zorlamak'}],
-                 'question': 'Sekonder laktoz intoleransı saptanan bu çocuğun beslenme tedavisi ve aile rehberliği '
-                             'nasıl olmalıdır?',
-                 'stage_title': 'Diyet Yönetimi ve İyileşme Süreci Eğitimi'}]},
-  { 'age': '7 Yaşında',
-    'case_pearl': 'Hareket Hastalığı (Kinetozis / Taşıt Tutması), vestibüler sistem (iç kulak), görsel uyaranlar '
-                  '(gözler) ve proprioseptif duyular (kas-eklem alıcıları) arasındaki duyu uyuşmazlığından (sensory '
-                  'mismatch / sensory conflict) kaynaklanan fizyolojik bir tablodur. Özellikle 2-12 yaş grubundaki '
-                  'çocuklarda çok sıktır. Araç hareket halindeyken iç kulak hareketi algılarken, çocuğun kitap okuması '
-                  'veya ekrana bakması nedeniyle gözler ortamı sabit algılar. Bu çatışma otonomik semptomları (esneme, '
-                  'solukluk, soğuk terleme, mide kazınması) ve ardından kusmayı tetikler. Nörolojik muayene tamamen '
-                  'doğaldır. Tedavide davranışsal önlemler esastır: Ön koltuğa oturtmak, ufuk çizgisine baktırmak, '
-                  'araç içinde kitap/ekran yasağı, hafif karbonhidratlı atıştırmalık, temiz hava girişi. Şiddetli '
-                  'olgularda yolculuktan 30-60 dakika önce 1. kuşak antihistaminik (dimenhidrinat vb.) profilaktik '
-                  'verilebilir.',
-    'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-    'complaint': 'Uzun araba yolculuklarında arka koltukta telefonla oynarken başlayan şiddetli bulantı, kusma ve '
-                 'soğuk terleme',
-    'disposition': 'Yeşil Alandan Nörolojik Muayenenin Doğrulanması, Davranışsal Önlemler ve Yolculuk Profilaksisi '
-                   'Eğitimi ile Taburculuk',
-    'final_diagnosis': 'Hareket Hastalığı (Taşıt Tutması / Motion Sickness / Kinetozis)',
-    'gender': 'Kız',
-    'history': "Yedi yaşındaki kız çocuk ailesi tarafından Yeşil Alana getiriliyor: 'Ailecek arabayla seyahat ederken "
-               'yolculuğun ilk saatinde çocukta esneme, solukluk, soğuk soğuk terleme ve ardından fışkırır tarzda '
-               'kusma başladı. Arka koltukta oturup elinde telefonla çizgi film izliyordu. Arabayı kenara çekip açık '
-               'havaya çıkarınca 15-20 dakikada tamamen kendine geldi, su içti, güldü. Ancak arabaya binip virajlı '
-               'yollara girince aynı bulantı ve kusma tekrar etti. Evdeyken hiçbir şikayeti yok. Beyninde tümör mü var '
-               "diye çok korktuk.'",
-    'id': 'G58',
-    'steps': [ { 'options': [ { 'explanation': 'KİBAS (tümör), serebellar patolojiler ve iç kulak vestibülopatilerini '
-                                               'dışlamak için tam nörolojik ve serebellar değerlendirme yapılmalıdır.',
-                                'is_correct': True,
-                                'new_finding': 'Vital Bulgular: Ateş 36.6°C, KTA 86/dk, SS 18/dk, SpO2 %100, TA 102/64 '
-                                               'mmHg. Genel durumu çok iyi, arabadan inince tamamen toparlamış, '
-                                               'neşeli. Nörolojik Muayene: Kraniyal sinirler intakt, nistagmus yok, '
-                                               'parmak-burun testi doğal, disdiadokokinezi yok, Romberg negatif, '
-                                               'tandem yürüyüşü kusursuz. Kulak zarları doğal. Batın rahat, hassasiyet '
-                                               'veya defans yok.',
-                                'text': 'Nörolojik muayeneyi, serebellar testleri, dengesini, yürüyüşünü ve batın '
-                                        'muayenesini sistemik olarak incelemek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Muayenesiz cerrahiye yönlendirilen hastada ailede haksız derin '
-                                                   'korku ve panik yaratıldı.',
-                                'teaching_point': 'Sadece araçta olan ve araç durunca düzelen kusma intrakraniyal '
-                                                  'kitle değildir; kinetozistir.',
-                                'text': 'Kusan çocuğu derhal beyin tümörü kabul ederek fizik muayene yapmadan acil '
-                                        'ameliyathaneye sevk etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Antipsikotik verilmesi çocukta akut distoni ve derin uyku hali '
-                                                   'oluşturdu.',
-                                'teaching_point': 'Taşıt tutmasında nöroleptikler kullanılmaz; tablo araçtan inince '
-                                                  'zaten spontan düzelir.',
-                                'text': 'Kusmayı durdurmak amacıyla 7 yaşındaki çocuğa acil serviste yüksek doz '
-                                        'antipsikotik ilaç enjeksiyonu yapmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gereksiz antibiyotik çocuğun midesini tahriş ederek bulantıyı daha '
-                                                   'da artırdı.',
-                                'teaching_point': 'Araç hareketine bağlı kusma enfeksiyon veya gıda zehirlenmesi '
-                                                  'değildir; antibiyotik verilmez.',
-                                'text': 'Kusmanın gıda zehirlenmesi olduğunu varsayıp fizik muayene yapmadan hastaya '
-                                        'oral antibiyotik başlamak'}],
-                 'question': 'Araç yolculuklarında tekrarlayan kusması olan bu çocukta ilk fizik muayene yaklaşımı '
-                             'nasıl olmalıdır?',
-                 'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene'},
-               { 'options': [ { 'explanation': 'Tipik kinetozis anamnezi olan ve nörolojik muayenesi kusursuz çocukta '
-                                               'kraniyal BT, MRG veya laboratuvar tetkiklerinin yeri yoktur; klinik '
-                                               'tanı yeterlidir.',
-                                'is_correct': True,
-                                'new_finding': 'Gereksiz kraniyal radyasyon ve invaziv tetkiklerden kaçınıldı. Aileye '
-                                               'durumun fizyolojisi açıklandı.',
-                                'text': 'Nörolojik odak bulgusu olmayan ve araç durunca tamamen düzelen bu hastada '
-                                        'hiçbir radyolojik tetkik istememek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'MRG tamamen normal geldi ancak çocuk gereksiz kontrast madde ve '
-                                                   'hastane anksiyetesine maruz kaldı.',
-                                'teaching_point': 'Tipik hareket hastalığında intrakraniyal görüntüleme endike '
-                                                  'değildir; sensory mismatch tablosudur.',
-                                'text': 'Kusmayı aydınlatmak için hastaya kontrastlı beyin ve tüm omurilik manyetik '
-                                        'rezonans görüntülemesi planlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Normal kulak zarına yapılan parasentez çocukta travmatik '
-                                                   'perforasyon ve işitme kaybı yarattı.',
-                                'teaching_point': 'Kinetozis iç kulak enfeksiyonu değildir; invaziv kulak girişimleri '
-                                                  'kontrendikedir.',
-                                'text': 'İç kulakta enfeksiyon aramak amacıyla genel anestezi altında acil tanısal '
-                                        'orta kulak parasentezi yapmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Normal tetkikler için hasta saatlerce acil serviste tutuldu; '
-                                                   'yolculuk planı aksadı.',
-                                'teaching_point': 'Araç içi hareket ilişkili kusmada toksikolojik tarama endikasyonu '
-                                                  'yoktur.',
-                                'text': 'Kanda zehirlenme taraması yapmak amacıyla ağır metal paneli ve tam biyokimya '
-                                        'gönderip yatış vermek'}],
-                 'question': 'Nörolojik muayenesi tamamen doğal olan ve araç durunca düzelen bu çocukta tetkik planı '
-                             'ne olmalıdır?',
-                 'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
-               { 'options': [ { 'explanation': 'Araç hareketi ve ekran bakışıyla tetiklenen, dinlenmeyle geçen '
-                                               'otonomik semptomlar ve kusma Kinetozis (Hareket Hastalığı) tanısıdır.',
-                                'is_correct': True,
-                                'new_finding': 'Kesin Tanı: Hareket Hastalığı (Taşıt Tutması / Kinetozis / Motion '
-                                               'Sickness).',
-                                'text': 'Hareket hastalığı kinetozis tablosu'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Posterior fossa kitlesinde ataksi, sabah kusmaları, nistagmus ve '
-                                                   'papilödem olur; araç durunca semptomlar sıfırlanmaz.',
-                                'teaching_point': 'Beyin tümörü ilerleyicidir ve fokal bulgu verir; kinetozis ise araç '
-                                                  'dışında tamamen asemptomatiktir.',
-                                'text': 'Posterior fossa tümörü kütlesi'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Vertigoda baş dönmesi nöbetleri olur ve nistagmus eşlik eder; araç '
-                                                   'içi ekran bakışıyla sınırlı kusma değildir.',
-                                'teaching_point': 'Vertigo istirahatte de nöbet yapar; kinetozis ise pasif hareket ve '
-                                                  'duyusal çelişkiyle tetiklenir.',
-                                'text': 'Akut benign paroksizmal vertigo'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Siklik kusmada saatlerce/günlerce süren, araçtan bağımsız '
-                                                   'periyodik kusma fırtınaları olur.',
-                                'teaching_point': 'Siklik kusma dehidrate eden uzamış ataklardır; kinetozis gibi araç '
-                                                  'durunca 15 dakikada düzelmez.',
-                                'text': 'Siklik kusma sendromu atağı'}],
-                 'question': 'Sadece araba hareket halindeyken olan, açık havada hızla düzelen kusma ve normal '
-                             'nöroloji ile tanınız nedir?',
-                 'stage_title': 'Klinik Tanı'},
-               { 'options': [ { 'explanation': 'Duyusal çelişkiyi önlemek için araçta telefon/kitap yasaklanır; çocuk '
-                                               'ön koltuğa oturtulup uzak ufka bakması sağlanır. Araç iyi '
-                                               'havalandırılır, yolculuk öncesi hafif kraker yedirilir. Gerekirse '
-                                               'seyahatten 30-60 dk önce profilaktik antihistaminik verilir.',
-                                'is_correct': True,
-                                'new_finding': 'Aileye davranışsal önlemler anlatıldı. Dönüş yolculuğunda çocuk ön '
-                                               'koltukta ufka bakarak ve müzik dinleyerek seyahat etti; hiç kusmadı ve '
-                                               'yolculuğu rahat tamamladı.',
-                                'text': 'Yolculukta ekran ve kitap okumayı yasaklamak, ufuk çizgisine baktırmak, '
-                                        'havalandırma sağlamak ve gerekirse antihistaminik vermek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Ulaşım yasağı çocuğun ve ailenin sosyal hayatını felç etti.',
-                                'teaching_point': 'Kinetozis basit önlemlerle yönetilir; seyahat kısıtlaması '
-                                                  'kesinlikle gerekmez.',
-                                'text': 'Çocuğun bir daha ömür boyu hiçbir arabaya, otobüse veya uçağa binmesini '
-                                        'kesinlikle yasaklamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Ağır yemek mide boşalmasını geciktirerek ilk tümsekte masif '
-                                                   'fışkırır kusmaya yol açtı.',
-                                'teaching_point': 'Yolculuk öncesi ağır yağlı yemekler kusmayı tetikler; hafif '
-                                                  'karbonhidratlı atıştırmalıklar önerilir.',
-                                'text': 'Yolculuk öncesinde çocuğun midesini tamamen doldurmak için bol yağlı ağır '
-                                        'yemekler yedirmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Gözleri bağlanan çocuk vestibüler uyaranı dengeleyemediği için '
-                                                   'daha şiddetli baş dönmesine girdi.',
-                                'teaching_point': 'Gözlerin ufuk çizgisini görmesi duyusal uyumu sağlar; gözün '
-                                                  'bağlanması çelişkiyi çözmez.',
-                                'text': 'Kusmayı önlemek amacıyla çocuğun gözlerini yolculuk boyunca sıkı bir bezle '
-                                        'bağlayıp uyutmaya zorlamak'}],
-                 'question': 'Kinetozis tanısı konulan bu çocuğun ailesine verilecek en uygun davranışsal ve medikal '
-                             'profilaksi eğitimi hangisidir?',
-                 'stage_title': 'Profilaksi ve Gelecek Yolculuklar İçin Öneriler'}]},
-  { 'age': '6 Yaşında',
-    'case_pearl': 'Enterobius vermicularis (kıl kurdu / pinworm), dünya genelinde çocuklarda en sık görülen nematod '
-                  'enfeksiyonudur. Dişi parazit geceleri rektumdan çıkarak perianal deriye binlerce mikroskobik '
-                  'yumurta bırakır; bu durum gece şiddetlenen yoğun perianal kaşıntıya (pruritus ani), uyku '
-                  'bozukluklarına ve diş gıcırdatmaya (bruksizm) yol açar. Enfeksiyon fekal-oral yolla (tırnak altı '
-                  'yumurtaların ağza götürülmesi, yatak çarşafları) son derece kolay bulaşır. Rutin gaita '
-                  'mikroskopisinde yumurtalar NADİREN görülür (dışkıya değil perianal deriye bırakılır). Tanıda altın '
-                  'standart sabah uyanınca dışkılama ve banyo öncesi yapılan SELOFAN BANT TESTİDİR (Sellotape testi). '
-                  'EN KRİTİK TEDAVİ KURALI: 1) Semptomu olsun olmasın TÜM AİLE BİREYLERİ AYNI GÜN TEDAVİ EDİLMELİDİR! '
-                  '2) İlaçlar (pirantel pamoat veya mebendazol) sadece erişkin kurtları öldürür, yumurtaları öldürmez; '
-                  'bu nedenle yeni çıkan larvaları yok etmek için İKİ HAFTA SONRA MUTLAKA İKİNCİ DOZ TEKRARLANMALIDIR! '
-                  'Çarşaflar sıcakta yıkanmalıdır.',
-    'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-    'complaint': 'Özellikle geceleri yatağa girdikten sonra başlayan şiddetli makat kaşıntısı, huzursuz uyku ve diş '
-                 'gıcırdatma',
-    'disposition': 'Yeşil Alandan Selofan Bant Yöntemi Eğitimi, Tek Doz Pirantel Pamoat ile TÜM AİLE TEDAVİSİ ve 2 '
-                   'Hafta Sonra Tekrar',
-    'final_diagnosis': 'Enterobiyazis (Kıl Kurdu / Enterobius vermicularis Enfeksiyonu)',
-    'gender': 'Erkek',
-    'history': "Altı yaşındaki erkek çocuk annesi tarafından getiriliyor: 'Yaklaşık üç haftadır özellikle geceleri "
-               'uyuduktan 1-2 saat sonra poposunu kaşıyarak ağlayarak uyanıyor. Gündüzleri kaşıntısı çok daha az. '
-               'Annesi dün gece fenerle baktığında makatının etrafında 1 cm boyunda beyaz ince pamuk ipliği gibi '
-               'kıpırdayan bir kurtçuk gördüğünü söylüyor. Çocuk geceleri dişlerini gıcırdatıyor, iştahı azaldı. Evde '
-               "4 yaşındaki kardeşinde de benzer kaşıntı başlamış.'",
-    'id': 'G59',
-    'steps': [ { 'options': [ { 'explanation': 'Perianal kaşıntı izleri (ekskoriasyon), sekonder bakteriyel enfeksiyon '
-                                               've tırnak aralarındaki hijyen durumu paraziter bulaşı değerlendirmede '
-                                               'esastır.',
-                                'is_correct': True,
-                                'new_finding': 'Vital Bulgular: Ateş 36.7°C, KTA 88/dk, SS 18/dk, SpO2 %100, TA 98/62 '
-                                               'mmHg. Genel durumu iyi. Batın rahat, organomegali yok. Perianal '
-                                               'muayenede anal girim çevresinde tırnakla kaşımaya bağlı lineer '
-                                               'ekskoriasyonlar ve hafif eritem izlendi; aktif kanayan anal fissür '
-                                               'veya hemoroid saptanmadı.',
-                                'text': 'Perianal bölgeyi ekskoriasyon, eritem ve tırnak altlarını hijyen yönünden '
-                                        'dikkatle muayene etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Paraziter kaşıntısı olan çocuğa gereksiz cerrahi hazırlığı '
-                                                   'yapılması derin endişe yarattı.',
-                                'teaching_point': 'Gece kaşıntısı paraziterdir; cerrahi anal stenoz veya anatomik '
-                                                  'kusur değildir.',
-                                'text': 'Kaşıntıyı cerrahi anal stenoz kabul edip fizik muayene yapmadan acil '
-                                        'anoplasti operasyonu planlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Alkol ve çamaşır suyu anal mukozada şiddetli kimyasal yanık ve '
-                                                   'dayanılmaz acı oluşturdu.',
-                                'teaching_point': 'Perianal mukozaya kostik veya tahriş edici maddeler sürülmesi '
-                                                  'kimyasal yanık yapar; KONTRENDİKEDİR.',
-                                'text': 'Kaşıntıyı durdurmak amacıyla perianal bölgeye acil serviste saf alkol ve '
-                                        'konsantre çamaşır suyu sürmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Tedavi edilmeyen enfeksiyon tüm aileye yayıldı ve çocukta sekonder '
-                                                   'impetigo gelişti.',
-                                'teaching_point': "Gözle görülen beyaz kurtçuk aksi kanıtlanana kadar Enterobius'tur; "
-                                                  'ailece tedavi şarttır.',
-                                'text': 'Ailenin gördüğü kurdu önemsemeyip hiçbir muayene yapmadan çocuğu Yeşil '
-                                        'Alandan derhal eve göndermek'}],
-                 'question': 'Gece perianal kaşıntısı olan bu 6 yaşındaki çocukta ilk muayene yaklaşımı nasıl '
-                             'olmalıdır?',
-                 'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene'},
-               { 'options': [ { 'explanation': 'Enterobius yumurtaları perianal deriye bırakıldığı için dışkı '
-                                               'incelemesinde nadiren çıkar (%5-10). Sabah kalkınca dışkılamadan önce '
-                                               "yapılan selofan bant testi (lam üzerine yapıştırılarak) %90'ın "
-                                               'üzerinde tanı koydurur.',
-                                'is_correct': True,
-                                'new_finding': 'Selofan Bant Testi: Mikroskopide karakteristik asimetrik, bir yüzü düz '
-                                               'diğer yüzü bombeli (D harfi şeklinde) bol miktarda Enterobius '
-                                               'vermicularis yumurtası izlendi.',
-                                'text': 'Sabah yataktan kalkınca yıkanmadan önce perianal bölgeye şeffaf selofan bant '
-                                        'testi uygulayarak yumurta aramak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Basit bant testiyle konan tanı için çocuk gereksiz yere invaziv '
-                                                   'kolonoskopiye alındı.',
-                                'teaching_point': 'Kıl kurdu tanısında kolonoskopinin yeri yoktur; selofan bant testi '
-                                                  'altın standarttır.',
-                                'text': 'Tanıyı kesinleştirmek amacıyla hastaya genel anestezi altında acil total '
-                                        'kolonoskopi ve ileoskopi yapmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Genetik test sonuç vermedi; invaziv kan alımı çocuğu gereksiz yere '
-                                                   'hırpaladı.',
-                                'teaching_point': 'Kıl kurdunun kanda serolojisi veya genetik testi yoktur; lüminal '
-                                                  'bir parazittir.',
-                                'text': 'Kanda parazit antikorlarını aramak için hastadan elli mililitre kan alarak '
-                                        'genetik sekanslama istemek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'İdrar kültürü steril geldi; paraziter enfeksiyon tanısı ve '
-                                                   'tedavisi atlandı.',
-                                'teaching_point': 'Perianal kaşıntıda idrar kültürü tanısal değildir; selofan bant '
-                                                  'testi yapılmalıdır.',
-                                'text': 'Sadece idrar kültürü alıp perianal bölgeyi hiç incelemeden hastayı '
-                                        'antibiyotikle taburcu etmek'}],
-                 'question': 'Kıl kurdu tanısını mikroskopik olarak doğrulamak için en uygun ve altın standart yöntem '
-                             'hangisidir?',
-                 'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
-               { 'options': [ { 'explanation': 'Gece perianal kaşıntı, beyaz ipliksi kurtçuk ve selofan bantta tipik '
-                                               'yumurtalar Enterobius vermicularis (kıl kurdu) tanısıdır.',
-                                'is_correct': True,
-                                'new_finding': 'Kesin Tanı: Enterobius vermicularis Enfeksiyonu (Enterobiyazis / Kıl '
-                                               'Kurdu).',
-                                'text': 'Enterobiyazis kıl kurdu enfeksiyonu'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Streptokok dermatitinde makat çevresinde parlak kırmızı, sınırları '
-                                                   'net selülit benzeri eritem olur; hareketli kurtçuk olmaz.',
-                                'teaching_point': 'Streptokok dermatiti bakteriyeldir ve parlak eritem yapar; parazit '
-                                                  'yumurtası ve kurt içermez.',
-                                'text': 'Perianal streptokok dermatiti enfeksiyonu'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Anal fissürde dışkılama sırasında cam keser gibi şiddetli ağrı ve '
-                                                   'taze kanama olur; gece izole kaşıntı yapmaz.',
-                                'teaching_point': 'Fissür ağrılı dışkılama ve kanama yapar; kıl kurdu ise ağrısız gece '
-                                                  'kaşıntısı yapar.',
-                                'text': 'Akut anal fissür yırtığı'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Uyuzda parmak araları, el bilekleri ve aksillada tüneller ve '
-                                                   'kaşıntılı papüller olur; izole perianal kurt görülmez.',
-                                'teaching_point': 'Uyuz tüm vücudu tutar; perianal ipliksi kurtçuklar kıl kurduna '
-                                                  'özgüdür.',
-                                'text': 'Skabiyez uyuz parazit enfeksiyonu'}],
-                 'question': 'Gece artan anal kaşıntı, gözle görülen beyaz ipliksi kurt ve selofan bantta asimetrik '
-                             'yumurtalar ile tanınız nedir?',
-                 'stage_title': 'Klinik Tanı'},
-               { 'options': [ { 'explanation': 'Antihelmintikler (pirantel pamoat 11 mg/kg tek doz veya tek doz '
-                                               'mebendazol 100 mg) sadece erişkin kurtları öldürür, yumurtalara etki '
-                                               'etmez. Bu nedenle 2 hafta sonra MUTLAKA 2. DOZ verilmelidir. '
-                                               'Asemptomatik taşıyıcılar nedeniyle evdeki herkes aynı anda tedavi '
-                                               'edilmeli, çarşaflar sıcakta yıkanmalı ve tırnaklar kısa kesilmelidir.',
-                                'is_correct': True,
-                                'new_finding': 'Tüm aile bireylerine tek doz pirantel pamoat verildi. İki hafta sonra '
-                                               "ikinci doz tekrarlandı. Çarşaf ve pijamalar 60°C'de yıkandı. Kaşıntı "
-                                               'tamamen bitti, tüm ailede reenfeksiyon önlendi.',
-                                'text': 'Tüm aile bireylerini aynı anda tedavi etmek ve iki hafta sonra ikinci dozu '
-                                        'mutlaka tekrarlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Asemptomatik ebeveynlerden çocuğa 3 hafta sonra parazit yeniden '
-                                                   'bulaştı ve kaşıntı tekrarladı.',
-                                'teaching_point': 'Kıl kurdunda tek kişiyi tedavi etmek başarısızlıktır; ev içi bulaş '
-                                                  'nedeniyle tüm aile tedavi edilmelidir.',
-                                'text': 'Sadece kaşınan çocuğu tedavi edip diğer aile bireylerine hiçbir ilaç vermeden '
-                                        'taburcu etmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Kalan yumurtalardan 2 hafta sonra yeni kurtçuklar çıktı ve '
-                                                   'enfeksiyon başa döndü.',
-                                'teaching_point': 'İlaçlar yumurtaları öldürmez; 2 hafta sonraki 2. doz döngüyü kırmak '
-                                                  'için zorunludur.',
-                                'text': 'Tek bir doz ilaç verip iki hafta sonraki ikinci dozu kesinlikle uygulamamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Antibiyotik parazite etki etmedi ve çocukta ilaca bağlı '
-                                                   'antibiyotik ishali başladı.',
-                                'teaching_point': 'Nematodlar bakteriyel antibiyotiklerle ölmez; spesifik '
-                                                  'antihelmintik (pirantel/mebendazol) gerekir.',
-                                'text': 'Paraziti öldürmek için hastaya bir ay boyunca aralıksız oral sefalosporin '
-                                        'antibiyotik tedavisi vermek'}],
-                 'question': 'Kıl kurdu tanısı konulan bu hastanın ve ailesinin tedavisinde uygulanacak en kritik '
-                             'kanıta dayalı kural hangisidir?',
-                 'stage_title': 'Tedavi Protokolü ve Ailece Tedavi Kuralı'}]},
-  { 'age': '6 Yaşında',
-    'case_pearl': 'A Grubu Beta Hemolitik Streptokok (AGBHS / Streptococcus pyogenes) farenjiti, okul çağı '
-                  'çocuklarında tipik olarak ani başlangıçlı yüksek ateş, boğaz ağrısı, eksüdatif tonsillit, hassas '
-                  'anterior servikal LAP ve ÖKSÜRÜK YOKLUĞU (Centor / McIsaac kriterleri) ile seyreder. Küçük '
-                  'çocuklarda streptokok enfeksiyonları sistemik lenfoid yanıt ve mezenterik lenfadenit uyarısıyla '
-                  'sıklıkla BULANTI, KUSMA VE GÖBEK ÇEVRESİ KARIN AĞRISINA yol açar! Bu durum sıklıkla yanlışlıkla '
-                  'akut apandisit veya gastroenterit sanılarak boğaz muayenesinin atlanmasına neden olur. Hızlı '
-                  'Antijen Testi (RAT) dakikalar içinde tanı koydurur. Tedavinin temel amacı semptomları kısaltmak, '
-                  'süpüratif komplikasyonları (peritonsiller apse) ve en önemlisi AKUT ROMATİZMAL ATEŞİ (ARA) '
-                  'ÖNLEMEKTİR! İlk tercih oral amoksisilin (50 mg/kg/gün tek doz veya 2 dozda, 10 gün) veya tek doz '
-                  "intramüsküler Benzatin Penisilin G'dir. Tedavinin 24. saatinden sonra bulaşıcılık biter.",
-    'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-    'complaint': 'Yüksek ateş, boğaz ağrısı, boyunda şişlik ve eşlik eden göbek çevresi karın ağrısı ile kusma',
-    'disposition': 'Yeşil Alandan Hızlı Antijen Testi Doğrulaması, Oral Amoksisilin Tedavisi ve ARA Profilaksisi ile '
-                   'Taburculuk',
-    'final_diagnosis': 'Akut Streptokokal Tonsillofarenjit (AGBHS - Mezenterik Lenfoid İrritasyona Bağlı Karın Ağrısı)',
-    'gender': 'Kız',
-    'history': "Altı yaşındaki kız çocuk ailesi tarafından Yeşil Alana getiriliyor: 'Dün aniden 39.2°C ateş ve "
-               'şiddetli boğaz ağrısı başladı, yutkunamıyor. Bugün sabah iki kez kustu ve karnının göbeğinin etrafında '
-               'kramp şeklinde ağrı olduğunu söylüyor. Öksürüğü, burun akıntısı veya hapşırması hiç yok. Boynunda '
-               'dokunmakla çok acıyan şişlikler fark ettik. Karnı ağrıdığı ve kustuğu için apandisit olmasından '
-               "endişelendik.'",
-    'id': 'G60',
-    'steps': [ { 'options': [ { 'explanation': 'Karın ağrılı çocukta tonsillitin sistemik mezenterik lenfoid yanıtı '
-                                               'dışlanmalı, Centor kriterleri (eksüda, servikal LAP, öksürük yokluğu) '
-                                               'aranmalı ve batında cerrahi akut batın ekarte edilmelidir.',
-                                'is_correct': True,
-                                'new_finding': 'Vital Bulgular: Ateş 39.2°C, KTA 128/dk, SS 22/dk, SpO2 %99, TA 100/62 '
-                                               'mmHg. Burun akıntısı veya konjonktivit yok, öksürük yok. Orofarenks '
-                                               'Muayenesi: Tonsiller bilateral hipertrofik, hiperemik ve üzerinde '
-                                               'yaygın beyaz-krem renkli pürülan eksüdalar mevcut; uvula ödemli, '
-                                               'peteşiler izlendi. Bilateral anterior servikal zincirde 2x1.5 cm '
-                                               'boyutlarında aşırı hassas LAP palpe edildi. Batın Muayenesi: Yumuşak, '
-                                               'periumbilikal hafif hassasiyet var; defans ve rebound yok.',
-                                'text': 'Orofarenksi, tonsilleri, servikal lenf nodlarını muayene edip batında '
-                                        'peritonit olmadığını sistemik muayeneyle doğrulamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Ağır tonsilliti olan çocuk gereksiz apandisit cerrahisine alındı; '
-                                                   'postoperatif yüksek ateş devam etti.',
-                                'teaching_point': 'Karın ağrılı çocuklarda orofarenks muayenesi asla atlanmamalıdır; '
-                                                  'streptokok karın ağrısı yapabilir.',
-                                'text': 'Karın ağrısı olduğu için boğaz muayenesini atlayıp hastayı doğrudan apandisit '
-                                        'şüphesiyle ameliyata almak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Buzlu su boğaz ağrısını şiddetlendirerek çocuğun ağlamasına ve '
-                                                   'kusmasına yol açtı.',
-                                'teaching_point': 'Boğaz enfeksiyonu olan kusan çocukta zorlayıcı uygunsuz içecekler '
-                                                  'aspirasyon riski doğurur.',
-                                'text': 'Kusan çocuğa fizik muayene yapmadan acil serviste zorla bir litre buzlu su '
-                                        'içirmeye çalışmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Bakteriyel tonsillit tedavi edilmediği için çocukta peritonsiller '
-                                                   'apse ve yüksek ateş gelişti.',
-                                'teaching_point': 'Okul çağında eksüdatif tonsillit aksi kanıtlanana kadar AGBHS '
-                                                  'bakteriyel farenjitidir; kandida değildir.',
-                                'text': 'Tonsillerdeki eksüdayı pamukçuk sanarak hiçbir tetkik yapmadan hastaya oral '
-                                        'antifungal damla vermek'}],
-                 'question': 'Ateş, boğaz ağrısı, karın ağrısı ve kusması olan bu çocukta fizik muayene yaklaşımı '
-                             'nasıl olmalıdır?',
-                 'stage_title': 'Orofarenks ve Batın Muayenesi Entegrasyonu'},
-               { 'options': [ { 'explanation': "Hızlı Antijen Testi (RAT) dakikalar içinde yüksek özgüllükle AGBHS'yi "
-                                               'doğrular. Böylece gereksiz batın tetkiklerinden (USG, BT) kaçınılarak '
-                                               'hedefe yönelik antibiyotik başlanır.',
-                                'is_correct': True,
-                                'new_finding': 'Boğaz Sürüntüsü Hızlı Antijen Testi (Strep-A RAT): POZİTİF (+). '
-                                               'Laboratuvar: Lökosit 15.200/mm³ (%80 nötrofil), CRP 38 mg/L. Gereksiz '
-                                               'batın ultrasonografisi veya tomografisinden kaçınıldı.',
-                                'text': 'Tonsillerden sürüntü alarak A grubu streptokok hızlı antijen testi ve '
-                                        'gerekirse boğaz kültürü istemek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Tomografide sadece reaktif lenfoid doku izlendi; çocuk gereksiz '
-                                                   'iyonizan radyasyon aldı.',
-                                'teaching_point': 'Basit bir boğaz testiyle aydınlatılacak tablo için batın '
-                                                  'tomografisi çekilmesi aşırı ve zararlı tetkiktir.',
-                                'text': 'Boğaz sürüntüsü almadan karın ağrısını aydınlatmak için acil kontrastlı tüm '
-                                        'batın tomografisi çekmek'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Tonsilliti olan hastaya yapılan aşırı invaziv girişimler çocukta '
-                                                   'derin travma ve enfeksiyon riski yarattı.',
-                                'teaching_point': 'Fokal tonsillit bulguları olan çocukta menenjit veya lösemi '
-                                                  'araştırması için invaziv ponksiyon endike değildir.',
-                                'text': 'Tanıyı doğrulamak için hastadan derhal kemik iliği aspirasyonu ve lomber '
-                                        'ponksiyon planlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Tedavi edilmeyen streptokok enfeksiyonu 2 hafta sonra akut '
-                                                   'romatizmal ateş ve kardite yol açtı.',
-                                'teaching_point': 'AGBHS farenjiti ARA profilaksisi için ilk 9 gün içinde uygun '
-                                                  'antibiyotikle tedavi edilmelidir.',
-                                'text': 'Hiçbir tetkik yapmadan hastayı 1 hafta sonraki kulak burun boğaz '
-                                        'polikliniğine yönlendirip göndermek'}],
-                 'question': 'Eksüdatif tonsilliti ve karın ağrısı olan bu çocukta tanıyı doğrulamak için en uygun '
-                             'tetkik hangisidir?',
-                 'stage_title': 'Laboratuvar ve Tetkik Stratejisi'},
-               { 'options': [ { 'explanation': 'Eksüdatif tonsillit, servikal lenfadenit, öksürük yokluğu ve pozitif '
-                                               'hızlı antijen testi AGBHS farenjiti tanısını kesinleştirir.',
-                                'is_correct': True,
-                                'new_finding': 'Kesin Tanı: Akut Streptokokal Tonsillofarenjit (Mezenterik Reaktif '
-                                               'Karın Ağrısı ile Seyreden).',
-                                'text': 'Akut streptokokal tonsillofarenjit enfeksiyonu'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Batın muayenesinde defans yoktur ve boğazda masif streptokok '
-                                                   'enfeksiyonu kanıtlanmıştır; apandisit dışlanmıştır.',
-                                'teaching_point': 'Streptokok farenjiti mezenterik lenfadenit üzerinden karın ağrısı '
-                                                  'yapar; cerrahi apandisit değildir.',
-                                'text': 'Akut cerrahi flegmonöz apandisit'},
-                              { 'is_correct': False,
-                                'scenario_update': "EBV'de posterior servikal LAP, belirgin splenomegali ve haftalar "
-                                                   'süren prodrom olur; Strep-A testi negatif çıkar.',
-                                'teaching_point': "EBV'de posterior lenfadenopati ve splenomegali tipiktir; hızlı "
-                                                  "Strep-A pozitifliği AGBHS'yi kanıtlar.",
-                                'text': 'Enfeksiyöz mononükleoz ebv tablosu'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Dizanteride kanlı mukuslu ishal ön plandadır; eksüdatif tonsillit '
-                                                   've boğaz ağrısı görülmez.',
-                                'teaching_point': 'Dizanteri kolondadır; bu hastada enfeksiyon odağı orofarenks ve '
-                                                  'tonsillerdir.',
-                                'text': 'Akut bakteriyel dizanteri koliti'}],
-                 'question': 'Eksüdatif tonsillit, hassas servikal LAP, öksürük yokluğu ve pozitif Strep-A testi ile '
-                             'tanınız nedir?',
-                 'stage_title': 'Klinik Tanı'},
-               { 'options': [ { 'explanation': 'İlk seçenek oral amoksisilindir (50 mg/kg/gün tek doz veya 2 dozda, 10 '
-                                               "gün) veya tek doz İM Benzatin Penisilin G'dir. Akut Romatizmal Ateşi "
-                                               '(ARA) önlemek için 10 günlük süre tam tamamlanmalıdır. Antibiyotik '
-                                               'başlandıktan 24 saat sonra bulaşıcılık sona erer ve çocuk okula '
-                                               'dönebilir.',
-                                'is_correct': True,
-                                'new_finding': 'Oral amoksisilin süspansiyon ve parasetamol başlandı. 24 saat sonra '
-                                               'ateşi düştü, yutkunması rahatladı ve mezenterik irritasyona bağlı '
-                                               'karın ağrısı ile kusması tamamen kayboldu. Aile 10 günlük kürü '
-                                               'tamamladı.',
-                                'text': 'Oral amoksisilin tedavisini on gün uygulamak, parasetamol vermek ve yirmi '
-                                        'dört saat sonra okula dönebileceğini anlatmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Tedavisi erken kesilen çocukta streptokok eradike edilemedi ve '
-                                                   'akut romatizmal ateş karditi gelişti.',
-                                'teaching_point': "AGBHS'de antibiyotik süresi semptomlar geçse bile mutlak 10 güne "
-                                                  'tamamlanmalıdır (ARA profilaksisi).',
-                                'text': 'Ateş düştüğü anda üçüncü günde antibiyotik tedavisini tamamen kesip hastayı '
-                                        'ilaçsız bırakmak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Aminoglikozid streptokoklara etkisizdir ve çocukta böbrek '
-                                                   'fonksiyon bozukluğuna yol açtı.',
-                                'teaching_point': 'AGBHS tedavisinde penisilin/amoksisilin altın standarttır; '
-                                                  'aminoglikozidler etkisiz ve zararlıdır.',
-                                'text': 'Bakterileri öldürmek için hastaya derhal intravenöz yüksek doz nefrotoksik '
-                                        'aminoglikozid başlamak'},
-                              { 'is_correct': False,
-                                'scenario_update': 'Akut enfeksiyon sırasında yapılan acil tonsillektomi masif '
-                                                   'kontrolsüz cerrahi kanamaya neden oldu.',
-                                'teaching_point': 'Akut farenjit enfeksiyonu esnasında tonsillektomi KONTRENDİKEDİR; '
-                                                  'medikal antibiyotikle tedavi edilir.',
-                                'text': 'Tonsilliti tedavi etmek amacıyla çocuğu acil serviste derhal ameliyathaneye '
-                                        'alıp acil tonsillektomi yapmak'}],
-                 'question': 'AGBHS tonsillofarenjiti kesinleşen bu çocuğun tedavisi, bulaşıcılığı ve ARA profilaksisi '
-                             'nasıl olmalıdır?',
-                 'stage_title': 'Antibiyotik Tedavisi ve ARA Profilaksisi'}]}]
+GREEN_CASES_PART6 = [{'id': 'G51',
+  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+  'age': '4 Yaşında',
+  'gender': 'Erkek',
+  'complaint': 'Ateşli hastalık sırasında bir gündür süren tekrarlayan kusma, ağızda meyvemsi koku ve halsizlik',
+  'history': "Annesi anlatıyor: 'İki gündür hafif ateşi ve boğaz ağrısı var, iştahı tamamen kesildi, neredeyse hiçbir "
+             'şey yemedi. Dün akşamdan beri bir yudum su içse bile kusuyor; kusmuk safralı değil. Ağzından çürük elma '
+             'gibi bir koku geliyor. Halsiz, sürekli uyumak istiyor. Bugün bir kez az miktarda çiş yaptı. Ailede '
+             "diyabet yok ama komşumuz şekeri olabilir dedi.' Son haftalarda çok su içme veya sık idrara çıkma tarif "
+             'edilmiyor. Tartı: 16 kg.',
+  'final_diagnosis': 'Açlık Ketozuna Bağlı Ketotik Kusma (Asetonemik Kusma)',
+  'disposition': 'Yeşil Alanda Yatak Başı Glukoz-Keton Değerlendirmesi, Ondansetron ve Glukozlu Oral Sıvı ile Ketozun '
+                 'Kırılması ve Taburculuk',
+  'case_pearl': 'Ateşli hastalık ve açlık sırasında küçük çocuklarda yağ yıkımına bağlı ketonemi kusmayı tetikler, '
+                'kusma da açlığı derinleştirerek kısır döngü yaratır. Yatak başı kan şekeri ve keton ölçümü diyabetik '
+                'ketoasidozu (hiperglisemi + asidoz) ve hipoglisemiyi ayırt etmek için zorunludur. Normoglisemik, '
+                'asidozu olmayan çocukta tedavi glukoz içeren sıvılarla ketozun kırılmasıdır; oral tolerans '
+                'sağlanamazsa %5-10 dekstrozlu intravenöz sıvı verilir.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Açlık, ateş ve tekrarlayan kusma ile gelen, ağzında meyvemsi koku olan bu halsiz çocukta ilk '
+                         'değerlendirmede önceliğiniz nedir?',
+             'options': [{'text': 'Bilinç düzeyini, solunum paternini, hidrasyon bulgularını ve karın muayenesini '
+                                  'değerlendirirken eş zamanlı yatak başı kapiller kan şekeri ve keton ölçümü yapmak',
+                          'is_correct': True,
+                          'explanation': 'Kusma ve ketotik nefes kokusu olan çocukta hipoglisemi ve hiperglisemik '
+                                         'ketoasidoz hayatı tehdit eden ayırıcı tanılardır; yatak başı glukoz ve keton '
+                                         'ölçümü dakikalar içinde yönetimi belirler. Derin-hızlı solunum asidozu, '
+                                         'karın bulguları cerrahi nedeni düşündürür.',
+                          'new_finding': 'Vital Bulgular: Ateş 37.4°C, KTA 112/dk, SS 22/dk (düzenli, derin-hızlı '
+                                         'solunum yok), SpO2 %99, TA 96/60 mmHg, KDZ 2 sn. Halsiz ancak seslenince '
+                                         'gözlerini açıyor, koopere. Ağız mukozası kuru, gözyaşı az. Farenks '
+                                         'hiperemik. Karın yumuşak, hassasiyet yok. Kapiller kan şekeri 68 mg/dL, '
+                                         'kapiller beta-hidroksibutirat 3.8 mmol/L.'},
+                         {'text': 'Ağızdaki koku ve ailenin endişesi nedeniyle diyabetik ketoasidoz protokolünü '
+                                  'başlatıp kan şekeri sonucu gelmeden serum fizyolojik bolusu ve insülin infüzyonu '
+                                  'hazırlamak',
+                          'is_correct': False,
+                          'scenario_update': 'İnsülin hazırlığı sürerken ölçülen kan şekeri 68 mg/dL geldi; protokol '
+                                             'iptal edildi, gereksiz yere damar yolu açıldı.',
+                          'teaching_point': 'Tedavi kararı yatak başı ölçümle verilmelidir; normoglisemik çocukta '
+                                            'insülin ölümcül hipoglisemiye yol açar.'},
+                         {'text': 'Kusmayı durdurmak için muayeneden önce intramüsküler metoklopramid yapıp yarım saat '
+                                  'sonra çocuğa bol miktarda su içirerek oral toleransı denemek',
+                          'is_correct': False,
+                          'scenario_update': 'Metoklopramid sonrası çocuk yine kustu; şekersiz su ile ketoz devam etti '
+                                             've halsizliği arttı.',
+                          'teaching_point': 'Metoklopramid çocuklarda ekstrapiramidal etki riski taşır; ayrıca glukoz '
+                                            'içermeyen sıvılar keton üretimini durdurmaz.'},
+                         {'text': 'Halsizlik ve uykuya meyil nedeniyle meningeal irritasyon bulgularını ayrıntılı '
+                                  'değerlendirip ensefalit olasılığına karşı acil kraniyal görüntüleme planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Ense sertliği ve fokal nörolojik bulgu saptanmadı. Görüntüleme '
+                                             'planlanırken kan şekeri ölçülmedi ve çocuk bir kez daha kustu.',
+                          'teaching_point': 'Kusan, halsiz çocukta ilk yapılması gereken basit ve hızlı test kapiller '
+                                            'kan şekeridir; nörolojik bulgusu olmayan çocukta görüntüleme öncelikli '
+                                            'değildir.'}]},
+            {'stage_title': 'Tetkik ve İlk Destek Kararı',
+             'question': 'Kan şekeri 68 mg/dL, kapiller ketonu 3.8 mmol/L olan, solunumu düzenli ve karnı rahat bu '
+                         'çocukta sonraki adımınız nedir?',
+             'options': [{'text': 'Kan şekeri normal olduğu için keton ölçümünü tekrarlamadan çocuğa yalnızca su ve '
+                                  'ayran içirerek oral toleransı denemek ve uyumasına izin vermek',
+                          'is_correct': False,
+                          'scenario_update': 'Glukoz içermeyen sıvılar sonrası çocuk iki kez kustu; bir saat sonra kan '
+                                             "şekeri 58 mg/dL'ye düştü.",
+                          'teaching_point': 'Ketonemide glukoz içeren sıvı gereklidir; şekersiz sıvılar ve uyku ile '
+                                            'açlığın uzaması hipoglisemiyi derinleştirir.'},
+                         {'text': 'Hipoglisemi sınırına yakın olduğu için damar yolu açıp 2 mL/kg %10 dekstroz bolusu '
+                                  'vermek ve ardından %0.9 NaCl ile idame sıvıya geçmek',
+                          'is_correct': False,
+                          'scenario_update': 'Dekstroz bolusu sonrası kan şekeri 110 mg/dL oldu; ancak dekstroz '
+                                             'içermeyen idame sıvıyla ketoz sürdü ve kusmalar devam etti.',
+                          'teaching_point': 'Ketozu kırmak için sürekli glukoz sağlanmalıdır; bolus sonrası '
+                                            'dekstrozsuz sıvı ketozu düzeltmez. Bilinci açık ve kusması kontrol '
+                                            'edilebilen çocukta önce oral glukoz denenir.'},
+                         {'text': 'Venöz kan gazı ile asidozu değerlendirmek, kiloya uygun tek doz oral ondansetron '
+                                  'vermek ve 20-30 dakika sonra glukozlu sıvıyla küçük yudumlarla oral deneme '
+                                  'başlatmak',
+                          'is_correct': True,
+                          'explanation': "Normoglisemik ketonemide kan gazı belirgin asidozu ve DKA'yı dışlamak için "
+                                         'yeterlidir. Ondansetron kusmayı kırar; glukoz içeren sıvılar insülin '
+                                         'salınımını uyararak lipolizi ve keton üretimini durdurur.',
+                          'new_finding': 'Venöz kan gazı: pH 7.33, HCO3 18 mmol/L, Na 136 mEq/L, K 4.1 mEq/L. 16 kg '
+                                         'için 2 mg oral ondansetron verildi. 30 dakika sonra 5 dakikada bir 10 mL '
+                                         'elma suyu ve glukozlu ORS başlandı; 1 saatte 180 mL içti, kusmadı.'},
+                         {'text': 'Ateş odağını belirlemek amacıyla tam kan sayımı, CRP, kan kültürü, boğaz kültürü ve '
+                                  'tam idrar tetkikini isteyip sonuçlar gelene kadar oral alımı kapalı tutmak',
+                          'is_correct': False,
+                          'scenario_update': 'Sonuçlar 2 saat içinde geldi ve belirgin bir bakteriyel odak göstermedi; '
+                                             "bu sürede aç bekleyen çocuğun ketonu 4.5 mmol/L'ye yükseldi.",
+                          'teaching_point': 'Ketotik çocukta oral alımın kapatılması ketozu derinleştirir; odak '
+                                            'araştırması klinik bulgulara göre seçici yapılmalıdır.'}]},
+            {'stage_title': 'Klinik Tanı',
+             'question': 'Açlık ve ateşli hastalık zemininde kusma, yüksek keton, normal-düşük kan şekeri ve belirgin '
+                         'olmayan asidozu olan bu çocukta tanı nedir?',
+             'options': [{'text': 'Yağ asidi oksidasyon bozukluğu',
+                          'is_correct': False,
+                          'scenario_update': 'Bu bozukluklarda açlıkta hipoketotik hipoglisemi beklenir; bu çocukta '
+                                             'keton belirgin yüksek.',
+                          'teaching_point': 'Yüksek ketonemi, yağ asidi oksidasyonunun çalıştığını gösterir.'},
+                         {'text': 'Döngüsel kusma sendromu atağı',
+                          'is_correct': False,
+                          'scenario_update': 'Öyküde benzer, stereotipik ve aralarında tamamen sağlıklı dönemler olan '
+                                             'tekrarlayan ataklar yok.',
+                          'teaching_point': 'Döngüsel kusma tanısı tekrarlayan ve birbirine benzer atakların varlığını '
+                                            'gerektirir.'},
+                         {'text': 'Diyabetik ketoasidoz',
+                          'is_correct': False,
+                          'scenario_update': 'Kan şekeri 68 mg/dL, pH 7.33; hiperglisemi ve belirgin asidoz yok.',
+                          'teaching_point': 'DKA tanısı hiperglisemi (>200 mg/dL), pH <7.30 veya HCO3 <18 ve ketonemi '
+                                            'gerektirir.'},
+                         {'text': 'Açlık ketozuna bağlı ketotik kusma',
+                          'is_correct': True,
+                          'explanation': 'Enfeksiyon ve açlık sırasında gelişen ketonemi, normal-düşük kan şekeri ve '
+                                         'hafif metabolik etkilenme ketotik (asetonemik) kusma ile uyumludur.',
+                          'new_finding': 'Tanı: Açlık Ketozuna Bağlı Ketotik Kusma (Asetonemik Kusma).'}]},
+            {'stage_title': 'Tedavi ve Taburculuk Planı',
+             'question': 'Glukozlu sıvıyı tolere eden ve halsizliği azalan bu çocuğun taburculuk planı nasıl '
+                         'olmalıdır?',
+             'options': [{'text': 'Sık aralıklarla glukoz içeren sıvılar ve karbonhidrat ağırlıklı küçük öğünler '
+                                  'önermek, ateşi kontrol etmek ve kusma, uykuya meyil veya idrar azalmasında dönmeyi '
+                                  'anlatmak',
+                          'is_correct': True,
+                          'explanation': 'Ketozun tekrarlamaması için açlık süresi kısaltılmalı, glukoz içeren sıvı ve '
+                                         'karbonhidrat ağırlıklı öğünler sık verilmelidir. Oral alım yetersiz kalırsa '
+                                         'intravenöz dekstroz gerekebileceği için dönüş kriterleri net anlatılır.',
+                          'new_finding': "İki saat sonra kapiller keton 1.6 mmol/L'ye geriledi, çocuk bisküvi yedi ve "
+                                         'idrar yaptı. Aile eğitimiyle taburcu edildi; ertesi gün telefonla yapılan '
+                                         'kontrolde kusmanın tekrarlamadığı öğrenildi.'},
+                         {'text': 'Ailede diyabet olmasa da olası başlangıç dönemini kaçırmamak için taburculukta '
+                                  'HbA1c, C-peptid ve adacık otoantikorlarını isteyip endokrinolojiye yönlendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Sonuçlar normal geldi; aile gereksiz endokrinoloji randevusu nedeniyle '
+                                             'kaygı yaşadı.',
+                          'teaching_point': 'Normoglisemik ketotik kusmada poliüri-polidipsi gibi bulgular yoksa '
+                                            'diyabet taraması gerekmez.'},
+                         {'text': 'Kusma tekrarlarsa evde kullanmak üzere oral ondansetron reçete etmek, yağlı ve '
+                                  'proteinli besinleri öne çıkarıp şekerli içecekleri kısıtlamasını önermek',
+                          'is_correct': False,
+                          'scenario_update': 'Yağlı beslenme önerisi sonrası çocuk ertesi gün yine kusmaya başladı ve '
+                                             'halsizlik tekrarladı.',
+                          'teaching_point': 'Ketotik kusmada karbonhidrat ağırlıklı, sık ve küçük öğünler önerilir; '
+                                            'yağ ağırlıklı beslenme ketozu artırır.'},
+                         {'text': 'Ketonun tamamen kaybolmasını görmek için çocuğu 12 saat %5 dekstrozlu intravenöz '
+                                  'sıvıyla gözleme almak ve sabah idrar ketonu negatifse taburcu etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Oral alımı iyi olan çocuk gece boyunca acilde kaldı; gereksiz damar yolu '
+                                             'nedeniyle huzursuzlaştı.',
+                          'teaching_point': 'Kapiller keton düşmeye başlayan ve oral glukozu tolere eden çocuk taburcu '
+                                            'edilebilir; idrar ketonu kandan geç negatifleşir.'}]}]},
+ {'id': 'G52',
+  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+  'age': '3 Yaşında',
+  'gender': 'Kız',
+  'complaint': 'Üç gündür düşmeyen yüksek ateş, karın ağrısı ve kusma',
+  'history': "Annesi anlatıyor: 'Üç gündür 39°C'ye çıkan ateşi var. Karnım ağrıyor diye ağlıyor, iki gündür günde 2-3 "
+             'kez kusuyor ama aralarda su ve çorba içebiliyor. İshal veya öksürük yok. Tuvalet eğitimi yeni bitti, son '
+             "iki gündür altına kaçırıyor ve çişini yaparken ağlıyor.' Daha önce benzer ateşli hastalık geçirmemiş. "
+             'Aşıları tam. Tartı: 14 kg.',
+  'final_diagnosis': 'Akut Piyelonefrit (Ateşli İdrar Yolu Enfeksiyonu)',
+  'disposition': 'Yeşil Alanda Oral Tolerans Doğrulaması, Kültür Sonrası Oral Sefalosporin ve Üriner USG Planıyla '
+                 'Ayaktan Tedavi',
+  'case_pearl': 'Küçük çocukta ateş, kusma ve karın ağrısı üriner sistem enfeksiyonunun sık prezentasyonudur; dizüri '
+                've yeni başlayan idrar kaçırma önemli ipuçlarıdır. Tanı uygun yöntemle alınmış idrar örneğinde piyüri '
+                've kültürde anlamlı üremeye dayanır. Genel durumu iyi, oral tolere edebilen çocukta oral 3. kuşak '
+                'sefalosporin (sefiksim 8 mg/kg/gün) parenteral tedavi kadar etkilidir; toplam süre 7-14 gündür. İlk '
+                'ateşli enfeksiyon sonrası üriner USG önerilir.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Üç gündür yüksek ateşi, karın ağrısı ve kusması olan, son günlerde altını ıslatan bu çocukta '
+                         'muayenede neye odaklanmalısınız?',
+             'options': [{'text': 'Karın ağrısı ve kusma nedeniyle sağ alt kadran hassasiyeti, psoas ve obturator '
+                                  'bulgularını değerlendirip çocuk cerrahisi konsültasyonunu muayeneyle eş zamanlı '
+                                  'istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Peritoneal bulgu yoktu; cerrahi ekip akut batın düşünmediğini belirtti. '
+                                             'Kostovertebral açı ve genitalya muayenesi yapılmamıştı.',
+                          'teaching_point': 'Küçük çocukta ateş ve karın ağrısı sıklıkla karın dışı veya üriner '
+                                            'kaynaklıdır; muayene sistematik olmalıdır.'},
+                         {'text': 'Ateşi düşürüp yeniden değerlendirmek için muayeneden önce ibuprofen vermek, bir '
+                                  'saat sonra genel durumu iyiyse odak aramadan taburculuğu planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Ateş düştükten sonra çocuk rahatladı ve aile taburculuk bekledi; ateşin '
+                                             'odağı belirlenmedi.',
+                          'teaching_point': 'Antipiretik yanıtı ciddi bakteriyel enfeksiyonu dışlamaz; üç günlük '
+                                            'ateşte odak mutlaka araştırılmalıdır.'},
+                         {'text': 'Genel durum ve hidrasyonu değerlendirip karın, suprapubik bölge ve kostovertebral '
+                                  'açıyı muayene etmek, dış genitalyayı ve odak açısından KBB-akciğeri incelemek',
+                          'is_correct': True,
+                          'explanation': 'Ateşli küçük çocukta odak araştırması sistematik yapılmalıdır. '
+                                         'Kostovertebral açı ve suprapubik hassasiyet üst ve alt üriner tutulumu '
+                                         'düşündürür; dış genitalya muayenesi vulvovajinit ve labial füzyon gibi '
+                                         'nedenleri dışlar.',
+                          'new_finding': 'Vital Bulgular: Ateş 38.8°C, KTA 126/dk, SS 24/dk, SpO2 %99, TA 98/62 mmHg, '
+                                         'KDZ 2 sn. Huzursuz ama çevreyle ilgili, mukozalar hafif kuru. KBB ve akciğer '
+                                         'muayenesi doğal. Karın yumuşak; suprapubik ve sağ kostovertebral açıda '
+                                         'belirgin hassasiyet. Defans, rebound yok. Dış genitalya doğal, akıntı yok.'},
+                         {'text': 'Üç günlük yüksek ateş nedeniyle döküntü, konjonktival hiperemi, dudak '
+                                  'değişiklikleri ve ekstremite ödemi aramak, servikal lenf nodlarını ayrıntılı '
+                                  'değerlendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Mukokutanöz bulgu saptanmadı. Karın ve kostovertebral açı muayenesi '
+                                             'ikinci planda kaldı.',
+                          'teaching_point': 'Uzamış ateşte vaskülit bulguları sorgulanmalıdır ancak bu çocukta dizüri '
+                                            've idrar kaçırma üriner odağa yönlendirir.'}]},
+            {'stage_title': 'Tetkik Stratejisi',
+             'question': 'Suprapubik ve sağ kostovertebral açı hassasiyeti olan, tuvalet eğitimli bu 3 yaşındaki kızda '
+                         'idrar değerlendirmesini nasıl planlarsınız?',
+             'options': [{'text': 'Yalnızca idrar strip testi yapıp lökosit esteraz ve nitrit pozitifse kültür '
+                                  'göndermeden ampirik tedavi başlatmak ve kontrolde stripi tekrarlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Kültür alınmadan antibiyotik başlandı; 48 saat sonra ateş sürünce '
+                                             'etkenin duyarlılığı bilinmediği için tedavi düzenlenemedi.',
+                          'teaching_point': 'Ateşli üriner enfeksiyon şüphesinde antibiyotik öncesinde kültür '
+                                            'alınmalıdır; kültür hem tanıyı doğrular hem tedaviyi yönlendirir.'},
+                         {'text': 'Temiz orta akım idrarında tam idrar tetkiki ve kültür göndermek; sistemik etkilenme '
+                                  'için hemogram, CRP ve kreatinin istemek',
+                          'is_correct': True,
+                          'explanation': 'Tuvalet eğitimli çocukta temiz orta akım idrarı kültür için uygundur. Piyüri '
+                                         've nitrit pozitifliği ön tanıyı destekler; hemogram, CRP ve kreatinin üst '
+                                         'üriner tutulum ve böbrek fonksiyonunu değerlendirmeye yardımcı olur.',
+                          'new_finding': 'Tam idrar: dansite 1.020, lökosit esteraz +++, nitrit pozitif, mikroskopide '
+                                         'her alanda bol lökosit ve lökosit kümeleri, bol bakteri. Kültür gönderildi. '
+                                         'Lökosit 14.800/mm³ (%78 nötrofil), CRP 42 mg/L, kreatinin 0.38 mg/dL.'},
+                         {'text': 'Karın ağrısının cerrahi nedenlerini dışlamak için önce batın ultrasonografisi '
+                                  'istemek, ultrasonda böbrek bulgusu varsa idrar örneği alarak tetkik etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Ultrasonografide sağ böbrekte hafif ekojenite artışı dışında bulgu '
+                                             'yoktu; idrar tetkiki 2 saat gecikti.',
+                          'teaching_point': 'Ateşli çocukta idrar tetkiki ilk basamaktır; ultrasonografi tanı koymaz, '
+                                            'anatomik değerlendirme için tedaviden sonra planlanır.'},
+                         {'text': 'Perineye yapıştırılan steril torba ile idrar toplayıp hem tam idrar tetkiki hem de '
+                                  'kültür göndermek, kültürde üreme olursa tedaviyi başlatmak',
+                          'is_correct': False,
+                          'scenario_update': 'Torba kültüründe karışık üreme bildirildi; sonuç yorumlanamadı ve örnek '
+                                             'tekrarlanmak zorunda kalındı, tedavi gecikti.',
+                          'teaching_point': 'Torba ile alınan örneğin kontaminasyon oranı yüksektir; kültür için orta '
+                                            'akım, kateter veya suprapubik aspirasyon örneği kullanılmalıdır.'}]},
+            {'stage_title': 'Klinik Tanı',
+             'question': 'Ateş, kusma, dizüri, kostovertebral açı hassasiyeti, piyüri, nitrit pozitifliği ve CRP '
+                         'yüksekliği olan bu çocukta tanı nedir?',
+             'options': [{'text': 'Akut piyelonefrit',
+                          'is_correct': True,
+                          'explanation': 'Ateş, sistemik inflamasyon bulguları ve kostovertebral açı hassasiyeti ile '
+                                         'birlikte piyüri ve nitrit pozitifliği üst üriner sistem enfeksiyonunu '
+                                         'gösterir.',
+                          'new_finding': 'Tanı: Akut Piyelonefrit (ateşli idrar yolu enfeksiyonu). Kültür sonucu '
+                                         'beklenmekte.'},
+                         {'text': 'Akut sistit',
+                          'is_correct': False,
+                          'scenario_update': 'Yüksek ateş, kusma, kostovertebral açı hassasiyeti ve CRP yüksekliği alt '
+                                             'üriner sistemle sınırlı bir enfeksiyonu açıklamaz.',
+                          'teaching_point': 'Sistit genellikle ateşsiz veya düşük ateşlidir ve sistemik bulgu vermez.'},
+                         {'text': 'Akut apandisit',
+                          'is_correct': False,
+                          'scenario_update': 'Sağ alt kadranda lokalize peritoneal bulgu yok; piyüri ve nitrit '
+                                             'pozitifliği üriner kaynağı gösteriyor.',
+                          'teaching_point': 'Apandisitte hafif piyüri olabilir ancak nitrit pozitifliği ve '
+                                            'kostovertebral hassasiyet üriner enfeksiyonu destekler.'},
+                         {'text': 'Nonspesifik vulvovajinit',
+                          'is_correct': False,
+                          'scenario_update': 'Dış genitalya doğal, akıntı yok ve tablo sistemik ateşle seyrediyor.',
+                          'teaching_point': 'Vulvovajinit dizüri yapabilir ancak yüksek ateş ve böbrek hassasiyeti '
+                                            'beklenmez.'}]},
+            {'stage_title': 'Tedavi ve Taburculuk Planı',
+             'question': "Acilde ondansetron sonrası oral sıvıyı tolere eden, genel durumu iyi bu 14 kg'lık çocuğun "
+                         'tedavisi nasıl olmalıdır?',
+             'options': [{'text': 'Oral sefiksim başlamakla birlikte tekrarlayan enfeksiyonları önlemek için tedavi '
+                                  'bitiminde düşük doz profilaksi ve işeme sistoüretrografisi planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'İlk enfeksiyon sonrası rutin profilaksi ve invaziv işeme grafisi planı '
+                                             'aileyi kaygılandırdı; çocuk gereksiz radyasyona maruz kalacaktı.',
+                          'teaching_point': 'İlk ateşli enfeksiyon sonrası USG normalse rutin işeme sistoüretrografisi '
+                                            "ve profilaksi önerilmez; tekrarlayan enfeksiyon veya anormal USG'de "
+                                            'düşünülür.'},
+                         {'text': 'Oral nitrofurantoin başlayıp beş gün sürdürmek, bol sıvı ve hijyen önerileriyle '
+                                  'taburcu etmek ve kültür sonucunu kontrolde değerlendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Ateşi 72 saat sonra hâlâ sürüyordu; çocuk kusma ve halsizlikle yeniden '
+                                             'başvurdu.',
+                          'teaching_point': 'Nitrofurantoin böbrek parankiminde yeterli düzeye ulaşmaz; ateşli üriner '
+                                            'enfeksiyonda kullanılmaz.'},
+                         {'text': 'Ateşli üriner enfeksiyonun parenteral tedavi gerektirdiğini düşünüp servise '
+                                  'yatırmak, intravenöz seftriakson ile 10 gün tedaviyi hastanede tamamlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Çocuk 10 gün hastanede kaldı; ikinci günden itibaren oral alımı ve ateşi '
+                                             'normal olmasına rağmen taburculuk ertelendi.',
+                          'teaching_point': 'Oral tolerans sağlanmış, toksik görünümlü olmayan çocukta yatış gerekmez; '
+                                            'parenteral başlanan tedavi de klinik düzelmede orale geçirilebilir.'},
+                         {'text': 'Kültür sonrası oral sefiksim 8 mg/kg/gün başlayıp 7-10 güne tamamlamak, 48-72. '
+                                  'saatte kontrol ve sonrasında üriner ultrasonografi planlamak',
+                          'is_correct': True,
+                          'explanation': 'Oral alabilen ve toksik görünümü olmayan çocukta oral 3. kuşak sefalosporin '
+                                         'parenteral tedavi kadar etkilidir. 48-72 saatte ateş yanıtı ve kültür '
+                                         'duyarlılığı değerlendirilir; ilk ateşli enfeksiyon sonrası üriner USG '
+                                         'yapılır.',
+                          'new_finding': 'Oral sefiksim başlandı. 48. saatte ateşi düştü, kusma kesildi. Kültürde '
+                                         '100.000 cfu/mL sefiksime duyarlı E. coli üredi. Tedavi 10 güne tamamlandı; '
+                                         'üriner USG normal bulundu.'}]}]},
+ {'id': 'G53',
+  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+  'age': '8 Yaşında',
+  'gender': 'Kız',
+  'complaint': 'İki aydır hafta içi sabahları başlayan göbek çevresinde karın ağrısı ve bulantı',
+  'history': "Ailesi anlatıyor: 'Yaklaşık iki aydır hafta içi sabahları kahvaltıdan sonra göbeğini tutup kıvranıyor, "
+             'midem bulanıyor diyor. Hafta sonları ve tatilde ağrısı çoğunlukla olmuyor. Gece ağrıyla hiç uyanmıyor. '
+             'Kilo kaybı, ateş, ishal veya kusması yok. Bu sabah ağrısı çok şiddetli olunca geldik. Yeni bir okula '
+             "geçti, arkadaş edinmekte zorlandığını söylüyor.' Babasında yıllardır mide yanması var. Büyümesi "
+             'persentilinde.',
+  'final_diagnosis': 'Fonksiyonel Karın Ağrısı (Roma IV)',
+  'disposition': 'Yeşil Alanda Alarm Bulgularının Dışlanması, Biyopsikososyal Açıklama, Okul Devamlılığı ve Pediatri '
+                 'Poliklinik Takibi',
+  'case_pearl': 'Okul çağında tekrarlayan periumbilikal ağrının çoğu fonksiyoneldir. Tanı Roma IV kriterlerine ve '
+                'alarm bulgularının (gece uyandıran ağrı, kilo kaybı, büyüme geriliği, kanlı dışkı, ateş, persistan '
+                'kusma, sağ kadranlarda lokalize ağrı, ailede inflamatuvar bağırsak hastalığı) yokluğuna dayanır; '
+                'geniş tetkik gerekmez. Tedavide ağrının gerçek olduğunun kabulü, beyin-bağırsak ilişkisinin '
+                'açıklanması, okula devamın sürdürülmesi ve gerekirse bilişsel davranışçı terapi esastır.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'İki aydır hafta içi sabahları tekrarlayan göbek çevresinde ağrısı olan bu 8 yaşındaki kızda '
+                         'değerlendirmenin temel amacı nedir?',
+             'options': [{'text': 'Babadaki mide yanması öyküsü nedeniyle epigastrik hassasiyete odaklanıp muayeneyi '
+                                  'kısa tutmak ve dışkıda Helicobacter pylori antijeni istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Dışkı antijeni negatif geldi; alarm bulguları ve büyüme '
+                                             'değerlendirilmediği için aile ne olduğunu anlamadan beklemeye devam '
+                                             'etti.',
+                          'teaching_point': 'Alarm bulgusu olmayan tekrarlayan karın ağrısında H. pylori araştırması '
+                                            'önerilmez; tetkik ancak alarm bulgusu veya endoskopi endikasyonu varsa '
+                                            'yapılır.'},
+                         {'text': 'Ağrının sabah okul öncesi olması nedeniyle temaruz olasılığını değerlendirmek için '
+                                  'muayeneyi kısa tutup çocukla ebeveynler olmadan görüşmeye öncelik vermek',
+                          'is_correct': False,
+                          'scenario_update': 'Görüşme sırasında çocuk ağrısının ciddiye alınmadığını hissetti ve '
+                                             'ağladı; organik alarm bulguları sistematik sorgulanmadı.',
+                          'teaching_point': "Tekrarlayan karın ağrısı gerçek bir ağrıdır; 'uydurma' yaklaşımı güveni "
+                                            'zedeler. Önce alarm bulguları sistematik değerlendirilmelidir.'},
+                         {'text': 'Gece uyandıran ağrı, kilo kaybı, kanlı dışkı, ateş, kusma ve aile öyküsü gibi alarm '
+                                  'bulgularını sorgulayıp büyüme eğrisi, karın ve perianal muayene yapmak',
+                          'is_correct': True,
+                          'explanation': 'Tekrarlayan karın ağrısında organik ve fonksiyonel nedenleri ayırmanın en '
+                                         'güçlü aracı alarm bulgularının sistematik sorgulanması ve büyüme ile fizik '
+                                         'muayenenin değerlendirilmesidir.',
+                          'new_finding': 'Vital Bulgular: Ateş 36.8°C, KTA 84/dk, TA 102/64 mmHg. Boy ve tartı 50. '
+                                         'persentilde, persentil kaybı yok. Gece uyandıran ağrı, kilo kaybı, kanlı '
+                                         'dışkı, ateş, kusma yok; ailede inflamatuvar bağırsak hastalığı veya çölyak '
+                                         'yok. Karın yumuşak, periumbilikal hafif hassasiyet tarifliyor; organomegali, '
+                                         'kitle, defans yok. Perianal bölge doğal.'},
+                         {'text': 'Bu sabahki şiddetli ağrı nedeniyle oral alımı kapatıp intravenöz analjezi yapmak, '
+                                  'ağrı geçene kadar seri karın muayeneleriyle acilde izlemek',
+                          'is_correct': False,
+                          'scenario_update': 'Çocuk 4 saat aç bekletildi, ağrısı oyun sırasında kendiliğinden geçti; '
+                                             'ailenin hastalık algısı güçlendi.',
+                          'teaching_point': 'Peritoneal bulgu yokken gereksiz invaziv yaklaşım ve uzun gözlem hastalık '
+                                            'davranışını pekiştirir.'}]},
+            {'stage_title': 'Tetkik Kararı',
+             'question': 'Alarm bulgusu olmayan, büyümesi normal ve muayenesi rahat bu çocukta tetkik yaklaşımınız '
+                         'nedir?',
+             'options': [{'text': 'Ailenin endişesini gidermek için tam kan sayımı, sedimantasyon, CRP, karaciğer ve '
+                                  'böbrek testleri, çölyak serolojisi, dışkı kalprotektini, gaitada parazit ve batın '
+                                  'ultrasonografisini birlikte istemek',
+                          'is_correct': False,
+                          'scenario_update': "Ultrasonografide 'ince bağırsaklarda gaz' raporu çıktı ve aile yeni bir "
+                                             'hastalık olduğundan endişelendi; diğer sonuçlar normaldi.',
+                          'teaching_point': 'Geniş tetkik paneli güvence vermez; anlamsız bulgular ek tetkik zinciri '
+                                            've kaygıyı artırır.'},
+                         {'text': 'Ağrının yemek sonrası başlaması nedeniyle laktoz intoleransı düşünerek hidrojen '
+                                  'nefes testi istemek ve süt ürünlerini iki hafta kesmeyi önermek',
+                          'is_correct': False,
+                          'scenario_update': 'Süt ürünleri kesildi; ağrı paterni değişmedi ve okul günleriyle ilişkisi '
+                                             'sürdü.',
+                          'teaching_point': 'Tetkik ve diyet değişikliği klinik ipuçlarına göre yapılmalıdır; burada '
+                                            'ağrının belirleyicisi okul günleridir.'},
+                         {'text': 'Alarm bulgusu olmadığından en fazla tam kan sayımı ve tam idrar tetkiki ile '
+                                  'yetinmek, ağrı günlüğü önermek ve sonuçları aileyle birlikte değerlendirmek',
+                          'is_correct': True,
+                          'explanation': 'Alarm bulgusu olmayan çocukta tanı klinik olarak konur; birçok klinisyen '
+                                         'güvence amacıyla sınırlı tarama (hemogram, idrar) yapar. Ağrı günlüğü '
+                                         'tetikleyicileri ve psikososyal ilişkiyi görünür kılar.',
+                          'new_finding': 'Tam kan sayımı ve tam idrar tetkiki normal. Kısa görüşmede çocuğun yeni '
+                                         'okulda yalnız kaldığını, sabahları okula gitmekten çekindiğini anlattığı '
+                                         'öğrenildi.'},
+                         {'text': 'Ağrının sabah oluşu ve bulantı nedeniyle çocuk gastroenterolojisine yönlendirip üst '
+                                  'gastrointestinal endoskopi değerlendirmesi yapılmasını istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Endoskopi için 2 ay sonrasına randevu verildi; bu sürede çocuk okula '
+                                             'düzensiz gitmeye başladı.',
+                          'teaching_point': 'Alarm bulgusu olmayan tekrarlayan karın ağrısında endoskopi rutin '
+                                            'önerilmez.'}]},
+            {'stage_title': 'Klinik Tanı',
+             'question': 'Alarm bulgusu olmayan, iki aydır okul günlerinde tekrarlayan periumbilikal ağrısı ve '
+                         'psikososyal stresörü olan bu çocukta tanı nedir?',
+             'options': [{'text': 'Helicobacter pylori gastriti',
+                          'is_correct': False,
+                          'scenario_update': 'Epigastrik ağrı, gece ağrısı veya kanama bulgusu yok; ağrı okul '
+                                             'günleriyle ilişkili.',
+                          'teaching_point': 'H. pylori çocukta tekrarlayan fonksiyonel ağrının nedeni olarak kabul '
+                                            'edilmez.'},
+                         {'text': 'Abdominal migren',
+                          'is_correct': False,
+                          'scenario_update': 'Saatlerce süren, bulantı-solukluk eşlik eden ve aralarında haftalarca '
+                                             'tamamen sağlıklı olunan stereotipik ataklar tarif edilmiyor.',
+                          'teaching_point': 'Abdominal migren paroksismal, stereotipik ve şiddetli ataklarla '
+                                            'seyreder.'},
+                         {'text': 'Fonksiyonel karın ağrısı',
+                          'is_correct': True,
+                          'explanation': 'Ayda en az 4 kez, en az 2 aydır süren, başka bir fonksiyonel tanıya uymayan, '
+                                         'alarm bulgusu olmayan periumbilikal ağrı Roma IV fonksiyonel karın ağrısı '
+                                         'kriterlerini karşılar; okul stresi sık bir tetikleyicidir.',
+                          'new_finding': 'Tanı: Fonksiyonel Karın Ağrısı - Başka Türlü Tanımlanmamış (Roma IV).'},
+                         {'text': 'Fonksiyonel dispepsi',
+                          'is_correct': False,
+                          'scenario_update': 'Ağrı epigastrik değil, periumbilikal; erken doyma veya postprandiyal '
+                                             'dolgunluk ön planda değil.',
+                          'teaching_point': 'Fonksiyonel dispepside semptomlar epigastriuma lokalizedir.'}]},
+            {'stage_title': 'Tedavi ve Aile Rehberliği',
+             'question': 'Bu çocuğun ve ailesinin yönetimi nasıl olmalıdır?',
+             'options': [{'text': 'Ağrı atakları için iki hafta oral antispazmodik ve proton pompa inhibitörü '
+                                  'başlamak, ağrının sürdüğü günlerde çocuğun evde dinlenmesine izin vermek',
+                          'is_correct': False,
+                          'scenario_update': 'İlaçlar ağrıyı değiştirmedi; evde kalmaya izin verilen çocuk iki hafta '
+                                             'içinde 5 gün okul kaçırdı.',
+                          'teaching_point': 'Okula gitmemek kaçınma döngüsünü güçlendirir; ilaçların fonksiyonel '
+                                            'ağrıda katkısı sınırlıdır.'},
+                         {'text': 'Ağrı şiddetli olduğunda kullanmak üzere düşük doz oral tramadol reçete edip ağrı '
+                                  'günlüğüne göre doz ayarlaması için iki hafta sonra kontrole çağırmak',
+                          'is_correct': False,
+                          'scenario_update': 'Tramadol sonrası çocukta bulantı ve uyku hali gelişti; aile ilacı keyfi '
+                                             'kullanmaya başladı.',
+                          'teaching_point': 'Fonksiyonel karın ağrısında opioidler kontrendikedir; bağımlılık ve '
+                                            'opioid ilişkili bağırsak hiperaljezisi riski taşır.'},
+                         {'text': 'Ailenin içini rahatlatmak için gastroenteroloji, çocuk psikiyatrisi ve diyetisyene '
+                                  'aynı anda sevk etmek ve tüm değerlendirmeler bitene kadar okula ara verdirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Çoklu sevk aileye ciddi bir hastalık mesajı verdi; okula ara verilmesi '
+                                             'sosyal kaygıyı artırdı.',
+                          'teaching_point': 'İlk basamak birinci basamak/pediatri takibi ve güvencedir; çoklu sevk ve '
+                                            'okul izni hastalık algısını güçlendirir.'},
+                         {'text': 'Ağrının gerçek olduğunu kabul edip beyin-bağırsak ilişkisini anlatmak, okula '
+                                  'düzenli devamı sürdürmek, okul rehberliğiyle iletişim ve pediatri kontrolü '
+                                  'planlamak',
+                          'is_correct': True,
+                          'explanation': 'Tedavinin temeli biyopsikososyal açıklama ve aileye güvencedir. Okula devam, '
+                                         'kaçınma davranışını kırar; okul ile işbirliği ve gerekirse bilişsel '
+                                         'davranışçı terapi en etkili yaklaşımlardır.',
+                          'new_finding': 'Aile ve çocukla ağrının mekanizması konuşuldu; okul rehber öğretmeniyle '
+                                         'görüşme planlandı. Bir ay sonraki kontrolde sabah ağrılarının belirgin '
+                                         'azaldığı, çocuğun okula düzenli gittiği öğrenildi.'}]}]},
+ {'id': 'G54',
+  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+  'age': '20 Aylık',
+  'gender': 'Erkek',
+  'complaint': 'Ek gıdaya geçtikten sonra giderek belirginleşen karın şişliği, açık renkli kötü kokulu ishal ve kilo '
+               'kaybı',
+  'history': "Annesi anlatıyor: 'Sekiz aylıkken ek gıdaya, tahıllara, bisküvi ve ekmeğe başladıktan sonra kakası "
+             'giderek cıvıklaştı; açık renkli, parlak ve çok kötü kokulu. Son 6 aydır kilo almıyor, eskiden 75. '
+             "persentildeydi. Karnı çok şişti, bacakları ve poposu eridi. Sürekli huysuz ve mutsuz, iştahı azaldı.' "
+             'Kistik fibrozis tarama testi yenidoğanda negatif. Tartı: 9.8 kg (10. persentilin altı), boy: 82 cm (25. '
+             'persentil).',
+  'final_diagnosis': 'Çölyak Hastalığı (Klasik Malabsorptif Form)',
+  'disposition': 'Yeşil Alandan Diyette Gluten Sürdürülerek Pediatrik Gastroenterolojiye Öncelikli Sevk ve Demir '
+                 'Desteği',
+  'case_pearl': 'Glutenli gıdalara geçişten sonra başlayan kronik ishal, karın distansiyonu, kas kaybı, irritabilite '
+                "ve büyüme geriliği klasik çölyak tablosudur. İlk tetkik doku transglutaminaz IgA ve total IgA'dır. "
+                "ESPGHAN 2020'ye göre tTG-IgA ≥10 kat yüksek ve ayrı örnekte endomisyum antikoru pozitifse biyopsisiz "
+                'tanı konulabilir. Tanı doğrulanana kadar gluten kesilmemelidir; erken kesilmesi serolojiyi ve '
+                'histolojiyi normalleştirerek tanıyı imkansızlaştırır.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Altı aydır kilo almayan, karın şişliği ve yağlı ishali olan 20 aylık bu çocukta ilk '
+                         'değerlendirmenizde neye odaklanırsınız?',
+             'options': [{'text': 'Büyüme eğrisini önceki ölçümlerle karşılaştırıp beslenme öyküsünü ve başlangıçla '
+                                  'ilişkisini sorgulamak, malnütrisyon, kas kaybı, distansiyon, ödem ve solukluk '
+                                  'bulgularını değerlendirmek',
+                          'is_correct': True,
+                          'explanation': 'Kronik ishal ve büyüme geriliğinde semptomların belirli gıdalara geçişle '
+                                         'zamansal ilişkisi, büyüme eğrisi ve malnütrisyon bulguları ayırıcı tanıyı '
+                                         'daraltan temel bilgilerdir.',
+                          'new_finding': 'Vital Bulgular: Ateş 36.7°C, KTA 104/dk, TA 90/58 mmHg. Tartı 75. '
+                                         'persentilden 10. persentilin altına düşmüş; boy 25. persentil. Soluk, '
+                                         'apatik, irritabl. Karın belirgin distandü, timpanik, hassasiyet yok. Gluteal '
+                                         've uyluk kas kitlesi belirgin azalmış, cilt kıvrımları sarkık. Ödem yok. '
+                                         'Hepatosplenomegali yok.'},
+                         {'text': 'İrritabilite ve apati nedeniyle nörolojik muayeneye ve gelişim basamaklarına '
+                                  'odaklanıp tablo nörometabolik olabilir diyerek amonyak ve laktat istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Nörolojik muayene ve metabolik tetkikler normal geldi; gastrointestinal '
+                                             'bulgular ikinci planda kaldı.',
+                          'teaching_point': 'Malnütrisyonlu çocukta irritabilite sık görülür; tablonun merkezinde '
+                                            'kronik ishal ve büyüme duraklaması vardır.'},
+                         {'text': 'Akut gastroenterit kabul edip hidrasyon bulgularını değerlendirmek, kısa bir oral '
+                                  'sıvı denemesi yapmak ve büyüme eğrisini sonraki aşı kontrolüne bırakmak',
+                          'is_correct': False,
+                          'scenario_update': 'Hidrasyon normal bulundu ve çocuk ORS ile taburcu edilecekti; altı aylık '
+                                             'büyüme duraklaması göz ardı edildi.',
+                          'teaching_point': 'Aylardır süren ishal ve kilo alamama akut gastroenteritle açıklanamaz; '
+                                            'büyüme eğrisi ilk değerlendirmenin parçasıdır.'},
+                         {'text': 'Karın distansiyonu nedeniyle intraabdominal kitle olasılığını ön planda tutup derin '
+                                  'palpasyon yapmak ve aynı gün acil batın ultrasonografisi istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Kitle palpe edilmedi; ultrasonografide gazla dolu ince bağırsak ansları '
+                                             'dışında bulgu yoktu. Beslenme öyküsü alınmadı.',
+                          'teaching_point': 'Kronik ishal ve büyüme geriliğiyle seyreden distansiyonda malabsorpsiyon '
+                                            'öncelikli düşünülmeli; görüntüleme seçici yapılmalıdır.'}]},
+            {'stage_title': 'Tetkik Stratejisi',
+             'question': 'Tahıllara geçişten sonra başlayan kronik ishal, distansiyon ve büyüme geriliği olan bu '
+                         'çocukta ilk tetkik planınız nedir?',
+             'options': [{'text': 'Ter testi, dışkı elastaz ve yağ atılımını isteyip pankreas kaynaklı malabsorpsiyon '
+                                  'dışlanana kadar diğer tetkikleri ertelemek',
+                          'is_correct': False,
+                          'scenario_update': 'Ter testi ve elastaz normal geldi; bu süreçte bir ay kaybedildi ve çocuk '
+                                             '300 g daha kaybetti.',
+                          'teaching_point': 'Yenidoğan taraması negatif ve klinik tablo gluten maruziyetiyle '
+                                            'ilişkiliyken ilk basamak serolojik tetkiklerdir.'},
+                         {'text': 'Doku transglutaminaz IgA ile total IgA, tam kan sayımı, ferritin, albümin ve '
+                                  'karaciğer testlerini istemek; diyette herhangi bir değişiklik yapmamak',
+                          'is_correct': True,
+                          'explanation': "Glutenle ilişkili malabsorpsiyon şüphesinde ilk tetkik tTG-IgA'dır; total "
+                                         'IgA eksikliği yanlış negatifliğe yol açacağı için birlikte bakılır. '
+                                         'Hemogram, ferritin ve albümin malabsorpsiyonun sonuçlarını gösterir. '
+                                         'Seroloji doğru sonuç vermesi için diyette gluten sürmelidir.',
+                          'new_finding': 'tTG-IgA >200 U/mL (normal üst sınır 10 U/mL; >10 kat). Total IgA 68 mg/dL '
+                                         '(yaşa göre normal). Hb 9.8 g/dL, MCV 66 fL, ferritin 8 ng/mL. Albümin 3.4 '
+                                         'g/dL. AST/ALT hafif yüksek (48/52 U/L).'},
+                         {'text': 'Dışkıda parazit, kültür, kalprotektin ve rotavirüs antijeni isteyip sonuçlar '
+                                  'normalse iki hafta sonra kontrol tartısı ile yeniden değerlendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Dışkı tetkikleri normal geldi; iki haftalık bekleme sonunda çocuk yine '
+                                             'kilo kaybetmişti.',
+                          'teaching_point': 'Aylar süren ishal ve büyüme geriliğinde enfeksiyöz tetkikler tek başına '
+                                            'yetersizdir; gluten ilişkili enteropati için seroloji önceliklidir.'},
+                         {'text': 'Olası besin alerjisini değerlendirmek için buğday, süt ve yumurta spesifik IgE ile '
+                                  'deri prick testi yapmak ve sonucu pozitif olan gıdaları diyetten çıkarmak',
+                          'is_correct': False,
+                          'scenario_update': 'Buğday spesifik IgE düşük pozitif geldi; aile buğdayı diyetten çıkardı, '
+                                             'ardından yapılan serolojik testler yanlış negatif çıkabilecekti.',
+                          'teaching_point': 'IgE aracılı alerji testleri malabsorpsiyonu açıklamaz; serolojiden önce '
+                                            'gluten kesilmesi tanıyı engeller.'}]},
+            {'stage_title': 'Klinik Tanı',
+             'question': 'Gluten maruziyeti sonrası başlayan malabsorpsiyon, büyüme geriliği, demir eksikliği ve 10 '
+                         'kattan yüksek tTG-IgA olan bu çocukta tanı nedir?',
+             'options': [{'text': 'İnek sütü proteinine bağlı enteropati',
+                          'is_correct': False,
+                          'scenario_update': 'Başlangıç inek sütü değil tahıllarla ilişkili ve tTG-IgA belirgin '
+                                             'yüksek.',
+                          'teaching_point': 'Besin proteini enteropatisi genellikle ilk yılda başlar ve seroloji '
+                                            'tanısal değildir.'},
+                         {'text': 'Kistik fibrozise bağlı pankreas yetersizliği',
+                          'is_correct': False,
+                          'scenario_update': 'Yenidoğan taraması negatif, solunum bulgusu yok ve seroloji başka bir '
+                                             'tanıyı gösteriyor.',
+                          'teaching_point': 'Pankreas yetersizliğinde semptomlar genellikle ilk aylardan itibaren '
+                                            'başlar.'},
+                         {'text': 'Çölyak hastalığı',
+                          'is_correct': True,
+                          'explanation': 'Glutene geçişle başlayan kronik ishal, distansiyon, kas kaybı, büyüme '
+                                         'geriliği, demir eksikliği ve 10 katı aşan tTG-IgA çölyak hastalığının klasik '
+                                         'formunu gösterir.',
+                          'new_finding': 'Ön Tanı: Çölyak Hastalığı (klasik form). Biyopsisiz tanı için ayrı örnekte '
+                                         'endomisyum antikoru gerekir.'},
+                         {'text': 'Kronik nonspesifik ishal',
+                          'is_correct': False,
+                          'scenario_update': 'Toddler diyaresinde büyüme normaldir; bu çocukta belirgin büyüme '
+                                             'duraklaması ve kas kaybı var.',
+                          'teaching_point': 'Büyüme geriliği fonksiyonel ishali dışlar.'}]},
+            {'stage_title': 'Sevk ve Tedavi Planı',
+             'question': 'Bu çocuk için acil servisten yapılacak en uygun plan hangisidir?',
+             'options': [{'text': 'Malnütrisyon nedeniyle hastayı servise yatırıp intravenöz albümin ve parenteral '
+                                  'beslenme başlatmak, tanıyı kesinleştirmek için yatışta endoskopi planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Hemodinamisi stabil ve oral beslenebilen çocuk gereksiz yere yatırıldı; '
+                                             'parenteral beslenme kateter enfeksiyonu riski yarattı.',
+                          'teaching_point': 'Ağır malnütrisyon veya çölyak krizi yoksa ayaktan öncelikli sevk '
+                                            'yeterlidir.'},
+                         {'text': 'Gluteni yarıya azaltıp yoğurt ve probiyotik eklemek, demir başlamadan önce '
+                                  'gastroenteroloji görüşü almak ve iki hafta sonra kilo kontrolü yapmak',
+                          'is_correct': False,
+                          'scenario_update': 'Kısmi gluten azaltması serolojinin güvenilirliğini düşürdü; demir '
+                                             'başlanmadığı için anemi derinleşti.',
+                          'teaching_point': 'Tanı sürecinde gluten miktarı değiştirilmemelidir; demir eksikliği '
+                                            'beklemeden tedavi edilir.'},
+                         {'text': 'Diyette glutene devam ederek pediatrik gastroenterolojiye öncelikli sevk etmek, '
+                                  'demir eksikliği için oral demir başlamak ve beslenme desteği önermek',
+                          'is_correct': True,
+                          'explanation': "ESPGHAN'a göre tanı biyopsi ya da tTG-IgA ≥10 kat + pozitif endomisyum "
+                                         'antikoru ile gastroenterolog tarafından doğrulanmalıdır; bu süreçte gluten '
+                                         'sürdürülür. Demir eksikliği eş zamanlı tedavi edilir.',
+                          'new_finding': 'Çocuk bir hafta içinde gastroenterolojiye görüldü; endomisyum antikoru '
+                                         'pozitif bulundu ve biyopsisiz tanı doğrulandı. Glutensiz diyet ve demir '
+                                         'tedavisiyle üç ayda kilo alımı yeniden başladı.'},
+                         {'text': 'Seroloji kesin pozitif olduğu için hemen glutensiz diyet başlatıp aileye diyet '
+                                  'listesi vermek, gastroenteroloji randevusunu diyetin etkisini görmek için üç ay '
+                                  'sonraya planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Glutensiz diyetle çocuk iyileşti ancak gastroenterolojide doğrulayıcı '
+                                             'endomisyum antikoru ve biyopsi yapılamadı; tanı belirsiz kaldı.',
+                          'teaching_point': 'Tanı uzman tarafından doğrulanmadan gluten kesilmemelidir; diyet '
+                                            'serolojiyi ve histolojiyi normalleştirir.'}]}]},
+ {'id': 'G55',
+  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+  'age': '6 Yaşında',
+  'gender': 'Erkek',
+  'complaint': 'Sağ tarafta karın ağrısı, kusma ve yüksek ateş',
+  'history': "Ailesi anlatıyor: 'İki gündür 39°C'ye çıkan ateşi ve karnının sağ tarafında ağrısı var, iki kez kustu. "
+             'Aile hekimimiz sağ alt tarafta hassasiyet bulunca acile gönderdi. Dünden beri ara ara kuru öksürüyor, '
+             "derin nefes alınca ağrısı artıyor.' Aşıları tam, pnömokok aşısı yapılmış. Daha önce bir hastalığı yok. "
+             'Tartı: 20 kg.',
+  'final_diagnosis': 'Sağ Alt Lob Lober Pnömoni (Diyafragmatik Plevral İrritasyona Bağlı Yansıyan Karın Ağrısı)',
+  'disposition': 'Yeşil Alandan Yüksek Doz Oral Amoksisilin ve 48 Saatlik Kontrolle Ayaktan Tedavi',
+  'case_pearl': 'Alt lob pnömonisinde diyafragmatik plevranın irritasyonu ağrıyı karına yansıtabilir ve tablo akut '
+                'batını taklit eder. Ateşli karın ağrısında solunum sayısı, oksijen satürasyonu ve akciğer '
+                'oskültasyonu atlanmamalıdır. Hipoksemisi ve ağır solunum sıkıntısı olmayan, oral alabilen çocukta '
+                'yüksek doz oral amoksisilin (90 mg/kg/gün, 2 dozda) ayaktan tedavide ilk seçenektir; 48-72 saatte '
+                'klinik yanıt değerlendirilir.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Ateş, kusma ve sağ taraflı karın ağrısıyla sevk edilen bu çocukta ilk değerlendirmeniz nasıl '
+                         'olmalıdır?',
+             'options': [{'text': 'Kusma nedeniyle önce ondansetron ve intravenöz parasetamol vermek, ağrı ve ateş '
+                                  'düştükten sonra karın muayenesini tekrarlayarak cerrahi gerekliliği değerlendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Ateş düştü ama takipne devam etti; vital bulgular ve akciğer '
+                                             'oskültasyonu kaydedilmeden değerlendirme gecikti.',
+                          'teaching_point': 'Semptomatik tedavi öncesi vital bulgular ve sistemik muayene kayıt altına '
+                                            'alınmalıdır.'},
+                         {'text': 'Sevk nedeni doğrultusunda oral alımı kapatıp intravenöz sıvı başlatmak ve karın '
+                                  'muayenesini çocuk cerrahisinin değerlendirmesiyle birlikte yapmak',
+                          'is_correct': False,
+                          'scenario_update': 'Cerrahi ekip karında gerçek defans bulmadı; solunum sayısı ve akciğer '
+                                             'muayenesi yapılmadan bir saat geçti.',
+                          'teaching_point': 'Sevk tanısı yeniden değerlendirilmeden kabul edilmemelidir; ateşli karın '
+                                            'ağrısında sistemik muayene tamamlanmalıdır.'},
+                         {'text': 'Solunum sayısı ve oksijen satürasyonu dahil vital bulguları almak, akciğerleri '
+                                  'dinlemek, ardından karın muayenesinde gerçek defans ve rebound aramak',
+                          'is_correct': True,
+                          'explanation': 'Ateşli karın ağrısında takipne, hipoksemi ve akciğer oskültasyon bulguları '
+                                         'karın dışı nedenleri ortaya koyar. Yansıyan ağrıda karında yüzeyel '
+                                         'hassasiyet olabilir ancak istemsiz defans ve rebound beklenmez.',
+                          'new_finding': 'Vital Bulgular: Ateş 39.1°C, KTA 128/dk, SS 34/dk (takipneik), SpO2 %96 (oda '
+                                         'havası), TA 102/64 mmHg. Burun kanadı solunumu ve inleme yok, hafif '
+                                         'interkostal çekilme. Sağ akciğer bazalinde solunum sesleri azalmış, '
+                                         'bronşiyal solunum sesi ve ince raller. Karında sağ üst ve alt kadranda '
+                                         'yüzeyel hassasiyet; istemsiz defans ve rebound yok. Derin inspiryumla ağrı '
+                                         'artıyor.'},
+                         {'text': 'Sağ alt kadran hassasiyeti nedeniyle risk skorunu hesaplamak için tam kan sayımı, '
+                                  'CRP ve batın ultrasonografisini muayeneyi tamamlamadan istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Ultrasonografide apendiks görüntülenemedi ve sonuç belirsiz raporlandı; '
+                                             'solunum bulguları değerlendirilmediği için tablo karıştı.',
+                          'teaching_point': 'Tetkikler eksiksiz bir muayeneden sonra seçilmelidir; tam muayene '
+                                            'gereksiz görüntülemeyi önler.'}]},
+            {'stage_title': 'Tetkik Stratejisi',
+             'question': 'Takipneik, sağ bazalde bronşiyal solunum sesi olan ve karında gerçek peritoneal bulgusu '
+                         'olmayan bu çocukta hangi tetkik uygundur?',
+             'options': [{'text': 'Ateş, sağ taraflı karın ağrısı ve kusma nedeniyle intravenöz kontrastlı batın ve '
+                                  'alt toraks bilgisayarlı tomografisi çekip cerrahiye danışmak',
+                          'is_correct': False,
+                          'scenario_update': 'Tomografide akciğer bazalinde bulgu görüldü, batın normaldi; çocuk '
+                                             'akciğer grafisiyle konabilecek tanı için yüksek radyasyona maruz kaldı.',
+                          'teaching_point': 'Çocukta ilk basamak düşük radyasyonlu ve hedefe yönelik tetkiktir; '
+                                            'tomografi rutin değildir.'},
+                         {'text': 'Tek yönlü akciğer grafisi istemek; genel durumu değerlendirmek için tam kan sayımı '
+                                  've CRP almak, klinik gerektirmedikçe batın görüntülemesi yapmamak',
+                          'is_correct': True,
+                          'explanation': 'Ateş, takipne ve fokal oskültasyon bulgusu olan çocukta akciğer grafisi '
+                                         'karın ağrısının kaynağını gösterir. Rutin kan tetkiki hafif olgularda '
+                                         'zorunlu değildir ancak tanısal belirsizlik ve yatış kararında yardımcıdır.',
+                          'new_finding': 'Akciğer grafisi (PA): Sağ alt zonda homojen dansite artışı, içinde hava '
+                                         'bronkogramları, sağ hemidiyafram konturunda silinme. Sinüsler açık, sıvı '
+                                         'izlenmedi. Lökosit 16.400/mm³ (%82 nötrofil), CRP 68 mg/L.',
+                          'image': 'assets/images/cxr_lobar_pneumonia.png',
+                          'image_caption': 'Akciğer Grafisi (PA)'},
+                         {'text': 'Sevk tanısını dışlamak için önce batın ultrasonografisi istemek, apendiks normalse '
+                                  'akciğer grafisini ertesi gün kontrol muayenesinde değerlendirmek ve sonuç gelene '
+                                  'kadar çocuğu aç tutmak',
+                          'is_correct': False,
+                          'scenario_update': 'Ultrasonografide apendiks görülemedi ve sonuç belirsiz kaldı; akciğer '
+                                             'grafisi ertelendiği için tedavi başlanmadı.',
+                          'teaching_point': 'Akciğer bulguları olan ateşli çocukta öncelikli tetkik akciğer '
+                                            'grafisidir; batın görüntülemesi seçici yapılmalıdır.'},
+                         {'text': 'Nazofaringeal sürüntüden solunum yolu viral PCR paneli göndermek ve sonuç viral '
+                                  'gelirse antibiyotiksiz izlem planlayıp ateş için antipiretik önermek',
+                          'is_correct': False,
+                          'scenario_update': "PCR'de rinovirüs pozitif geldi; fokal akciğer bulguları olan çocuk "
+                                             'antibiyotiksiz taburcu edilecekti.',
+                          'teaching_point': 'Viral pozitiflik bakteriyel koenfeksiyonu dışlamaz; fokal bulgu '
+                                            'varlığında görüntüleme ve klinik karar esastır.'}]},
+            {'stage_title': 'Klinik Tanı',
+             'question': 'Ateş, takipne, sağ bazalde bronşiyal solunum sesi, grafide hava bronkogramlı homojen opasite '
+                         've yansıyan karın ağrısı olan bu çocukta tanı nedir?',
+             'options': [{'text': 'Akut viral bronşit',
+                          'is_correct': False,
+                          'scenario_update': 'Fokal konsolidasyon bulgusu, yüksek ateş ve inflamatuvar yanıt viral '
+                                             'bronşitle uyumlu değil.',
+                          'teaching_point': 'Bronşitte grafide lober opasite beklenmez.'},
+                         {'text': 'Akut apandisit',
+                          'is_correct': False,
+                          'scenario_update': 'Karında istemsiz defans ve rebound yok; ağrı derin inspiryumla artıyor '
+                                             've akciğer bulguları belirgin.',
+                          'teaching_point': 'Alt lob tutulumu akut batını taklit edebilir.'},
+                         {'text': 'Sağ alt lob lober pnömoni',
+                          'is_correct': True,
+                          'explanation': 'Ateş, takipne, fokal bronşiyal solunum sesi ve hava bronkogramlı homojen '
+                                         'lober opasite tipik bakteriyel pnömoniyi gösterir; diyafragmatik plevra '
+                                         'irritasyonu ağrıyı karına yansıtır.',
+                          'new_finding': 'Tanı: Sağ Alt Lob Lober Pnömoni (yansıyan karın ağrısı ile).'},
+                         {'text': 'Parapnömonik plevral efüzyon',
+                          'is_correct': False,
+                          'scenario_update': 'Grafide kostofrenik sinüsler açık, sıvı izlenmiyor.',
+                          'teaching_point': 'Efüzyon kuşkusunda grafide sinüs kapanması veya menisküs görülür; USG ile '
+                                            'doğrulanır.'}]},
+            {'stage_title': 'Tedavi ve Taburculuk Planı',
+             'question': "SpO2'si %96 olan, oral alabilen ve ciddi solunum sıkıntısı bulunmayan bu 20 kg'lık çocuğun "
+                         'tedavisi nasıl olmalıdır?',
+             'options': [{'text': 'Lober tutulum nedeniyle servise yatırıp intravenöz ampisilin 200 mg/kg/gün başlamak '
+                                  've klinik düzelme sonrası kontrol akciğer grafisi çekerek taburcu etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Oral tedaviye uygun çocuk 4 gün hastanede kaldı; kontrol grafisi '
+                                             'gereksiz radyasyon ekledi.',
+                          'teaching_point': 'Lober tutulum tek başına yatış endikasyonu değildir; hipoksemi, ağır '
+                                            'solunum sıkıntısı ve oral intolerans yatışı belirler. Komplike olmayan '
+                                            'olguda kontrol grafisi gerekmez.'},
+                         {'text': 'Atipik etkenleri de kapsamak için yüksek doz amoksisiline ek olarak oral '
+                                  'klaritromisin başlamak ve ayaktan izlemle 48 saat sonra kontrole çağırmak',
+                          'is_correct': False,
+                          'scenario_update': 'Kombinasyon tedavisiyle çocukta bulantı ve ishal gelişti; tipik lober '
+                                             'tabloda makrolidin ek yararı olmadı.',
+                          'teaching_point': 'Tipik lober pnömonide ampirik makrolid eklenmesi rutin önerilmez; atipik '
+                                            'etken şüphesinde düşünülür.'},
+                         {'text': 'Tek doz intramüsküler seftriakson yapıp ertesi gün oral sefuroksim aksetil ile on '
+                                  'güne tamamlamak ve tedavi sonunda kontrol akciğer grafisi planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'İntramüsküler enjeksiyon ağrılıydı; geniş spektrumlu tedavi gereksizdi '
+                                             've kontrol grafisi yönetimi değiştirmedi.',
+                          'teaching_point': 'Ayaktan tedavide ilk seçenek dar spektrumlu yüksek doz amoksisilindir; '
+                                            'rutin kontrol grafisi önerilmez.'},
+                         {'text': 'Yüksek doz oral amoksisilin 90 mg/kg/gün iki dozda başlamak, ateş ve ağrı için '
+                                  'parasetamol önermek, 48 saatte kontrol ve solunum sıkıntısında dönüşü anlatmak',
+                          'is_correct': True,
+                          'explanation': 'Hipoksemisi ve ağır solunum sıkıntısı olmayan, oral alabilen çocukta IDSA ve '
+                                         'BTS önerisi yüksek doz oral amoksisilindir. Klinik yanıt 48-72 saatte '
+                                         'değerlendirilir; yanıtsızlıkta efüzyon gibi komplikasyonlar araştırılır.',
+                          'new_finding': 'Oral amoksisilin başlandı. 48. saatteki kontrolde ateşi düşmüş, solunum '
+                                         "sayısı 24/dk'ya inmiş ve karın ağrısı kaybolmuştu. Tedavi tamamlandı."}]}]},
+ {'id': 'G56',
+  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+  'age': '7 Yaşında',
+  'gender': 'Erkek',
+  'complaint': 'Bir haftadır halsizlik, bulantı ve iştahsızlık; son iki gündür gözlerde sararma ve koyu renkli idrar',
+  'history': "Annesi anlatıyor: 'Bir hafta önce hafif ateşi, halsizliği ve bulantısı başladı, hiçbir şey yemek "
+             'istemedi, karnının sağ üst tarafı ağrıyordu. Ateşi geçti ama iki gündür gözlerinin akı sarardı, çişi çay '
+             "rengi, kakası açık renkli oldu. Sınıfında üç arkadaşında da benzer şikayet olmuş.' Kan nakli, ilaç veya "
+             'bitki çayı kullanımı yok. Aşı kartında 18. ay sonrası takvim aşılarının yapılmadığı görüldü (aile göç '
+             'nedeniyle aşıları kaçırmış). Tartı: 24 kg.',
+  'final_diagnosis': 'Akut Viral Hepatit A',
+  'disposition': 'Yeşil Alanda Karaciğer Sentez Fonksiyonunun Doğrulanması, Destek Tedavisi, Temaslı Profilaksisi ve '
+                 'Bildirim ile Ayaktan İzlem',
+  'case_pearl': 'Okul çağında prodrom (halsizlik, bulantı, sağ üst kadran ağrısı) sonrası ateşin düşüp sarılığın '
+                "başlaması ve kümelenme hepatit A'yı düşündürür. Tanı anti-HAV IgM ile konur. Prognozu belirleyen "
+                'transaminaz düzeyi değil, sentez fonksiyonu (INR), kan şekeri ve bilinç durumudur; INR ≥1.5 veya '
+                'ensefalopati akut karaciğer yetmezliği kriteridir. Tedavi destekleyicidir; parasetamol düşük dozda '
+                'kısa süre kullanılabilir, hepatotoksik ilaç ve bitkisel ürünlerden kaçınılır. Temaslılara iki hafta '
+                'içinde aşı ile profilaksi önerilir ve bildirim zorunludur.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Prodrom sonrası sarılık, koyu idrar ve açık renkli dışkısı olan bu 7 yaşındaki çocukta '
+                         'muayenede öncelikle neyi değerlendirirsiniz?',
+             'options': [{'text': 'Sağ üst kadran ağrısı nedeniyle Murphy bulgusunu aramak ve safra yolu taşı '
+                                  'olasılığına karşı muayeneyi karın palpasyonuyla sınırlı tutup cerrahiye danışmak',
+                          'is_correct': False,
+                          'scenario_update': 'Murphy bulgusu negatifti. Bilinç, kanama ve maruziyet değerlendirilmeden '
+                                             'cerrahi konsültasyon istendi; cerrahi ekip akut cerrahi tablo düşünmedi.',
+                          'teaching_point': 'Prodrom ve kümelenme sonrası gelişen sarılıkta öncelik karaciğer '
+                                            'fonksiyonunu tehdit eden bulguları aramaktır; safra taşı çocukta '
+                                            'nadirdir.'},
+                         {'text': 'Sınıftaki kümelenme nedeniyle izolasyon önlemlerine odaklanıp çocuğu ayrı bir odaya '
+                                  'almak ve muayeneyi laboratuvar sonuçları geldikten sonra ayrıntılandırmak',
+                          'is_correct': False,
+                          'scenario_update': 'Çocuk bir saat odada bekletildi; ensefalopati ve kanama bulguları '
+                                             'sorgulanmadan zaman geçti.',
+                          'teaching_point': 'Temas önlemleri gereklidir ancak sistematik muayeneyi geciktirmemelidir.'},
+                         {'text': 'Bulantı ve iştahsızlık nedeniyle önce intravenöz sıvı ve ondansetron başlatmak, '
+                                  'sarılığın derecesini değerlendirmek için transkutan bilirubin ölçümü yapmak',
+                          'is_correct': False,
+                          'scenario_update': 'İntravenöz sıvı başlandı; çocuk oral alabildiği halde damar yolu açıldı '
+                                             've karaciğer yetmezliği bulguları sistematik değerlendirilmedi.',
+                          'teaching_point': 'Transkutan ölçüm yenidoğan dışında güvenilir değildir; oral alabilen '
+                                            'çocukta intravenöz sıvı gerekmez.'},
+                         {'text': 'Bilinç ve davranış değişikliğini, asteriksisi, kanama bulgularını, hidrasyonu ve '
+                                  'karaciğer-dalak boyutunu değerlendirip ilaç, bitki ve toksin maruziyetini '
+                                  'sorgulamak',
+                          'is_correct': True,
+                          'explanation': 'Sarılıklı çocukta ilk öncelik akut karaciğer yetmezliği bulgularını '
+                                         '(ensefalopati, kanama) erkenden tanımaktır. Karaciğer boyutu, hassasiyet, '
+                                         'dalak ve ilaç-bitki maruziyeti ayırıcı tanıyı yönlendirir.',
+                          'new_finding': 'Vital Bulgular: Ateş 37.2°C, KTA 92/dk, SS 20/dk, TA 104/66 mmHg. Bilinç '
+                                         'açık, oryante, davranış değişikliği ve asteriksis yok. Skleralar ikterik. '
+                                         'Peteşi, ekimoz, burun kanaması yok. Karaciğer kot kavsini 3 cm geçiyor, '
+                                         'kenarı yumuşak ve hassas. Dalak ele gelmiyor. Asit yok. Hidrasyonu iyi. İlaç '
+                                         'olarak yalnızca iki gün parasetamol kullanılmış (15 mg/kg, günde 3 kez).'}]},
+            {'stage_title': 'Tetkik Stratejisi',
+             'question': 'Bilinci açık, kanama bulgusu olmayan ve hepatomegalisi olan bu sarılıklı çocukta hangi '
+                         'tetkikler öncelikli olarak istenmelidir?',
+             'options': [{'text': 'Kolestaz paterni nedeniyle önce batın ultrasonografisi ve manyetik rezonans '
+                                  'kolanjiyografi isteyip laboratuvar tetkiklerini görüntüleme sonucuna göre planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Ultrasonografide hepatomegali ve safra kesesi duvar ödemi dışında bulgu '
+                                             'yoktu; MR kolanjiyografi için sedasyon gerekecekti.',
+                          'teaching_point': 'Hepatosellüler hasar paterni olan çocukta ilk basamak laboratuvar ve '
+                                            'viral seroloji olmalıdır; ileri görüntüleme seçici kullanılır.'},
+                         {'text': "AST, ALT ve bilirubin düzeylerini istemek, transaminazlar 1000 U/L'nin üzerindeyse "
+                                  'hastayı karaciğer nakil merkezine sevk etmek',
+                          'is_correct': False,
+                          'scenario_update': 'ALT 1840 U/L geldi; sentez fonksiyonu bilinmeden çocuk nakil merkezine '
+                                             'sevk edilmek üzereydi.',
+                          'teaching_point': 'Transaminaz yüksekliği prognozu belirlemez; sentez fonksiyonu (INR), kan '
+                                            'şekeri ve bilinç durumu belirleyicidir.'},
+                         {'text': 'Yalnızca total bilirubin ve tam idrar tetkiki isteyip idrarda bilirubin pozitifse '
+                                  'ek tetkik yapmadan aile hekimi kontrolü ile taburcu etmek',
+                          'is_correct': False,
+                          'scenario_update': 'İdrarda bilirubin pozitif bulundu; sentez fonksiyonu ve etiyoloji '
+                                             'değerlendirilmeden çocuk taburcu edilecekti.',
+                          'teaching_point': 'Sarılıklı çocukta INR ve kan şekeri bakılmadan güvenli taburculuk kararı '
+                                            'verilemez.'},
+                         {'text': 'Transaminazlar, total-direkt bilirubin, INR, kan şekeri, albümin ve tam kan sayımı '
+                                  'ile birlikte hepatotropik virüs serolojilerini istemek',
+                          'is_correct': True,
+                          'explanation': 'Akut hepatitte sentez fonksiyonu (INR, albümin) ve kan şekeri yetmezlik '
+                                         'riskini gösterir. Akut viral seroloji paneli (A, B ve C tipi belirteçler) '
+                                         'etiyolojiyi belirler.',
+                          'new_finding': 'AST 1420 U/L, ALT 1840 U/L, total bilirubin 5.8 mg/dL, direkt 4.1 mg/dL, INR '
+                                         '1.1, kan şekeri 92 mg/dL, albümin 3.9 g/dL, hemogram normal. Viral seroloji: '
+                                         'A tipi IgM antikoru pozitif; B tipi yüzey antijeni ve çekirdek IgM '
+                                         'negatif.'}]},
+            {'stage_title': 'Klinik Tanı',
+             'question': 'Prodrom sonrası sarılık, belirgin transaminaz yüksekliği, normal INR ve A tipi IgM antikoru '
+                         'pozitifliği olan bu çocukta tanı nedir?',
+             'options': [{'text': 'Otoimmün hepatit',
+                          'is_correct': False,
+                          'scenario_update': 'Kümelenme, akut prodrom ve viral seroloji pozitifliği otoimmün süreci '
+                                             'düşündürmez.',
+                          'teaching_point': 'Otoimmün hepatit viral etiyoloji dışlandıktan sonra düşünülür.'},
+                         {'text': 'Parasetamol hepatotoksisitesi',
+                          'is_correct': False,
+                          'scenario_update': 'Terapötik dozda kısa süreli kullanım ve pozitif anti-HAV IgM bu tanıyı '
+                                             'desteklemez.',
+                          'teaching_point': 'Parasetamol toksisitesi aşırı doz öyküsü ve genellikle prodrom olmadan '
+                                            'gelişir.'},
+                         {'text': 'Akut hepatit A',
+                          'is_correct': True,
+                          'explanation': 'Okul kümelenmesi, aşısız çocuk, prodrom sonrası sarılık, hepatosellüler '
+                                         "hasar ve anti-HAV IgM pozitifliği akut hepatit A'yı doğrular. INR normal "
+                                         'olduğundan karaciğer yetmezliği yoktur.',
+                          'new_finding': 'Tanı: Akut Viral Hepatit A (sentez fonksiyonu korunmuş).'},
+                         {'text': 'Koledok kisti',
+                          'is_correct': False,
+                          'scenario_update': 'Ultrasonda safra yollarında dilatasyon yok; tablo hepatosellüler.',
+                          'teaching_point': 'Koledok kistinde kolestatik patern ve safra yolu dilatasyonu beklenir.'}]},
+            {'stage_title': 'Tedavi ve Taburculuk Planı',
+             'question': "Oral alabilen, INR'si normal bu çocuğun yönetimi nasıl olmalıdır?",
+             'options': [{'text': 'Akut karaciğer yetmezliği gelişme riskine karşı çocuğu servise yatırıp intravenöz '
+                                  'dekstrozlu sıvı başlatmak ve transaminazlar normale dönene kadar hastanede tutmak',
+                          'is_correct': False,
+                          'scenario_update': 'Stabil çocuk iki hafta hastanede kaldı; transaminazlar haftalar içinde '
+                                             'yavaş düştüğü için taburculuk gereksiz uzadı.',
+                          'teaching_point': 'INR normal, bilinci açık ve oral alabilen çocuk ayaktan izlenir; yatış '
+                                            'ölçütü transaminaz değil sentez fonksiyonu ve klinik bulgulardır.'},
+                         {'text': 'Ev temaslılarına profilaksi için immünoglobulin yapmak ve çocuğa enfeksiyonu '
+                                  'sınırlamak amacıyla antiviral tedavi başlayıp bir hafta sonra kontrol etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Antiviral tedavi için bir endikasyon bulunmadığı belirtildi; sağlıklı '
+                                             'okul çağı temaslılarda immünoglobulin yerine aşı tercih edilecekti.',
+                          'teaching_point': 'Hepatit A için antiviral tedavi yoktur; 12 ay-40 yaş sağlıklı '
+                                            'temaslılarda temas sonrası profilakside tercih aşıdır.'},
+                         {'text': 'Karaciğeri korumak için ursodeoksikolik asit ve silimarin başlamak, yağ ve protein '
+                                  'kısıtlı diyet önermek ve iki hafta okula gönderilmemesini söylemek',
+                          'is_correct': False,
+                          'scenario_update': 'Kısıtlı diyetle çocuk iştahsızlaşıp kilo kaybetti; ilaçlar seyri '
+                                             'değiştirmedi.',
+                          'teaching_point': "Akut hepatit A'da spesifik tedavi yoktur; diyet kısıtlaması ve "
+                                            'hepatoprotektif ürünlerin yararı gösterilmemiştir.'},
+                         {'text': 'Destek tedavisi, gerekirse kısa süreli düşük doz parasetamol, sarılık '
+                                  'başlangıcından bir hafta okula ara, temaslılara aşı profilaksisi, bildirim ve 3-5 '
+                                  'günde INR kontrolü',
+                          'is_correct': True,
+                          'explanation': 'Tedavi destekleyicidir; hepatotoksik ilaç ve bitkisel ürünlerden kaçınılır. '
+                                         'Bulaştırıcılık sarılık başlangıcından yaklaşık bir hafta sonra azalır. Ev ve '
+                                         'sınıf temaslılarına iki hafta içinde aşı uygulanır; INR ve bilinç izlemi '
+                                         'karaciğer yetmezliğini erken yakalamak için yapılır.',
+                          'new_finding': 'Bildirim yapıldı, kardeşe ve sınıf temaslılarına hepatit A aşısı önerildi. '
+                                         'Dördüncü gün kontrolünde INR 1.0, bilirubin 4.2 mg/dL; çocuk iştahla yemek '
+                                         'yiyordu. Üç haftada sarılık geriledi.'}]}]},
+ {'id': 'G57',
+  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+  'age': '15 Aylık',
+  'gender': 'Kız',
+  'complaint': 'Geçirilmiş ishal sonrasında süt ve yoğurt alınca tekrarlayan köpüklü sulu dışkılama, şişkinlik ve '
+               'pişik',
+  'history': "Annesi anlatıyor: 'On gün önce ateşli, kusmalı bir ishal geçirdi; ateşi ve kusması geçti. Ama ne zaman "
+             'inek sütü veya yoğurt versem yarım saat sonra karnından gurultular geliyor, bezine fışkırır gibi '
+             'köpüklü, sapsarı, ekşi kokulu sulu kaka yapıyor. Popo bölgesi kıpkırmızı oldu. Süt vermediğim günlerde '
+             "kakası düzeliyor gibi.' İştahı iyi, oyun oynuyor. Kreşe gidiyor. Tartı: 10 kg (hastalık öncesi 10.2 kg).",
+  'final_diagnosis': 'Sekonder (Postenfeksiyöz) Laktoz İntoleransı',
+  'disposition': 'Yeşil Alandan 2-4 Hafta Laktozu Azaltılmış Beslenme, Bariyer Krem ve Kademeli Yeniden Başlama '
+                 'Eğitimi ile Taburculuk',
+  'case_pearl': 'Viral gastroenterit sonrası ince bağırsak fırça kenarı hasarı geçici laktaz eksikliğine yol açabilir. '
+                'Süt ürünleriyle ilişkili köpüklü, asidik ishal, şişkinlik ve perianal eritem tipiktir; dışkı pH <5.5 '
+                've redüktan madde pozitifliği tanıyı destekler. Tedavi geçici (2-4 hafta) laktozu azaltılmış '
+                'beslenmedir; yoğurt ve peynir gibi fermente ürünler çoğunlukla tolere edilir. Kalıcı kısıtlama ve '
+                'rutin laktozsuz mama önerilmez.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Geçirilmiş ishal sonrası belirli gıdalarla tetiklenen köpüklü dışkılaması olan bu bebekte '
+                         'değerlendirmenin odağı nedir?',
+             'options': [{'text': 'Dışkılamanın tetikleyici gıdalarla zamansal ilişkisini ayrıntılı sorgulayıp '
+                                  'hidrasyon, büyüme, karın distansiyonu ve perianal cildi değerlendirmek',
+                          'is_correct': True,
+                          'explanation': 'Postenfeksiyöz dönemde belirli gıdalarla tetiklenen ishalde gıda-semptom '
+                                         'ilişkisi tanının anahtarıdır. Hidrasyon ve büyüme klinik ciddiyeti, perianal '
+                                         'eritem dışkının asiditesini yansıtır.',
+                          'new_finding': 'Vital Bulgular: Ateş 36.8°C, KTA 104/dk, SS 22/dk, KDZ 1.5 sn. Hidrasyonu '
+                                         'iyi, aktif. Tartı 10 kg (%2 kayıp). Karın hafif distandü, timpanik, yaygın '
+                                         'gurultu; hassasiyet yok. Perianal bölgede parlak kırmızı, dışkı temas '
+                                         'alanıyla sınırlı eritem; satellit lezyon yok. Annenin tuttuğu bezde köpüklü, '
+                                         'sulu, sarı dışkı.'},
+                         {'text': 'Uzayan ishal nedeniyle bakteriyel bir etken olabileceğini düşünüp hidrasyon '
+                                  'değerlendirmesi sonrasında dışkı kültürü ve Clostridioides toksin testi istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Kültür negatif geldi; toksin testi pozitif bildirildi ve iki yaş altı '
+                                             'çocukta kolonizasyon olabileceği için yorumlanamadı. Aile kaygılandı.',
+                          'teaching_point': 'Ateşsiz, iyi görünen ve belirli gıdalarla tetiklenen ishalde rutin '
+                                            'bakteriyel tetkik yönetimi değiştirmez.'},
+                         {'text': 'Perianal kızarıklığı kandida dermatiti kabul edip antifungal krem önermek, ishal '
+                                  'için mevcut beslenmeyi sürdürüp bir hafta sonra kontrole çağırmak',
+                          'is_correct': False,
+                          'scenario_update': 'Antifungal kreme rağmen kızarıklık sürdü; dışkının niteliği değişmediği '
+                                             'için cilt iyileşmedi.',
+                          'teaching_point': 'Satellit lezyonu olmayan, dışkı temas alanıyla sınırlı eritem asidik '
+                                            'dışkıya bağlı irritan dermatittir; altta yatan nedene yönelinmelidir.'},
+                         {'text': 'Köpüklü ve yağlı görünümlü dışkı nedeniyle pankreas yetersizliğini düşünüp solunum '
+                                  'öyküsünü sorgulamak ve ter testi için yönlendirme planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Solunum öyküsü yoktu; ter testi randevusu verildi ve gıda-semptom '
+                                             'ilişkisi ayrıntılı sorgulanmadı.',
+                          'teaching_point': 'Akut enfeksiyon sonrası başlayan ve belirli gıdalarla tetiklenen ishal '
+                                            'kronik malabsorpsiyon hastalıklarından önce geçici enzim eksikliklerini '
+                                            'düşündürür.'}]},
+            {'stage_title': 'Tetkik Stratejisi',
+             'question': 'Hidrasyonu iyi, perianal asidik eritemi ve köpüklü dışkısı olan bu bebekte hangi basit '
+                         'tetkik tanıyı destekler?',
+             'options': [{'text': 'Taze dışkı örneğinde pH ölçümü ve redüktan madde testi yapmak, mikroskopide lökosit '
+                                  've parazit bakmak; kan tetkiki istememek',
+                          'is_correct': True,
+                          'explanation': 'Fermente edilmemiş karbonhidratların kolonda bakteriyel fermantasyonu asidik '
+                                         '(pH <5.5) ve redüktan madde içeren dışkıya yol açar. Bu basit tetkikler kan '
+                                         'tetkikine gerek kalmadan tanıyı destekler.',
+                          'new_finding': 'Taze dışkı: pH 5.0, redüktan madde ++ pozitif. Mikroskopide lökosit, '
+                                         'eritrosit, parazit ve kist yok.'},
+                         {'text': 'Tanıyı kesinleştirmek için acil serviste 2 g/kg oral yükleme verip iki saat sonra '
+                                  'kan şekeri artışını ve gelişen semptomları gözlemek',
+                          'is_correct': False,
+                          'scenario_update': 'Yükleme sonrası bebekte şiddetli gaz sancısı ve dört kez patlayıcı ishal '
+                                             'gelişti; kan şekeri ölçümü güvenilir sonuç vermedi.',
+                          'teaching_point': 'Provokatif yükleme testleri akut dönemdeki küçük çocukta rahatsızlık '
+                                            'verir ve gereksizdir.'},
+                         {'text': 'Hidrojen nefes testi ile karbonhidrat emilimini değerlendirmek amacıyla çocuk '
+                                  'gastroenteroloji polikliniğine randevu verip testi yapılana kadar mevcut beslenmeyi '
+                                  'sürdürmek',
+                          'is_correct': False,
+                          'scenario_update': 'Randevu üç hafta sonraya verildi; bu sürede ishal ve pişik sürdü.',
+                          'teaching_point': 'Hidrojen nefes testi küçük çocukta uygulaması güç ve bu klinik tabloda '
+                                            'gereksizdir; basit dışkı testleri yeterlidir.'},
+                         {'text': 'Malabsorpsiyonu değerlendirmek için doku transglutaminaz IgA, total IgA, albümin, '
+                                  'demir ve çinko düzeylerini isteyip sonuçlara göre diyet planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Sonuçlar normal geldi; bebek kan alımı sırasında çok ağladı ve diyet '
+                                             'önerisi ertelendi.',
+                          'teaching_point': 'Yeni başlayan, enfeksiyon sonrası, büyümeyi etkilememiş ishalde kronik '
+                                            'malabsorpsiyon taraması gerekmez.'}]},
+            {'stage_title': 'Klinik Tanı',
+             'question': 'Viral ishal sonrası süt ürünleriyle tetiklenen köpüklü ishal, asidik dışkı ve redüktan madde '
+                         'pozitifliği olan bu bebekte tanı nedir?',
+             'options': [{'text': 'Giardia duodenalis enfeksiyonu',
+                          'is_correct': False,
+                          'scenario_update': 'Mikroskopide trofozoit veya kist görülmedi ve ishal süt alımıyla '
+                                             'tetikleniyor.',
+                          'teaching_point': 'Protozoon enfeksiyonu belirli gıdayla tetiklenmeyen uzamış ishal yapar.'},
+                         {'text': 'İnek sütü proteini alerjisi',
+                          'is_correct': False,
+                          'scenario_update': 'Yakınma enfeksiyon sonrası başlamış; kanlı dışkı, ürtiker veya egzama '
+                                             'yok ve dışkı bulguları karbonhidrat malabsorpsiyonunu gösteriyor.',
+                          'teaching_point': 'Asidik dışkı ve redüktan madde pozitifliği protein alerjisinden çok '
+                                            'karbonhidrat malabsorpsiyonunu düşündürür.'},
+                         {'text': 'Konjenital sukraz-izomaltaz eksikliği',
+                          'is_correct': False,
+                          'scenario_update': 'Konjenital eksiklikte şikayet sükroz içeren gıdalara geçişle başlar; '
+                                             'burada belirleyici olan enfeksiyon sonrası süt ürünleri.',
+                          'teaching_point': 'Konjenital disakkaridaz eksiklikleri enfeksiyon öyküsünden bağımsız ve '
+                                            'kalıcıdır.'},
+                         {'text': 'Sekonder (postenfeksiyöz) laktoz intoleransı',
+                          'is_correct': True,
+                          'explanation': 'Viral enterit sonrası fırça kenarı hasarına bağlı geçici laktaz eksikliği '
+                                         'süt alımıyla ozmotik-fermentatif ishale neden olur; asidik dışkı ve redüktan '
+                                         'madde pozitifliği tanıyı destekler.',
+                          'new_finding': 'Tanı: Postenfeksiyöz (Sekonder) Laktoz İntoleransı.'}]},
+            {'stage_title': 'Diyet Yönetimi ve İyileşme Planı',
+             'question': 'Bu bebeğin beslenme planı nasıl düzenlenmelidir?',
+             'options': [{'text': 'İnek sütü ve süt ürünlerini kalıcı olarak kesip soya bazlı mamaya geçmek, kalsiyum '
+                                  'desteği başlamak ve okul çağında yeniden değerlendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Kalıcı kısıtlama gereksiz yere uygulandı; aile yıllarca süt ürünlerinden '
+                                             'kaçındı.',
+                          'teaching_point': 'Sekonder laktoz intoleransı geçicidir; kalıcı kısıtlama ve soya mamaya '
+                                            'geçiş gereksizdir.'},
+                         {'text': 'İki-dört hafta laktozu azaltılmış süt kullanmak, yoğurt ve peynire devam etmek, '
+                                  'bariyer krem önermek ve ardından sütü kademeli olarak yeniden başlatmak',
+                          'is_correct': True,
+                          'explanation': 'Fırça kenarının yenilenmesi için 2-4 haftalık laktoz azaltımı yeterlidir. '
+                                         'Fermente ürünler daha az laktoz içerdiği için genellikle tolere edilir. '
+                                         'Sonrasında süt ürünleri kademeli açılır; perianal bölge bariyer kremle '
+                                         'korunur.',
+                          'new_finding': 'Laktozu azaltılmış süte geçildi, çinko oksitli bariyer krem başlandı. 48 '
+                                         'saatte patlayıcı ishal durdu, pişik geriledi. Üç hafta sonra normal süt '
+                                         'sorunsuz yeniden başlandı.'},
+                         {'text': 'Bağırsak enzimlerinin hızla yenilenmesi için iki hafta probiyotik ve çinko vermek, '
+                                  'süt ürünlerine aynı miktarda devam edip şikayetleri izlemek',
+                          'is_correct': False,
+                          'scenario_update': 'Süt ürünlerine devam edilince ishal ve pişik sürdü; bebeğin tartısı 200 '
+                                             'g daha azaldı.',
+                          'teaching_point': 'Takviyeler tek başına yeterli değildir; semptomların kontrolü için geçici '
+                                            'laktoz azaltımı gerekir.'},
+                         {'text': 'İshali durdurmak için 24 saat yalnızca ORS ile beslemek, ardından pirinç lapası ve '
+                                  'muzla sınırlı bir diyetle bir hafta devam etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Kısıtlı diyetle bebek huzursuzlaştı ve kilo kaybı derinleşti; süt '
+                                             'yeniden başlanınca ishal tekrarladı.',
+                          'teaching_point': 'Aç bırakma ve kısıtlı diyetler önerilmez; hedef yalnızca laktoz yükünü '
+                                            'geçici olarak azaltmaktır.'}]}]},
+ {'id': 'G58',
+  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+  'age': '7 Yaşında',
+  'gender': 'Kız',
+  'complaint': 'Araba yolculuğu sırasında başlayan bulantı, kusma, solukluk ve soğuk terleme',
+  'history': "Ailesi anlatıyor: 'Ailecek bayram için şehir dışına arabayla gidiyorduk. Yolun ilk saatinde arka "
+             'koltukta tablette çizgi film izlerken esnemeye başladı, rengi soldu, soğuk soğuk terledi ve ardından '
+             'kustu. Arabayı kenara çekip açık havaya çıkınca 15-20 dakikada toparlandı. Tekrar yola çıkıp virajlara '
+             'girince yine kustu. Evde hiç şikayeti yok. Baş ağrısı, sabah kusması veya dengesizliği olmadı. Daha önce '
+             "otobüs yolculuklarında da midesi bulanmıştı. Beyninde bir şey mi var diye çok korktuk.'",
+  'final_diagnosis': 'Hareket Hastalığı (Taşıt Tutması)',
+  'disposition': 'Yeşil Alandan Nörolojik Muayenenin Doğrulanması, Davranışsal Önlemler ve Gerekirse Yolculuk Öncesi '
+                 'Profilaksi Eğitimi ile Taburculuk',
+  'case_pearl': 'Taşıt hareketiyle başlayıp hareket bitince geçen bulantı, solukluk, terleme ve kusma; vestibüler, '
+                'görsel ve proprioseptif girdiler arasındaki uyumsuzluktan kaynaklanır. Normal nörolojik muayenede '
+                'görüntüleme gerekmez. Kırmızı bayraklar: sabah kusmaları, uykudan uyandıran baş ağrısı, ataksi, '
+                'nistagmus, papilödem. Tedavide ön koltukta ufka bakmak, ekran-okuma yasağı, havalandırma ve hafif '
+                'öğün; gerekirse 2 yaş üstünde yolculuktan 30-60 dakika önce birinci kuşak antihistaminik.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Yolculuk sırasında tekrarlayan kusması olan, ailesi beyinle ilgili bir hastalıktan endişe '
+                         'eden bu çocukta muayenede neye odaklanırsınız?',
+             'options': [{'text': 'Kusma ve solukluk nedeniyle hipoglisemiyi düşünüp kapiller kan şekeri bakmak, '
+                                  'normalse ek muayene yapmadan oral sıvı denemesiyle taburcu etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Kan şekeri normal geldi. Nörolojik muayene yapılmadığı için ailenin '
+                                             'endişesi giderilemedi ve aile başka bir merkezde tomografi istedi.',
+                          'teaching_point': 'Ailenin intrakraniyal hastalık kaygısı ancak sistematik nörolojik '
+                                            'muayeneyle giderilebilir.'},
+                         {'text': 'Kusmaların gastrointestinal kaynaklı olabileceğini düşünüp karın muayenesine '
+                                  'odaklanmak, ardından ondansetron vererek ailenin yolculuğa devam etmesini önermek',
+                          'is_correct': False,
+                          'scenario_update': 'Karın muayenesi normaldi; nörolojik muayene yapılmadan çocuk taburcu '
+                                             'edildi ve aile endişesini sürdürdü.',
+                          'teaching_point': 'Tekrarlayan kusmada nörolojik kırmızı bayraklar mutlaka '
+                                            'değerlendirilmelidir.'},
+                         {'text': 'Viraj sırasında kusma olduğu için vestibüler nörit olasılığını değerlendirmek '
+                                  'amacıyla Dix-Hallpike manevrası yapıp kulak burun boğaz konsültasyonu istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Dix-Hallpike negatifti; çocuk manevra sırasında yeniden bulantı '
+                                             'hissetti. KBB randevusu ertesi güne verildi.',
+                          'teaching_point': 'Vestibüler nörit sürekli vertigo ve spontan nistagmusla seyreder; yalnız '
+                                            'taşıt içinde ortaya çıkan semptomlar bu tabloya uymaz.'},
+                         {'text': 'Baş ağrısı, sabah kusması ve dengesizlik gibi kırmızı bayrakları sorgulayıp '
+                                  'fundoskopi, nistagmus, serebellar testler, Romberg ve tandem yürüyüşü içeren '
+                                  'nörolojik muayene yapmak',
+                          'is_correct': True,
+                          'explanation': 'Kusan çocukta intrakraniyal basınç artışı ve arka çukur patolojileri kırmızı '
+                                         'bayraklar ve ayrıntılı nörolojik muayeneyle dışlanır. Normal muayene ve '
+                                         'hareketle ilişkili örüntü aileye güvence vermek için temel dayanaktır.',
+                          'new_finding': 'Vital Bulgular: Ateş 36.6°C, KTA 86/dk, SS 18/dk, TA 102/64 mmHg. Genel '
+                                         'durumu iyi, toparlanmış. Fundoskopide optik disk sınırları keskin. Kraniyal '
+                                         'sinirler normal, nistagmus yok, parmak-burun ve topuk-diz testleri normal, '
+                                         'Romberg negatif, tandem yürüyüş normal. Kulak zarları doğal. Karın rahat, '
+                                         'hidrasyonu iyi.'}]},
+            {'stage_title': 'Tetkik Kararı',
+             'question': 'Nörolojik muayenesi tamamen normal, şikayetleri yalnızca taşıt içinde olan bu çocukta tetkik '
+                         'yaklaşımınız nedir?',
+             'options': [{'text': 'Görüntüleme veya laboratuvar istemeden, şikayetlerin yalnızca taşıt hareketiyle '
+                                  'başlayıp durduğunu ve kırmızı bayrak olmadığını aileyle birlikte netleştirmek',
+                          'is_correct': True,
+                          'explanation': 'Tanı öykü ve normal nörolojik muayeneye dayanır. Semptomların taşıt '
+                                         'hareketiyle tetiklenip hareket bitince geçmesi tipik örüntüdür; tetkikler '
+                                         'yönetimi değiştirmez ve kaygıyı artırabilir.',
+                          'new_finding': 'Tetkik istenmedi. Ayrıntılı öyküde çocuğun salıncak ve lunaparktaki dönen '
+                                         'oyuncaklarda da benzer bulantı yaşadığı, evde hiç şikayeti olmadığı '
+                                         'öğrenildi.'},
+                         {'text': 'Paroksismal vertigo atağı olabileceğini düşünüp elektroensefalografi ve odyometri '
+                                  'planlamak, sonuçlar çıkana kadar uzun yolculuklardan kaçınmasını önermek',
+                          'is_correct': False,
+                          'scenario_update': 'Tetkik randevuları haftalar sonrasına verildi; aile bayram ziyaretini '
+                                             'iptal etti.',
+                          'teaching_point': 'Benign paroksismal vertigo taşıttan bağımsız, ani başlangıçlı kısa '
+                                            'ataklarla seyreder; burada tetkik gerekmez.'},
+                         {'text': 'Ailenin endişesini gidermek ve arka çukur kitlesini kesin olarak dışlamak için '
+                                  'kontrastsız beyin tomografisi çekip sonucu aileyle paylaşmak',
+                          'is_correct': False,
+                          'scenario_update': 'Tomografi normal geldi; çocuk gereksiz radyasyona maruz kaldı ve aile '
+                                             'bir sonraki yolculukta yeniden görüntüleme istedi.',
+                          'teaching_point': 'Normal nörolojik muayenede görüntüleme endike değildir; güvence muayene '
+                                            'bulgularıyla verilir.'},
+                         {'text': 'Tekrarlayan kusma nedeniyle elektrolit, kan gazı ve tam idrar tetkiki isteyip '
+                                  'metabolik bir neden dışlanana kadar oral alımı kısıtlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Sonuçlar normal geldi; toparlanmış ve yemek isteyen çocuk iki saat aç '
+                                             'bekletildi.',
+                          'teaching_point': 'Hidrasyonu iyi ve semptomları geçmiş çocukta laboratuvar tetkikinin '
+                                            'katkısı yoktur.'}]},
+            {'stage_title': 'Klinik Tanı',
+             'question': 'Yalnızca taşıt ve dönen oyuncaklarda başlayan, hareket bitince geçen bulantı-kusma, solukluk '
+                         've terlemesi olan bu çocukta tanı nedir?',
+             'options': [{'text': 'Döngüsel kusma sendromu',
+                          'is_correct': False,
+                          'scenario_update': 'Ataklar taşıt hareketiyle tetikleniyor ve dakikalar içinde geçiyor; '
+                                             'saatler-günler süren stereotipik ataklar yok.',
+                          'teaching_point': 'Döngüsel kusma tetikleyiciden bağımsız uzun ataklarla seyreder.'},
+                         {'text': 'Çocukluk çağı benign paroksismal vertigosu',
+                          'is_correct': False,
+                          'scenario_update': 'Ataklar taşıt dışında spontan olmuyor ve kusma ön planda.',
+                          'teaching_point': 'Benign paroksismal vertigo ani başlangıçlı, kısa süreli ve spontan '
+                                            'dengesizlik ataklarıdır.'},
+                         {'text': 'Arka çukur tümörü',
+                          'is_correct': False,
+                          'scenario_update': 'Sabah kusmaları, baş ağrısı, ataksi ve papilödem yok; nörolojik muayene '
+                                             'normal.',
+                          'teaching_point': 'Kafa içi basınç artışı taşıttan bağımsız, ilerleyici bulgularla '
+                                            'seyreder.'},
+                         {'text': 'Hareket hastalığı (taşıt tutması)',
+                          'is_correct': True,
+                          'explanation': 'Görsel, vestibüler ve proprioseptif girdiler arasındaki uyumsuzluk taşıt '
+                                         'hareketi sırasında bulantı, solukluk, terleme ve kusmaya yol açar; hareket '
+                                         'bitince semptomlar geriler.',
+                          'new_finding': 'Tanı: Hareket Hastalığı (Taşıt Tutması).'}]},
+            {'stage_title': 'Önlemler ve Yolculuk Planı',
+             'question': 'Ailenin dönüş yolculuğu için en uygun öneri hangisidir?',
+             'options': [{'text': 'Yolculuk öncesinde mideyi boşaltmak için çocuğu aç bırakmak, araba içinde kapalı '
+                                  'camla klimayı açık tutmak ve uyuması için hafif sedatif şurup vermek',
+                          'is_correct': False,
+                          'scenario_update': 'Aç bırakılan çocukta bulantı daha erken başladı; sedatif şurup sonrası '
+                                             'aşırı uyku hali gelişti.',
+                          'teaching_point': 'Tamamen aç kalmak bulantıyı artırabilir; hafif öğün ve temiz hava '
+                                            'önerilir, rutin sedatif kullanımı uygun değildir.'},
+                         {'text': 'Yolculuk sırasında bulantı başlayınca ağızdan çözünen ondansetron vermek ve çocuğun '
+                                  'dikkatini dağıtmak için tablette film izlemeye devam etmesine izin vermek',
+                          'is_correct': False,
+                          'scenario_update': 'Ekran izlemeye devam eden çocuk yine kustu; ondansetron hareketle '
+                                             'ilişkili bulantıda sınırlı etki gösterdi.',
+                          'teaching_point': 'Ekrana bakmak görsel-vestibüler uyumsuzluğu artırır; ondansetronun bu '
+                                            'durumda etkinliği düşüktür.'},
+                         {'text': 'Tekrarlayan kusma nedeniyle yolculuk öncesi intramüsküler metoklopramid uygulamak, '
+                                  'çocuğu arka koltukta yatırıp gözlerini kapatarak uyumasını sağlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Metoklopramid sonrası çocukta huzursuzluk ve istemsiz kasılmalar '
+                                             'gelişti; yolculuk ertelendi.',
+                          'teaching_point': 'Metoklopramid çocuklarda ekstrapiramidal yan etki riski nedeniyle bu '
+                                            'amaçla önerilmez.'},
+                         {'text': 'Ekran ve kitaptan kaçınmasını, mümkünse ön koltukta ufka bakmasını, havalandırmayı '
+                                  've hafif öğünü önermek; gerekirse yolculuktan 30-60 dakika önce antihistaminik '
+                                  'kullanmak',
+                          'is_correct': True,
+                          'explanation': 'Davranışsal önlemler duyusal uyumsuzluğu azaltır. Gerekirse 2 yaş üstünde '
+                                         'yolculuk öncesi birinci kuşak antihistaminik (örn. dimenhidrinat) '
+                                         'profilaktik kullanılabilir; sedasyon yan etkisi anlatılır.',
+                          'new_finding': 'Dönüş yolculuğunda çocuk ön koltukta, camı aralık, müzik dinleyerek ve ufka '
+                                         'bakarak seyahat etti; ilaca gerek kalmadan kusmadan yolculuğu '
+                                         'tamamladı.'}]}]},
+ {'id': 'G59',
+  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+  'age': '6 Yaşında',
+  'gender': 'Erkek',
+  'complaint': 'Özellikle geceleri artan makat kaşıntısı ve huzursuz uyku',
+  'history': "Annesi anlatıyor: 'Üç haftadır geceleri uyuduktan bir-iki saat sonra poposunu kaşıyarak ağlayarak "
+             'uyanıyor. Gündüz kaşıntısı çok daha az. Dün gece fenerle baktığımda makatının etrafında yarım santim '
+             'boyunda, beyaz, ince iplik gibi kıpırdayan bir şey gördüm. İştahı biraz azaldı. Dört yaşındaki kızımda '
+             "da benzer kaşıntı başladı.' Çocuk kreşe ve futbol kursuna gidiyor. Kilo kaybı, ishal veya kanlı dışkı "
+             'yok. Tartı: 21 kg.',
+  'final_diagnosis': 'Enterobiyazis (Kıl Kurdu Enfeksiyonu)',
+  'disposition': 'Yeşil Alandan Tek Doz Antihelmintik, İki Hafta Sonra Tekrar Doz, Tüm Hane Halkının Eş Zamanlı '
+                 'Tedavisi ve Hijyen Eğitimi ile Taburculuk',
+  'case_pearl': 'Gece artan perianal kaşıntı, ailede benzer yakınma ve perianal bölgede görülen ince beyaz kurtlar '
+                'enterobiyazisi düşündürür. Dişi kurtlar geceleri perianal deriye yumurta bırakır; dışkı mikroskopisi '
+                'duyarsızdır, tanı sabah tuvalet ve banyo öncesi şeffaf yapışkan bant yöntemiyle konur. Tedavide '
+                'mebendazol 100 mg veya pirantel pamoat 11 mg/kg tek doz verilir ve 2 hafta sonra tekrarlanır; tüm '
+                'hane halkı eş zamanlı tedavi edilir.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Gece artan makat kaşıntısı ve kardeşinde benzer yakınması olan bu çocukta muayenede neye '
+                         'dikkat edersiniz?',
+             'options': [{'text': 'Perianal bölgeyi ekskoriasyon, sekonder enfeksiyon, fissür ve streptokokal dermatit '
+                                  'açısından incelemek, kız kardeşte vulvovajinit sorgulamak ve büyüme durumunu '
+                                  'değerlendirmek',
+                          'is_correct': True,
+                          'explanation': 'Perianal kaşıntıda muayene kaşıntının komplikasyonlarını (ekskoriasyon, '
+                                         'sekonder bakteriyel enfeksiyon) ve ayırıcı tanıları (fissür, perianal '
+                                         'streptokokal dermatit) ortaya koyar. Kız çocuklarında kurtlar vulvovajinite '
+                                         'yol açabilir.',
+                          'new_finding': 'Vital Bulgular: Ateş 36.7°C, KTA 88/dk, TA 98/62 mmHg. Genel durumu iyi, '
+                                         'büyümesi normal. Karın rahat. Perianal bölgede kaşımaya bağlı lineer '
+                                         'ekskoriasyonlar ve hafif eritem; keskin sınırlı parlak kırmızı eritem, '
+                                         'fissür veya akıntı yok. Muayene sırasında görülebilen hareketli yapı '
+                                         'izlenmedi.'},
+                         {'text': 'Ailenin gördüğü yapıyı doğrulamak için muayenede rektal tuşe yapıp parmakta dışkı '
+                                  'örneği almak ve mikroskopiye göndermek',
+                          'is_correct': False,
+                          'scenario_update': 'Rektal tuşe çocuk için travmatik oldu; dışkı örneğinde yumurta '
+                                             'görülmedi.',
+                          'teaching_point': 'Bu tabloda rektal tuşenin tanısal değeri yoktur; yumurtalar dışkıda değil '
+                                            'perianal deride bulunur.'},
+                         {'text': 'Huzursuz uyku ve iştahsızlık nedeniyle demir eksikliği ve davranış sorunlarını '
+                                  'öncelikli değerlendirip uyku hijyeni önermek ve hemogram istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Hemogram normal geldi; perianal bölge muayene edilmediği için kaşıntının '
+                                             'nedeni belirlenmedi.',
+                          'teaching_point': 'Huzursuz uyku burada kaşıntının sonucudur; öncelik perianal '
+                                            'değerlendirmedir.'},
+                         {'text': 'Perianal kaşıntıyı mantar enfeksiyonu kabul edip bölgeyi yüzeysel incelemek, '
+                                  'topikal antifungal krem başlamak ve iki hafta sonra kontrole çağırmak',
+                          'is_correct': False,
+                          'scenario_update': 'Antifungal kreme rağmen gece kaşıntıları sürdü; kız kardeşteki '
+                                             'şikayetler de arttı.',
+                          'teaching_point': 'Gece artan kaşıntı ve ailede benzer yakınma paraziter etiyolojiyi '
+                                            'düşündürür; ampirik antifungal tedavi tanıyı geciktirir.'}]},
+            {'stage_title': 'Tetkik Stratejisi',
+             'question': 'Tanıyı doğrulamak için en uygun tetkik yöntemi hangisidir?',
+             'options': [{'text': 'Sabah uyanınca tuvalet ve banyodan önce perianal bölgeye şeffaf yapışkan bant '
+                                  'bastırıp lam üzerine yapıştırmak ve mikroskopta incelemek',
+                          'is_correct': True,
+                          'explanation': 'Dişi kurtlar geceleri perianal deriye yumurta bırakır; sabah yıkanmadan önce '
+                                         'şeffaf bantla alınan örnek en duyarlı yöntemdir. Üç ardışık sabah yapılırsa '
+                                         "duyarlılık %90'ı aşar.",
+                          'new_finding': 'Ertesi sabah aile tarafından alınan bant örneğinin mikroskopisinde bir yüzü '
+                                         'düz, diğer yüzü bombeli, asimetrik, oval, ince kabuklu çok sayıda yumurta '
+                                         'görüldü.'},
+                         {'text': 'Üç ayrı günde dışkı örneği alarak parazit yumurtası ve kist açısından mikroskopik '
+                                  'inceleme yapmak, sonuçlar çıkana kadar tedaviyi ertelemek',
+                          'is_correct': False,
+                          'scenario_update': 'Üç dışkı örneği de negatif geldi; aile enfeksiyon olmadığını düşünerek '
+                                             'önlem almayı bıraktı.',
+                          'teaching_point': 'Bu parazitin yumurtaları dışkıya nadiren geçer; dışkı mikroskopisinin '
+                                            'duyarlılığı çok düşüktür.'},
+                         {'text': 'Perianal bölgeden steril eküvyonla sürüntü alıp bakteriyel ve fungal kültür '
+                                  'göndermek, kültür sonucuna göre tedaviyi düzenlemek',
+                          'is_correct': False,
+                          'scenario_update': 'Kültürde cilt florası üredi; sonuç yönetimi değiştirmedi ve tanı '
+                                             'gecikti.',
+                          'teaching_point': 'Kültür paraziter tanıda yararsızdır; yumurtaları göstermek için bant '
+                                            'yöntemi kullanılır.'},
+                         {'text': 'Eozinofil sayısı ve total IgE düzeyi için kan alıp eozinofili saptanırsa paraziter '
+                                  'enfeksiyon kabul ederek ampirik tedavi başlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Eozinofil sayısı normal geldi; aile tedaviye gerek olmadığı sonucuna '
+                                             'vardı.',
+                          'teaching_point': 'Bu enfeksiyon dokuya invaze olmadığından eozinofili genellikle yoktur; '
+                                            'kan tetkikleri tanısal değildir.'}]},
+            {'stage_title': 'Klinik Tanı',
+             'question': 'Gece artan perianal kaşıntı, ailede benzer şikayet ve bant örneğinde asimetrik oval '
+                         'yumurtalar görülen bu çocukta tanı nedir?',
+             'options': [{'text': 'Perianal streptokokal dermatit',
+                          'is_correct': False,
+                          'scenario_update': 'Keskin sınırlı parlak eritem, ağrılı dışkılama veya kanlı dışkı yok; '
+                                             'bant örneğinde yumurtalar görüldü.',
+                          'teaching_point': 'Perianal streptokokal dermatitte hızlı antijen testi pozitiftir ve '
+                                            'parazit yumurtası görülmez.'},
+                         {'text': 'Ascaris lumbricoides enfeksiyonu',
+                          'is_correct': False,
+                          'scenario_update': 'Askaris yumurtaları dışkıda görülür ve perianal kaşıntı tipik değildir.',
+                          'teaching_point': 'Askariyazis çoğunlukla asemptomatik veya karın ağrısı, obstrüksiyon ve '
+                                            'akciğer bulgularıyla seyreder.'},
+                         {'text': 'Enterobiyazis (kıl kurdu)',
+                          'is_correct': True,
+                          'explanation': 'Gece perianal kaşıntı, ailede bulaş ve bant örneğinde bir yüzü düz, diğer '
+                                         'yüzü bombeli yumurtalar Enterobius vermicularis enfeksiyonunu doğrular.',
+                          'new_finding': 'Tanı: Enterobiyazis (Enterobius vermicularis).'},
+                         {'text': 'Atopik dermatit alevlenmesi',
+                          'is_correct': False,
+                          'scenario_update': 'Başka bölgelerde egzama yok, kaşıntı perianal bölgeye sınırlı ve ailede '
+                                             'bulaş var.',
+                          'teaching_point': 'Ailede eş zamanlı benzer kaşıntı bulaşıcı bir etkeni düşündürür.'}]},
+            {'stage_title': 'Tedavi ve Aile Planı',
+             'question': 'Bu çocuk ve ailesi için en uygun tedavi planı hangisidir?',
+             'options': [{'text': 'Yalnızca semptomlu çocuk ve kız kardeşine tek doz mebendazol vermek, diğer aile '
+                                  'bireylerini şikayet başlarsa tedavi etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Asemptomatik ebeveynden yeniden bulaş oldu; altı hafta sonra her iki '
+                                             'çocukta da kaşıntı tekrarladı.',
+                          'teaching_point': 'Hane halkında asemptomatik taşıyıcılık sıktır; tüm aile eş zamanlı tedavi '
+                                            'edilmelidir.'},
+                         {'text': 'Tüm hane halkına aynı gün tek doz mebendazol 100 mg veya pirantel pamoat 11 mg/kg '
+                                  'vermek, iki hafta sonra dozu tekrarlamak ve hijyen önlemlerini anlatmak',
+                          'is_correct': True,
+                          'explanation': 'Antihelmintikler erişkin kurtları öldürür ancak yumurtalara etkisizdir; iki '
+                                         'hafta sonra yumurtadan çıkan yeni kurtlar için ikinci doz gerekir. Tırnak '
+                                         'kesimi, sabah banyo, el yıkama ve çarşaf-pijamaların sıcak yıkanması yeniden '
+                                         'bulaşı önler.',
+                          'new_finding': 'Tüm aileye aynı gün tek doz mebendazol verildi, iki hafta sonra tekrarlandı. '
+                                         'Çarşaf ve pijamalar sıcak suda yıkandı. Bir ay sonra iki çocuğun da '
+                                         'kaşıntısı tamamen geçmişti.'},
+                         {'text': 'Çocuğa tek doz albendazol 400 mg verip kontrol bant testi negatif olana kadar '
+                                  'haftalık örnek almak ve kardeşini ayrı odada yatırmak',
+                          'is_correct': False,
+                          'scenario_update': 'Tek doz sonrası iki hafta içinde yeni kurtlar çıktı ve kaşıntı '
+                                             'tekrarladı; aile içi bulaş sürdü.',
+                          'teaching_point': 'Tek doz yetersizdir; iki hafta sonra tekrar doz ve tüm hanenin tedavisi '
+                                            'esastır.'},
+                         {'text': 'Çocuğa yedi gün boyunca günde iki kez mebendazol vermek, kreşe tedavi bitene kadar '
+                                  'göndermemek ve evcil hayvanı veterinere götürmek',
+                          'is_correct': False,
+                          'scenario_update': 'Uzun süreli tedavi gereksizdi; çocuk kreşten uzak kaldı ve evcil hayvan '
+                                             'gereksiz yere tedavi edildi.',
+                          'teaching_point': 'Bu parazit yalnızca insanda yaşar; evcil hayvanlar kaynak değildir. Kreşe '
+                                            'ara vermek gerekmez.'}]}]},
+ {'id': 'G60',
+  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+  'age': '6 Yaşında',
+  'gender': 'Kız',
+  'complaint': 'Ani başlayan yüksek ateş, yutma güçlüğü, göbek çevresinde karın ağrısı ve kusma',
+  'history': "Ailesi anlatıyor: 'Dün aniden 39.2°C ateş başladı, yutkunurken ağladı. Bu sabah iki kez kustu ve "
+             'göbeğinin etrafında kramp tarzında ağrısı oldu. Öksürüğü, burun akıntısı veya hapşırması yok. Boynunun '
+             "yanında dokununca acıyan şişlikler fark ettik. Karnı ağrıdığı ve kustuğu için apandisitten korktuk.' "
+             'Sınıfında son haftalarda benzer hastalık geçiren çocuklar var. Penisilin alerjisi yok. Tartı: 22 kg.',
+  'final_diagnosis': 'Akut Streptokokal Tonsillofarenjit (Karın Ağrısı ile Seyreden)',
+  'disposition': 'Yeşil Alandan Hızlı Antijen Testi ile Doğrulama, Oral Amoksisilin ve Okula Dönüş Eğitimi ile '
+                 'Taburculuk',
+  'case_pearl': 'Okul çağında ani ateş, boğaz ağrısı, tonsiller eksüda, hassas ön servikal lenfadenopati ve '
+                'öksürük-burun akıntısı yokluğu A grubu streptokok enfeksiyonunu düşündürür; bu çocuklarda karın '
+                'ağrısı ve kusma sıktır ve akut batını taklit edebilir. Tanı hızlı antijen testi veya kültürle konur. '
+                'Tedavide amoksisilin 50 mg/kg/gün (tek veya iki dozda, maks 1 g/gün) 10 gün ya da tek doz benzatin '
+                'penisilin G kullanılır; antibiyotiğin 12-24. saatinden sonra okula dönülebilir.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Ani ateş, yutma güçlüğü, karın ağrısı ve kusması olan bu 6 yaşındaki kızda muayeneniz nasıl '
+                         'olmalıdır?',
+             'options': [{'text': 'Orofarenkste eksüda ve peteşi, ön servikal lenf nodlarını ve öksürük-burun akıntısı '
+                                  'varlığını değerlendirmek; karında peritoneal bulgu aramak ve hidrasyonu kontrol '
+                                  'etmek',
+                          'is_correct': True,
+                          'explanation': 'Ateşli karın ağrısında sistematik muayene karın dışı odakları ortaya koyar. '
+                                         'Tonsiller eksüda, palatal peteşi, hassas ön servikal lenfadenopati ve viral '
+                                         'bulguların yokluğu bakteriyel farenjiti düşündürür; peritoneal bulguların '
+                                         'yokluğu cerrahi olasılığı azaltır.',
+                          'new_finding': 'Vital Bulgular: Ateş 39.2°C, KTA 128/dk, SS 22/dk, SpO2 %99, KDZ 2 sn. '
+                                         'Konjonktivit, burun akıntısı ve öksürük yok. Tonsiller hipertrofik, '
+                                         'hiperemik, üzerinde beyaz-krem eksüda; yumuşak damakta peteşiler, uvula '
+                                         'ödemli. Bilateral ön servikal zincirde 2x1.5 cm hassas lenf nodları. Karın '
+                                         'yumuşak, periumbilikal hafif hassasiyet; defans ve rebound yok, '
+                                         'zıplayabiliyor. Döküntü yok.'},
+                         {'text': 'Ateş ve kusma nedeniyle muayene öncesinde intravenöz parasetamol ve ondansetron '
+                                  'yapıp ateş düştükten sonra sistemleri ayrıntılı değerlendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Ateş düştü ve çocuk rahatladı; ilk muayene bulguları kaydedilmeden 45 '
+                                             'dakika geçti.',
+                          'teaching_point': 'Semptomatik tedavi öncesinde vital bulgular ve sistemik muayene kayıt '
+                                            'altına alınmalıdır; oral alabilen çocukta intravenöz yol gerekmez.'},
+                         {'text': 'Yutma güçlüğü nedeniyle hava yolu tehlikesini düşünerek orofarenksi dil basacağıyla '
+                                  'muayene etmeden çocuğu oturur pozisyonda tutmak ve kulak burun boğaz uzmanını '
+                                  'çağırmak',
+                          'is_correct': False,
+                          'scenario_update': 'Çocukta salya akması, stridor ve tripod pozisyon yoktu; KBB uzmanı '
+                                             'orofarenks muayenesinin güvenle yapılabileceğini belirtti, zaman '
+                                             'kaybedildi.',
+                          'teaching_point': 'Dil basacağı ile muayeneden kaçınma yalnızca salya akması, stridor ve '
+                                            'toksik görünüm gibi epiglottit bulgularında gereklidir.'},
+                         {'text': 'Karın ağrısı ve kusma nedeniyle önce sağ alt kadran, rebound ve zıplama testini '
+                                  'değerlendirmek, orofarenks muayenesini batın ultrasonografisinden sonraya bırakmak',
+                          'is_correct': False,
+                          'scenario_update': 'Karında peritoneal bulgu saptanmadı; ultrasonografi beklenirken '
+                                             'orofarenks muayenesi yapılmadığından tablonun kaynağı bir saat belirsiz '
+                                             'kaldı.',
+                          'teaching_point': 'Ateşli karın ağrısı olan çocukta orofarenks ve servikal lenf nodu '
+                                            'muayenesi atlanmamalıdır; karın dışı nedenler sık görülür.'}]},
+            {'stage_title': 'Tetkik Stratejisi',
+             'question': 'Tonsiller eksüda, hassas ön servikal lenfadenopati ve öksürük yokluğu olan, karnı rahat bu '
+                         'çocukta tetkik yaklaşımınız nedir?',
+             'options': [{'text': 'Monomükleoz olasılığına karşı periferik yayma ve heterofil antikor testi isteyip '
+                                  'sonuç çıkana kadar antibiyotik vermeden izlemek',
+                          'is_correct': False,
+                          'scenario_update': 'Periferik yaymada atipik lenfosit görülmedi, heterofil antikor '
+                                             'negatifti; tanı bir gün gecikti.',
+                          'teaching_point': 'Monomükleoz arka servikal lenfadenopati, hepatosplenomegali ve '
+                                            'yorgunlukla seyreder; burada ilk tetkik boğaz sürüntüsüdür.'},
+                         {'text': 'Klinik bulgular tipik olduğu için hiçbir tetkik istemeden ampirik antibiyotik '
+                                  'başlamak ve kusma nedeniyle ilk dozu intramüsküler seftriakson olarak yapmak',
+                          'is_correct': False,
+                          'scenario_update': 'Seftriakson enjeksiyonu ağrılı oldu; mikrobiyolojik doğrulama '
+                                             'yapılmadığı için tedavinin gerekliliği belirsiz kaldı.',
+                          'teaching_point': 'Viral farenjitlerle örtüşme nedeniyle klinik skorlar tek başına '
+                                            'antibiyotik kararı için yeterli değildir; geniş spektrumlu parenteral '
+                                            'tedavi gereksizdir.'},
+                         {'text': 'Boğaz sürüntüsünden hızlı antijen testi yapmak, negatif olursa kültür göndermek; '
+                                  'karın bulguları rahat olduğu için batın görüntülemesi istememek',
+                          'is_correct': True,
+                          'explanation': 'Klinik bulgular tek başına bakteriyel ve viral farenjiti güvenle ayıramaz; '
+                                         'tedavi kararı hızlı antijen testi veya kültürle verilir. Çocukta negatif '
+                                         'hızlı test kültürle doğrulanmalıdır. Peritoneal bulgu olmadığından '
+                                         'görüntüleme gerekmez.',
+                          'new_finding': 'Boğaz sürüntüsü hızlı antijen testi: POZİTİF. Karında bulgu gerilemesi için '
+                                         'görüntüleme istenmedi.'},
+                         {'text': 'Akut batını dışlamak için tam kan sayımı, CRP ve batın ultrasonografisi istemek, '
+                                  'sonuçlar normalse boğaz sürüntüsü almadan ampirik antibiyotik başlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Lökosit 15.200/mm³, CRP 38 mg/L geldi; ultrasonografide yalnızca reaktif '
+                                             'mezenterik lenf nodları görüldü. Etiyoloji doğrulanmadan antibiyotik '
+                                             'başlandı.',
+                          'teaching_point': 'Lökosit ve CRP viral ve bakteriyel farenjiti ayırmaz; antibiyotik kararı '
+                                            'mikrobiyolojik doğrulamaya dayanmalıdır.'}]},
+            {'stage_title': 'Klinik Tanı',
+             'question': 'Ani ateş, tonsiller eksüda, palatal peteşi, hassas ön servikal lenfadenopati, karın ağrısı '
+                         've pozitif hızlı antijen testi olan bu çocukta tanı nedir?',
+             'options': [{'text': 'Adenoviral faringokonjonktival ateş',
+                          'is_correct': False,
+                          'scenario_update': 'Konjonktivit, öksürük ve burun akıntısı yok.',
+                          'teaching_point': 'Adenovirüs farenjiti konjonktivit ve diğer viral bulgularla birlikte '
+                                            'görülür.'},
+                         {'text': 'Akut apandisit',
+                          'is_correct': False,
+                          'scenario_update': 'Karında defans ve rebound yok, çocuk zıplayabiliyor ve tablo orofarenks '
+                                             'bulgularıyla açıklanıyor.',
+                          'teaching_point': 'Farenjite eşlik eden karın ağrısı mezenterik lenfoid yanıtla ilişkilidir; '
+                                            'peritoneal bulgu yoksa cerrahi tablo düşünülmez.'},
+                         {'text': 'Akut streptokokal tonsillofarenjit',
+                          'is_correct': True,
+                          'explanation': 'Pozitif hızlı antijen testi ile birlikte tipik klinik bulgular A grubu '
+                                         'streptokok tonsillofarenjitini doğrular; karın ağrısı ve kusma bu '
+                                         'enfeksiyonda sık görülür.',
+                          'new_finding': 'Tanı: Akut A Grubu Streptokok Tonsillofarenjiti (karın ağrısı ve kusma '
+                                         'ile).'},
+                         {'text': 'Enfeksiyöz mononükleoz',
+                          'is_correct': False,
+                          'scenario_update': 'Arka servikal lenfadenopati ve splenomegali yok, hızlı antijen testi '
+                                             'pozitif.',
+                          'teaching_point': 'Mononükleozda eksüdatif farenjit olabilir ancak lenfadenopati yaygın ve '
+                                            'organomegali eşlik eder.'}]},
+            {'stage_title': 'Tedavi ve Taburculuk Planı',
+             'question': "Oral alabilen bu 22 kg'lık çocuk için en uygun tedavi planı hangisidir?",
+             'options': [{'text': 'Oral amoksisilin-klavulanat 90 mg/kg/gün dozunu üç gün vermek, ateş düşünce kesmek '
+                                  've bir hafta sonra kontrol boğaz kültürü almak',
+                          'is_correct': False,
+                          'scenario_update': 'Kısa süreli tedavi sonrası iki hafta içinde semptomlar tekrarladı; '
+                                             'kontrol kültürü taşıyıcılığı gösterdi ve aile kafası karıştı.',
+                          'teaching_point': 'Geniş spektrumlu ve kısa süreli tedavi önerilmez; 10 günlük süre '
+                                            'eradikasyon ve romatizmal ateşin önlenmesi için gereklidir. Asemptomatik '
+                                            'hastada kontrol kültürü yapılmaz.'},
+                         {'text': 'Karın ağrısı ve kusma nedeniyle yatırıp intravenöz ampisilin başlamak, çocuk '
+                                  'cerrahisi ile seri muayene planlamak ve kusma kesilince orale geçmek',
+                          'is_correct': False,
+                          'scenario_update': 'Oral alabilen ve karnı rahat çocuk gereksiz yere yatırıldı; ertesi gün '
+                                             'cerrahi ekip izlem gerekmediğini belirtti.',
+                          'teaching_point': 'Oral tolere eden, peritoneal bulgusu olmayan çocukta yatış ve parenteral '
+                                            'tedavi gerekmez.'},
+                         {'text': 'Oral azitromisin 12 mg/kg/gün dozunu beş gün vermek, kısa süreli tedavinin uyumu '
+                                  'artıracağını anlatmak ve okula üç gün sonra dönmesini önermek',
+                          'is_correct': False,
+                          'scenario_update': 'Makrolid direnci nedeniyle 72. saatte ateş sürüyordu; tedavi '
+                                             'amoksisiline değiştirildi.',
+                          'teaching_point': 'Makrolidler yalnızca ciddi penisilin alerjisinde alternatiftir; direnç '
+                                            'oranları yüksek olabilir.'},
+                         {'text': 'Oral amoksisilin 50 mg/kg/gün dozunu iki dozda 10 gün vermek, ateş ve ağrı için '
+                                  'parasetamol önermek, antibiyotiğin ilk gününden sonra okula dönüşe izin vermek',
+                          'is_correct': True,
+                          'explanation': 'A grubu streptokok tonsillofarenjitinde amoksisilin 50 mg/kg/gün (maks 1 '
+                                         'g/gün) 10 gün etkin ve iyi tolere edilen ilk seçenektir. Tedavinin '
+                                         'tamamlanması akut romatizmal ateşi önler; 12-24 saat antibiyotik sonrası '
+                                         'bulaştırıcılık belirgin azalır.',
+                          'new_finding': 'Oral amoksisilin ve parasetamol başlandı. 24 saat sonra ateşi düştü, '
+                                         'yutkunması rahatladı; karın ağrısı ve kusması kayboldu. Aile 10 günlük '
+                                         'tedaviyi tamamladı.'}]}]}]
