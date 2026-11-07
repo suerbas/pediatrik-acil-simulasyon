@@ -102,19 +102,28 @@ def eval_ss(val: float, age_m: float) -> dict:
     return {"status": "normal", "icon": "🟢", "label": "Normal Solunum", "ref": ref}
 
 
-def eval_ates(val: float) -> dict:
-    """Ateş (°C) değerlendirmesi."""
-    ref = "36.5 - 37.5 °C"
+def eval_ates(val: float, age_m: float = 999) -> dict:
+    """Ateş (°C) değerlendirmesi, yaşa göre (koltuk altı ölçümü esas alınır).
+
+    3 aydan küçük bebeklerde normal aralık dardır (36.5-37.4 °C): 36.0-36.4 °C hafif
+    hipotermi (DSÖ), 37.5-37.9 °C subfebril, >= 38.0 °C ise sepsis açısından ateştir.
+    """
+    young = age_m < 3
+    ref = "36.5 - 37.4 °C (3 ay altı)" if young else "36.0 - 37.4 °C"
     if val < 36.0:
         return {"status": "low", "icon": "🔵", "label": "Düşük (Hipotermi)", "ref": ref}
-    elif 36.0 <= val <= 37.5:
+    if val < 36.5 and young:
+        return {"status": "low", "icon": "🔵", "label": "Hafif Hipotermi", "ref": ref}
+    if val < 37.5:
         return {"status": "normal", "icon": "🟢", "label": "Normal Sıcaklık", "ref": ref}
-    elif 37.6 <= val <= 37.9:
-        return {"status": "high", "icon": "🟡", "label": "Hafif Yüksek (Subfebril)", "ref": ref}
-    elif 38.0 <= val < 39.0:
+    if val < 38.0:
+        label = "Subfebril (Yakın Takip)" if young else "Hafif Yüksek (Subfebril)"
+        return {"status": "high", "icon": "🟡", "label": label, "ref": ref}
+    if young:
+        return {"status": "high", "icon": "🔴", "label": "Ateş (Sepsis Açısından Değerlendir)", "ref": ref}
+    if val < 39.0:
         return {"status": "high", "icon": "🔴", "label": "Yüksek (Ateş)", "ref": ref}
-    else:
-        return {"status": "high", "icon": "🔥", "label": "Belirgin Yüksek Ateş", "ref": ref}
+    return {"status": "high", "icon": "🔥", "label": "Belirgin Yüksek Ateş", "ref": ref}
 
 
 def eval_spo2(val: float) -> dict:
@@ -347,7 +356,7 @@ def annotate_clinical_text(text: str, age_str: str) -> str:
     def repl_ates(m):
         raw = m.group(0)
         val = float(m.group(1).replace(',', '.'))
-        res = eval_ates(val)
+        res = eval_ates(val, age_m)
         return build_tooltip_html(raw, res)
     text = re.sub(r'\b(?:(?:Ateş|ateş|Ateşi|ateşi)\s*[:]?\s*)?(\d{2}(?:[.,]\d+)?)\s*°?\s*C\b', repl_ates, text)
     
