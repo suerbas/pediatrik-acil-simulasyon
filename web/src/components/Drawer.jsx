@@ -21,6 +21,8 @@ export default function Drawer({ caseId, onClose, onSolved }) {
   const closeRef = useRef(null)
   const bodyRef = useRef(null)
   const questionRef = useRef(null)
+  const logsRef = useRef(null)
+  const goingBack = useRef(false)
   const [closing, setClosing] = useState(false)
   const closingRef = useRef(false)
   const closeTimer = useRef(null)
@@ -108,9 +110,18 @@ export default function Drawer({ caseId, onClose, onSolved }) {
     }
   }, [data])
 
-  // Yeni aşamaya geçince soruyu görünür alana getir.
+  // Doğru karardan sonra yeni bulguyu ekranın en üstüne getir (ilk bulguda bölüm başlığıyla birlikte);
+  // bulgu eklenmediyse ya da geri dönüldüyse soruya git.
   useEffect(() => {
-    if (stepIdx > 0) questionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const back = goingBack.current
+    goingBack.current = false
+    if (stepIdx === 0) return
+    let target = questionRef.current
+    if (!back) {
+      const fresh = logsRef.current?.querySelector('.log-new')
+      if (fresh) target = fresh === logsRef.current.querySelector('.log') ? logsRef.current : fresh
+    }
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }, [stepIdx])
 
   const choose = (opt) => {
@@ -142,8 +153,9 @@ export default function Drawer({ caseId, onClose, onSolved }) {
     setFeedback(trail[prev - 1] ?? '')
     setDetour(null)
     setShowHint(false)
+    goingBack.current = true
     setStepIdx(prev)
-    requestAnimationFrame(() => questionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+    if (prev === 0) bodyRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const restart = () => {
@@ -220,7 +232,7 @@ export default function Drawer({ caseId, onClose, onSolved }) {
               </details>
 
               {logs.length > 0 && (
-                <section className="logs">
+                <section className="logs" ref={logsRef}>
                   <p className="section-label">Dosya notları & tetkik sonuçları</p>
                   {logs.map((log) => {
                     const fresh = log.step === stepIdx - 1

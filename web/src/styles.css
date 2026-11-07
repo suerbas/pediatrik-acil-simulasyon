@@ -684,6 +684,11 @@ button {
 
 .logs {
   margin: 20px 0 8px;
+  scroll-margin-top: 12px;
+}
+
+.logs .log {
+  scroll-margin-top: 12px;
 }
 
 .log {
