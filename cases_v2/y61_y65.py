@@ -1,137 +1,137 @@
 # -*- coding: utf-8 -*-
 """
-Sarı Alan Vakaları - Y61-Y65 (v2 Şartnamesine Uygun Yeniden Yazım)
+Yeşil Alan Vakaları - Y61-Y65 (v2 Şartnamesine Uygun Yeniden Yazım)
 """
 
 CASES = [
     {
         "id": "Y61",
-        "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
-        "age": "3 Yaşında",
+        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
+        "age": "4 Yaşında",
         "gender": "Erkek",
-        "complaint": "Altı gündür düşmeyen yüksek ateş, gözlerde kızarıklık, dudaklarda çatlama ve boyunda şişlik",
-        "history": "Ailesi anlatıyor: 'Altı gündür ateşi 39.5°C'ye kadar çıkıyor, ateş düşürücülerle ancak 38.5°C'ye iniyor. Üç gün önce farenjit denilerek oral sefalosporin başlandı, ateş hiç gerilemedi. Gözlerinin akı kıpkırmızı ama çapak yok. Dudakları kurudu, çatladı, kanıyor. Dün gövdesinde kırmızı döküntüler çıktı, el ve ayakları şişti, kızardı. Çok huzursuz.' Öksürük ve ishal yok. Aşıları tam. Tartı: 15 kg.",
-        "final_diagnosis": "Kawasaki Hastalığı (Tam Form, Koroner Arter Dilatasyonu ile)",
-        "disposition": "Sarı Alanda Ekokardiyografi Sonrası İntravenöz İmmünoglobulin (2 g/kg) ve Aspirin ile Çocuk Kardiyoloji Yatışı",
-        "case_pearl": "En az 5 gün ateşle birlikte şu beş bulgudan en az dördü tam form tanısı koydurur: eksüdasız bilateral konjonktival kızarıklık, dudak-ağız değişiklikleri (çatlak dudak, çilek dili), polimorf döküntü, el-ayakta ödem-eritem (sonra periungual soyulma) ve genellikle tek taraflı ≥1.5 cm servikal lenfadenopati. Eksik formda laboratuvar (CRP, ESH, albümin, ALT, trombositoz, steril piyüri) ve ekokardiyografi yol gösterir. Tedavi ilk 10 gün içinde İVİG 2 g/kg ve aspirindir; amaç koroner anevrizmayı önlemektir.",
+        "complaint": "Bu sabah aniden başlayan sağ bacağa basamama ve topallama",
+        "history": "Babası anlatıyor: 'Bir hafta önce hafif burun akıntısı ve öksürüğü olmuştu, ilaçsız geçti. Bu sabah uyanınca sağ bacağının üstüne basınca acıdığını söyleyip ağladı, topallayarak yürüyor. Ateşi hiç çıkmadı. Düşme ya da çarpma olmadı. İştahı ve neşesi yerinde.' Bilinen hastalığı yok. Tartı: 17 kg.",
+        "final_diagnosis": "Geçici (Toksik) Sinovit",
+        "disposition": "Yeşil Alandan Oral NSAİİ, Kısa Süreli İstirahat, Alarm Bulguları Eğitimi ve 48-72 Saat Sonra Kontrol ile Taburculuk",
+        "case_pearl": "3-8 yaş erkek çocukta viral enfeksiyon sonrası ani başlayan, ateşsiz, iyi görünümlü topallama geçici sinovitin tipik tablosudur. Asıl hedef septik artriti kaçırmamaktır: Kocher kriterleri (ateş >38.5°C, basamama, ESH >40 mm/sa, lökosit >12.000/mm³) ve CRP >2 mg/dL riski artırır. Ultrasonda efüzyon iki durumda da görülebilir; ayrım klinik ve laboratuvarla yapılır. Tedavi NSAİİ ve istirahattir; yakınmalar genellikle 1-2 haftada geçer.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
-                "question": "Antibiyotiğe rağmen altı gündür ateşi süren bu 3 yaşındaki çocukta muayenede neye odaklanırsınız?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Ateşsiz, travmasız, aniden topallamaya başlayan bu 4 yaşındaki çocukta muayenede neyi değerlendirirsiniz?",
                 "options": [
                     {
-                        "text": "Perfüzyon ve kalp muayenesini yapmak; göz, dudak-ağız, döküntü, el-ayak değişikliklerini ve boyun lenf nodlarını sistematik olarak değerlendirmek",
+                        "text": "Ateşi ve genel görünümü, yürüyüşü, kalça iç rotasyon-abdüksiyonunu, diğer eklemleri, omurga, karın, testis ve cildi sistematik olarak değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Uzamış ateşte göz, ağız, deri ve el-ayak bulgularının sistematik sayılması tanıyı belirler. Taşikardi, galo veya şok bulguları miyokardit ya da şok tablosunu düşündürür.",
-                        "new_finding": "Vital Bulgular: Ateş 39.4°C, KTA 142/dk, SS 28/dk, SpO2 %98, TA 94/58 mmHg, KDZ 2 sn. Bilateral eksüdasız konjonktival kızarıklık, limbus korunmuş. Dudaklar kırmızı, çatlak ve kanamalı; çilek dili. Gövdede makülopapüler polimorf döküntü. El ve ayak sırtında sert ödem, avuç içi ve tabanlarda eritem. Solda 2x2 cm tek, hassas servikal lenf nodu. Kalp sesleri ritmik, üfürüm ve galo yok."
+                        "explanation": "Çocukta topallamanın kaynağı kalça dışında diz, omurga, karın veya testis olabilir. Ateş, toksik görünüm ve hareket kısıtlılığının derecesi septik artriti diğer nedenlerden ayırmada ilk ipuçlarıdır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 94/dk, SS 20/dk, SpO2 %99. Masada otururken neşeli, oyuncakla oynuyor. Sağ bacağa kısmen basarak antaljik yürüyüş. Sağ kalçada iç rotasyon ve abdüksiyonun son derecelerinde hafif ağrı; pasif hareket büyük ölçüde serbest. Isı artışı, kızarıklık, şişlik yok. Diz, ayak bileği, omurga, karın ve testis muayenesi normal. Peteşi veya döküntü yok."
                     },
                     {
-                        "text": "Göz kızarıklığını bakteriyel konjonktivit kabul edip antibiyotikli göz damlası başlamak, döküntüyü sefalosporin alerjisine bağlayıp antihistaminik vermek",
+                        "text": "Bacağını kullanmak istemediği için çocuğu tekerlekli sandalyeye alıp ortopedi konsültasyonu istemek, sistemik muayeneyi ortopedi değerlendirmesinden sonraya bırakmak",
                         "is_correct": False,
-                        "scenario_update": "Göz damlası ve antihistaminik bulguları değiştirmedi; altta yatan tablo tanınmadı.",
-                        "teaching_point": "Bulguları ayrı ayrı açıklamaya çalışmak, onları birleştiren sistemik hastalığın gözden kaçmasına yol açar."
+                        "scenario_update": "Ortopedi ekibi iki saat sonra geldi; bu sürede ateş, diğer eklemler ve karın değerlendirilmemişti.",
+                        "teaching_point": "Topallayan çocuğun ilk değerlendirmesi acil hekiminin sorumluluğundadır; konsültasyon sistematik muayeneden sonra gerekirse istenir."
                     },
                     {
-                        "text": "Viral bir enfeksiyon olduğunu düşünüp antibiyotiği kesmek, ateş düşürücü ve bol sıvı önererek çocuğu evde izleme göndermek",
+                        "text": "Topallamanın kaynağının kalça olduğunu kabul edip yalnızca kalça eklemini muayene etmek ve ağrı kontrolü için hemen intramüsküler diklofenak uygulamak",
                         "is_correct": False,
-                        "scenario_update": "Çocuk dördüncü gün yine ateşli getirildi; ekokardiyografide koroner anevrizma saptandı.",
-                        "teaching_point": "Beş günü aşan ateşte bu bulgular varsa tedavi geciktirilmemelidir; koroner hasar riski zamanla artar."
+                        "scenario_update": "Enjeksiyon sonrası çocuk ağlayarak muayeneye direnç gösterdi; diz, omurga ve karın muayenesi yapılmadan zaman geçti.",
+                        "teaching_point": "Küçük çocuk ağrının yerini doğru tarif edemez; topallamada tüm alt ekstremite, omurga, karın ve genital bölge muayene edilmelidir."
                     },
                     {
-                        "text": "Ateşin dirençli farenjite bağlı olduğunu düşünüp antibiyotiği intravenöz seftriaksona çevirmek ve iki gün sonra yeniden değerlendirmek",
+                        "text": "Çocuğun travma öyküsünü saklıyor olabileceğini düşünüp istismar şüphesiyle sosyal hizmet bildirimi yapmak ve kemik taraması planlamak",
                         "is_correct": False,
-                        "scenario_update": "İki gün seftriaksona rağmen ateş sürdü; tedavi penceresi daralmaya başladı.",
-                        "teaching_point": "Antibiyotiğe yanıtsız uzamış ateşte enfeksiyon dışı nedenler ile deri ve mukoza bulguları sistematik değerlendirilmelidir."
+                        "scenario_update": "Ciltte morluk, kırık bulgusu veya öyküde tutarsızlık yoktu; aile yersiz şüpheden incindi ve muayene ertelendi.",
+                        "teaching_point": "İstismar şüphesi tutarsız öykü, uygunsuz yaralanma bulguları veya gecikmiş başvuru gibi somut ipuçlarına dayanmalıdır."
                     }
                 ]
             },
             {
-                "stage_title": "Laboratuvar ve Kardiyak Değerlendirme",
-                "question": "Uzamış ateş ve dört deri-mukoza bulgusu olan bu çocukta hangi tetkikler öncelikli olarak istenmelidir?",
+                "stage_title": "Tetkik Stratejisi",
+                "question": "Ateşsiz, iyi görünümlü ve kalça hareketleri hafif ağrılı bu çocukta hangi tetkik yaklaşımı uygundur?",
                 "options": [
                     {
-                        "text": "Hemogram, CRP, sedimantasyon, albümin, karaciğer testleri ve tam idrar istemek; acil ekokardiyografiyle koroner arterleri değerlendirmek",
+                        "text": "Kalça patolojilerini en iyi gösteren yöntem olduğu için sedasyon altında kontrastlı kalça manyetik rezonans görüntülemesi planlamak",
+                        "is_correct": False,
+                        "scenario_update": "MR için sedasyon ve saatlerce bekleme gerekti; temel laboratuvar tetkikleri istenmemişti.",
+                        "teaching_point": "MR, atipik seyir veya osteomiyelit şüphesinde değerlidir; ilk basamak tetkik değildir."
+                    },
+                    {
+                        "text": "Yalnızca ön-arka pelvis grafisi çekmek, kırık ve kemik lezyonu görülmezse laboratuvar istemeden taburcu edip bir hafta sonra kontrole çağırmak",
+                        "is_correct": False,
+                        "scenario_update": "Grafi normal geldi; inflamatuvar belirteçler bakılmadan taburcu edilmek üzereydi ve septik artrit dışlanmamıştı.",
+                        "teaching_point": "Normal grafi eklem enfeksiyonunu dışlamaz; basamayan çocukta laboratuvar ve ultrason değerlendirmesi gerekir."
+                    },
+                    {
+                        "text": "Ortopedi ile birlikte acil kalça eklem aspirasyonu yapmak, sinovyal sıvıyı hücre sayımı ve kültür için gönderip sonuç gelene kadar intravenöz antibiyotik başlamak",
+                        "is_correct": False,
+                        "scenario_update": "Sedasyonla aspirasyon yapıldı; az miktarda berrak sıvıda düşük hücre sayısı saptandı. Çocuk gereksiz yere invaziv işlem ve antibiyotiğe maruz kaldı.",
+                        "teaching_point": "Eklem aspirasyonu ateş, basamama ve yüksek inflamatuvar belirteçlerle septik artrit riski arttığında endikedir."
+                    },
+                    {
+                        "text": "Tam kan sayımı, CRP ve sedimantasyon istemek, bilateral kalça ultrasonografisiyle efüzyonu değerlendirmek ve sonuçları septik artrit risk kriterleriyle yorumlamak",
                         "is_correct": True,
-                        "explanation": "Yüksek inflamatuvar belirteçler, hipoalbüminemi, transaminaz artışı ve steril piyüri tanıyı destekler. Ekokardiyografi koroner tutulumu, miyokardit ve perikardiyal sıvıyı gösterir ve tedavi yoğunluğunu belirler.",
-                        "new_finding": "Lökosit 18.400/mm³ (%78 nötrofil), Hb 10.2 g/dL, trombosit 485.000/mm³, CRP 142 mg/L, ESH 88 mm/sa, albümin 2.8 g/dL, ALT 72 U/L. Tam idrarda steril piyüri (15-20 lökosit/saha). Ekokardiyografi: sol ön inen koroner arter Z skoru +2.8 (dilatasyon), sol ventrikül fonksiyonu normal, minimal perikardiyal sıvı."
-                    },
-                    {
-                        "text": "Döküntü ve ateş nedeniyle kızamık, EBV ve adenovirüs serolojilerini gönderip sonuçlar gelene kadar ekokardiyografiyi ertelemek",
-                        "is_correct": False,
-                        "scenario_update": "Seroloji sonuçları beş gün sürdü; kardiyak değerlendirme gecikti.",
-                        "teaching_point": "Viral tetkikler ayırıcı tanıda yardımcı olabilir ancak kardiyak değerlendirmeyi ve tedaviyi geciktirmemelidir."
-                    },
-                    {
-                        "text": "Yalnızca boğaz kültürü ve ASO istemek, streptokok enfeksiyonu dışlanırsa ateşin nedenini araştırmak için çocuğu bir hafta daha izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Bekleme süresinde ateşin onuncu günü geçti; tedavinin en etkili olduğu dönem kaçırıldı.",
-                        "teaching_point": "Tedavi ateşin ilk 10 günü içinde verildiğinde koroner anevrizma riski belirgin azalır."
-                    },
-                    {
-                        "text": "Menenjiti dışlamak için lomber ponksiyon yapmak ve sonuç gelene kadar intravenöz antibiyotikle izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Beyin omurilik sıvısında hafif pleositoz saptandı ancak kültür negatif kaldı; asıl tablo için tetkikler gecikti.",
-                        "teaching_point": "Bu hastalıkta aseptik pleositoz görülebilir; lomber ponksiyon ilk basamak tetkik değildir."
+                        "explanation": "Lökosit, ESH ve CRP Kocher ve CRP kriterlerinin bileşenleridir. Ultrason efüzyonu gösterir ancak septik artriti ayırmaz; karar klinik ve laboratuvar birlikte değerlendirilerek verilir.",
+                        "new_finding": "Lökosit 7.800/mm³, CRP 0.2 mg/dL, ESH 12 mm/sa. Kalça ultrasonu: sağda 4 mm anekoik efüzyon, sinovyal kalınlaşma yok; sol kalça normal. Kocher kriterlerinin hiçbiri yok."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Altı gündür süren ateş, eksüdasız konjonktival kızarıklık, çatlak dudak ve çilek dili, polimorf döküntü, el-ayakta ödem, servikal lenfadenopati ve koroner dilatasyonu olan bu çocukta tanı nedir?",
+                "question": "Viral enfeksiyon sonrası ateşsiz topallama, normal inflamatuvar belirteçler ve kalçada az miktarda efüzyonu olan bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "Sistemik juvenil idiyopatik artrit",
+                        "text": "Septik artrit",
                         "is_correct": False,
-                        "scenario_update": "Artrit yok; mukokutanöz bulgular ve koroner tutulum farklı bir tabloyu gösteriyor.",
-                        "teaching_point": "Sistemik JİA'da günlük kotidyen ateş, somon renkli döküntü ve artrit beklenir."
+                        "scenario_update": "Ateş yok, lökosit, CRP ve ESH normal, çocuk kısmen basabiliyor.",
+                        "teaching_point": "Septik artritte ateş, şiddetli ağrı, basamama ve yüksek inflamatuvar belirteçler beklenir."
                     },
                     {
-                        "text": "Kızıl (A grubu streptokok)",
+                        "text": "Juvenil idiyopatik artrit",
                         "is_correct": False,
-                        "scenario_update": "Döküntü zımpara kâğıdı gibi değil, konjonktival kızarıklık var ve antibiyotiğe yanıt yok.",
-                        "teaching_point": "Kızılda konjonktivit beklenmez ve antibiyotik tedavisine hızlı yanıt alınır."
+                        "scenario_update": "Sabah tutukluğu ve 6 haftayı aşan eklem şişliği öyküsü yok.",
+                        "teaching_point": "Juvenil idiyopatik artrit tanısı için en az 6 hafta süren artrit gerekir."
                     },
                     {
-                        "text": "Kawasaki hastalığı (tam form)",
+                        "text": "Geçici (toksik) sinovit",
                         "is_correct": True,
-                        "explanation": "En az 5 gün ateşle birlikte beş ana bulgunun tamamının varlığı ve koroner dilatasyon tam form Kawasaki hastalığını doğrular.",
-                        "new_finding": "Tanı: Kawasaki Hastalığı (tam form, koroner arter dilatasyonu ile)."
+                        "explanation": "İyi görünüm, ateşsizlik, normal lökosit-CRP-ESH ve küçük efüzyon geçici sinovitle uyumludur; Kocher kriterlerinin hiçbirinin olmaması septik artrit olasılığını çok düşük kılar.",
+                        "new_finding": "Tanı: Geçici (Toksik) Sinovit."
                     },
                     {
-                        "text": "Kızamık (rubeola enfeksiyonu)",
+                        "text": "Legg-Calvé-Perthes hastalığı",
                         "is_correct": False,
-                        "scenario_update": "Aşıları tam; öksürük, burun akıntısı ve Koplik lekeleri yok.",
-                        "teaching_point": "Kızamıkta öksürük, nezle ve konjonktivit üçlüsü ile Koplik lekeleri görülür."
+                        "scenario_update": "Yakınma aniden ve viral enfeksiyon sonrası başladı; haftalar süren sinsi topallama öyküsü yok.",
+                        "teaching_point": "Perthes hastalığı sinsi başlangıçlıdır; topallama 2 haftayı aşarsa grafi tekrarlanmalıdır."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve Yatış",
-                "question": "Bu çocuğun tedavi planı hangisidir?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu çocuğun tedavi ve izlem planı nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Ateş altıncı günde olduğu için tedavi için geç kalındığını kabul edip yalnızca düşük doz aspirinle taburcu etmek",
+                        "text": "Sinovyal inflamasyonu hızla baskılamak için üç gün oral prednizolon vermek ve iki hafta sonra kalça manyetik rezonansı ile kontrol etmek",
                         "is_correct": False,
-                        "scenario_update": "Tedavi verilmeyen çocukta üçüncü haftada dev koroner anevrizma gelişti.",
-                        "teaching_point": "İVİG ideal olarak ilk 10 günde verilir; 10. günden sonra da ateş veya inflamasyon sürüyorsa önerilir."
+                        "scenario_update": "Steroid sonrası iştah artışı ve uyku bozukluğu gelişti; kontrol MR'ı gereksizdi.",
+                        "teaching_point": "Geçici sinovitte sistemik steroid ve rutin ileri görüntüleme önerilmez."
                     },
                     {
-                        "text": "İVİG yerine yüksek doz intravenöz metilprednizolon vermek ve koroner dilatasyon anevrizmaya dönüşürse immünoglobulin eklemek",
+                        "text": "Çocuğu servise yatırıp cilt traksiyonu uygulamak, intravenöz sıvı başlamak ve günlük CRP ile ultrason kontrolü yaparak efüzyon kaybolana kadar izlemek",
                         "is_correct": False,
-                        "scenario_update": "Steroid tek başına verildi; koroner dilatasyon ilerledi.",
-                        "teaching_point": "Steroid ilk tedavide yalnızca yüksek riskli hastalarda İVİG'e ek olarak kullanılır, yerine geçmez."
+                        "scenario_update": "Yatışın üçüncü gününde çocuk iyileşmişti; traksiyon ve tekrarlanan tetkikler sonucu değiştirmedi.",
+                        "teaching_point": "Geçici sinovitte traksiyon ve yatış gerekmez; seri ultrason efüzyonun takibinde kullanılmaz."
                     },
                     {
-                        "text": "Yalnızca yüksek doz aspirin başlamak, ateş düşmezse iki gün sonra intravenöz immünoglobulin vermeyi değerlendirmek",
-                        "is_correct": False,
-                        "scenario_update": "Aspirin tek başına koroner tutulumu önlemedi; iki gün sonraki ekoda dilatasyon arttı.",
-                        "teaching_point": "Tedavinin temeli İVİG'dir; aspirin tek başına koroner anevrizmayı önlemez."
-                    },
-                    {
-                        "text": "İntravenöz immünoglobulin 2 g/kg'ı 10-12 saatte vermek, aspirin başlamak ve 2 ile 6. haftalarda ekokardiyografi kontrolü planlamak",
+                        "text": "Ibuprofen 10 mg/kg 8 saatte bir, kısa süreli istirahat, ateş veya basamama gelişirse hemen başvuru eğitimi ve 48-72 saat sonra kontrol",
                         "is_correct": True,
-                        "explanation": "İVİG koroner anevrizma riskini belirgin azaltır. Aspirin ateş düşene kadar orta-yüksek dozda, sonra 3-5 mg/kg/gün düşük dozda sürdürülür. Koroner dilatasyonu olan yüksek riskli olguda ek steroid düşünülebilir. Canlı aşılar İVİG sonrası 11 ay ertelenir.",
-                        "new_finding": "İVİG ve aspirin başlandı. 36 saatte ateş düştü, CRP geriledi. İkinci hafta ekokardiyografide koroner Z skoru +2.1'e indi; altıncı haftada normaldi. Düşük doz aspirin kardiyoloji önerisiyle kesildi."
+                        "explanation": "NSAİİ ağrı ve sinovyal inflamasyonu azaltır ve iyileşmeyi hızlandırır. Ateş, kötüleşen ağrı veya basamama septik artrit olasılığını yeniden gündeme getirir; bu nedenle kısa süreli kontrol önemlidir.",
+                        "new_finding": "İbuprofen başlandı, alarm bulguları anlatıldı. 72. saat kontrolünde çocuk topallamadan koşuyordu; kalça hareketleri ağrısızdı."
+                    },
+                    {
+                        "text": "Olası erken bakteriyel enfeksiyonu önlemek için 10 gün oral sefaleksin başlamak ve topallama tamamen geçene kadar çocuğun yürümesini yasaklamak",
+                        "is_correct": False,
+                        "scenario_update": "Gereksiz antibiyotik sonrası çocukta ishal gelişti; yürüme yasağı ailenin günlük yaşamını zorlaştırdı.",
+                        "teaching_point": "Bu tabloda antibiyotik endikasyonu yoktur; çocuk tolere ettiği ölçüde hareket edebilir."
                     }
                 ]
             }
@@ -139,132 +139,132 @@ CASES = [
     },
     {
         "id": "Y62",
-        "category": "🦴 Kas-İskelet & Eklem / Ortopedik Aciller",
-        "age": "2 Yaşında",
+        "category": "🧠 Nörolojik Belirtiler & Konvülziyon",
+        "age": "9 Yaşında",
         "gender": "Kız",
-        "complaint": "Sağ dizde hızla artan şişlik, kızarıklık, sıcaklık, yüksek ateş ve bacağa hiç basamama",
-        "history": "Ailesi anlatıyor: 'Dün sabah hafif topallıyordu. Gece sağ dizi şişti, kızardı, dokununca yanıyor. Ateşi 39.2°C'ye çıktı. Bacağını hafif bükük tutuyor, hiç basmıyor, dokunmamıza izin vermiyor.' Bir hafta önce dizinde küçük bir sıyrık olmuş. Travma yok. Kanama hastalığı öyküsü yok. Aşıları tam. Tartı: 12 kg.",
-        "final_diagnosis": "Sağ Diz Septik Artriti (Staphylococcus aureus)",
-        "disposition": "Sarı Alanda Kültür Sonrası İntravenöz Antistafilokokal Antibiyotik ve Acil Ortopedik Eklem Lavajı ile Yatış",
-        "case_pearl": "Ateş, basamama ve tek eklemde ağrılı şişlik septik artrit acilidir; kıkırdak hasarı saatler içinde başlar. En sık etken S. aureus'tur; 4 yaş altında Kingella kingae de sık görülür ve kültürde zor ürer (PCR yararlıdır). Sinovyal sıvıda lökosit >50.000/mm³ ve nötrofil hakimiyeti tipiktir. Tedavi kültürler alındıktan sonra ampirik antibiyotik ve cerrahi drenajdır; klinik ve CRP yanıtıyla erken oral geçiş mümkündür. Komşu kemikte osteomiyelit eşlik edebilir.",
+        "complaint": "Dört saattir süren şiddetli, zonklayıcı baş ağrısı, bulantı, ışık ve sesten rahatsızlık",
+        "history": "Annesi anlatıyor: 'Öğleden sonra okulda başının sağ tarafında zonklayıcı, çok şiddetli bir ağrı başladı. Eve gelince iki kez kustu. Işık ve ses ağrısını artırıyor, karanlık odaya kapanmak istiyor. Son bir yılda ayda bir-iki kez benzer, daha hafif ağrıları oldu, uyuyunca geçiyordu. Bende de gençliğimden beri böyle baş ağrıları var.' Ateş, travma, sabah kusması veya uykudan uyandıran baş ağrısı yok. Tartı: 30 kg.",
+        "final_diagnosis": "Aurasız Migren Atağı",
+        "disposition": "Yeşil Alanda Erken Analjezi, Antiemetik ve Karanlık-Sessiz Ortamda Dinlendirme Sonrası Baş Ağrısı Günlüğü Eğitimi ile Taburculuk",
+        "case_pearl": "Çocuklarda migren erişkinden daha kısa (2-72 saat) ve sıklıkla bilateral olabilir; bulantı-kusma, fotofobi-fonofobi ve aile öyküsü tanıyı destekler. Normal nörolojik ve fundoskopik muayenede, kırmızı bayrak yoksa görüntüleme gerekmez. Akut tedavide ilk seçenek erken alınan ibuprofen 10 mg/kg'dır; yanıt yoksa intravenöz sıvı ve dopamin antagonisti eklenir. Opioidlerden kaçınılır; ayda 10-15 günden fazla analjezik kullanımı ilaç aşırı kullanım baş ağrısına yol açar.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
-                "question": "Ateşli, dizi şiş ve bacağına basamayan bu 2 yaşındaki kızda muayenede neye odaklanırsınız?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Şiddetli baş ağrısı ve kusması olan bu 9 yaşındaki kızda değerlendirmenin odağı nedir?",
                 "options": [
                     {
-                        "text": "Sepsis bulgularını, dizde efüzyon ve hareket ağrısını, komşu kemik hassasiyetini, diğer eklemleri ve deri lezyonlarını değerlendirmek",
+                        "text": "Ailede benzer baş ağrısı olduğu için tanıyı öyküye dayanarak koymak, muayeneyi vital bulgularla sınırlı tutup oral analjezik vererek taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Fundoskopi ve nörolojik muayene yapılmadan taburcu edildi; kırmızı bayraklar dışlanmadığı için aile ertesi gün başka bir merkeze başvurdu.",
+                        "teaching_point": "Aile öyküsü destekleyicidir ancak sekonder nedenleri dışlamak için ayrıntılı muayene şarttır."
+                    },
+                    {
+                        "text": "Kan basıncı, ateş ve bilinç düzeyini değerlendirmek; fundoskopi, meninks irritasyon bulguları, kraniyal sinirler, motor-duyu ve serebellar muayeneyi yapmak",
                         "is_correct": True,
-                        "explanation": "Ateşli monoartritte sistemik durum aciliyeti belirler. Komşu metafizde hassasiyet osteomiyeliti, birden çok eklem tutulumu farklı nedenleri düşündürür. Deri lezyonu stafilokokal giriş kapısı olabilir.",
-                        "new_finding": "Vital Bulgular: Ateş 39.1°C, KTA 138/dk, SS 26/dk, SpO2 %99, TA 96/60 mmHg, KDZ 2 sn. Sağ diz 30 derece fleksiyonda tutuluyor; belirgin şişlik, patellar ballotman, kızarıklık ve ısı artışı var. En küçük pasif hareket şiddetli ağrıya yol açıyor. Distal femur ve proksimal tibiada belirgin kemik hassasiyeti yok. Diğer eklemler normal. Diz önünde iyileşmekte olan sıyrık."
+                        "explanation": "Baş ağrılı çocukta sekonder nedenler (menenjit, kafa içi basınç artışı, hipertansiyon, kitle) ancak sistematik nörolojik muayene ve fundoskopiyle dışlanabilir. Normal muayene görüntüleme ihtiyacını belirleyen en önemli unsurdur.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 82/dk, SS 18/dk, SpO2 %99, TA 102/64 mmHg. Işıktan gözlerini kısıyor. Bilinç açık, oryante. Ense sertliği, Kernig ve Brudzinski negatif. Kraniyal sinirler, motor-duyu muayenesi ve serebellar testler normal. Fundoskopide optik disk sınırları keskin, venöz pulsasyon var."
                     },
                     {
-                        "text": "Travma olabileceğini düşünüp diz grafisi çekmek, kırık yoksa atel ve ibuprofen önerip üç gün sonra kontrole çağırmak",
+                        "text": "Kusma ve tek taraflı ağrı nedeniyle kafa içi kanama düşünüp çocuğu sedyede yatırmak ve muayene etmeden acil beyin tomografisi istemek",
                         "is_correct": False,
-                        "scenario_update": "Grafide kırık yoktu; atelle eve giden çocuğun ateşi sürdü ve iki gün sonra eklem harabiyetiyle geri getirildi.",
-                        "teaching_point": "Ateşle birlikte tek eklemde ağrılı şişlik enfeksiyon dışlanana kadar acil kabul edilir."
+                        "scenario_update": "Tomografi için sıra beklenirken muayene yapılmadı; nörolojik muayene sonradan tamamen normal bulundu.",
+                        "teaching_point": "Görüntüleme kararı öykü ve muayene bulgularına göre verilir; muayeneden önce rutin tomografi istenmez."
                     },
                     {
-                        "text": "Huzursuzluğu azaltmak için önce sedasyon verip dizden hemen biyopsi almak üzere ortopediye danışmak",
+                        "text": "Çocuğun ağrısını hızla azaltmak için muayeneden önce intravenöz tramadol uygulamak ve rahatladıktan sonra kısa bir nörolojik değerlendirme yapmak",
                         "is_correct": False,
-                        "scenario_update": "Biyopsi bu aşamada gereksizdi; sistemik değerlendirme ve kültürler alınmadan zaman kaybedildi.",
-                        "teaching_point": "İlk adım sistemik değerlendirme, kan tetkikleri ve kültürlerdir; doku biyopsisi atipik olgularda düşünülür."
-                    },
-                    {
-                        "text": "Romatizmal bir hastalık düşünüp romatoloji polikliniğine yönlendirmek ve ağrı için oral prednizolon başlamak",
-                        "is_correct": False,
-                        "scenario_update": "Steroid ateşi maskeledi; eklem enfeksiyonu ilerledi.",
-                        "teaching_point": "Enfeksiyon dışlanmadan steroid verilmez; akut ateşli monoartrit acil değerlendirilir."
+                        "scenario_update": "Tramadol sonrası bulantısı arttı ve uykuya daldı; nörolojik muayene güvenilir yapılamadı.",
+                        "teaching_point": "Opioidler çocukta baş ağrısı tedavisinde önerilmez; ayrıca muayeneyi maskeleyebilir."
                     }
                 ]
             },
             {
-                "stage_title": "Laboratuvar, Görüntüleme ve Sinovyal Sıvı",
-                "question": "Bu çocukta tanıyı doğrulamak için hangi tetkikler yapılmalıdır?",
+                "stage_title": "Tetkik Kararı",
+                "question": "Nörolojik ve fundoskopik muayenesi normal olan bu çocukta tetkik yaklaşımınız nedir?",
                 "options": [
                     {
-                        "text": "Yalnızca hemogram ve CRP istemek, lökosit 20.000/mm³'ün altındaysa enfeksiyonu dışlayıp çocuğu ağrı kesiciyle izlemek",
+                        "text": "Ataklar arasında tamamen iyi olduğu için epileptik bir süreci dışlamak amacıyla acil elektroensefalografi istemek ve sonucu nöroloji ile değerlendirmek",
                         "is_correct": False,
-                        "scenario_update": "Lökosit 19.800/mm³ geldi ve enfeksiyon yok sayıldı; sinovyal sıvı alınmadı.",
-                        "teaching_point": "Normal veya sınırda lökosit sayısı eklem enfeksiyonunu dışlamaz."
+                        "scenario_update": "EEG acil koşullarda yapılamadı; randevu haftalar sonrasına verildi ve tanıya katkısı olmadı.",
+                        "teaching_point": "EEG baş ağrısının rutin değerlendirmesinde yer almaz; bilinç kaybı veya nöbet şüphesinde düşünülür."
                     },
                     {
-                        "text": "Osteomiyeliti dışlamak için sedasyon altında diz manyetik rezonansını acil çekmek ve sonuç gelene kadar antibiyotiği ertelemek",
+                        "text": "Menenjit olasılığını dışlamak için tam kan sayımı ve CRP istemek, yüksek çıkarsa lomber ponksiyon yapmak üzere hazırlık yapmak",
                         "is_correct": False,
-                        "scenario_update": "MR için saatlerce beklendi; eklem enfeksiyonu tedavisiz kaldı.",
-                        "teaching_point": "MR eşlik eden osteomiyelit şüphesinde değerlidir ancak drenaj ve antibiyotiği geciktirmemelidir."
+                        "scenario_update": "Lökosit ve CRP normal geldi; ateş ve meninks bulgusu olmadığı halde çocuk kan alımı sırasında daha da kötüleşti.",
+                        "teaching_point": "Ateşsiz, meninks irritasyon bulgusu olmayan çocukta menenjit için kan tetkiki ve lomber ponksiyon endike değildir."
                     },
                     {
-                        "text": "Hemogram, CRP ve kan kültürü almak; grafi ve ultrason çekip ortopediyle sinovyal sıvıyı hücre sayımı ve kültür için almak",
+                        "text": "Kırmızı bayrakları (ani gök gürültüsü ağrı, uykudan uyandırma, sabah kusması, nörolojik bulgu, kişilik değişikliği) aileyle gözden geçirip görüntüleme istememek",
                         "is_correct": True,
-                        "explanation": "Kan kültürü ve sinovyal sıvı kültürü antibiyotik öncesinde alınmalıdır. Sinovyal lökosit sayısı ve Gram boyama tanıyı hızla destekler. Grafi kırık ve kemik lezyonunu, ultrason efüzyonu gösterir.",
-                        "new_finding": "Lökosit 19.800/mm³ (%84 nötrofil), CRP 112 mg/L, ESH 74 mm/sa, kan kültürü alındı. Grafide kırık yok, yumuşak doku şişliği var. Ultrasonda yoğun ekojenik efüzyon. Sinovyal sıvı bulanık: lökosit 92.000/mm³ (%88 nötrofil), Gram boyamada küme yapan gram pozitif koklar; kültür ve Kingella PCR gönderildi."
+                        "explanation": "Kırmızı bayrak olmayan, tekrarlayan benzer atakları ve normal muayenesi olan çocukta tanı kliniktir. Görüntüleme ve laboratuvar yönetimi değiştirmez; aileye hangi durumda yeniden değerlendirme gerektiği anlatılır.",
+                        "new_finding": "Kırmızı bayrak saptanmadı. Ataklar son bir yılda benzer nitelikte, aralarda çocuk tamamen iyi. Tetkik istenmedi."
                     },
                     {
-                        "text": "Sinovyal sıvı almadan hemen intravenöz antibiyotik başlamak ve tanıyı antibiyotik yanıtına göre koymak, eklem sıvısını yalnızca yanıt alınamazsa incelemek",
+                        "text": "Kusmayla seyreden ilk şiddetli atak olduğu için kontrastsız beyin tomografisi çekmek ve normalse aileyi rahatlatarak taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Antibiyotik sonrası alınan sıvıda kültür negatif kaldı; etken ve duyarlılık belirlenemedi.",
-                        "teaching_point": "Hemodinami stabilse antibiyotik öncesinde eklem sıvısı ve kan kültürü alınmalıdır."
+                        "scenario_update": "Tomografi normal geldi; çocuk gereksiz radyasyona maruz kaldı ve ağrısı tedavi edilmeden bir saat geçti.",
+                        "teaching_point": "Tekrarlayan benzer ataklar, aile öyküsü ve normal muayenede görüntüleme tanıya katkı sağlamaz."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Ateş, basamama, dizde ağrılı efüzyon, CRP 112 mg/L ve sinovyal sıvıda 92.000/mm³ lökosit ile gram pozitif kok kümeleri olan bu çocukta tanı nedir?",
+                "question": "Tekrarlayan, zonklayıcı, bulantı-kusma ve ışık-ses hassasiyetiyle seyreden, aile öyküsü olan ve muayenesi normal bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "Geçici (toksik) sinovit",
+                        "text": "Gerilim tipi baş ağrısı",
                         "is_correct": False,
-                        "scenario_update": "Yüksek ateş, basamama, yüksek CRP ve pürülan sinovyal sıvı var.",
-                        "teaching_point": "Geçici sinovitte çocuk iyi görünür ve inflamatuvar belirteçler normaldir."
+                        "scenario_update": "Ağrı zonklayıcı, şiddetli ve kusmayla birlikte; gerilim tipi baş ağrısında bunlar beklenmez.",
+                        "teaching_point": "Gerilim tipi baş ağrısı bası tarzında, hafif-orta şiddette ve bulantısızdır."
                     },
                     {
-                        "text": "Hemofiliye bağlı hemartroz",
+                        "text": "Akut bakteriyel rinosinüzit",
                         "is_correct": False,
-                        "scenario_update": "Kanama öyküsü yok, kız çocuk ve sinovyal sıvı kanlı değil pürülan.",
-                        "teaching_point": "Hemartrozda eklem sıvısı kanlıdır ve kanama öyküsü bulunur."
+                        "scenario_update": "Burun akıntısı, ateş veya yüz ağrısı yok; ağrı epizodik.",
+                        "teaching_point": "Sinüzit tekrarlayan epizodik baş ağrısının nadir nedenidir."
                     },
                     {
-                        "text": "Sağ diz septik artriti",
+                        "text": "Aurasız migren atağı",
                         "is_correct": True,
-                        "explanation": "Pürülan sinovyal sıvı, lökosit >50.000/mm³, nötrofil hakimiyeti ve Gram boyamada stafilokok morfolojisi bakteriyel eklem enfeksiyonunu doğrular.",
-                        "new_finding": "Tanı: Sağ Diz Septik Artriti (olası Staphylococcus aureus)."
+                        "explanation": "Tekrarlayan, orta-şiddetli, zonklayıcı ağrı; bulantı-kusma ve fotofobi-fonofobi ile birlikte normal muayene ve aile öyküsü ICHD-3 aurasız migren kriterlerini karşılar.",
+                        "new_finding": "Tanı: Aurasız Migren Atağı."
                     },
                     {
-                        "text": "Oligoartiküler juvenil idiyopatik artrit",
+                        "text": "İdiyopatik intrakraniyal hipertansiyon",
                         "is_correct": False,
-                        "scenario_update": "Akut başlangıç, yüksek ateş ve sinovyal sıvıda bakteri görülmesi bu tanıyla uyumsuz.",
-                        "teaching_point": "Juvenil idiyopatik artrit en az 6 hafta süren, genellikle ateşsiz artritle tanınır."
+                        "scenario_update": "Papilödem ve görme yakınması yok, ataklar arasında çocuk tamamen iyi.",
+                        "teaching_point": "İdiyopatik intrakraniyal hipertansiyonda sürekli baş ağrısı ve papilödem beklenir."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve Yatış",
-                "question": "Bu çocuğun tedavi planı hangisidir?",
+                "stage_title": "Akut Tedavi ve Taburculuk Planı",
+                "question": "Bu çocuğun acil serviste akut tedavisi ve taburculuk önerileri nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Eklemi yıkamadan altı hafta intravenöz antibiyotik vermek ve eklem hareketini tamamen kısıtlamak için alçıya almak",
-                        "is_correct": False,
-                        "scenario_update": "Drenaj yapılmayan eklemde pürülan sıvı kaldı ve kıkırdak hasarı gelişti; alçı eklem sertliğine yol açtı.",
-                        "teaching_point": "Drenaj kıkırdağı korur; uzun süreli immobilizasyon önerilmez."
-                    },
-                    {
-                        "text": "Eklem içine kortikosteroid ve antibiyotik enjekte etmek, inflamasyonu baskılamak için oral ibuprofeni yüksek dozda sürdürmek",
-                        "is_correct": False,
-                        "scenario_update": "Eklem içi steroid enfeksiyonu ağırlaştırdı; ateş ve şişlik arttı.",
-                        "teaching_point": "Eklem enfeksiyonunda eklem içi steroid kontrendikedir; antibiyotik sistemik verilir."
-                    },
-                    {
-                        "text": "Oral sefaleksinle ayaktan tedavi başlamak ve 48 saat sonra poliklinikte eklemi yeniden değerlendirmek, ağrı için ibuprofen ve dinlenme önermek",
-                        "is_correct": False,
-                        "scenario_update": "Drenajsız oral tedavi yetersiz kaldı; çocuk iki gün sonra eklem harabiyetiyle geri geldi.",
-                        "teaching_point": "Septik artrit başlangıçta intravenöz antibiyotik ve eklem drenajı gerektirir."
-                    },
-                    {
-                        "text": "İntravenöz sefazolin başlamak, acil eklem lavajı yapmak; klinik ve CRP düzelince oral tedaviyle toplam 2-3 haftaya tamamlamak",
+                        "text": "Oral ibuprofen 10 mg/kg ve ondansetron verip karanlık-sessiz odada dinlendirmek; atak başında erken ilaç alımını, uyku düzenini ve baş ağrısı günlüğünü anlatmak",
                         "is_correct": True,
-                        "explanation": "Sefazolin S. aureus ve Kingella'yı kapsar; MRSA sıklığı yüksek bölgelerde klindamisin veya vankomisin tercih edilir. Cerrahi lavaj bakteri yükünü ve kıkırdak hasarını azaltır. Ateşi düşen ve CRP'si gerileyen çocukta erken oral geçiş güvenlidir.",
-                        "new_finding": "Sefazolin başlandı, artroskopik lavaj yapıldı. Kültürde metisiline duyarlı S. aureus üredi. 72. saatte ateş düştü, CRP 34 mg/L'ye indi; oral sefaleksine geçildi ve tedavi üç haftaya tamamlandı. Eklem hareketleri normale döndü."
+                        "explanation": "Atağın erken döneminde alınan ibuprofen çocuk migreninde en kanıtlı ilk basamaktır; antiemetik bulantıyı giderir. Günlük, tetikleyicileri ve sıklığı izlemeye yardım eder; analjezikleri ayda 10-15 günden fazla kullanmamak ilaç aşırı kullanım baş ağrısını önler.",
+                        "new_finding": "İbuprofen ve ondansetron sonrası karanlık odada bir saat uyudu; uyandığında ağrısı ve bulantısı geçmişti. Aileye günlük ve analjezik kullanım sınırları anlatıldı."
+                    },
+                    {
+                        "text": "Atağı sonlandırmak için intravenöz deksametazon uygulamak ve tekrarları önlemek amacıyla acil serviste günlük topiramat proflaksisi başlatıp bir ay sonra kontrol önermek",
+                        "is_correct": False,
+                        "scenario_update": "Steroid ilk basamak tedavi değildi; ayda bir-iki atağı olan çocukta proflaksi endikasyonu yoktu ve ilaç yan etki riski taşıyordu.",
+                        "teaching_point": "Proflaksi sık ve yeti yitimine yol açan ataklarda, poliklinik değerlendirmesiyle planlanır."
+                    },
+                    {
+                        "text": "Ağrının şiddeti nedeniyle oral kodeinli parasetamol reçete etmek ve ataklar sırasında günde üç kez, en az beş gün düzenli kullanmasını önermek",
+                        "is_correct": False,
+                        "scenario_update": "Kodein 12 yaş altında solunum depresyonu riski nedeniyle kontrendikedir; düzenli kullanım önerisi ilaç aşırı kullanımına zemin hazırlar.",
+                        "teaching_point": "Kodein ve diğer opioidler çocuklarda baş ağrısı tedavisinde kullanılmamalıdır."
+                    },
+                    {
+                        "text": "Analjeziği yalnızca ağrı en şiddetli düzeye ulaştığında vermek, çocuğun okul ve ekran kullanımını tamamen yasaklayıp bir ay ev istirahati önermek",
+                        "is_correct": False,
+                        "scenario_update": "Geç alınan ilaç etkisiz kaldı; okuldan uzaklaştırma çocuğun kaygısını artırdı.",
+                        "teaching_point": "Analjezik atak başında alınmalıdır; okula devam ve düzenli yaşam desteklenir."
                     }
                 ]
             }
@@ -272,132 +272,132 @@ CASES = [
     },
     {
         "id": "Y63",
-        "category": "💧 Sıvı-Elektrolit & Renal / Ürolojik Aciller",
-        "age": "8 Yaşında",
-        "gender": "Erkek",
-        "complaint": "Kola renginde idrar, göz kapaklarında ve bacaklarda şişlik, idrar azalması ve şiddetli baş ağrısı",
-        "history": "Ailesi anlatıyor: 'Sabahtan beri kola renginde, koyu idrar yapıyor; bugün yalnızca bir kez azıcık yaptı. Sabah göz kapakları ve yüzü şişti, çorap lastikleri bacağında iz bıraktı. Şiddetli baş ağrısı var, gözlerinin önünde ışıklar çaktığını söylüyor.' İki hafta önce ateşli boğaz ağrısı geçirmiş, tedavi almamış. Bilinen böbrek hastalığı yok. Tartı: 28 kg (bir hafta önce 26 kg).",
-        "final_diagnosis": "Akut Poststreptokokal Glomerülonefrit (Hipertansiyon ve Sıvı Yüklenmesi ile)",
-        "disposition": "Sarı Alanda Tuz-Sıvı Kısıtlaması, İntravenöz Furosemid, Antihipertansif Tedavi ve Çocuk Nefroloji Yatışı",
-        "case_pearl": "Boğaz enfeksiyonundan 1-3 hafta (deri enfeksiyonundan 3-6 hafta) sonra gelişen kola renkli idrar, ödem, hipertansiyon ve oligüri nefritik sendromun klasik tablosudur. Düşük C3 ve normal C4, streptokok antikorlarının yüksekliği ve idrarda dismorfik eritrosit-eritrosit silendirleri tanıyı destekler. Hipertansiyon çoğunlukla sıvı-tuz tutulumuna bağlıdır; tedavi tuz-sıvı kısıtlaması ve loop diüretiktir. Baş ağrısı, görme bozukluğu ve nöbet hipertansif ensefalopatiyi düşündürür. C3 6-8 haftada normale döner; dönmezse başka glomerül hastalıkları araştırılır.",
+        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
+        "age": "6 Yaşında",
+        "gender": "Kız",
+        "complaint": "İki gündür idrar yaparken yanma, sık idrara çıkma ve altını ıslatma",
+        "history": "Annesi anlatıyor: 'İki gündür çiş yaparken yandığını söyleyip ağlıyor. Günde on beş kez tuvalete koşuyor ama birkaç damla yapıyor. Dün okulda iki kez altına kaçırdı. Ateşi olmadı, böğrü ağrımıyor, kusmadı.' Ayrıntılı sorgulamada üç-dört günde bir, sert dışkı yaptığı ve okulda tuvalete gitmekten kaçındığı öğrenildi. Daha önce benzer yakınması olmamış. Tartı: 20 kg.",
+        "final_diagnosis": "Akut Sistit (Ateşsiz İdrar Yolu Enfeksiyonu), Eşlik Eden Mesane-Bağırsak Disfonksiyonu",
+        "disposition": "Yeşil Alandan Kültür Sonrası Kısa Süreli Oral Antibiyotik, Kabızlık Tedavisi ve Tuvalet Alışkanlığı Eğitimi ile Taburculuk",
+        "case_pearl": "Okul çağındaki kız çocukta ateşsiz dizüri, sık idrara çıkma ve suprapubik hassasiyet alt üriner sistem enfeksiyonunu düşündürür. Tanı orta akım temiz idrarda piyüri ile birlikte anlamlı üremeyle konur; idrar torbası kültür için uygun değildir. Ateşsiz enfeksiyonda 3-5 günlük oral tedavi yeterlidir ve ilk atakta rutin görüntüleme gerekmez. Kabızlık ve işeme ertelemesi (mesane-bağırsak disfonksiyonu) tekrarların en sık değiştirilebilir nedenidir.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Kan Basıncı",
-                "question": "Kola renkli idrar, ödem ve şiddetli baş ağrısıyla gelen bu 8 yaşındaki çocukta ilk değerlendirmede neye odaklanırsınız?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Ateşsiz idrar yakınmaları olan bu 6 yaşındaki kızda muayenede neye dikkat edersiniz?",
                 "options": [
                     {
-                        "text": "İdrar azaldığı için böbrekleri desteklemek amacıyla 20 mL/kg serum fizyolojik bolusu vermek ve idrar çıkışını iki saat boyunca saat başı ölçerek beklemek",
-                        "is_correct": False,
-                        "scenario_update": "Bolus sonrası solunum hızı arttı, satürasyon %92'ye düştü ve kan basıncı 150/100 mmHg'ye yükseldi.",
-                        "teaching_point": "Ödemli ve hipertansif çocukta oligüri sıvı yüklenmesine eşlik eder; bolus tehlikelidir."
-                    },
-                    {
-                        "text": "Kan basıncını uygun manşonla ölçmek; sıvı yüklenmesi, kalp yetmezliği ve hipertansif ensefalopati bulgularını aramak, tartıp idrar çıkışını izlemek",
+                        "text": "Ateş ve kostovertebral açı hassasiyetine bakmak, suprapubik bölgeyi ve dış genitali vulvovajinit ve yapışıklık açısından incelemek, lumbosakral omurga ve kabızlığı değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Baş ağrısı ve görsel yakınmalar hipertansif ensefalopatinin habercisi olabilir. Ödem, raller, hepatomegali ve galo sıvı yüklenmesini gösterir. Tartı ve idrar çıkışı sıvı dengesinin temelidir.",
-                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 88/dk, SS 22/dk, SpO2 %98, TA 138/92 mmHg (evre 2 hipertansiyon). Bilinç açık, oryante; fokal defisit yok, fundoskopide papilödem yok. Belirgin periorbital ödem, pretibial 2+ gode bırakan ödem. Akciğer bazallerinde hafif raller, karaciğer kot kavsini 2 cm geçiyor, galo yok. Tartı 28 kg."
+                        "explanation": "Ateş ve böğür hassasiyeti üst üriner sistem tutulumunu düşündürür. Genital muayene vulvovajinit, labial yapışıklık ve kıl kurdu gibi taklitçileri ayırır. Lumbosakral anomali ve kabızlık işeme bozukluğuna katkıda bulunur.",
+                        "new_finding": "Vital Bulgular: Ateş 36.7°C, KTA 86/dk, SS 18/dk, TA 98/62 mmHg. Genel durumu iyi. Suprapubik hafif hassasiyet; kostovertebral açı hassasiyeti yok. Sol alt kadranda dışkı kitlesi palpe ediliyor. Dış genital normal, vulvit, akıntı veya yapışıklık yok. Lumbosakral bölgede gamze veya kıl tutamı yok."
                     },
                     {
-                        "text": "Şişliği alerjik reaksiyon kabul edip intravenöz antihistaminik ve steroid vermek, baş ağrısı için parasetamol önermek",
+                        "text": "Altını ıslatma yakınması nedeniyle psikolojik bir sorun olabileceğini düşünüp okul stresini sorgulamak ve çocuk psikiyatrisine yönlendirme yapmak",
                         "is_correct": False,
-                        "scenario_update": "Kan basıncı ölçülmedi; çocuk gözlem sırasında jeneralize nöbet geçirdi.",
-                        "teaching_point": "Ödem ve baş ağrısı olan çocukta kan basıncı ölçümü atlanmamalıdır."
+                        "scenario_update": "Fizik muayene ve idrar değerlendirmesi yapılmadan yönlendirme yapıldı; dizüri sürdü.",
+                        "teaching_point": "Yeni başlayan gündüz ıslatması öncelikle organik nedenlerle değerlendirilmelidir."
                     },
                     {
-                        "text": "Baş ağrısı ve görme yakınması nedeniyle önce kontrastsız beyin tomografisi çekmek ve idrar değerlendirmesini sonrasına bırakmak",
+                        "text": "Havuz ve banyo öyküsünü sorgulayıp vulvovajinit kabul etmek, oturma banyosu önermek ve idrar tetkiki yapmadan semptomlar sürerse kontrole çağırmak",
                         "is_correct": False,
-                        "scenario_update": "Tomografi normal geldi; kan basıncı ve idrar değerlendirilmeden bir saat geçti.",
-                        "teaching_point": "Baş ağrısının en olası nedeni yüksek kan basıncıdır; önce ölçülmeli ve tedavi edilmelidir."
+                        "scenario_update": "Genital muayene yapılmadan vulvovajinit kabul edildi; idrar tetkiki yapılmadığı için olası enfeksiyon tedavisiz kaldı.",
+                        "teaching_point": "Dizüri ve sık idrara çıkma idrar tetkikiyle değerlendirilmeli; vulvovajinit tanısı muayeneyle konmalıdır."
+                    },
+                    {
+                        "text": "Muayeneyi yalnızca karın palpasyonuyla sınırlı tutup ampirik oral antibiyotik reçete etmek ve idrar örneğini tedaviden üç gün sonra kontrol amaçlı istemek",
+                        "is_correct": False,
+                        "scenario_update": "Kültür alınmadan başlanan antibiyotik nedeniyle tanı doğrulanamadı ve direnç durumu öğrenilemedi.",
+                        "teaching_point": "Antibiyotik öncesi uygun yöntemle alınmış idrar kültürü tanı ve tedavi seçimi için zorunludur."
                     }
                 ]
             },
             {
-                "stage_title": "Laboratuvar ve İdrar Değerlendirmesi",
-                "question": "Hipertansif ve ödemli bu çocukta hangi tetkikler öncelikli olarak istenmelidir?",
+                "stage_title": "Tetkik Stratejisi",
+                "question": "Ateşsiz, böğür hassasiyeti olmayan ve tuvalet eğitimini tamamlamış bu çocukta hangi tetkik yaklaşımı uygundur?",
                 "options": [
                     {
-                        "text": "Tam idrar ve idrar mikroskopisi, BUN-kreatinin, elektrolitler, albümin, C3-C4, ASO ve anti-DNaz B istemek; solunum sıkıntısı varsa akciğer grafisi çekmek",
+                        "text": "Böbrek tutulumunu dışlamak amacıyla tam kan sayımı, CRP, kan kültürü ve böbrek fonksiyon testleri isteyip idrar tetkikini sonuçlara göre planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Kan tetkikleri normal geldi; çocuk gereksiz damar yolu girişimine maruz kaldı ve asıl tanısal tetkik gecikti.",
+                        "teaching_point": "Ateşsiz ve iyi görünümlü çocukta kan tetkikleri ve kan kültürü gerekmez."
+                    },
+                    {
+                        "text": "Çocuğun bezine idrar torbası yapıştırıp toplanan örnekten hem tam idrar tetkiki hem de kültür göndermek ve sonuca göre tedavi başlamak",
+                        "is_correct": False,
+                        "scenario_update": "Torba örneğinin kültüründe karışık flora üredi; sonuç yorumlanamadı ve tetkik tekrarlandı.",
+                        "teaching_point": "Torba idrarı kontaminasyon riski nedeniyle kültür için uygun değildir; tuvalet eğitimli çocukta orta akım temiz idrar alınır."
+                    },
+                    {
+                        "text": "Genital temizlik sonrası orta akım idrar örneğinden tam idrar tetkiki ve mikroskopi yapmak, aynı örneği antibiyotik öncesinde kültüre göndermek",
                         "is_correct": True,
-                        "explanation": "Dismorfik eritrositler ve eritrosit silendirleri glomerül kaynaklı kanamayı gösterir. Düşük C3 ve normal C4 ile streptokok antikorlarının yüksekliği etiyolojiyi destekler. Potasyum ve kreatinin akut böbrek hasarının derecesini belirler.",
-                        "new_finding": "Tam idrar: kola renginde, dansite 1025, protein 2+, kan 3+. Mikroskopide bol dismorfik eritrosit ve eritrosit silendirleri. BUN 48 mg/dL, kreatinin 0.88 mg/dL, K 4.6 mEq/L, Na 136 mEq/L, albümin 3.4 g/dL. C3 32 mg/dL (düşük), C4 normal, ASO 680 IU/mL. Akciğer grafisinde hafif vasküler belirginleşme."
+                        "explanation": "Tuvalet eğitimli çocukta temiz orta akım idrarı güvenilir bir örnektir. Lökosit esteraz, nitrit ve mikroskopik piyüri ön tanıyı destekler; kesin tanı ve antibiyotik seçimi kültürle yapılır.",
+                        "new_finding": "Tam idrar: dansite 1020, lökosit esteraz +++, nitrit pozitif, mikroskopide her sahada 35-40 lökosit, bol bakteri, 1-2 eritrosit. Kültür antibiyotik öncesi gönderildi."
                     },
                     {
-                        "text": "Kola renkli idrarı rabdomiyolize bağlayıp kreatin kinaz ve idrarda miyoglobin istemek, sonuç gelene kadar yüksek hızda sıvı başlamak, idrarı alkalileştirmek için bikarbonat eklemek",
+                        "text": "Altta yatan anatomik bir sorunu dışlamak için aynı gün böbrek-mesane ultrasonu ve işeme sistoüretrografisi planlamak, ardından idrar kültürü göndermek",
                         "is_correct": False,
-                        "scenario_update": "Kreatin kinaz normal geldi; verilen sıvı ödemi ve hipertansiyonu ağırlaştırdı.",
-                        "teaching_point": "Ödem ve hipertansiyonla birlikte koyu idrar glomerül kaynaklı hematüriyi düşündürür."
-                    },
-                    {
-                        "text": "Tanıyı kesinleştirmek için acil perkütan böbrek biyopsisi planlamak ve tedaviyi patoloji sonucuna göre başlatmak",
-                        "is_correct": False,
-                        "scenario_update": "Biyopsi tipik klinik tabloda gereksizdi; hipertansif çocukta kanama riski taşıdı ve tedavi gecikti.",
-                        "teaching_point": "Biyopsi atipik seyir, hızlı ilerleyen böbrek yetmezliği veya C3'ün 8 haftada düzelmemesi durumunda yapılır."
-                    },
-                    {
-                        "text": "Yalnızca idrar kültürü göndermek, idrar yolu enfeksiyonu kabul edip oral antibiyotik başlamak ve ödemi gözlemek",
-                        "is_correct": False,
-                        "scenario_update": "Kültür negatif geldi; hipertansiyon ve böbrek fonksiyonu değerlendirilmedi.",
-                        "teaching_point": "Hematüri, ödem ve hipertansiyon birlikteliği enfeksiyonla açıklanmaz."
+                        "scenario_update": "İşeme sistoüretrografisi aktif enfeksiyon döneminde ve gereksiz yere planlandı; aile kateterizasyon nedeniyle çok kaygılandı.",
+                        "teaching_point": "Ateşsiz ilk enfeksiyonda rutin görüntüleme gerekmez; işeme sistoüretrografisi seçilmiş olgularda yapılır."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Boğaz enfeksiyonundan iki hafta sonra kola renkli idrar, ödem, hipertansiyon, eritrosit silendirleri, düşük C3 ve yüksek ASO olan bu çocukta tanı nedir?",
+                "question": "Ateşsiz dizüri, sık idrara çıkma, suprapubik hassasiyet, piyüri ve nitrit pozitifliği olan, kabız bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "İlk atak nefrotik sendrom",
-                        "is_correct": False,
-                        "scenario_update": "Albümin yalnızca hafif düşük, masif proteinüri yok ve hematüri ile hipertansiyon belirgin.",
-                        "teaching_point": "Nefrotik sendromda masif proteinüri ve ağır hipoalbüminemi ön plandadır."
-                    },
-                    {
-                        "text": "Hemolitik üremik sendrom",
-                        "is_correct": False,
-                        "scenario_update": "Kanlı ishal, anemi ve trombositopeni yok.",
-                        "teaching_point": "Hemolitik üremik sendromda mikroanjiyopatik hemoliz ve trombositopeni böbrek hasarına eşlik eder."
-                    },
-                    {
-                        "text": "IgA nefropatisi",
-                        "is_correct": False,
-                        "scenario_update": "Hematüri enfeksiyondan iki hafta sonra başladı ve C3 düşük.",
-                        "teaching_point": "IgA nefropatisinde hematüri enfeksiyonla eş zamanlı (1-2 gün içinde) ortaya çıkar ve C3 normaldir."
-                    },
-                    {
-                        "text": "Akut poststreptokokal glomerülonefrit",
+                        "text": "Akut sistit ve mesane-bağırsak disfonksiyonu",
                         "is_correct": True,
-                        "explanation": "Latent dönem sonrası nefritik sendrom, düşük C3, normal C4 ve yüksek streptokok antikorları akut poststreptokokal glomerülonefriti doğrular.",
-                        "new_finding": "Tanı: Akut Poststreptokokal Glomerülonefrit (hipertansiyon ve sıvı yüklenmesi ile)."
+                        "explanation": "Ateşsiz alt üriner sistem yakınmaları, piyüri ve nitrit pozitifliği akut sistiti düşündürür; kültür doğrular. Kabızlık ve işeme ertelemesi eşlik eden ve tekrar riskini artıran mesane-bağırsak disfonksiyonunu gösterir.",
+                        "new_finding": "Tanı: Akut Sistit (ateşsiz idrar yolu enfeksiyonu), eşlik eden mesane-bağırsak disfonksiyonu."
+                    },
+                    {
+                        "text": "Kimyasal irritan üretrit",
+                        "is_correct": False,
+                        "scenario_update": "Köpük banyosu veya sabun maruziyeti öyküsü yok; nitrit pozitifliği bakteriyel enfeksiyonu düşündürüyor.",
+                        "teaching_point": "İrritan üretritte idrar tetkiki genellikle normaldir."
+                    },
+                    {
+                        "text": "Akut piyelonefrit",
+                        "is_correct": False,
+                        "scenario_update": "Ateş, böğür ağrısı, kostovertebral açı hassasiyeti ve sistemik bulgu yok.",
+                        "teaching_point": "Piyelonefritte ateş ve böğür hassasiyeti beklenir; tedavi süresi ve yaklaşım farklıdır."
+                    },
+                    {
+                        "text": "Nonspesifik vulvovajinit",
+                        "is_correct": False,
+                        "scenario_update": "Genital muayene normal; idrarda nitrit pozitif ve belirgin piyüri var.",
+                        "teaching_point": "Vulvovajinitte dış genital eritem ve akıntı görülür; nitrit pozitifliği beklenmez."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve Yatış",
-                "question": "Bu çocuğun tedavi planı hangisidir?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu çocuğun tedavi ve izlem planı hangisidir?",
                 "options": [
                     {
-                        "text": "Tuz ve sıvıyı kısıtlamak, intravenöz furosemid vermek, kan basıncı yüksek kalırsa nifedipin eklemek ve günlük tartıyla izlemek",
+                        "text": "Çocuğu servise yatırıp intravenöz seftriakson başlamak, ateşsiz geçen ilk 48 saatten sonra orale geçerek toplam 14 gün tedaviyi tamamlamak",
+                        "is_correct": False,
+                        "scenario_update": "İyi görünümlü, ateşsiz çocuk gereksiz yere yatırıldı ve geniş spektrumlu parenteral tedavi aldı.",
+                        "teaching_point": "Ateşsiz alt üriner sistem enfeksiyonu oral ve kısa süreli tedavi edilir."
+                    },
+                    {
+                        "text": "Oral sefaleksin 50 mg/kg/gün dört dozda 3-5 gün vermek, kültür sonucunu kontrol etmek, kabızlığı tedavi edip düzenli tuvalet alışkanlığını anlatmak",
                         "is_correct": True,
-                        "explanation": "Hipertansiyon ve ödem sıvı-tuz tutulumuna bağlıdır; diüretik ve kısıtlama temel tedavidir. Kalsiyum kanal blokerleri ek antihipertansif olarak güvenlidir. Süren streptokok enfeksiyonu varsa penisilin verilir ancak böbrek seyrini değiştirmez.",
-                        "new_finding": "Furosemid 1 mg/kg intravenöz verildi, tuz-sıvı kısıtlandı. Dört saatte 450 mL idrar çıktı, kan basıncı 118/76 mmHg'ye indi, baş ağrısı geçti. Üç günde ödem çözüldü. Sekizinci haftada C3 normale döndü."
+                        "explanation": "Ateşsiz enfeksiyonda yerel dirence uygun oral ajanla 3-5 günlük tedavi yeterlidir; kültüre göre gerekirse değiştirilir. Kabızlığın tedavisi, 2-3 saatte bir tuvalete gitme ve yeterli sıvı tekrarları önler; ilk atakta görüntüleme gerekmez.",
+                        "new_finding": "Sefaleksin ve polietilen glikol başlandı, tuvalet programı anlatıldı. Kültürde 100.000 cfu/mL sefaleksine duyarlı E. coli üredi. 48 saatte yakınmaları geçti; bir ay sonra dışkılaması düzenliydi ve yeni atak olmadı."
                     },
                     {
-                        "text": "Kan basıncı 138/92 mmHg olduğu için hipertansiyonu ciddi kabul etmemek, oral antibiyotik ve tuzsuz diyetle çocuğu taburcu etmek",
+                        "text": "Ondört gün amoksisilin-klavulanat vermek, tekrarları önlemek için altı ay düşük doz trimetoprim-sülfametoksazol proflaksisi başlamak ve işeme sistoüretrografisi planlamak",
                         "is_correct": False,
-                        "scenario_update": "Evde baş ağrısı arttı; çocuk ertesi gün hipertansif ensefalopati ve nöbetle getirildi.",
-                        "teaching_point": "Semptomatik evre 2 hipertansiyon ve oligüri yatış gerektirir."
+                        "scenario_update": "İlk ateşsiz atakta uzun tedavi, proflaksi ve invaziv görüntüleme gereksizdi; çocukta proflaksi sırasında döküntü gelişti.",
+                        "teaching_point": "Proflaksi ve işeme sistoüretrografisi ilk ateşsiz enfeksiyonda rutin önerilmez."
                     },
                     {
-                        "text": "Böbrek perfüzyonunu korumak için idame hızında intravenöz sıvı vermek, kan basıncını düşürmek için ilk seçenek olarak ACE inhibitörü başlamak",
+                        "text": "Kültür sonucu gelene kadar antibiyotik vermeyip bol su içmesini önermek, kızılcık suyu ve idrar alkalileştirici şurup ile semptomları gidermeye çalışmak",
                         "is_correct": False,
-                        "scenario_update": "Sıvı yükü arttı; ACE inhibitörü sonrası potasyum 6.1 mEq/L'ye yükseldi ve kreatinin arttı.",
-                        "teaching_point": "Akut dönemde sıvı kısıtlanır; ACE inhibitörleri hiperkalemi ve böbrek fonksiyonunda bozulma riski nedeniyle ilk seçenek değildir."
-                    },
-                    {
-                        "text": "Böbrek hasarını önlemek için yüksek doz intravenöz metilprednizolon ve siklofosfamid başlamak, kan basıncı için yalnızca gözlem yapmak",
-                        "is_correct": False,
-                        "scenario_update": "İmmünsüpresif tedavi gereksizdi; tedavi edilmeyen hipertansiyon nedeniyle çocukta nöbet gelişti.",
-                        "teaching_point": "Tipik seyirde immünsüpresyon endike değildir; hipertansiyon acilen tedavi edilmelidir."
+                        "scenario_update": "İki gün tedavisiz kalan çocuğun yakınmaları arttı ve ateşi çıktı.",
+                        "teaching_point": "Semptomatik ve piyürisi olan çocukta kültür alındıktan sonra ampirik tedavi geciktirilmemelidir."
                     }
                 ]
             }
@@ -405,132 +405,132 @@ CASES = [
     },
     {
         "id": "Y64",
-        "category": "💧 Sıvı-Elektrolit & Renal / Ürolojik Aciller",
-        "age": "4 Yaşında",
+        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
+        "age": "11 Yaşında",
         "gender": "Erkek",
-        "complaint": "Göz kapaklarında başlayıp bacaklara, karına ve skrotuma yayılan yaygın şişlik ve köpüklü idrar",
-        "history": "Ailesi anlatıyor: 'Beş gün önce sabah göz kapakları şişmişti, alerji sandık. Şişlik bacaklarına, ayak bileklerine ve testislerine yayıldı. Karnı şişti, pantolonu kapanmıyor. İdrarı azaldı ve köpüklü. Bugün karnı biraz ağrıyor, halsiz.' Bir hafta önce soğuk algınlığı geçirmiş. Kanlı idrar ve döküntü yok. Su çiçeği geçirmemiş. Tartı: 18 kg (öncesinde 15.5 kg).",
-        "final_diagnosis": "İlk Atak İdiyopatik Nefrotik Sendrom (Olası Minimal Değişiklik Hastalığı)",
-        "disposition": "Sarı Alanda Damar İçi Hacim Değerlendirmesi, Tuz Kısıtlaması, Oral Prednizolon ve Komplikasyon Eğitimi ile Çocuk Nefroloji Yatışı",
-        "case_pearl": "Masif proteinüri (idrar protein/kreatinin >2 mg/mg), hipoalbüminemi (<2.5 g/dL) ve ödem tanı koydurur; hiperlipidemi eşlik eder. 1-10 yaş arasında hematüri, hipertansiyon ve böbrek yetmezliği olmayan, C3'ü normal çocukta neden çoğunlukla minimal değişiklik hastalığıdır ve biyopsi yapılmadan steroid başlanır. Ödemli olmasına karşın damar içi hacim azalmış olabilir (karın ağrısı, taşikardi, soğuk ekstremite, yüksek hematokrit); bu durumda diüretik tehlikelidir. Başlıca komplikasyonlar enfeksiyon (peritonit, selülit) ve trombozdur.",
+        "complaint": "Temmuz öğleden sonrası açık sahada futbol oynadıktan sonra başlayan baş dönmesi, halsizlik, bulantı ve aşırı terleme",
+        "history": "Antrenörü anlatıyor: 'Saat 14:00'te güneş altında iki saattir maç yapıyorlardı. Sona doğru başı döndü, dizleri boşaldı ve yere oturdu. Çok terliyor, forması sırılsıklam. Bir şişe su içince bir kez kustu. Bizi tanıyor, sorulara doğru cevap veriyor. Bayılmadı, kasılmadı.' Bilinen hastalığı ve düzenli ilacı yok. Tartı: 38 kg.",
+        "final_diagnosis": "Sıcak Bitkinliği (Isıya Bağlı Hastalık, Santral Sinir Sistemi Tutulumu Olmayan)",
+        "disposition": "Yeşil Alanda Serin Ortamda Soğutma, Oral Elektrolitli Sıvı ve Sıcakta Egzersiz Eğitimi ile Taburculuk",
+        "case_pearl": "Isıya bağlı hastalıkta en kritik ayrım santral sinir sistemi tutulumudur: sıcak çarpmasında vücut iç ısısı genellikle >40°C'dir ve bilinç değişikliği, konfüzyon, ataksi veya nöbet görülür; acil soğuk suya daldırma gerekir. Sıcak bitkinliğinde bilinç normaldir, iç ısı genellikle <40°C'dir; serin ortam, soyma, evaporatif soğutma ve oral elektrolitli sıvı yeterlidir. Aksiller ölçüm güvenilmez, rektal ölçüm tercih edilir. Antipiretikler etkisizdir. Aşırı sade su hiponatremiye yol açabilir.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Hacim Durumu",
-                "question": "Yaygın ödemi, asiti ve karın ağrısı olan bu 4 yaşındaki çocukta ilk değerlendirmede neye odaklanırsınız?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Sıcakta egzersiz sonrası baş dönmesi ve kusması olan bu çocukta ilk yaklaşımınız nedir?",
                 "options": [
                     {
-                        "text": "Skrotal şişlik nedeniyle testis torsiyonunu dışlamak için acil skrotal Doppler istemek ve üroloji görüşü gelene kadar muayeneyi bununla sınırlamak",
-                        "is_correct": False,
-                        "scenario_update": "Doppler normal geldi; yaygın ödemin nedeni ve hacim durumu değerlendirilmedi.",
-                        "teaching_point": "Yaygın ödemin bir parçası olan skrotal ödem sistemik değerlendirme gerektirir."
-                    },
-                    {
-                        "text": "Göz kapağı şişliği nedeniyle alerjik anjiyoödem kabul edip intramüsküler adrenalin ve antihistaminik vermek",
-                        "is_correct": False,
-                        "scenario_update": "Tedaviye yanıt alınmadı; ödemin nedeni değerlendirilmedi.",
-                        "teaching_point": "Günler içinde yerçekimine bağlı yayılan gode bırakan ödem alerjik değildir."
-                    },
-                    {
-                        "text": "Ödemi hızla azaltmak için hacim durumunu değerlendirmeden yüksek doz intravenöz furosemid vermek ve idrar çıkışını izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Furosemid sonrası çocukta taşikardi, karın ağrısında artış ve soğuk ekstremiteler gelişti.",
-                        "teaching_point": "Hacim azlığı olan nefrotik çocukta diüretik şoka ve tromboza yol açabilir."
-                    },
-                    {
-                        "text": "Kan basıncı, nabız, kapiller dolum ve ekstremite ısısıyla hacim durumunu; ödem, asit, solunum, enfeksiyon ve tromboz bulgularını değerlendirmek",
+                        "text": "Çocuğu hemen serin bir odaya alıp formasını çıkarmak, rektal ısı ölçmek, bilinç-davranış, nörolojik bulgular, vital bulgular ve kan şekerini değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Ödemli çocukta damar içi hacim azalmış olabilir; karın ağrısı ve soğuk ekstremite hipovolemiyi düşündürür. Plevral efüzyon solunumu etkiler. Karın ağrısı ayrıca enfeksiyon veya trombozun habercisi olabilir.",
-                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 98/dk, SS 22/dk, SpO2 %99, TA 96/60 mmHg, KDZ 2 sn, ekstremiteler sıcak. Periorbital ödem, pretibial 3+ gode bırakan ödem, belirgin skrotal ödem. Karın distandü, yer değiştiren matite (asit); hafif yaygın hassasiyet, defans ve rebound yok. Akciğer bazallerinde solunum sesleri hafif azalmış. Tartı 18 kg."
+                        "explanation": "Isıya bağlı hastalıkta soğutmaya başlamak ve iç ısıyı doğru ölçmek eş zamanlı yapılır. Bilinç değişikliği, konfüzyon veya ataksi santral sinir sistemi tutulumunu gösterir ve yaklaşımı tamamen değiştirir.",
+                        "new_finding": "Vital Bulgular: Rektal ısı 38.9°C, KTA 112/dk, SS 22/dk, SpO2 %99, TA 100/62 mmHg, kapiller kan şekeri 92 mg/dL. Bilinç açık, oryante, konuşması akıcı. Yürüyüşü dengeli, nörolojik muayene normal. Cilt nemli ve terli, mukozalar hafif kuru, KDZ 2.5 sn."
+                    },
+                    {
+                        "text": "Kusma nedeniyle önce intravenöz yol açıp 20 mL/kg serum fizyolojik bolus başlatmak ve sıvı bitene kadar çocuğu sedyede sıcak bekleme alanında tutmak",
+                        "is_correct": False,
+                        "scenario_update": "Sıvı verilirken çocuk sıcak ortamda kaldı; iç ısı ölçülmedi ve soğutma gecikti.",
+                        "teaching_point": "İlk öncelik serin ortama alma ve soğutmadır; oral alabilen çocukta intravenöz sıvı zorunlu değildir."
+                    },
+                    {
+                        "text": "Baş dönmesi ve kusma nedeniyle kafa travması olasılığını düşünüp boyunluk takmak ve nörolojik değerlendirme için çocuğu sırtüstü sabitlemek",
+                        "is_correct": False,
+                        "scenario_update": "Öyküde travma yoktu; boyunluk ve sabitleme sırasında çocuk terlemeye devam etti ve soğutma başlamadı.",
+                        "teaching_point": "Travma öyküsü olmayan çocukta omurga immobilizasyonu gereksizdir ve tedaviyi geciktirir."
+                    },
+                    {
+                        "text": "Aksiller ısı 38.2°C olduğu için ateşi düşürmek amacıyla oral parasetamol vermek, yarım saat bekleyip ısı düşmezse ibuprofen eklemek",
+                        "is_correct": False,
+                        "scenario_update": "Antipiretik ısıyı düşürmedi; iç ısı ölçülmeden ve soğutma başlanmadan yarım saat geçti.",
+                        "teaching_point": "Isıya bağlı hastalıkta yükseklik hipotalamik ayar noktasından kaynaklanmaz; antipiretikler etkisizdir, fiziksel soğutma gerekir."
                     }
                 ]
             },
             {
-                "stage_title": "Laboratuvar Değerlendirmesi",
-                "question": "Bu çocukta tanı ve tedavi kararı için hangi tetkikler istenmelidir?",
+                "stage_title": "Tetkik Stratejisi",
+                "question": "Bilinci tamamen açık, rektal ısısı 38.9°C ve hafif dehidrate olan bu çocukta tetkik yaklaşımınız nedir?",
                 "options": [
                     {
-                        "text": "Tam idrar, idrar protein/kreatinin oranı, albümin, kolesterol, kreatinin, elektrolit, hemogram ve C3 istemek; enfeksiyon taraması yapmak",
+                        "text": "Kan şekeri, sodyum-potasyum, böbrek fonksiyonları ve kreatin kinaz ile idrar dansitesi bakmak; soğutmayı sürdürüp ısıyı 15-30 dakikada bir izlemek",
                         "is_correct": True,
-                        "explanation": "Masif proteinüri ve hipoalbüminemi tanıyı doğrular. Hematüri, düşük C3, hipertansiyon ve kreatinin artışı atipik nedenleri düşündürür. Hematokrit yüksekliği hacim azlığını gösterir. Hepatit B, su çiçeği serolojisi ve tüberküloz taraması steroid öncesi önemlidir.",
-                        "new_finding": "Tam idrar: dansite 1030, protein 4+, eritrosit yok. İdrar protein/kreatinin 8.4 mg/mg. Albümin 1.6 g/dL, kolesterol 380 mg/dL, kreatinin 0.4 mg/dL, Na 133 mEq/L, hematokrit %42, C3 normal. HBsAg negatif, su çiçeği IgG negatif."
+                        "explanation": "Kusma ve aşırı terlemeyle sodyum değişikliği, prerenal azotemi ve rabdomiyoliz gelişebilir. Seri ısı ölçümü soğutmaya yanıtı ve kötüleşmeyi gösterir.",
+                        "new_finding": "Glukoz 88 mg/dL, Na 137 mEq/L, K 4.1 mEq/L, BUN 16 mg/dL, kreatinin 0.6 mg/dL, CK 210 U/L. İdrar dansitesi 1028, miyoglobin negatif. 30. dakikada rektal ısı 38.1°C."
                     },
                     {
-                        "text": "Tedaviye başlamadan önce acil perkütan böbrek biyopsisi planlamak ve histolojik tanıya göre tedavi seçmek",
+                        "text": "Ateş nedeniyle enfeksiyon odağı aramak amacıyla kan kültürü, CRP ve akciğer grafisi istemek, sonuç gelene kadar ampirik antibiyotik başlamak",
                         "is_correct": False,
-                        "scenario_update": "Nefroloji, tipik başvuruda biyopsinin gerekmediğini belirtti; tedavi gecikti.",
-                        "teaching_point": "1-10 yaş arası tipik başvuruda biyopsi yapılmadan steroid başlanır; biyopsi steroid direncinde düşünülür."
+                        "scenario_update": "Tetkikler normal geldi; gereksiz antibiyotik başlandı ve tablo egzersiz-ısı ilişkisi göz ardı edildi.",
+                        "teaching_point": "Sıcakta egzersizle başlayan ve soğutmaya yanıt veren tabloda enfeksiyon tetkiki rutin değildir."
                     },
                     {
-                        "text": "Asitin nedenini bulmak için kontrastlı batın tomografisi çekmek ve karaciğer hastalığını dışlamak için gastroenterolojiye danışmak",
+                        "text": "Tetkik istemeden çocuğu yarım saat gölgede dinlendirip baş dönmesi geçince antrenmana dönmesine izin vermek",
                         "is_correct": False,
-                        "scenario_update": "Tomografi yaygın asit gösterdi; asıl tanı için idrar tetkiki yapılmamıştı.",
-                        "teaching_point": "Ödem ve asitli çocukta ilk tetkik tam idrardır; proteinüri tanıyı yönlendirir."
+                        "scenario_update": "Elektrolit ve hidrasyon durumu değerlendirilmeden antrenmana dönen çocuk yeniden baş dönmesi yaşadı.",
+                        "teaching_point": "Isıya bağlı hastalık sonrası aynı gün egzersize dönüş önerilmez."
                     },
                     {
-                        "text": "Tedavi kararı için 24 saatlik idrar toplamasını tamamlamak ve sonuç gelene kadar steroid dahil hiçbir tedavi başlamamak",
+                        "text": "Baş dönmesi ve kusma birlikteliği nedeniyle kontrastsız beyin tomografisi çekmek, ardından ateş ve kusma için lomber ponksiyon planlamak",
                         "is_correct": False,
-                        "scenario_update": "Bezli çocukta idrar toplama güvenilir yapılamadı; tedavi bir gün gecikti.",
-                        "teaching_point": "Spot idrar protein/kreatinin oranı küçük çocuklarda yeterli ve pratiktir."
+                        "scenario_update": "Bilinci açık, nörolojik muayenesi normal çocuğa gereksiz görüntüleme ve invaziv işlem planlandı.",
+                        "teaching_point": "Normal nörolojik muayenesi olan çocukta görüntüleme ve lomber ponksiyon endike değildir."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Masif proteinüri, albümin 1.6 g/dL, hiperkolesterolemi ve yaygın ödemi olan, hematürisi ve hipertansiyonu olmayan, C3'ü normal bu çocukta tanı nedir?",
+                "question": "Sıcakta uzun egzersiz sonrası baş dönmesi, bulantı, aşırı terleme, bilinci açık ve rektal ısısı 38.9°C olan bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "Dilate kardiyomiyopatiye bağlı kalp yetmezliği",
-                        "is_correct": False,
-                        "scenario_update": "Kalp muayenesi normal, hepatomegali ve galo yok; idrarda masif protein var.",
-                        "teaching_point": "Kalp yetmezliğine bağlı ödemde proteinüri ve ağır hipoalbüminemi beklenmez."
-                    },
-                    {
-                        "text": "İlk atak idiyopatik nefrotik sendrom",
+                        "text": "Sıcak bitkinliği",
                         "is_correct": True,
-                        "explanation": "Masif proteinüri, hipoalbüminemi, ödem ve hiperlipidemi nefrotik sendromu tanımlar; yaş, hematüri ve hipertansiyon yokluğu ve normal C3 minimal değişiklik hastalığını düşündürür.",
-                        "new_finding": "Tanı: İlk Atak İdiyopatik Nefrotik Sendrom (olası minimal değişiklik hastalığı)."
+                        "explanation": "Sıcakta egzersiz sonrası halsizlik, baş dönmesi, bulantı-kusma, terleme ve hafif dehidratasyon ile birlikte normal bilinç ve 40°C altı iç ısı sıcak bitkinliğini tanımlar.",
+                        "new_finding": "Tanı: Sıcak Bitkinliği."
                     },
                     {
-                        "text": "Akut glomerülonefrit",
+                        "text": "Sıcak çarpması",
                         "is_correct": False,
-                        "scenario_update": "Hematüri, hipertansiyon ve düşük C3 yok; masif proteinüri ön planda.",
-                        "teaching_point": "Glomerülonefritte hematüri, hipertansiyon ve oligüri baskındır."
+                        "scenario_update": "Bilinç ve nörolojik muayene normal, iç ısı 40°C'nin altında.",
+                        "teaching_point": "Sıcak çarpmasında santral sinir sistemi bulguları vardır ve hayatı tehdit eder."
                     },
                     {
-                        "text": "Protein kaybettiren enteropati",
+                        "text": "Akut viral gastroenterit",
                         "is_correct": False,
-                        "scenario_update": "İdrarda masif protein kaybı var; ishal ve gastrointestinal yakınma yok.",
-                        "teaching_point": "Protein kaybettiren enteropatide idrarda protein beklenmez."
+                        "scenario_update": "Yakınmalar sıcakta egzersizle başladı, ishal yok ve soğutmayla hızla düzeliyor.",
+                        "teaching_point": "Bağlamın (ısı, egzersiz) değerlendirilmesi tanının anahtarıdır."
+                    },
+                    {
+                        "text": "Egzersize bağlı hiponatremi",
+                        "is_correct": False,
+                        "scenario_update": "Serum sodyumu 137 mEq/L, normal.",
+                        "teaching_point": "Egzersize bağlı hiponatremi genellikle aşırı sade su alımıyla gelişir ve sodyum <135 mEq/L'dir."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve Yatış",
-                "question": "Damar içi hacmi korunmuş bu çocuğun tedavi planı hangisidir?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu çocuğun tedavisi ve taburculuk önerileri nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Steroid başlamadan önce proteinürinin kendiliğinden düzelip düzelmediğini görmek için iki hafta yalnızca tuzsuz diyetle izlemek",
+                        "text": "Kaybedilen sıvıyı hızla yerine koymak için çocuğa yarım saat içinde iki litre sade su içirmek ve terleme geçince aynı gün maça dönmesine izin vermek",
                         "is_correct": False,
-                        "scenario_update": "Bekleme süresinde ödem arttı ve çocukta selülit gelişti.",
-                        "teaching_point": "Tipik ilk atakta steroid geciktirilmemelidir."
+                        "scenario_update": "Hızlı sade su alımı sonrası bulantı arttı ve yeniden kustu; aynı gün egzersize dönüş riskliydi.",
+                        "teaching_point": "Kısa sürede aşırı sade su hiponatremi riski taşır; elektrolitli sıvı azar azar verilmelidir."
                     },
                     {
-                        "text": "Oral prednizolon 60 mg/m²/gün başlamak, tuzu kısıtlamak, hareketi teşvik etmek ve enfeksiyon ile tromboz belirtileri konusunda aileyi eğitmek",
+                        "text": "Serin ortamda nemli bez ve fanla soğutmak, azar azar soğuk oral elektrolitli sıvı vermek; sıcakta egzersiz saatleri, sıvı molaları ve uyarı belirtilerini anlatmak",
                         "is_correct": True,
-                        "explanation": "Steroid ilk atakta 4-6 hafta günlük, ardından 4-6 hafta gün aşırı verilir; çocukların çoğunda 2 hafta içinde remisyon sağlanır. Tuz kısıtlaması ödemi azaltır. Hareketsizlik tromboz riskini artırır. Ateş, karın ağrısı ve su çiçeği teması acil başvuru nedenidir.",
-                        "new_finding": "Prednizolon ve tuz kısıtlaması başlandı. Onuncu günde idrarda protein negatifleşti, diürez başladı ve ödem çözüldü. Aileye günlük idrar stiki ve uyarı belirtileri öğretildi."
+                        "explanation": "Evaporatif soğutma ve oral rehidratasyon sıcak bitkinliğinde yeterlidir. Günün sıcak saatlerinden kaçınma, düzenli sıvı molası, açık renkli giysi ve kademeli alışma tekrarları önler; konfüzyon gelişirse acil başvuru gerekir.",
+                        "new_finding": "Bir saatte rektal ısı 37.4°C'ye, nabız 82/dk'ya geriledi; baş dönmesi geçti, iki bardak elektrolitli sıvıyı kusmadan içti. Antrenöre ve aileye öneriler yazılı verildi."
                     },
                     {
-                        "text": "İlk tedavi olarak siklofosfamid başlamak, steroidi yan etkileri nedeniyle vermemek ve proteinüri azalana kadar yatak istirahati önermek",
+                        "text": "Aktif soğutma için çocuğu buzlu suya daldırıp titreme başlayana kadar tutmak ve ardından intravenöz parasetamol ile ısıyı kontrol altında tutmak",
                         "is_correct": False,
-                        "scenario_update": "Siklofosfamid ilk basamak değildi; yatak istirahati sırasında çocukta derin ven trombozu gelişti.",
-                        "teaching_point": "İlk atakta tedavi steroiddir; ikinci basamak ilaçlar steroid bağımlılığı veya direncinde kullanılır."
+                        "scenario_update": "Bilinci açık çocuk buzlu suda şiddetli titreme ve huzursuzluk yaşadı; parasetamol ısıyı etkilemedi.",
+                        "teaching_point": "Soğuk suya daldırma sıcak çarpmasında hayat kurtarıcıdır; sıcak bitkinliğinde evaporatif soğutma yeterlidir ve antipiretikler etkisizdir."
                     },
                     {
-                        "text": "Ödemin hızla çözülmesi için her çocukta rutin olarak günde iki kez albümin ve furosemid vermek ve sıvıyı kesin olarak kısıtlamak",
+                        "text": "Çocuğu 24 saat gözlem için yatırıp intravenöz idame sıvısı başlamak, ertesi gün tekrar elektrolit ve böbrek fonksiyon testleri istemek",
                         "is_correct": False,
-                        "scenario_update": "Rutin albümin-furosemid sonrası çocukta hacim azlığı ve hiponatremi gelişti.",
-                        "teaching_point": "Albümin ve diüretik yalnızca semptomatik ağır ödemde, hacim azlığı yoksa ve yakın izlemle kullanılır."
+                        "scenario_update": "Bir saatte tamamen düzelen çocuk gereksiz yere yatırıldı ve tetkikler tekrarlandı.",
+                        "teaching_point": "Soğutma ve oral sıvıyla düzelen, laboratuvarı normal çocuk taburcu edilebilir."
                     }
                 ]
             }
@@ -538,132 +538,132 @@ CASES = [
     },
     {
         "id": "Y65",
-        "category": "🧠 Nörolojik Aciller",
-        "age": "7 Yaşında",
+        "category": "👁️ Göz Şikayetleri",
+        "age": "5 Yaşında",
         "gender": "Kız",
-        "complaint": "Bulantı ilacı sonrası başlayan boyunda kasılma, başın geriye-yana bükülmesi, gözlerin yukarı kayması ve konuşma güçlüğü",
-        "history": "Ailesi anlatıyor: 'Dün geceden beri kusuyordu. Bugün aile hekimi bulantı için damla reçete etti; kusmaya devam edince önerilenin iki katı verdik. Yaklaşık iki saat sonra boynu sola kilitlendi, başı geriye büküldü, gözleri yukarı kaydı, aşağı bakamıyor. Dili kasılıyor, konuşamıyor ama bizi duyuyor, korkuyor.' Ateş, travma ve bilinç kaybı yok. Daha önce nöbet öyküsü yok. Tartı: 24 kg.",
-        "final_diagnosis": "İlaca Bağlı Akut Distonik Reaksiyon (Metoklopramid; Okülojirik Kriz ve Tortikolis)",
-        "disposition": "Sarı Alanda İntravenöz-İntramüsküler Antikolinerjik Tedavi, İlacın Kesilmesi ve 24-48 Saat Oral Antikolinerjikle Taburculuk",
-        "case_pearl": "Dopamin antagonistleri (metoklopramid, proklorperazin, haloperidol) özellikle çocuk ve gençlerde, sıklıkla doz aşımında saatler içinde akut distoniye yol açar: tortikolis, okülojirik kriz, dil-çene kasılması ve opistotonus. Bilinç korunur ve bu nöbetten ayıran temel özelliktir. Laringeal distoni hava yolunu tehdit edebilir. Tedavi intravenöz veya intramüsküler difenhidramin (1 mg/kg) ya da biperidendir; yanıt dakikalar içindedir. Tekrarı önlemek için 24-48 saat oral antikolinerjik verilir.",
+        "complaint": "Sağ göz kapaklarında iki gündür giderek artan kızarıklık, şişlik ve dokunmakla hassasiyet",
+        "history": "Annesi anlatıyor: 'Üç gün önce sağ kaşının kenarını sivrisinek ısırdı, çok kaşıdı. Dünden beri sağ üst ve alt göz kapağı kızardı, şişti, gözü biraz kapandı. Gözünün akı kızarık değil, akıntısı yok. Çizgi filmi net gördüğünü söylüyor, gözünü oynatınca acımıyor. Ateşi 37.4°C oldu.' Burun akıntısı veya sinüzit öyküsü yok. Aşıları tam. Tartı: 19 kg.",
+        "final_diagnosis": "Preseptal Selülit (Cilt Bütünlüğü Bozulmasına Sekonder)",
+        "disposition": "Yeşil Alandan Oral Antibiyotik, Alarm Bulguları Eğitimi ve 24-48 Saat Sonra Kontrol ile Taburculuk",
+        "case_pearl": "Göz kapağı selülitinde asıl görev orbital tutulumu dışlamaktır: proptozis, ağrılı veya kısıtlı göz hareketleri, görme azalması, RAPD ve kemozis orbital selülit bulgularıdır ve kontrastlı orbita BT ile acil yatış gerektirir. Bu bulgular yoksa ve çocuk iyi görünümlüyse görüntüleme gerekmez. Cilt kaynaklı olgularda S. aureus ve A grubu streptokoku kapsayan oral tedavi (sefaleksin veya amoksisilin-klavulanat; MRSA riskinde klindamisin veya TMP-SMX) 7-10 gün verilir ve 24-48 saatte kontrol edilir.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
-                "question": "Bulantı damlası sonrası boynu kilitlenen ve gözleri yukarı kayan bu 7 yaşındaki kızda ilk değerlendirmede neye odaklanırsınız?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Göz kapaklarında kızarıklık ve şişliği olan bu 5 yaşındaki kızda muayenede öncelikle neyi değerlendirirsiniz?",
                 "options": [
                     {
-                        "text": "Ensefalit olasılığı nedeniyle lomber ponksiyon yapmak ve sonuç gelene kadar intravenöz asiklovir başlamak",
+                        "text": "Ateşli kapak şişliğinde menenjit riskini dışlamak amacıyla önce ense sertliği ve Kernig-Brudzinski bulgularına odaklanmak, göz muayenesini oftalmolojiye bırakmak",
                         "is_correct": False,
-                        "scenario_update": "Lomber ponksiyon sırasında çocuk kasılmalar nedeniyle pozisyon alamadı; ateş ve bilinç bozukluğu yoktu.",
-                        "teaching_point": "Ateşsiz, bilinci açık ve ilaç öyküsü belirgin çocukta santral sinir sistemi enfeksiyonu öncelikli düşünülmez."
+                        "scenario_update": "Meninks bulguları negatifti; görme ve göz hareketleri değerlendirilmeden göz konsültasyonu için saatlerce beklendi.",
+                        "teaching_point": "Göz kapağı enfeksiyonunun ilk değerlendirmesinde orbital bulgular acil hekimi tarafından kontrol edilmelidir."
                     },
                     {
-                        "text": "Kaygılı görünümü nedeniyle tabloyu psikojenik kabul edip çocuğu sakinleştirmeye çalışmak ve ailesini dışarı çıkarmak",
-                        "is_correct": False,
-                        "scenario_update": "Kasılmalar sürdü ve dil kasılması nedeniyle çocuk yutkunmakta zorlanmaya başladı.",
-                        "teaching_point": "Yeni ilaç sonrası gelişen kasılmalar organik bir neden olarak değerlendirilmelidir."
-                    },
-                    {
-                        "text": "Gözlerin yukarı kayması nedeniyle tabloyu epileptik nöbet kabul edip intravenöz diazepam ve ardından fenitoin yüklemesi yapmak, nöbet sürerse levetirasetam eklemek",
-                        "is_correct": False,
-                        "scenario_update": "Diazepam sonrası çocuk uykuya daldı ancak boyun ve göz kasılması sürdü; fenitoin yanıtsızdı.",
-                        "teaching_point": "Bilinç açıkken süren kasılma epileptik nöbet değildir; antiepileptikler bu tabloda etkisizdir."
-                    },
-                    {
-                        "text": "Hava yolunu ve yutmayı değerlendirmek; bilinç, ateş, kas sertliği ve vital bulguları kontrol edip ilacın adını ve dozunu öğrenmek",
+                        "text": "Görme keskinliği, pupilla refleksleri ve RAPD, göz hareketlerinde ağrı veya kısıtlılık, proptozis ve kemoziyi değerlendirip cilt giriş kapısını ve sinüs bulgularını aramak",
                         "is_correct": True,
-                        "explanation": "Laringeal tutulum hava yolunu tehdit edebilir. Korunmuş bilinç epileptik nöbetten ayırır. Ateş, yaygın rijidite ve otonomik bozukluk daha ağır bir ilaç reaksiyonunu düşündürür. İlaç öyküsü tanının anahtarıdır.",
-                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 104/dk, SS 20/dk, SpO2 %99, TA 102/64 mmHg. Stridor yok, salyasını yutabiliyor. Bilinç tamamen açık, sorulara baş hareketiyle yanıt veriyor. Sola tortikolis, hafif retrokollis; gözler yukarıda fikse, aşağı bakamıyor. Dilde kasılma. Ekstremitelerde yaygın rijidite yok. Kullanılan damlanın bir dopamin antagonisti antiemetik olduğu öğrenildi."
+                        "explanation": "Göz kapağı enfeksiyonunda hayatı ve görmeyi tehdit eden durum septum arkasına yayılımdır. Görme, pupilla, göz hareketleri, proptozis ve kemozi bu ayrımın temelidir; giriş kapısı olası etkeni ve tedavi seçimini belirler.",
+                        "new_finding": "Vital Bulgular: Ateş 37.3°C, KTA 92/dk, SS 20/dk, SpO2 %99. Genel durumu iyi. Sağ üst ve alt kapakta eritem, ödem ve hafif hassasiyet; kaş kenarında kaşıntıya bağlı ekskoriasyon. Göz hareketleri her yöne tam ve ağrısız, proptozis yok, kemozis yok. Görme keskinliği her iki gözde tam, pupillalar izokorik, RAPD yok. Burun akıntısı ve sinüs hassasiyeti yok."
+                    },
+                    {
+                        "text": "Kapaklar şiş ve çocuk huzursuz olduğu için gözü açmaya zorlamadan sıcak kompres uygulamak, ödem azaldıktan sonra yarın ayrıntılı göz muayenesi için göz polikliniğine yönlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "Görme, pupilla ve göz hareketleri değerlendirilmeden çocuk gönderilecekti; orbital tutulum dışlanmamıştı.",
+                        "teaching_point": "Şiş kapak muayeneyi zorlaştırsa da kapak nazikçe açılarak görme ve göz hareketleri mutlaka değerlendirilmelidir."
+                    },
+                    {
+                        "text": "Sivrisinek ısırığı öyküsü nedeniyle tabloyu alerjik reaksiyon kabul edip oral antihistaminik vermek ve göz muayenesine gerek görmeden taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Hassasiyet ve ateş göz ardı edildi; enfeksiyon olasılığı ve orbital bulgular değerlendirilmedi.",
+                        "teaching_point": "Alerjik ödem genellikle kaşıntılı ve ağrısızdır; hassasiyet ve ateş enfeksiyonu düşündürür."
                     }
                 ]
             },
             {
-                "stage_title": "Tetkik Kararı",
-                "question": "Bilinci açık, ateşsiz, hava yolu güvenli ve ilaç öyküsü belirgin bu çocukta tetkik yaklaşımınız nedir?",
+                "stage_title": "Tetkik ve Görüntüleme Kararı",
+                "question": "Orbital bulgusu olmayan, iyi görünümlü bu çocukta tetkik yaklaşımınız nedir?",
                 "options": [
                     {
-                        "text": "Geniş kapsamlı toksikoloji taraması göndermek ve sonuç gelene kadar çocuğu gözlem odasında tedavisiz izlemek",
+                        "text": "Göz kapağı ödemi ve ateşi olan her çocukta septum arkasına yayılımı kesin olarak dışlamak için acil kontrastlı orbita ve sinüs bilgisayarlı tomografisi çekmek",
                         "is_correct": False,
-                        "scenario_update": "Tarama sonucu ertesi güne kaldı; çocuk saatlerce kasılmalarla bekledi.",
-                        "teaching_point": "Öyküyle açıklanan tabloda rutin toksikoloji taraması tedaviyi geciktirmemelidir."
+                        "scenario_update": "Tomografi normal geldi; çocuk gereksiz radyasyon ve kontrast maddeye maruz kaldı.",
+                        "teaching_point": "Orbita BT orbital bulgu varlığında, muayene yapılamadığında veya 24-48 saatte yanıt alınamadığında endikedir."
                     },
                     {
-                        "text": "Kapiller kan şekeri, elektrolitler, kalsiyum ve magnezyum bakmak; ateş ve kas sertliği olmadığını kayda geçirip ek görüntüleme istememek",
+                        "text": "Kan kültürü, tam kan sayımı ve CRP almak, değerler yüksekse çocuğu yatırıp intravenöz antibiyotik başlamak üzere planlama yapmak",
+                        "is_correct": False,
+                        "scenario_update": "Lökosit 8.400/mm³, CRP hafif yüksek geldi; kan kültürü negatifti ve tetkikler yönetimi değiştirmedi.",
+                        "teaching_point": "İyi görünümlü çocukta kan kültürünün verimi çok düşüktür; yatış kararı klinik bulgulara dayanır."
+                    },
+                    {
+                        "text": "Sedasyon altında orbita manyetik rezonansı ve göz içi basıncı ölçümü yaptırmak, sonuçlar normalse oral tedaviyle taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Sedasyon için çocuğun aç kalması gerekti ve tedavi saatlerce gecikti.",
+                        "teaching_point": "MR ve göz içi basıncı ölçümü bu klinik tabloda gereksizdir."
+                    },
+                    {
+                        "text": "Görüntüleme veya kan tetkiki istemeden klinik tanıyla tedaviyi planlamak, orbital bulguların yokluğunu kayıt altına almak ve kontrol zamanını belirlemek",
                         "is_correct": True,
-                        "explanation": "Hipokalsemi ve hipomagnezemi kas spazmlarını taklit edebilir. Ateş, rijidite ve otonomik bozukluğun olmaması nöroleptik malign sendromu dışlamaya yardım eder. Tanı öyküye dayanır ve tedaviye hızlı yanıtla doğrulanır.",
-                        "new_finding": "Kan şekeri 98 mg/dL, Na 138, K 4.2 mEq/L, iyonize kalsiyum 1.22 mmol/L, magnezyum 2.0 mg/dL. Kreatin kinaz normal. Önerilen dozun iki katı alındığı doğrulandı."
-                    },
-                    {
-                        "text": "Kafa içi patolojiyi dışlamak için acil beyin manyetik rezonansı ve elektroensefalografi istemek, nörolojiye danışıp sonuçlar çıkana kadar hiçbir tedavi vermemek",
-                        "is_correct": False,
-                        "scenario_update": "Görüntüleme ve EEG için saatlerce beklendi; kasılmalar sürdü.",
-                        "teaching_point": "Tipik ilaç öyküsü ve korunmuş bilinçte görüntüleme ve EEG gerekmez; tedavi tanısaldır."
-                    },
-                    {
-                        "text": "Boyun kasılması nedeniyle servikal omurga grafisi ve tomografi çekmek, ardından ortopediye danışmak",
-                        "is_correct": False,
-                        "scenario_update": "Görüntüleme normal geldi; travma öyküsü olmadığı için tetkikler gereksizdi.",
-                        "teaching_point": "Travmasız, ilaçla ilişkili tortikoliste omurga görüntülemesi gerekmez."
+                        "explanation": "Orbital bulgusu olmayan, sistemik olarak iyi ve muayenesi güvenilir çocukta tanı kliniktir. Tetkikler yönetimi değiştirmez; asıl güvenlik önlemi yakın klinik izlemdir.",
+                        "new_finding": "Tetkik istenmedi. Muayene bulguları ve kapak eritem sınırı kalemle işaretlenerek kayda geçirildi."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Önerilen dozun iki katı bulantı damlası (metoklopramid) aldıktan sonra bilinci açıkken tortikolis, okülojirik kriz ve dil kasılması gelişen bu çocukta tanı nedir?",
+                "question": "Böcek ısırığı ve kaşıma sonrası göz kapaklarında hassas eritem-ödem, ağrısız ve tam göz hareketleri, normal görme ve proptozis yokluğu olan bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "Fokal epileptik nöbet",
-                        "is_correct": False,
-                        "scenario_update": "Bilinç tamamen açık, kasılmalar sürekli ve ilaç alımı sonrası başladı.",
-                        "teaching_point": "Uzun süren fokal nöbetlerde genellikle ritmik kasılmalar ve bilinç değişikliği görülür."
-                    },
-                    {
-                        "text": "Nöroleptik malign sendrom",
-                        "is_correct": False,
-                        "scenario_update": "Ateş, yaygın kurşun boru rijiditesi, otonomik bozukluk ve kreatin kinaz yüksekliği yok.",
-                        "teaching_point": "Nöroleptik malign sendrom ateş, rijidite, bilinç değişikliği ve otonomik instabiliteyle seyreder."
-                    },
-                    {
-                        "text": "Hipokalsemik tetani",
-                        "is_correct": False,
-                        "scenario_update": "İyonize kalsiyum ve magnezyum normal; karpopedal spazm yok.",
-                        "teaching_point": "Tetanide el-ayak spazmı, Chvostek ve Trousseau bulguları görülür."
-                    },
-                    {
-                        "text": "İlaca bağlı akut distonik reaksiyon",
+                        "text": "Preseptal selülit",
                         "is_correct": True,
-                        "explanation": "Dopamin antagonisti alımından saatler sonra gelişen, bilincin korunduğu tortikolis, okülojirik kriz ve dil kasılması akut distonik reaksiyonu doğrular.",
-                        "new_finding": "Tanı: İlaca Bağlı Akut Distonik Reaksiyon (metoklopramid)."
+                        "explanation": "Cilt bütünlüğü bozulması sonrası gelişen, septum önüyle sınırlı hassas eritem-ödem ve normal orbital muayene preseptal selülitle uyumludur.",
+                        "new_finding": "Tanı: Preseptal Selülit (cilt kaynaklı)."
+                    },
+                    {
+                        "text": "Böcek ısırığına lokal alerjik reaksiyon",
+                        "is_correct": False,
+                        "scenario_update": "Lezyon hassas, ateş var ve eritem giderek yayılıyor.",
+                        "teaching_point": "Alerjik reaksiyon kaşıntılı, hassasiyetsiz ve ateşsizdir."
+                    },
+                    {
+                        "text": "Akut dakriyosistit",
+                        "is_correct": False,
+                        "scenario_update": "Şişlik iç kantusta lokalize değil ve gözyaşı kesesinden akıntı yok.",
+                        "teaching_point": "Dakriyosistit medial kantusta, gözyaşı kesesi üzerinde hassas şişlikle seyreder."
+                    },
+                    {
+                        "text": "Orbital selülit",
+                        "is_correct": False,
+                        "scenario_update": "Proptozis, ağrılı veya kısıtlı göz hareketi, görme kaybı ve kemozis yok.",
+                        "teaching_point": "Orbital selülit septum arkasına yayılımdır ve orbital bulgularla kendini gösterir."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve Taburculuk",
-                "question": "Bu çocuğun tedavisi nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu çocuğun tedavi ve izlem planı hangisidir?",
                 "options": [
                     {
-                        "text": "Kasılmalar kendiliğinden geçeceği için yalnızca intravenöz sıvı ve parasetamol vermek, ilacın bir sonraki dozunu evde yarıya indirerek sürdürmeyi önermek",
+                        "text": "Yalnızca antibiyotikli göz damlası ve göz merhemi reçete etmek, kapağa günde birkaç kez soğuk kompres önermek ve şişlik geçmezse bir hafta sonra kontrole gelmesini söylemek",
                         "is_correct": False,
-                        "scenario_update": "Kasılmalar saatlerce sürdü; yarım dozla yeniden başlanan ilaç reaksiyonu tekrarlattı.",
-                        "teaching_point": "Neden olan ilaç kesilmeli ve antikolinerjikle hızla tedavi edilmelidir."
+                        "scenario_update": "Topikal tedavi yumuşak doku enfeksiyonuna ulaşmadı; iki gün sonra eritem yanağa doğru yayıldı.",
+                        "teaching_point": "Preseptal selülit yumuşak doku enfeksiyonudur ve sistemik antibiyotik gerektirir."
                     },
                     {
-                        "text": "Yüksek doz intravenöz midazolam infüzyonu başlamak, kasılma geçmezse kas gevşetici ile entübasyon hazırlığı yapmak",
-                        "is_correct": False,
-                        "scenario_update": "Midazolam çocuğu derin sedasyona soktu ancak distoniyi çözmedi; solunum depresyonu gelişti.",
-                        "teaching_point": "Benzodiazepinler ikinci basamak destek tedavidir; ilk seçenek antikolinerjiktir."
-                    },
-                    {
-                        "text": "İlacı kesip intravenöz difenhidramin 1 mg/kg veya biperiden vermek, tekrarı önlemek için 24-48 saat oral antikolinerjik reçete etmek",
+                        "text": "Oral sefaleksin veya amoksisilin-klavulanat ile 7-10 gün tedavi, eritem sınırını izlemek, görme bozukluğu veya ağrılı göz hareketinde acil başvuru ve 24-48 saatte kontrol",
                         "is_correct": True,
-                        "explanation": "Antikolinerjik ilaçlar dopamin-asetilkolin dengesini düzelterek dakikalar içinde distoniyi çözer. İlacın etkisi sürebileceği için reaksiyon tekrarlayabilir; kısa süreli oral tedavi önerilir. Aileye bu ilacı tekrar kullanmamaları söylenir.",
-                        "new_finding": "İntravenöz difenhidramin sonrası 10 dakikada boyun ve göz kasılması çözüldü, çocuk konuşmaya başladı. İki saat gözlem sonrası oral antikolinerjikle taburcu edildi; kayda ilaç reaksiyonu işlendi."
+                        "explanation": "Cilt kaynaklı preseptal selülitte S. aureus ve A grubu streptokoku kapsayan oral tedavi yeterlidir. Alarm bulguları ve 24-48 saatlik kontrol orbital yayılımı erken yakalamayı sağlar; yanıt yoksa görüntüleme ve yatış düşünülür.",
+                        "new_finding": "Oral sefaleksin başlandı, alarm bulguları anlatıldı. 48. saat kontrolünde eritem işaretli sınırın gerisine çekilmişti, göz kolayca açılıyordu; tedavi 7 güne tamamlandı."
                     },
                     {
-                        "text": "Kasılmaları çözmek için intravenöz dantrolen başlamak ve çocuğu yoğun bakım ünitesinde izlemek",
+                        "text": "Ödemi hızla azaltmak için oral prednizolon ve antihistaminik başlamak, antibiyotiği ancak ateş 38.5°C'yi geçerse vermek üzere aileye reçete etmek",
                         "is_correct": False,
-                        "scenario_update": "Dantrolen bu tabloda etkisizdi; çocuk gereksiz yere yoğun bakıma yatırıldı.",
-                        "teaching_point": "Dantrolen malign hipertermi ve seçilmiş nöroleptik malign sendrom olgularında kullanılır."
+                        "scenario_update": "Steroid ödemi kısa süre azalttı ancak enfeksiyon ilerledi; ertesi gün kapak eritemi belirgin şekilde genişledi.",
+                        "teaching_point": "Bakteriyel yumuşak doku enfeksiyonunda tedavinin temeli antibiyotiktir; steroidlerin yeri yoktur."
+                    },
+                    {
+                        "text": "Çocuğu servise yatırıp intravenöz seftriakson ve vankomisin başlamak, orbita BT ile izlemek ve en az beş gün intravenöz tedaviyi sürdürmek",
+                        "is_correct": False,
+                        "scenario_update": "İyi görünümlü çocuk gereksiz yere yatırıldı ve geniş spektrumlu parenteral tedavi aldı.",
+                        "teaching_point": "Yatış küçük bebeklerde, toksik görünümde, oral tolere edemeyende veya ayaktan tedaviye yanıtsızlıkta gerekir."
                     }
                 ]
             }

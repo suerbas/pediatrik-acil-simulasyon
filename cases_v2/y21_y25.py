@@ -1,678 +1,725 @@
 # -*- coding: utf-8 -*-
 """
-Sarı Alan Vakaları - Y21 - Y25 (v2 Şartnamesine Uygun Yeniden Yazım)
+Yeşil Alan Vakaları - Y21-Y25 (v2 Şartnamesine Uygun Yeniden Yazım)
 """
 
 CASES = [
     {
         "id": "Y21",
-        "category": "🫁 Hırıltı & Solunum Sıkıntısı",
-        "age": "4 Yaş",
+        "category": "👶 Ağlayan, Emmeyen, Huzursuz Bebek",
+        "age": "18 Aylık",
         "gender": "Erkek",
-        "complaint": "İki gündür düşmeyen 39.5°C yüksek ateş, titreme, nefes alıp verirken sağ böğründe batıcı ağrı ve hızlı soluma",
-        "history": "Ailesi 4 yaşındaki (17 kg) erkek çocuğu Sarı Alana getiriyor: 'İki gündür ateşi düşürücülerle bile 39.5°C'den aşağı inmiyor, sürekli titriyor. Bugün sağ yanını tutarak her nefeste canının yandığını söylüyor. Karnı ve göğsü hızla inip kalkıyor, hiçbir şey yemiyor ve sürekli inliyor.' Travma veya aspirasyon öyküsü bulunmuyor.",
-        "final_diagnosis": "Akut Tipik Bakteriyel Lober Pnömoni (Streptococcus pneumoniae)",
-        "disposition": "Sarı Alanda Nazal Oksijen Desteği + İntravenöz Hidrasyon + İntravenöz Ampisilin (150-200 mg/kg/gün) Tedavisi ile Pediatri Servisine Yatış",
-        "case_pearl": "Okul öncesi ve okul çağı çocuklarda ani başlayan yüksek ateş, titreme, plörotik göğüs ağrısı, takipne ve lokalize dinleme bulguları (tübüler solunum sesi, fokal krepitan raller) tipik bakteriyel lober pnömoniyi düşündürür. En sık etken Streptococcus pneumoniae'dir. Hastaneye yatış endikasyonu olan komplike olmayan olgularda ilk tercih parenteral tedavi İV ampisilindir (150-200 mg/kg/gün). Plörotik ağrı çocuklarda sıklıkla batın sağ alt kadrana yansıyarak akut batını taklit edebilir; dikkatli solunum sistemi ve akciğer muayenesi gereksiz cerrahi girişimleri önler.",
+        "complaint": "Halsizlik, iştahsızlık, solukluk ve yabancı maddeleri yeme isteği",
+        "history": (
+            "On sekiz aylık erkek çocuğu annesi polikliniğe getiriyor: 'Oğlum son bir aydır eskisi gibi koşup oynamıyor, "
+            "çabuk yoruluyor ve sürekli kucak istiyor. İştahı çok azaldı, katı gıdaları neredeyse hiç yemiyor; günde bir "
+            "litreden fazla inek sütü biberonla içiyor. Ayrıca son iki haftadır saksıdaki toprağı ve yerdeki kağıt "
+            "parçalarını ağzına götürürken yakalıyorum. Ten rengi de sanki giderek beyazlaştı.'"
+        ),
+        "final_diagnosis": "Aşırı İnek Sütü Tüketimine Bağlı Demir Eksikliği Anemisi",
+        "disposition": "Yeşil Alandan Oral Demir Tedavisi, Beslenme Düzenlemesi ve Poliklinik Kontrolü ile Taburculuk",
+        "case_pearl": (
+            "Süt çocukluğu döneminde günlük 500 mL'nin üzerinde inek sütü tüketimi hem mikrovasküler intestinal kanamaya "
+            "yol açarak gizli kan kaybına neden olur hem de biyoyararlanımı düşürerek demir eksikliği anemisi gelişimini "
+            "tetikler. Tedavide oral elementer demir 3-6 mg/kg/gün bölünmüş dozda başlanmalı, inek sütü günde 400-500 mL "
+            "ile sınırlandırılmalıdır."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Solunum Desteği",
-                "question": "Yüksek ateş, takipne ve sağ tarafta batıcı plörotik göğüs ağrısı ile getirilen 4 yaşındaki çocukta ilk öncelikli yaklaşım ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Halsizlik, iştahsızlık ve pika öyküsüyle getirilen bu çocukta ilk muayene yaklaşımınız hangisi olmalıdır?",
                 "options": [
                     {
-                        "text": "Solunum seslerindeki kabalaşmayı ve bronkospazmı gidermek amacıyla acilen yüksek doz nebulize salbutamol ve ipratropiyum bromür inhalasyonu başlatarak yanıtı beklemek",
+                        "text": "Hastayı acilen monitörize alana alıp periferik damar yolu açarak hidrasyon ve parenteral beslenme amacıyla hemen Sarı Alana devretmek",
                         "is_correct": False,
-                        "scenario_update": "Uygulanan inhale beta-mimetik sonrası çocuğun kalp tepe atımı 172/dk düzeyine fırladı; takipne, plörotik göğüs ağrısı ve solunum sıkıntısı gerilemedi.",
-                        "teaching_point": "Fokal parankimal enfeksiyonlarda hışıltı ve bronkospazm primer patoloji değildir; gereksiz bronkodilatör uygulaması taşikardiyi tetikler ve klinik tabloyu rahatlatmaz."
+                        "scenario_update": "Sarı Alanda hastanın vital bulgularının tamamen stabil olduğu görüldü; damar yolu açılması çocuğu aşırı ajite etti.",
+                        "teaching_point": "Genel durumu stabil, dehidratasyon veya dekompansasyon bulgusu olmayan ve aktif kanaması bulunmayan hastalar Yeşil Alanda değerlendirilir.",
                     },
                     {
-                        "text": "Hastaya nemlendirilmiş oksijen başlamak, kardiyorespiratuar monitörizasyon sağlamak, solunum seslerini ve periferik perfüzyonu dikkatle değerlendirerek damar yolu açmak",
+                        "text": "Vital bulguları ölçmek, konjonktiva ve derideki solukluğu incelemek, kardiyak üfürüm varlığını mezokardiyak odakta dikkatle oskülte etmek",
                         "is_correct": True,
-                        "explanation": "Takipne, hipoksi ve solunum iş yükü artışı olan febril çocukta ilk basamak oksijen desteği, sürekli monitörizasyon ve solunum sistemi odaklı detaylı fizik muayenedir.",
-                        "new_finding": "Vital Bulgular: Ateş 39.5°C, KTA 146/dk, SS 48/dk, SpO2 %91 (oda havasında, oksijenle %98), TA 96/60 mmHg, KDZ 2 sn. Fizik Muayene: Sağ alt zonda belirgin krepitan raller ve tübüler solunum sesi, sağ bazalde submatite, interkostal çekilmeler ve hafif burun kanadı solunumu izlendi."
+                        "explanation": "Kronik hematolojik yetersizliklerde doku hipoksisine bağlı kompansatuar taşikardi ve hiperdinamik sistolik üfürüm gelişebilir; genel perfüzyon dikkatle incelenmelidir.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 122/dk, SS 24/dk, SpO2 %99, KB 92/58 mmHg. Genel durumu sakin, konjonktivalar ve avuç içleri belirgin soluk. Kalp oskültasyonunda mezokardiyak odakta 2/6 dereceden sistolik üfürüm duyuldu, periferik nabızlar dolgun. Organomegali saptanmadı.",
                     },
                     {
-                        "text": "Sağ taraftaki batıcı ağrının akut batın kaynaklı olduğunu düşünerek derhal acil çocuk cerrahisi konsültasyonu istemek ve batın ultrasonografisi çekilmesini planlamak",
+                        "text": "Ağızdan toprak ve kağıt parçaları yeme davranışı nedeniyle genel fizik muayeneyi kısa tutup hastayı doğrudan çocuk psikiyatrisi polikliniğine sevk etmek",
                         "is_correct": False,
-                        "scenario_update": "Çocuk cerrahisi değerlendirmesinde batında defans saptanmadı; sağ alt zon patolojisinin diyafragma komşuluğu nedeniyle batına yansıyan yalancı akut batın tablosu olduğu belirlendi.",
-                        "teaching_point": "Sağ bazal akciğer enfeksiyonları diyafragmatik plevra uyarısıyla çocuklarda akut apandisiti taklit eden yalancı batın ağrısına yol açabilir; öncelikle göğüs muayenesine odaklanılmalıdır."
+                        "scenario_update": "Psikiyatri polikliniğine yönlendirilen ailenin fiziksel muayenesi eksik kaldı ve çocuğun belirgin solukluğu ile üfürümü gözden kaçtı.",
+                        "teaching_point": "Küçük çocuklarda yabancı cisim yeme (pika) davranışı öncelikle nutrisyonel eksikliklerin organik bir belirtisi olarak araştırılmalıdır.",
                     },
                     {
-                        "text": "Ateşi düşürmek ve ağrıyı hafifletmek için yüksek doz intramusküler metamizol sodyum enjekte ederek hastayı sakinleşmesi için 30 dakika bekletmek",
+                        "text": "Aşırı süt alımı öyküsü nedeniyle batın muayenesine yoğunlaşıp karın ağrısı veya akut batın bulgularını ekarte etmeyi öncelikli hedef seçmek",
                         "is_correct": False,
-                        "scenario_update": "İntramusküler enjeksiyon çocuğu aşırı ajite etti, solunum iş yükünü artırdı ve hipoksemiye rağmen oksijen başlanmadığı için satürasyonu %88'e kadar geriledi.",
-                        "teaching_point": "Solunum sıkıntısı ve hipoksemisi olan ajite çocukta invaziv kas içi enjeksiyonlar solunum eforunu tüketebilir; öncelik non-invaziv oksijenasyon ve damar yolundan uygun hidrasyondur."
-                    }
-                ]
+                        "scenario_update": "Batın muayenesinde defans veya hassasiyet saptanmadı; ancak hastanın genel halsizliği ve mukozal solukluğu sistematik olarak değerlendirilmemiş oldu.",
+                        "teaching_point": "Aşırı inek sütü tüketimi tek başına akut batın tablosuna yol açmaz; solukluk ve kardiyovasküler kompansasyon bulguları öncelikle taranmalıdır.",
+                    },
+                ],
             },
             {
-                "stage_title": "Radyolojik İnceleme ve Laboratuvar Değerlendirmesi",
-                "question": "Fizik muayenesinde sağ alt zonda tübüler solunum sesleri ve raller duyulan bu hastada en uygun tetkik ve görüntüleme yaklaşımı nedir?",
+                "stage_title": "Tetkik ve Yaklaşım Kararı",
+                "question": "Fizik muayenesinde belirgin solukluk ve sistolik üfürüm saptanan bu çocukta ilk basamakta hangi tetkik istenmelidir?",
                 "options": [
                     {
-                        "text": "Hemen ayakta posteroanterior akciğer grafisi çekmek, tam kan sayımı, C-reaktif protein ve kan kültürü örnekleri alarak enfeksiyon belirteçlerini incelemek",
+                        "text": "Pika semptomu ve derin halsizlik nedeniyle ilk basamakta doğrudan kemik iliği aspirasyonu ve kapsamlı genetik enzim paneli tetkiki planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Gereksiz invaziv işlem önerisi aileyi paniğe sevk etti ve poliklinik şartlarında gereksiz ileri tetkik maliyeti oluştu.",
+                        "teaching_point": "Nutrisyonel kaynaklı şüpheli tablolarda ilk basamakta invaziv tetkikler yerine tam kan sayımı ve eritrosit indeksleri yeterlidir.",
+                    },
+                    {
+                        "text": "Oskültasyonda sistolik ejeksiyon üfürümü duyulduğu için elektrokardiyografi çekip ileri kardiyak değerlendirme ve ekokardiyografi incelemesi amacıyla hastayı çocuk kardiyolojisine sevk etmek",
+                        "is_correct": False,
+                        "scenario_update": "EKG normal sinüs ritmi ve taşikardi gösterdi; kardiyoloji konsültasyonunda üfürümün hiperdinamik akıma bağlı masum üfürüm olduğu belirtildi.",
+                        "teaching_point": "Belirgin solukluğu olan çocuklarda duyulan sistolik fonksiyonel üfürümlerde ilk aşama kardiyak görüntüleme değil hematolojik değerlendirmedir.",
+                    },
+                    {
+                        "text": "Eritrosit indeksleri, hemoglobin, hematokrit ve eritrosit dağılım genişliğini içeren tam kan sayımı ile periferik yayma tetkiki istemek",
                         "is_correct": True,
-                        "image": "assets/images/cxr_lobar_pneumonia.png",
-                        "image_caption": "PA Akciğer Grafisi: Sağ alt/orta zonda homojen lober konsolidasyon ve hava bronkogramları",
-                        "explanation": "Fokal dinleme bulguları ve plörotik ağrısı olan yüksek ateşli çocukta tanıyı doğrulamak, komplikasyonları dışlamak ve etkeni belirlemek için akciğer grafisi ve kan kültürü endikedir.",
-                        "new_finding": "PA Akciğer Grafisi: Sağ hemitoraks orta ve alt zonda homojen radyoopasite artışı ve içerisinde tübüler hava bronkogramları izlendi; sinüsler açık, efüzyon hattı saptanmadı. Laboratuvar: BK 22.400/mm3 (%84 nötrofil, %8 çomak), CRP 168 mg/L, Prokalsitonin 4.2 ng/mL. Kan kültürü alındı."
+                        "explanation": "Hemoglobin düzeyi, ortalama eritrosit hacmi (MCV) ve eritrosit dağılım genişliği (RDW) tablonun ağırlığını ve morfolojisini ortaya koyar.",
+                        "new_finding": "Laboratuvar Bulguları: Hemoglobin 7.1 g/dL, Hematokrit %22.4, MCV 58 fL (düşük), MCH 19 pg, RDW %19.8 (belirgin yüksek), WBC 8.400/mm³, Trombosit 460.000/mm³. Periferik yaymada eritrositlerde belirgin hipokromi, anizositoz ve poikilositoz izlendi.",
                     },
                     {
-                        "text": "Grafi çekmeden önce akciğer patolojisini ve olası komplikasyonları ekarte etmek amacıyla acilen yüksek çözünürlüklü kontrastlı toraks bilgisayarlı tomografisi istemek",
+                        "text": "Toprak yeme öyküsü olduğundan kurşun maruziyetini araştırmak üzere ayakta direkt batın grafisi çekilmesini ve tam idrar tahlili yapılmasını istemek",
                         "is_correct": False,
-                        "scenario_update": "Toraks BT çekimi hastaya yüksek doz radyasyon maruziyeti getirdi ve klinik yönetimde iki yönlü direkt grafiye kıyasla ek bir cerrahi endikasyon sağlamadı.",
-                        "teaching_point": "Pediatrik toplum kaynaklı alt solunum yolu enfeksiyonlarında rutin ilk basamak radyolojik inceleme direkt grafidir; bilgisayarlı tomografi nekrotizan şüphe veya tedaviye yanıtsızlıkta saklanmalıdır."
+                        "scenario_update": "Batın grafisinde radyoopak yabancı cisim görülmedi ve idrar tetkiki doğal çıktı; ancak solukluğun derecesi aydınlatılamadı.",
+                        "teaching_point": "Pika öyküsünde kurşun maruziyeti bir komplikasyon olabilse de hastanın belirgin solukluğu öncelikle tam kan sayımıyla değerlendirilir.",
                     },
-                    {
-                        "text": "Çocuklarda radyasyon riskinden kaçınmak amacıyla hiçbir görüntüleme yapmadan yalnızca derin trakeal aspirat örneğinden polimeraz zincir reaksiyonu paneli çalışmak",
-                        "is_correct": False,
-                        "scenario_update": "Görüntüleme yapılmadığı için parankimal tutulumun yaygınlığı ve olası plevral komplikasyonlar netleştirilemedi, viral panel sonuçları ise saatler sonra negatif çıktı.",
-                        "teaching_point": "Hastaneye yatış gerektiren fokal muayene bulgulu çocuklarda direkt grafi komplikasyonların dışlanması ve parankim tutulumunun teyidi açısından kılavuzlarca önerilen standart tetkiktir."
-                    },
-                    {
-                        "text": "Enfeksiyon odağını netleştirmek için lomber ponksiyon yaparak beyin omurilik sıvısı incelemek ve eş zamanlı ayrıntılı batın manyetik rezonans görüntülemesi planlamak",
-                        "is_correct": False,
-                        "scenario_update": "Klinik odağı açıkça akciğer olan hastada yapılan lomber ponksiyon ve MRG tetkikleri çocuğun stresini artırdı, BOS bulguları tamamen normal sonuçlandı.",
-                        "teaching_point": "Açık bir fokal solunum muayene bulgusu ve takipnesi olan çocukta santral sinir sistemi ve batın odaklı ileri invaziv tetkikler gereksizdir ve tedaviyi geciktirir."
-                    }
-                ]
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Yüksek ateş, plörotik yan ağrısı, fokal raller ve grafide homojen radyoopak parankim infiltrasyonu olan bu hastada kesin tanı nedir?",
+                "question": "Öykü, fizik muayene ve laboratuvar bulguları bir arada değerlendirildiğinde en olası klinik tanınız nedir?",
                 "options": [
                     {
-                        "text": "Atipik Mikoplazma Pnömonisi",
+                        "text": "Talasemi Minör (Akdeniz Kansızlığı Taşıyıcılığı)",
                         "is_correct": False,
-                        "scenario_update": "Mikoplazma pnömonisi genellikle okul çağı çocuklarda subakut başlangıçlı, kuru öksürük ve bilateral yamalı interstisiyel infiltrasyonlarla seyreder; bu akut lober tabloya uymaz.",
-                        "teaching_point": "Atipik pnömoniler sinsi başlangıç, kuru inatçı öksürük ve yaygın bilateral infiltrasyonla karakterizedir; yüksek ateş, akut lober tutulum ve belirgin lökositoz tipik bakteriyel etkenleri gösterir."
+                        "scenario_update": "Talasemi taşıyıcılığında genellikle RDW normaldir ve Mentzer indeksi 13'ün altındadır; hastamızda ise RDW yüksek ve Mentzer indeksi 15.8 hesaplandı.",
+                        "teaching_point": "Talasemi minörde eritrosit sayısı yüksek, RDW normal veya hafif yüksek ve Mentzer indeksi (MCV/RBC) < 13 iken, demir eksikliğinde RDW belirgin yüksektir ve Mentzer > 13 saptanır.",
                     },
                     {
-                        "text": "Akut Viral Bronşiolit",
-                        "is_correct": False,
-                        "scenario_update": "Bronşiolit iki yaş altı infantlarda hışıltı ve hiperenflasyonla seyreder; 4 yaşındaki çocukta tek taraflı lober infiltrasyon ve yüksek ateş bronşiolit tablosu değildir.",
-                        "teaching_point": "Bronşiolit 2 yaş altı bebeklerin bilateral wheezing ve hiperenflasyonla giden viral tablosudur; 4 yaşındaki çocukta fokal tübüler solunum sesi ve lober opasite bakteriyel parankim enfeksiyonunu işaret eder."
-                    },
-                    {
-                        "text": "Tipik Bakteriyel Lober Pnömoni",
+                        "text": "Demir Eksikliği Anemisi",
                         "is_correct": True,
-                        "explanation": "Ani başlangıçlı yüksek ateş, takipne, tek taraflı plörotik göğüs ağrısı, tübüler solunum sesleri ve grafide segmental/lober homojen dansite artışı Streptococcus pneumoniae kaynaklı tipik bakteriyel lober pnömoninin klasik tablosudur.",
-                        "new_finding": "Kesin tanı: Tipik Bakteriyel Lober Pnömoni (Streptococcus pneumoniae). Kan tablosundaki belirgin nötrofilik lökositoz ve yüksek CRP bakteriyel etiyolojiyi doğrulamaktadır."
+                        "explanation": "Aşırı inek sütü tüketimi, pika, düşük MCV, yüksek RDW ve reaktif trombositoz demir eksikliği anemisini güçlü şekilde destekler.",
+                        "new_finding": "Tanı Demir Eksikliği Anemisi olarak teyit edildi; eşzamanlı bakılan serum ferritin düzeyi 4 ng/mL (çok düşük) olarak sonuçlandı.",
                     },
                     {
-                        "text": "Akut Pulmoner Emboli",
+                        "text": "Kronik Hastalık Anemisi",
                         "is_correct": False,
-                        "scenario_update": "Pulmoner emboli çocuklarda son derece nadir olup altta yatan derin ven trombozu veya hiperkoagülabilite gerektirir; 39.5°C ateş ve lober parankim tutulumunu açıklamaz.",
-                        "teaching_point": "Pediatrik yaş grubunda pulmoner emboli risk faktörleri (santral kateter, nefrotik sendrom, malignite) olmaksızın beklenmez ve yüksek ateşle seyreden lober konsolidasyon tablosu oluşturmaz."
-                    }
-                ]
+                        "scenario_update": "Hastanın öyküsünde kronik inflamatuar, romatizmal veya enfeksiyöz bir hastalık bulunmamaktadır; ferritin düzeyi düşük beklenir.",
+                        "teaching_point": "Kronik hastalık anemisinde ferritin normal veya yüksektir ve demir bağlama kapasitesi azalmıştır; hastanın öyküsü besinsel eksiklikle uyumludur.",
+                    },
+                    {
+                        "text": "Kurşun Zehirlenmesine Bağlı Sideroblastik Anemi",
+                        "is_correct": False,
+                        "scenario_update": "Periferik yaymada bazofilik noktalanma izlenmedi ve hastanın tablosunu açıklayan birincil neden nutrisyonel yetersizliktir.",
+                        "teaching_point": "Pikaya sekonder kurşun maruziyeti gelişebilse de süt çocukluğunda mikrositer hipokrom aneminin ezici çoğunluğu nutrisyonel demir eksikliğidir.",
+                    },
+                ],
             },
             {
-                "stage_title": "Tedavi, Antibiyoterapi ve Yatış Yönetimi",
-                "question": "Tipik lober pnömoni tanısı kesinleşen, takipneik ve hipoksik 4 yaşındaki bu hastada en uygun tedavi ve yatış planı ne olmalıdır?",
+                "stage_title": "Tedavi ve Yönetim",
+                "question": "Demir eksikliği anemisi tanısı kesinleşen bu hastada en uygun tedavi ve beslenme planı hangisidir?",
                 "options": [
                     {
-                        "text": "Klinik tablonun viral olabileceğini düşünerek antibiyotik vermeden yalnızca parasetamol şurup ve oral hidrasyon önerisiyle hastayı acil servisten evine taburcu etmek",
+                        "text": "Hemoglobin değeri sekiz gramın altında saptandığı için acil serviste eritrosit süspansiyonu transfüzyonu uygulayarak hastayı çocuk hematoloji servisine yatırmak",
                         "is_correct": False,
-                        "scenario_update": "Tedavisiz evine gönderilen çocuğun ertesi gün solunum sıkıntısı derinleşti, hipoksisi arttı ve parapnömonik komplikasyon gelişerek ambulansla tekrar getirildi.",
-                        "teaching_point": "Takipnesi, hipoksemisi ve lober tutulumu olan bakteriyel pnömonili çocukların hastaneye yatırılarak parenteral antibiyotik ve oksijen desteğiyle izlenmesi şarttır."
+                        "scenario_update": "Kalp yetmezliği veya dekompansasyon bulgusu olmayan stabil kronik anemide acil transfüzyon volüm yüklenmesi riski oluşturdu.",
+                        "teaching_point": "Kronik demir eksikliği anemisinde hemodinami stabilse hemoglobin 7 g/dL altında olsa dahi öncelikle oral tedavi tercih edilir.",
                     },
                     {
-                        "text": "Dirençli suş olasılığı nedeniyle doğrudan intravenöz meropenem ve vankomisin kombinasyonu başlayarak hastayı acilen entübe etmek ve çocuk yoğun bakıma almak",
+                        "text": "Oral emilimin yetersiz kalacağı gerekçesiyle acil serviste tek doz yüksek doz intravenöz demir infüzyonu planlayarak hastayı gözleme almak",
                         "is_correct": False,
-                        "scenario_update": "Gereksiz aşırı geniş spektrumlu antibiyotik ve elektif entübasyon hastada nozokomiyal enfeksiyon riskini artırdı ve yoğun bakım morbiditesine neden oldu.",
-                        "teaching_point": "Komplike olmayan toplum kaynaklı pnömonilerde ilk basamakta karbapenem veya vankomisin endikasyonu yoktur; gereksiz entübasyon ve geniş spektrum antibiyotik direnç gelişimine yol açar."
+                        "scenario_update": "İntravenöz demir infüzyonu sonrası çocukta alerjik reaksiyon gelişti; gereksiz yere invaziv ve maliyetli bir yol seçildi.",
+                        "teaching_point": "Oral tedaviyi tolere edebilen ve malabsorbsiyonu olmayan süt çocuklarında parenteral demir ilk seçenek değildir.",
                     },
                     {
-                        "text": "Oral yoldan düşük doz amoksisilin 40 mg/kg/gün reçete ederek hastayı Sarı Alanda iki saat izledikten sonra poliklinik kontrolü şartıyla taburcu etmek",
+                        "text": "Diyet kısıtlaması yapmadan sadece profilaktik dozda günde bir miligram bölü kilogram oral demir damlası başlayarak hastayı kontrole çağırmak",
                         "is_correct": False,
-                        "scenario_update": "Takipneik ve iştahsız çocuk oral ilacı tolere edemedi, yetersiz doz nedeniyle klinik gerileme sağlanamadı ve hipoksemisi derinleşti.",
-                        "teaching_point": "Hipoksisi ve solunum iş yükü artışı olan yatan hastalarda parenteral tedavi endikedir; oral tedavide ise pnömokok direnci için yüksek doz (80-90 mg/kg/gün) gereklidir."
+                        "scenario_update": "Aşırı süt alımı devam ettiği ve doz yetersiz kaldığı için birinci aydaki kontrolde hemoglobin yükselmedi.",
+                        "teaching_point": "Tedavi edici doz 3-6 mg/kg/gün elementer demirdir ve inek sütü tüketimi mutlaka günlük 500 mL'nin altına indirilmelidir.",
                     },
                     {
-                        "text": "Hastayı servise yatırarak nazal oksijen sağlamak, hidrasyonu düzenlemek ve intravenöz ampisilin 150-200 mg/kg/gün tedavisini dört eşit dozda başlatmak",
+                        "text": "Günlük 3-6 mg/kg elementer demir başlamak, inek sütünü kısıtlamak ve ilacı C vitaminiyle aç karnına vermek",
                         "is_correct": True,
-                        "explanation": "Hastaneye yatırılan aşılı çocuklarda komplike olmayan toplum kaynaklı tipik bakteriyel pnömonide ilk tercih parenteral antibiyotik yüksek doz İV ampisilindir (150-200 mg/kg/gün).",
-                        "new_finding": "Çocuk pediatri servisine yatırıldı. İV ampisilin (50 mg/kg/doz, 6 saatte bir) ve nazal kanülle 2 L/dk nemlendirilmiş oksijen başlandı. Tedavinin 36. saatinde ateş düştü, takipnesi ve solunum sıkıntısı belirgin geriledi."
-                    }
-                ]
-            }
-        ]
+                        "explanation": "Tedavi dozu 3-6 mg/kg/gün elementer demirdir; C vitamini emilimi artırırken kalsiyum emilimi azaltır, inek sütü günlük 500 mL altında tutulmalıdır.",
+                        "new_finding": "Oral demir tedavisi başlandı. Aileye ilacın dişlerde geçici boyanma yapabileceği, gaitayı siyaha boyayacağı anlatıldı ve 1 ay sonraya kontrol planlandı.",
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "Y22",
-        "category": "🫁 Hırıltı & Solunum Sıkıntısı",
+        "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
         "age": "6 Yaş",
         "gender": "Kız",
-        "complaint": "Üç gündür oral antibiyotik almasına rağmen düşmeyen 39.8°C ateş, nefes darlığı, sol yan ağrısı ve halsizlik",
-        "history": "Ailesi 6 yaşındaki (20 kg) kız çocuğu Sarı Alana getiriyor: 'Dört gün önce ateş ve öksürük nedeniyle sağlık ocağında antibiyotik (amoksisilin-klavulanat) başlandı. İlacı düzenli vermemize rağmen ateşi 39.8°C'den düşmüyor. Dünden beri sol yanını tutarak öne eğik oturuyor, nefes alırken inliyor ve göğsü sol tarafta hiç kalkmıyor.' Hasta aşırı soluk ve bitkin görünüyor.",
-        "final_diagnosis": "Komplike Parapnömonik Plevral Efüzyon ve Ampiyem (Streptococcus pneumoniae / Staphylococcus aureus)",
-        "disposition": "Sarı Alanda Oksijen ve İV Hidrasyon Desteği + Tanısal Torasentez / Tüp Torakostomi (Göğüs Tüpü) ve Genişletilmiş İV Antibiyoterapi İçin Çocuk Cerrahisi / Pediatri Servisine Yatış",
-        "case_pearl": "Uygun oral antibiyotik tedavisine rağmen 48-72 saat içinde ateşi düşmeyen, solunum sıkıntısı kötüleşen veya tek taraflı solunum seslerinde ileri derecede azalma ve perküsyonda tahta matitesi saptanan çocuklarda komplike parapnömonik plevral efüzyon ve ampiyem mutlaka düşünülmelidir. Tanıda PA grafi (kostofrenik sinüs küntleşmesi, menisküs belirtisi) ve plevral USG (sıvı miktarı, septasyon, lokülasyon) altın standarttır. Plevral sıvı pH < 7.20, glukoz < 40 mg/dL, LDH > 1000 U/L veya loküle/pürülan sıvı varlığı tüp torakostomi (göğüs tüpü) veya intraplevral fibrinolitik/VATS endikasyonudur. Tedavide plevral drenaj ile birlikte İV 3. kuşak sefalosporin + anti-stafilokoksik (klindamisin veya vankomisin) kombinasyonu uygulanmalıdır.",
+        "complaint": "Ağız içinde şiddetli ağrı, yemek yiyememe ve dudakta yaralar",
+        "history": (
+            "Altı yaşındaki kız çocuğu annesi tarafından ağız içi yaralar nedeniyle getiriliyor: 'Kızım üç gündür bir şeyler "
+            "çiğnerken ve su içerken ağzının çok acıdığını söylüyor, katı hiçbir şey yemedi. Dudağının içinde ve yanağında "
+            "beyaz renkli küçük yaralar fark ettik. Ateşi hiç olmadı. Ellerinde veya ayaklarında herhangi bir döküntü yok. "
+            "Geçen yıl da benzer şekilde dudağında tek bir yara çıkmış ve yaklaşık on günde kendiliğinden geçmişti.'"
+        ),
+        "final_diagnosis": "Rekürren Aftöz Stomatit (Minör Aft)",
+        "disposition": "Yeşil Alandan Topikal Tedavi, Oral Hijyen ve Diyet Önerileri ile Taburculuk",
+        "case_pearl": (
+            "Rekürren aftöz stomatitte lezyonlar keratinize olmayan mukozada (bukkal mukoza, dudak iç yüzü, dil altı) "
+            "yerleşir; etrafı eritemli bir hale ile çevrili, ortası sarı-gri psödomembranla kaplı ağrılı oval ülserlerdir. "
+            "Diş etleri ve sert damak tutulmaz; ateş ve sistemik bulgu eşlik etmez. Viral enfeksiyonlardan (herpetik "
+            "gingivostomatit, el-ayak-ağız) bu klinik özelliklerle ayrılır; antibiyotik veya sistemik antiviral gerekmez."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Solunum Muayenesi",
-                "question": "Oral antibiyotik altında düşmeyen yüksek ateş, sol yan ağrısı ve takipnesi olan 6 yaşındaki hastada ilk yaklaşım ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Ağız içinde ağrılı lezyonlar nedeniyle getirilen bu hastada ilk fizik muayene yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Sol taraftaki solunum sıkıntısını bronkospazma bağlayarak derhal aralıksız yüksek doz nebulize salbutamol vermek ve oral antibiyotiğe devam etmek",
-                        "is_correct": False,
-                        "scenario_update": "Nebulize bronkodilatör sonrası solunum seslerindeki kayıp ve tahta matitesi değişmedi; hastanın taşikardisi belirginleşti ve solunum yorgunluğu arttı.",
-                        "teaching_point": "Tek taraflı solunum sesi kaybı ve perküsyonda matite parankim dışı sıvı birikimi veya atelektaziyi düşündürür; bronkospazm tablosu değildir ve bronkodilatöre yanıt vermez."
-                    },
-                    {
-                        "text": "Ateşin dirençli olmasını viral koinfeksiyona bağlayarak oral oseltamivir başlamak ve herhangi bir ileri tetkik yapmadan evinde dinlenmesini önermek",
-                        "is_correct": False,
-                        "scenario_update": "Taburcu edilmeye çalışılan hastanın solunum güçlüğü derinleşti, siyanoz gelişti ve solunum arresti riski nedeniyle hasta yakınları panikledi.",
-                        "teaching_point": "Antibiyoterapiye rağmen düşmeyen yüksek ateş ve tek taraflı matite ciddi bir akciğer komplikasyonunun göstergesidir; viral enfeksiyon denilerek evine gönderilemez."
-                    },
-                    {
-                        "text": "Hastaya nemlendirilmiş oksijen başlamak, kardiyorespiratuar monitörizasyon sağlamak ve solunum sesleri ile göğüs perküsyonunu karşılaştırmalı olarak dikkatle değerlendirmek",
+                        "text": "Vital bulguları almak, ağız mukozası, diş etleri ile el, ayak ve perineal bölgeleri dikkatle muayene etmek",
                         "is_correct": True,
-                        "explanation": "Antibiyotik tedavisine yanıtsız persistan ateş ve tek taraflı solunum sıkıntısı olan çocukta öncelik oksijenasyonun sağlanması ve ayrıntılı solunum muayenesidir.",
-                        "new_finding": "Vital Bulgular: Ateş 39.8°C, KTA 152/dk, SS 44/dk, SpO2 %91 (oda havasında, maske ile %97), TA 94/58 mmHg, KDZ 2 sn. Fizik Muayene: Sol hemitoraksta solunuma katılım belirgin azalmış, sol orta ve alt zonda solunum sesleri neredeyse hiç duyulmuyor (abolished), perküsyonda belirgin tahta matitesi mevcut; sağ akciğer alanları doğal."
+                        "explanation": "Lezyonların yerleşimi (keratinize vs non-keratinize mukoza) ve ekstraoral döküntülerin taranması ayırıcı tanıda kilit role sahiptir.",
+                        "new_finding": "Vital Bulgular: Ateş 36.7°C, KTA 88/dk, SS 20/dk, SpO2 %100. Fizik Muayene: Alt dudak mukozasında 4 mm ve sağ bukkal mukozada 5 mm çapında, ortası sarı-gri tabanlı, çevresi parlak eritemli hale ile çevrili 2 adet yuvarlak ülseratif lezyon izlendi. Diş etleri, dil sırtı ve sert damak tamamen doğal; ödem ve kanama yok. El ayası, ayak tabanı ve perianal bölgede döküntü saptanmadı. Servikal lenfadenopati yok.",
                     },
                     {
-                        "text": "Hastada derin ven trombozuna bağlı pulmoner infarktüs düşünerek derhal terapötik doz düşük molekül ağırlıklı heparin başlamak ve izlemek",
+                        "text": "Ülser tabanından steril eküvyonla sürüntü alarak hızlı antijen testi ve mikrobiyolojik boğaz kültürü analizi için acilen laboratuvara göndermek",
                         "is_correct": False,
-                        "scenario_update": "Gereksiz antikoagülan başlanması sonrasında olası invaziv torasentez veya göğüs tüpü girişimi öncesinde kanama riski artarak klinik tabloyu riske soktu.",
-                        "teaching_point": "Önceden sağlıklı 6 yaşındaki febril çocukta tek taraflı solunum sesi azalması ve matite enfeksiyöz komplikasyonları işaret eder; antikoagülasyon endikasyonu yoktur."
-                    }
-                ]
+                        "scenario_update": "Lezyon tabanından sürüntü alınması çocuğa şiddetli ağrı verdi ve ağlamasına yol açtı; sürüntüde bakteriyel üreme saptanmadı.",
+                        "teaching_point": "Tipik non-keratinize mukozal ülserlerde rutin bakteriyel kültür endike değildir ve invaziv sürüntü gereksiz acı verir.",
+                    },
+                    {
+                        "text": "Beslenme azlığı öyküsü nedeniyle dehidratasyon gelişebileceğini öngörüp periferik damar yolu açarak rutin kan şekeri ve elektrolit paneli göndermek",
+                        "is_correct": False,
+                        "scenario_update": "Damar yolu açılması hastanın anksiyetesini artırdı; bakılan elektrolitler ve kan şekeri tamamen normal sınırlarda geldi.",
+                        "teaching_point": "Mukozaları nemli, turgoru doğal ve idrar çıkışı yeterli olan çocuklarda invaziv damar yolu ve lab tetkiki gereksizdir.",
+                    },
+                    {
+                        "text": "Ağız içi yaygın enfeksiyon kuşkusuyla hastayı derhal izole edip acil diş hekimliği konsültasyonu ve tedavi amacıyla Sarı Alana devretmek",
+                        "is_correct": False,
+                        "scenario_update": "Sarı Alanda hastanın genel durumunun stabil olduğu ve acil invaziv müdahale gereksinimi bulunmadığı teyit edildi.",
+                        "teaching_point": "Ateşi olmayan, vital bulguları stabil ve hava yolu tehdidi bulunmayan oral lezyonlu hastalar Yeşil Alanda yönetilebilir.",
+                    },
+                ],
             },
             {
-                "stage_title": "Radyolojik Görüntüleme ve Plevral Değerlendirme",
-                "question": "Sol hemitoraksta solunum sesi kaybı ve tahta matitesi saptanan bu hastada en uygun radyolojik yaklaşım nedir?",
+                "stage_title": "Tetkik ve Yaklaşım Kararı",
+                "question": "Fizik muayenesinde dudak içi ve yanakta lokalize ülserleri olan, ateşi bulunmayan çocukta tetkik stratejiniz ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Görüntüleme yapmadan sol hemitoraksa körlemesine geniş çaplı iğne ile batarak kontrolsüz şekilde sıvıyı aspire etmeye çalışmak",
+                        "text": "Herpes simpleks virüs enfeksiyonunu dışlamak amacıyla lezyon tabanından Tzanck yayması ve viral polimeraz zincir reaksiyonu tetkikini birlikte istemek",
                         "is_correct": False,
-                        "scenario_update": "Ultrason kılavuzluğu olmadan yapılan kör girişim sonucunda akciğer parankimi zedelendi ve yetersiz plevral örnek elde edildi.",
-                        "teaching_point": "Çocuklarda plevral sıvı koleksiyonlarına müdahale öncesinde radyolojik teyit ve mümkünse ultrason kılavuzluğu komplikasyonları önlemek açısından şarttır."
+                        "scenario_update": "Tzanck yaymasında multinükleer dev hücreler izlenmedi; viral tetkikler negatif sonuçlandı ve ek klinik katkı sağlamadı.",
+                        "teaching_point": "Herpetik lezyonlar genellikle keratinize mukozayı (diş eti, sert damak) tutar ve vezikülle başlar; non-keratinize mukoza ülserlerinde rutin önerilmez.",
                     },
                     {
-                        "text": "Hemen ayakta posteroanterior akciğer grafisi çekmek ve sıvı varlığını, septasyonları ve lokülasyonu değerlendirmek için toraks ultrasonografisi planlamak",
+                        "text": "Tekrarlayan ağız lezyonları öyküsü nedeniyle Behçet hastalığı ve otoimmünite yönünden tam kan, CRP, ANA ve HLA-B51 tetkiklerini göndermek",
+                        "is_correct": False,
+                        "scenario_update": "İstenen romatolojik ve genetik testlerin sonuçlanmasının haftalar süreceği belirtildi; akut faz reaktanları tamamen negatif çıktı.",
+                        "teaching_point": "Yılda bir iki kez çıkan, genital ülser veya üveitin eşlik etmediği izole tablolarda ilk başvuruda romatolojik panel istenmez.",
+                    },
+                    {
+                        "text": "Altta yatan inflamatuar bağırsak hastalığını ekarte etmek için fekal kalprotektin düzeyi bakılmasını ve acil gastroenteroloji konsültasyonu talep etmek",
+                        "is_correct": False,
+                        "scenario_update": "Gastroenteroloji konsültan hekimi hastada kilo kaybı, kronik ishal veya rektal kanama olmadığı için endoskopi endikasyonu görmedi.",
+                        "teaching_point": "Gastrointestinal semptomların, büyüme geriliğinin veya anemi bulgularının eşlik etmediği durumlarda ileri tetkik gerekmez.",
+                    },
+                    {
+                        "text": "Klinik tablo ve lezyonlar tipik olduğundan laboratuvar tetkiki istemeden semptomları rahatlatmaya ve oral alımı desteklemeye odaklanmak",
                         "is_correct": True,
-                        "image": "assets/images/cxr_pleural_effusion.png",
-                        "image_caption": "PA Akciğer Grafisi: Sol hemitoraksta kostofrenik sinüs küntleşmesi ve menisküs belirtisi",
-                        "explanation": "Tek taraflı solunum sesi kaybı ve matitede direkt grafi tanı koydurucudur; toraks ultrasonografisi ise plevral sıvı miktarını, fibrin bantlarını ve drenaj gerekliliğini gösterir.",
-                        "new_finding": "PA Akciğer Grafisi: Sol hemitoraksta kostofrenik ve kardiyofrenik sinüsler tamamen kapalı, diyafragma silinmiş ve lateral göğüs duvarı boyunca yükselen konkav menisküs hattı (radyoopasite) mevcut; mediastende hafif sağa deviasyon izlendi. Toraks USG: Sol plevral boşlukta 35 mm kalınlığında, yoğun fibrin septasyonları ve ekojenik partiküller içeren plevral sıvı koleksiyonu saptandı. Lab: BK 26.800/mm3, CRP 240 mg/L."
+                        "explanation": "Ateşsiz, izole ve karakteristik lezyonlarda tanı tamamen klinik konur; gereksiz tetkik ve girişimlerden kaçınılmalıdır.",
+                        "new_finding": "Ek laboratuvar tetkiki istenmedi. Hastanın klinik muayene bulgularıyla tanısal değerlendirmeye geçildi.",
                     },
-                    {
-                        "text": "Akciğer grafisi çekmeden derhal genel anestezi altında acil açık torakotomi ve dekortikasyon planlayarak hastayı doğrudan ameliyathaneye almak",
-                        "is_correct": False,
-                        "scenario_update": "Öncesinde temel radyolojik değerlendirme ve torasentez yapılmadan ameliyata alınan hastada gereksiz majör cerrahi morbidite ve anestezi riski oluştu.",
-                        "teaching_point": "Akciğer enfeksiyonu komplikasyonlarında ilk basamak ameliyat değil; direkt grafi, ultrasonografi ve tüp drenajı veya medikal tedavidir."
-                    },
-                    {
-                        "text": "Sadece boğaz kültürü ve idrarda pnömokok antijeni isteyerek radyolojik tetkik yapmaksızın mevcut oral antibiyotiğin dozunu iki katına çıkarmak",
-                        "is_correct": False,
-                        "scenario_update": "Radyolojik inceleme geciktirildiği için geniş plevral sıvı koleksiyonu bası yaparak mediasteni daha da itti ve kardiyopulmoner dekompansasyon gelişti.",
-                        "teaching_point": "Solunum seslerinin kaybolduğu ve tahta matitesinin alındığı tedaviye dirençli olgularda direkt görüntüleme yapılmaması hayatı tehdit eden gecikmelere yol açar."
-                    }
-                ]
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Tedaviye dirençli yüksek ateş, sol hemitoraksta solunum sesi kaybı, grafide menisküs hattı ve ultrasonografide septalı plevral sıvı olan hastada tanı nedir?",
+                "question": "Öykü ve fizik muayene bulguları dikkate alındığında bu hastada en olası klinik tanı hangisidir?",
                 "options": [
                     {
-                        "text": "Komplike Parapnömonik Plevral Efüzyon ve Ampiyem",
+                        "text": "Primer Herpetik Gingivostomatit",
+                        "is_correct": False,
+                        "scenario_update": "Herpetik gingivostomatitte yüksek ateş, yaygın diş eti hipertrofisi, kanaması ve perioral veziküller beklenir; bu hastada diş etleri doğaldır.",
+                        "teaching_point": "Herpetik gingivostomatit belirgin ateş, servikal lenfadenopati ve keratinize mukoza (gingiva) tutulumu ile seyreder.",
+                    },
+                    {
+                        "text": "El-Ayak-Ağız Hastalığı",
+                        "is_correct": False,
+                        "scenario_update": "Hastanın el ayalarında, ayak tabanlarında veya kalçasında döküntü yoktur ve lezyonlar daha çok arka farenksten ziyade ön ağızdadır.",
+                        "teaching_point": "El-ayak-ağız hastalığında el ve ayaklarda papüloveziküler döküntüler ile farenks/damakta enantemler görülür.",
+                    },
+                    {
+                        "text": "Rekürren Aftöz Stomatit",
                         "is_correct": True,
-                        "explanation": "Bakteriyel pnömoni tedavisi sırasında gelişen, grafide menisküs belirtisi veren ve ultrasonda fibrin septasyonları ile pürülan koleksiyon gösteren tablo komplike parapnömonik plevral efüzyon ve ampiyemdir.",
-                        "new_finding": "Kesin tanı: Komplike Parapnömonik Plevral Efüzyon ve Ampiyem. Plevral boşluktaki lokülasyon ve septasyonlar acil drenaj ihtiyacını doğrulamaktadır."
+                        "explanation": "Non-keratinize mukoza tutulumu, sarı-gri psödomembranlı ağrılı ülserler, eritemli çevre ve ateşsiz seyir aftöz stomatit ile uyumludur.",
+                        "new_finding": "Klinik tanı Rekürren Aftöz Stomatit (Minör Aft) olarak belirlendi.",
                     },
                     {
-                        "text": "Komplike Olmayan Akut Lober Pnömoni",
+                        "text": "Oral Mukozal Kandidiyazis (Pamukçuk)",
                         "is_correct": False,
-                        "scenario_update": "Komplike olmayan pnömonide plevral boşlukta loküle sıvı koleksiyonu, menisküs hattı ve solunum seslerinde tam kayıp görülmez.",
-                        "teaching_point": "Geniş sıvı birikimi, fibrinöz septasyonlar ve antibiyotiğe dirençli persistan ateş tablonun basit pnömoniden komplike efüzyon/ampiyem evresine ilerlediğini gösterir."
+                        "scenario_update": "Oral kandidiyaziste mukozaya yapışık, kaldırılınca kanayan beyaz peynirimsi plaklar görülür; sınırları belirgin ülserler oluşmaz.",
+                        "teaching_point": "Pamukçuk lezyonları eritemli tabanlı beyaz plaklar şeklindedir, tipik ağrılı çukurlaşmış ülser morfolojisinde değildir.",
                     },
-                    {
-                        "text": "Mukus Tıkacına Bağlı Pulmoner Atelektazi",
-                        "is_correct": False,
-                        "scenario_update": "Atelektazide mediasten lezyon tarafına çekilir; bu hastada ise geniş sıvı basısıyla mediasten karşı tarafa itilmiştir.",
-                        "teaching_point": "Atelektazi hacim kaybı yaparak trakea ve mediasteni aynı tarafa çeker; plevral sıvı koleksiyonlarında ise itici kitle etkisiyle mediasten karşı tarafa itilir."
-                    },
-                    {
-                        "text": "Konjenital Sol Diyafragma Hernisi",
-                        "is_correct": False,
-                        "scenario_update": "Diyafragma hernisinde toraks içinde bağırsak ansları görülür; akut 3 günlük febril seyir ve pürülan plevral koleksiyon oluşturmaz.",
-                        "teaching_point": "Geç başlangıçlı diyafragma hernisi toraks içinde hava-sıvı seviyeli bağırsak lupları ile karakterizedir; persistan yüksek ateş ve fibrinli septalı efüzyon ampiyem lehinedir."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Tedavi, Cerrahi Drenaj ve Servis Yatış Planı",
-                "question": "Ultrasonografide septalı kalın plevral koleksiyonu saptanan bu hastada en uygun tedavi ve girişimsel yaklaşım ne olmalıdır?",
+                "stage_title": "Tedavi ve Yönetim",
+                "question": "Rekürren aftöz stomatit tanısı konulan bu hastada en uygun tedavi ve taburculuk planı hangisidir?",
                 "options": [
                     {
-                        "text": "Göğüs tüpü takmadan yalnızca oral amoksisilin dozunu artırmak ve hastayı evde buhar banyosu ile günlük poliklinik kontrolüne çağırmak",
-                        "is_correct": False,
-                        "scenario_update": "Drenaj uygulanmayan pürülan ampiyem hızla organize oldu, akciğer parankiminde hapsolma (trapped lung) ve ciddi restriktif solunum yetmezliği gelişti.",
-                        "teaching_point": "pH < 7.20, glukoz < 40 mg/dL veya pürülan/septalı olan plevral koleksiyonlar cerrahi drenaj olmaksızın medikal tedaviyle gerilemez; gecikme kalıcı fibrotoraks yaratır."
-                    },
-                    {
-                        "text": "Herhangi bir antibiyotik tedavisi vermeden yalnızca plevral boşluğa yüksek doz kortikosteroid enjekte etmek ve hastayı genel pediatri servisinde izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Bakteriyel enfeksiyon zemininde lokal steroid enjeksiyonu ampiyemin hızla yayılmasına, bakteremiye ve septik şok tablosuna yol açtı.",
-                        "teaching_point": "Bakteriyel plevral ampiyemde intraplevral kortikosteroid uygulaması kontrendikedir; tedavi uygun antibiyoterapi ve mekanik/fibrinolitik drenajdır."
-                    },
-                    {
-                        "text": "Tanısal torasentez ve tüp torakostomiyle sıvıyı drene etmek, intravenöz seftriakson ve klindamisin başlayıp çocuk cerrahisi servisine yatırmak",
+                        "text": "Topikal bariyer veya analjezik jel uygulamak, ılık yumuşak gıdalar önermek ve hidrasyonu yakından takip etmek",
                         "is_correct": True,
-                        "explanation": "Komplike parapnömonik efüzyon ve ampiyemde plevral sıvının drenajı (göğüs tüpü veya VATS) ve genişlemiş spektrumlu parenteral antibiyoterapi (3. kuşak sefalosporin + antistafilokoksik) temel tedavidir.",
-                        "new_finding": "Göğüs tüpü takılarak 350 mL pürülan plevral sıvı drene edildi. Plevral Sıvı Analizi: pH 7.08, Glukoz 22 mg/dL, LDH 2850 U/L, lökosit 65.000/mm3 (ampiyem ile uyumlu). İV seftriakson (100 mg/kg/gün) ve klindamisin (40 mg/kg/gün) başlandı."
+                        "explanation": "Tedavide amaç ağrıyı hafifletmek ve hidrasyonu korumaktır; topikal hyaluronik asit/mukoprotektif jeller ve oral hijyen yeterlidir.",
+                        "new_finding": "Aileye topikal mukoza koruyucu jel tarifi yapıldı. Asitli, tuzlu ve sert gıdalardan kaçınmaları, hidrasyonu sürdürmeleri anlatıldı.",
                     },
                     {
-                        "text": "Sıvı örneği almadan hastaya acilen sol tam akciğer rezeksiyonu uygulamak ve ameliyat sonrasında ampirik geniş spektrumlu antitüberküloz tedavisi başlatmak",
+                        "text": "Lezyonların hızla gerilemesi amacıyla yedi gün süreli oral asiklovir süspansiyon ve sistemik antibiyotik tedavisi reçete ederek taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Gereksiz radikal rezeksiyon hastada geri dönüşsüz solunum kapasitesi kaybına ve tüberküloz ilaçlarına bağlı toksisiteye neden oldu.",
-                        "teaching_point": "Parapnömonik ampiyemde akciğer dokusu rezeke edilmez; amaç plevral drenaj ve antibiyotikle enfeksiyonu temizleyip akciğerin yeniden ekspanse olmasını sağlamaktır."
-                    }
-                ]
-            }
-        ]
+                        "scenario_update": "Viral veya bakteriyel etken olmadığı için antiviral ve antibiyotik tedavisi klinik gidişatı değiştirmedi ve yan etki riski oluşturdu.",
+                        "teaching_point": "Aftöz lezyonlarda herpes virüsü veya bakteriler rol oynamaz; asiklovir veya antibiyotik kullanımı tamamen gereksizdir.",
+                    },
+                    {
+                        "text": "Ülserlerin yayılmasını önlemek amacıyla yüksek doz oral prednizolon tedavisi başlayarak hastayı acil serviste yakın gözlem yatağına yatırmak",
+                        "is_correct": False,
+                        "scenario_update": "Hafif minör lezyonlarda sistemik kortikosteroid başlanması hiperglisemi, immünsüpresyon ve huzursuzluk gibi yan etkilere yol açtı.",
+                        "teaching_point": "Sistemik steroidler yalnızca çok şiddetli, majör ve tedaviye dirençli vakalarda uzman kontrolünde düşünülür; minör lezyonlarda yeri yoktur.",
+                    },
+                    {
+                        "text": "Ağrıyı derhal kesmek için poliklinikte lezyon tabanını gümüş nitrat çubuğuyla koterize edip derin kimyasal koterizasyon pansumanı uygulamak",
+                        "is_correct": False,
+                        "scenario_update": "Gümüş nitrat uygulaması çocukta dayanılmaz bir yanma ağrısına yol açtı ve çevre dokuda kimyasal hasar oluşturdu.",
+                        "teaching_point": "Küçük çocuklarda kimyasal koterizasyon ağrılıdır, çevre mukozaya zarar verebilir ve doku iyileşmesini geciktirebilir.",
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "Y23",
-        "category": "🫁 Hırıltı & Solunum Sıkıntısı",
-        "age": "15 Yaş",
+        "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
+        "age": "9 Yaş",
         "gender": "Erkek",
-        "complaint": "İstirahat halindeyken aniden başlayan şiddetli sağ taraflı batıcı göğüs ağrısı ve nefes darlığı",
-        "history": "15 yaşında (182 cm, 54 kg - uzun boylu, zayıf, astenik yapıda) erkek hasta Sarı Alana getiriliyor: 'Evde bilgisayar başında ders çalışırken hiçbir darbe veya zorlanma olmadan aniden sağ göğsüme bir bıçak saplandı gibi oldu. Derin nefes almaya çalıştığımda sağ tarafım çok şiddetli batıyor ve nefesim yetmiyor.' Özgeçmişinde astım, travma veya sigara öyküsü bulunmuyor.",
-        "final_diagnosis": "Primer Spontan Pnömotoraks (PSP - Subplevral Bleb Rüptürü)",
-        "disposition": "Sarı Alanda Yüksek Akımlı (%100) Geri Solumasız Maske ile Oksijen Desteği + Toraks Cerrahisi Konsültasyonu ve Tüp Torakostomi (Göğüs Tüpü) İçin Yatış",
-        "case_pearl": "Primer spontan pnömotoraks (PSP), altta yatan belirgin bir akciğer hastalığı veya travma olmaksızın, genellikle uzun boylu ve zayıf adölesan erkeklerde apikal subplevral bül/bleblerin rüptürü sonucu gelişir. Ani başlangıçlı plörotik göğüs ağrısı ve dispne tipiktir. Fizik muayenede etkilenen tarafta solunum seslerinde azalma/kayıp ve perküsyonda hipersonorite (timpanik ses) saptanır. Ayakta ekspiryum PA akciğer grafisinde visseral plevra hattı ve periferik damarlanma kaybı tanıyı kesinleştirir. Hipotansiyon, juguler venöz dolgunluk ve trakeal deviasyon gelişirse derhal tansiyon pnömotoraks düşünülüp 2. interkostal aralık midklavikuler hattan veya 4-5. İKA ön aksiller hattan acil iğne dekompresyonu yapılmalıdır. Semptomatik veya geniş PSP olgularında yüksek akımlı oksijen (%100 O2, plevral havanın rezorpsiyonunu 4-6 kat hızlandırır) ve tüp torakostomi uygulanır.",
+        "complaint": "Gövdede kaşıntılı döküntüler ve göğüste daha önce çıkan büyük leke",
+        "history": (
+            "Dokuz yaşındaki erkek çocuk annesiyle birlikte polikliniğe başvuruyor: 'Doktor bey/hanım, yaklaşık on gün önce "
+            "oğlumun göğsünün üst kısmında madeni para büyüklüğünde, kenarları hafif kabuklu pembe bir leke fark ettik. Başta "
+            "mantar sandık ve nemlendirici sürdük ama geçmedi. Son üç dört gündür ise sırtında, karnında ve göğsünde aynı "
+            "lekenin daha küçükleri hızla çoğaldı. Hafif kaşıntısı var ama ateşi, boğaz ağrısı veya halsizliği hiç olmadı.'"
+        ),
+        "final_diagnosis": "Pitriyazis Rozea",
+        "disposition": "Yeşil Alandan Bilgilendirme, Güvence Verme, Semptomatik Kaşıntı Tedavisi ile Taburculuk",
+        "case_pearl": (
+            "Pitriyazis rozea tipik olarak gövdede tek, 2-5 cm çapında, kenarları kalkık ve hafif skuamlı öncü plakla "
+            "(herald patch / madalyon plak) başlar; 1-2 hafta sonra gövdede Langer çizgilerine paralel, 'çam ağacı' dağılımı "
+            "gösteren daha küçük oval eritematöz skuamlı papül ve plaklar belirir. Kendi kendini 6-8 haftada sınırlayan selim "
+            "bir ekzantemdir; gereksiz antifungal veya antibiyotik verilmemeli, aileye bulaşıcı olmadığı anlatılarak güvence verilmelidir."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Fizik Muayene",
-                "question": "İstirahat halindeyken ani batıcı göğüs ağrısı ve nefes darlığı gelişen 15 yaşındaki astenik yapılı hastada ilk yaklaşım ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Gövdede yaygın döküntü şikayetiyle getirilen bu okul çağı çocuğunda ilk klinik muayene yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Hastaya rezervuarlı maskeyle yüksek akımlı oksijen başlamak, kardiyopulmoner monitörizasyon sağlamak, solunum seslerini ve trakea pozisyonunu değerlendirmek",
+                        "text": "Malign deri lezyonlarını ekarte etmek amacıyla döküntülerin dermatoskopik incelemesini yapıp acilen cerrahi eksizyonel deri biyopsisi işlemi planlamak",
+                        "is_correct": False,
+                        "scenario_update": "İnvaziv biyopsi önerisi aileyi derin bir endişeye sevk etti; selim bir ekzantem için gereksiz doku hasarı riski doğdu.",
+                        "teaching_point": "Simetrik, yüzeyel ve tipik seyirli döküntülerde invaziv deri biyopsisi endike değildir; klinik muayene yeterlidir.",
+                    },
+                    {
+                        "text": "Tüm vücut cildini tamamen soyup döküntülerin morfolojisini, gövdedeki dizilim paternini, avuç içlerini ve mukozaları dikkatlice incelemek",
                         "is_correct": True,
-                        "explanation": "Ani başlayan plörotik göğüs ağrısı ve dispnede ilk öncelik oksijen desteği, hemodinaminin değerlendirilmesi ve tansiyon bulgularının (trakeal deviasyon, hipotansiyon) dışlanmasıdır.",
-                        "new_finding": "Vital Bulgular: KTA 118/dk, SS 28/dk, SpO2 %92 (oda havasında, rezervuarlı maske ile %99), TA 116/74 mmHg. Fizik Muayene: Sağ hemitoraksta solunuma katılım belirgin azalmış, oskültasyonda sağda solunum sesleri apikal ve bazalde tamamen kaybolmuş, perküsyonda sağ hemitoraksta belirgin hipersonorite (timpanik ses) mevcut; trakea orta hatta, boyun venöz dolgunluğu yok."
+                        "explanation": "Döküntünün dağılım paterni (Langer çizgilerine paralellik), skuam özelliği ve mukoza/avuç içi tutulumunun olmaması kritik ipuçları sağlar.",
+                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 82/dk, SS 18/dk, SpO2 %99. Cilt Muayenesi: Sternum üzerinde 3.5 cm çapında, hafif kabarık eritematöz kenarlı, iç kenarında yakalık tarzında ince deskuamasyon bulunan oval bir plak saptandı. Sırt ve gövde ön yüzünde kaburga çizgilerine paralel 'çam ağacı' diziliminde 0.5-1.5 cm boyutlarında benzer morfolojide çok sayıda oval eritematöz skuamlı lezyon izlendi. Avuç içleri, ayak tabanları ve oral mukoza tamamen temiz. Lenfadenopati yok.",
                     },
                     {
-                        "text": "Ağrının kas spazmı kaynaklı olduğunu düşünerek yalnızca intramusküler diklofenak enjekte etmek ve hastayı sedyede dinlendirerek evine göndermek",
+                        "text": "Vaskülit veya meningokoksemi kuşkusuyla hastayı izole edip acil damar yolu açılması ve monitörizasyon amacıyla Sarı Alana devretmek",
                         "is_correct": False,
-                        "scenario_update": "Analjezik sonrası göğüs ağrısı hafiflese de hastanın solunum sıkıntısı sürdü; fizik muayene yapılmadığı için tek taraflı patoloji gözden kaçtı.",
-                        "teaching_point": "Ani başlayan şiddetli göğüs ağrısı ve dispnede kas spazmı tanısı ancak hayatı tehdit eden torakal patolojiler dışlandıktan sonra konulabilir."
+                        "scenario_update": "Sarı Alanda hastanın genel durumunun iyi, döküntülerin peteşi-purpura değil eritematöz skuamlı olduğu ve vitallerin stabil olduğu görüldü.",
+                        "teaching_point": "Basmakla solan, skuamlı ve genel durumu mükemmel olan hastalar vaskülit veya meningokoksemi lehine değildir; Yeşil Alanda incelenir.",
                     },
                     {
-                        "text": "Akut bronkospazm atağı düşünerek hastaya derhal aralıksız yüksek doz nebulize salbutamol başlamak ve ardından klinik yanıtı beklemek",
+                        "text": "Çocuğu tamamen soymadan sadece göğsündeki ilk lezyonu muayene edip alerjik reaksiyon düşünerek oral antihistaminik şurup verip taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Nebulize tedavi sonrası hastanın taşikardisi arttı; tek taraflı ses kaybı ve belirgin perküsyon timpanizmi bronkodilatör ile gerilemedi.",
-                        "teaching_point": "Bronkospazm bilateral hışıltı ve ekspiryum uzamasıyla seyreder; tek taraflı ani ses kaybı ve timpanik ses hava yolu daralmasıyla açıklanamaz."
+                        "scenario_update": "Sırt ve diğer gövde alanları incelenmediği için döküntünün karakteristik dermatom benzeri dağılım paterni gözden kaçırıldı.",
+                        "teaching_point": "Döküntülü çocuklarda tüm vücut derisi mutlaka tamamen açılarak incelenmeli ve lezyonların yayılım paterni haritalandırılmalıdır.",
                     },
-                    {
-                        "text": "Akut koroner sendrom ön tanısıyla hastaya hemen çiğnetme şeklinde asetilsalisilik asit vermek ve sublingual nitrogliserin uygulayarak izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Verilen sublingual nitrogliserin hastada şiddetli baş ağrısı ve hipotansiyona yol açtı; tek taraflı solunum bulguları değişmedi.",
-                        "teaching_point": "15 yaşındaki önceden sağlıklı adölesanda ani tek taraflı batıcı ağrıda koroner iskemi beklenmez; vazodilatatörler hipotansiyona yol açarak tabloyu ağırlaştırabilir."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Radyolojik İnceleme ve Plevral Değerlendirme",
-                "question": "Sağda solunum sesleri kaybolan ve perküsyonda hipersonorite saptanan bu hastada en uygun radyolojik inceleme hangisidir?",
+                "stage_title": "Tetkik ve Yaklaşım Kararı",
+                "question": "Gövdede kaburga çizgilerine paralel dağılım gösteren oval skuamlı döküntüleri olan bu hastada tetkik kararınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Tanıyı doğrulamak amacıyla zaman kaybettiren yüksek doz kontrastlı tüm vücut bilgisayarlı tomografisi ve kardiyak koroner anjiyografi planlamak",
+                        "text": "Mantar enfeksiyonunu kesin olarak dışlamak amacıyla tüm lezyonlardan bistüriyle derin kazıntı alarak potasyum hidroksit mikroskopisi tetkiki istemek",
                         "is_correct": False,
-                        "scenario_update": "Acil toraks patolojisi varken hastanın BT ünitesine transferi sırasında takipnesi arttı ve hemodinamik dekompansasyon riski yaşandı.",
-                        "teaching_point": "Stabil adölesanda plevral serbest havanın tespitinde iki yönlü akciğer grafisi yeterlidir; gereksiz anjiyografi ve tüm vücut BT zaman kaybettirir."
+                        "scenario_update": "Çok sayıda lezyondan yapılan ağrılı kazıntıda mikroskopide mantar hifleri veya sporları görülmedi; lezyonlar irrite oldu.",
+                        "teaching_point": "Tinea korporiste lezyon genellikle tek veya birkaç adettir; tüm gövdeye paralel dağılan döküntülerde yaygın kazıntı gerekmez.",
                     },
                     {
-                        "text": "Grafi çekmeden önce solunum kapasitesini ölçmek amacıyla hastaya zorlu ekspirasyon gerektiren spirometrik solunum fonksiyon testi yaptırmak",
+                        "text": "Alerji ve post-streptokokal reaksiyonları araştırmak amacıyla periferik tam kan sayımı, total IgE, CRP ve ASO düzeylerini birlikte göndermek",
                         "is_correct": False,
-                        "scenario_update": "Zorlu ekspirasyon ve spirometri manevrası sırasında plevral bası aniden arttı, parankim hava kaçağı genişledi ve solunum sıkıntısı derinleşti.",
-                        "teaching_point": "Plevral hava kaçağı şüphesinde zorlu ekspiratuar solunum testleri kesinlikle kontrendikedir; intratorasik basıncı artırarak kaçak alanını büyütebilir."
+                        "scenario_update": "Kan tahlili sonuçları tamamen normal geldi; damar yolu açılması çocuğun korkmasına ve acilde beklemesine neden oldu.",
+                        "teaching_point": "Klinik görünümü tipik olan, ateş ve sistemik bulgunun eşlik etmediği tablolarda kan tetkiklerinin tanısal değeri yoktur.",
                     },
                     {
-                        "text": "Radyolojik inceleme yapmadan derhal sağ ikinci interkostal aralık midklavikuler hattan acil kör iğne torakostomi uygulayarak doğrudan plevraya girmek",
-                        "is_correct": False,
-                        "scenario_update": "Hemodinamisi stabil ve trakeası orta hatta olan hastaya kontrolsüz acil iğne batırılması sağlıklı akciğer parankimine iatrojenik hasar verdi.",
-                        "teaching_point": "Tansiyon bulgusu (hipotansiyon, şok, trakeal deviasyon) olmayan stabil hastalarda ampirik kör iğne dekompresyonu yapılmaz; önce grafi çekilmelidir."
-                    },
-                    {
-                        "text": "Ayakta ekspiryum posteroanterior akciğer grafisi çekerek plevral hava birikimini ve parankim kollapsını radyolojik olarak incelemek",
+                        "text": "Klinik tablo ve döküntü paterni tanısal olduğundan hastadan herhangi bir invaziv laboratuvar veya görüntüleme tetkiki istememek",
                         "is_correct": True,
-                        "image": "assets/images/cxr_pneumothorax.png",
-                        "image_caption": "PA Akciğer Grafisi: Sağda visseral plevra çizgisi ve apikalde damarlanma kaybı",
-                        "explanation": "Akut tek taraflı solunum sesi kaybı ve hipersonorite varlığında ayakta ekspiryum PA akciğer grafisi plevral boşluktaki serbest havanın ve sınır hattının görüntülenmesinde altın standarttır.",
-                        "new_finding": "PA Akciğer Grafisi: Sağ hemitoraks apeksinde ve lateralinde parankim damar gölgelerinin aniden sonlandığı lüsent ve avasküler serbest hava sahası, akciğer dokusunun hilusa doğru kollabe olduğu sınır hattı izlendi; mediastende ve trakeada belirgin bir deviasyon saptanmadı."
-                    }
-                ]
+                        "explanation": "Karakteristik öncü lezyon ve gövdedeki dağılım paterni klinik tanı için yeterlidir; rutin laboratuvar tetkiki endike değildir.",
+                        "new_finding": "Tetkik istenmedi; lezyonların klinik özellikleri üzerinden tanı ve hasta eğitimi aşamasına geçildi.",
+                    },
+                    {
+                        "text": "Viral döküntü etkenlerini aydınlatmak için kanda Epstein-Barr virüsü, sitomegalovirüs ve parvovirüs serolojilerinden oluşan genişletilmiş antikor panelini istemek",
+                        "is_correct": False,
+                        "scenario_update": "Seroloji sonuçlarının çıkmasının günler alacağı öğrenildi; hastanın klinik yaklaşımında ve tedavisinde hiçbir değişiklik sağlamadı.",
+                        "teaching_point": "Selim seyirli yüzeyel ekzantemlerde genişletilmiş viral antikor panelleri rutin pratikte maliyet-etkin değildir ve önerilmez.",
+                    },
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Uzun boylu astenik yapıda, istirahatte ani göğüs ağrısı başlayan ve grafide serbest hava hattı görülen hastada kesin tanı nedir?",
+                "question": "Öykü ve döküntü morfolojisi birlikte değerlendirildiğinde hastadaki en olası klinik tanı hangisidir?",
                 "options": [
                     {
-                        "text": "Akut Kostokondrit Sendromu",
+                        "text": "Tinea Korporis (Gövde Mantarı)",
                         "is_correct": False,
-                        "scenario_update": "Kostokondritte kostosternal eklemlerde lokalize palpasyon hassasiyeti olur; solunum sesi kaybı ve grafide plevral serbest hava görülmez.",
-                        "teaching_point": "Kostokondrit palpasyonla artan göğüs ön duvarı hassasiyeti ile giden kas-iskelet patolojisidir; akciğer grafisi ve solunum sesleri tamamen normaldir."
+                        "scenario_update": "Tinea korporiste genellikle tek veya az sayıda, santralden iyileşme gösteren anüler plaklar görülür; tüm sırtta çam ağacı dağılımı beklenmez.",
+                        "teaching_point": "Tinea korporis asimetrik ve sınırlı sayıda lezyonla gider; bu hastadaki gibi öncü plak sonrası bilateral simetrik dissemine yayılım göstermez.",
                     },
                     {
-                        "text": "Primer Spontan Pnömotoraks",
+                        "text": "Guttat Psöriyazis (Damla Sedef)",
+                        "is_correct": False,
+                        "scenario_update": "Guttat psöriyaziste genellikle streptokokal farenjitten 1-2 hafta sonra kalın gümüşi skuamlı küçük damla şeklinde lezyonlar çıkar; öncü madalyon plak olmaz.",
+                        "teaching_point": "Guttat psöriyazis kalın sedef rengi skuamlarla kaplıdır ve öncü bir büyük plak öyküsü bulunmaz.",
+                    },
+                    {
+                        "text": "Sekonder Sifiliz Ekzantemi",
+                        "is_correct": False,
+                        "scenario_update": "Sekonder sifilizde döküntüler avuç içi ve ayak tabanlarını belirgin tutar, lenfadenopati eşlik eder ve öncü plak görülmez.",
+                        "teaching_point": "Sekonder sifiliz palmar ve plantar tutulumun yanı sıra generalized lenfadenopati ile seyreder.",
+                    },
+                    {
+                        "text": "Pitriyazis Rozea",
                         "is_correct": True,
-                        "explanation": "Altta yatan akciğer hastalığı veya travma olmaksızın, uzun boylu astenik gençlerde apikal subplevral bleb rüptürüne bağlı gelişen hava kaçağı primer spontan pnömotorakstır.",
-                        "new_finding": "Kesin tanı: Primer Spontan Pnömotoraks (PSP). Apikal subplevral bleb rüptürü kaynaklı plevral hava birikimi teyit edildi."
+                        "explanation": "Öncü plak (herald patch), bunu izleyen çam ağacı dağılımlı yakalık tarzı skuamlı oval lezyonlar pitriyazis rozea için tipiktir.",
+                        "new_finding": "Klinik tanı Pitriyazis Rozea olarak kesinleştirildi.",
                     },
-                    {
-                        "text": "Akut Miyoperikardit Atağı",
-                        "is_correct": False,
-                        "scenario_update": "Miyoperikarditte EKG'de yaygın ST elevasyonları ve troponin yüksekliği beklenir; tek taraflı solunum sesi kaybı ve plevral hava oluşmaz.",
-                        "teaching_point": "Miyoperikardit kardiyak enzim yüksekliği, sürtünme sesi ve EKG değişiklikleri ile seyreder; plevral hava kaçağı ve tek taraflı timpanizm yapmaz."
-                    },
-                    {
-                        "text": "Akut Pulmoner Tromboemboli",
-                        "is_correct": False,
-                        "scenario_update": "Pulmoner embolide grafi çoğunlukla normaldir veya kama şeklinde opasite görülür; avasküler plevral hava sahası emboli bulgusu değildir.",
-                        "teaching_point": "Pulmoner emboli risk faktörü olan hastalarda hipoksi ve taşikardi ile seyreder; plevral boşlukta geniş avasküler hava birikimi oluşturmaz."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Tedavi, Cerrahi Konsültasyon ve Girişim Planı",
-                "question": "Akciğer grafisinde belirgin hava kaçağı ve dispnesi olan bu primer spontan pnömotoraks olgusunda en uygun tedavi yaklaşımı nedir?",
+                "stage_title": "Tedavi ve Yönetim",
+                "question": "Pitriyazis rozea tanısı kesinleşen bu hastanın tedavisinde ve aile bilgilendirmesinde en uygun yaklaşım hangisidir?",
                 "options": [
                     {
-                        "text": "Yüksek akımlı oksijen başlamak, toraks cerrahisi konsültasyonuyla tüp torakostomi uygulayarak hastayı kapalı su altı drenajına bağlamak",
+                        "text": "Döküntülerin yayılmasını durdurmak amacıyla dört hafta süreli oral terbinafin veya flukonazol antifungal tablet tedavisi reçete ederek taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Antifungal tedavi mantar kaynaklı olmayan bu tabloda etkisiz kaldı ve gereksiz hepatotoksisite takip ihtiyacı doğurdu.",
+                        "teaching_point": "Pitriyazis rozea fungal bir enfeksiyon değildir; sistemik veya topikal antifungallerin tedavide yeri yoktur.",
+                    },
+                    {
+                        "text": "Hastalığın kendiliğinden iyileşeceğini belirtmek, bulaşıcı olmadığını anlatıp kaşıntı varsa semptomatik antihistaminik veya nemlendirici losyon önermek",
                         "is_correct": True,
-                        "explanation": "Semptomatik veya geniş plevral hava kaçağında yüksek akımlı (%100) oksijen rezorpsiyon hızını 4-6 kat artırır; göğüs tüpü takılması akciğerin re-ekspansiyonunu sağlar.",
-                        "new_finding": "Toraks cerrahisi tarafından sağ 5. interkostal aralık orta aksiller hattan küçük çaplı göğüs tüpü yerleştirildi ve su altı drenajına bağlandı. Aktif hava çıkışı izlendi. Hastanın dispnesi hızla geriledi, SpO2 %99'a yükseldi. Kontrol grafisinde akciğer parankimi tam olarak ekspanse oldu."
+                        "explanation": "Hastalık kendi kendini sınırlayan selim bir tablodur; temel yaklaşım aileye güvence vermek ve varsa semptomatik kaşıntıyı rahatlatmaktır.",
+                        "new_finding": "Aileye hastalığın iz bırakmadan 1-2 ay içinde kendiliğinden geçeceği anlatıldı. Sıcak banyodan kaçınmaları ve hafif kaşıntı için nemlendirici kullanmaları önerildi.",
                     },
                     {
-                        "text": "Hiçbir oksijen veya girişim uygulamadan yalnızca oral parasetamol reçete ederek hastayı ertesi gün poliklinik kontrolüne göndermek",
+                        "text": "Hastalığı bulaşıcı kabul ederek çocuğu üç hafta okuldan izole etmek ve taburculukta yüksek doz sistemik kortikosteroid başlamak",
                         "is_correct": False,
-                        "scenario_update": "Tedavisiz evine gönderilen hastada hava kaçağının ilerlemesi sonucu gece saatlerinde tansiyon tablosu ve kardiyorespiratuar kollaps gelişti.",
-                        "teaching_point": "Belirgin semptomatik ve geniş plevral hava birikimi olan adölesanlar taburcu edilemez; acil drenaj ve yakın klinik takip gerektirir."
+                        "scenario_update": "Okuldan gereksiz yere uzaklaştırılan çocuğun eğitim hayatı aksadı ve sistemik steroid yan etkileri ortaya çıktı.",
+                        "teaching_point": "Pitriyazis rozea bulaşıcı değildir, okula devamı kısıtlanmaz ve rutin sistemik kortikosteroid endikasyonu yoktur.",
                     },
                     {
-                        "text": "Plevral havanın hızla dağılması amacıyla hastayı derhal acil pozitif basınçlı mekanik ventilasyon desteğine bağlayarak entübe etmek",
+                        "text": "Lezyonların derhal solması için hastayı acil serviste ultraviyole fototerapi seansına almak ve yüksek doz intravenöz antiviral infüzyonu uygulamak",
                         "is_correct": False,
-                        "scenario_update": "Göğüs tüpü takılmadan uygulanan pozitif basınçlı ventilasyon plevral boşluğa hava girişini katlayarak ani kardiyak arresti tetikledi.",
-                        "teaching_point": "Drene edilmemiş plevral hava kaçağında pozitif basınçlı ventilasyon uygulanması mortal tansiyon tablosunu tetikleyen kritik bir tıbbi hatadır."
+                        "scenario_update": "Hastanede yatış ve fototerapi gereksiz maliyet ve anksiyete yarattı; selim tablonun seyrinde dramatik fark oluşmadı.",
+                        "teaching_point": "Hafif ve orta seyirli pitriyazis rozeada acil fototerapi veya antiviral infüzyon endikasyonu bulunmamaktadır.",
                     },
-                    {
-                        "text": "Acil açık torakotomi ve lobektomi planlayarak hastayı ilk spontan atakta doğrudan genel anestezi altında cerrahi ameliyathaneye hızla almak",
-                        "is_correct": False,
-                        "scenario_update": "İlk atakta doğrudan açık majör cerrahi rezeksiyon uygulanması hastada gereksiz ameliyat morbiditesi ve uzamış hastane yatışına yol açtı.",
-                        "teaching_point": "İlk atak spontan olgularda ilk tercih göğüs tüpü veya kateter aspirasyonudur; cerrahi (VATS/blebektomi) nüks veya persistan kaçakta endikedir."
-                    }
-                ]
-            }
-        ]
+                ],
+            },
+        ],
     },
     {
         "id": "Y24",
         "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
-        "age": "8 Yaş",
+        "age": "4 Yaş",
         "gender": "Kız",
-        "complaint": "40.2°C inatçı yüksek ateş, tüm vücutta güneş yanığı benzeri yaygın döküntü, kusma, tansiyon düşüklüğü ve baygınlık hissi",
-        "history": "Ailesi 8 yaşındaki (25 kg) kız çocuğu acil Sarı Alana getiriyor: 'İki gün önce hafif boğaz ağrısı ve burun akıntısı vardı. Dün ateşi 40.2°C'ye fırladı, ardından tüm vücudu sanki güneşte kalmış gibi kıpkırmızı oldu. Bugün sürekli kusuyor, sulu ishal oldu, ayakta duramıyor, gözleri kan çanağı gibi ve dili kıpkırmızı kabardı.' Çocuğun bilinci uykulu ve yanıtlara güçlükle odaklanıyor.",
-        "final_diagnosis": "Stafilokoksik Toksik Şok Sendromu (TŞS / TSS - TSST-1 Aracılı Süperantijenik Sepsis Tablosu)",
-        "disposition": "Sarı Alanda Agresif İntravenöz Kristaloid Sıvı Resüsitasyonu (20 mL/kg boluslar) + İntravenöz Vankomisin ve Klindamisin Tedavisi ile Çocuk Yoğun Bakım Ünitesine (ÇYBÜ) Acil Yatış",
-        "case_pearl": "Toksik Şok Sendromu (TŞS), Staphylococcus aureus (TSST-1, enterotoksinler) veya Streptococcus pyogenes (pirojenik ekzotoksinler) süperantijenlerinin T lenfositlerin %20'den fazlasını non-spesifik aktive ederek kontrolsüz masif sitokin fırtınasına yol açtığı yaşamı tehdit eden bir sendromdur. Klasik tanı kriterleri: >38.9°C ateş, diffüz maküler eritrodermi (güneş yanığı benzeri döküntü, 1-2 hafta sonra el-ayak parmaklarında deskuamasyonla sonuçlanır), hipotansiyon ve en az 3 organ sistemi tutulumudur (GİS: kusma/ishal, mukoza: konjonktival hiperemi/çilek dili, renal, hepatik, hematolojik, SSS). Acil yönetimde ilk basamak agresif izotonik sıvı resüsitasyonudur (şok tablosunda tekrarlayan 20 mL/kg boluslar). Antimikrobiyal tedavide hücre duvarına etkili antibiyotiğe (vankomisin/seftriakson) ek olarak ribosomal protein ve toksin sentezini hızla durduran KLİNDAMİSİN (Eagle etkisi/toksin inhibisyonu) mutlaka eklenmeli ve hasta Çocuk Yoğun Bakım Ünitesinde izlenmelidir.",
+        "complaint": "Koltuk altında ve gövdede inci tanesi gibi parlak pütürler çıkması",
+        "history": (
+            "Dört yaşındaki kız çocuğu annesi tarafından cildindeki pütürler nedeniyle getiriliyor: 'Kızımın yaklaşık bir ay "
+            "önce sağ koltuk altında bir iki tane sivilce benzeri kabarcık çıkmıştı. Zamanla bunların sayısı arttı, göğsüne "
+            "ve karnına da yayıldı. Kabarcıklar sert, inci gibi parlıyor ve ortalarında minik bir çukurluk var. Herhangi bir "
+            "ağrısı veya ateşi yok, bazen hafif kaşıyor. Kreşe gidiyor ve havuz kursuna katılıyordu.'"
+        ),
+        "final_diagnosis": "Molluskum Kontagiozum",
+        "disposition": "Yeşil Alandan Aile Eğitimi, Otomanipülasyondan Kaçınma ve İzlem Planı ile Taburculuk",
+        "case_pearl": (
+            "Molluskum kontagiozum, poxvirüs ailesinden Molluscum contagiosum virüsünün neden olduğu, çocuklarda sık görülen "
+            "selim bir kutanöz enfeksiyondur. Karakteristik lezyonlar 2-5 mm çapında, kubbe şeklinde, ortası göbekli "
+            "(umbilike), inci benzeri parlak papüllerdir. Havuz, doğrudan temas veya havlu paylaşımıyla bulaşır. Çoğu lezyon "
+            "6-18 ay içinde nedbesiz kendiliğinden geriler. Sıkma, kaşıma ve cerrahi küretaj otokoinokülasyona ve skar "
+            "gelişimine yol açabileceğinden öncelikle konservatif izlem ve aile eğitimi önerilir."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Acil Hemodinamik Değerlendirme ve Resüsitasyon",
-                "question": "40.2°C ateş, yaygın eritrodermi ve kan basıncı 70/40 mmHg olan 25 kg ağırlığındaki çocukta ilk basamak acil müdahale ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Gövdede parlak kabarcıklar tariflenen bu çocuğun ilk değerlendirmesinde en uygun klinik muayene yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Hipotansiyonu düzeltmek amacıyla sıvı vermeden önce hastaya derhal yüksek doz oral antihipertansif ilaç içirmeye çalışarak klinik yanıtı beklemek",
+                        "text": "Tanıyı doğrulamak amacıyla lezyonlardan birini forsepsle sıkarak içindeki kazeöz materyali aspire edip acil serviste mikroskop altında incelemeyi seçmek",
                         "is_correct": False,
-                        "scenario_update": "Zaten derin hipotansiyonda olan hastada antihipertansif verilmesi vasküler tonusu tamamen çökertti ve kardiyovasküler kollapsı tetikledi.",
-                        "teaching_point": "Hipotansif şok tablosundaki hastaya vazodilatatör veya antihipertansif verilmesi ölümcül bir hatadır; öncelik damar içi volümün kristaloidle hızla doldurulmasıdır."
+                        "scenario_update": "Lezyonun sıkılması şiddetli ağrıya, kanamaya ve virüsün çevre deriye yayılmasına zemin hazırladı.",
+                        "teaching_point": "Klinik muayenede tipik kubbe şeklindeki papüller sıkılmamalı veya koparılmamalıdır; bu durum otokoinokülasyona ve skara yol açar.",
                     },
                     {
-                        "text": "Yalnızca soğuk uygulama ve oral parasetamol şurup vererek hastayı vital monitörizasyon yapmaksızın yeşil alan gözlem odasında beklemeye almak",
+                        "text": "Suçiçeği veya dissemine enfeksiyon kuşkusuyla çocuğu negatif basınçlı odaya alıp damar yolu ve izolasyon amacıyla Sarı Alana devretmek",
                         "is_correct": False,
-                        "scenario_update": "Damar yolu açılmayan ve sıvı resüsitasyonu geciken çocukta kapiller dolum 5 saniyeye uzadı, periferik nabızlar palpe edilemez hale geldi.",
-                        "teaching_point": "Hipotansiyon, taşikardi ve letarji septik şok bulgularıdır; oral antipiretik ve bekleme yaklaşımı hastanın ölümüne neden olabilir."
+                        "scenario_update": "Sarı Alanda hastanın ateşi olmadığı, genel durumunun tamamen stabil olduğu ve lezyonların vezikül değil papül olduğu belirlendi.",
+                        "teaching_point": "Sistemik toksisite bulgusu, ateşi veya akut veziküler döküntüsü olmayan stabil deri döküntüleri Yeşil Alanda değerlendirilir.",
                     },
                     {
-                        "text": "Ciltteki yaygın kızarıklığı kontakt alerji kabul ederek yalnızca tek doz subkutan antihistaminik uygulayıp hastayı poliklinik kontrolüyle evine yönlendirmek",
-                        "is_correct": False,
-                        "scenario_update": "Alerji sanılarak evine gönderilmeye çalışılan çocuk Sarı Alan kapısında senkop geçirdi, kardiyojenik ve distributif şok tablosu ağırlaştı.",
-                        "teaching_point": "Yüksek ateş, mukozal hiperemi ve hipotansiyonla seyreden eritrodermi sistemik enfeksiyöz şok tablosudur; basit alerjik döküntü kabul edilemez."
-                    },
-                    {
-                        "text": "Geniş damar yolu açarak 20 mL/kg izotonik sodyum klorür bolusu başlatmak, oksijen vermek ve kardiyovasküler monitörizasyon sağlamak",
+                        "text": "Vital bulguları almak, lezyonların morfolojisini, santral umbilikasyonunu, anatomik dağılımını ve sekonder enfeksiyon varlığını dikkatle muayene etmek",
                         "is_correct": True,
-                        "explanation": "Ağır hipotansiyon ve hipoperfüzyon bulguları olan septik hemodinamik tabloda ilk öncelik havayolu-oksijenasyon ve 20 mL/kg izotonik kristaloid sıvı resüsitasyonudur.",
-                        "new_finding": "Vital Bulgular: Ateş 40.2°C, KTA 162/dk, SS 36/dk, TA 70/40 mmHg (ağır hipotansiyon), SpO2 %94, KDZ 4 saniye, periferik nabızlar filiform. Fizik Muayene: Tüm vücutta yaygın diffüz maküler eritem (güneş yanığı görünümü), bilateral eksüdasız konjonktival hiperemi, orofarenkste hiperemi ve belirgin çilek dili görünümü; bilinç letarjik, oryantasyon bozuk. 500 mL %0.9 NaCl sonrası TA 82/48 mmHg oldu."
-                    }
-                ]
+                        "explanation": "Kubbe şeklindeki papüllerin santral umbilikasyonu ve parlak inci görünümü ile çevre derideki egzama veya süperenfeksiyon incelenmelidir.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 94/dk, SS 22/dk, SpO2 %100. Cilt Muayenesi: Sağ aksiller bölgede, göğüs yan duvarında ve karında 2-4 mm boyutlarında, pembe-ten rengi, kubbe şeklinde, ortasında belirgin göbek benzeri çukurluk (santral umbilikasyon) bulunan yaklaşık 15 adet parlak papül izlendi. Lezyonların çevresinde eritem, ısı artışı veya pürülan akıntı yok. Diğer sistem muayeneleri doğal.",
+                    },
+                    {
+                        "text": "Cinsel istismar kuşkusu nedeniyle ayrıntılı adli tıp protokolü başlatıp hastayı genel muayene yapmadan doğrudan çocuk izlem merkezine yönlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "Adli süreç başlatılması ailede büyük bir şok yarattı; aksiller ve gövdedeki lezyonların çocukluk çağında temasla geçtiği sonradan anlaşıldı.",
+                        "teaching_point": "Aksilla ve gövde yerleşimi çocukluk çağında havuz veya oyun temasıyla sık görülen tipik bir kutanöz yayılımdır; izole adli şüphe doğurmaz.",
+                    },
+                ],
             },
             {
-                "stage_title": "İleri Laboratuvar ve Çoklu Organ Değerlendirmesi",
-                "question": "Sıvı resüsitasyonu sürdürülen, yüksek ateşi ve diffüz eritrodermisi olan bu çocukta laboratuvar ve tetkik planı ne olmalıdır?",
+                "stage_title": "Tetkik ve Yaklaşım Kararı",
+                "question": "Fizik muayenesinde gövdede ortası göbekli parlak papülleri saptanan bu çocukta tetkik yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Organ disfonksiyonunu değerlendirmeksizin yalnızca parmak ucu glukoz ölçümü yapıp hastayı başka hiçbir laboratuvar tetkiki istemeden derhal taburcu etmek",
-                        "is_correct": False,
-                        "scenario_update": "Laboratuvar tetkikleri yapılmadığı için hastanın ağır laktik asidozu, akut böbrek yetmezliği ve koagülopatisi saptanamadı ve arrest gelişti.",
-                        "teaching_point": "Hipotansif ve yüksek febril çocuklarda çoklu organ yetmezliği parametreleri değerlendirilmeden taburculuk kararı verilmesi ölümcül ihmaldir."
-                    },
-                    {
-                        "text": "Sadece gıda alerjisi paneli ve spesifik IgE antikorları isteyerek hastanın tüm sonuçlarını ayaktan alerji polikliniğinde değerlendirmeyi planlamak",
-                        "is_correct": False,
-                        "scenario_update": "Spesifik IgE sonuçları günler sonra çıkacağı için hastanın fulminan sepsisi ve organ disfonksiyonu tanısız kaldı.",
-                        "teaching_point": "Akut septik ve eritrodermik tablolar acil yoğun bakım patolojisidir; ayaktan poliklinik alerji tetkiklerinin bu aşamada yeri yoktur."
-                    },
-                    {
-                        "text": "Tam kan, kan gazı, biyokimya, koagülasyon paneli, kreatin kinaz incelemek ve kan, boğaz, idrar kültürleri göndermek",
+                        "text": "Karakteristik klinik bulgular tanı koydurucu olduğundan hastadan herhangi bir invaziv girişim veya laboratuvar tetkiki istememek",
                         "is_correct": True,
-                        "explanation": "Süperantijen aracılı sistemik inflamatuar yanıtta çoklu organ yetmezliğinin (böbrek, karaciğer, kas, hematolojik, metabolik asidoz) tespiti ve mikrobiyolojik odak araştırması şarttır.",
-                        "new_finding": "Laboratuvar Bulguları: BK 28.400/mm3 (%88 nötrofil, %12 bant formu), Trombosit 84.000/mm3 (trombositopeni), CRP 260 mg/L, Prokalsitonin 28 ng/mL. Biyokimya: Üre 78 mg/dL, Kreatinin 1.8 mg/dL (akut böbrek hasarı), AST 184 U/L, ALT 165 U/L, Total Bilirubin 2.4 mg/dL. Kreatin kinaz (CK) 890 U/L. Kan Gazı: pH 7.24, HCO3 14 mmol/L, Laktat 4.8 mmol/L. Boğaz sürüntüsünde ve kanda Gram-pozitif koklar üremesi için kültürler gönderildi."
+                        "explanation": "Ortası göbekli inci gibi kubbe papüller tanı için patognomoniktir; laboratuvar veya biyopsi gerekmez.",
+                        "new_finding": "Tetkik istenmedi; lezyonların klinik morfolojisinin tanı için tam yeterlilikte olduğu teyit edildi.",
                     },
                     {
-                        "text": "Hiçbir kan tetkiki yapmadan yalnızca tüm vücut manyetik rezonans görüntülemesi planlayarak hastayı iki saatlik radyoloji çekimine göndermek",
+                        "text": "Histopatolojik inceleme için genel anestezi altında lezyonlardan çok odaklı cerrahi punch deri biyopsisi alınmasını planlayıp hastaya gün vermek",
                         "is_correct": False,
-                        "scenario_update": "Kararsız hemodinamisi olan çocuk MRG odasında monitörsüz kaldı; hipotansiyonu derinleşti ve acil resüsitasyon gerekti.",
-                        "teaching_point": "Hemodinamik instabilitesi olan septik çocuklarda acil resüsitasyon tamamlanmadan ve organ fonksiyonları belirlenmeden uzun süreli görüntülemeye gönderilmez."
-                    }
-                ]
+                        "scenario_update": "Deri biyopsisi önerisi çocuğu çok korkuttu ve küçük çocukta genel anestezi riski gereksiz yere gündeme geldi.",
+                        "teaching_point": "Tipik klinik görünüme sahip benign papüler lezyonlarda tanı klinik olarak konur; cerrahi deri biyopsisi endike değildir.",
+                    },
+                    {
+                        "text": "Altta yatan hücresel immün yetmezlik olasılığını dışlamak amacıyla lenfosit alt grupları ve serum immünglobulin düzeylerini tetkik olarak göndermek",
+                        "is_correct": False,
+                        "scenario_update": "Gönderilen immünolojik paneller tamamen normal çıktı; poliklinik bekleme süresi uzadı ve gereksiz maliyet oluştu.",
+                        "teaching_point": "Gelişimi normal, tekrarlayan ağır enfeksiyon öyküsü olmayan immünokompetan çocuklarda yaygın kutanöz lezyonlar için rutin immün panel gerekmez.",
+                    },
+                    {
+                        "text": "Papüllerin yüzeyini bistüriyle delerek steril eküvyon çubuğuyla bakteriyel ve fungal kültür örnekleri alıp acilen mikrobiyoloji laboratuvarına göndermek",
+                        "is_correct": False,
+                        "scenario_update": "Papüllerin delinmesi ağrı ve kanamaya yol açtı; kültürlerde patojen üremedi ve iyileşme gecikti.",
+                        "teaching_point": "Pürülan akıntı veya selülit benzeri süperenfeksiyon bulgusu yoksa lezyonları delmek veya kültür almak kontraendikedir.",
+                    },
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Yüksek ateş, hipotansiyon, diffüz eritrodermi, çilek dili ve çoklu organ yetmezliği (renal, hepatik, hematolojik) tablosunun tanısı nedir?",
+                "question": "Öykü ve fizik muayenedeki lezyon morfolojisi dikkate alındığında en olası klinik tanı nedir?",
                 "options": [
                     {
-                        "text": "Klasik Kawasaki Hastalığı",
+                        "text": "Verruka Vulgaris (Yaygın Siğil)",
                         "is_correct": False,
-                        "scenario_update": "Kawasaki hastalığında en az 5 gün inatçı ateş, lenfadenopati ve ekstremite değişiklikleri görülür; ilk 48 saatte dekompanse hipotansif şok oluşturmaz.",
-                        "teaching_point": "Kawasaki hastalığı tipik olarak en az 5 günlük ateş gerektirir ve nadiren erken şok yapar; akut başlangıçlı ağır hipotansiyon ve çoklu organ yetmezliği TŞS'yi gösterir."
+                        "scenario_update": "Verruka vulgariste hiperkeratotik, pürtüklü karnabahar benzeri lezyonlar görülür; düzgün yüzeyli santral umbilike kubbe papüller olmaz.",
+                        "teaching_point": "Verrukalar HPV kaynaklıdır ve yüzeyi sert, hiperkeratotiktir; ortası göbekli inci benzeri morfoloji göstermez.",
                     },
                     {
-                        "text": "Akut Fulminan Meningokoksemi",
+                        "text": "Varisella Zoster (Suçiçeği)",
                         "is_correct": False,
-                        "scenario_update": "Meningokoksemide tipik olarak hızla birleşen purpurik ve ekimotik döküntüler (purpura fulminans) görülür; yaygın güneş yanığı benzeri eritrodermi görülmez.",
-                        "teaching_point": "Meningokoksemi peteşiyal ve nekrotik purpurik lezyonlarla seyreder; diffüz güneşte yanmış gibi basmakla solan maküler eritem ve çilek dili TŞS lehinedir."
+                        "scenario_update": "Suçiçeğinde lezyonlar hızla polimorfik veziküllere dönüşür, kaşıntılıdır, ateş eşlik eder ve haftalarca aynı papül formunda kalmaz.",
+                        "teaching_point": "Varisella akut başlangıçlı, ateşli ve hızla vezikül-krut evrelerine ilerleyen kaşıntılı bir enfeksiyondur.",
                     },
                     {
-                        "text": "Komplike Olmayan Kızıl",
-                        "is_correct": False,
-                        "scenario_update": "Kızılda çilek dili ve zımpara kağıdı benzeri döküntü olabilir ancak dekompanse hipotansiyon, çoklu organ yetmezliği ve şok tablosu gelişmez.",
-                        "teaching_point": "Kızıl hafif-orta seyirli streptokoksik bir toksin tablosudur; organ yetmezliği, koagülopati ve hipotansif şok geliştiğinde tablo artık TŞS olarak adlandırılır."
-                    },
-                    {
-                        "text": "Toksik Şok Sendromu",
+                        "text": "Molluskum Kontagiozum",
                         "is_correct": True,
-                        "explanation": "Yüksek ateş (>38.9°C), diffüz maküler eritrodermi, hipotansiyon ve en az üç organ sistemi tutulumu (GİS, mukoza hiperemisi/çilek dili, renal, hepatik, hematolojik) klasik Toksik Şok Sendromu tanı kriterlerini tam olarak karşılar.",
-                        "new_finding": "Kesin tanı: Stafilokoksik Toksik Şok Sendromu (TŞS). Süperantijen salınımına bağlı ağır kapiller kaçak ve distributif şok doğrulanmıştır."
-                    }
-                ]
+                        "explanation": "Kubbe şeklinde, santral umbilike inci parlaklığındaki papüller Molluscum contagiosum virüsü enfeksiyonu için karakteristiktir.",
+                        "new_finding": "Klinik tanı Molluskum Kontagiozum olarak kesinleştirildi.",
+                    },
+                    {
+                        "text": "Gençlik Ksantogranülomu",
+                        "is_correct": False,
+                        "scenario_update": "Ksantogranülomlar sarı-turuncu renkli, umbilikasyon içermeyen soliter veya az sayıda nodüllerdir; lezyon özellikleri uymamaktadır.",
+                        "teaching_point": "Ksantogranülom sarımsı histiyositik proliferasyon olup santral göbekli parlak inci papülleri yapmaz.",
+                    },
+                ],
             },
             {
-                "stage_title": "Antimikrobiyal Tedavi ve Yoğun Bakım Planı",
-                "question": "Toksik şok sendromu ve distributif şok tablosundaki bu hastada en uygun antimikrobiyal rejim ve yatış kararı ne olmalıdır?",
+                "stage_title": "Tedavi ve Yönetim",
+                "question": "Molluskum kontagiozum tanısı alan bu çocuk ve ailesi için en uygun yönetim stratejisi hangisidir?",
                 "options": [
                     {
-                        "text": "Yalnızca oral amoksisilin şurup reçete ederek hastayı servise bile yatırmadan acil servis yeşil alandan evine taburcu etmek",
+                        "text": "Acil serviste tüm lezyonları cerrahi küretajla kazımak veya sıvı nitrojen koterizasyonuyla seanslar halinde agresif cerrahi kriyoterapi uygulamak",
                         "is_correct": False,
-                        "scenario_update": "Yoğun bakıma alınmayan ve parenteral tedavi verilmeyen hasta ev yolunda kardiyopulmoner arrest geçirerek acile geri döndü.",
-                        "teaching_point": "TŞS ve septik şok tablosundaki çocukların Çocuk Yoğun Bakım Ünitesine yatırılması ve acil kombine parenteral antibiyotik alması zorunludur."
+                        "scenario_update": "Küretaj ve agresif kriyoterapi çocukta kalıcı hipopigmentasyon, hipertrofik skar ve tedaviye bağlı fobiye yol açtı.",
+                        "teaching_point": "Küçük çocuklarda invaziv girişimler skar bırakabilir ve travmatiktir; lezyonların kendiliğinden gerileyeceği unutulmamalıdır.",
                     },
                     {
-                        "text": "İntravenöz vankomisin ve toksin üretimini baskılamak için klindamisin başlayarak hastayı acilen çocuk yoğun bakım ünitesine yatırmak",
+                        "text": "Sistemik yayılımı önlemek için oral asiklovir süspansiyon ve profilaktik geniş spektrumlu oral sefalosporin antibiyotik tedavisi reçete etmek",
+                        "is_correct": False,
+                        "scenario_update": "Poxvirüslere asiklovir etkisizdir ve bakteriyel süperenfeksiyon yokluğunda antibiyotik sadece bağırsak florasını bozdu.",
+                        "teaching_point": "Molluskum kontagiozum bir poxvirüs enfeksiyonudur; asiklovir veya oral antibiyotikler tedavide kesinlikle etkisizdir.",
+                    },
+                    {
+                        "text": "Papülleri hızla kurutmak amacıyla tüm lezyonlu deriye sabah akşam yüksek potensli topikal klobetazol kortikosteroid krem reçete etmek",
+                        "is_correct": False,
+                        "scenario_update": "Güçlü kortikosteroid uygulanması lokal immüniteyi baskılayarak lezyonların hızla çoğalmasına ve büyümesine neden oldu.",
+                        "teaching_point": "Topikal kortikosteroidler virüsün çoğalmasını artırarak molluskum lezyonlarının yayılmasına yol açabilir.",
+                    },
+                    {
+                        "text": "Lezyonların kendiliğinden gerileyeceğini aileye anlatmak, lezyonları sıkma ve kaşımadan kaçınmayı tembihlemek, ortak havlu kullanımını kesinlikle engellemek",
                         "is_correct": True,
-                        "explanation": "TŞS tedavisinde hücre duvarına etkili antibiyotiğe (vankomisin) ek olarak, Eagle etkisini kırıp protein ve süperantijen toksin üretimini ribozomal düzeyde baskılayan klindamisin esastır; hasta ÇYBÜ'de izlenmelidir.",
-                        "new_finding": "Hasta Çocuk Yoğun Bakım Ünitesine (ÇYBÜ) kabul edildi. İntravenöz vankomisin (60 mg/kg/gün) ve klindamisin (40 mg/kg/gün, 3 doza bölünerek) başlandı. İkinci 20 mL/kg kristaloid bolusu ve santral venöz kateterizasyon uygulandı; noradrenalin infüzyonu ile hemodinamik stabilite sağlandı."
+                        "explanation": "İmmünokompetan çocuklarda lezyonlar 6-18 ayda nedbesiz geriler; otokoinokülasyonu ve bulaşı önlemek için sıkmamak ve havlu paylaşmamak esastır.",
+                        "new_finding": "Aileye lezyonların selim doğası anlatıldı. Tırnakların kısa kesilmesi, banyoda liflenmemesi ve yüzme havuzunda lezyonların su geçirmez bantla kapatılması önerildi.",
                     },
-                    {
-                        "text": "Klindamisin eklemeden yalnızca tek başına sefazolin başlamak ve hastayı monitörizasyon yapmaksızın normal cerrahi servis yatağına transfer etmek",
-                        "is_correct": False,
-                        "scenario_update": "Sadece hücre duvarı antibiyotiği verilmesi toksin sentezini durduramadı; süperantijenik fırtına devam etti ve organ yetmezliği derinleşti.",
-                        "teaching_point": "TŞS'de tek başına hücre duvarı inhibitörleri yetersizdir; klindamisin süperantijen ve ekzotoksin sentezini hızla kapatan hayat kurtarıcı ikinci ajandır."
-                    },
-                    {
-                        "text": "Tüm antibiyotikleri keserek hastaya yalnızca yüksek doz oral asetilsalisilik asit vermek ve standart kardiyoloji servisinde izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Antibiyotik kesilmesi üzerine bakteremi ve kontrolsüz toksin salınımı katlandı, trombositopenik hastada gastrointestinal kanama gelişti.",
-                        "teaching_point": "TŞS bakteriyel toksin aracılı akut bir şoktur; antibiyoterapi kesilemez ve yüksek doz aspirin Reye sendromu ile kanama riskini artırır."
-                    }
-                ]
-            }
-        ]
+                ],
+            },
+        ],
     },
     {
         "id": "Y25",
-        "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
-        "age": "14 Aylık",
-        "gender": "Erkek",
-        "complaint": "Ağız çevresi ve bez bölgesinden başlayıp tüm vücuda yayılan parlak kızarıklık, cilde dokunmakla çığlık atarak ağlama ve deride soyulmalar",
-        "history": "Ailesi 14 aylık (10 kg) erkek bebeği Sarı Alana getiriyor: 'Üç gün önce hafif burun akıntısı ve huysuzluğu vardı. Dün ağzının kenarında kabuklanma ve boynunda kızarıklık başladı. Bugün ise bütün vücudu kıpkırmızı oldu; bezini değiştirirken veya kucağımıza alırken derisine hafifçe dokunsak bile canı çok yanıyor gibi çığlık çığlığa ağlıyor. Kollarında ve göbeğinde ince su dolu kabarcıklar patladı ve derisi çarşaf gibi soyulmaya başladı.' Bebeğin ateşi 38.4°C ölçülmüş.",
-        "final_diagnosis": "Stafilokoksik Haşlanmış Deri Sendromu (SSSS / Ritter Hastalığı - Eksfolyatif Toksin A ve B Aracılı Büllöz Epidermolizis)",
-        "disposition": "Sarı Alanda Damar Yolu + İntravenöz Kristaloid Hidrasyonu + İntravenöz Antistafilokoksik Antibiyoterapi (Sefazolin / Nafsilin veya Vankomisin) + Steril Parafinli Nemlendirici Pansuman ile Pediatri Servisine Yatış",
-        "case_pearl": "Stafilokoksik Haşlanmış Deri Sendromu (SSSS / Ritter Hastalığı), genellikle yenidoğan ve <5 yaş çocuklarda Staphylococcus aureus suşlarının ürettiği eksfolyatif toksinlerin (ET-A, ET-B) kan yoluyla yayılıp epidermis stratum granulosum tabakasındaki dezmoglein-1 proteinini parçalamasıyla gelişen büllöz bir tablodur. Toksin böbreklerden atıldığı için renal fonksiyonları immatür olan süt çocuklarında sık görülür. Karakteristik özellikleri: perioral/fleksural eritem, perioral radyal fissür ve kabuklanmalar, aşırı kutanöz hiperestezi (dokunmakla şiddetli ağlama), gevşek büller ve pozitif Nikolsky belirtisidir (teğetsel sürtünmeyle epidermisin kolayca soyulması). EN KRİTİK AYIRICI TANI NOKTASI: SSSS'de ORAL VE GENİTAL MUKOZALAR KORUNMUŞTUR (mukoza tutulumu yoktur). Mukozal tutulum varsa Stevens-Johnson Sendromu (SJS) veya Toksik Epidermal Nekroliz (TEN) düşünülmelidir (ayrıca SJS/TEN'de ayrılma dermal-epidermal bileşkededir). Büller sterildir çünkü patoloji bakterinin kendisinden değil uzaktaki odaktan (nazofarenks, konjonktiva, göbek vb.) salınan toksinden kaynaklanır. Tedavide İV antistafilokoksik antibiyotik, sıvı-elektrolit kaybının karşılanması, steril yara bakımı (yapışmayan pansumanlar) ve analjezi esastır; kortikosteroidler kontrendikedir.",
+        "category": "👶 Ağlayan, Emmeyen, Huzursuz Bebek",
+        "age": "7 Aylık",
+        "gender": "Kız",
+        "complaint": "Alt bez bölgesinde şiddetli kızarıklık, pişik ve huzursuzluk",
+        "history": (
+            "Yedi aylık kız bebek annesi tarafından alt bez bölgesindeki döküntüler nedeniyle getiriliyor: 'Kızımın altındaki "
+            "kızarıklık yaklaşık beş gün önce başladı. Normalde pişik kremi sürünce geçerdi ama bu sefer hiç fayda etmedi, "
+            "aksine daha da koyu kırmızı oldu ve bacak kıvrımlarının içine doğru yayıldı. Kızarıklığın çevresinde küçük sivilce "
+            "gibi kırmızı noktalar çıkmaya başladı. Altını her açtığımızda veya ıslattığında canı çok yanıyor ve durmaksızın "
+            "ağlıyor. İki hafta önce üst solunum yolu enfeksiyonu nedeniyle bir hafta antibiyotik şurup kullanmıştı.'"
+        ),
+        "final_diagnosis": "Bebek Bezi Dermatiti ve Sekonder Kandida Süperenfeksiyonu",
+        "disposition": "Yeşil Alandan Topikal Antifungal, Çinko Oksit Bariyer Krem ve Bez Bakımı Eğitimi ile Taburculuk",
+        "case_pearl": (
+            "Basit irritan bebek bezi dermatitinde inguinal katlantılar korunurken, sekonder Candida albicans süperenfeksiyonu "
+            "eklendiğinde parlak kırmızı eritematöz plaklar inguinal kıvrımları da tutar ve çevreye dağılan noktasal satellit "
+            "püstüller/papüller görülür. Yakın zamanda antibiyotik kullanımı önemli bir kolaylaştırıcı faktördür. Tedavide "
+            "katlantılara topikal antifungal (klotrimazol veya mikonazol), üzerine çinko oksitli bariyer krem uygulanmalı ve "
+            "bölgenin kuru kalması sağlanmalıdır."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Mukoza Muayenesi",
-                "question": "Yaygın kızarıklık, cilde dokunmakla aşırı ağlama ve deride soyulmaları olan 14 aylık bebekte ilk kritik muayene adımı ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Alt bez alanında şiddetli kızarıklık ve huzursuzlukla başvuran bu süt çocuğunda ilk klinik muayene yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Derideki soyulmaları debride etmek için lezyonları gazlı bezle sertçe ovalayarak soymak ve üzerine alkol bazlı dezenfektan sürmek",
+                        "text": "Huzursuzluk ve yaygın cilt bulguları nedeniyle bebeği acil Sarı Alana alıp erken sepsis kuşkusuyla damar yolu açmak",
                         "is_correct": False,
-                        "scenario_update": "Sert mekanik travma ve alkol uygulaması bebekte dayanılmaz ağrıya, yaygın epidermal doku kaybına ve toksisiteye yol açtı.",
-                        "teaching_point": "Yüzeyel büllöz soyulmalarda cilde sert sürtünme ve alkollü solüsyonlar kesinlikle yasaktır; bariyer kaybını ve sıvı kaybını ağırlaştırır."
+                        "scenario_update": "Sarı Alanda bebeğin ateşi olmadığı, beslenmesinin iyi ve hemodinamisinin tamamen stabil olduğu görüldü.",
+                        "teaching_point": "Genel durumu iyi, ateşi ve sistemik enfeksiyon belirtisi olmayan lokalize cilt lezyonlu bebekler Yeşil Alanda değerlendirilir.",
                     },
                     {
-                        "text": "Ağız mukozasını ve konjonktivayı incelemek, teğetsel sürtünmeyle cilt ayrılmasını değerlendirmek ve nazikçe vital bulguları ölçmek",
+                        "text": "Lokal lezyon muayenesini yapmadan önce tüm püstülleri enjektör iğnesiyle patlatarak elde edilen pürülan materyali mikrobiyoloji laboratuvarına ulaştırmak",
+                        "is_correct": False,
+                        "scenario_update": "Püstüllerin mekanik olarak boşaltılması bebeğe şiddetli acı verdi ve deride açık erozyonlar oluşturdu.",
+                        "teaching_point": "İntakt lezyonların agresif şekilde patlatılması ağrı ve sekonder bakteriyel giriş kapısı oluşturur; muayene inspeksiyonla yapılmalıdır.",
+                    },
+                    {
+                        "text": "Vital bulguları almak, perineal bölgeyi, inguinal katlantıları, perianal dokuyu ve oral mukozayı dikkatlice muayene etmek",
                         "is_correct": True,
-                        "explanation": "Gevşek bül ve soyulmayla giden yaygın eritematöz tablolarda oral mukoza tutulumunun olup olmaması ve Nikolsky bulgusu ayırıcı tanıda en kritik basamaktır.",
-                        "new_finding": "Vital Bulgular: Ateş 38.3°C, KTA 136/dk, SS 28/dk, TA 88/54 mmHg, SpO2 %98, KDZ 2 sn. Fizik Muayene: Perioral bölgede radyal çatlaklar ve bal rengi benzeri kabuklanmalar mevcut. Ağız içi oral mukoza, dil ve konjonktivalar tamamen doğal ve nemli (mukoza tutulumu yok). Gövde ve fleksural bölgelerde yaygın parlak eritem; cilde hafif teğetsel sürtünmeyle epidermis tabaka halinde ayrılıyor (pozitif Nikolsky bulgusu), patlamış büllerden seröz sızıntı var, cilt dokunmaya aşırı duyarlı (şiddetli hiperestezi)."
+                        "explanation": "İnguinal kıvrımların tutulumu, periferik çevre püstüllerin varlığı ve eşlik edebilecek oral mukoza lezyonları kritik ayırt edici bulgulardır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 114/dk, SS 26/dk, SpO2 %99. Fizik Muayene: Gluteal, perineal ve her iki inguinal katlantıyı içine alan, parlak 'biftek kırmızısı' eritemli, masere plaklar saptandı. Plağın periferinde sağlam deriye saçılmış çok sayıda 1-2 mm boyutunda noktasal eritematöz çevre püstül ve papüller görüldü. Oral mukozada yanak içinde beyaz membranöz lezyonlar saptandı. Sistemik muayeneler doğal.",
                     },
                     {
-                        "text": "Tabloyu basit pişik ve atopik dermatit alevlenmesi kabul ederek yalnızca çinko oksitli krem sürüp bebeği hemen evine göndermek",
+                        "text": "Kızarıklığın sınırları belirgin olduğu için öncelikle çocuk istismarı açısından genital yaralanma ve travma odaklı adli muayene gerçekleştirmek",
                         "is_correct": False,
-                        "scenario_update": "Evine gönderilen bebeğin tüm vücut epidermisi soyuldu, sıvı-elektrolit kaybına bağlı dehidratasyon ve sekonder sepsis tablosu gelişti.",
-                        "teaching_point": "Pozitif Nikolsky bulgusu, aşırı hiperestezi ve perioral çatlaklar basit pişik değildir; hastaneye yatış gerektiren ciddi toksin ilişkili tablodur."
+                        "scenario_update": "Adli şüphe aileyi renside etti; perineal kıvrımları tutan parlak eritemin tipik bir dermatolojik süreç olduğu anlaşıldı.",
+                        "teaching_point": "Katlantıları tutan masere eritem ve periferik püstüller enfeksiyöz dermatolojik süreçlerle uyumludur; travmatik veya adli özellik taşımaz.",
                     },
-                    {
-                        "text": "Otoimmün büllöz hastalık düşünerek herhangi bir muayene yapmadan doğrudan yüksek doz oral sistemik prednizolon tedavisi başlatmak",
-                        "is_correct": False,
-                        "scenario_update": "Bakteriyel toksin zemininde verilen sistemik immünsüpresif kortikosteroid enfeksiyonun kontrolsüzce yayılmasına ve bakteremiye neden oldu.",
-                        "teaching_point": "Toksin aracılı soyulma tablolarında kortikosteroidler immünsüpresyon yaparak enfeksiyon kontrolünü bozar ve kesinlikle kontrendikedir."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Laboratuvar Tetkikleri ve Enfeksiyon Odağı Araştırması",
-                "question": "Oral mukozası salim, pozitif Nikolsky belirtisi ve belirgin kutanöz hiperestezisi olan bu bebekte en uygun laboratuvar ve tetkik yaklaşımı nedir?",
+                "stage_title": "Tetkik ve Yaklaşım Kararı",
+                "question": "İnguinal katlantıları tutan parlak kızarıklığı ve çevresel püstülleri olan bu bebekte tetkik stratejiniz ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Tam kan, elektrolitler, böbrek fonksiyonları incelemek ve primer odağı saptamak için nazofarenks, konjonktiva ve göbekten kültür almak",
+                        "text": "Sistemik bakteriyemi veya derin doku enfeksiyonu riskini değerlendirmek üzere tam kan sayımı, CRP ve kan kültürünü acilen almak",
+                        "is_correct": False,
+                        "scenario_update": "Laboratuvar sonuçlarında lökosit ve CRP normal sınırlarda geldi; kan alınırken bebek uzun süre sakinleşmedi.",
+                        "teaching_point": "Ateş veya toksik görünümün olmadığı yüzeyel perineal tablolarda sistemik enflamatuar belirteçler ve kan kültürü endike değildir.",
+                    },
+                    {
+                        "text": "Klinik görünüm ve lezyon dağılımı karakteristik olduğundan acil serviste kan tahlili veya radyolojik tetkik istememek",
                         "is_correct": True,
-                        "explanation": "Eksfolyatif toksin ilişkili tablolarda bül sıvısı genellikle sterildir; etken bakteri sıklıkla nazofarenks, konjonktiva, umbilikus veya perioral odakta kolonizedir.",
-                        "new_finding": "Laboratuvar Bulguları: BK 16.400/mm3 (%72 nötrofil), CRP 38 mg/L. Biyokimya: Na 134 mEq/L, K 4.1 mEq/L, Üre 26 mg/dL, Kreatinin 0.35 mg/dL. İntak bül sıvısı Gram boyamasında bakteri görülmedi (steril). Nazofarenks ve perioral kabuk sürüntüsü kültüründe metisiline duyarlı Staphylococcus aureus üremesi saptandı."
+                        "explanation": "İnguinal kıvrım tutulumu ve periferik lezyonlar klinik tanı için yeterlidir; rutin laboratuvar araştırması gerekmez.",
+                        "new_finding": "Gereksiz laboratuvar tetkiklerinden kaçınıldı; klinik bulgularla doğrudan tanı ve tedavi aşamasına geçildi.",
                     },
                     {
-                        "text": "Etkeni izole etmek amacıyla sağlam deriden ve bül tabanından bistüriyle derin cerrahi insizyonel cilt biyopsisi yapmayı planlamak",
+                        "text": "Langerhans hücreli histiyositoz olasılığını dışlamak amacıyla sedasyon altında acil perineal cerrahi punch deri biyopsisi işlemini planlamak",
                         "is_correct": False,
-                        "scenario_update": "İnvaziv cerrahi biyopsi bebekte gereksiz kanamaya ve sekonder bakteriyel yara enfeksiyonuna neden oldu; patoloji yönetimini değiştirmedi.",
-                        "teaching_point": "Ayrılma intraepidermal granüler tabakada olduğundan derin cerrahi biyopsi gereksizdir; tanı klinik bulgular ve odak kültürleri ile konur."
+                        "scenario_update": "Punch biyopsi önerisi aileyi paniğe sevk etti; invaziv işlem bölgedeki doku maserasyonunu artırma riski taşıdı.",
+                        "teaching_point": "Tipik eritematöz masere döküntülerde histiyositoz gibi nadir antiteler ilk aşamada düşünülmez ve acil biyopsi yapılmaz.",
                     },
                     {
-                        "text": "Hastalığın primer etkenini bulmak için bebeğe genel anestezi altında acilen tanısal fleksibl bronkoskopi ve üst gastrointestinal endoskopi uygulamak",
+                        "text": "Perineal döküntülerin idrar yolu enfeksiyonu sekeli olabileceği düşüncesiyle mesane kateterizasyonu uygulayarak steril idrar tahlili ve kültürü göndermek",
                         "is_correct": False,
-                        "scenario_update": "Mukoza tutulumu olmayan bebekte anestezi altında yapılan invaziv endoskopi mukoza hasarı ve anestezi komplikasyonları yarattı.",
-                        "teaching_point": "İç organ veya gastrointestinal mukoza tutulumu olmayan bu klinik antitede invaziv endoskopik incelemelerin yeri yoktur."
+                        "scenario_update": "Ağrılı idrar sondası uygulaması eritemli perineal dokuda kanamaya neden oldu; tam idrar tetkiki normal sonuçlandı.",
+                        "teaching_point": "İdrar yolu enfeksiyonu perineal kıvrımlarda biftek kırmızısı lezyon yapmaz; travmatize dokuya gereksiz kateter uygulanmamalıdır.",
                     },
-                    {
-                        "text": "Hiçbir kan tetkiki ve mikrobiyolojik kültür almadan yalnızca viral seroloji panelini göndererek hastayı hemen antibiyotiksiz taburcu etmeyi planlamak",
-                        "is_correct": False,
-                        "scenario_update": "Kültür alınmadığı için bakteriyel etken ve antibiyotik duyarlılığı tespit edilemedi, hastanın cilt bariyer kaybı kontrolsüz ilerledi.",
-                        "teaching_point": "Toksin salgılayan primer stafilokok odağının tespiti ve antibiyogram için nazofarenks/lezyon kültürü alınması tedavinin temelidir."
-                    }
-                ]
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Oral mukoza tutulumu olmayan, pozitif Nikolsky bulgusu, aşırı hiperestezi ve perioral kabuklanmaları olan bu hastada kesin tanı nedir?",
+                "question": "Öykü, antibiyotik kullanımı ve fizik muayene bulguları birlikte ele alındığında en olası klinik tanı nedir?",
                 "options": [
                     {
-                        "text": "Toksik Epidermal Nekroliz",
+                        "text": "Basit İrritan Bez Dermatiti",
                         "is_correct": False,
-                        "scenario_update": "Toksik epidermal nekrolizde (TEN) en az iki mukozal bölgede (oral, oküler, genital) şiddetli nekrotizan erozyonlar ve tam kat epidermal ayrılma vardır; mukozalar salim kalmaz.",
-                        "teaching_point": "TEN/SJS'de belirgin mukozal tutulum ve dermal-epidermal bileşke nekrozu mevcuttur; SSSS'de ise mukoza kesinlikle salimdir ve ayrılma granüler tabakadadır."
+                        "scenario_update": "Basit irritan dermatitte inguinal katlantılar ve kıvrımlar genellikle korunur, satellit lezyonlar ve parlak eritem izlenmez.",
+                        "teaching_point": "Basit irritan kontakt dermatitte dışbükey yüzeyler tutulurken derin kıvrımlar korunur; kıvrım tutulumu süperenfeksiyon lehinedir.",
                     },
                     {
-                        "text": "Yaygın Büllöz İmpetigo",
+                        "text": "İnvers Psoriyazis (Ters Sedef)",
                         "is_correct": False,
-                        "scenario_update": "Büllöz impetigo lokalize enfeksiyondur; büller bakteri içerir ve yaygın güneş yanığı benzeri eritrodermi veya pozitif Nikolsky bulgusu yapmaz.",
-                        "teaching_point": "Büllöz impetigo lokalize bir enfeksiyon olup intak bül sıvısında bol stafilokok ürer; SSSS'de ise toksin sistemik dolaşımla yayılır, büller sterildir ve Nikolsky pozitiftir."
+                        "scenario_update": "İnvers psoriyaziste parlak kırmızı keskin sınırlı plaklar görülebilse de satellit püstüller ve oral pamukçuk eşliği beklenmez.",
+                        "teaching_point": "İnvers sedefte lezyonlar kıvrımlardadır ancak satellit püstüller bulunmaz ve yakın dönem antibiyotik öyküsüyle ilişkili değildir.",
                     },
                     {
-                        "text": "Stafilokoksik Haşlanmış Deri Sendromu",
+                        "text": "Bebek Bezi Dermatiti ve Sekonder Kandida Süperenfeksiyonu",
                         "is_correct": True,
-                        "explanation": "Süt çocuğunda eksfolyatif toksin aracılı gelişen, perioral kabuklanma, kutanöz hiperestezi, pozitif Nikolsky belirtisi ve en önemlisi oral mukoza tutulumunun olmaması ile karakterize tablo Stafilokoksik Haşlanmış Deri Sendromudur (SSSS / Ritter Hastalığı).",
-                        "new_finding": "Kesin tanı: Stafilokoksik Haşlanmış Deri Sendromu (SSSS / Ritter Hastalığı). Toksin aracılı intraepidermal granüler tabaka ayrılması teyit edildi."
+                        "explanation": "İnguinal kıvrımların belirgin tutulumu, parlak biftek kırmızısı maserasyon, satellit püstüller ve oral tutulum tipiktir.",
+                        "new_finding": "Klinik tanı Bebek Bezi Dermatiti ve Sekonder Kandida Süperenfeksiyonu olarak doğrulandı.",
                     },
                     {
-                        "text": "Termal Sıcak Su Yanığı",
+                        "text": "Streptokokal Perianal Selülit",
                         "is_correct": False,
-                        "scenario_update": "Termal haşlanma yanığında temas öyküsü, sınırları belirgin eritem ve derin doku hasarı olur; perioral çatlaklar veya pozitif Nikolsky görülmez.",
-                        "teaching_point": "Haşlanma benzeri görünüm olsa da temas öyküsünün olmaması, perioral radyal fissürler ve teğetsel sürtünmeyle soyulma bakteriyel toksik tabloyu kanıtlar."
-                    }
-                ]
+                        "scenario_update": "Perianal streptokokal enfeksiyonda anüs çevresinde keskin sınırlı parlak eritem ve kanamalı defekasyon görülür; inguinal katlantılar tutulmaz.",
+                        "teaching_point": "Streptokokal hastalıkta anüs çevresi sınırlı tutulur ve satellit püstüller görülmez.",
+                    },
+                ],
             },
             {
-                "stage_title": "Tedavi, Yara Bakımı ve Yatış Yönetimi",
-                "question": "Stafilokoksik haşlanmış deri sendromu tanısı kesinleşen 14 aylık bu bebekte en uygun tedavi ve bakım yaklaşımı ne olmalıdır?",
+                "stage_title": "Tedavi ve Yönetim",
+                "question": "Kandida süperenfeksiyonlu bebek bezi dermatiti tanısı kesinleşen bu bebek için en uygun tedavi yaklaşımı nedir?",
                 "options": [
                     {
-                        "text": "Herhangi bir antibiyotik vermeden yalnızca yüksek doz oral kortikosteroid şurup başlamak ve bebeği acil servisten hemen evine taburcu etmek",
+                        "text": "Enflamasyonu derhal baskılamak amacıyla günde iki kez yüksek potensli topikal florlu kortikosteroid krem reçete edip taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Kortikosteroid verilerek taburcu edilen bebekte bağışıklık baskılandı, stafilokoksik bakteremi ve septik şok tablosu gelişti.",
-                        "teaching_point": "SSSS'de kortikosteroid kullanımı kesinlikle kontrendikedir; enfeksiyonun yayılmasına neden olur. Temel tedavi parenteral antistafilokoksik antibiyotiktir."
+                        "scenario_update": "Güçlü steroid antifungal olmadan uygulandığı için fungal proliferasyon şiddetlendi ve cilt atrofisi gelişti.",
+                        "teaching_point": "Fungal süperenfeksiyon varlığında tek başına güçlü steroid kullanımı mantarın çoğalmasına ve sistemik emilime yol açar.",
                     },
                     {
-                        "text": "Lezyonları kurutmak amacıyla tüm vücuda alkollü tentürdiyot sürmek ve hidrasyon vermeksizin bebeği ayaktan poliklinik kontrolüne yönlendirmek",
+                        "text": "Süperenfeksiyonun derin dokulara yayılmasını önlemek amacıyla bebeği yatırıp intravenöz flukonazol infüzyonu ve parenteral geniş spektrumlu antibiyotik başlamak",
                         "is_correct": False,
-                        "scenario_update": "Açık epidermal alana uygulanan tentürdiyot sistemik iyot toksisitesi yarattı, şiddetli ağrı ve dehidratasyon tablosunu derinleştirdi.",
-                        "teaching_point": "Epidermal bariyeri kaybolmuş deriye tahriş edici antiseptikler uygulanmaz; steril nemlendirici ve yapışmayan pansumanlarla cilt bütünlüğü korunmalıdır."
+                        "scenario_update": "İnvaziv fungal enfeksiyonu olmayan stabil bebekte gereksiz hastane yatışı ve parenteral ilaç toksisite riski doğdu.",
+                        "teaching_point": "Yüzeyel kutanöz fungal enfeksiyonlarda hemodinami stabilse parenteral tedavi endike değildir; topikal tedavi yeterlidir.",
                     },
                     {
-                        "text": "Cilt lezyonlarını cerrahi olarak debride etmek için bebeği acil ameliyathaneye alarak tüm cilde genel anestezi altında zımparalama uygulamak",
+                        "text": "Lezyonlara talk pudrası uygulayarak bölgeyi kurutmak ve eşzamanlı olarak oral yoldan amoksisilin-klavulanat antibiyotik şurup reçete ederek taburculuk planlamak",
                         "is_correct": False,
-                        "scenario_update": "Gereksiz agresif cerrahi debridman derin doku hasarı, kontrolsüz masif kanama ve kalıcı skarlaşma komplikasyonlarına yol açtı.",
-                        "teaching_point": "SSSS'de doku nekrozu yoktur, ayrılma çok yüzeyeldir (granüler tabaka); kendiliğinden iz bırakmadan iyileşir, cerrahi debridman yapılmaz."
+                        "scenario_update": "Pudra kullanımı aspirasyon riski yarattı ve ciltte granülasyona neden oldu; antibiyotik ise mantar florasını daha da artırdı.",
+                        "teaching_point": "Pudra solunum yolu için tehlikelidir; antibiyotikler koruyucu bakterileri yok ederek kandida üremesini alevlendirir.",
                     },
                     {
-                        "text": "İntravenöz antistafilokoksik antibiyotik başlamak, sıvı ve elektrolit desteği sağlamak, steril yapışmayan nemlendirici pansumanlar uygulayarak servise yatırmak",
+                        "text": "Topikal klotrimazol krem ile çinko oksit bariyer krem başlamak, altını sık değiştirmek ve kuru tutulmasını sağlamak",
                         "is_correct": True,
-                        "explanation": "SSSS tedavisinde İV antistafilokoksik antibiyotik (sefazolin veya vankomisin), epidermal bariyer kaybına bağlı hidrasyon desteği, steril yapışmayan parafinli pansumanlar ve analjezi esastır; kortikosteroidler kontrendikedir.",
-                        "new_finding": "Bebek pediatri servisine yatırıldı. İV sefazolin (100 mg/kg/gün) ve idame + %20 fazlası izotonik hidrasyon başlandı. Lezyonlara steril beyaz vazelin/parafinli gazlı bezler uygulandı, sürtünmeden kaçınıldı. 48 saat içinde ateş düştü, deskuamasyon durdu ve 5. günde iz bırakmadan tam re-epitelizasyon sağlandı."
-                    }
-                ]
-            }
-        ]
-    }
+                        "explanation": "Günde 2-3 kez topikal antifungal (klotrimazol veya mikonazol), üzerine bariyer krem sürülmeli ve bölge havalandırılmalıdır.",
+                        "new_finding": "Topikal antifungal ve çinko oksit bariyer krem başlandı. Eşlik eden oral pamukçuk için nistatin damla reçete edildi ve bez bakımı eğitimi verildi.",
+                    },
+                ],
+            },
+        ],
+    },
 ]

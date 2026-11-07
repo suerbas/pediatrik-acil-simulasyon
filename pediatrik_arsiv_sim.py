@@ -1038,7 +1038,7 @@ def render_archive_header():
     with c_search:
         st.text_input(
             "Arşivde Ara:",
-            placeholder="🔍 Tüm arşivde serbest ara (örn: Guillain, yoğun bakım, menenjit, kusma, G14...)",
+            placeholder="🔍 Tüm arşivde serbest ara (örn: Guillain, yoğun bakım, menenjit, kusma, Y14...)",
             label_visibility="collapsed",
             key="search_input_box",
         )
@@ -1048,7 +1048,7 @@ def render_archive_header():
 
 def render_case_card(case: dict, is_drawer_open: bool = False):
     cid = case["id"]
-    is_yellow = cid.startswith("Y")
+    is_yellow = cid.startswith("S")
     zone_label = "Sarı Alan" if is_yellow else "Yeşil Alan"
     pill_class = "pill-yellow" if is_yellow else ""
     is_solved = cid in st.session_state.solved_case_ids
@@ -1142,7 +1142,7 @@ def render_drawer(case: dict):
     steps = case["steps"]
     total_steps = len(steps)
     current_idx = st.session_state.drawer_step_idx
-    is_yellow = cid.startswith("Y")
+    is_yellow = cid.startswith("S")
     zone_label = "🟡 Sarı Alan (Acil Gözlem)" if is_yellow else "🟢 Yeşil Alan (Poliklinik)"
     pill_class = "pill-yellow" if is_yellow else ""
 
@@ -1345,9 +1345,9 @@ def main():
     filtered = all_cases
     tab = st.session_state.active_tab
     if tab == "GREEN":
-        filtered = [c for c in filtered if c["id"].startswith("G")]
-    elif tab == "YELLOW":
         filtered = [c for c in filtered if c["id"].startswith("Y")]
+    elif tab == "YELLOW":
+        filtered = [c for c in filtered if c["id"].startswith("S")]
 
     # 2. Anahtar Kelime Filtresi (Önbelleğe alınmış etiketlerden anlık O(1) hızında filtreleme)
     active_tag = st.query_params.get("tag", "").strip()

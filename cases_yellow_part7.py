@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Pediatrik Acil Simülasyonu - Sarı Alan Vakaları (Bölüm 7: Y61 - Y70)
+Pediatrik Acil Simülasyonu - Sarı Alan Vakaları (Bölüm 7: S61 - S70)
 """
 
-YELLOW_CASES_PART7 = [{'id': 'Y61',
+YELLOW_CASES_PART7 = [{'id': 'S61',
   'category': '🌡️ Ateş & Döküntü / Enfeksiyon',
   'age': '3 Yaşında',
   'gender': 'Erkek',
@@ -148,7 +148,7 @@ YELLOW_CASES_PART7 = [{'id': 'Y61',
                           'new_finding': 'İVİG ve aspirin başlandı. 36 saatte ateş düştü, CRP geriledi. İkinci hafta '
                                          "ekokardiyografide koroner Z skoru +2.1'e indi; altıncı haftada normaldi. "
                                          'Düşük doz aspirin kardiyoloji önerisiyle kesildi.'}]}]},
- {'id': 'Y62',
+ {'id': 'S62',
   'category': '🦴 Kas-İskelet & Eklem / Ortopedik Aciller',
   'age': '2 Yaşında',
   'gender': 'Kız',
@@ -284,7 +284,7 @@ YELLOW_CASES_PART7 = [{'id': 'Y61',
                                          "S. aureus üredi. 72. saatte ateş düştü, CRP 34 mg/L'ye indi; oral "
                                          'sefaleksine geçildi ve tedavi üç haftaya tamamlandı. Eklem hareketleri '
                                          'normale döndü.'}]}]},
- {'id': 'Y63',
+ {'id': 'S63',
   'category': '💧 Sıvı-Elektrolit & Renal / Ürolojik Aciller',
   'age': '8 Yaşında',
   'gender': 'Erkek',
@@ -425,7 +425,7 @@ YELLOW_CASES_PART7 = [{'id': 'Y61',
                                              'nedeniyle çocukta nöbet gelişti.',
                           'teaching_point': 'Tipik seyirde immünsüpresyon endike değildir; hipertansiyon acilen tedavi '
                                             'edilmelidir.'}]}]},
- {'id': 'Y64',
+ {'id': 'S64',
   'category': '💧 Sıvı-Elektrolit & Renal / Ürolojik Aciller',
   'age': '4 Yaşında',
   'gender': 'Erkek',
@@ -565,7 +565,7 @@ YELLOW_CASES_PART7 = [{'id': 'Y61',
                                              'gelişti.',
                           'teaching_point': 'Albümin ve diüretik yalnızca semptomatik ağır ödemde, hacim azlığı yoksa '
                                             've yakın izlemle kullanılır.'}]}]},
- {'id': 'Y65',
+ {'id': 'S65',
   'category': '🧠 Nörolojik Aciller',
   'age': '7 Yaşında',
   'gender': 'Kız',
@@ -706,7 +706,7 @@ YELLOW_CASES_PART7 = [{'id': 'Y61',
                                              'yatırıldı.',
                           'teaching_point': 'Dantrolen malign hipertermi ve seçilmiş nöroleptik malign sendrom '
                                             'olgularında kullanılır.'}]}]},
- {'id': 'Y66',
+ {'id': 'S66',
   'category': '🩸 Hematolojik & Onkolojik Aciller',
   'age': '6 Yaşında',
   'gender': 'Erkek',
@@ -844,7 +844,7 @@ YELLOW_CASES_PART7 = [{'id': 'Y61',
                                          'enfeksiyonu araştırılır.',
                           'new_finding': 'Sefepim ile 48. saatte ateş düştü, kan kültürü negatif kaldı. Nötrofil '
                                          "sayısı 7. günde 600/mm³'ün üzerine çıktı ve antibiyotik kesildi."}]}]},
- {'id': 'Y67',
+ {'id': 'S67',
   'category': '🩸 Hematolojik & Onkolojik Aciller',
   'age': '9 Yaşında',
   'gender': 'Kız',
@@ -980,7 +980,7 @@ YELLOW_CASES_PART7 = [{'id': 'Y61',
                           'scenario_update': 'Yüksek hemoglobin kan viskozitesini artırdı ve ağrı kötüleşti.',
                           'teaching_point': 'Komplikasyonsuz ağrı krizinde transfüzyon endike değildir; hedef Hb 10 '
                                             "g/dL'yi aşmamalıdır."}]}]},
- {'id': 'Y68',
+ {'id': 'S68',
   'category': '👶 Yenidoğan Acilleri',
   'age': '3 Günlük',
   'gender': 'Erkek',
@@ -1118,7 +1118,7 @@ YELLOW_CASES_PART7 = [{'id': 'Y61',
                                          "Altıncı saatte bilirubin 17.1 mg/dL'ye geriledi ve kan değişimine gerek "
                                          'kalmadı. Bebek 72. saatte fototerapiden çıkarıldı; işitme taraması (ABR) '
                                          'planlandı.'}]}]},
- {'id': 'Y69',
+ {'id': 'S69',
   'category': '💊 Toksikoloji & Metabolik / Endokrin Aciller',
   'age': '14 Günlük',
   'gender': 'Kız',
@@ -1258,7 +1258,7 @@ YELLOW_CASES_PART7 = [{'id': 'Y61',
                                              'hipotansiyon gelişti.',
                           'teaching_point': 'Krizde öncelik intravenöz hidrokortizondur; oral mineralokortikoid '
                                             'stabilizasyon sonrası eklenir.'}]}]},
- {'id': 'Y70',
+ {'id': 'S70',
   'category': '💊 Toksikoloji & Metabolik / Endokrin Aciller',
   'age': '11 Yaşında',
   'gender': 'Kız',

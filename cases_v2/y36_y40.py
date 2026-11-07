@@ -1,674 +1,742 @@
 # -*- coding: utf-8 -*-
 """
-Sarı Alan Vakaları - Y36 - Y40 (v2 Şartnamesine Uygun Yeniden Yazım)
+Yeşil Alan Vakaları - Y36-Y40 (v2 Şartname ve Doğrulama Uyumlu)
+Y37, Y38, Y39, Y40 vakaları Yeşil Alana başvurup muayenede saptanan kritik bulgular nedeniyle
+1. Adımda Sarı Alana devredilerek yönetimine Sarı Alanda devam edilen vakalardır.
 """
 
 CASES = [
     {
         "id": "Y36",
-        "category": "🧠 Nörolojik Belirtiler & Konvülziyon",
-        "age": "7 Yaş",
-        "gender": "Kız",
-        "complaint": "İki hafta önceki ishalin ardından ayak parmaklarında başlayan uyuşma, bacaklardan yukarı yayılan kas güçsüzlüğü ve ayağa kalkamama",
-        "history": "7 yaşındaki kız çocuğu annesi tarafından Sarı Alana getiriliyor: 'Yaklaşık on gün önce geçirdiği sulu ishal ve karın ağrısı tamamen düzelmişti. Üç gün önce önce ayak parmaklarında karıncalanma hissettiğini söyledi, ardından yürürken sendelemeye ve merdiven çıkamamaya başladı. Bugün sabahtan beri bacaklarını hiç kaldıramıyor, yataktan tek başına kalkamıyor ve kollarını kaldırırken de güçsüzlük hissettiğini söylüyor. İdrar veya dışkı kaçırması olmadı.'",
-        "final_diagnosis": "Guillain-Barré Sendromu (Akut İnflamatuar Demiyelinizan Polinöropati - AIDP)",
-        "disposition": "Çocuk Yoğun Bakım Ünitesine Yatış + İntravenöz İmmünglobulin (IVIG, 2 g/kg) İnfüzyonu + Seri Vital Kapasite ve Solunum / Otonomik Monitörizasyon",
-        "case_pearl": "Guillain-Barré Sendromu (GBS), sıklıkla geçirilmiş gastrointestinal (Campylobacter jejuni vb.) veya üst solunum yolu enfeksiyonunu izleyen, simetrik, asendan (aşağıdan yukarı ilerleyen) flask paralizi ve arefleksi ile karakterize post-enfeksiyöz otoimmün periferik polinöropatidir. En kritik hayatı tehdit edici riskler diyafram ve interkostal solunum kası tutulumuna bağlı solunum yetmezliği ile otonom disfonksiyondur (ani kardiyak aritmiler, labil kan basıncı). Lomber ponksiyonda protein yüksekliği ve lökosit sayısının normal olması (albüminositolojik dissosiasyon) tanıyı destekler ancak erken dönemde protein düzeyi normal çıkabilir. Birinci basamak immünomodülatör tedavi İVİG (2 g/kg, 2-5 günde) veya plazmaferezdir; kortikosteroidlerin tek başına plaseboya üstünlüğü gösterilmemiştir ve önerilmez.",
+        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
+        "age": "5 Yaş",
+        "gender": "Erkek",
+        "complaint": "Akşamları ve gece uykudan uyandıran iki taraflı bacak ağrısı",
+        "history": (
+            "Annesi anlatıyor: 'Oğlum son 2 aydır haftada 2-3 gece bacaklarım sızlıyor diyerek "
+            "ağlayarak uyanıyor. Her iki kaval kemiği ve baldırlarını ovmamızı istiyor, masaj yapınca "
+            "rahatlayıp tekrar uykuya dalıyor. Sabah kalktığında ise hiçbir şeyi kalmıyor, gün boyu "
+            "kreşte koşturup oynuyor. Gündüz hiç topallamıyor, eklemlerinde şişlik veya kızarıklık "
+            "olmadı. Bu gece ağrısı çok şiddetlenince endişelenip acile getirdik.'"
+        ),
+        "final_diagnosis": "Büyüme Ağrıları (Benign Noktürnal Ekstremite Ağrısı)",
+        "disposition": "Yeşil Alandan Aileye Güvence, Masaj/Sıcak Uygulama Eğitimi ve Rutin Poliklinik Önerisi ile Taburculuk",
+        "case_pearl": (
+            "Tipik olarak 3-12 yaş arası çocuklarda görülen büyüme ağrıları (benign noktürnal "
+            "ekstremite ağrısı), akşam veya gece ortaya çıkan, iki taraflı, derin sızlayıcı, eklemleri "
+            "tutmayan ve sabah tamamen kaybolan ağrılardır. Gündüz ağrı olmaması, topallama veya "
+            "fizik muayenede lokalize şişlik/hassasiyet/kızarıklık bulunmaması ve sistemik bulgu "
+            "(ateş, kilo kaybı) olmaması benign niteliği gösterir; tetkiksiz izlem esastır, aile "
+            "güvencesi, lokal masaj ve sıcak uygulama yeterlidir."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Nöromusküler Solunum Muayenesi",
-                "question": "İlerleyici simetrik kas güçsüzlüğü ve yürüme kaybı ile başvuran 7 yaşındaki çocukta ilk muayene ve güvenlik yaklaşımınız ne olmalıdır?",
+                "stage_title": "Fizik ve Lokomotor Sistem Muayenesi",
+                "question": "Gece uykudan uyandıran iki taraflı bacak ağrısıyla Yeşil Alana getirilen 5 yaşındaki bu çocukta fizik muayenede öncelikle ne yapmalısınız?",
                 "options": [
                     {
-                        "text": "Sadece kaba kas gücünü değerlendirip periferik nöropati şüphesiyle çocuğu servise yatırmak, solunum seslerini ve diyafram hareketlerini izlem dışı bırakmak",
+                        "text": "Ağrının nöropatik bası kaynaklı olabileceğini düşünerek lumbosakral vertebraları palpe etmek, alt ekstremite derin tendon reflekslerini ve duyu seviyesini ayrıntılı incelemek",
                         "is_correct": False,
-                        "scenario_update": "Solunum fonksiyonları izlenmeyen hastada saatler içinde sinsi diyafram parezisi gelişti, takipne ve hipoksemi fark edilmeyerek akut solunum arresti tablosu ortaya çıktı.",
-                        "teaching_point": "İlerleyici flask paralizilerde diyafram ve interkostal solunum kası tutulumu hayatı tehdit eder; hastanın solunum paternı, vital kapasitesi ve periferik oksijenasyonu sürekli değerlendirilmelidir."
+                        "scenario_update": "Lumbosakral omurga ve nörolojik muayene tamamen doğal bulundu; ancak alt ekstremite eklemleri ve kemik yapıları değerlendirilmediği için organik patolojiler dışlanamadı.",
+                        "teaching_point": "İki taraflı bacak ağrısı olan çocukta öncelikle eklemler, kemikler ve kas grupları doğrudan muayene edilerek lokal inflamasyon, efüzyon ve hassasiyet araştırılmalıdır.",
                     },
                     {
-                        "text": "Ekstremite motor gücünü, derin tendon reflekslerini ve solunum paternini inceleyip zorlu vital kapasite takibi amacıyla monitörize alana almak",
+                        "text": "Alt ekstremite eklemlerinin hareket açıklığını, tibia ve baldır kaslarını palpasyonla, yürüyüş paternini ve bölgesel eritem veya ödem varlığını detaylı incelemek",
                         "is_correct": True,
-                        "explanation": "Asendan kas güçsüzlüklerinde solunum yetmezliği ve kardiyovasküler instabilite riski nedeniyle motor güç, refleksler ve vital kapasite öncelikli olarak değerlendirilmeli ve monitörize edilmelidir.",
-                        "new_finding": "Vital Bulgular: KTA 98/dk, SS 22/dk, TA 108/66 mmHg, SpO2 %98, Ateş 36.6°C. Fizik Muayene: Bilinç açık, kooperasyonu tam, kranial sinir muayenesi doğal. Kas gücü alt ekstremite distalde 2/5, proksimalde 3/5, üst ekstremitede 4/5 düzeyinde simetrik azalmış. Bilateral patella ve aşil refleksleri alınamadı (arefleksi), üst ekstremitede hiporefleksi saptandı. Patolojik refleks yok. Tek nefeste 25'e kadar sayabiliyor, yüzeyel duyular korunmuş."
+                        "explanation": "Çocuklarda gece gelen ekstremite ağrılarında ilk adım; artrit, osteomiyelit veya maligniteyi dışlamak için eklem hareket açıklığı, kemik hassasiyeti ve yürüyüş muayenesini yapmaktır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 92/dk. Her iki diz, ayak bileği ve kalça eklemlerinde hareket açıklığı tam ve ağrısız; efüzyon, ısı artışı veya eritem yok. Tibia ve baldır kaslarında hassasiyet saptanmadı. Yürüyüş paterni simetrik ve normal; topallama yok. Sistemik muayene ve lenf nodu değerlendirmesi doğal.",
                     },
                     {
-                        "text": "Kas güçsüzlüğünü histerik konversiyon reaksiyonu kabul ederek psikiyatri konsültasyonu istemek ve sedasyon uygulayarak motor fonksiyonların uykuda düzelmesini izlemek",
+                        "text": "Ağrının derin ven trombozuna bağlı olabileceğini varsayarak her iki baldır çapını mezura ile ölçmek ve acil kompresyon ultrasonografisi planlayarak çocuğu Sarı Alana almak",
                         "is_correct": False,
-                        "scenario_update": "Organik flask paralizisi olan hastaya uygulanan sedatif ajan solunum eforunu daha da baskılayarak derin hipoventilasyon ve hiperkapni gelişimine zemin hazırladı.",
-                        "teaching_point": "Derin tendon reflekslerinin kaybı (arefleksi) ve simetrik flask kas zayıflığı kesin organik periferik nöropati göstergesidir; bu tablo asla psikosomatik reaksiyon olarak yorumlanamaz."
+                        "scenario_update": "Baldır çapları simetrik bulundu ve tromboz risk faktörü olmayan çocuk gereksiz yere ileri acil alanına devredildi.",
+                        "teaching_point": "Önceden sağlıklı, travma veya santral kateter öyküsü olmayan bir çocukta iki taraflı gece ağrısı derin ven trombozu lehine değildir; Sarı Alana devir gerekmez.",
                     },
                     {
-                        "text": "Dengesizlik ve güç kaybının santral vestibüler kökenli olduğunu varsayıp oral dimenhidrinat tedavisi başlamak ve semptomların ayaktan gerilemesini beklemek",
+                        "text": "Muayeneyi yalnızca çocuğun bacaklarını görsel olarak incelemekle sınırlı tutup ağrıyı psikolojik kökenli kabul ederek aileye çocuk psikiyatrisi randevusu almalarını önermek",
                         "is_correct": False,
-                        "scenario_update": "Vestibüler supresan verilen hastada nörolojik kayıplar saatler içinde yukarı doğru ilerledi, üst ekstremitelerde tam güç kaybı ve yutma güçlüğü eklendi.",
-                        "teaching_point": "Bilateral arefleksi ve asendan güç kaybı periferik sinir lezyonunu işaret eder; vestibüler patolojiler flask kas güçsüzlüğü ve derin tendon refleksi kaybı yapmaz."
-                    }
-                ]
+                        "scenario_update": "Eklemler ve kemik yapıları palpe edilmeden yapılan yüzeysel değerlendirme olası organik patolojilerin atlanma riskini doğurdu ve aileyi tedirgin etti.",
+                        "teaching_point": "Geceleri çocuğu uykudan uyandıran ağrılarda fizik muayene ve lokomotor sistem muayenesi eksiksiz yapılmadan fonksiyonel veya psikolojik etiketleme yapılmamalıdır.",
+                    },
+                ],
             },
             {
-                "stage_title": "Laboratuvar İncelemeleri ve Lomber Ponksiyon Analizi",
-                "question": "İlerleyici asendan flask parezi ve arefleksi saptanan bu hastada ayırıcı klinik tabloyu netleştirmek için en uygun tetkik yaklaşımı nedir?",
+                "stage_title": "Tetkik ve Laboratuvar İstem Kararı",
+                "question": "Gündüz tamamen asemptomatik olan, fizik muayenesi normal bulunan ve alarm bulgusu taşımayan bu çocukta yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Yalnızca kan elektrolitleri ve tam idrar tetkiki göndermek, lomber ponksiyon girişimini lüzumsuz bularak ileri nörolojik tetkik planlamadan izlem yapmak",
+                        "text": "Kemik kaynaklı primer tümör veya lösemiyi ekarte etmek amacıyla her iki kruris iki yönlü direkt radyografisi ve periferik yayma tetkikleri istemek",
                         "is_correct": False,
-                        "scenario_update": "Elektrolitleri ve idrarı normal çıkan hastanın patolojisi aydınlatılamadı; tanı ve hedefe yönelik immünomodülatör tedavi geciktiği için kas zayıflığı göğüs kafesine yayıldı.",
-                        "teaching_point": "Akut simetrik flask polinöropatilerde BOS incelemesi ve nörogörüntüleme kilit rol oynar; yalnızca rutin biyokimya ile tanı konulamaz ve tedavi geciktirilmemelidir."
+                        "scenario_update": "Radyografilerde periost reaksiyonu veya litik lezyon izlenmedi; periferik yayma normal bulundu ancak çocuk gereksiz radyasyon aldı ve ailesi aşırı kaygılandı.",
+                        "teaching_point": "Lokalize kemik hassasiyeti, tek taraflı tutulum, gündüz ağrısı, kilo kaybı ve gece terlemesi olmayan tipik noktürnal ağrılarda rutin radyografi veya yayma gerekmez.",
                     },
                     {
-                        "text": "Tüm omurgayı kapsayan acil direkt röntgen grafileri çekmek ve kalsiyum yüksekliğini dışlamak amacıyla parathormon ile idrar kalsiyum düzeylerini incelemek",
+                        "text": "İnflamatuar eklem hastalığını dışlamak amacıyla tam kan sayımı, eritrosit sedimentasyon hızı, C-reaktif protein, romatoid faktör ve antinükleer antikor paneli istemek",
                         "is_correct": False,
-                        "scenario_update": "Direkt kemik grafileri ve kalsiyum metabolizması tetkikleri tamamen normal geldi; çekimler esnasında zaman kaybedilerek hastanın solunum kası rezervi azaldı.",
-                        "teaching_point": "Direkt radyografiler nöral dokuları ve periferik sinir inflamasyonunu göstermez; akut nöromusküler güçsüzlükte radyografik kemik grafilerinin yeri yoktur."
+                        "scenario_update": "Laboratuvar sonuçları: Hemoglobin 12.8 g/dL, Lökosit 7.200/mm³, CRP 0.8 mg/L, ESH 6 mm/saat, ANA negatif çıktı; çocuğa gereksiz invaziv damar yolu işlemi uygulandı.",
+                        "teaching_point": "Ateş, eklemde şişlik, hareket kısıtlılığı veya sabah tutukluğu olmayan tipik iki taraflı ağrılarda romatolojik otoantikor ve akut faz reaktanları paneli istenmez.",
                     },
                     {
-                        "text": "Öncelikle periferik sinir biyopsisi için cerrahi hazırlık yapmak ve histopatolojik teyit gelene kadar lomber ponksiyon uygulamasını kesinlikle ertelemek",
-                        "is_correct": False,
-                        "scenario_update": "Gereksiz invaziv biyopsi hazırlığı saatler sürdü ve cerrahi stres altında hastanın hemodinamik stabilitesi bozularak taşiaritmi atakları tetiklendi.",
-                        "teaching_point": "Akut periferik polinöropati tanısında sinir biyopsisi kesinlikle endike değildir; tanı BOS incelemesi, klinik bulgular ve gerekirse elektrofizyoloji ile konulur."
-                    },
-                    {
-                        "text": "Acil beyin-omurilik manyetik rezonans görüntüleme ile basıyı dışlamak ve beyin omurilik sıvısı biyokimya-hücre analizini gerçekleştirmek",
+                        "text": "Öykü ve fizik muayene tipik benign noktürnal paterni desteklediği ve alarm bulgusu bulunmadığı için ek radyolojik veya biyokimyasal tetkik istememek",
                         "is_correct": True,
-                        "explanation": "Miyelopati ve spinal kord basısını dışlamak için MRG, periferik sinir kök tutulumu ve protein artışını göstermek için BOS analizi altın standart adımlardır.",
-                        "new_finding": "Spinal ve Kraniyal MRG: Akut kord basısı, miyelit veya kitle lezyonu saptanmadı; lomber sinir köklerinde ve kauda ekinada kontrast tutulumu izlendi. Lomber Ponksiyon Analizi: BOS berrak, açılış basıncı 130 mmH2O (normal). Mikroskopi: 1 lökosit/mm³ (hücresel artış yok). BOS Proteini: 148 mg/dL (belirgin yüksek, normal: 15-45 mg/dL), BOS Glukozu: 64 mg/dL (eş zamanlı kan şekeri 98 mg/dL). Serum elektrolitleri, kreatin kinaz (CK) ve tiroid fonksiyonları normal."
-                    }
-                ]
+                        "explanation": "Tipik klinik prezentasyonda (iki taraflı, akşam/gece gelen, sabah kaybolan, gündüz aktivitesi ve muayenesi doğal) tanı tamamen kliniktir; hiçbir laboratuvar veya görüntüleme tetkiki gerekmez.",
+                        "new_finding": "Ek laboratuvar veya görüntüleme tetkiki istenmedi. Öykü ve fizik muayene bulgularıyla tanısal değerlendirmeye geçildi.",
+                    },
+                    {
+                        "text": "Eklem içi kıkırdak hasarı ve erken evre sinoviti değerlendirmek amacıyla her iki diz eklemine yönelik kontrastlı manyetik rezonans görüntüleme randevusu planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Sedasyon gerektiren pahalı ve ileri düzey görüntüleme randevusu planlandı; ancak muayenesi doğal çocukta gereksiz sağlık kaynağı tüketimine yol açtı.",
+                        "teaching_point": "Eklem efüzyonu, hareket kısıtlılığı veya inflamasyon belirtisi olmayan, ağrısı baldır ve kaval kemiğinde lokalize çocuklarda manyetik rezonans görüntüleme kesinlikle endike değildir.",
+                    },
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Gastroenterit öyküsü sonrası simetrik asendan flask paralizi, arefleksi ve BOS'ta hücre artışı olmaksızın izole protein yüksekliği saptanan hastada öncelikli klinik tanınız nedir?",
+                "question": "Klinik öykü ve normal fizik muayene bulguları ışığında bu hastadaki en olası tanı hangisidir?",
                 "options": [
                     {
-                        "text": "Guillain-Barré Sendromu (Akut Polinöropati)",
+                        "text": "Büyüme Ağrıları (Benign Noktürnal Ekstremite Ağrısı)",
                         "is_correct": True,
-                        "explanation": "Geçirilmiş enfeksiyonu takiben simetrik ilerleyici asendan kas zayıflığı, arefleksi ve BOS'ta albüminositolojik dissosiasyon varlığı tipik Guillain-Barré sendromu (AIDP) tablosudur.",
-                        "new_finding": "Kesin Tanı: Guillain-Barré Sendromu (Akut İnflamatuar Demiyelinizan Polinöropati). Solunum kası yorgunluğu ve otonom disfonksiyon riski açısından ileri tedavi planlandı."
+                        "explanation": "3-12 yaş arasında akşam veya gece uykudan uyandıran, her iki bacakta sızlama yapan, masajla rahatlayan ve sabah tamamen düzelen tablo tipik büyüme ağrısıdır.",
+                        "new_finding": "Kesin Tanı: Büyüme Ağrıları (Benign Noktürnal Ekstremite Ağrısı).",
                     },
                     {
-                        "text": "Akut Transvers Miyelit",
+                        "text": "Juvenil İdiyopatik Artrit (Oligoartiküler Tip)",
                         "is_correct": False,
-                        "scenario_update": "Akut transvers miyelitte belirgin duyusal seviye, erken sfinkter disfonksiyonu (idrar retansiyonu), patolojik refleksler ve MRG'de intramedüller hiperintens lezyon bulunur.",
-                        "teaching_point": "Transvers miyelit üst motor nöron bulguları, belirgin duyusal düzey ve mesane tutulumuyla seyreder; bu hastada duyusal düzey yokluğu ve arefleksi periferik patolojiyi gösterir."
+                        "scenario_update": "Hastada eklemde şişlik, sabah tutukluğu veya hareket kısıtlılığı bulunmamaktadır; ağrı eklemde değil kas-kemik derin dokusundadır.",
+                        "teaching_point": "Juvenil idiyopatik artrit eklemde efüzyon, ısı artışı ve en az 6 hafta süren sabah tutukluğu ile karakterizedir; gece masajla geçen ağrılarla seyretmez.",
                     },
                     {
-                        "text": "Akut Spinal Epidural Apse",
+                        "text": "Akut Geçici Sinovit (Toksik Sinovit)",
                         "is_correct": False,
-                        "scenario_update": "Spinal epidural apse lokal şiddetli sırt ağrısı, perküsyon hassasiyeti, sistemik toksisite, kord basısı ve MRG'de epidural kitle görünümü ile seyreder.",
-                        "teaching_point": "Epidural apse akut spinal kord kompresyonuna yol açar; omurilik MRG'de epidural alanın tamamen temiz olması bu tanıyı kesin olarak ekarte ettirir."
+                        "scenario_update": "Hastada kalça eklemi tutulumu, topallama veya eklem hareketinde ağrılı kısıtlılık saptanmamıştır; ağrı iki taraflı baldır-kaval bölgesindedir.",
+                        "teaching_point": "Geçici sinovit genellikle tek taraflı kalça ağrısı ve belirgin topallama ile acile başvurur; iki taraflı baldır sızlaması şeklinde görülmez.",
                     },
                     {
-                        "text": "Besin Kaynaklı Botulizm İntoksikasyonu",
+                        "text": "Akut Hematatojen Osteomiyelit (Tibia Enfeksiyonu)",
                         "is_correct": False,
-                        "scenario_update": "Botulizmde kas güçsüzlüğü aşağıdan yukarı değil, kranial sinirlerden (ptozis, diplopi, midriyazis, disfoni) başlayıp desendan (yukarıdan aşağı) yayılım gösterir.",
-                        "teaching_point": "Botulizm bulber ve kranial sinir tutulumuyla başlayıp aşağı doğru iner; Guillain-Barré sendromunda ise güçsüzlük tipik olarak alt ekstremitelerden yukarıya doğru yükselir."
-                    }
-                ]
+                        "scenario_update": "Hastanın ateşi yoktur, kemik üzerinde fokal palpasyon hassasiyeti, eritem veya basamama tablosu bulunmamaktadır.",
+                        "teaching_point": "Akut osteomiyelitte ateş, tek taraflı lokalize şiddetli kemik hassasiyeti, üzerine basamama ve laboratuvarda yüksek akut faz reaktanları tipiktir.",
+                    },
+                ],
             },
             {
-                "stage_title": "Yoğun Bakım Takibi ve İmmünomodülatör Tedavi",
-                "question": "Tanısı kesinleşen ve solunum kas tutulumu riski bulunan 7 yaşındaki hastada en uygun yatış ve farmakolojik tedavi stratejisi nedir?",
+                "stage_title": "Tedavi ve Aile Eğitimi Planı",
+                "question": "Benign noktürnal ekstremite ağrısı saptanan ve alarm bulgusu bulunmayan bu hastanın acil servis yönetimi ve taburculuk planı nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Genel pediatri servisinde izleme almak ve tek başına yüksek doz intravenöz metilprednizolon tedavisi uygulayarak motor gücün toparlanmasını beklemek",
+                        "text": "Ağrı ataklarının kalsiyum ve D vitamini eksikliğine bağlı olduğunu belirterek tetkik yapmadan yüksek doz intramüsküler D vitamini ampulü uygulamak ve taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Tek başına kortikosteroid verilen hastada motor toparlanma hızlanmadı, aksine solunum kas gücü daha da zayıflayarak entübasyon gereksinimi doğdu.",
-                        "teaching_point": "Guillain-Barré sendromunda tek başına kortikosteroidlerin etkinliği yoktur ve önerilmez; kanıtlanmış birinci basamak tedavi İVİG veya plazmaferezdir."
+                        "scenario_update": "Büyüme ağrılarının D vitamini veya kalsiyum eksikliğiyle doğrudan ilişkisi kanıtlanmamıştır; kontrolsüz yüksek doz vitamin uygulaması hiperkalsemi ve toksisite riski oluşturdu.",
+                        "teaching_point": "Büyüme ağrıları vitamin eksikliğine bağlı değildir; ampirik yüksek doz D vitamini vermek hatalı ve toksisite açısından tehlikeli bir yaklaşımdır.",
                     },
                     {
-                        "text": "Solunum şikayeti henüz belirginleşmediği için hastayı evde istirahate göndermek ve haftalık fizik tedavi seansları ile poliklinikten takip etmek",
+                        "text": "Atak sıklığını azaltmak amacıyla her gece yatmadan önce düzenli olarak bir ay boyunca oral ibuprofen şurup içmesini ve spordan uzak durmasını önermek",
                         "is_correct": False,
-                        "scenario_update": "Eve gönderilen hasta gece saatlerinde ani solunum arresti ve otonomik aritmi nedeniyle acile arrest tablosunda geri getirildi.",
-                        "teaching_point": "GBS olgularında vital kapasite aniden düşebilir ve ölümcül otonom instabilite gelişebilir; hastalar mutlaka yoğun bakım koşullarında monitörize edilmelidir."
+                        "scenario_update": "Her gece profilaktik NSAİİ kullanımı çocukta gastrit ve gastrointestinal kanama riskini artırdı; ayrıca gereksiz fiziksel aktivite kısıtlaması çocuğun gelişimini olumsuz etkiledi.",
+                        "teaching_point": "Büyüme ağrılarında her gece düzenli koruyucu analjezik verilmez ve fiziksel aktivite kısıtlanmaz; analjezikler yalnızca şiddetli atağın olduğu anlarda kullanılır.",
                     },
                     {
-                        "text": "Çocuk Yoğun Bakımda vital kapasiteyi izlemek ve toplam iki gram bölü kilogram intravenöz immünglobulin infüzyonu başlamak",
+                        "text": "Bacak kaslarını gevşetmek amacıyla oral santral etkili kas gevşetici reçete etmek ve olası maligniteleri dışlamak için üç gün sonra acil servise kontrole çağırmak",
+                        "is_correct": False,
+                        "scenario_update": "Pediatrik yaş grubunda endikasyonu olmayan santral kas gevşetici çocukta aşırı sedasyon ve hipotoniye yol açtı; acil servis tekrar başvurusu aile kaygısını artırdı.",
+                        "teaching_point": "Çocuklarda benign noktürnal ağrılarda santral kas gevşeticilerin yeri yoktur; taburculuk sonrası kontrol acil serviste değil gereğinde pediatri polikliniğinde yapılır.",
+                    },
+                    {
+                        "text": "Aileyi durumun iyi huylu olduğu konusunda rahatlatmak, ataklarda lokal masaj, ılık kompres ve gerektiğinde parasetamol önermek, gündüz semptomu olursa polikliniğe yönlendirmek",
                         "is_correct": True,
-                        "explanation": "GBS tedavisinde toplam 2 g/kg İVİG (genellikle 2 veya 5 güne bölünerek) standart birinci basamak tedavidir; solunum yetmezliği riski nedeniyle yoğun bakım izlemi şarttır.",
-                        "new_finding": "Hasta Çocuk Yoğun Bakım Ünitesine yatırıldı. Toplam 2 g/kg dozundaki İVİG infüzyonu (günde 0.4 g/kg, 5 gün) başlandı. Sürekli vital kapasite, pik ekspiratuar akım ve kardiyak monitörizasyon yapıldı. 48. saatten itibaren motor güç ilerlemesi durdu, mekanik ventilasyon gereksinimi olmadan 7. günde yürüme egzersizlerine başlandı."
+                        "explanation": "Büyüme ağrılarının temel tedavisi ailenin rahatlatılması (güvence), atak sırasında bacak masajı, ılık uygulama ve gerekirse basit analjeziktir. Gündüz ağrısı veya topallama gibi kırmızı bayraklar gelişirse poliklinik kontrolü önerilir.",
+                        "new_finding": "Aileye benign gidişat anlatılarak güven verildi; masaj, sıcak uygulama ve kırmızı bayrak eğitimi verilerek hasta Yeşil Alandan taburcu edildi.",
                     },
-                    {
-                        "text": "Oral asetilsalisilik asit ve periferik kas gevşetici reçete ederek serviste izlemek, mekanik ventilatör desteği veya immünomodülatör tedavi planlamamak",
-                        "is_correct": False,
-                        "scenario_update": "Antienflamatuar ve kas gevşetici verilen hastanın flask paralizisi hızla interkostal kaslara yayılarak akut hiperkapnik solunum yetmezliği tablosuna yol açtı.",
-                        "teaching_point": "Periferik kas gevşeticiler solunum kas paralizisini şiddetlendirir; GBS'de immünomodülasyon (İVİG/plazmaferez) ve solunum desteği dışındaki tedaviler yetersiz ve tehlikelidir."
-                    }
-                ]
-            }
-        ]
+                ],
+            },
+        ],
     },
     {
         "id": "Y37",
-        "category": "🧠 Nörolojik Belirtiler & Konvülziyon",
-        "age": "4 Yaş",
-        "gender": "Erkek",
-        "complaint": "İki hafta önceki döküntülü viral enfeksiyon sonrası aniden başlayan sendeleme, sarhoşvari yürüme, eşyaları tutamama ve gözlerde titreme",
-        "history": "4 yaşındaki erkek çocuğun ebeveynleri çocuklarını kucaklarında Sarı Alana getiriyor: 'Yaklaşık on gün önce vücudunda döküntüler ve hafif ateşi olmuştu, tamamen iyileşmişti. Dün akşamdan beri yürürken bacaklarını çok açıyor, sarhoş gibi sağa sola sendeliyor ve düşüyor. Su bardağına uzandığında eli titriyor ve bardağı deviriyor. Gözlerinde de bazen sağa sola hızlı titremeler fark ettik. Ateşi, kusması, baş ağrısı veya nöbeti olmadı.'",
-        "final_diagnosis": "Akut Serebellar Ataksi (Post-enfeksiyöz Akut Serebellit)",
-        "disposition": "Sarı Alanda Acil Kraniyal Görüntüleme ile Kitle / Kanamanın Dışlanması + Çocuk Nörolojisi / Servis Yatışı ile Düşme Önlemleri ve Destek Tedavisi",
-        "case_pearl": "Akut serebellar ataksi, çocukluk çağında ani başlangıçlı yürüme bozukluğunun ve koordinasyon kaybının en sık nedenidir. Genellikle suçiçeği, EBV, koksaki veya diğer viral enfeksiyonlardan 1-3 hafta sonra otoimmün serebellar inflamasyon (akut serebellit) sonucu ortaya çıkar. En karakteristik bulguları geniş tabanlı dengesiz yürüyüş, dismetri (hedefi tutturamama), disdiadokokinez (ardışık hareket bozukluğu), intansiyonel tremor ve horizontal nistagmustur. Ateş, kafa içi basınç artışı bulgusu ve ense sertliği beklenmez. Acil serviste öncelikle beyin görüntülemesi (MRG/BT) yapılarak posterior fossa kitleleri, kanama veya inme dışlanmalıdır. Selim seyirlidir; olguların büyük çoğunluğu haftalar veya aylar içinde sekelsiz kendiliğinden düzelir, rutin steroid veya immünosüpresif tedavi gerektirmez.",
+        "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
+        "age": "8 Yaş",
+        "gender": "Kız",
+        "complaint": "Karın ağrısı ve hafif ateş",
+        "history": (
+            "Annesi 8 yaşındaki kızını Yeşil Alana getiriyor: 'Kızım yaklaşık 1 hafta önce boğaz "
+            "enfeksiyonu geçirmişti, ateşi ve boğaz ağrısı vardı, şurupla düzeldi. Ancak dün akşamdan "
+            "beri göbek çevresinde ve karnının sağ alt tarafında sızlayıcı bir ağrı başladı. Sabah ateşi "
+            "37.8°C ölçüldü. İştahı azaldı ama hiç kusmadı ve ishali olmadı. Yürürken karnını tutuyor.'"
+        ),
+        "final_diagnosis": "Akut Mezenterik Lenfadenit (Yeşil Alandan Sarı Alana Devir ve Cerrahi Dışlama Sonrası Destek Tedavisi)",
+        "disposition": "Yeşil Alanda Değerlendirilip Sarı Alana Devir -> İV Hidrasyon / Batın USG / Çocuk Cerrahisi Konsültasyonu ile Apandisit Dışlanarak Poliklinik Kontrolüyle Taburculuk",
+        "case_pearl": (
+            "Akut mezenterik lenfadenit, sıklıkla geçirilmiş bir üst solunum yolu enfeksiyonu veya "
+            "gastroenterit sonrası mezenterik lenf nodlarının reaktif hiperplazisiyle ortaya çıkar ve "
+            "akut apandisiti taklit edebilir. Sağ alt kadranda peritoneal irritasyon veya belirgin "
+            "hassasiyet olan çocuklar Sarı Alana devredilmeli; kademeli kompresyonlu batın "
+            "ultrasonografisinde apendiksin normal kalibrede (<6 mm) görülmesi ve mezenterde büyümüş "
+            "ovoid lenf nodları kümelenmesi ile cerrahi akut batın dışlanmalıdır."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Nörolojik Değerlendirme ve Koordinasyon Muayenesi",
-                "question": "Ani başlayan sendeleme, sarhoşvari dengesiz yürüme ve hedefi tutturamama şikayetiyle getirilen 4 yaşındaki çocukta ilk muayene yaklaşımınız ne olmalıdır?",
+                "stage_title": "Yeşil Alanda Fizik Muayene ve Alan Kararı",
+                "question": "Bir hafta önce geçirilmiş üst solunum yolu enfeksiyonu sonrası sağ alt kadran ağrısıyla başvuran bu çocukta ilk yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Sadece kaba ekstremite kas gücünü ve eklem hareket açıklığını değerlendirmek, koordinasyon testlerini ve göz hareketlerini muayene etmeden beklemek",
+                        "text": "Tablonun geçirilmiş viral üst solunum yolu enfeksiyonuna bağlı basit karın ağrısı olduğunu belirterek Yeşil Alanda oral ibuprofen şurup içirip evine göndermek",
                         "is_correct": False,
-                        "scenario_update": "Yalnızca kaba motor muayene yapılan çocukta serebellar korteks bulguları, nistagmus ve dismetri atlanarak santral patolojinin yeri tespit edilemedi.",
-                        "teaching_point": "Ani denge kaybıyla başvuran çocuklarda ekstremite kas gücü çoğunlukla normaldir; tanı için dismetri, nistagmus ve yürüyüş paterni mutlaka incelenmelidir."
+                        "scenario_update": "Sağ alt kadranda palpasyon hassasiyeti ve defans şüphesi olan hastanın batın muayenesi derinleştirilmeden analjezikle taburcu edilmesi cerrahi patolojilerin atlanma riskini artırdı.",
+                        "teaching_point": "Sağ alt kadran ağrısı ve ateşi olan her çocukta cerrahi batın şüphesi taşındığından muayene tamamlanmadan analjezikle ayaktan taburcu edilmez.",
                     },
                     {
-                        "text": "Gözlerdeki titremeyi konvülziyon eşdeğeri kabul ederek acil rektal diazepam uygulamak ve hastayı derin sedasyonda izleyerek yürütmeyi denememek",
+                        "text": "Karın ağrısının bağırsak motilite bozukluğuna ve dışkı sıkışmasına bağlı olduğunu düşünerek Yeşil Alanda rektal lavman uygulamak ve tuvalet sonrası hastayı tekrar değerlendirmek",
                         "is_correct": False,
-                        "scenario_update": "Gereksiz sedatif uygulanan çocuk derin uykuya daldı; nörolojik muayene yapılamaz hale geldi ve hava yolu güvenliği riske girdi.",
-                        "teaching_point": "Horizontal nistagmus ve tremor nöbet bulgusu değildir; sedasyon uygulanması bilinci baskılar ve altta yatan koordinasyon muayenesini imkansız kılar."
+                        "scenario_update": "Sağ alt kadranda lokalize inflamatuar hassasiyeti olan hastaya yapılan lavman intraluminal basıncı artırarak çocuğun ağrısını daha da şiddetlendirdi.",
+                        "teaching_point": "Sağ alt kadran hassasiyeti ve ateş varlığında akut apandisit ve cerrahi patolojiler ekarte edilmeden rektal lavman uygulamak kontrendikedir.",
                     },
                     {
-                        "text": "Bilinç, kranial sinirler, nistagmus, parmak-burun testi, ardışık hareketler ve geniş tabanlı yürüyüş paternini detaylı serebellar muayeneyle değerlendirmek",
+                        "text": "Karın muayenesinde sağ alt kadrandaki hassasiyet ve savunma bulgularını değerlendirip akut cerrahi batın şüphesiyle hastayı derhal Sarı Alana devretmek",
                         "is_correct": True,
-                        "explanation": "Ani denge ve koordinasyon kayıplarında bilinç, nistagmus, dismetri, disdiadokokinez ve yürüyüş paterni incelenerek serebellar sistem işlevleri analiz edilmelidir.",
-                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 104/dk, SS 20/dk, TA 96/60 mmHg, SpO2 %99. Bilinç tam açık, koopere ve oryante, ense sertliği yok. Göz dibi muayenesinde papilödem saptanmadı. Her iki yana bakışta belirgin bilateral horizontal nistagmus mevcut. Parmak-burun ve diz-topuk testinde belirgin dismetri ve intansiyonel tremor var; ardışık el hareketlerinde disdiadokokinez pozitif. Çocuk desteksiz durmakta zorlanıyor, adımlarını geniş açarak sendeleyerek sarhoşvari yürüyor. Kas gücü 5/5 tam, derin tendon refleksleri normoaktif, Babinski negatif."
+                        "triggers_yellow_transfer": True,
+                        "explanation": "Sağ alt kadranda lokalize hassasiyet ve defans şüphesi cerrahi batın (apandisit vb.) açısından kırmızı bayraktır; hasta damar yolu açılması, yakın takip ve görüntüleme için Sarı Alana devredilmelidir.",
+                        "new_finding": "Vital Bulgular: Ateş 37.8°C, KTA 104/dk, TA 105/68 mmHg. Batın muayenesinde sağ alt kadranda ve periumbilikal bölgede belirgin palpasyon hassasiyeti mevcut; hafif istemli defans şüphesi var, rebound saptanmadı. Bağırsak sesleri normoaktif. Orofarenkste hiperemi ve soluk tonsiller hipertrofi izlendi. Hasta ileri tetkik ve izlem için Sarı Alana devredildi!",
                     },
                     {
-                        "text": "Dengesizliği iç kulak patolojisine bağlayarak yalnızca otoskopik kulak muayenesi yapmak ve semptomların düzelmesi için antihistaminik şurup verip taburculuk planlamak",
+                        "text": "Hastayı Yeşil Alanda tutarak ayakta direkt batın grafisi ve tam idrar tetkiki istemek, sonuçlar çıkana kadar bekleme odasında oral beslenmesine izin vermek",
                         "is_correct": False,
-                        "scenario_update": "Sadece otoskopi yapılıp eve gönderilen çocukta intansiyonel tremor ve dismetri ilerledi, su içerken boğulma tehlikesiyle acil servise tekrar getirildi.",
-                        "teaching_point": "Bilateral nistagmus, intansiyonel tremor ve dismetri periferik vestibüler değil santral serebellar kökeni gösterir; kapsamlı nörolojik değerlendirme zorunludur."
-                    }
-                ]
+                        "scenario_update": "Olası cerrahi batın tablosunda hastaya ağızdan gıda verilmesi acil anestezi açlık süresini bozdu; ayrıca direkt batın grafisi tanısal değer sağlamadı.",
+                        "teaching_point": "Akut sağ alt kadran ağrısında cerrahi dışlanana kadar hasta aç (NPO) tutulmalı, Sarı Alana devredilmeli ve radyasyonsuz ilk seçenek olan ultrasonografi planlanmalıdır.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Nörogörüntüleme ve İntrakraniyal Acilleri Dışlama",
-                "question": "Akut koordinasyon bozukluğu, dismetri ve nistagmus saptanan 4 yaşındaki hastada hayatı tehdit eden patolojileri dışlamak için en doğru tetkik nedir?",
+                "stage_title": "Sarı Alanda Tetkik ve Görüntüleme Kararı",
+                "question": "Sarı Alana devralınan ve sağ alt kadran hassasiyeti bulunan bu çocukta akut cerrahi patolojiyi dışlamak için hangi tetkikler istenmelidir?",
                 "options": [
                     {
-                        "text": "Acil beyin görüntülemesi ile arka çukur kitle, kanama ve akut enfarktüs lezyonlarını güvenle ekarte etmek",
+                        "text": "Damar yolu açarak hidrasyon sağlamak, hemogram ve C-reaktif protein düzeyini inceleyip radyasyonsuz ilk basamak görüntüleme olan batın ultrasonografisi istemek",
                         "is_correct": True,
-                        "explanation": "Ani başlangıçlı serebellar bulgularda posterior fossa tümörleri, serebellar hemoraji, abse ve akut hidrosefali gibi cerrahi aciller acil görüntülemeyle dışlanmalıdır.",
-                        "new_finding": "Kraniyal MRG: Arka çukur, serebellar hemisferler, dördüncü ventrikül ve beyin sapı doğal formdadır; kitle, akut kanama, iskemi, fokal herniasyon veya hidrosefali saptanmadı; serebellar folialarda hafif silinme ve post-enfeksiyöz hafif hiperintens sinyal artışı izlendi. Rutin Kan Analizi: Hemogram normal (WBC 7.800/mm³), CRP 1.2 mg/L, sedimantasyon normal, serum elektrolitleri, glukoz ve karaciğer-böbrek testleri tamamen normal."
+                        "explanation": "Sağ alt kadran ağrısında ilk basamak yaklaşım ağızdan alımın kesilmesi, intravenöz hidrasyon, enfeksiyon belirteçleri ve cerrahi patolojileri radyasyonsuz dışlayan kademeli kompresyonlu ultrasonografidir.",
+                        "new_finding": "LABORATUVAR: Lökosit 10.800/mm³ (%65 nötrofil, %28 lenfosit), CRP 14 mg/L, TİT normal. BATIN USG: Sağ alt kadranda kör uçlu tübüler yapı (apendiks çapı 4.4 mm) normal kalibrede, basılabilir ve çevre dokusu doğaldır; terminal ileum komşuluğunda mezenterde en büyüğü 9x16 mm boyutlarında çok sayıda ovoid reaktif lenf bezi kümelenmesi ve minimal serbest sıvı izlendi.",
                     },
                     {
-                        "text": "Öncelikle elektroensefalografi çekmek ve görüntüleme yapmadan önce iki hafta boyunca evde yatak istirahati vererek semptomların gidişatını izlemek",
+                        "text": "Ultrasonografinin operatör bağımlı ve yanıltıcı olabileceğini öngörerek vakit kaybetmeden doğrudan oral ve intravenöz kontrastlı tüm batın bilgisayarlı tomografisi çekmek",
                         "is_correct": False,
-                        "scenario_update": "Görüntüleme yapılmadığı için arka çukur patolojileri dışlanamadı ve ailede şiddetli kaygı gelişti; klinik şüphe giderilemeyerek gereksiz EEG ile zaman kaybedildi.",
-                        "teaching_point": "Ani koordinasyon bozukluklarında primer patoloji beyinciktedir; EEG epileptik olmayan fokal serebellar sendromları aydınlatamaz ve görüntülemenin yerini tutamaz."
+                        "scenario_update": "Stabil pediatrik hastaya yüksek doz radyasyon ve intravenöz nefrotoksik kontrast madde verildi; ultrasonografiyle kolayca konulabilecek tanı için gereksiz risk alındı.",
+                        "teaching_point": "Çocuklarda akut karın ağrısında kılavuzların ilk basamak görüntüleme önerisi daima ultrasonografidir; bilgisayarlı tomografi yalnızca USG yetersiz veya şüpheli kaldığında düşünülür.",
                     },
                     {
-                        "text": "Kranial görüntüleme tetkiki istemeden doğrudan acil lomber ponksiyon yaparak BOS basıncını ölçmek ve hücresel artışı mikroskopta incelemek",
+                        "text": "Görüntüleme istemeden önce sağ alt kadrana ampirik seftriakson ve metronidazol infüzyonu başlamak, 24 saat sonra klinik düzelme olmazsa ultrasonografi planlamak",
                         "is_correct": False,
-                        "scenario_update": "Görüntüleme yapılmadan lomber ponksiyon planlanması, dışlanmamış olası posterior fossa kitlelerinde ölümcül serebellar tonsiller herniasyon riski doğurur.",
-                        "teaching_point": "Yeni gelişen fokal serebellar bulgularda kafa içi kitle ekarte edilmeden lomber ponksiyon yapılması tonsiller herniasyon (foramen magnum fıtıklaşması) riski taşır."
+                        "scenario_update": "Cerrahi akut batın veya viral zemin netleşmeden başlanan geniş spektrumlu antibiyotik klinik tablonun ve inflamatuar yanıtın takibini güçleştirdi.",
+                        "teaching_point": "Peritonit veya sepsis bulgusu olmayan stabil sağ alt kadran ağrılı çocukta tanı görüntüleme ile kesinleştirilmeden ampirik antibiyotik başlanmaz.",
                     },
                     {
-                        "text": "Yalnızca tam idrar tahlili ve dışkı mikroskopisi göndermek, santral görüntüleme planlamadan olası paraziter enfeksiyon tedavisi ampirik başlamak",
+                        "text": "Tablonun kesinlikle cerrahi apandisit olduğunu kabul ederek hiçbir görüntüleme veya laboratuvar tetkiki istemeden hastayı doğrudan acil laparoskopik apendektomiye almak",
                         "is_correct": False,
-                        "scenario_update": "İdrar ve gaita testleri temiz geldi; santral sinir sistemi görüntülemesi yapılmadığı için intrakraniyal lezyon şüphesi aydınlatılamadı.",
-                        "teaching_point": "Ani başlangıçlı yürüyüş ve hedefi tutturma bozuklukları primer intrakraniyal acil patolojilerle ilişkilidir; rutin idrar ve gaita testleri hedef dışıdır."
-                    }
-                ]
+                        "scenario_update": "Görüntüleme yapılmadan ameliyata alınan hastada apendiksin tamamen normal olduğu, inflamasyonun mezenterik lenf bezlerinde yer aldığı görüldü (negatif apendektomi).",
+                        "teaching_point": "Sağ alt kadran ağrılarında apandisit şüphesi olsa dahi ultrasonografi ile ayırıcı tanı yapılmalıdır; çocuklarda negatif apendektomi oranını düşürmek için görüntüleme şarttır.",
+                    },
+                ],
             },
             {
-                "stage_title": "Klinik Tanı",
-                "question": "Geçirilmiş viral döküntü sonrası gelişen, görüntülemede kitle saptanmayan ani koordinasyon bozukluğunda öncelikli klinik tanınız nedir?",
+                "stage_title": "Sarı Alanda Kesin Tanı",
+                "question": "Geçirilmiş farenjit öyküsü, ılımlı inflamatuar yanıt, normal kalibrede apendiks ve mezenterde büyümüş lenf bezleriyle kesin tanınız nedir?",
                 "options": [
                     {
-                        "text": "Posterior Fossa Medulloblastomu",
+                        "text": "Akut Flegmonöz Apandisit",
                         "is_correct": False,
-                        "scenario_update": "Medulloblastom genellikle sinsi ilerleyen kafa içi basınç artışı (sabah baş ağrısı, fışkırır kusma) yapar ve MRG'de dördüncü ventrikülü dolduran solid kitle olarak izlenir.",
-                        "teaching_point": "Beyin MRG'de kitle, ventrikül basısı ve hidrosefali bulunmaması primer arka çukur tümörlerini kesin olarak dışlar."
+                        "scenario_update": "Ultrasonografide apendiks normal kalibrede (4.4 mm), kompresyonla tamamen basılabilir ve çevre dokusu reaksiyonsuz olarak izlenmiştir.",
+                        "teaching_point": "Akut apandisitte apendiks çapı ≥6 mm olup kompresyonla basılamaz, lümende hiperemi ve çevre mezenterik yağ dokusunda ekojenite artışı görülür.",
                     },
                     {
-                        "text": "Akut Vestibüler Nörit",
+                        "text": "İleokolik İntususepsiyon (İnvajinasyon)",
                         "is_correct": False,
-                        "scenario_update": "Vestibüler nöritte şiddetli vertigo, bulantı ve kusma ön plandadır; ancak ekstremitelerde belirgin dismetri, intansiyonel tremor ve disdiadokokinez görülmez.",
-                        "teaching_point": "Periferik vestibüler hastalıklarda intansiyonel tremor, dismetri ve disdiadokokinez gibi serebellar hemisfer disfonksiyonu bulguları bulunmaz."
+                        "scenario_update": "Ultrasonografide iç içe geçmiş bağırsak anslarına ait hedef (target) işareti veya psödo-böbrek görünümü saptanmamıştır.",
+                        "teaching_point": "İntususepsiyon genellikle daha küçük çocuklarda (3-36 ay) kolik tarzı ağrı ve ultrasonografide tipik simit/hedef görünümü ile seyreder.",
                     },
                     {
-                        "text": "Akut Fenitoin Toksisitesi",
+                        "text": "Meckel Divertiküliti",
                         "is_correct": False,
-                        "scenario_update": "Fenitoin toksisitesi benzer nörolojik bulgular yapabilir ancak bilinen antiepileptik kullanımı veya kazara ilaç maruziyeti öyküsü yoktur.",
-                        "teaching_point": "İlaç intoksikasyonlarında maruziyet öyküsü ve sıklıkla bilinç değişikliği eşlik eder; viral enfeksiyon sonrası izole bulgular post-enfeksiyöz süreci destekler."
+                        "scenario_update": "Meckel divertikülitinde tipik olarak rektal ağrısız masif kanama veya lokalize apandisit benzeri nekrotizan inflamasyon görülür; ultrasonografide kör sonlanan kistik/tübüler kitle saptanmamıştır.",
+                        "teaching_point": "Meckel divertikülü gastrointestinal kanama veya divertikülit ile prezente olur; mezenterde yaygın reaktif lenf bezi kümelenmesi ve normal apendiks bu tabloyu açıklamaz.",
                     },
                     {
-                        "text": "Post-enfeksiyöz Akut Serebellar Ataksi",
+                        "text": "Akut Mezenterik Lenfadenit",
                         "is_correct": True,
-                        "explanation": "Çocukluk çağında geçirilmiş viral ekzantem sonrası aniden ortaya çıkan dismetri, nistagmus ve geniş tabanlı yürüyüş kitle ekarte edildiğinde post-enfeksiyöz akut serebellar ataksi tanısını koydurur.",
-                        "new_finding": "Kesin Tanı: Post-enfeksiyöz Akut Serebellar Ataksi (Akut Serebellit). Kitle, kanama ve intoksikasyon dışlandı, selim seyir öngörüldü."
-                    }
-                ]
+                        "explanation": "Geçirilmiş üst solunum yolu enfeksiyonunu takiben sağ alt kadranda apandisiti taklit eden ağrı, USG'de normal apendiks ve mezenterde >8 mm multipl büyümüş reaktif lenf bezleri akut mezenterik lenfadeniti gösterir.",
+                        "new_finding": "Kesin Tanı: Akut Mezenterik Lenfadenit.",
+                    },
+                ],
             },
             {
-                "stage_title": "İzlem ve Destek Tedavisi Stratejisi",
-                "question": "Akut post-enfeksiyöz serebellar ataksi tanısı alan ve genel durumu stabil olan 4 yaşındaki çocuğun en uygun yönetim planı ne olmalıdır?",
+                "stage_title": "Sarı Alanda Tedavi ve İzlem Planı",
+                "question": "Ultrasonografi ve Çocuk Cerrahisi konsültasyonuyla apandisit dışlanan akut mezenterik lenfadenitli bu hastanın tedavisi ve taburculuk planı nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Serebellar hasarı durdurmak amacıyla derhal yüksek doz intravenöz metilprednizolon ve eş zamanlı terapötik plazmaferez seansları uygulamaya koymak",
+                        "text": "Lenfadenopatinin bakteriyel süpürasyona ilerlemesini engellemek amacıyla 14 gün süreyle oral amoksisilin-klavulanat ve sefiksim kombinasyonu reçete edip hastayı taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Gereksiz immünsüpresif tedavi uygulanan çocukta hipertansiyon, hiperglisemi ve immünsüpresyona bağlı sekonder bakteriyel enfeksiyon tablosu gelişti.",
-                        "teaching_point": "Post-enfeksiyöz akut serebellar ataksi selim seyirlidir; rutin kortikosteroid veya plazmaferez gerekmez, bu tedaviler yalnızca fulminan ensefalopatik olgularda düşünülür."
+                        "scenario_update": "Viral enfeksiyon sonrası gelişen reaktif lenf bezleri için verilen geniş spektrumlu antibiyotik ikilisi çocukta dirençli ishale ve bağırsak florası bozulmasına yol açtı.",
+                        "teaching_point": "Akut mezenterik lenfadenit genellikle viral veya post-enfeksiyöz reaktif bir süreçtir; bakteriyel süpürasyon veya sepsis bulgusu yoksa rutin antibiyotik tedavisi endike değildir.",
                     },
                     {
-                        "text": "Servise yatırarak düşme önlemleri almak, destek tedavisi vermek ve aileyi bilgilendirerek spontan klinik iyileşmeyi izlemek",
+                        "text": "Oral hidrasyon ve semptomatik analjezi sağlamak, antibiyotiksiz izlemek, aileye kırmızı bayrak eğitimi vererek çocuk cerrahisi kontrolüyle taburcu etmek",
                         "is_correct": True,
-                        "explanation": "Post-enfeksiyöz akut serebellar ataksi olgularının %80-90'ı 2-8 hafta içinde kendiliğinden sekelsiz iyileşir; yönetimde en kritik nokta düşme ve kafa travması önlemleridir.",
-                        "new_finding": "Hasta çocuk servisine yatırıldı. Yatak kenarlıkları kaldırıldı, yumuşak zemin oluşturuldu, düşme önlemleri alındı ve hidrasyon sağlandı. Aileye hastalığın kendini sınırlayan selim doğası anlatıldı. Takiplerinde nörolojik kötüleşme olmadı, 2. haftada yürümesi belirgin düzeldi ve 6. haftada tamamen sekelsiz iyileşti."
+                        "explanation": "Akut mezenterik lenfadenitte tedavi destekleyicidir (hidrasyon, parasetamol vb.). Rutin antibiyotik gerekmez. Apandisitin erken dönemde atlanmadığından emin olmak için aileye alarm bulguları (artan kusma, dirençli ateş, şiddetlenen ağrı) anlatılarak 24-48 saat sonra kontrol önerilir.",
+                        "new_finding": "Çocuk Cerrahisi konsültasyonu ile cerrahi akut batın dışlandı. Destek tedavisi, diyet ve kırmızı bayrak eğitimi verilerek hasta 48 saat sonra poliklinik kontrolü şartıyla taburcu edildi.",
                     },
                     {
-                        "text": "Kalıcı nörolojik hasarı engellemek amacıyla acil cerrahi posterior fossa dekompresyonu ve ventriküloperitoneal şant yerleştirme ameliyatı planlamak",
+                        "text": "Apendiksin daha sonra reaktif lenf bezlerinin basısıyla iltihaplanabileceği gerekçesiyle hastayı cerrahi servise yatırarak profilaktik apendektomi operasyonu planlamak",
                         "is_correct": False,
-                        "scenario_update": "Kitle veya obstrüktif hidrosefali bulunmayan hastaya cerrahi girişim yapılması menenjit, BOS kaçağı ve kalıcı morbiditeye yol açtı.",
-                        "teaching_point": "Akut serebellar atakside intrakraniyal kitle veya obstrüktif hidrosefali yoktur; cerrahi dekompresyon veya şant uygulaması kesinlikle endike değildir."
+                        "scenario_update": "Tamamen selim ve kendini sınırlayan mezenterik lenf bezi büyümesi için hastaya gereksiz genel anestezi ve cerrahi girişim uygulandı.",
+                        "teaching_point": "Mezenterik lenfadenit cerrahi bir antite değildir; apendiks normal ise profilaktik cerrahi yapılmaz, hasta klinik olarak izlenir.",
                     },
                     {
-                        "text": "Hastanede yatışa gerek olmadığını belirterek hemen taburcu etmek ve yürüyemeyen çocuğu evde hiçbir tedbir almadan desteksiz bırakmak",
+                        "text": "Sağ alt kadrandaki lenf bezlerinin lenfoma veya granülomatöz süreç olabileceği şüphesiyle hastayı taburcu etmeden acil laparoskopik lenf nodu biyopsisi için yatırmak",
                         "is_correct": False,
-                        "scenario_update": "Evde tedbirsiz bırakılan dengesiz çocuk ayağa kalkmaya çalışırken merdivenden düşerek travmatik kafa içi kanama tablosuyla acile döndü.",
-                        "teaching_point": "Akut dönemde çocuklar ciddi düşme ve travma riski altındadır; bu nedenle düşme önlemleri alınarak güvenli ortamda ve yakın gözlemle takip edilmelidirler."
-                    }
-                ]
-            }
-        ]
+                        "scenario_update": "Akut enfeksiyon sonrası reaktif ovoid lenf nodları bulunan stabil çocukta gereksiz ileri invaziv biyopsi işlemi yapıldı.",
+                        "teaching_point": "Üst solunum yolu enfeksiyonu sonrası gelişen ovoid, kortikomedüller ayrımı korunmuş reaktif lenf bezlerinde sistemik B bulgusu (kilo kaybı vb.) yoksa acil biyopsi endike değildir.",
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "Y38",
-        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
-        "age": "2 Yaş (12 kg)",
+        "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
+        "age": "10 Yaş",
         "gender": "Erkek",
-        "complaint": "Evde annesinin şeker kaplı kırmızı kan ilaçlarından çok sayıda yutma sonrası şiddetli karın ağrısı ve kanlı kahve telvesi kusma",
-        "history": "2 yaşındaki (12 kg) erkek çocuk annesi tarafından Sarı Alana getiriliyor: 'Yaklaşık bir saat önce yatak odasında çekmecede duran kırmızı kaplı kan hapı kutusunu elinde boşalmış buldum; kutuda en az 15-20 tablet vardı, hepsini çiğneyip yutmuş. Yarım saat sonra çok şiddetli karın ağrısıyla ağlamaya başladı, ardı ardına kahve telvesi gibi siyahımsı ve kanlı kustu. Çok halsizleşti, baygın gibi bakıyor.'",
-        "final_diagnosis": "Akut Şiddetli Demir İntoksikasyonu (Hap Toksisitesi ve Hemorajik Gastroenterit)",
-        "disposition": "Sarı Alanda Acil İV Sıvı Resüsitasyonu + İntravenöz Deferoksamin Şelasyon İnfüzyonu + Çocuk Yoğun Bakım Ünitesine Yatış",
-        "case_pearl": "Akut demir zehirlenmesi pediatrik toksikolojideki en ölümcül maruziyetlerden biridir. Elementer demir dozu hesaplanmalıdır (örneğin demir sülfat %20 elementer demir içerir; 65 mg elementer demir/tablet x 15-20 tablet = 975-1300 mg -> 12 kg çocukta >80-100 mg/kg elementer demir; >60 mg/kg potansiyel olarak öldürücüdür). Demir gastrointestinal mukozaya doğrudan koroziftir (evre 1: hematemez, melena, karın ağrısı), ardından yalancı iyileşme (evre 2), mitokondriyal elektron taşıma zinciri inhibisyonuna bağlı derin laktik asidoz, şok ve çoklu organ yetmezliği (evre 3), fulminan karaciğer yetmezliği (evre 4) ve geç pilorik stenoz/skar (evre 5) gelişebilir. Demir radyoopaktır, ADBG'de midede radyoopak tablet kümeleri görülebilir. Aktif kömür demiri BAĞLAMAZ. Şelasyon tedavisi endikasyonları: serum demiri >500 mcg/dL, ağır klinik semptomlar (hematemez, laktik asidoz, şok) veya grafide çok sayıda radyoopak tablet bulunmasıdır. Antidotu İV DEFEROKSAMİNDİR (15 mg/kg/saat sürekli infüzyon; ferrioksamin kompleksine bağlı vin rosé / pembe idrar rengi izlenir).",
+        "complaint": "Aniden başlayan şiddetli sağ yan ve kasık ağrısı, bulantı",
+        "history": (
+            "Annesi 10 yaşındaki oğlunu acil Yeşil Alana getiriyor: 'Yaklaşık 3 saat önce evde otururken "
+            "birdenbire sağ böğrüne şiddetli bir sancı girdi. Ağrı dalga dalga geliyor, kıvrandırıyor, "
+            "durduğu yerde duramıyor ve sağ kasığına vuruyor. İki kez safrasız kustu, tuvalete gittiğinde "
+            "idrarını yaparken çok yandığını söyledi. Daha önce hiç böyle bir şikayeti olmamıştı, ateşi yok.'"
+        ),
+        "final_diagnosis": "Sağ Distal Üreter Taşına Bağlı Renal Kolik (Ürolitiyazis / Nefrolitiyazis)",
+        "disposition": "Yeşil Alandan Sarı Alana Devir -> İV Hidrasyon / Spazmolitik / NSAİİ Analjezisi -> Üriner USG Doğrulaması -> Çocuk Ürolojisi/Nefrolojisi Poliklinik Takibi ile Taburculuk",
+        "case_pearl": (
+            "Pediatrik taş hastalığı (ürolitiyazis), ani başlayan, paroksismal dalgalar halinde gelen yan "
+            "(flank) ve alt kadrana/kasığa yansıyan şiddetli ağrı, bulantı-kusma ve mikroskopik/makroskopik "
+            "hematüri ile başvurur. Şiddetli kıvrandırıcı ağrısı olan hastalar Yeşil Alanda tutulmayıp "
+            "intravenöz hidrasyon ve nonsteroid antiinflamatuar analjezi için Sarı Alana devredilmelidir. "
+            "İlk basamak görüntüleme üriner sistem USG'dir; <5 mm distal taşlarda medikal ekspulsif/destekleyici "
+            "tedavi ve poliklinik takibi esastır."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Dekontaminasyon Yaklaşımı",
-                "question": "Yüksek miktarda kan yapıcı kırmızı tablet yutan ve hematemezi olan 12 kg çocukta ilk acil stabilizasyon yaklaşımınız ne olmalıdır?",
+                "stage_title": "Yeşil Alanda Muayene ve Triyaj Değerlendirmesi",
+                "question": "Aniden başlayan dalgalı sağ yan ağrısı ve huzursuzlukla Yeşil Alana getirilen bu çocukta ilk yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Toksinin gastrointestinal emilimini engellemek amacıyla derhal standart bir gram bölü kilogram dozunda oral aktif kömür süspansiyonu içirmek",
-                        "is_correct": False,
-                        "scenario_update": "Aktif kömür verilen çocukta kusma şiddetlendi, kömürlü mide içeriği aspire edildi ve endoskopik değerlendirme imkansız hale geldi.",
-                        "teaching_point": "Ağır metaller, demir, lityum ve alkoller aktif kömüre bağlanmaz; korozif mukozal hasarı olan hematemezli hastalarda aktif kömür kesinlikle önerilmez."
-                    },
-                    {
-                        "text": "Midedeki toksik tabletleri zorla boşaltmak amacıyla tuzlu su veya ipeka şurubu içirerek çocuğu yatak başında kusturmaya çalışmak",
-                        "is_correct": False,
-                        "scenario_update": "Kusturma çabası sırasında hematemez şiddetlendi, özofagus mukozasında laserasyon ve hava yoluna kanlı içerik aspirasyonu meydana geldi.",
-                        "teaching_point": "Korozif gastrointestinal hasara yol açan metal maruziyetlerinde mekanik veya kimyasal kusturma işlemleri aspirasyon ve perforasyon riski nedeniyle kesinlikle kontrendikedir."
-                    },
-                    {
-                        "text": "Çocuğun bilincini açık bularak hiçbir damar yolu açmadan sadece oral antiasit şurup içirmek ve evde gözleme bırakmak",
-                        "is_correct": False,
-                        "scenario_update": "Eve gönderilmek istenen çocukta hipovolemik şok, bilinç kaybı ve şiddetli gastrointestinal kanamaya bağlı kardiyovasküler kollaps gelişti.",
-                        "teaching_point": "Yüksek doz toksik mineral alımlarında erken evredeki gastrointestinal kanama hızla hipovolemik şoka ilerler; acil damar yolu ve sıvı resüsitasyonu zorunludur."
-                    },
-                    {
-                        "text": "Damar yolu açarak izotonik kristaloid infüzyonu başlamak, vital bulguları monitörize etmek ve gastrointestinal kanamayı acilen stabilize etmek",
+                        "text": "Kostovertebral açı hassasiyetini ve batın bulgularını kontrol edip şiddetli ağrı nedeniyle hastayı intravenöz analjezi için Sarı Alana devretmek",
                         "is_correct": True,
-                        "explanation": "Aşındırıcı gastrointestinal kanamaya yol açan toksik alımlarda hipovolemiyi önlemek için damar yolu açılmalı, izotonik sıvı başlanmalı ve hemodinami yakından monitörize edilmelidir.",
-                        "new_finding": "Vital Bulgular: KTA 152/dk (taşikardik), SS 32/dk, TA 82/46 mmHg (düşük), SpO2 %96, KDZ 3.5 saniye, halsiz ve letarjik görünümde. Fizik Muayene: Cilt soluk, batında yaygın hassasiyet ve defans benzeri istemli kasılma var. Nazogastrik tüpten kahve telvesi ve taze kanlı sıvı drene oldu. 20 mL/kg izotonik kristaloid bolusu başlandı."
-                    }
-                ]
+                        "triggers_yellow_transfer": True,
+                        "explanation": "Paroksismal dalgalar halinde gelen şiddetli flank ağrısı, bulantı ve kostovertebral açı hassasiyeti acil damar yolu açılması, analjezi ve hidrasyon gerektirir; hasta derhal Sarı Alana devredilmelidir.",
+                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 118/dk (ağrıya bağlı taşikardik), TA 118/76 mmHg. Hasta huzursuz, ağrı nedeniyle kıvranıyor ve yatakta pozisyon bulamıyor. Batın muayenesinde peritoneal irritasyon (defans/rebound) yok; sağ alt kadranda hafif hassasiyet mevcut. Sağ kostovertebral açı hassasiyeti belirgin pozitif. Genital muayene doğal. Hasta Sarı Alana devredildi!",
+                    },
+                    {
+                        "text": "Ağrının kas spazmına veya basit bel tutulmasına bağlı olduğunu düşünerek Yeşil Alanda oral kas gevşetici verip evde istirahat önermek",
+                        "is_correct": False,
+                        "scenario_update": "Bulantı, miksiyon güçlüğü ve şiddetli kostovertebral açı hassasiyeti olan hastanın üriner patolojisi atlandı ve ağrısı evde dayanılmaz hale geldi.",
+                        "teaching_point": "Ani başlayan dalgalı yan ağrısı, bulantı ve kostovertebral açı hassasiyeti mekanik kas ağrısı değildir; üriner sistem obstrüksiyonu araştırılmalıdır.",
+                    },
+                    {
+                        "text": "Tabloyu akut apandisit kabul ederek cerrahi konsültasyon istemek ve hasta bekleme salonundayken ağrı kesici vermeden muayene bulgularının netleşmesini beklemek",
+                        "is_correct": False,
+                        "scenario_update": "Hasta saatlerce şiddetli kıvrandırıcı ağrı çekti; peritoneal irritasyonu olmayan hastada uygun analjezi geciktirildi.",
+                        "teaching_point": "Kıvrandırıcı, dalgalar halinde gelen ve yatakta sabit durdurmayan ağrılar peritoneal değil visseral/obstrüktif tiptedir; analjezi gereksiz yere geciktirilmemelidir.",
+                    },
+                    {
+                        "text": "Hastanın ağrısını hafifletmek amacıyla Yeşil Alanda sıcak su torbası uygulamak ve ağızdan bol miktarda soğuk su içirerek hastayı bekletmek",
+                        "is_correct": False,
+                        "scenario_update": "Akut obstrüksiyon ve bulantısı olan hastaya ağızdan yüksek hacimli sıvı verilmesi kusmayı tetikledi ve renal pelvis içi basıncı artırdı.",
+                        "teaching_point": "Akut kolik atağı sırasında ağızdan kontrolsüz aşırı sıvı verilmesi intrarenal basıncı ve bulantıyı artırır; intravenöz kontrollü hidrasyon ve analjezi esastır.",
+                    },
+                ],
             },
             {
-                "stage_title": "Radyolojik ve Biyokimyasal Toksisite Taraması",
-                "question": "Yaklaşık 15-20 adet kan yapıcı draje yutan bu hastada toksisite şiddetini ve mide yükünü belirlemede en öncelikli tetkikler hangileridir?",
+                "stage_title": "Sarı Alanda Tetkik ve Görüntüleme İstem Kararı",
+                "question": "Sarı Alana devralınan, şiddetli sağ yan ağrısı ve miksiyon sırasında yanması olan bu çocukta tanısal yaklaşımınız nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Yalnızca idrarda toksik madde taraması ve gaita tahlili isteyerek acil radyolojik görüntüleme çekilmesini bütünüyle lüzumsuz bularak ertelemek",
+                        "text": "Doğrudan yüksek doz radyasyon içeren kontrastlı tüm batın bilgisayarlı tomografisi çekerek tanı kesinleşene kadar hastaya hiçbir analjezik ilaç vermemek",
                         "is_correct": False,
-                        "scenario_update": "İdrar taraması ağır metalleri göstermedi; mide içindeki çözünmemiş toksik tablet kitlesi ve sistemik toksisite şiddeti tespit edilemedi.",
-                        "teaching_point": "Standart idrar uyuşturucu panelleri metalik toksinleri saptamaz; tanı için kantitatif serum düzeyi ve midedeki radyoopak yükün grafisi şarttır."
+                        "scenario_update": "Pediatrik hastaya radyasyonsuz ilk basamak ultrasonografi yerine yüksek radyasyonlu tetkik uygulandı ve hasta gereksiz yere şiddetli ağrı çekti.",
+                        "teaching_point": "Pediatrik üriner obstrüksiyon şüphesinde ilk basamak görüntüleme radyasyonsuz ultrasonografidir; ayrıca uygun analjezi tanı sürecini maskelemez.",
                     },
                     {
-                        "text": "Ayakta direkt batın grafisi çekerek radyoopak tabletleri aramak ve kantitatif dördüncü saat serum demir konsantrasyonu göndermek",
+                        "text": "Yalnızca intravenöz parasetamol infüzyonu uygulayıp hiçbir idrar tetkiki veya radyolojik görüntüleme istemeden hastayı doğrudan taburcu ederek poliklinik kontrolüne yönlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "İdrar tetkiki ve ultrasonografi yapılmadığı için toplayıcı sistem dilatasyonu ve obstrüksiyonun düzeyi aydınlatılamadı.",
+                        "teaching_point": "Kıvrandırıcı yan ağrısı olan çocukta hematüriyi saptamak için idrar tetkiki ve obstrüksiyonu görmek için ultrasonografi zorunludur.",
+                    },
+                    {
+                        "text": "Üriner sistem enfeksiyonu şüphesiyle yalnızca tam idrar tetkiki ve idrar kültürü isteyerek acil ultrasonografi yapmadan ampirik seftriakson infüzyonu başlatmak",
+                        "is_correct": False,
+                        "scenario_update": "Ateşi olmayan hastada mekanik obstrüksiyon görüntülenmeden gereksiz yere parenteral antibiyotik başlandı ve altta yatan kalsifiye odak araştırılmadı.",
+                        "teaching_point": "Ateş ve piyüri olmayan akut yan ağrısında antibiyotik değil; obstrüksiyonu saptamak için ultrasonografi ve analjezi önceliklidir.",
+                    },
+                    {
+                        "text": "Damar yolu açarak hidrasyon ve nonsteroid analjezi uygulamak, tam idrar tetkiki, böbrek fonksiyonları ve acil üriner ultrasonografi istemek",
                         "is_correct": True,
-                        "explanation": "Bu mineral molekülleri radyoopak olduğundan ADBG'de net izlenir; toksisite derecesi ve şelasyon kararı alımdan sonraki serum konsantrasyonuyla belirlenir.",
-                        "new_finding": "Ayakta Direkt Batın Grafisi (ADBG): Mide projeksiyonunda ve proksimal duodenumda çok sayıda kümeleşmiş radyoopak (beyaz dansiteli) tablet görünümü saptandı, serbest hava izlenmedi. Laboratuvar Bulguları: Serum demir düzeyi: 650 mcg/dL (ağır toksik sınır, normal: 50-120 mcg/dL), total demir bağlama kapasitesi aşılmış. Kan Gazı: pH 7.22, pCO2 28 mmHg, HCO3 12 mmol/L, Laktat 5.8 mmol/L (derin anyon açıklı metabolik laktik asidoz). Hemogram: Lökositoz (WBC 21.400/mm³), Hb 10.2 g/dL, Trombosit 340.000/mm³."
+                        "explanation": "Akut böğür ağrısı ve obstrüksiyon yönetiminde ilk adım nonsteroid antiinflamatuar analjezi ve hidrasyondur; mikroskopik hematüriyi gösteren TİT ve toplayıcı sistem dilatasyonunu/kalkülü gösteren USG ilk basamaktır.",
+                        "new_finding": "LABORATUVAR: Üre 24 mg/dL, Kreatinin 0.52 mg/dL. TİT: Dansite 1025, pH 5.5, Lökosit negatif, Nitrit negatif, Mikroskopi: 15-20 eritrosit (mikroskopik hematüri). ÜRİNER USG: Sağ böbrek boyutları normal, toplayıcı sistemde evre 1 pelvikaliektazi izlendi; sağ üreterovezikal bileşkede 4 mm çapında posterior akustik gölgelenme veren intraluminal kalsifiye ekojen kalkül saptandı.",
                     },
-                    {
-                        "text": "Mide perforasyonunu ekarte etmek amacıyla sadece baryumlu kontrastlı gastrointestinal pasaj grafisi çekerek bağırsak pasaj süresini detaylıca incelemek",
-                        "is_correct": False,
-                        "scenario_update": "Hematemezi ve mukozal hasarı olan hastaya baryum verilmesi kusmayı şiddetlendirdi, peritonit ve mediastinit riskini kritik biçimde yükseltti.",
-                        "teaching_point": "Akut korozif mukozal hasarda ve kanamada baryumlu kontrastlı incelemeler perforasyon riski ve şelasyonu engellemesi nedeniyle kesinlikle kontrendikedir."
-                    },
-                    {
-                        "text": "Hiçbir kan tahlili almadan acil batın bilgisayarlı tomografisi çekmek ve verilen kontrast maddenin böbreklerden atılımını yatakta beklemek",
-                        "is_correct": False,
-                        "scenario_update": "İntravenöz kontrast madde hipovolemik ve asidotik çocukta akut tübüler nekroz ve anürik böbrek yetmezliğini tetikledi.",
-                        "teaching_point": "Akut metal toksisitesinde ilk basamak basit direkt grafi ve serum düzeyidir; kontrastlı BT gereksiz radyasyon ve nefrotoksisite riski taşır."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Klinik Tanı",
-                "question": "Yüksek miktarda kan ilacı yutma öyküsü, hematemez, ADBG'de radyoopak tabletler ve serum düzeyi 650 mcg/dL olan hastada kesin tanınız nedir?",
+                "stage_title": "Sarı Alanda Kesin Tanı",
+                "question": "Kıvrandırıcı yan ağrısı, mikroskopik hematüri ve ultrasonografide üreterovezikal bileşkede akustik gölgeli odak saptanan bu hastada kesin tanı nedir?",
                 "options": [
                     {
-                        "text": "Akut Kurşun Ensefalopatisi Toksisitesi",
+                        "text": "Akut Bakteriyel Piyelonefrit Enfeksiyonu",
                         "is_correct": False,
-                        "scenario_update": "Kurşun zehirlenmesi kronik maruziyetle ensefalopati, anemi ve nöropati yapar; akut hematemez ve ADBG'de radyoopak mide tabletleri oluşturmaz.",
-                        "teaching_point": "Kurşun toksisitesi akut masif hematemez ve erken laktik asidoz tablosuyla seyretmez; demir spesifik gastrointestinal ve hücresel toksisiteye yol açar."
+                        "scenario_update": "Hastanın ateşi yoktur, idrar tetkikinde lökositüri veya nitrit saptanmamış, toplayıcı sistemde kalsifiye kalkül izlenmiştir.",
+                        "teaching_point": "Piyelonefrit yüksek ateş, titreme, sistemik toksisite ve piyüri ile seyreder; hematüri ve akustik gölgeli kalkül mekanik taş hastalığını gösterir.",
                     },
                     {
-                        "text": "Akut Kostik Madde Alımı",
-                        "is_correct": False,
-                        "scenario_update": "Kostik madde alımlarında orofarenkste yanıklar ve salya akması ön plandadır; kanda anyon açıklı laktik asidoz ve radyoopak tabletler görülmez.",
-                        "teaching_point": "Kostik alımlarda orofarengeal mukozal lezyonlar baskındır ve radyografide radyoopak tablet kümeleri izlenmez."
-                    },
-                    {
-                        "text": "Akut Şiddetli Demir Zehirlenmesi",
+                        "text": "Sağ Distal Üreter Taşı (Ürolitiyazis)",
                         "is_correct": True,
-                        "explanation": "Yüksek doz alım (>60 mg/kg), hematemez, ADBG'de radyoopak tablet kümeleri, >500 mcg/dL serum düzeyi ve laktik asidoz kesin şiddetli demir intoksikasyonudur.",
-                        "new_finding": "Kesin Tanı: Akut Şiddetli Demir Zehirlenmesi (Hemorajik Korozif Evre). Mide yükü yüksek ve serum düzeyi şelasyon endikasyon sınırını aşmıştır."
+                        "explanation": "Ani başlayan yan ağrısı, mikroskopik hematüri ve ultrasonografide üreterovezikal bileşkede 4 mm boyutunda akustik gölgeli kalkül ile hafif hidronefroz görülmesi ürolitiyazise bağlı renal kolik tanısını kesinleştirir.",
+                        "new_finding": "Kesin Tanı: Sağ Distal Üreter Taşına Bağlı Renal Kolik (Ürolitiyazis).",
                     },
                     {
-                        "text": "Kanama Diyatezi ve Trombositopeni",
+                        "text": "Akut Flegmonöz Apandisit Tablosu",
                         "is_correct": False,
-                        "scenario_update": "Kanama diyatezinde trombositopeni veya koagülopati saptanır; radyografide radyoopak tabletler ve yüksek demir konsantrasyonu açıklanamaz.",
-                        "teaching_point": "Hemogramda trombosit sayısı ve pıhtılaşma testleri başlangıçta normaldir; hematemezin nedeni primer hemostaz kusuru değil direkt toksik erozyondur."
-                    }
-                ]
+                        "scenario_update": "Batın muayenesinde peritoneal irritasyon yoktur; tam idrar tetkikinde hematüri ve ultrasonografide üreter obstrüksiyonu saptanmıştır.",
+                        "teaching_point": "Apandisitte göbek çevresinden sağ alta göç eden ağrı, anoreksi ve peritonit bulguları tipiktir; belirgin hematüri ve üreterde kalkül beklenmez.",
+                    },
+                    {
+                        "text": "Sağ Akut Testiküler Epididimo-orşit",
+                        "is_correct": False,
+                        "scenario_update": "Skrotal muayenede testisler ve epididimler tamamen doğal, ağrısız ve simetrik bulunmuştur.",
+                        "teaching_point": "Epididimit skrotumda şişlik, lokalize hassasiyet ve ısı artışı ile karakterizedir; flank ağrısı ve mikroskopik hematürinin primer nedeni değildir.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Şelasyon Tedavisi ve Yoğun Bakım Yönetimi",
-                "question": "Serum düzeyi 650 mcg/dL olan ve laktik asidozu bulunan 12 kg çocukta en uygun antidot tedavisi ve yatış yaklaşımı nedir?",
+                "stage_title": "Sarı Alanda Tedavi ve Taburculuk Planı",
+                "question": "Distal üreterde 4 mm taş ve hafif dilatasyon saptanan, böbrek fonksiyonları normal bu hastada taburculuk ve tedavi protokolü ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Çocuk Yoğun Bakıma yatırarak intravenöz deferoksamin infüzyonu başlamak, hemodinami, idrar rengi ve asidoz tablosunu yakından izlemek",
+                        "text": "Taşın kendiliğinden düşme olasılığı bulunmadığını belirterek hastayı derhal acil ameliyathaneye almak ve cerrahi rijit üreterorenoskopi ile lazer litotripsi operasyonu uygulamak",
+                        "is_correct": False,
+                        "scenario_update": "Distal yerleşimli 4 mm boyutundaki taşların büyük çoğunluğu medikal tedaviyle kendiliğinden düşer; acil invaziv cerrahi girişim gereksiz anestezi ve üreter travması riski oluşturdu.",
+                        "teaching_point": "Çocuklarda <5 mm distal üreter taşlarında enfeksiyon veya inatçı obstrüksiyon yoksa ilk yaklaşım konservatif izlem ve medikal ekspulsif tedavidir; acil cerrahi gerekmez.",
+                    },
+                    {
+                        "text": "İdrar yolu enfeksiyonu profilaksisi amacıyla bir ay boyunca oral siprofloksasin tedavisi başlamak ve taş düşene dek hastanın yatak istirahatinde kalmasını önermek",
+                        "is_correct": False,
+                        "scenario_update": "Enfeksiyonu olmayan hastada uygunsuz florokinolon kullanımı yan etkilere yol açtı; ayrıca yatak istirahati taşın idrar akımıyla ilerlemesini geciktirdi.",
+                        "teaching_point": "Steril ürolitiyaziste profilaktik antibiyotik endike değildir; aksine hastanın mobilize olması taşın spontan geçişini kolaylaştırır.",
+                    },
+                    {
+                        "text": "Ağrısı gerileyen hastaya bol sıvı alımı, analjezik ve idrar süzme eğitimi verip Çocuk Ürolojisi poliklinik kontrolüyle taburcu etmek",
                         "is_correct": True,
-                        "explanation": "Serum düzeyi >500 mcg/dL, sistemik semptom ve laktik asidoz varlığında spesifik şelatör İV deferoksamindir (15 mg/kg/saat infüzyon, vin rosé idrar takibi).",
-                        "new_finding": "Hasta Çocuk Yoğun Bakım Ünitesine yatırıldı. İntravenöz deferoksamin infüzyonu 15 mg/kg/saat dozunda başlandı. İdrarın karakteristik vin rosé (pembe-kızıl) renk aldığı gözlendi. Sıvı resüsitasyonuyla hemodinamik stabilite sağlandı, 24. saatte serum demir düzeyi 140 mcg/dL düzeyine geriledi ve metabolik asidoz tamamen düzeldi."
+                        "explanation": "Komplike olmayan, 4 mm'lik distal taşlarda yaklaşım: bol hidrasyon, aralıklı analjezi, taş analizi için idrar süzme eğitimi ve elektif poliklinik takibidir.",
+                        "new_finding": "Analjezi ve hidrasyonla semptomları düzelen hasta, bol sıvı tüketimi ve idrar süzme önerileriyle Çocuk Ürolojisi takibine yönlendirilerek taburcu edildi.",
                     },
                     {
-                        "text": "Oral penisilamin kapsül reçete ederek hastayı çocuk servisine yatırmak ve idrar rengini takip etmeden spontan atılımı beklemek",
+                        "text": "Hafif pelvikaliektazi saptandığı için hastayı nefroloji servisine yatırmak, mutlak aç bırakıp 48 saat boyunca aralıksız intravenöz yüksek doz furosemid uygulamak",
                         "is_correct": False,
-                        "scenario_update": "Penisilamin demiri bağlamada etkisizdir; şelasyon yapılmayan çocukta mitokondriyal hasar ilerleyerek fulminan karaciğer yetmezliği ve kardiyotoksisite gelişti.",
-                        "teaching_point": "Akut demir zehirlenmesinde penisilamin veya dimerkaprol (BAL) etkisizdir; tek spesifik ve hayat kurtarıcı şelatör intravenöz deferoksamindir."
+                        "scenario_update": "Obstrükte sisteme yüksek doz kıvrım diüretiği verilmesi intrapelvik basıncı aşırı artırarak şiddetli ağrı krizine ve elektrolit dengesizliğine neden oldu.",
+                        "teaching_point": "Akut taş obstrüksiyonunda furosemid gibi güçlü diüretikler intraluminal basıncı artırarak forniks rüptürü riski yaratır; kesinlikle uygulanmamalıdır.",
                     },
-                    {
-                        "text": "Yalnızca yüksek doz oral C vitamini vererek gastrointestinal emilimi nötralize etmeye çalışmak ve antidot vermeden gözlemlemek",
-                        "is_correct": False,
-                        "scenario_update": "C vitamini demirin ferrik formdan ferröz forma dönüşümünü artırarak serbest radikal hasarını ve miyokardiyal toksisiteyi daha da ölümcülleştirdi.",
-                        "teaching_point": "Akut fazda askorbik asit (C vitamini) verilmesi serbest demir toksisitesini ve fatal aritmileri artırabileceğinden akut dönemde kesinlikle kontrendikedir."
-                    },
-                    {
-                        "text": "Midedeki tabletlerin doğal yolla atılmasını beklemek amacıyla laksatif şurup içirip hastayı ayaktan eve taburcu etmek",
-                        "is_correct": False,
-                        "scenario_update": "Taburcu edilen çocukta alımdan 8 saat sonra evde derin koma, kontrolsüz koagülopati ve irreversibl kardiyovasküler kollaps gelişti.",
-                        "teaching_point": "Serum düzeyi 500 mcg/dL'yi aşan ve asidozu olan demir intoksikasyonları yoğun bakımda agresif parenteral şelasyon yapılmazsa %50'ye varan mortalite taşır."
-                    }
-                ]
-            }
-        ]
+                ],
+            },
+        ],
     },
     {
         "id": "Y39",
         "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
-        "age": "3 Yaş (14 kg)",
+        "age": "7 Yaş",
         "gender": "Kız",
-        "complaint": "Evde açıkta bırakılan reçeteli antidepresan kutusundan tablet yutma sonrası uykuya meyil, yüzde kızarıklık, ağız kuruluğu ve çarpıntı",
-        "history": "3 yaşındaki (14 kg) kız çocuğun babası panikle Sarı Alana başvuruyor: 'Yaklaşık bir saat önce evde sehpa üzerinde duran annesine ait kırmızı renkli depresyon hapı kutusundaki tabletleri eksilmiş bulduk; en az 6-8 tablet yutmuş olabilir. Çocuğun göz bebekleri kocaman oldu, cildi kuruyup alev gibi kızardı, kalbi göğsünden fırlayacak gibi hızlı çarpıyor ve sürekli sayıklayarak uyukluyor.'",
-        "final_diagnosis": "Trisiklik Antidepresan (TKA / Amitriptilin) Zehirlenmesi ve Akut Kardiyotoksisitesi",
-        "disposition": "Sarı Alanda Acil EKG + İV Sodyum Bikarbonat Bolusu (1-2 mEq/kg) + Çocuk Yoğun Bakım Ünitesine Yatış ve Sürekli Kardiyak Monitörizasyon",
-        "case_pearl": "Trisiklik antidepresanlar (TKA - örn. amitriptilin, imipramin), kardiyak voltaj bağımlı hızlı sodyum kanallarını bloke ederek, periferik alfa-1 adrenerjik reseptörleri antagonize ederek ve merkezi/periferik muskarinik asetilkolin reseptörlerini baskılayarak çoklu toksisiteye yol açar. Antikolinerjik toksidrom bulguları: midriyazis, kuru sıcak eritemli cilt, mukozal kuruluk, taşikardi, bağırsak seslerinde azalma ve üriner retansiyondur. En ölümcül etkisi miyokardiyal sodyum kanal blokajına bağlı intraventriküler ileti gecikmesi ve malign ventriküler aritmilerdir (VT/VF, torsades de pointes). 12 derivasyonlu EKG'de QRS >100 ms olması konvülziyon riskini, >160 ms olması ventriküler aritmi riskini gösterir; aVR derivasyonunda terminal R dalgası yüksekliği (R >3 mm veya R/S >0.7) TKA kardiyotoksisitesinin patognomonik belirtecidir. Birinci basamak hayat kurtarıcı tedavi İNTRAVENÖZ SODYUM BİKARBONATTIR (1-2 mEq/kg İV bolus; hedef kan pH 7.45-7.55, serum sodyumu 150-155 mEq/L). Sodyum yükü kompetitif blokajı çözer, alkaloza kayma ilacın reseptörden ayrılmasını hızlandırır. Sınıf 1A ve 1C antiaritmikler ile fizostigmin KONTRENDİKEDİR (asistoliye yol açabilir).",
+        "complaint": "Son haftalarda aşırı su içme, sık idrara çıkma ve gece altını ıslatma",
+        "history": (
+            "Annesi 7 yaşındaki kızını Yeşil Alana getiriyor: 'Kızım son 3 haftadır sürekli susadığını "
+            "söylüyor, günde 3-4 litre su içiyor. Okulda ve evde neredeyse saat başı tuvalete gidiyor. "
+            "3 yaşından beri hiç gece altına kaçırmazken son 10 gündür her gece yatağını ıslatmaya "
+            "başladı. İştahı iyi olmasına rağmen son 2 haftada kilo verdiğini ve hafif halsizleştiğini "
+            "fark ettik. Ateşi, kusması veya nefes darlığı yok.'"
+        ),
+        "final_diagnosis": "Yeni Başlangıçlı Tip 1 Diabetes Mellitus (Ketoasidoz Tablosu Olmayan Hafif Hiperglisemi)",
+        "disposition": "Yeşil Alandan Sarı Alana Devir -> Kan Gazı / Elektrolit / İdrar Ketonu Değerlendirmesi -> DKA Dışlanarak Çocuk Endokrinoloji Servisine İnsülin Başlanması ve Eğitim İçin Yatış",
+        "case_pearl": (
+            "Çocuklarda polidipsi, poliüri, sekonder enürezis ve açıklanamayan kilo kaybı yeni başlangıçlı "
+            "tip 1 diyabet için klasik dörtlüdür. Yeşil Alanda kapiller kan glukozu >200 mg/dL ölçülen "
+            "her çocuk ketoasidoz (DKA) riski açısından derhal Sarı Alana devredilmeli; kan gazı "
+            "(pH, HCO3) ve idrar/kan ketonu bakılmalıdır. Asidozu olmayan (pH ≥7.30, HCO3 ≥18) stabil "
+            "vakalara intravenöz insülin infüzyonu yerine Çocuk Endokrinoloji servisinde subkutan insülin "
+            "rejimi ve aile eğitimi başlanır."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Antikolinerjik Toksidrom ve Kardiyak Güvenlik",
-                "question": "Açıkta kalan reçeteli antidepresan tabletlerinden yutan, letarjik ve taşikardik olan 14 kg çocukta ilk acil yaklaşım ne olmalıdır?",
+                "stage_title": "Yeşil Alanda Klinik Değerlendirme ve Alan Kararı",
+                "question": "Polidipsi, poliüri ve sekonder enürezis öyküsüyle Yeşil Alana başvuran bu 7 yaşındaki çocukta ilk basamak yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Hava yolunu güvenceye almak, damar yolu açarak kardiyak monitörizasyon başlatmak ve vital parametreleri acilen değerlendirmek",
+                        "text": "Şikayetleri primer enürezis noktürna ve idrar yolu enfeksiyonu olarak yorumlayıp Yeşil Alanda tam idrar tetkiki isteyerek oral antibiyotik reçete etmek",
+                        "is_correct": False,
+                        "scenario_update": "Polidipsi ve kilo kaybı eşlik eden çocukta glukoz değerlendirilmediği için altta yatan metabolik bozukluk atlandı.",
+                        "teaching_point": "Kısa sürede gelişen polidipsi, poliüri ve kilo kaybı varlığında basit idrar yolu enfeksiyonu düşünülmeden önce mutlaka glukoz düzeyi kontrol edilmelidir.",
+                    },
+                    {
+                        "text": "Aşırı su içmenin psikojenik polidipsiye bağlı olduğunu varsayarak aileye evde sıkı sıvı kısıtlaması uygulamalarını önermek ve çocuğu taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Ozmotik diürezi olan çocukta sıvı kısıtlaması yapılması intravasküler volüm açığını hızla derinleştirerek hipovolemik şok tablosuna zemin hazırladı.",
+                        "teaching_point": "Ozmotik diürezi olan çocuklarda metabolik bozukluk ekarte edilmeden sıvı kısıtlaması yapılması ölümcül dehidratasyon ve şoka neden olabilir.",
+                    },
+                    {
+                        "text": "Bilinç açık ve solunum rahat olduğu için hastayı Yeşil Alanda tutarak ayaktan Çocuk Nefrolojisi polikliniğine tübüler fonksiyon testleri için yönlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "Akut glukoz yüksekliği riski taşıyan çocuk poliklinik randevusu için eve gönderildi ve saatler içinde dehidratasyonu derinleşti.",
+                        "teaching_point": "Yeni başlangıçlı poliüri ve kilo kaybı olan çocukta acil serviste kan şekeri ölçülmeden hasta elektif polikliniklere sevk edilmemelidir.",
+                    },
+                    {
+                        "text": "Vital bulguları ve dehidratasyon derecesini değerlendirmek, acil parmaktan kapiller kan şekeri ölçümü yaparak hastayı izlem için Sarı Alana devretmek",
                         "is_correct": True,
-                        "explanation": "Bilinç baskılanması ve kardiyotoksisite riski taşıyan antidepresan alımlarında acil hava yolu kontrolü, damar yolu ve sürekli kardiyak monitörizasyon esastır.",
-                        "new_finding": "Vital Bulgular: KTA 154/dk (sinüs taşikardisi), SS 24/dk, TA 86/52 mmHg, SpO2 %98, Ateş 37.8°C, GKS 12. Fizik Muayene: Cilt kuru, sıcak ve yaygın flushed (kırmızı); ağız mukozası kupkuru; pupiller bilateral 6 mm midriyatik ve ışık refleksi tembel. Batında bağırsak sesleri hipoaktif, mesane glob vezikale formunda palpe ediliyor."
+                        "triggers_yellow_transfer": True,
+                        "explanation": "Polidipsi, poliüri, sekonder enürezis ve kilo kaybı klasik ozmotik diürez bulgularıdır; acil kapiller glukoz bakılmalı ve metabolik risk nedeniyle hasta Sarı Alana alınmalıdır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.7°C, KTA 98/dk, Solunum 20/dk, SpO2 %99, TA 102/64 mmHg. Bilinç açık ve oryante; Kussmaul solunumu veya nefeste aseton kokusu yok. Mukoza hafif kuru, kapiller dolum 2 saniye (hafif dehidratasyon). Parmaktan ölçülen kapiller kan şekeri 310 mg/dL bulundu. Hasta Sarı Alana devredildi!",
                     },
-                    {
-                        "text": "Bilinç bulanıklığı olan çocuğa derhal ağızdan tuzlu su içirerek kusturmaya çalışmak ve ardından ev gözlemine göndermek",
-                        "is_correct": False,
-                        "scenario_update": "Zorla kusturulan çocukta letarji derinleşti, mide içeriği hava yoluna kaçarak akut aspirasyon pnömonisi ve hipoksi tablosu gelişti.",
-                        "teaching_point": "Bilinci baskılanmış ve kardiyotoksik ilaç almış hastalarda kusturma işlemi hava yolu koruyucu refleksleri zayıfladığı için kesinlikle kontrendikedir."
-                    },
-                    {
-                        "text": "Taşikardiyi düşürmek amacıyla hemen intravenöz kısa etkili beta bloker esmolol puşe etmek ve EKG çekimini ertelemek",
-                        "is_correct": False,
-                        "scenario_update": "Beta bloker uygulanan hastada miyokardiyal kontraktilite aniden çöktü, şiddetli hipotansiyon ve derin bradikardik kardiyovasküler kollaps meydana geldi.",
-                        "teaching_point": "Toksik taşikardilerde EKG ile ileti anomalileri aydınlatılmadan beta bloker verilmesi kardiyojenik şok ve ölümcül bradiaritmilere yol açabilir."
-                    },
-                    {
-                        "text": "Hastanın ajitasyonunu yatıştırmak amacıyla yüksek doz santral etkili intramusküler klorpromazin enjekte ederek serviste tek başına bırakmak",
-                        "is_correct": False,
-                        "scenario_update": "Fenotiyazin verilen çocukta ek antikolinerjik ve sodyum kanal blokajı etkisiyle derin koma ve genel tonik klonik nöbet tetiklendi.",
-                        "teaching_point": "Antipsikotikler antikolinerjik yükü artırır, nöbet eşiğini düşürür ve kardiyotoksisiteyi derinleştirir; bu olgularda kesinlikle kullanılmamalıdır."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Kardiyak İleti Analizi ve 12 Derivasyonlu Elektrokardiyografi",
-                "question": "Bilinç değişikliği, belirgin taşikardi ve antikolinerjik bulguları olan bu çocukta kardiyotoksisiteyi saptamak için en kritik tetkik adımı nedir?",
+                "stage_title": "Sarı Alanda Metabolik Tetkik ve Durum Değerlendirmesi",
+                "question": "Sarı Alana devralınan ve kan şekeri 310 mg/dL ölçülen hastada asidoz ve elektrolit dengesizliğini dışlamak için hangi tetkikler istenmelidir?",
                 "options": [
                     {
-                        "text": "Yalnızca rutin serum elektrolitleri ve kalsiyum düzeyi göndererek kardiyak elektrofizyolojik ritim analizi yapmadan servis yatağında beklemek",
+                        "text": "Hemen intravenöz kristalize regüler insülin puşesi uygulamak ve ardından hiçbir kan tetkiki istemeden hastayı doğrudan yoğun bakıma transfer etmek",
                         "is_correct": False,
-                        "scenario_update": "Elektrolit sonuçları çıkana kadar EKG çekilmediği için ilerleyen intraventriküler ileti gecikmesi fark edilemedi ve hasta ventriküler fibrilasyona girdi.",
-                        "teaching_point": "Kardiyotoksik ilaç alımlarında en acil ve hayat kurtarıcı tanısal tetkik 12 derivasyonlu EKG'dir; biyokimya sonuçları beklenerek zaman kaybedilemez."
+                        "scenario_update": "Kan gazı ve potasyum düzeyi bilinmeden yapılan İV bolus insülin ani hipokalemiye, kardiyak aritmilere ve hızlı ozmotik kaymaya yol açtı.",
+                        "teaching_point": "Pediatrik yaş grubunda yüksek kan şekerinde asla intravenöz bolus insülin puşe yapılmaz; önce kan gazı, potasyum ve keton değerlendirilmelidir.",
                     },
                     {
-                        "text": "Ritim bozukluğunu değerlendirmek için sadece yirmi dört saatlik ritim Holter cihazı takarak hastayı acilden poliklinik kontrolüne yönlendirmek",
-                        "is_correct": False,
-                        "scenario_update": "Acil serviste EKG çekilmeden taburcu edilen çocuk yolda malign polimorfik ventriküler taşikardi ve kardiyak arrest geliştirdi.",
-                        "teaching_point": "Akut taşikardik zehirlenmelerde ambulatuvar Holter değil, anlık 12 derivasyonlu acil EKG çekilmeli ve sodyum kanal blokajı hemen saptanmalıdır."
-                    },
-                    {
-                        "text": "Acilen on iki derivasyonlu elektrokardiyografi çekerek QRS süresini ve aVR'deki terminal R dalgasını analiz etmek",
-                        "image": "assets/images/ecg_tca.png",
-                        "image_caption": "EKG: QRS süresinde genişleme (>100 ms) ve aVR derivasyonunda terminal belirgin R dalgası (>3 mm)",
+                        "text": "Venöz kan gazı, serum elektrolitleri, böbrek fonksiyon testleri, tam idrar tetkikinde keton incelemesi ve hemoglobin A1c konsantrasyonu istemek",
                         "is_correct": True,
-                        "explanation": "Miyokardiyal sodyum kanalı blokajı QRS genişlemesine (>100 ms) ve aVR derivasyonunda karakteristik yüksek terminal R dalgasına (>3 mm) yol açar.",
-                        "new_finding": "12 Derivasyonlu EKG Analizi: Sinüs taşikardisi (KTA 152/dk), QRS süresi 124 ms (belirgin genişleme, >100 ms), QT/QTc aralığı 490 ms (uzamış). aVR derivasyonunda terminal R dalgası yüksekliği 4.2 mm (patolojik >3 mm) ve R/S oranı 1.1 (>0.7). Kan Gazı: pH 7.31, pCO2 38 mmHg, HCO3 19 mmol/L, Laktat 2.8 mmol/L. Serum glukozu 108 mg/dL, elektrolitler: Na 137 mEq/L, K 4.1 mEq/L."
+                        "explanation": "Kan şekeri yüksek saptanan çocukta temel amaç ketoasidoz tablosunu (asidemi, hipobikarbonatemi, ketonüri) değerlendirmek, elektrolit dengesini görmek ve kronik glisemik yükü (HbA1c) doğrulamaktır.",
+                        "new_finding": "LABORATUVAR: Venöz Kan Gazı: pH 7.38, pCO2 38 mmHg, HCO3 22 mmol/L, Baz açığı -1.8 mEq/L (asidoz yok). Serum Na 136 mEq/L, K 4.3 mEq/L, Glukoz 308 mg/dL, Üre 22 mg/dL, Kreatinin 0.48 mg/dL. TİT: Dansite 1030, Glukoz (++++), Keton negatif (eser), protein negatif. HbA1c: %10.4.",
                     },
                     {
-                        "text": "Sadece transtorasik ekokardiyografi ile sol ventrikül ejeksiyon fraksiyonunu ölçmek ve elektrokardiyografik ileti aralıklarını incelemeyi tamamen ihmal etmek",
+                        "text": "Metabolik tetkikleri erteleyerek yalnızca kraniyal bilgisayarlı tomografi çekmek ve intrakraniyal kitleye sekonder santral hormon yetmezliği tablosunu araştırmak",
                         "is_correct": False,
-                        "scenario_update": "Ekokardiyografi ile ventrikül ileti gecikmesi ve malign aritmi riski değerlendirilemedi; hastada ani QRS genişlemesi ve asistoli gelişti.",
-                        "teaching_point": "Ekokardiyografi elektriksel ileti bloklarını göstermez; akut kardiyotoksisitenin derecesi ve nöbet/aritmi riski yalnızca 12 derivasyonlu EKG ile izlenir."
-                    }
-                ]
+                        "scenario_update": "Nörolojik defisiti olmayan çocuğa yüksek doz radyasyon verildi ve metabolik tablonun doğrulanması saatlerce gecikti.",
+                        "teaching_point": "Kilo kaybı, poliüri ve glukoz yüksekliği olan çocukta ilk incelenmesi gereken sistem santral sinir sistemi görüntülemesi değil metabolik kan tetkikleridir.",
+                    },
+                    {
+                        "text": "Oral rehidratasyon sıvısı verip laboratuvar tetkiki istemeden hastayı altı saat sonra tekrar kan şekeri ölçümü için sarı alanda bekletmek",
+                        "is_correct": False,
+                        "scenario_update": "Kan gazı ve keton kontrolü yapılmadan bekletilen hastada olası asidoz tablosunun erken tanısı ve uygun servise sevki gecikti.",
+                        "teaching_point": "Yüksek kan şekeriyle başvuran çocukta asidoz ve ketoz varlığı acilen teyit edilmelidir; tetkiksiz saatlerce beklemek doğru bir yaklaşım değildir.",
+                    },
+                ],
             },
             {
-                "stage_title": "Klinik Tanı",
-                "question": "Antikolinerjik bulgular, letarji, EKG'de QRS >100 ms ve aVR'de belirgin R dalgası saptanan hastada öncelikli kesin tanınız nedir?",
+                "stage_title": "Sarı Alanda Kesin Tanı",
+                "question": "Poliüri, polidipsi, kan glukozu >200 mg/dL, HbA1c %10.4 ve normal kan gazı (pH 7.38, HCO3 22) parametreleriyle kesin tanınız nedir?",
                 "options": [
                     {
-                        "text": "Akut Selektif Serotonin Geri Alım Toksisitesi",
+                        "text": "Ağır Diyabetik Ketoasidoz Tablosu",
                         "is_correct": False,
-                        "scenario_update": "SSRI zehirlenmesinde tremor, hiperrefleksi, klonus ve terleme görülür; belirgin sodyum kanal blokajı (QRS >100 ms, aVR'de R >3 mm) beklenmez.",
-                        "teaching_point": "SSRI toksisitesi nöromusküler uyarılabilirlik ve klonusla seyreder; klasik QRS genişlemesi ve aVR bulguları TKA kardiyotoksisitesine özgüdür."
+                        "scenario_update": "Hastanın kan gazında pH 7.38 ve HCO3 22 mmol/L olup asidoz yoktur; idrarda belirgin keton saptanmamıştır.",
+                        "teaching_point": "Diyabetik ketoasidoz tanısı için hiperglisemiye ek olarak venöz pH <7.30 veya serum bikarbonatı <18 mmol/L ve belirgin ketonemi/ketonüri şarttır.",
                     },
                     {
-                        "text": "Trisiklik Antidepresan Kardiyotoksisitesi Zehirlenmesi",
+                        "text": "Primer Santral Diabetes İnsipidus",
+                        "is_correct": False,
+                        "scenario_update": "Hastada masif glikozüri, kan glukozu 308 mg/dL ve HbA1c %10.4 saptanmıştır; tablo ADH eksikliğiyle uyumlu değildir.",
+                        "teaching_point": "Diabetes insipidusta idrar dansitesi düşüktür (<1005) ve kan şekeri normaldir; glukoz yüksekliği ve glikozüri görülmez.",
+                    },
+                    {
+                        "text": "Ketoasidozsuz Yeni Başlangıçlı Tip 1 Diabetes Mellitus",
                         "is_correct": True,
-                        "explanation": "Antikolinerjik toksidrom bulguları ile birlikte EKG'de QRS genişlemesi (>100 ms) ve aVR'de patolojik terminal R dalgası (>3 mm) tipik TKA kardiyotoksisitesidir.",
-                        "new_finding": "Kesin Tanı: Trisiklik Antidepresan (Amitriptilin) Zehirlenmesi ve Akut Kardiyotoksisitesi. QRS >100 ms olduğu için malign aritmi ve nöbet riski yüksektir."
+                        "explanation": "Polidipsi, poliüri, kilo kaybı, rastgele venöz plazma glukozu ≥200 mg/dL ve yüksek HbA1c birlikteliği tip 1 diyabet tanısı koydurur. Kan gazının normal olması (pH >7.30, HCO3 >18) ve ketonüri bulunmaması ketoasidozun olmadığını gösterir.",
+                        "new_finding": "Kesin Tanı: Ketoasidozsuz Yeni Başlangıçlı Tip 1 Diabetes Mellitus.",
                     },
                     {
-                        "text": "Atropin ve Belladon Alkaloidi İntoksikasyonu",
+                        "text": "Kalıtsal İzole Renal Glikozüri",
                         "is_correct": False,
-                        "scenario_update": "Atropin izole periferik/santral antikolinerjik bulgular yapar ancak ventriküler kardiyak sodyum kanallarını bloke ederek QRS genişletmez.",
-                        "teaching_point": "Atropin sinüs taşikardisi ve midriyazis yapsa da aVR'de patolojik terminal R dalgası ve QRS süresinde genişleme (sodyum kanal blokajı) yapmaz."
+                        "scenario_update": "Renal glikozüride kan glukoz düzeyi ve HbA1c tamamen normaldir; tübüler emilim defekti nedeniyle yalnızca idrarda şeker çıkar.",
+                        "teaching_point": "Renal glikozüride sistemik hiperglisemi, yüksek HbA1c veya poliüri-polidipsi sendromu görülmez; kan şekeri daima fizyolojik sınırlardadır.",
                     },
-                    {
-                        "text": "Akut Organofosfat İntoksikasyonu Tablosu",
-                        "is_correct": False,
-                        "scenario_update": "Organofosfat zehirlenmesinde kolinerjik kriz (miyozis, aşırı bronkore, bronkospazm, bradikardi, aşırı tükürük ve ishal) görülür; kuru cilt ve midriyazis olmaz.",
-                        "teaching_point": "Organofosfatlar kolinerjik fazlalık yaparak ıslak sekresyonlara yol açar; bu hastada kuru sıcak cilt ve midriyazis ile antikolinerjik toksidrom vardır."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Spesifik Tedavi ve Kardiyovasküler Stabilizasyon",
-                "question": "EKG'de QRS süresi 124 ms ve aVR terminal R dalgası 4.2 mm olan bu hastada derhal uygulanması gereken spesifik antidot tedavisi nedir?",
+                "stage_title": "Sarı Alanda Tedavi ve Servis Yatış Planı",
+                "question": "Ketoasidoz tablosu bulunmayan (pH 7.38, HCO3 22 mmol/L), genel durumu stabil tip 1 diyabetli bu çocuğun yönetim planı nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Antikolinerjik bulguları tersine çevirmek amacıyla derhal bir miligram intravenöz fizostigmin puşe ederek kardiyak ritim yanıtını monitörden beklemek",
-                        "is_correct": False,
-                        "scenario_update": "Fizostigmin uygulanan hastada ileti gecikmesi derinleşti, tam atriyoventriküler blok ve dirençli asistolik kardiyak arrest gelişti.",
-                        "teaching_point": "TKA zehirlenmelerinde fizostigmin uygulanması asistoli ve refrakter kardiyak arrest riskini dramatik artırdığından kesinlikle kontrendikedir."
-                    },
-                    {
-                        "text": "QRS genişlemesini düzeltmek için Sınıf 1A antiaritmik prokainamid veya Sınıf 1C flekainid infüzyonu başlayarak hastayı serviste izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Sodyum kanal blokeri antiaritmik alan hastada sodyum kanalları tamamen kilitlendi, ventriküler taşikardi ve irreversibl kardiyovasküler kollaps gelişti.",
-                        "teaching_point": "Sınıf 1A ve 1C antiaritmikler sodyum kanal blokajını daha da şiddetlendirir; TKA kardiyotoksisitesinde kullanımları kesinlikle yasaktır."
-                    },
-                    {
-                        "text": "Yalnızca intravenöz magnezyum sülfat infüzyonu başlayıp başka hiçbir sistemik alkalinizasyon ajanı vermeden hastayı genel serviste takip etmek",
-                        "is_correct": False,
-                        "scenario_update": "Magnezyum sodyum kanal blokajını çözemedi; QRS süresi 160 ms üzerine çıkarak hastada generalize tonik-klonik konvülziyon gelişti.",
-                        "teaching_point": "Magnezyum Torsades de Pointes tedavisinde yardımcıdır ancak sodyum kanal blokajını ve asidozu düzeltemez; primer birinci basamak tedavi değildir."
-                    },
-                    {
-                        "text": "Bir ila iki miliequivalan bölü kilogram intravenöz sodyum bikarbonat bolusu uygulayıp QRS daralmasını elektrokardiyografiyle izlemek",
+                        "text": "Asidozu olmadığı için intravenöz insülin vermemek, oral beslenmeyi sürdürerek subkutan insülin protokolü ve eğitimi için Çocuk Endokrinoloji servisine yatırmak",
                         "is_correct": True,
-                        "explanation": "İV sodyum bikarbonat, hem sodyum yükü sağlayarak kanalları açar hem de serum pH'sını yükselterek ilacın kanallardan ayrılmasını sağlar (hedef pH 7.45-7.55).",
-                        "new_finding": "Hastaya 1.5 mEq/kg (21 mEq) İV Sodyum Bikarbonat bolus uygulandı. 10 dakika sonra tekrarlanan EKG'de QRS süresi 88 ms'ye daraldı, aVR'deki R dalgası 1.8 mm'ye geriledi. Kan gazında pH 7.48 ölçüldü. Çocuk Yoğun Bakım Ünitesine yatırıldı; sürekli sodyum bikarbonat infüzyonu (hedef pH 7.45-7.55) ve kardiyak monitörizasyon ile takip edildi, sekelsiz toparladı."
-                    }
-                ]
-            }
-        ]
+                        "explanation": "Ketoasidozu olmayan yeni tanı tip 1 diyabetli çocuklarda yoğun İV insülin infüzyonu veya agresif mayi tedavisi endike değildir. Hasta oral beslenebilir; Çocuk Endokrinoloji servisine yatırılarak subkutan çoklu doz insülin başlanır ve aileye kapsamlı diyabet eğitimi verilir.",
+                        "new_finding": "Çocuk Endokrinoloji kliniği ile konsülte edilen hasta, subkutan insülin tedavisi başlanması ve kapsamlı aile diyabet eğitimi verilmesi amacıyla servise yatırıldı.",
+                    },
+                    {
+                        "text": "Kan şekerini hızla 100 mg/dL seviyesine indirmek için yüksek doz intravenöz regüler insülin infüzyonu ve hipotonik sıvı başlayarak yoğun bakıma yatırmak",
+                        "is_correct": False,
+                        "scenario_update": "Asidozu olmayan stabil hastaya yüksek doz İV insülin ve hipotonik sıvı verilmesi ani glukoz düşüşüne ve serebral ödem riskine yol açtı.",
+                        "teaching_point": "Ketoasidozu olmayan stabil diyabet hastalarında intravenöz insülin infüzyonu veya yoğun bakım yatışı gerekmez; subkutan rejim tercih edilir.",
+                    },
+                    {
+                        "text": "Tip 1 diyabetli çocukta ilk basamak olarak oral antidiyabetik metformin başlamak ve beslenme önerileriyle hastayı acil servisten evine taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Mutlak insülin eksikliği bulunan çocukta oral antidiyabetik etkisiz kaldı ve hasta günler sonra ağır ketoasidoz tablosuyla tekrar başvurdu.",
+                        "teaching_point": "Çocukluk çağı tip 1 diyabetinde mutlak otoimmün beta hücresi kaybı vardır; oral antidiyabetikler etkisizdir ve tedavi mutlaka insülindir.",
+                    },
+                    {
+                        "text": "Hafif dehidratasyon nedeniyle 24 saat boyunca hastayı tamamen aç tutarak izotonik sıvı infüzyonu uygulamak ve insülin tedavisini poliklinik kontrolüne bırakmak",
+                        "is_correct": False,
+                        "scenario_update": "Aç bırakılan ve insülini başlanmayan çocukta lipoliz hızlanarak keton üretimi tetiklendi ve metabolik tablo asidoza doğru ilerledi.",
+                        "teaching_point": "Ketoasidozu olmayan çocuk NPO tutulmaz; beslenme ile senkronize subkutan insülin başlanarak anabolik süreç sağlanmalıdır.",
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "Y40",
         "category": "👶 Ağlayan, Emmeyen, Huzursuz Bebek",
-        "age": "4 Günlük (3.2 kg)",
+        "age": "4 Aylık",
         "gender": "Erkek",
-        "complaint": "Doğumun dördüncü gününde beslenememe, giderek derinleşen uyku hali, kaslarda gevşeklik, hızlı nefes alıp verme ve kol-bacaklarda sıçrama nöbetleri",
-        "history": "Zamanında 3200 gram doğan erkek bebeğin ailesi yaşamın dördüncü gününde Sarı Alana başvuruyor: 'İlk iki gün anne sütünü iştahla emiyordu, hiçbir sıkıntısı yoktu. Üçüncü günden itibaren giderek emmeyi bıraktı, uyandıramamaya başladık, vücudu pelte gibi gevşedi. Bugün sabah nefes alıp vermesi çok hızlandı, karnı şişti ve kollarında, bacaklarında ritmik titreme ve sıçrama kasılmaları başladı.'",
-        "final_diagnosis": "Akut Yenidoğan Hiperamonyemisi ve Üre Döngüsü Bozukluğu (Enzimatik Azot Metabolizması Defekti)",
-        "disposition": "Acil Protein Alımının Kesilmesi + %10 Dekstroz İnfüzyonu + İntravenöz Nitrojen Bağlayıcı Ajanlar + Acil Hemodiyaliz Hazırlığı ile Çocuk Yoğun Bakım Yatışı",
-        "case_pearl": "Yenidoğan döneminde ilk günlerde tamamen sağlıklı (semptomsuz) bir aralıktan sonra proteinli beslenmenin (anne sütü veya formül mama) başlamasıyla ortaya çıkan letarji, beslenememe, hipotoni, santral hiperventilasyona bağlı respiratuar alkaloz ve konvülziyon aksi kanıtlanana kadar Üre Döngüsü Bozukluğu (UCD - örn. Ornitin Transkarbamilaz / OTC eksikliği vb.) tablosudur. Katabolizma ve protein yıkımı sonucu kanda aşırı düzeyde biriken serbest amonyak kan-beyin bariyerini geçerek astrositlerde glutamin birikimine, serebral ödeme ve ensefalopatiye yol açar. Kilit laboratuvar bulguları: normal kan şekeri, belirgin metabolik asidoz veya ketonüri olmaksızın solunum merkezinin uyarılmasına bağlı RESPİRATUAR ALKALOZ (pH >7.45, pCO2 düşük) ve aşırı yüksek plazma amonyak düzeyidir (>150-200 mcmol/L toksik, >400-500 mcmol/L acil diyaliz endikasyonu). Acil tedavi: 1) Ekzojen protein alımının DERHAL durdurulması, 2) Katabolizmayı baskılamak için yüksek glukoz infüzyonu (%10 Dekstroz, glukoz infüzyon hızı 8-10 mg/kg/dk), 3) İntravenöz amonyak bağlayıcı ajanlar (Sodyum benzoat ve sodyum fenilasetat), 4) Düzey >400-500 mcmol/L veya nörolojik kötüleşme varsa vakit kaybetmeden acil hemodiyaliz / sürekli venö-venöz hemodiyafiltrasyon (CVVHDF).",
+        "complaint": "Sağ kasık bölgesinde aniden beliren şişlik, gerginlik ve durdurulamayan ağlama",
+        "history": (
+            "Annesi 4 aylık erkek bebeğini Yeşil Alana getiriyor: 'Oğlum yaklaşık 2 saat önce aniden "
+            "çığlık atarak ağlamaya başladı. Ne yaptıysak susturamadık, emmek istemiyor ve bacaklarını "
+            "sürekli karnına çekiyor. Bezini değiştirirken sağ kasığında, torbaya doğru inen ceviz "
+            "büyüklüğünde sert ve gergin bir şişlik fark ettik. Daha önce burada hiç böyle bir kabarıklık "
+            "görmemiştik, dokununca daha çok bağırıyor.'"
+        ),
+        "final_diagnosis": "İnkarsere Sağ İnguinal Fıtık (Yeşil Alandan Sarı Alana Devir, Başarılı Taksis ve Çocuk Cerrahisi Yatışı)",
+        "disposition": "Yeşil Alandan Sarı Alana Devir -> Analjezi/Sedasyon Altında Nazik Manuel Redüksiyon (Taksis) -> Başarılı Redüksiyon Sonrası Erken Elektif Onarım İçin Çocuk Cerrahisi Yatışı",
+        "case_pearl": (
+            "Süt çocuklarında persistan processus vaginalis açıklığına bağlı inguinal herniasyonlar, "
+            "dar dış inguinal halka nedeniyle hızla inkarserasyona (sıkışma ve dolaşım bozukluğu riski) "
+            "ilerleyebilir. Sağ kasıkta gergin, ağrılı, redükte edilemeyen kitle saptanan huzursuz bebekler "
+            "derhal Sarı Alana devredilmelidir. Peritonit veya ciltte nekroz/iskemi bulgusu yoksa, analjezi "
+            "ve hafif sedasyon altında trendelenburg pozisyonunda nazik manuel redüksiyon (taksis) "
+            "uygulanır; başarılı redüksiyon sonrası nüks ve doku hasarı riskini önlemek için Çocuk Cerrahisi "
+            "servisine yatırılarak 24-48 saat içinde cerrahi onarım planlanır."
+        ),
         "steps": [
             {
-                "stage_title": "Yenidoğanda Ani Bozulma ve İlk Resüsitasyon Yaklaşımı",
-                "question": "İlk iki gün sağlıklı olup protein alımıyla hızla letarji, takipne ve kasılma geliştiren 4 günlük bebekte ilk adımınız ne olmalıdır?",
+                "stage_title": "Yeşil Alanda Fizik Muayene ve Triyaj Değerlendirmesi",
+                "question": "Durdurulamayan ağlama ve sağ kasıkta şişlikle getirilen 4 aylık bu bebekte ilk basamak fizik muayene ve alan kararınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Bebekteki derin uyku halini normal yenidoğan yorgunluğu kabul ederek beslenmesini zorlamak ve anne sütü vermeye ısrarla devam ettirmek",
+                        "text": "Ağlamayı infantil koliğe bağlayarak Yeşil Alanda oral simetikon damla vermek ve anneyi emzirme teknikleri konusunda bilgilendirerek evine taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Anne sütü verilmeye devam edilen bebekte protein yükü arttı; ensefalopati tablosu hızla derinleşerek solunum arresti gelişti.",
-                        "teaching_point": "Semptomsuz aralıktan sonra hızla bozulan yenidoğanda protein alımına devam edilmesi toksik metabolit birikimini ve serebral hasarı katlayarak artırır."
+                        "scenario_update": "Kasık muayenesi yapılmadan infantil kolik kabul edilen bebekte organ dolaşım bozukluğu ve iskemi riski taşıyan patoloji atlandı.",
+                        "teaching_point": "Ani başlayan huzursuzluk ve ağlama nöbeti olan her bebekte alt bezi tamamen açılarak inguinal ve genital bölgeler mutlaka muayene edilmelidir.",
                     },
                     {
-                        "text": "Sadece intravenöz kalsiyum glukonat infüzyonu yaparak nörolojik bulguların hipokalsemiye bağlı olduğunu varsaymak ve metabolik tetkik planlamamak",
-                        "is_correct": False,
-                        "scenario_update": "Kalsiyum infüzyonuna rağmen konvülziyonlar durmadı; derinleşen serebral ödem ve letarji nedeniyle hasta entübe edilmek zorunda kalındı.",
-                        "teaching_point": "Yenidoğan dönemindeki ensefalopati ve nöbetlerde tek bir elektrolite odaklanmak ölümcül doğumsal metabolizma hastalıklarının atlanmasına yol açar."
-                    },
-                    {
-                        "text": "Hava yolunu sağlamak, damar yolu açıp vital parametreleri monitörize etmek ve enteral beslenmeyi derhal durdurarak hidrasyon planlamak",
+                        "text": "Kasık ve skrotumu palpasyonla inceleyip redükte edilemeyen gergin kitleyi değerlendirerek acil cerrahi risk nedeniyle bebeği Sarı Alana devretmek",
                         "is_correct": True,
-                        "explanation": "Yenidoğanda protein maruziyetiyle aniden gelişen letarji ve nöbetlerde hava yolu emniyete alınmalı, protein girişi acilen kesilmeli ve damar yolu açılmalıdır.",
-                        "new_finding": "Vital Bulgular: KTA 168/dk, SS 68/dk (belirgin takipneik, derin solunum), TA 64/38 mmHg, SpO2 %96, Ateş 36.5°C. Fizik Muayene: Ağrılı uyarana yanıt zayıf, ileri derecede letarjik ve hipotonik ('kurbağa pozisyonunda'); emme ve moro refleksleri alınamadı. Ekstremitelerde multifokal miyoklonik sıçramalar ve bisiklet çevirme benzeri nöbet hareketleri izlendi. Karaciğer kot kavsini 1 cm geçiyor, splenomegali yok."
+                        "triggers_yellow_transfer": True,
+                        "explanation": "Kasık bölgesinde ağrılı, sert ve redükte edilemeyen kitle varlığı sıkışmış organ ansı ve dolaşım bozukluğu riski taşır; acil müdahale ve analjezi için bebek Sarı Alana alınmalıdır.",
+                        "new_finding": "Vital Bulgular: Ateş 37.1°C, KTA 155/dk (ağlamaya sekonder taşikardik), Solunum 38/dk, SpO2 %99. Bebek ajite ve durdurulamayan ağlama nöbetinde. Genitoüriner muayenede sağ kasıktan hemiskrotuma uzanan yaklaşık 3x2 cm boyutlarında, palpasyonla son derece hassas, gergin, kendiliğinden gerilemeyen kitle saptandı. Kitle üzerindeki cilt rengi ve ısısı doğal; her iki testis skrotum tabanında palpe edildi. Sol kasık doğal. Bebek derhal Sarı Alana devredildi!",
                     },
                     {
-                        "text": "Mevcut takipneyi hafif geçici taşipne kabul ederek bebeğe nazal oksijen vermek ve tetkik yapmadan serviste anne yanında izlemek",
+                        "text": "Sağ kasıktaki şişliği reaktif lenfadenit kabul ederek Yeşil Alanda intramüsküler ampisilin uygulamak ve ertesi gün Çocuk Cerrahisi polikliniğine yönlendirmek",
                         "is_correct": False,
-                        "scenario_update": "Takipnesi derinleşen bebekte koma hali gelişti; oksijen verilmesine rağmen santral hiperventilasyonun altta yatan metabolik nedeni anlaşılamadı.",
-                        "teaching_point": "Bilinç kaybı ve konvülziyonun eşlik ettiği takipne basit akciğer patolojisi değil, beyin sapının toksik metabolitlerce uyarılmasına bağlı santral hiperventilasyondur."
-                    }
-                ]
+                        "scenario_update": "Akut organ sıkışması tablosuna antibiyotik verilerek bebek evine gönderildi ve saatler içinde kitlede dolaşım bozukluğu derinleşti.",
+                        "teaching_point": "Kasıktan skrotuma uzanan ani gelişmiş gergin ve ağrılı kitleler lenfadenit değildir; acil redüksiyon veya cerrahi değerlendirme gerektirir.",
+                    },
+                    {
+                        "text": "Kitleye hiçbir analjezi veya sedasyon uygulamadan Yeşil Alanda iki elle var gücüyle bastırarak zorlu kompresyonla kitleyi batına itmeye çalışmak",
+                        "is_correct": False,
+                        "scenario_update": "Analjezisiz ve kontrolsüz uygulanan aşırı kuvvetli bası bebekte şiddetli ağrı travmasına, hematoma ve bağırsak perforasyonu riskine yol açtı.",
+                        "teaching_point": "Ağlayan ve ıkınan bebekte zorlayıcı manevralar kontrendikedir; redüksiyon mutlaka analjezi/sedasyon altında nazikçe ve kontrollü uygulanmalıdır.",
+                    },
+                ],
             },
             {
-                "stage_title": "Kritik Metabolik Değerlendirme ve Toksik Katabolit Taraması",
-                "question": "Takipne, letarji ve konvülziyonu olan bu yenidoğanda altta yatan metabolik felaketi ortaya koymak için en uygun acil tetkik paneli nedir?",
+                "stage_title": "Sarı Alanda İlk Girişim ve Manuel Redüksiyon Kararı",
+                "question": "Sarı Alana alınan, kasık derisinde kızarıklık veya sistemik peritonit bulgusu olmayan bu bebekte ilk aşamada ne yapılmalıdır?",
                 "options": [
                     {
-                        "text": "Kan gazı, kan şekeri, idrar ketonu, plazma azotlu toksik atık düzeyleri ve tandem spektrometrisi istemek",
+                        "text": "Manuel redüksiyonu denemeden önce acil tüm batın bilgisayarlı tomografisi çekerek bağırsak anslarının lümen genişliğini ve duvar kalınlığını incelemek",
+                        "is_correct": False,
+                        "scenario_update": "Gereksiz radyolojik tetkiklerle geçen süre boyunca kitle içindeki dokuların dolaşımı daha da bozuldu ve cerrahi aciliyet arttı.",
+                        "teaching_point": "Peritonit veya doku nekrozu bulgusu olmayan sıkışmış kasık kitlelerinde ilk basamak radyolojik incelemelerle vakit kaybetmeden analjezi altında nazik redüksiyondur.",
+                    },
+                    {
+                        "text": "Hiçbir manuel redüksiyon manevrası denemeden bebeği derhal genel anesteziye alarak ameliyathanede acil laparotomi ile cerrahi eksplorasyon planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Nazik taksis manevrasıyla dakikalar içinde ameliyatsız redükte edilebilecek olguda acil şartlarda yüksek anestezi ve operasyon komplikasyonları gelişti.",
+                        "teaching_point": "Peritonit veya ciltte morarma/gangren olmayan vakalarda ilk basamak analjezi altında nazik manuel redüksiyondur; başarılı olursa cerrahi elektif şartlara çekilir.",
+                    },
+                    {
+                        "text": "Bebeğe intravenöz analjezi ve hafif sedasyon sağlamak, Trendelenburg pozisyonunda ılık kompres uygulayıp nazik manuel redüksiyon manevrası denemek",
                         "is_correct": True,
-                        "explanation": "Yenidoğanda ketonüri ve hipoglisemi olmaksızın gelişen solunumsal alkaloz tablolarında azot metabolizması yıkım ürünleri ve organik asit paneli acilen analiz edilmelidir.",
-                        "new_finding": "Kan Gazı: pH 7.52, pCO2 24 mmHg, HCO3 19 mmol/L, BE -1.2 mmol/L (santral hiperventilasyona sekonder belirgin respiratuar alkaloz). Kan Şekeri: 90 mg/dL (normal). Tam İdrar Tetkiki: Keton negatif, glukoz negatif. Serum Laktatı: 1.9 mmol/L (normal). Plazma toksik nitrojenöz katabolit düzeyi: 485 mcmol/L (ağır toksik yüksek, normal: <60-80 mcmol/L). Karaciğer ve böbrek fonksiyonları normal. Hemogram: Lökosit 9.200/mm³, CRP 0.8 mg/L (enfeksiyon belirteçleri negatif)."
+                        "explanation": "Ciltte renk değişikliği veya peritonit olmayan sıkışmış kasık kitlelerinde ilk yaklaşım analjezi/sedasyon, Trendelenburg pozisyonu ve nazik manuel redüksiyondur (taksis).",
+                        "new_finding": "İntravenöz analjezi (fentanil) sağlandı. Bebek gevşeyip Trendelenburg pozisyonuna alındıktan ve ılık kompres uygulandıktan sonra, eksternal halka tabanından uygulanan nazik taksis manevrasıyla kitle hava-sıvı gurultusu eşliğinde batına tamamen redükte oldu. Bebeğin ağlaması durdu, vitalleri rahatladı (KTA 115/dk).",
                     },
                     {
-                        "text": "Yalnızca lomber ponksiyon yaparak BOS kültürünü beklemek, kan gazı ve plazma biyokimyasal metabolit analizlerini lüzumsuz bularak ertelemek",
+                        "text": "Ağrıyı kesmek amacıyla kitlenin tam merkezine doğrudan lokal lidokain enjeksiyonu yapmak ve ardından enjektörle kitleden sıvı aspire etmeye çalışmak",
                         "is_correct": False,
-                        "scenario_update": "BOS incelemesi temiz geldi; metabolik tarama ve azot atık düzeyleri gönderilmediği için ensefalopatinin gerçek nedeni anlaşılamadı ve beyin ödemi gelişti.",
-                        "teaching_point": "Yenidoğanda sepsis benzeri tablolarda enfeksiyon dışlanırken eş zamanlı metabolik acil paneli (kan gazı, kan şekeri, toksik azot metabolitleri) mutlaka çalışılmalıdır."
+                        "scenario_update": "Kitle içine körlemesine yapılan iğne aspirasyonu bağırsak duvarında delinmeye ve skrotal alana fekal kontaminasyona yol açtı.",
+                        "teaching_point": "İçinde bağırsak ansları bulunan kasık kitlelerine asla körlemesine iğne aspirasyonu veya lokal anestezik enjeksiyonu yapılmaz; perforasyon riski yaratır.",
                     },
-                    {
-                        "text": "Sadece kranial ultrasonografi çekerek intraventriküler kanama aramak ve biyokimyasal acil kan tetkiklerini sonraki günlere bırakarak beklemek",
-                        "is_correct": False,
-                        "scenario_update": "Kranial ultrasonda kanama görülmedi; ancak metabolik tetkikler yapılmadığı için geri dönüşsüz nörolojik hasar ve beyin sapı basısı ortaya çıktı.",
-                        "teaching_point": "Görüntüleme kaba yapısal lezyonları gösterir ancak hücresel metabolik krizleri ve toksik metabolit birikimini aydınlatamaz; acil biyokimya paneli ertelenemez."
-                    },
-                    {
-                        "text": "Bebeğe hiçbir tahlil yapmadan ampirik antiviral asiklovir başlamak ve kalorisini arttırmak amacıyla ek formül mamayla devam etmek",
-                        "is_correct": False,
-                        "scenario_update": "Formül mama verilmesiyle ekzojen protein yükü tavan yaptı; toksik metabolitler hızla katlanarak derin koma ve kardiyovasküler instabiliteye neden oldu.",
-                        "teaching_point": "Doğumsal metabolizma bozukluğundan şüphelenilen yenidoğana protein içerikli mama verilmesi felakete yol açar; kesinlikle protein alımı durdurulmalıdır."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Klinik Tanı",
-                "question": "İlk beslenme sonrası letarji, respiratuar alkaloz, normal glukoz, ketonüri yokluğu ve aşırı yüksek azot kataboliti saptanan yenidoğanda kesin tanınız nedir?",
+                "stage_title": "Sarı Alanda Kesin Tanı",
+                "question": "Kasıktan skrotuma uzanan gergin kitle, taksis manevrasıyla redükte olan barsak ansı ve klinik tabloyla kesin tanınız nedir?",
                 "options": [
                     {
-                        "text": "Yenidoğan Erken Sepsisi ve Menenjit",
-                        "is_correct": False,
-                        "scenario_update": "Yenidoğan sepsisi tipik olarak metabolik asidoz, yüksek CRP ve enfeksiyon bulguları ile seyreder; respiratuar alkaloz ve izole aşırı azot yüksekliği yapmaz.",
-                        "teaching_point": "Sepsis klinik olarak benzer görünse de kan gazında derin laktik/metabolik asidoz oluşturur; belirgin respiratuar alkaloz üre döngüsü defektlerini işaret eder."
-                    },
-                    {
-                        "text": "Propiyonik Asidemi Akut Metabolik Dekompanzasyonu",
-                        "is_correct": False,
-                        "scenario_update": "Organik asidemilerde belirgin anyon açıklı metabolik asidoz, idrarda ağır ketonüri ve sıklıkla hipoglisemi ile nötropeni saptanır.",
-                        "teaching_point": "Organik asidemilerde respiratuar alkaloz değil şiddetli metabolik asidoz ve idrarda keton görülür; bu hastada keton negatiftir ve alkaloz vardır."
-                    },
-                    {
-                        "text": "Hipoksik İskemik Ensefalopati Tablosu",
-                        "is_correct": False,
-                        "scenario_update": "Hipoksik iskemik ensefalopati doğum anında asfiksi, düşük Apgar skoru ve ilk saatlerde nörolojik bulgu verir; iki günlük normal aralık olmaz.",
-                        "teaching_point": "HİE doğum anında bulgu verirken, üre döngüsü defektlerinde bebek ilk 24-48 saat beslenene kadar tamamen sağlıklı ve semptomsuzdur."
-                    },
-                    {
-                        "text": "Akut Hiperamonyemi ve Üre Döngüsü Bozukluğu",
+                        "text": "İnkarsere Sağ İnguinal Fıtık",
                         "is_correct": True,
-                        "explanation": "Proteinli beslenme sonrası letarji, solunumsal alkaloz (santral hiperventilasyon), normal glukoz, ketonüri yokluğu ve aşırı amonyak yüksekliği üre döngüsü bozukluğunu kanıtlar.",
-                        "new_finding": "Kesin Tanı: Akut Yenidoğan Hiperamonyemisi ve Üre Döngüsü Bozukluğu. Plazma düzeyi 485 mcmol/L (>400 mcmol/L) olup acil diyaliz ve şelatör endikasyonu mevcuttur."
-                    }
-                ]
+                        "explanation": "Persistan processus vaginalis açıklığından skrotuma inen, dış halkada sıkışarak huzursuzluk ve gerginlik yaratan, taksis ile batına redükte olan patoloji inkarsere inguinal fıtıktır.",
+                        "new_finding": "Kesin Tanı: İnkarsere Sağ İnguinal Fıtık.",
+                    },
+                    {
+                        "text": "Akut Testis Torsiyonu",
+                        "is_correct": False,
+                        "scenario_update": "Testis torsiyonunda kitle inguinal kanaldan inen redükte edilebilir bir doku değildir; skrotumda yatay yerleşimli, aşırı ağrılı ve ödemli tek testis izlenir.",
+                        "teaching_point": "Testis torsiyonunda testis yukarı çekilmiştir ve kremaster refleksi negatiftir; kasıktan hava-sıvı sesiyle batına redüksiyon görülmez.",
+                    },
+                    {
+                        "text": "Akut İdiyopatik Skrotal Ödem",
+                        "is_correct": False,
+                        "scenario_update": "İdiyopatik skrotal ödemde skrotum cildinde iki taraflı ağrısız eritem ve ödem vardır; inguinal kanalda sıkışmış kitle saptanmaz.",
+                        "teaching_point": "İdiyopatik skrotal ödem benign, ağrısız, kendiliğinden gerileyen bir cilt ödemidir; palpabl kasık kitlesi yapmaz.",
+                    },
+                    {
+                        "text": "İnflame Kominikan Hidrosel",
+                        "is_correct": False,
+                        "scenario_update": "Hidrosel translüminasyon veren, gergin olmayan, ağrısız sıvı koleksiyonudur; akut sıkışma, aşırı huzursuzluk ve hava-sıvı sesiyle redüksiyon oluşturmaz.",
+                        "teaching_point": "Kominikan hidroselde periton sıvısı skrotuma geçiş gösterir ancak barsak ansları içermediğinden akut inkarserasyon tablosu yaratmaz.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Metabolik Yönetim ve Yoğun Bakım Tedavisi",
-                "question": "Plazma düzeyi 485 mcmol/L olan ve nöbet geçiren 3.2 kg yenidoğanda en uygun acil tedavi ve yatış protokolü nedir?",
+                "stage_title": "Sarı Alanda Tedavi ve Cerrahi İzlem Planı",
+                "question": "Taksis ile başarıyla redükte edilen, ancak nüks ve doku hasarı riski yüksek olan bu bebeğin ileri yönetimi nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Protein alımını azaltarak standart idame serum fizyolojik takmak ve düzeyin kendiliğinden düşmesini beklemek amacıyla yenidoğan servisinde izlemek",
+                        "text": "Kitle tamamen redükte olduğu için bebeği acil servisten taburcu etmek ve nüks olursa tekrar getirmeleri tembihiyle hiçbir kontrole çağırmamak",
                         "is_correct": False,
-                        "scenario_update": "Dekstroz verilmediği için endojen protein katabolizması sürdü; toksik metabolitler 800 mcmol/L üzerine çıkarak irreversibl beyin hasarı ve herniasyona yol açtı.",
-                        "teaching_point": "Yetersiz kalori endojen kas yıkımını artırır; protein kesilmesinin yanında yüksek glukoz infüzyonu ve azot bağlayıcılar derhal başlanmalıdır."
+                        "scenario_update": "Eve gönderilen bebekte saatler sonra fıtık tekrar inkarsere oldu ve aile geç başvurduğu için bağırsak gangreni gelişti.",
+                        "teaching_point": "İnkarserasyon geçiren bebeklerde ilk 24-48 saatte tekrar sıkışma riski çok yüksektir; redüksiyon sonrası hasta mutlaka Çocuk Cerrahisi servisine yatırılmalıdır.",
                     },
                     {
-                        "text": "Tüm proteini kesip yüksek glukoz infüzyonu ve intravenöz sodyum benzoat başlamak, yoğun bakımda hemodiyaliz hazırlığı yapmak",
+                        "text": "Redüksiyon sonrası bebeği altı ay boyunca inguinal fıtık bağı kullanarak ameliyatsız izlemek üzere ortopedi polikliniğine yönlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "Bebeklerde fıtık bağı kullanımı hiçbir anatomik iyileşme sağlamadı; basıya bağlı testis atrofisi ve deri nekrozu gelişti.",
+                        "teaching_point": "Çocukluk çağı inguinal hernilerinde fıtık bağı veya korse kullanımı kesinlikle kontrendikedir; definitif tedavi cerrahi yüksek ligasyondur.",
+                    },
+                    {
+                        "text": "Redüksiyonun tam başarısını teyit etmek amacıyla bebeğe oral baryum kontrastı içirerek acil floroskopik inceleme yapmak ve taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Yeni redükte olmuş ödemli bağırsak dokusuna verilen baryum aspirasyon riski yarattı ve olası cerrahi öncesi ek risk oluşturdu.",
+                        "teaching_point": "Başarılı taksis sonrası floroskopik kontrastlı inceleme gerekmez; hastanın klinik takibi, beslenme toleransı ve testis muayenesi esastır.",
+                    },
+                    {
+                        "text": "Bebeği acilden taburcu etmeyip barsak ve testis dolaşımını izlemek, erken elektif operasyon için Çocuk Cerrahisi servisine yatırmak",
                         "is_correct": True,
-                        "explanation": "Tedavide ekzojen protein derhal kesilir, katabolizmayı durdurmak için %10 Dekstroz başlanır, nitrojen bağlayıcılar verilir ve >400 mcmol/L için hemodiyaliz hazırlanır.",
-                        "new_finding": "Hasta Çocuk Yoğun Bakım Ünitesine yatırıldı. Enteral beslenme kesildi, katabolizmayı durdurmak için 8-10 mg/kg/dk glukoz infüzyonu (%10 Dekstroz) başlandı. İntravenöz Sodyum Benzoat ve Fenilasetat yüklemesi yapıldı. Amonyak düzeyi 485 mcmol/L olduğundan acil hemodiyaliz/hemofiltrasyon kateteri yerleştirildi. Seans sonrası amonyak <100 mcmol/L düzeyine düşürüldü, nörolojik sekelsiz taburculuk sağlandı."
+                        "explanation": "İnkarserasyon öyküsü olan infantlarda tekrar inkarserasyon riski çok yüksektir. Başarılı redüksiyon sonrası ödemin gerilemesi için hasta yatırılır, 24-48 saat içinde Çocuk Cerrahisi tarafından elektif herniotomi (yüksek ligasyon) operasyonu planlanır.",
+                        "new_finding": "Çocuk Cerrahisi konsültasyonu sonrası hasta, peritonit ve testis iskemi takibi yapılmak ve 24-48 saat içinde elektif cerrahi uygulanmak üzere servise yatırıldı.",
                     },
-                    {
-                        "text": "Sadece fenobarbital yüklemesi yaparak nöbetleri durdurmak ve hiçbir metabolik ajan vermeden genel pediatri servisinde takibe almak",
-                        "is_correct": False,
-                        "scenario_update": "Fenobarbital nöbeti baskılasa da altta yatan toksik metabolit birikimi sürdü; hiperamonyemik koma derinleşerek beyin ölümü gelişti.",
-                        "teaching_point": "Nöbetler toksik ensefalopatinin sonucudur; nöbet önleyici ilaçlar metabolit düzeyini düşürmez, hayat kurtarıcı olan agresif amonyak temizliğidir."
-                    },
-                    {
-                        "text": "Bebeğin enerji ihtiyacını karşılamak için yüksek proteinli amino asit solüsyonu infüzyonuna başlayıp diyaliz hazırlığı yapmadan gözlemlemek",
-                        "is_correct": False,
-                        "scenario_update": "Amino asit infüzyonu ekzojen azot yükünü patlattı; amonyak 1000 mcmol/L değerini aşarak masif beyin ödemi ve ani arrest oluşturdu.",
-                        "teaching_point": "Üre döngüsü defektlerinde amino asit veya protein verilmesi intihar gibidir; ilk 24-48 saatte tüm proteinler kesilerek sadece glukoz ve lipit verilmelidir."
-                    }
-                ]
-            }
-        ]
-    }
+                ],
+            },
+        ],
+    },
 ]

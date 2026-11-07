@@ -1,741 +1,733 @@
 # -*- coding: utf-8 -*-
 """
-Sarı Alan Vakaları - Y26-Y30 (v2 Şartnamesine Uygun Yeniden Yazım)
+Yeşil Alan Vakaları - Y26-Y30 (v2 Şartnamesine Uygun Yeniden Yazım)
 """
 
 CASES = [
     {
         "id": "Y26",
-        "category": "👂 Kulak Ağrısı & KBB",
-        "age": "11 Yaş",
+        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
+        "age": "6 Yaş",
         "gender": "Erkek",
-        "complaint": "Tek taraflı şiddetli boğaz ağrısı, yutkunamama, çene açmada zorluk ve boğuk konuşma",
+        "complaint": "Geceleri uykuda altını ıslatma ve yatağı kirletme şikayeti",
         "history": (
-            "11 yaşındaki erkek çocuk (38 kg), dört gündür süren boğaz ağrısı ve ateşle getirildi. İki gün önce "
-            "amoksisilin başlanmış ancak son yirmi dört saatte sol taraflı boğaz ve kulak ağrısı dramatik artmış. "
-            "Hasta tükürüğünü yutamıyor, ağzını açarken şiddetli ağrı çekiyor ve sanki ağzında sıcak patates varmış "
-            "gibi boğuk sesle güçlükle konuşuyor."
+            "6 yaşındaki erkek hasta, annesi tarafından acil polikliniğine getirildi. Annesi, oğlunun bezden çıktığı "
+            "3 yaşından beri hiçbir zaman 6 ay üst üste kuru kalmadığını, son birkaç aydır ise haftada 3-4 gece uykuda "
+            "farkında olmadan yatağını ıslattığını anlatıyor. Gündüzleri idrar kaçırma, ani sıkışma hissi, kesik kesik "
+            "idrar yapma veya damlatma olmuyor. İdrar yaparken yanma, ağrı, kabızlık veya aşırı su içme şikayeti yok. "
+            "Okula yeni başlamış ve ailesi ceza yöntemi denediğinde tablonun kötüleştiğini ifade ediyor."
         ),
-        "final_diagnosis": "Sol Peritonsiller Abse (Quinsy)",
-        "disposition": "Acil KBB Konsültasyonu ile İğne Aspirasyonu / İnsizyon Drenajı + İntravenöz Ampisilin-Sulbaktam ve Yatış",
+        "final_diagnosis": "Primer Monosemptomatik Noktürnal Enürezis",
+        "disposition": "Yeşil Alandan Aile Eğitimi, Yaşam Tarzı Önerileri ve Çocuk Nefroloji / Üroloji Poliklinik Randevusu ile Taburculuk",
         "case_pearl": (
-            "Peritonsiller abse (quinsy), adölesan ve büyük çocuklarda akut tonsillitin en sık derin boyun komplikasyonudur. "
-            "En sık etkenler Streptococcus pyogenes ve anaerop mikroorganizmalardır (Fusobacterium necrophorum). "
-            "Tek taraflı şiddetli boğaz ağrısı, odinofaji, kulağa yansıyan ağrı, trismus (internal pterigoid kas irritasyonuna bağlı) "
-            "ve sıcak patates sesi tipiktir. Fizik muayenede etkilenen tarafta tonsil ön plikasında asimetrik şişlik ve uvulanın "
-            "karşı tarafa deviasyonu görülür. Tanı genellikle kliniktir; şüpheli olgularda kontrastlı boyun BT yardımcıdır. "
-            "Yönetimde acil KBB konsültasyonu ile iğne aspirasyonu veya insizyon-drenaj, intravenöz ampisilin-sulbaktam "
-            "(veya klindamisin), hidrasyon, analjezi ve sistemik kortikosteroid uygulaması esastır."
+            "Beş yaşından büyük çocuklarda, gündüz semptomu veya organik patoloji olmaksızın sadece uykuda idrar kaçırma "
+            "primer monosemptomatik noktürnal enürezis olarak adlandırılır. İlk basamakta tam idrar tahlili ve fizik muayene "
+            "yeterlidir; invaziv ürolojik tetkik gerekmez. Tedavide suçlayıcı tutumun bırakılması, akşam sıvı kısıtlaması "
+            "ve motivasyonel takip ilk adımdır; medikal (desmopresin) veya alarm tedavisi poliklinik takibinde planlanır."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Fizik Muayene",
-                "question": "Tek taraflı şiddetli boğaz ağrısı, yutma güçlüğü ve çene kısıtlılığı olan hastada orofarenks değerlendirmesinde ilk yaklaşım nasıl olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Geceleri uykuda idrar kaçırma şikayetiyle getirilen 6 yaşındaki bu hastada ilk fizik muayene yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Çene açıklığı kısıtlı olan hastanın dil kökünü metal basacakla kuvvetlice bastırarak orofarenks ve arka duvarını zorlayarak ayrıntılı şekilde incelemek",
+                        "text": "Acil serviste mesane disfonksiyonunu ve nörolojik kökeni araştırmak amacıyla hastayı hemen Sarı Alana devredip acil spinal manyetik rezonans planlamak",
                         "is_correct": False,
-                        "scenario_update": "Zorlu dil basacağı uygulaması hastada şiddetli öğürme refleksini tetikledi ve geçici laringospazm ile oksijen satürasyonu %91 düzeyine düştü.",
-                        "teaching_point": "Çene açması kısıtlı ve hava yolu daralmış çocuklarda orofarenks zorlanmamalıdır; agresif muayene laringospazm ve akut havayolu tıkanıklığına yol açabilir."
+                        "scenario_update": "Sarı Alana devredilen hastanın genel durumu ve vital bulguları tamamen stabildi; acil sedasyonlu spinal görüntüleme endikasyonu bulunmadığı için yeşil alana geri yönlendirildi.",
+                        "teaching_point": "Nörolojik defisiti, lumbosakral anomalisi veya gündüz idrar semptomu olmayan çocuklarda acil nörogörüntüleme gerekmez; değerlendirme ayaktan yapılmalıdır.",
                     },
                     {
-                        "text": "Hastayı zorlamadan ışık kaynağıyla ağız boşluğunu incelemek, tonsiller asimetriyi, uvula deviasyonunu ve havayolu açıklığını sakince değerlendirmek",
+                        "text": "Vital bulgularla birlikte batın muayenesi, lumbosakral omurga inspeksiyonu, alt ekstremite derin tendon refleksleri ve dış genital muayeneyi eksiksiz tamamlamak",
                         "is_correct": True,
-                        "explanation": "Ağız açmada kısıtlılık ve havayolu darlığı kuşkusu olan hastalarda orofarenks nazikçe ve aydınlatılarak incelenmeli, gereksiz mekanik travmadan kaçınılmalıdır.",
-                        "new_finding": "Vital Bulgular: Ateş 38.8°C, KTA 110/dk, SS 20/dk, SpO2 %98. Muayene: Sol tonsil ön plikası ileri derecede şiş ve eritemli, sol bademcik öne-orta hatta itilmiş, küçük dil belirgin şekilde sağa devie, çene açıklığı 1.5 cm."
+                        "explanation": "Uykuda alt ıslatma yakınmasında spina bifida okülta gibi nöropatik nedenleri dışlamak için lumbosakral bölge, kabızlığı ekarte etmek için batın muayenesi mutlaka yapılmalıdır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 86/dk, SS 20/dk, TA 95/60 mmHg. Batın rahat, glob vezikale veya kitle yok. Lumbosakral bölgede çukurcuk, kıllanma veya hiperpigmentasyon yok. Alt ekstremite nörolojik muayenesi ve anal sfinkter tonusu doğal. Genital muayenede mea darlığı veya sineşi izlenmedi.",
                     },
                     {
-                        "text": "Muayene yapmadan hastayı sakinleştirmek için hemen oral analjezik şurup içirmek ve sedyede tam supin pozisyonda yatırarak gözleme almak",
+                        "text": "Üretral obstrüksiyon veya posterior üretral valv şüphesiyle acil serviste idrar sondası takarak rezidü idrar miktarını ve mesane çıkım anatomisini değerlendirmek",
                         "is_correct": False,
-                        "scenario_update": "Yutma güçlüğü belirgin olan hasta oral şurubu yutamayarak aspire etme tehlikesi yaşadı ve sırtüstü pozisyonda solunum eforu belirgin arttı.",
-                        "teaching_point": "Ciddi odinofajisi ve salya akışı olan hastalara oral ilaç verilmemelidir; supin pozisyon farengeal havayolunu daraltarak solunum sıkıntısını artırır."
+                        "scenario_update": "İdrar sondası takılması sırasında çocuk yoğun ajitasyon ve ağrı yaşadı; işlem sonrasında üretral travmaya bağlı geçici mikroskopik hematüri gelişti.",
+                        "teaching_point": "Gündüz semptomu olmayan ve işeme akımı normal olan çocukta invaziv üretral kateterizasyon kesinlikle endike değildir, travma ve enfeksiyon riskini artırır.",
                     },
                     {
-                        "text": "Fizik muayeneyi tamamen erteleyerek hastayı genel anestezi eşliğinde acil orotrakeal entübasyon yapmak amacıyla derhal ameliyathane koşullarına hızla nakletmek",
+                        "text": "Şikayetin yalnızca gece uykuda ortaya çıktığını öğrenip fizik muayene yapmadan hastayı doğrudan çocuk psikiyatri polikliniğine yönlendirerek taburculuk planlamak",
                         "is_correct": False,
-                        "scenario_update": "Stabil solunumu olan hastada gereksiz genel anestezi ve entübasyon hazırlığı nedeniyle acil klinik değerlendirme ve tedavi süreci gecikti.",
-                        "teaching_point": "Solunumu stabil olan, dinlenme halinde dispnesi bulunmayan hastalarda orotrakeal entübasyon endikasyonu yoktur; öncelik sakin ortamda klinik değerlendirmedir."
-                    }
-                ]
+                        "scenario_update": "Fizik muayene yapılmadığı için olası sakral disrafizm, kabızlık fekalomu veya eksternal genital anomaliler klinik olarak dışlanamamış oldu.",
+                        "teaching_point": "Psikolojik faktörler tetikleyici olabilse de lumbosakral ve genital muayene yapılmadan organik patolojiler dışlanamaz; fizik muayene atlanmamalıdır.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Girişimsel ve Klinik İnceleme",
-                "question": "Muayenesinde sol tonsil plikasında tek taraflı belirgin kabarıklık ve küçük dilde karşıya deviasyon saptanan hastada öncelikli yaklaşım nedir?",
+                "stage_title": "Laboratuvar ve Tetkik Stratejisi",
+                "question": "Fizik muayenesinde organik patoloji veya nörolojik defisit saptanmayan bu hastada tetkik yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Klinik bulgular tanıya yettiğinden radyolojik gecikme yaratmadan acil kulak burun boğaz konsültasyonuyla iğne aspirasyonu veya drenaj planlamak",
+                        "text": "Mesane kapasitesini, duvar kalınlığını ve işeme sonrası rezidüel idrar volümünü belirlemek için acil üriner sistem ultrasonografisi ve ürodinami tetkiki istemek",
+                        "is_correct": False,
+                        "scenario_update": "Acil şartlarda yapılan ultrasonda böbrek parankimi, toplayıcı sistemler ve mesane duvarı tamamen normal bulundu; invaziv ürodinami ise çocukta anksiyeteye yol açtı.",
+                        "teaching_point": "Monosemptomatik olgularda başlangıçta radyolojik görüntüleme veya ürodinamik çalışma endike değildir; bu tetkikler tedaviye yanıtsız veya komplike vakalara saklanır.",
+                    },
+                    {
+                        "text": "Kronik böbrek yetmezliği, elektrolit dengesizliği ve diabetes insipidus taraması için serum üre, kreatinin, elektrolitler ve sabah plazma osmolaritesi kanı almak",
+                        "is_correct": False,
+                        "scenario_update": "Kan sonuçlarında üre 21 mg/dL, kreatinin 0.42 mg/dL, sodyum 139 mEq/L, potasyum 4.3 mEq/L olup tüm biyokimyasal parametreler referans aralıkta geldi.",
+                        "teaching_point": "Büyüme-gelişme geriliği, gündüz polidipsi veya poliürisi bulunmayan stabil çocuklarda rutin venöz kan biyokimyası tetkiki maliyet-etkin değildir ve gereksizdir.",
+                    },
+                    {
+                        "text": "Glikozüri, proteinüri veya üriner enfeksiyonu dışlamak adına yalnızca tam idrar tahlili isteyip gereksiz ileri tetkiklerden kaçınmak",
                         "is_correct": True,
-                        "explanation": "Tipik klinik bulguları olan stabil kooperatif adölesanlarda görüntüleme şart değildir; KBB tarafından yapılan tanısal ve terapötik aspirasyon ilk seçenektir.",
-                        "new_finding": "KBB hekimi tarafından sol tonsil üst kutbundan 18G iğne ile lokal anestezi altında yapılan aspirasyonda 4 mL pürülan sıvı boşaltıldı; hastanın ağrısı ve çene hareketleri belirgin rahatladı."
+                        "explanation": "Sadece uykuda idrar kaçıran, gündüz semptomu ve muayene bulgusu olmayan çocuklarda diabetes mellitus ve enfeksiyonu dışlamak için tam idrar analizi yeterlidir.",
+                        "new_finding": "TAM İDRAR TAHLİLİ: Dansite 1022, pH 6.0, Glukoz negatif, Protein negatif, Nitrit negatif, Lökosit esteraz negatif, Mikroskopi: 1-2 lökosit, eritrosit yok, bakteri görülmedi.",
                     },
                     {
-                        "text": "Herhangi bir cerrahi konsültasyon istemeden hastaya yalnızca oral tek doz sefaleksin reçete ederek ertesi gün kontrole gelmesini önermek",
+                        "text": "Mesane ve üretranın yapısal patolojilerini dışlamak amacıyla acil serviste kontrastlı işeme sistoüretrografisi çekilerek vezikoüreteral reflü varlığını araştırmak",
                         "is_correct": False,
-                        "scenario_update": "Lokalize pürülan sıvı drene edilmediği için enfeksiyon derin parafarengeal dokulara ilerledi, ateş 39.5°C oldu ve hastada dispne gelişti.",
-                        "teaching_point": "Lokal pürülan sıvı birikimlerinde tek başına antibiyotik tedavisi yetersizdir; cerrahi drenaj yapılmadığında derin boyun enfeksiyonlarına ilerleme riski yüksektir."
+                        "scenario_update": "Kateter eşliğinde çekilen sistoüretrografide darlık veya kaçak saptanmadı ancak çocuk yüksek miktarda radyasyona ve üretral travmaya maruz kaldı.",
+                        "teaching_point": "İdrar yolu enfeksiyonu öyküsü, gündüz inkontinansı veya ultrasonografik anomali bulunmayan monosemptomatik olgularda sistoüretrografi kesinlikle endike değildir.",
                     },
-                    {
-                        "text": "Aspirasyon girişiminden önce mutlaka kontrastlı boyun manyetik rezonans görüntülemesi planlayıp hasta çekimden çıkana kadar hiçbir medikal tedavi başlamamak",
-                        "is_correct": False,
-                        "scenario_update": "MR randevusu ve çekimi için kaybedilen üç saatlik sürede hastanın ağrısı dayanılmaz hale geldi ve yutkunma güçlüğü daha da kötüleşti.",
-                        "teaching_point": "Tipik klinik tablolarda manyetik rezonans görüntüleme gibi zaman alıcı tetkikler acil drenajı ve antibiyotik tedavisini gereksiz yere geciktirir."
-                    },
-                    {
-                        "text": "Tanıyı doğrulamak amacıyla yalnızca boğaz kültürü ve rutin tam kan sayımı isteyerek sonuçlar çıkana kadar hastayı tedavisiz gözlemek",
-                        "is_correct": False,
-                        "scenario_update": "Laboratuvar sonuçlarının beklenmesi sırasında hastanın orofaringeal darlığı ilerledi ve hastada belirgin solunum güçlüğü belirtileri ortaya çıktı.",
-                        "teaching_point": "Akut pürülan farengeal koleksiyonlarda tanı kliniktir; laboratuvar sonuçlarını beklemek hava yolu obstrüksiyonu riskini artırır ve tedaviyi geciktirir."
-                    }
-                ]
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Tek taraflı boğaz ağrısı, yutkunamama, sıcak patates sesi, çene kısıtlılığı, uvula deviasyonu ve pürülan aspirasyon ile kesin tanınız nedir?",
+                "question": "Anamnez, fizik muayene ve tam idrar tahlili sonuçlarına göre en olası klinik tanınız nedir?",
                 "options": [
                     {
-                        "text": "Akut Eksüdatif Tonsillofarenjit",
-                        "is_correct": False,
-                        "scenario_update": "Tonsillofarenjitte uvula karşı tarafa itilmez, trismus ve asimetrik ön plika şişliği bulunmaz.",
-                        "teaching_point": "Akut tonsillofarenjit simetrik tutulum yapar; tek taraflı şişlik, uvula deviasyonu ve trismus peritonsiller abseyi işaret eder."
-                    },
-                    {
-                        "text": "Akut İnflamatuar Epiglottit",
-                        "is_correct": False,
-                        "scenario_update": "Epiglottitte tonsiller asimetri ve uvula deviasyonu olmaz; stridor, nefes darlığı ve oturur pozisyonda öne eğilme ön plandadır.",
-                        "teaching_point": "Epiglottit supraglottik yapıların diffüz inflamasyonudur; tek taraflı tonsil flegmonu ve uvula itilmesi peritonsiller kompartman patolojisidir."
-                    },
-                    {
-                        "text": "Sol Peritonsiller Abse",
+                        "text": "Primer Monosemptomatik Noktürnal Enürezis",
                         "is_correct": True,
-                        "explanation": "Tek taraflı tonsil plikası şişliği, uvulanın karşıya deviasyonu, trismus ve pürülan mayi aspirasyonu peritonsiller abse tanısını doğrular.",
-                        "new_finding": "Kesin tanı: Sol Peritonsiller Abse (Quinsy). Cerrahi aspirasyon sonrası hava yolu açıklığı rahatladı."
+                        "explanation": "Doğumdan itibaren 6 aydan uzun kuru döneminin olmaması (primer), gündüz hiçbir alt üriner sistem semptomunun bulunmaması (monosemptomatik) ve TİT'in normal olması primer monosemptomatik noktürnal enürezis tanısını kesinleştirir.",
+                        "new_finding": "Klinik tanı Primer Monosemptomatik Noktürnal Enürezis olarak kesinleştirildi; aileye durumun yaygın ve gelişimsel olduğu açıklandı.",
                     },
                     {
-                        "text": "Parafarengeal Boşluk Enfeksiyonu",
+                        "text": "Non-Monosemptomatik Noktürnal Enürezis",
                         "is_correct": False,
-                        "scenario_update": "Parafarengeal enfeksiyonlarda tonsil itilmesinden ziyade boyun lateralinde derin şişlik ve sistemik toksisite baskındır.",
-                        "teaching_point": "Parafarengeal tutulumda karotis kılıfı komşuluğu ve boyun dış üçgeninde şişlik ön plandadır; intraoral asimetri peritonsiller alana işaret eder."
-                    }
-                ]
+                        "scenario_update": "Hastada gündüz idrar kaçırma, ani sıkışma, bacakları çaprazlama veya işeme sıklığında artış gibi gündüz semptomları bulunmadığı teyit edildi.",
+                        "teaching_point": "Non-monosemptomatik tanı için gece ıslatmasına gündüz inkontinansı, sıkışma veya disfonksiyonel işeme gibi alt üriner sistem semptomlarının eşlik etmesi gerekir.",
+                    },
+                    {
+                        "text": "Sekonder Noktürnal Enürezis",
+                        "is_correct": False,
+                        "scenario_update": "Anamnez derinleştirildiğinde çocuğun bez bırakmadan sonra hiçbir zaman aralıksız altı ay kuru kalmadığı yeniden doğrulandı.",
+                        "teaching_point": "Sekonder tanı için çocuğun en az 6 ay boyunca tamamen kuru kaldığı bir dönemin ardından alt ıslatmanın yeniden başlamış olması şarttır.",
+                    },
+                    {
+                        "text": "Nörojenik Mesane Disfonksiyonu",
+                        "is_correct": False,
+                        "scenario_update": "Lumbosakral omurga, perineal duyu, anal refleks ve alt ekstremite nörolojik muayenesinde nöropatik mesaneyi düşündürecek patoloji saptanmadı.",
+                        "teaching_point": "Nörojenik mesanede spina bifida, anal sfinkter tonus kaybı, rektal disfonksiyon ve gündüz sürekli damlatma tarzında inkontinans beklenir.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Tedavi Yönetimi ve Konsültasyon",
-                "question": "İğne aspirasyonu ile pürülan drenaj sağlanan 11 yaşındaki hastanın servis yatışında medikal tedavi ve takip planı nasıl düzenlenmelidir?",
+                "stage_title": "Tedavi, Aile Eğitimi ve Taburculuk Planı",
+                "question": "Primer monosemptomatik noktürnal enürezis tanısı alan bu hastada acil servisteki en uygun yönetim ve taburculuk planı hangisidir?",
                 "options": [
                     {
-                        "text": "Drenaj sonrasında şikayetleri gerilediği için hastaya antibiyotik vermeden yalnızca evde tuzlu su gargarası ve oral parasetamol önererek taburcu etmek",
+                        "text": "Acil servisten taburcu ederken yüksek doz oral desmopresin liyofilize tablet başlayıp sıvı kısıtlaması eğitimi vermeden hastayı kontrole çağırmak",
                         "is_correct": False,
-                        "scenario_update": "Parenteral antibakteriyel tedavi verilmeden gönderilen hastada yirmi dört saat sonra pürülan koleksiyon yeniden toplandı ve ateşle acile döndü.",
-                        "teaching_point": "Drenaj sonrası rezidüel enfeksiyonu ve nüksü önlemek için geniş spektrumlu parenteral antibiyoterapi başlanması ve hastanın yatırılarak izlenmesi zorunludur."
+                        "scenario_update": "Sıvı kısıtlaması eğitimi verilmeden yüksek doz desmopresin kullanan çocukta aşırı su içilmesine bağlı hiponatremi ve baş ağrısı semptomları gelişti.",
+                        "teaching_point": "Desmopresin başlanırken akşam sıvı kısıtlaması mutlaka anlatılmalıdır; ayrıca ilaç tedavisi acil serviste değil poliklinikte aile eğitimi sonrası başlanmalıdır.",
                     },
                     {
-                        "text": "Oral alımı hemen açarak hastayı yüksek doz oral siprofloksasin tedavisiyle evine göndermek ve üç gün sonra poliklinik kontrolüne çağırmak",
+                        "text": "Spesifik olmayan mesane kontraksiyonlarını baskılamak amacıyla acil serviste oral oksibutinin tedavisi başlayarak bir ay sonra kontrole çağırmak",
                         "is_correct": False,
-                        "scenario_update": "Oral kinolon tedavisi adölesanlarda uygun birinci basamak tercih değildir ve hasta devam eden ağrı nedeniyle oral tableti içemedi.",
-                        "teaching_point": "Çocuklarda derin enfeksiyonlarda florokinolonlar ilk seçenek değildir; erken dönemde oral uyumsuzluk riski nedeniyle intravenöz tedavi tercih edilir."
+                        "scenario_update": "Oral antikolinerjik başlanan çocukta belirgin ağız kuruluğu, yüzde kızarıklık ve kabızlık gelişti ancak gece yatak ıslatma sıklığı değişmedi.",
+                        "teaching_point": "Oksibutinin gibi antikolinerjikler gündüz aşırı aktif mesane semptomları olan non-monosemptomatik vakalarda kullanılır, izole monosemptomatik olgularda ilk basamak değildir.",
                     },
                     {
-                        "text": "Hastaya parenteral kortikosteroid veya antibiyotik uygulamadan doğrudan acil genel anestezi altında elektif cerrahi tonsillektomi operasyonuna derhal almak",
+                        "text": "Uykuda uyanma eşiğini düşürmek amacıyla trisiklik antidepresan olan imipramin tablet reçete edip aileye yakın takip önerisinde bulunmak",
                         "is_correct": False,
-                        "scenario_update": "Akut aktif enfeksiyon ve inflamasyon zemininde yapılan acil tonsillektomi sırasında şiddetli orofaringeal kanama ve operasyon komplikasyonları gelişti.",
-                        "teaching_point": "Akut enfeksiyon evresinde rutin tonsillektomi kanama riskini artırır; drenaj ve medikal tedaviye yanıt vermeyen seçilmiş olgularda düşünülür."
+                        "scenario_update": "Kardiyak aritmi ve fatal intoksikasyon riski taşıyan trisiklik antidepresan reçetesi ailede endişe yarattı ve çocukta sabahları aşırı sedasyon gözlendi.",
+                        "teaching_point": "Trisiklik antidepresanlar kardiyotoksisite ve dar terapötik aralıkları nedeniyle ilk seçenek değildir; dirençli vakalarda sadece uzman hekimce kullanılabilir.",
                     },
                     {
-                        "text": "Hastaneye yatırılarak intravenöz ampisilin-sulbaktam, hidrasyon, analjezi, tek doz deksametazon ve hava yolu açısından yakın takip planlamak",
+                        "text": "Akşam sıvı alımını kısıtlama, işeme günlüğü tutma, cezalandırıcı yaklaşımdan kaçınma eğitimi vererek elektif çocuk nefroloji polikliniğine yönlendirmek",
                         "is_correct": True,
-                        "explanation": "En sık etken olan GAS ve oral anaeropları kapsayan ampisilin-sulbaktam, analjezi, ödemi azaltıcı steroid ve hospitalizasyon standart tedavidir.",
-                        "new_finding": "Hasta servise yatırıldı; intravenöz ampisilin-sulbaktam (200 mg/kg/gün) ve tek doz deksametazon sonrası 24. saatte oral alımı açıldı, ateşi düştü."
-                    }
-                ]
-            }
-        ]
+                        "explanation": "Tedavinin ilk basamağı ailenin suçlayıcı tutumunun önlenmesi, motivasyonel takvim ve akşam sıvısının sınırlandırılmasıdır; alarm veya desmopresin elektif poliklinikte planlanır.",
+                        "new_finding": "Aileye suçlayıcı tutumdan kaçınmaları ve motivasyon takvimi tutmaları anlatıldı; poliklinik randevusu oluşturularak çocuk taburcu edildi.",
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "Y27",
-        "category": "👂 Kulak Ağrısı & KBB",
-        "age": "3 Yaş",
+        "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
+        "age": "5 Yaş",
         "gender": "Kız",
-        "complaint": "Kulak arkasında kızarıklık, şişlik, hassasiyet ve kulak kepçesinin öne doğru itilmesi",
+        "complaint": "Özellikle geceleri uykudan uyandıran şiddetli makat kaşıntısı ve huzursuzluk",
         "history": (
-            "3 yaşındaki kız çocuğu (14 kg), beş gün önce sol orta kulak iltihabı tanısıyla oral amoksisilin başlanmış "
-            "bir hastadır. İlacını düzenli almasına karşın ateşi düşmemiş; son yirmi dört saatte sol kulak arkasında "
-            "belirgin kızarıklık ve ağrılı şişlik gelişmiş, sol kulak kepçesi öne-aşağı doğru açılanmıştır."
+            "5 yaşındaki kız çocuğu, annesi tarafından acil polikliniğine getirildi. Annesi, kızının yaklaşık 10 gündür "
+            "özellikle yatağa yattıktan sonra başlayan perianal bölgede şiddetli kaşıntıdan yakındığını, sürekli poposunu "
+            "kaşıdığını ve uykuya dalmakta zorlandığını belirtiyor. Gece huzursuz uyanmaları oluyormuş. Ateş, karın ağrısı, "
+            "kusma, ishal veya kilo kaybı yok. Anaokuluna gittiği ve sınıfta benzer kaşıntı şikayeti olan başka çocukların da "
+            "bulunduğu öğrenildi."
         ),
-        "final_diagnosis": "Sol Akut Koalesan Mastoidit",
-        "disposition": "Acil KBB ve Pediatri Yatışı + İntravenöz Seftriakson ve Vankomisin Tedavisi + Terapötik Miringotomi / Tüp Uygulaması İçin Takip",
+        "final_diagnosis": "Enterobiyazis (Kıl Kurdu Enfeksiyonu)",
+        "disposition": "Yeşil Alandan Antipareziter Tedavi, Tüm Aile Tedavisi ve Hijyen Eğitimi ile Taburculuk",
         "case_pearl": (
-            "Akut koalesan mastoidit, akut otitis medianın en sık görülen intratemporal komplikasyonudur. "
-            "Enfeksiyonun mastoid hava hücrelerine yayılması, pürülan eksüdanın basınç artışı yapması ve kemik trabeküllerin "
-            "erimesi (osteit/koalesans) ile karakterizedir. Tipik fizik muayene bulguları kulak arkasında (retroauriküler) "
-            "ödem, eritem, retroauriküler sulkusun silinmesi ve kulak kepçesinin öne-aşağı doğru itilmesidir (aurikular proptozis). "
-            "Kemik destrüksiyonu, subperiosteal abse veya intrakraniyal yayılım şüphesinde kontrastlı temporal kemik BT çekilmelidir. "
-            "Tedavide intravenöz geniş spektrumlu antibiyoterapi (seftriakson +/- vankomisin), orta kulak dekompresyonu için "
-            "miringotomi ve medikal tedaviye yanıtsız olgularda kortikal mastoidektomi uygulanır."
+            "Enterobius vermicularis (kıl kurdu) çocuklarda en sık görülen paraziter enfeksiyondur ve tipik olarak geceleri "
+            "perianal bölgeye göç eden dişi parazitlerin yol açtığı kaşıntıyla başvurur. Tanıda rutin gaita mikroskopisinin "
+            "duyarlılığı düşüktür (<%10); altın standart sabah perianal bölgeden alınan selofan bant testidir. Tedavide "
+            "pirantel pamoat veya mebendazol tek doz verilir; yumurtalara etkisiz olduğu için tüm aile bireyleri eş zamanlı "
+            "tedavi edilmeli ve 2 hafta sonra doz mutlaka tekrarlanmalıdır."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Kulak Muayenesi",
-                "question": "Kulak arkasında şişlik, kızarıklık ve kulak kepçesi öne itilmiş olan 3 yaşındaki çocukta ilk muayene yaklaşımı nasıl olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Geceleri artan perianal kaşıntı ve uykusuzluk şikayetiyle getirilen 5 yaşındaki hastada en uygun klinik muayene yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Otoskopiyle timpanik membranı değerlendirmek, kulak arkasındaki kemik çıkıntıda ödem, eritem, hassasiyet ve sulkus silinmesini dikkatlice muayene etmek",
+                        "text": "Perianal kaşıntının derin rektal patolojilerden kaynaklanabileceğini düşünerek hastaya sedasyonsuz acil rektal tuşe ve dijital muayene uygulamak",
+                        "is_correct": False,
+                        "scenario_update": "Ağrılı dijital muayene nedeniyle çocuk yoğun korku ve ajitasyon yaşadı; rektal lümende kitle veya palpable kitle saptanmadı.",
+                        "teaching_point": "Yüzeyel perianal kaşıntı yakınmasında rektal kanama veya kitle şüphesi olmadıkça invaziv dijital rektal muayene endike değildir ve çocuğu travmatize eder.",
+                    },
+                    {
+                        "text": "Kaşıntının sistemik alerjik bir reaksiyona bağlı olduğunu varsayarak fizik muayeneyi yapmadan acil intramüsküler antihistaminik uygulayıp çocuğu gözleme almak",
+                        "is_correct": False,
+                        "scenario_update": "Antihistaminik enjeksiyonu sonrası çocukta derin sedasyon gelişti ancak perianal bölge değerlendirilmediği için lokal patolojiler gözden kaçırıldı.",
+                        "teaching_point": "İzole perianal kaşıntıda sistemik anafilaksi veya ürtiker bulgusu yoksa sedatif antihistaminik enjeksiyonu yapılmamalı, öncelikle fizik muayene tamamlanmalıdır.",
+                    },
+                    {
+                        "text": "Vital bulgular, karın palpasyonu, sistemik cilt bakısı ve perianal bölgenin inspeksiyonunu eksfoliasyon ve eritem yönünden dikkatle değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Kulak arkası enfeksiyon bulguları ve kepçe protrüzyonu olan çocukta orta kulak zarı ve retroauriküler kemik çıkıntı eş zamanlı incelenmelidir.",
-                        "new_finding": "Vital Bulgular: Ateş 39.2°C, KTA 134/dk, SS 26/dk, SpO2 %98. Muayene: Sol kulak kepçesi öne-aşağı itilmiş, kulak arkasında eritemli ve aşırı hassas ödem mevcut, sulkus silinmiş; sol kulak zarı bombe ve hiperemik."
+                        "explanation": "Perianal kaşıntı olgularında anal fissür, streptokokal perianal dermatit ve kaşıntıya bağlı ekskoriasyonları ayırt etmek için perianal inspeksiyon yapılmalıdır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.7°C, KTA 94/dk, SS 20/dk, SpO2 %99. Batın rahat, defans veya organomegali yok. Perianal inspeksiyonda eritem ve tırnak izlerine bağlı yüzeyel ekskoriasyonlar görüldü; anal fissür, apse veya pürülan akıntı saptanmadı.",
                     },
                     {
-                        "text": "Kulak arkasındaki şişliği basit bir böcek ısırığı reaksiyonu olarak kabul edip topikal antihistaminik krem sürerek çocuğu evine göndermek",
+                        "text": "Perianal eritemi doğrudan idrar yolu enfeksiyonuna bağlayarak genital muayeneyi ertelemek ve çocuğu acil serviste idrar sondasıyla kateterize etmek",
                         "is_correct": False,
-                        "scenario_update": "Topikal tedaviyle evine gönderilen hastada saatler içinde kulak arkasındaki eritem yayıldı, ateş 40°C oldu ve subperiosteal yayılım ilerledi.",
-                        "teaching_point": "Kulak arkası kemik çıkıntıda kızarıklık, ödem ve aurikula protrüzyonu derin kemik enfeksiyonu işaretidir; basit cilt lezyonlarıyla karıştırılmamalıdır."
+                        "scenario_update": "Kateterizasyon sırasında çocukta şiddetli üretral rahatsızlık oluştu; idrar tahlili tamamen normal geldi ancak perianal patoloji aydınlatılamadı.",
+                        "teaching_point": "Dizüri veya ateş olmaksızın izole gece kaşıntısı olan olguda invaziv üriner kateterizasyon kesinlikle gereksizdir; perianal inspeksiyon önceliklidir.",
                     },
-                    {
-                        "text": "Kulak zarını görmeye çalışmadan önce dış kulak yoluna yüksek basınçlı çeşme suyu sıkarak kontrolsüz şekilde lavaj uygulamaya çalışmak",
-                        "is_correct": False,
-                        "scenario_update": "Akut enfekte ve gergin kulak zarına uygulanan basınçlı lavaj hastada şiddetli ağrı krizine ve kulak zarında perforasyona neden oldu.",
-                        "teaching_point": "Akut süpüratif kulak enfeksiyonlarında basınçlı lavaj kontrendikedir; şiddetli ağrıya, timpanik membran rüptürüne ve enfeksiyonun yayılmasına yol açabilir."
-                    },
-                    {
-                        "text": "Mevcut klinik tabloyu önemsemeyip hastanın oral amoksisilin tedavisini aynı dozda sürdürerek bir hafta sonra rutin poliklinik kontrolüne çağırmak",
-                        "is_correct": False,
-                        "scenario_update": "Oral amoksisiline yanıtsız devam eden enfeksiyon nedeniyle retroauriküler kemik korteksi erozyona uğradı ve çocuk toksik görünümle acile döndü.",
-                        "teaching_point": "Oral antibiyotik altında ilerleyen kulak arkası kemik tutulumu acil hastane yatışı ve parenteral tedavi gerektiren ciddi bir komplikasyondur."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Acil Radyolojik ve Laboratuvar İncelemesi",
-                "question": "Kulak arkasında ödem, kızarıklık, hassasiyet ve aurikula deviasyonu saptanan 3 yaşındaki çocukta en uygun ileri tetkik yaklaşımı nedir?",
+                "stage_title": "Laboratuvar ve Tetkik Stratejisi",
+                "question": "Anamnezinde gece artan perianal kaşıntısı olan ve muayenede ekskoriasyon saptanan bu çocukta en uygun tetkik yöntemi hangisidir?",
                 "options": [
                     {
-                        "text": "Kafatasını değerlendirmek amacıyla yalnızca iki yönlü akciğer grafisi çekip herhangi bir kan tahlili veya ek inceleme istemeden beklemek",
-                        "is_correct": False,
-                        "scenario_update": "Akciğer grafisi normal geldi ancak kulak arkasındaki kemik erozyonu ve pürülan koleksiyon saptanamadığı için uygun tedavi planlanamadı.",
-                        "teaching_point": "Akciğer grafisi temporal kemik patolojilerini göstermez; kemik destrüksiyonu ve intrakraniyal yayılım riskini değerlendirmek için hedefe yönelik inceleme gerekir."
-                    },
-                    {
-                        "text": "Radyolojik inceleme yapmadan kulak arkasındaki gergin cilt alanına poliklinik şartlarında cerrahi bistüriyle körlemesine derin bir insizyon uygulamak",
-                        "is_correct": False,
-                        "scenario_update": "Anatomik planlar görüntülenmeden yapılan kör insizyon sırasında retroauriküler damar yaralanması ve kontrolsüz kanama meydana geldi.",
-                        "teaching_point": "Görüntüleme ile kemik destrüksiyonu, vasküler yapılar ve sinüs ilişkisi ortaya konmadan kulak arkasına körlemesine cerrahi kesi yapılmamalıdır."
-                    },
-                    {
-                        "text": "Hastadan yalnızca rutin tam idrar tetkiki ve gaita mikroskopisi isteyerek sonuçlar çıkana kadar hastayı tedavisiz acilde bekletmeye almak",
-                        "is_correct": False,
-                        "scenario_update": "İdrar ve gaita tetkikleri normal sonuçlandı; bu süreçte kaybedilen saatler nedeniyle retroauriküler subperiosteal sıvı birikimi belirginleşti.",
-                        "teaching_point": "Kulak arkası komplikasyonlarında idrar veya gaita tahlilinin tanısal değeri yoktur; zaman kaybetmeden temporal kemik görüntülemesi yapılmalıdır."
-                    },
-                    {
-                        "text": "Kemik trabekül yıkımını ve komplikasyonları belirlemek için kontrastlı temporal kemik tomografisi ve inflamasyon belirteçlerini istemek",
+                        "text": "Sabah uyanınca yıkama yapmadan perianal bölgeye şeffaf yapışkan bant yapıştırılarak hazırlanan lam preparatının mikroskopta incelenmesini planlamak",
                         "is_correct": True,
-                        "explanation": "Temporal kemik BT, kemik trabekül destrüksiyonunu, subperiosteal koleksiyonu ve intrakraniyal yayılımı net gösteren altın standart yöntemdir.",
-                        "new_finding": "Temporal Kemik BT: Sol timpanik kavite ve hava hücrelerinde yaygın sıvı dansitesi, kemik septalarda destrüksiyon (koalesans) ve kortikal kemik erozyonu izlendi. Lökosit 19.500/mm³, CRP 105 mg/L."
-                    }
-                ]
+                        "explanation": "Parazit yumurtaları perianal deriye bırakıldığından sabah perianal yapışkan bant mikroskopisi tanı koydurucudur; rutin dışkı incelemesinde yumurta saptanma oranı çok düşüktür.",
+                        "new_finding": "Yapışkan bant mikroskobik incelemesinde bir tarafı düz, diğer tarafı konveks karakteristik asimetrik parazit yumurtaları bol miktarda gözlendi.",
+                    },
+                    {
+                        "text": "Paraziter etkenleri saptamak amacıyla hastadan ardışık üç gün boyunca taze dışkı örneği toplanarak rutin gaita mikroskopisi istemek",
+                        "is_correct": False,
+                        "scenario_update": "Gönderilen dışkı mikroskopisinde parazit kisti veya trofozoiti izlenmedi; yanlış negatif sonuç ailenin endişesini artırdı ve tanıyı geciktirdi.",
+                        "teaching_point": "Bu parazitin yumurtaları lümene değil perianal cilde bırakıldığından rutin gaita mikroskopisinin duyarlılığı yüzde beş ile on civarındadır, güvenilmezdir.",
+                    },
+                    {
+                        "text": "Perianal kaşıntının helmintik invazyona bağlı olup olmadığını anlamak için kanda total IgE ve periferik yaymada eozinofil sayımı istemek",
+                        "is_correct": False,
+                        "scenario_update": "Laboratuvar sonucunda lökosit sayısı 6.800/mm³, eozinofil oranı %2, total IgE düzeyi normal sınırlarda geldi ve tanısal katkı sağlamadı.",
+                        "teaching_point": "Yüzeyel lümen içi parazitler doku invazyonu yapmadığından periferik eozinofili veya belirgin IgE yüksekliği oluşturmaz; kan tahlili gereksizdir.",
+                    },
+                    {
+                        "text": "Perianal derideki eritematöz lezyonlardan bakteriyel ve fungal sürüntü kültürü alarak mikrobiyolojik üreme sonucuna göre tedavi planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Sürüntü kültüründe normal cilt florası bakterileri üredi; kültür sonucunu beklemek tanıyı ve tedaviyi en az iki gün gereksiz geciktirdi.",
+                        "teaching_point": "Pürülan akıntı, bül veya bal rengi krut yoksa izole kaşıntılı ekskoriasyonlarda rutin mikrobiyolojik kültür gönderilmesine gerek yoktur.",
+                    },
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Kulak enfeksiyonu zemininde retroauriküler eritem, sulkus silinmesi, aurikula protrüzyonu ve tomografide kemik koalesansı saptanan hastada kesin tanı nedir?",
+                "question": "Anamnez, perianal inspeksiyon ve mikroskobik inceleme bulguları doğrultusunda en olası klinik tanınız nedir?",
                 "options": [
                     {
-                        "text": "Akut Süpüratif Otitis Eksterna",
+                        "text": "Perianal Streptokokal Selülit",
                         "is_correct": False,
-                        "scenario_update": "Dış kulak yolu enfeksiyonlarında tragus hassasiyeti belirgindir ancak temporal kemik tomografisinde trabeküler destrüksiyon görülmez.",
-                        "teaching_point": "Otitis eksternada tragus basısıyla ağrı olur ve dış kulak yolu ödemlidir; retroauriküler kemik erozyonu ve sulkus silinmesi mastoid tutulumunu gösterir."
+                        "scenario_update": "Perianal bölgede parlak kırmızı, keskin sınırlı selülitik eritem veya defekasyon sırasında şiddetli kanamalı ağrı saptanmadı.",
+                        "teaching_point": "Streptokokal perianal hastalıkta gece kaşıntısından ziyade defekasyonda şiddetli acı, parlak kırmızı sınırları belirgin eritem ve rektal kanama ön plandadır.",
                     },
                     {
-                        "text": "Sol Akut Koalesan Mastoidit",
+                        "text": "İntestinal Giardiyazis Enfeksiyonu",
+                        "is_correct": False,
+                        "scenario_update": "Hastada sulu, köpüklü veya yağlı ishal, karın krampları, gaz ve kilo kaybı gibi malabsorptif bağırsak semptomları bulunmadığı görüldü.",
+                        "teaching_point": "Giardiyazis lümen içi protozoon enfeksiyonu olup malabsorpsiyon, kronik ishal ve gaz sancısıyla seyreder; izole gece perianal kaşıntısı yapmaz.",
+                    },
+                    {
+                        "text": "Atopik Perianal Dermatit",
+                        "is_correct": False,
+                        "scenario_update": "Çocukta atopi öyküsü, fleksural egzama lezyonları saptanmadı ve mikroskopide karakteristik yumurtaların görülmesi tanıyı dışladı.",
+                        "teaching_point": "Atopik dermatit kronik kaşıntı yapsa da mikroskobik parazit yumurtası görülmesi durumunda etken doğrudan spesifik paraziter enfeksiyondur.",
+                    },
+                    {
+                        "text": "Enterobiyazis (Kıl Kurdu Enfeksiyonu)",
                         "is_correct": True,
-                        "explanation": "Tedaviye dirençli orta kulak enfeksiyonu, retroauriküler sulkus silinmesi, kepçe protrüzyonu ve BT'de kemik septa erimesi koalesan mastoidit tanısı koydurur.",
-                        "new_finding": "Kesin tanı: Sol Akut Koalesan Mastoidit. Kemik trabekül destrüksiyonu ve subperiosteal yayılım doğrulandı."
+                        "explanation": "Gece artan perianal kaşıntı, okulda benzer şikayet öyküsü ve yapışkan bantta asimetrik yumurtaların görülmesi Enterobius vermicularis (kıl kurdu) enfeksiyonu için patognomoniktir.",
+                        "new_finding": "Klinik tanı Enterobiyazis (Kıl Kurdu Enfeksiyonu) olarak kesinleştirildi.",
                     },
-                    {
-                        "text": "Akut Bakteriyel Enfeksiyöz Parotit",
-                        "is_correct": False,
-                        "scenario_update": "Parotitte şişlik mandibula köşesi ve yanak önündedir; retroauriküler sulkusu silmez ve aurikulayı öne itmez.",
-                        "teaching_point": "Parotit lezyonları kulağın ön ve alt kısımlarındadır; retroauriküler kemik hassasiyeti ve otoskopik orta kulak bulguları mastoiditi işaret eder."
-                    },
-                    {
-                        "text": "Retroauriküler Enfekte Aterom Kisti",
-                        "is_correct": False,
-                        "scenario_update": "Aterom kisti cilt altı lokalize kistik lezyondur; orta kulak patolojisi ve temporal kemikte trabeküler destrüksiyon yapmaz.",
-                        "teaching_point": "Enfekte sebase kistler yüzeyeldir; otoskopik orta kulak inflamasyonu ve BT'de kemik erozyonu bulunması sistemik mastoidit tablosunu doğrular."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Acil Tedavi Yönetimi ve Konsültasyon",
-                "question": "Kemik trabekül yıkımı ve subperiosteal kortikal erozyon saptanan 3 yaşındaki bu hastanın acil medikal ve cerrahi yönetimi nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Profilaksi Planı",
+                "question": "Enterobiyazis tanısı kesinleşen bu hastada en uygun farmakolojik tedavi, aile yaklaşımı ve hijyen stratejisi hangisi olmalıdır?",
                 "options": [
                     {
-                        "text": "Hastayı oral amoksisilin-klavulanat reçete ederek ayaktan takibe almak ve herhangi bir cerrahi branşa danışmadan beş gün sonra kontrole çağırmak",
+                        "text": "Yalnızca şikayeti olan çocuğa oral metronidazol süspansiyon başlayıp yedi gün süreyle kullanmasını ve aile bireylerine tedavi vermemeyi önermek",
                         "is_correct": False,
-                        "scenario_update": "Oral antibiyotik kemik yıkımı olan dokuda yeterli konsantrasyona ulaşamadı ve hastada subperiosteal pürülan koleksiyon ciltten fistülize oldu.",
-                        "teaching_point": "Kemik erozyonu ve koalesans gelişen olgularda oral tedavi yetersizdir; acil hospitalizasyon, intravenöz tedavi ve cerrahi müdahale şarttır."
+                        "scenario_update": "Kullanılan metronidazol enterobiyazise karşı etkisiz kaldı; ayrıca aile bireyleri tedavi edilmediği için çocukta kısa süre sonra reenfeksiyon gelişti.",
+                        "teaching_point": "Metronidazol protozoonlara etkilidir, kıl kurduna etki etmez; ayrıca aile fertleri asemptomatik taşıyıcı olabileceğinden tüm aile eş zamanlı tedavi edilmelidir.",
                     },
                     {
-                        "text": "Sistemik hiçbir antibiyotik vermeden sadece dış kulak yoluna gentamisin damla damlatıp hastayı doğrudan evine göndererek yakın gözlem önermek",
-                        "is_correct": False,
-                        "scenario_update": "Topikal damlalar orta kulak arkasındaki kemik trabeküllere ulaşamaz; enfeksiyon hızla sigmoid sinüs trombozuna doğru ilerledi.",
-                        "teaching_point": "Topikal kulak damlaları derin kemik tutulumunda tamamen etkisizdir; sistemik yayılımı ve intrakraniyal komplikasyonları önleyemez."
-                    },
-                    {
-                        "text": "Hastaneye yatırarak intravenöz seftriakson ve vankomisin başlamak, kulak burun boğaz konsültasyonuyla miringotomi ve cerrahi drenaj planlamak",
+                        "text": "Hastaya ve tüm aile bireylerine tek doz pirantel pamoat verip iki hafta sonra dozu mutlaka tekrarlamak",
                         "is_correct": True,
-                        "explanation": "Streptococcus pneumoniae ve anaeropları kapsayan intravenöz geniş spektrumlu antibiyoterapi ve KBB tarafından orta kulak dekompresyonu/miringotomi esastır.",
-                        "new_finding": "Hasta KBB servisine yatırıldı; intravenöz antibiyotikler başlandı ve genel anestezi altında sol miringotomi ile ventilasyon tüpü takılarak pürülan drenaj sağlandı."
+                        "explanation": "Antihelmintik ilaçlar paraziti öldürür ancak yumurtalara etkisizdir; otoenfeksiyonu önlemek için 2 hafta sonra 2. doz şarttır ve tüm aile eş zamanlı tedavi edilmelidir.",
+                        "new_finding": "Aileye tüm fertlerin tedavi edileceği, 14 gün sonra dozun tekrarlanacağı ve iç çamaşırlarının sıcak suyla yıkanıp ütüleneceği anlatılarak taburculuk sağlandı.",
                     },
                     {
-                        "text": "Hastayı çocuk cerrahisi servisine devrederek genel anestezi altında tanısal acil laparotomi yapmak üzere ameliyathane hazırlığı derhal başlatmak",
+                        "text": "Sadece çocuğa tek doz oral albendazol vermek, iki hafta sonraki tekrar dozunu ise yalnızca kaşıntı devam ederse uygulamak",
                         "is_correct": False,
-                        "scenario_update": "Kulak ve baş boyun patolojisinde ilgisiz şekilde batın cerrahisi hazırlığı yapılması hem zaman kaybına hem de malpraktis riskine yol açtı.",
-                        "teaching_point": "Temporal kemik patolojileri KBB uzmanlık alanıdır; alakasız cerrahi konsültasyonlar ve girişimler hastanın yönetimini ciddi şekilde aksatır."
-                    }
-                ]
-            }
-        ]
+                        "scenario_update": "İki hafta sonraki tekrar dozu verilmediği için hayatta kalan yumurtalardan çıkan yeni larvalar bir ay sonra kaşıntının nüksetmesine yol açtı.",
+                        "teaching_point": "Antihelmintikler yumurtaları yok edemez; yumurtadan çıkacak yeni kurtları öldürmek ve döngüyü kırmak için şikayet olmasa bile 2 hafta sonra ikinci doz şarttır.",
+                    },
+                    {
+                        "text": "Farmakolojik tedavi vermeden sadece perianal bölgeye topikal çinko oksit krem sürülmesini ve tırnakların kısa kesilmesini klinik olarak yeterli görmek",
+                        "is_correct": False,
+                        "scenario_update": "Topikal bariyer krem kaşıntıyı kısmen azaltsa da bağırsak lümenindeki parazit yükü devam etti ve paraziter enfeksiyon kontrol altına alınamadı.",
+                        "teaching_point": "Hijyenik önlemler döngüyü kırmak için vazgeçilmez bir yardımcıdır ancak bağırsak lümenindeki etkeni eradike etmek için medikal antihelmintik tedavi zorunludur.",
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "Y28",
-        "category": "👂 Kulak Ağrısı & KBB",
-        "age": "2.5 Yaş",
+        "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
+        "age": "3.5 Aylık",
         "gender": "Erkek",
-        "complaint": "Yüksek ateş, boynunu geriye atma, ağzını açamama, yutkunamama ve hırıltılı solunum",
+        "complaint": "Her beslenme sonrası ağızdan taşar tarzda, eforsuz ve ağrısız kusma",
         "history": (
-            "2.5 yaşındaki erkek çocuk (13 kg), üç gündür süren yüksek ateş, huzursuzluk ve boynunu geriye doğru "
-            "hiperekstansiyonda tutma yakınmasıyla getirildi. Ailesi çocuğun dünden beri ağzını hiç açmak istemediğini, "
-            "salyasının aktığını, katı gıdayı tamamen reddettiğini ve nefes alırken kaba bir hırıltı çıkardığını ifade ediyor."
+            "3.5 aylık erkek bebek, anne ve babası tarafından acil polikliniğine getirildi. Annesi, bebeğin son 1 aydır "
+            "neredeyse her emzirme sonrasında sütün bir kısmını eforsuzca ağzından geri çıkardığını söylüyor. Kusmaların "
+            "safrasız, kansız, beyaz süt renginde olduğu, fışkırır tarzda olmadığı ve bebek kusarken ağlamayıp neşeli kaldığı "
+            "belirtildi. Doğum ağırlığı 3200 gr olan bebeğin şu an 6200 gr olduğu (ayda ~850 gr kilo alımı), bezlerinin "
+            "bol idrarlı olduğu, ateş, öksürük veya solunum sıkıntısı bulunmadığı öğrenildi."
         ),
-        "final_diagnosis": "Akut Retrofarengeal Abse",
-        "disposition": "Acil KBB ve Pediatrik Yoğun Bakım Konsültasyonu + Havayolu Güvenliğinin Sağlanması + Cerrahi İnsizyon ve Drenaj + İntravenöz Antibiyotik İçin Yatış",
+        "final_diagnosis": "Fizyolojik Gastroözofageal Reflü ('Mutlu Kusan Bebek' / Happy Spitter)",
+        "disposition": "Yeşil Alandan Beslenme Pozisyonu ve Gaz Çıkarma Eğitimi Verilerek İlaçsız Taburculuk",
         "case_pearl": (
-            "Retrofarengeal abse, genellikle beş yaşından küçük çocuklarda (özellikle 2-4 yaş) retrofarengeal lenf nodlarının "
-            "(Rouvière nodları) süpürasyonu sonucu gelişir; bu nodlar yaşla birlikte atrofiye uğrar. Polimikrobiyaldir "
-            "(A grubu streptokok, S. aureus, solunum yolu anaeropları). Belirtiler yüksek ateş, boyun hiperekstansiyonu "
-            "(menenjizmi taklit eden rijidite), tortikolis, odinofaji, salya akması, kaba ses ve inspiratuar stridordur. "
-            "Radyolojik olarak boyun ekstansiyonda ve inspiryumda çekilen lateral boyun grafisinde servikal omurga önü yumuşak "
-            "doku kalınlaşması (C2 düzeyinde >7 mm veya vertebra korpus genişliğinden fazla, C6 düzeyinde >14 mm) karakteristiktir. "
-            "Kontrastlı boyun BT altın standarttır. Acil hava yolu kontrolü, KBB tarafından cerrahi drenaj ve intravenöz "
-            "ampisilin-sulbaktam (veya seftriakson + klindamisin/vankomisin) standart tedavidir."
+            "Süt çocuklarında alt özofagus sfinkterinin geçici gevşemelerine bağlı fizyolojik gastroözofageal reflü çok sıktır "
+            "ve 'mutlu kusan bebek' (happy spitter) olarak adlandırılır. Kilo alımı normalse, hematemez, safralı kusma, "
+            "aspirasyon bulgusu ve irritabilite yoksa bu durum reflü hastalığı (GÖRH) değil, selim fizyolojik bir süreçtir. "
+            "Asit baskılayıcılar (PPI, H2 reseptör blokeri) veya motilite ajanları endike değildir; besleme sonrası dik tutma, "
+            "gaz çıkarma ve aşırı beslenmeden kaçınma yeterlidir."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Havayolu Muayenesi",
-                "question": "Yüksek ateş, salya akması, boyun hiperekstansiyonu ve inspiratuar stridoru olan 2.5 yaşındaki çocukta ilk muayene yaklaşımı ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Her beslenme sonrası eforsuz kusma şikayetiyle getirilen 3.5 aylık bebeğin acil servisteki ilk fizik muayene yaklaşımı hangisi olmalıdır?",
                 "options": [
                     {
-                        "text": "Çocuğun boynunu kuvvetle öne bükmeye zorlayarak meningeal irritasyon bulgularını ortaya çıkarmak için tekrarlayan fleksiyon manevraları uygulamaya çalışmak",
-                        "is_correct": False,
-                        "scenario_update": "Boynun zorla fleksiyona getirilmesi faringeal kabarıklığı hava yoluna doğru itti ve çocukta ani akut respiratuar arrest gelişti.",
-                        "teaching_point": "Derin boyun patolojisi olan çocukta boyun zorlanmamalıdır; fleksiyon manevraları laringeal basıyı artırarak ani havayolu kollapsına yol açabilir."
-                    },
-                    {
-                        "text": "Solunum yolunu açmak için hastayı derhal supin yatırıp metal dil basacağı ile dil kökünü kuvvetlice bastırarak muayene etmek",
-                        "is_correct": False,
-                        "scenario_update": "Dil köküne uygulanan mekanik baskı spazm ve öğürmeyi tetikledi, kitle rüptürü riski ve ağır laringeal daralma oluştu.",
-                        "teaching_point": "Hava yolu tehlikede olan çocukta zorlu orofarenks alet muayenesi kontrendikedir; refleks laringospazma veya kitle rüptürüne neden olabilir."
-                    },
-                    {
-                        "text": "Çocuğu ajite etmeden, boynunu zorlamadan havayolu açıklığını, solunum eforunu ve vital parametrelerini sakin ortamda değerlendirmek",
+                        "text": "Vital bulgular, tartı ölçümü, büyüme eğrisi, batın muayenesinde zeytin benzeri kitle ve hidrasyon durumunu kapsamlı olarak değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Üst hava yolu obstrüksiyonu riski taşıyan çocuklarda ajitasyon stridoru artırır; hasta en rahat ettiği pozisyonda, sakin ortamda değerlendirilmelidir.",
-                        "new_finding": "Vital Bulgular: Ateş 39.3°C, KTA 146/dk, SS 34/dk, SpO2 %94. Fizik Muayene: Baş hiperekstansiyonda, boyun fleksiyonu ağrılı, sürekli salya akıyor, orofarenks arka duvarında tek taraflı belirgin kabarıklık izleniyor."
+                        "explanation": "Kusan bebekte öncelikle kilo alımı, hidrasyon, batında pilor stenozu düşündürecek kitle veya distansiyon gibi kırmızı bayraklar dışlanmalıdır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 124/dk, SS 32/dk, SpO2 %99. Kilo 6.200 gr (50. persentilde, mükemmel kilo alımı). Ön fontanel normal bombelikte, mukozalar ıslak, turgor doğal. Batın rahat, distansiyon veya palpabl kitle (zeytin kitle) yok. Akciğer sesleri doğal, çekilme yok.",
                     },
                     {
-                        "text": "Solunum sıkıntısını hiç önemsemeyip hastaya intramusküler tek doz kristalize penisilin enjekte ederek reçetesiz şekilde doğrudan evine göndermek",
+                        "text": "Kusma şikayetinin intrakraniyal basınç artışına bağlı olabileceğini düşünerek bebeği acil serviste bekletmeden Sarı Alana devredip acil beyin tomografisi istemek",
                         "is_correct": False,
-                        "scenario_update": "İntramusküler enjeksiyon sonrası eve gönderilen hastada iki saat içinde tam hava yolu tıkanması ve siyanoz gelişti.",
-                        "teaching_point": "Stridor, salya akması ve boyun rijiditesi olan çocukta havayolu acildir; hastayı taburcu etmek ölümcül asfiksiye zemin hazırlar."
-                    }
-                ]
+                        "scenario_update": "Sarı Alana alınan bebeğin nörolojik muayenesi ve fontaneli tamamen normaldi; radyasyona yol açacak acil beyin görüntülemesi endikasyonu bulunmadığı belirtildi.",
+                        "teaching_point": "Genel durumu iyi, fontaneli normal ve nöromotor gelişimi olağan kusan süt çocuklarında kırmızı bayraklar olmadan santral patoloji düşünülüp tomografi istenmez.",
+                    },
+                    {
+                        "text": "Beslenme sonrası kusmanın akut cerrahi batına işaret edebileceğini öngörerek batın muayenesini derin ve ağrılı palpasyonla tekrarlayıp hemen nazogastrik sonda takmak",
+                        "is_correct": False,
+                        "scenario_update": "Nazogastrik sonda takılması bebeği aşırı derecede ajite etti; mideden sadece sindirilmemiş süt geldi ve herhangi bir safra içeriği görülmedi.",
+                        "teaching_point": "Batını rahat, kilo alımı mükemmel ve safrasız kusan bebekte akut cerrahi batın düşünülmez; gereksiz nazogastrik dekompresyon travmaya neden olur.",
+                    },
+                    {
+                        "text": "Bebeğin neşeli ve aktif olduğunu gözlemleyip tartı ölçümü ve fizik muayene yapmadan anneyi sadece sakinleştirerek taburculuğa yönlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "Tartı ölçümü ve muayene yapılmadığı için bebeğin büyüme eğrisi ve olası patolojik kusma nedenleri objektif olarak değerlendirilememiş oldu.",
+                        "teaching_point": "Kusan her süt çocuğunda büyüme persentili, tartı takibi ve hidrasyon değerlendirilmesi fizyolojik ve patolojik süreçleri ayırt etmede zorunludur.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Radyolojik Görüntüleme ve İnceleme",
-                "question": "Hava yolunu tehdit eden derin servikal patoloji şüphesinde ilk basamakta istenmesi gereken hızlı radyolojik görüntüleme yöntemi nedir?",
+                "stage_title": "Laboratuvar ve Tetkik Stratejisi",
+                "question": "Kilo alımı ve hidrasyonu mükemmel, batını rahat olan bu bebekte acil serviste tetkik stratejiniz ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Boyun ekstansiyonda ve inspiryumda lateral boyun grafisi çekerek servikal omurga önü yumuşak doku kalınlığını radyolojik incelemek",
+                        "text": "Pilor stenozu ve intestinal malrotasyonu dışlamak amacıyla bebeğe acil baryumlu üst gastrointestinal sistem pasaj grafisi çektirmek",
+                        "is_correct": False,
+                        "scenario_update": "Kontrastlı pasaj grafisinde baryumun mideye ve duodenuma geçişi normal bulundu ancak bebek kontrast madde aspirasyonu riskiyle karşı karşıya kaldı.",
+                        "teaching_point": "Safrasız kusan ve kilo alımı persentil üzerinde olan bebekte intestinal malrotasyon veya pilor stenozu düşünülerek acil kontrastlı grafi çekilmez.",
+                    },
+                    {
+                        "text": "Kusmaya bağlı gelişebilecek hipokloremi, hipokalemi ve metabolik alkalozu belirlemek için acil kan gazı ve venöz elektrolit paneli çalışmak",
+                        "is_correct": False,
+                        "scenario_update": "Kan gazında pH 7.39, pCO2 38 mmHg, HCO3 23 mmol/L, sodyum 138 mEq/L, potasyum 4.4 mEq/L, klor 102 mEq/L normal sınırlarda geldi.",
+                        "teaching_point": "Fışkırır tarzda kusması olmayan, dehidrate bulunmayan ve beslenmesi iyi bebeklerde elektrolit bozukluğu beklenmez; invaziv kan alımı gereksizdir.",
+                    },
+                    {
+                        "text": "Özofagus lümeninde mikroskopik erozyon ve kanamayı araştırmak için dışkıda gizli kan testi ve acil üst gastrointestinal endoskopi planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Dışkıda gizli kan negatif bulundu; çocuk gastroenteroloji konsültanı asemptomatik ve kilo alan bu bebekte endoskopi endikasyonu olmadığını bildirdi.",
+                        "teaching_point": "Hematemez, demir eksikliği anemisi veya belirgin büyüme geriliği bulunmayan kusan bebeklerde invaziv endoskopik biyopsi endikasyonu yoktur.",
+                    },
+                    {
+                        "text": "Kırmızı bayrak bulgusu ve gelişim geriliği bulunmadığı için herhangi bir laboratuvar veya görüntüleme tetkiki istememek",
                         "is_correct": True,
-                        "image": "assets/images/neck_retropharyngeal.png",
-                        "image_caption": "Lateral Boyun Grafisi: Prevertebral yumuşak doku gölgesinde ileri derecede kalınlaşma",
-                        "explanation": "İnspiryumda ve boyun ekstansiyondayken çekilen lateral boyun grafisi servikal yumuşak doku genişlemesini hızlıca gösteren ilk tercihtir.",
-                        "new_finding": "Lateral Boyun Grafisi: Servikal omurga önündeki yumuşak doku mesafesinde ileri derecede patolojik genişleme (C2-C4 seviyesinde komşu korpus kalınlığının iki katından fazla), farengeal hava sütununda öne doğru yer değiştirme izlendi."
+                        "explanation": "Kilo alımı çok iyi olan, safrasız, eforsuz kusan ve hidrasyonu normal bebeklerde ileri laboratuvar veya radyolojik inceleme endike değildir.",
+                        "new_finding": "Tetkik istenmedi; aileye bebeğin organ muayenesinin, hidrasyonunun ve tartı artışının tamamen sağlıklı olduğu bilgisi verildi.",
                     },
-                    {
-                        "text": "Radyasyon riskinden kaçınmak amacıyla görüntüleme yapmayıp sadece tam idrar tahlili ve gaita mikroskopisi isteyerek hastayı izleme almak",
-                        "is_correct": False,
-                        "scenario_update": "Laboratuvar tetkikleri normal sonuçlandı ancak derin dokudaki bası ilerleyerek hastada belirgin hipoksi ve hava yolu stridoru derinleşti.",
-                        "teaching_point": "Stridor ve boyun hiperekstansiyonu olan olgularda radyolojik görüntüleme esastır; idrar tahlili gibi ilgisiz tetkikler tanıyı tehlikeli şekilde geciktirir."
-                    },
-                    {
-                        "text": "Birincil basamak tetkiki olarak derhal yüksek doz kontrastlı tüm vücut anjiyografisi çekerek olası vasküler malformasyonları taramaya çalışmak",
-                        "is_correct": False,
-                        "scenario_update": "Tüm vücut anjiyografisi hazırlığı ve kontrast uygulaması sırasında solunum sıkıntısı ağırlaştı ve kardiyopulmoner instabilite yaşandı.",
-                        "teaching_point": "Tüm vücut anjiyografisi endike değildir; invazivdir, gereksiz yüksek radyasyon ve kontrast yükü taşır ve acil süreci aksatır."
-                    },
-                    {
-                        "text": "Görüntüleme tetkiki istemeden hastayı sakinleştirmek için genel anestezi altında acil diagnostik bronkoskopi planlayarak ameliyathane koşullarına hızla nakletmek",
-                        "is_correct": False,
-                        "scenario_update": "Görüntüleme olmadan girilen bronkoskopi sırasında kitleye temas edilerek kanama ve pürülan içeriğin bronşlara aspirasyonu meydana geldi.",
-                        "teaching_point": "Anatomik lokalizasyon radyolojik olarak belirlenmeden körlemesine bronkoskopi yapılması kitle rüptürüne ve trakeobronşiyal aspirasyona neden olabilir."
-                    }
-                ]
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Boyun hiperekstansiyonu, salya akması, stridor ve lateral grafide servikal omurga önü doku kalınlaşması saptanan hastada kesin tanı nedir?",
+                "question": "Anamnez, fizik muayene ve mükemmel kilo alımı bulguları ışığında bu bebeğin en olası tanısı nedir?",
                 "options": [
                     {
-                        "text": "Akut Viral Krup Sendromu",
+                        "text": "Gastroözofageal Reflü Hastalığı (GÖRH)",
                         "is_correct": False,
-                        "scenario_update": "Krup sendromunda havlayan öksürük ve subglottik daralma olur; salya akması, boyun hiperekstansiyonu ve servikal doku kalınlaşması görülmez.",
-                        "teaching_point": "Krup subglottik trakeayı tutar; salya akışı, disfaji ve boyun rijiditesi derin servikal abse patolojilerini işaret eder."
+                        "scenario_update": "Bebekte hematemez, beslenmeyi reddetme, kilo alamama, stridor veya apne gibi patolojik reflü hastalığı bulguları saptanmadı.",
+                        "teaching_point": "Reflü hastalığı (GÖRH) tanısı için basit regürjitasyonun ötesinde büyüme geriliği, özofajit, hematemez veya solunumsal komplikasyonlar bulunmalıdır.",
                     },
                     {
-                        "text": "Akut Bakteriyel Trakeit Tablosu",
-                        "is_correct": False,
-                        "scenario_update": "Bakteriyel trakeitte pürülan psödomembranlar trakea lümenini tıkar; lateral grafide farenks arkası yumuşak dokuda kalınlaşma izlenmez.",
-                        "teaching_point": "Bakteriyel trakeit endotrakeal pürülan eksüda ile seyreder; lateral boyun grafisinde servikal yumuşak doku genişlemesi retrofarengeal tutulumu gösterir."
-                    },
-                    {
-                        "text": "Akut İnflamatuar Epiglottit Enfeksiyonu",
-                        "is_correct": False,
-                        "scenario_update": "Epiglottitte lateral grafide belirgin başparmak belirtisi (ödemli epiglottis) görülür; farenks arkası doku mesafesi normal sınırlardadır.",
-                        "teaching_point": "Epiglottit supraglottik laringeal yapıları tutar; retrofarengeal abse ise vertebra önü potansiyel boşlukta koleksiyonla karakterizedir."
-                    },
-                    {
-                        "text": "Akut Servikal Retrofarengeal Abse",
+                        "text": "Fizyolojik Gastroözofageal Reflü ('Mutlu Kusan Bebek')",
                         "is_correct": True,
-                        "explanation": "Küçük çocukta ateş, salya akması, boyun hiperekstansiyonu, stridor ve lateral grafide yumuşak doku kalınlaşması retrofarengeal abse için patognomoniktir.",
-                        "new_finding": "Kesin tanı: Akut Servikal Retrofarengeal Abse. Hava yolu obstrüksiyonu riski nedeniyle acil cerrahi drenaj planlandı."
-                    }
-                ]
+                        "explanation": "Eforsuz kusmalara rağmen kilo alımının mükemmel olması, kusma sırasında ağrı veya irritabilite olmaması fizyolojik gastroözofageal reflü ('mutlu kusan bebek') tablosunu kanıtlar.",
+                        "new_finding": "Klinik tanı Fizyolojik Gastroözofageal Reflü ('Mutlu Kusan Bebek') olarak kesinleştirildi; durumun selim olduğu aileye açıklandı.",
+                    },
+                    {
+                        "text": "İnfantil Hipertrofik Pilor Stenozu",
+                        "is_correct": False,
+                        "scenario_update": "Kusmaların fışkırır tarzda olmaması, kilo alımının 50. persentilde seyretmesi ve batında zeytin kitle bulunmaması pilor stenozunu dışladı.",
+                        "teaching_point": "Pilor darlığında tipik olarak 3-6 haftalıkken başlayan fışkırır tarzda safrasız kusma, kilo kaybı ve hipokloremik metabolik alkaloz gelişir.",
+                    },
+                    {
+                        "text": "İnek Sütü Proteini İlişkili Proktokolit",
+                        "is_correct": False,
+                        "scenario_update": "Dışkıda mukus veya taze kan çizgileri bulunmadığı, bebeğin derisinde egzama veya atopik lezyon olmadığı gözlendi.",
+                        "teaching_point": "İnek sütü proktokolitinde temel başvuru bulgusu dışkıda kan ve mukustur; izole kilo alımı iyi olan eforsuz kusma alerjik kolitle uyuşmaz.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Tedavi Yönetimi ve Konsültasyon",
-                "question": "Lateral boyun grafisinde derin enfeksiyon odağı saptanan 2.5 yaşındaki bu hastanın kesin tedavi ve takip stratejisi nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Aile Eğitimi Planı",
+                "question": "Fizyolojik reflü tanısı alan bu 'mutlu kusan bebek' için en uygun tedavi ve taburculuk yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Hastaya oral sefuroksim reçete ederek ayaktan izlem planlamak ve genel durumu bozulursa iki gün sonra getirilmesini söylemek",
+                        "text": "Kusma sıklığını azaltmak amacıyla hemen oral proton pompa inhibitörü süspansiyon ve motilite artırıcı prokinetik şurup tedavisi başlamak",
                         "is_correct": False,
-                        "scenario_update": "Oral sefalosporin alan hastada gece saatlerinde kitle büyüyerek havayolunu tamamen kapattı ve arrest tablosuyla acile getirildi.",
-                        "teaching_point": "Havayolunu tehdit eden derin boyun koleksiyonlarında ayaktan oral tedavi kesinlikle kabul edilemez; cerrahi drenaj ve hospitalizasyon şarttır."
+                        "scenario_update": "Asit baskılayıcı ilaç başlanan bebekte iki hafta sonra nekrotizan enterokolit riski, gastrointestinal disbiyozis ve solunum yolu enfeksiyonu sıklığı arttı.",
+                        "teaching_point": "Kilo alımı iyi olan selim reflüde proton pompa inhibitörleri ve prokinetikler etkisizdir; pnömoni ve bağırsak enfeksiyonu riskini artırdığı için kontrendikedir.",
                     },
                     {
-                        "text": "Acil KBB konsültasyonuyla ameliyathanede cerrahi drenaj planlamak, hastanın havayolu güvenliğini sağlamak ve intravenöz ampisilin-sulbaktam başlamak",
+                        "text": "Anne sütünü derhal keserek bebeği yoğunlaştırılmış pirinçli antireflü formül mamaya ve koyulaştırıcı mama takviyelerine geçirmeyi aileye önermek",
+                        "is_correct": False,
+                        "scenario_update": "Anne sütünün kesilmesi bebekte kabızlığa ve annenin süt üretiminin hızla azalmasına neden oldu; ailede belirgin emzirme stresi yaşandı.",
+                        "teaching_point": "Anne sütü koruyucudur ve sindirimi kolaydır; fizyolojik kusmaları olan bebekte anne sütü kesinlikle kesilmemeli ve formül mamaya geçilmemelidir.",
+                    },
+                    {
+                        "text": "İlaç tedavisi vermeden beslenme sonrası dik tutma, gaz çıkarma ve aşırı beslenmeden kaçınma eğitimiyle bebeği taburcu etmek",
                         "is_correct": True,
-                        "explanation": "Havayolu emniyeti sağlandıktan sonra KBB tarafından cerrahi drenaj yapılması ve polimikrobiyal floraya yönelik ampisilin-sulbaktam verilmesi esastır.",
-                        "new_finding": "Hasta ameliyathaneye alındı; KBB ekibi transoral insizyon ve drenajla 6 mL pürülan mayi boşalttı; çocuk yoğun bakımda İV antibiyoterapiyle izleme alındı."
+                        "explanation": "Fizyolojik reflüde asit baskılayıcı ilaçlar etkisizdir ve yan etki riskini artırır; dik pozisyon, sık aralıklarla uygun hacimde besleme ve gaz çıkarma yeterlidir.",
+                        "new_finding": "Anneye beslenme sonrası bebeği 20-30 dakika dik tutması, gazını çıkarması ve kırmızı bayraklar (safralı kusma, ateş, kilo duraklaması) anlatılarak taburcu edildi.",
                     },
                     {
-                        "text": "Cerrahi yaklaşımı tamamen reddederek hastaya yalnızca soğuk buhar inhalasyonu ve nebulize budesonid vermek, acilde iki saat gözlemek",
+                        "text": "Mide asiditesini nötralize etmek için her beslenmeden önce antiasit magnezyum ve alüminyum hidroksit süspansiyon verilmesini reçete etmek",
                         "is_correct": False,
-                        "scenario_update": "Nebulize tedaviler derin farengeal pürülan odağı etkilemedi ve solunum eforu dakikalar içinde daha da kötüleşti.",
-                        "teaching_point": "Krup benzeri nebulize tedaviler retrofarengeal pürülan koleksiyonlarda etkisizdir; mekanik basıyı ortadan kaldıracak cerrahi drenaj gereklidir."
+                        "scenario_update": "Alüminyum içeren antiasit verilen süt çocuğunda serum alüminyum toksisitesi ve mineral metabolizması bozukluğu riski ortaya çıktı.",
+                        "teaching_point": "Süt çocuklarında magnezyum veya alüminyum içeren antiasitler elektrolit dengesizliği ve sistemik toksisite oluşturabileceğinden kesinlikle kullanılmaz.",
                     },
-                    {
-                        "text": "Boyun bölgesine lokal sıcak kompres uygulayıp hastayı çocuk enfeksiyon polikliniğine haftalık elektif poliklinik randevusu için sevk etmek",
-                        "is_correct": False,
-                        "scenario_update": "Sıcak uygulama ve gecikme nedeniyle lokal hiperemi arttı ve koleksiyon spontan rüptürle trakeobronşiyal ağaca boşalma tehlikesi oluşturdu.",
-                        "teaching_point": "Derin boyun patolojilerinde sıcak kompres ve elektif poliklinik sevki kontrendikedir; acil cerrahi drenaj ve hava yolu emniyeti gerekir."
-                    }
-                ]
-            }
-        ]
+                ],
+            },
+        ],
     },
     {
         "id": "Y29",
-        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
-        "age": "1.5 Yaş",
-        "gender": "Kız",
-        "complaint": "Aniden başlayan tükürüğünü yutamama, öğürme, retrosternal huzursuzluk ve besini reddetme",
+        "category": "👂 Kulak Ağrısı & KBB",
+        "age": "4 Yaş",
+        "gender": "Erkek",
+        "complaint": "Televizyonu yüksek sesle dinleme, seslenildiğinde bakmama ve işitme güçlüğü",
         "history": (
-            "1.5 yaşındaki kız çocuğu (11 kg), evde oyuncak uzaktan kumandasıyla oynadıktan hemen sonra aniden öğürmeye "
-            "ve ağlamaya başlamış. Ailesi çocuğun dakikalar içinde tükürüğünü yutamaz hale geldiğini, sürekli salyasının "
-            "aktığını, göğsünü göstererek kıvrandığını ve hiçbir şey içemediğini belirtiyor."
+            "4 yaşındaki erkek çocuk, annesi tarafından acil polikliniğine getirildi. Annesi, çocuğun son 3 haftadır "
+            "televizyonu çok yakından ve sesini aşırı açarak izlediğini, arkasından seslenildiğinde çoğu zaman duymadığını "
+            "veya yanıt vermediğini anlatıyor. Akut kulak ağrısı, kulaktan akıntı veya ateş tariflenmiyor. Yaklaşık 1 ay "
+            "önce hafif bir viral üst solunum yolu enfeksiyonu geçirdiği öğrenildi. Çocuğun genel durumu iyi, beslenmesi "
+            "ve uykusu düzenli."
         ),
-        "final_diagnosis": "Özofagus Üst Darlıkta Düğme Pil İmpaksiyonu",
-        "disposition": "Acil Çocuk Cerrahisi / Pediatrik Gastroenteroloji Konsültasyonu + İlk 2 Saat İçinde Acil Rijit Endoskopik Çıkarma + Yoğun Bakım Takibi",
+        "final_diagnosis": "Efüzyonlu Otitis Media (Seröz Otit)",
+        "disposition": "Yeşil Alandan Antibiyotiksiz İzlem, Aile Eğitimi ve 3 Ay Sonra Elektif KBB Kontrolü ile Taburculuk",
         "case_pearl": (
-            "Özofagusta düğme pil (button battery) sıkışması, çocuk acil pratiğinde en kritik zamana duyarlı durumlardan biridir. "
-            "Düğme piller elektrik akımı oluşturarak hidroksit iyonu üretir, alkali likefaksiyon nekrozu ve bası nekrozu ile "
-            "2 saat kadar kısa sürede mukozal hasar ve özofagus perforasyonu yapabilir; trakeoözofageal veya aortoözofageal fistül "
-            "gibi ölümcül komplikasyonlara yol açabilir. Ön-arka radyografide karakteristik çift halka (double ring / halo) "
-            "belirtisi ve yan grafide basamak (step-off) belirtisi görülmesi madeni paralardan ayırt ettirir. Tanı anında oral stop "
-            "yapılmalı ve genel anestezi altında ilk 2 saat içinde acil rijit endoskopiyle çıkarılmalıdır. Bir yaşından büyük "
-            "çocuklarda endoskopiye kadar mukozal hasarı azaltmak için bal verilmesi önerilse de endoskopiyi asla geciktirmemelidir."
+            "Efüzyonlu otitis media (EOM / seröz otit), akut enfeksiyon bulguları (ateş, kulak ağrısı, zarda belirgin "
+            "bombeleşme/eritem) olmaksızın timpanik membran arkasında sıvı toplanmasıdır. Genellikle viral ÜSYE veya "
+            "AOM atağını takiben gelişir ve en sık başvuru semptomu hafif-orta derecede iletim tipi işitme kaybıdır "
+            "(TV sesini açma, seslenince bakmama). Vakaların %75-90'ı 3 ay içinde kendiliğinden düzelir. Antibiyotikler, "
+            "oral/nazal dekonjestanlar ve kortikosteroidler etkisizdir ve önerilmez. 3 aydan uzun süren veya konuşma "
+            "geriliği yapan olgularda KBB tarafından tüp takılması planlanır."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Triyaj",
-                "question": "Ani başlayan yutma güçlüğü, tükürüğünü yutamama ve göğüs huzursuzluğu olan 1.5 yaşındaki bebekte ilk yaklaşım ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "İşitme azlığı ve seslenildiğinde yanıt vermeme şikayetiyle getirilen 4 yaşındaki çocukta en uygun fizik muayene yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Yutamadığı tükürüğü temizlemek için ağzına parmak sokarak kuvvetlice öğürtmek ve kusmasını sağlayarak lümeni temizlemeye hemen gayret etmek",
+                        "text": "Ani gelişen işitme kaybının intrakraniyal kitleye bağlı olabileceğini düşünerek hastayı acil Sarı Alana devredip acil beyin manyetik rezonansı planlamak",
                         "is_correct": False,
-                        "scenario_update": "Ağza parmak sokulması öğürme spazmına, mukozal abrazyona ve tükürüğün trakeobronşiyal ağaca aspire edilmesine neden oldu.",
-                        "teaching_point": "Özofagus patolojisi şüphesinde körlemesine parmak manevraları ve kusturma kontrendikedir; lümen perforasyonu ve aspirasyon riskini artırır."
+                        "scenario_update": "Sarı Alana yönlendirilen çocuğun nörolojik muayenesi ve kranial sinirleri tamamen intakt bulundu; acil santral görüntüleme endikasyonu olmadığı bildirildi.",
+                        "teaching_point": "Öncesinde nezle öyküsü olan, bilateral ve ağrısız işitme azalmasında nörolojik defisit yoksa acil santral görüntüleme gerekmez; kulak muayenesi önceliklidir.",
                     },
                     {
-                        "text": "Lümeni mekanik olarak temizlemek amacıyla bebeğe zorla bol miktarda katı ekmek içi yedirmek ve su içirmeye çalışmak",
+                        "text": "Kulak kanalını incelemeden önce işitme kaybının akut mastoidite bağlı olabileceğini varsayarak hastayı acil temporal kemik bilgisayarlı tomografisine göndermek",
                         "is_correct": False,
-                        "scenario_update": "Katı gıda takılan diskin üzerine bası yaparak mukozal hasarı artırdı ve çocukta tam solunum sıkıntısı tetiklendi.",
-                        "teaching_point": "Özofagusta takılma şüphesi olan hastaya katı gıda veya sıvı verilmemelidir; perforasyon riskini ve aspirasyon tehlikesini tetikler."
+                        "scenario_update": "Retroauriküler eritem, ödem veya kulak kepçesinde öne itilme gibi hiçbir mastoidit bulgusu olmayan çocukta gereksiz yüksek doz radyasyon maruziyeti oluştu.",
+                        "teaching_point": "Mastoidit retroauriküler şişlik, kızarıklık ve sistemik ateşle seyreder; bu bulgular olmadan izole işitme güçlüğünde bilgisayarlı tomografi endike değildir.",
                     },
                     {
-                        "text": "Tablonun hafif bir boğaz enfeksiyonu olabileceğini düşünerek ağızdan parasetamol şurup içirmek ve evde dinlenmeye göndermek üzere reçetelemek",
+                        "text": "Çocuğun seslenince bakmamasını tamamen davranışsal ve psikolojik bir sorun olarak kabul edip otoskopik muayeneyi atlayarak çocuk psikiyatrisine sevk etmek",
                         "is_correct": False,
-                        "scenario_update": "Oral şurup yutulamayıp aspire edildi; eve gönderilmek istenen çocukta göğüs ağrısı ve huzursuzluk şiddetlenerek devam etti.",
-                        "teaching_point": "Ani başlayan disfaji ve tükürük yutamama tablosu akut cerrahi acildir; basit farenjit kabul edilip analjezikle evine gönderilemez."
+                        "scenario_update": "Kulak zarları incelenmediği için orta kulak patolojisi tamamen atlandı ve çocuk gereksiz yere davranışsal değerlendirme sürecine sokuldu.",
+                        "teaching_point": "Seslenince bakmama veya televizyon sesini açma yakınmasında davranışsal tanı düşünülmeden önce mutlaka ayrıntılı otoskopik kulak muayenesi yapılmalıdır.",
                     },
                     {
-                        "text": "Havayolu açıklığını ve aspirasyon riskini değerlendirmek, oral alımı derhal durdurup damar yolu açarak monitörize takibe almak",
+                        "text": "Vital bulguları kaydedip pnömatik otoskopi ile timpanik membranın rengi, pozisyonu, saydamlığı ve mobilitesini dikkatle değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Ani disfaji ve tükürük yutamayan çocuklarda aspirasyonu önlemek için oral alım kesilmeli, havayolu güvenceye alınmalı ve İV erişim sağlanmalıdır.",
-                        "new_finding": "Vital Bulgular: KTA 126/dk, SS 24/dk, TA 92/58 mmHg, SpO2 %98. Muayene: Sürekli tükürük akışı var, çocuk göğsünü tutarak ağlıyor, solunum sesleri kaba ancak stridor yok, orofarenkste travma izlenmedi."
-                    }
-                ]
+                        "explanation": "İşitme azlığı yakınmasında akut inflamasyon varlığını, zar arkasında sıvı toplanmasını ve zar mobilitesindeki kısıtlılığı saptamak için pnömatik otoskopi esastır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 90/dk, SS 22/dk, SpO2 %99. Orofarenks sakin. Otoskopide: Bilateral timpanik membranlar matlaşmış, retrakte görünümde, ışık refleksi silik; zar arkasında sarımsı sıvı birikimi ve hava kabarcıkları izlendi, bombeleşme veya hiperemi yok. Pnömatik otoskopide zar mobilitesi belirgin azalmış.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Radyolojik Görüntüleme ve İnceleme",
-                "question": "Özofagusta şüpheli radyoopak disk alımı kuşkusu bulunan bu çocukta tanısal yerleşimi belirlemek için hangi radyolojik inceleme yapılmalıdır?",
+                "stage_title": "Laboratuvar ve Tetkik Stratejisi",
+                "question": "Otoskopisinde zar arkasında hava-sıvı seviyesi saptanan, ateşi ve kulak ağrısı olmayan bu çocukta tetkik yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Radyasyon almaması için düz film çekmeyip yalnızca baryumlu sindirim pasaj grafisi planlayarak bebeğe kontrast madde içirmeye kalkışmak",
+                        "text": "Orta kulaktaki sıvının bakteriyel enfeksiyon belirteci olup olmadığını netleştirmek amacıyla acil tam kan sayımı ve CRP tetkiki istemek",
                         "is_correct": False,
-                        "scenario_update": "Olası perforasyon zemininde verilen baryumlu kontrast madde mediastene sızarak kimyasal mediastinit tehlikesi yarattı ve endoskopiyi zorlaştırdı.",
-                        "teaching_point": "Perforasyon riski olan şüpheli lümen patolojilerinde baryum kontrendikedir; mediastene sızıntı ölümcül kimyasal mediastinite yol açabilir."
+                        "scenario_update": "Laboratuvar tetkiklerinde lökosit sayısı 7.200/mm³, CRP 1.1 mg/L olarak tamamen normal sınırlarda geldi ve klinik yaklaşımı değiştirmedi.",
+                        "teaching_point": "Ateş veya akut ağrısı olmayan orta kulak sıvı birikimlerinde sistemik inflamasyon belirteçleri tanısal değer taşımaz ve bakılmamalıdır.",
                     },
                     {
-                        "text": "Boyun, göğüs ve batını içeren iki yönlü grafiler çekerek radyoopak diskin anatomik morfolojisini dikkatlice incelemek",
+                        "text": "Acil serviste kan tahlili veya radyoloji istemeyip elektif poliklinikte timpanometri ve odyometrik işitme testi planlamak",
                         "is_correct": True,
-                        "image": "assets/images/adbg_button_battery.png",
-                        "image_caption": "Radyografi: Üst özofagus hizasında çift halka (double ring / halo) belirtisi veren radyoopak disk",
-                        "explanation": "Ön-arka ve yan grafilerde diskin karakteristik kenar yapısı (çift kontur/halo ve basamak belirtisi) radyolojik tanıyı kesinleştirir.",
-                        "new_finding": "Radyografi: Servikal özofagus C6-T1 hizasında yaklaşık 20 mm çapında, ön-arka grafide kenarında belirgin çift halka (halo) görünümü, yan grafide basamak belirtisi veren radyoopak disk saptandı."
+                        "explanation": "Akut inflamasyon bulgusu olmayan olgularda kan veya radyolojik tetkik gerekmez; tanı ve izlemde objektif değerlendirme timpanometri ve odyometri ile yapılır.",
+                        "new_finding": "Acil kan ve radyolojik tetkik istenmedi; hastanın izlemi için kulak burun boğaz polikliniğinde Tip B timpanogram ve işitme değerlendirmesi önerildi.",
                     },
                     {
-                        "text": "Birincil basamakta derhal genel anestezi altında tüm vücut manyetik rezonans görüntülemesi planlayıp hastayı radyoloji ünitesine hızla göndermek",
+                        "text": "Sıvı içeriğinin etken mikrobiyolojisini belirlemek amacıyla acil serviste parasentez ve timpanosentez uygulayarak orta kulak sıvısından kültür almak",
                         "is_correct": False,
-                        "scenario_update": "Metalik ferromanyetik materyal varlığında MR çekilmeye çalışılması doku ısınması ve cismin yer değiştirmesi riskini doğurdu.",
-                        "teaching_point": "Vücutta metalik iletken disk şüphesi varken MR görüntüleme kesinlikle kontrendikedir; termal yanık ve doku hasarına neden olur."
+                        "scenario_update": "Acil serviste timpanosentez girişimi sırasında çocuk şiddetli ağrı duydu ve timpanik membranda travmatik mikro-perforasyon gelişti.",
+                        "teaching_point": "Timpanosentez acil serviste elektif sıvı toplanmasında uygulanmaz; yalnızca toksik, dirençli ve bağışıklık yetmezliği olan komplike vakalarda KBB uzmanlarınca yapılır.",
                     },
                     {
-                        "text": "Herhangi bir radyolojik film çekmeden çocuğu doğrudan çocuk cerrahisi polikliniğine sonraki haftalık rutin randevu sırasına yönlendirmek",
+                        "text": "Miringoskleroz ve olası kemikçik zincir anomalilerini değerlendirmek için acil serviste yüksek çözünürlüklü temporal kemik bilgisayarlı tomografisi çekmek",
                         "is_correct": False,
-                        "scenario_update": "Radyografik inceleme yapılmadığı için özofagustaki doku hasarı fark edilemedi ve duvarda saatler içinde tam kat nekroz gelişti.",
-                        "teaching_point": "Akut yutma güçlüğü olan çocukta acil radyografi zorunludur; gecikme durumunda dokuda likefaksiyon nekrozu ve ölümcül perforasyon gelişir."
-                    }
-                ]
+                        "scenario_update": "Tomografi sonucunda orta kulak boşluklarında aerasyon kaybı dışında kemik destrüksiyonu izlenmedi; çocuk gereksiz radyasyona maruz bırakıldı.",
+                        "teaching_point": "Kolesteatom, intrakraniyal yayılım veya kemik erozyonu şüphesi olmayan olgularda temporal bilgisayarlı tomografi çekilmesi kesinlikle kontrendikedir.",
+                    },
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Özofagus proksimalinde çift halka ve basamak belirtisi veren metalik disk saptanan hastada kesin tanı nedir?",
+                "question": "Anamnez, fizik muayene ve otoskopik bulgular ışığında bu hastada en olası klinik tanınız nedir?",
                 "options": [
                     {
-                        "text": "Özofagusta Düğme Pil İmpaksiyonu",
+                        "text": "Akut Süpüratif Otitis Media",
+                        "is_correct": False,
+                        "scenario_update": "Timpanik membranda belirgin bombeleşme, kızarıklık, akut otalji ve sistemik ateş bulunmadığı yeniden teyit edildi.",
+                        "teaching_point": "Akut otitis media tanısı için timpanik membranda belirgin bombeleşme, akut eritem ve eşlik eden şiddetli kulak ağrısı ya da ateş şarttır.",
+                    },
+                    {
+                        "text": "Kronik Süpüratif Otitis Media",
+                        "is_correct": False,
+                        "scenario_update": "Muayenede timpanik membranda kalıcı delinme veya dış kulak yoluna kronik pürülan akıntı olmadığı görüldü.",
+                        "teaching_point": "Kronik süpüratif otit timpanik membranda kalıcı perforasyon ve en az altı haftadır devam eden pürülan akıntı ile tanımlanır.",
+                    },
+                    {
+                        "text": "Efüzyonlu Otitis Media (Seröz Otit)",
                         "is_correct": True,
-                        "explanation": "Ön-arka grafide çift halka (halo) ve yan grafide basamak (step-off) belirtisi düğme pil için patognomoniktir; madeni paralardan ayırır.",
-                        "new_finding": "Kesin tanı: Özofagusta Düğme Pil İmpaksiyonu. İki saat içinde perforasyon ve doku nekrozu riski nedeniyle acil endoskopi gerekir."
+                        "explanation": "Akut enfeksiyon bulgusu (ateş, ağrı, bombeleşme) olmadan timpanik membran arkasında sıvı ve hava kabarcıkları varlığı efüzyonlu otitis media için tipiktir.",
+                        "new_finding": "Klinik tanı Efüzyonlu Otitis Media (Seröz Otit) olarak netleştirildi.",
                     },
                     {
-                        "text": "Özofagusta Madeni Para Sıkışması",
+                        "text": "Kanal İçi Tıkacı (Serümen Bitişi)",
                         "is_correct": False,
-                        "scenario_update": "Madeni paralar tek katmanlı homojen radyoopasite verir; çift halka (halo) veya basamak belirtisi göstermezler.",
-                        "teaching_point": "Madeni para homojen radyoopaktır; çift kontur (halo) ve basamak görünümü iki kutuplu düğme pil yapısına özgüdür."
+                        "scenario_update": "Dış kulak yolunun tamamen açık olduğu, zarı kapatan buşon veya yabancı cisim bulunmadığı otoskopide netleştirildi.",
+                        "teaching_point": "Serümen tıkacında işitme kaybı dış kulak yolunun tıkanmasına bağlıdır ve buşon nedeniyle timpanik membran muayene edilemez.",
                     },
-                    {
-                        "text": "Akut Özofageal Kostik Yanık",
-                        "is_correct": False,
-                        "scenario_update": "Kostik sıvı alımlarında düz radyografide lümende sınırları keskin dairesel radyoopak metalik gölge izlenmez.",
-                        "teaching_point": "Sıvı kostik madde alımları yaygın kimyasal yanık yapar ancak grafide disk şeklinde sınırları belirgin opasite oluşturmaz."
-                    },
-                    {
-                        "text": "Konjenital Vasküler Halka Basısı",
-                        "is_correct": False,
-                        "scenario_update": "Vasküler halka basısı kronik stridor ve beslenme güçlüğü yapar; aniden başlayan metalik radyoopak gölge ile ilişkisizdir.",
-                        "teaching_point": "Vasküler halka basısı kronik konjenital malformasyondur; ani başlayan disfaji ve radyografide disk gölgesi pil yutulmasını gösterir."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Acil Tedavi Yönetimi ve Konsültasyon",
-                "question": "Özofagusta iki saat içinde likefaksiyon nekrozu ve fistül riski taşıyan bu hastada acil yönetim nasıl olmalıdır?",
+                "stage_title": "Tedavi ve İzlem Planı",
+                "question": "Efüzyonlu otitis media tanısı alan bu çocuk için güncel kılavuzlara göre en uygun yönetim planı hangisidir?",
                 "options": [
                     {
-                        "text": "Kendiliğinden mideye geçmesini beklemek amacıyla oral laksatif şurup başlayıp çocuğu kırk sekiz saat sonra kontrole çağırmak",
-                        "is_correct": False,
-                        "scenario_update": "Özofagusta bekletilen disk iki saat içinde özofagus duvarını eriterek trakeoözofageal fistül ve ağır mediastinit tablosuna yol açtı.",
-                        "teaching_point": "Özofagustaki düğme pil kendiliğinden geçiş için asla bekletilemez; iki saat içinde tam kat nekroz ve trakeoözofageal fistül yapabilir."
-                    },
-                    {
-                        "text": "Çocuğa bol lifli katı gıdalar yedirerek diski mekanik olarak aşağı itmeyi denemek ve ayaktan güvenle taburcu etmek",
-                        "is_correct": False,
-                        "scenario_update": "Verilen katı gıdalar nekroze olan duvardan mediastene döküldü ve çocukta septik şok tablosu gelişti.",
-                        "teaching_point": "Katı gıdayla itmeye çalışmak perforasyonu hızlandırır ve mediastinal kontaminasyona yol açar; oral alım kesinlikle durdurulmalıdır."
-                    },
-                    {
-                        "text": "Çocuk cerrahisi veya gastroenteroloji konsültasyonuyla ilk iki saat içinde acil rijit endoskopi planlayıp ameliyathaneye nakletmek",
+                        "text": "Antibiyotik veya dekonjestan vermeden izlem kararı alıp aileyi bilgilendirerek üç ay sonra poliklinik kontrolü önermek",
                         "is_correct": True,
-                        "explanation": "Özofagus düğme pillerinde altın standart ilk 2 saat içinde genel anestezi altında rijit/fleksibl endoskopik acil çıkarmadır.",
-                        "new_finding": "Hasta acilen ameliyathaneye alındı; çocuk cerrahisi tarafından rijit özofagoskopiyle lityum pil çıkarıldı, mukozal nekroz görüldü, perforasyon saptanmadı."
+                        "explanation": "Olguların çoğu 3 ay içinde spontan düzelir; antibiyotikler, antihistaminikler ve dekonjestanlar etkisizdir. 3 ayı aşan efüzyonda KBB değerlendirmesi gerekir.",
+                        "new_finding": "Aileye durumun nezle sonrası geliştiği, çoğu vakada kendiliğinden geçtiği anlatıldı; okulda öğretmene işitme azlığının bildirilmesi ve 3 ay sonra KBB kontrolü planlandı.",
                     },
                     {
-                        "text": "Acil girişim yapmadan çocuğu evine gönderip haftalık seri karın grafileriyle diskin dışkıdan spontan çıkışını uzun süre bekletmek",
+                        "text": "Orta kulaktaki sıvının rezolüsyonunu hızlandırmak amacıyla yüksek doz oral amoksisilin-klavulanat süspansiyon ve nazal kortikosteroid sprey tedavisi başlamak",
                         "is_correct": False,
-                        "scenario_update": "Müdahale edilmeyen çocukta aortoözofageal fistül ve masif gastrointestinal kanama nedeniyle ölümcül kardiyovasküler kollaps gelişti.",
-                        "teaching_point": "Özofagus düğme pilleri acil cerrahi acildir; seri grafilerle haftalık takip yaklaşımı yalnızca mideyi geçmiş asemptomatik piller içindir."
-                    }
-                ]
-            }
-        ]
+                        "scenario_update": "On günlük antibiyotik kullanımı sonrası çocukta yaygın antibiyotiğe bağlı diyare gelişti ancak orta kulaktaki sıvı varlığı ve işitme kaybı devam etti.",
+                        "teaching_point": "Efüzyonlu otitis mediada bakteriyel eradikasyon hedeflenmediğinden antibiyotikler ve steroidler uzun dönemde sıvıyı rezolve etmez; kılavuzlarca önerilmez.",
+                    },
+                    {
+                        "text": "Östaki disfonksiyonunu gidermek amacıyla sistemik psödoefedrin şurup ve sedatif birinci kuşak oral antihistaminik kombinasyonunu reçete ederek taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Kombine şurup kullanımı çocukta sinirlilik, uykusuzluk ve taşikardiye yol açtı; östaki tüp fonksiyonlarında veya işitmede hiçbir düzelme sağlanamadı.",
+                        "teaching_point": "Oral dekonjestanlar ve antihistaminikler efüzyonlu otitte klinik iyileşme sağlamadığı gibi çocuklarda belirgin nöropsikiyatrik ve kardiyovasküler yan etki yapar.",
+                    },
+                    {
+                        "text": "İşitme kaybı saptandığı için çocuğu acil servisten taburcu etmeden aynı gün ameliyathaneye alarak bilateral ventilasyon tüpü tatbik etmek",
+                        "is_correct": False,
+                        "scenario_update": "Acil serviste cerrahi girişim endikasyonu olmadığı, olguların çoğunun ilk üç ayda spontan rezolüsyona uğradığı KBB kliniğince hatırlatıldı.",
+                        "teaching_point": "Ventilasyon tüpü tatbiki akut bir acil müdahale değildir; en az üç ay süren bilateral efüzyon ve işitme/konuşma geriliği varlığında elektif olarak planlanır.",
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "Y30",
-        "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
-        "age": "3 Yaş",
-        "gender": "Erkek",
-        "complaint": "Safralı koyu yeşil fışkırır kusma, karında ileri derecede şişlik ve gaz-gaita çıkışının durması",
+        "category": "👂 Kulak Ağrısı & KBB",
+        "age": "7 Yaş",
+        "gender": "Kız",
+        "complaint": "Sol boyunda 2 haftadır ele gelen ve ağrısız olan küçük şişlik",
         "history": (
-            "3 yaşındaki erkek çocuk (14 kg), on sekiz ay önce perfore apandisit nedeniyle açık operasyon geçirmiştir. "
-            "On iki saat önce aniden başlayan safralı, koyu yeşil fışkırır kusma ve kıvrandırıcı karın ağrısıyla getirildi. "
-            "Ailesi dünden beri hiç gaz ve gaita çıkarmadığını, karnının davul gibi gerginleştiğini ifade ediyor."
+            "7 yaşındaki kız çocuğu, annesi tarafından boynundaki şişlik nedeniyle acil servise getirildi. Annesi, "
+            "yaklaşık 2 hafta önce çocuğun hafif burun akıntısı ve boğaz ağrısı ile seyreden viral bir üst solunum yolu "
+            "enfeksiyonu geçirdiğini, bu enfeksiyondan birkaç gün sonra sol boyun bölgesinde fındık büyüklüğünde bir "
+            "beze fark ettiğini söylüyor. Şişlikte belirgin kızarıklık, sıcaklık artışı veya ağrı olmamış. Son 2 haftada "
+            "boyutta büyüme veya küçülme gözlenmemiş. Ateş, gece terlemesi, kilo kaybı, halsizlik veya kemik ağrısı yok."
         ),
-        "final_diagnosis": "Adezyona Bağlı Mekanik Bağırsak Obstrüksiyonu (Akut İleus)",
-        "disposition": "Oral Stop (NPO) + Nazogastrik Dekompresyon + İntravenöz Kristaloid Sıvı Resüsitasyonu + Acil Çocuk Cerrahisi Konsültasyonu ve Yatış",
+        "final_diagnosis": "Reaktif Servikal Lenfadenopati",
+        "disposition": "Yeşil Alandan Aile Eğitimi, Kırmızı Bayrak Bulguları Bilgilendirmesi ve 3-4 Hafta Sonra Poliklinik Kontrolü ile Taburculuk",
         "case_pearl": (
-            "Pediatrik yaş grubunda safralı (koyu yeşil) kusma, aksi kanıtlanana kadar cerrahi mekanik bağırsak obstrüksiyonu olarak kabul edilmelidir. "
-            "Daha önce geçirilmiş batın cerrahisi (örneğin perfore apandisit) öyküsü olan çocuklarda postoperatif adezyonlar (bridler) "
-            "en sık mekanik obstrüksiyon nedenidir. Klinik bulgular safralı kusma, karın distansiyonu, kolik karın ağrısı, "
-            "obstipasyon (gaz-gaita çıkaramama) ve metalik çınlama tarzında hiperaktif veya kaybolmuş barsak sesleridir. "
-            "Ayakta direkt batın grafisinde (ADBG) dilate ince bağırsak ansları, merdiven basamağı şeklinde yaygın hava-sıvı seviyeleri "
-            "ve kolonda gaz yokluğu tipiktir. Tedavide acil oral stop (NPO), geniş lümenli nazogastrik sonda ile sürekli dekompresyon, "
-            "üçüncü boşluğa kaçan sıvıyı yerine koymak için agresif izotonik İV kristaloid sıvı resüsitasyonu, elektrolit takibi "
-            "ve acil çocuk cerrahisi konsültasyonu esastır."
+            "Çocukluk çağında servikal lenfadenopatilerin en sık nedeni geçirilmiş viral üst solunum yolu enfeksiyonlarına "
+            "bağlı reaktif lenf bezi hiperplazisidir. Tipik olarak <2 cm, mobil, yumuşak-elastik kıvamda, ağrısızdır; "
+            "üzerindeki deride eritem/ısı artışı yoktur ve B semptomları (ateş, kilo kaybı, gece terlemesi) eşlik etmez. "
+            "Fiks, sert, konglomere, supraklaviküler yerleşimli veya 2 cm'den büyük nodüller malignite/granülomatöz hastalık "
+            "açısından ileri inceleme gerektirir. Akut süpürasyon ve sistemik bulgu yoksa antibiyotik, acil biyopsi veya "
+            "gereksiz kan tetkiki endike değildir; 3-4 hafta gözlem en doğru yaklaşımdır."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Resüsitasyon",
-                "question": "Safralı kusma, karın distansiyonu ve gaz-gaita çıkışı olmayan 3 yaşındaki çocukta ilk acil yaklaşım ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Boynunda 2 haftadır ele gelen şişlik şikayetiyle başvuran 7 yaşındaki çocukta ilk fizik muayene yaklaşımınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Dehidratasyonu hızla düzeltmek amacıyla bol miktarda oral rehidratasyon sıvısını zorlayarak içirmek ve kusmanın kendiliğinden kesilmesini sabırla beklemek",
+                        "text": "Boyundaki kitlenin olası lenfoma veya nöroblastom metastazı olabileceğini öngörerek hastayı hemen Sarı Alana devredip acil boyun tomografisi planlamak",
                         "is_correct": False,
-                        "scenario_update": "Oral sıvı alımı mide ve bağırsak içi basıncı dramatik artırarak masif safralı kusmaya ve akciğer aspirasyonuna neden oldu.",
-                        "teaching_point": "Safralı kusan ve distandü batını olan çocukta oral alım derhal durdurulmalıdır; enteral sıvı verilmesi aspirasyon ve perforasyon riskini artırır."
+                        "scenario_update": "Sarı Alana yönlendirilen stabil hastada kitle bulgusu veya hava yolu basısı saptanmadı; acil serviste kontrastlı boyun tomografisi endikasyonu olmadığı bildirildi.",
+                        "teaching_point": "Genel durumu iyi, B semptomu olmayan ve mobil küçük lenf nodlarında acil radyasyonlu tomografi endike değildir; ayaktan benign değerlendirme esastır.",
                     },
                     {
-                        "text": "Oral alımı durdurmak, nazogastrik sonda ile gastrointestinal dekompresyon sağlamak ve damar yolundan izotonik sıvı başlamak",
+                        "text": "Vital bulgular, lenf nodunun boyutu, kıvamı, mobilitesi ile supraklaviküler bölge, orofarenks ve hepatosplenomegaliyi dikkatle değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Safralı kusma cerrahi mekanik engel göstergesidir; aspirasyonu önlemek için nazogastrik dekompresyon ve kayıplar için İV sıvı zorunludur.",
-                        "new_finding": "Vital Bulgular: KTA 136/dk, SS 28/dk, TA 88/54 mmHg, SpO2 %98, KDZ 3 saniye. Muayene: Batın belirgin distandü, timpanik, sağ altta eski cerrahi skar mevcut; nazogastrik sondadan 140 mL koyu yeşil safralı mayi drene oldu."
+                        "explanation": "Lenf bezi büyümesiyle gelen çocukta malignite ve sistemik enfeksiyonları dışlamak için lenf bezinin karakteri, diğer lenf istasyonları ve organomegali muayene edilmelidir.",
+                        "new_finding": "Vital Bulgular: Ateş 36.7°C, KTA 84/dk, SS 18/dk, SpO2 %100. Sol anterior servikal zincirde yaklaşık 1.5 cm çapında, yumuşak-elastik, çevre dokulara fikse olmayan mobil, hassasiyetsiz lenf nodu palpe edildi. Üzerindeki cilt doğal, ısı artışı veya fluktuasyon yok. Supraklaviküler, aksiller veya inguinal lenf bezi yok. Hepatosplenomegali saptanmadı. Tonsiller ve orofarenks sakin.",
                     },
                     {
-                        "text": "Kusmayı durdurmak için hastaya yüksek doz oral antiemetik şurup içirip ayaktan izlemek üzere reçete düzenleyerek taburculuk planlamak",
+                        "text": "Fluktuasyon veya derin apse varlığını netleştirmek amacıyla acil serviste kalın iğne aspirasyonu uygulayarak lenf nodu içeriğini boşaltmak",
                         "is_correct": False,
-                        "scenario_update": "Antiemetik verilmesine rağmen bağırsak lümenindeki aşırı basınç nedeniyle kusma sürdü ve çocukta uykuya meyil gelişti.",
-                        "teaching_point": "Safralı kusmalarda antiemetik verilmesi klinik tabloyu maskeler ve cerrahi tanıyı geciktirir; mekanik patolojide temel yaklaşım dekompresyondur."
+                        "scenario_update": "Aspirasyon girişimi sırasında lenf nodundan pürülan içerik gelmedi; travmaya bağlı lokal hematom ve çocukta yoğun anksiyete oluştu.",
+                        "teaching_point": "Eritem, ısı artışı ve fluktuasyon olmayan küçük lenf nodlarında körlemesine acil iğne aspirasyonu kontrendikedir; enfeksiyon ve hematom riski yaratır.",
                     },
                     {
-                        "text": "Bağırsak pasajını açmak düşüncesiyle yüksek basınçlı hipertonik rektal lavman uygulayarak çocuğu derhal evine göndermek ve yakın izlem önermek",
+                        "text": "Şişliğin sadece sol tarafta olması nedeniyle derin boyun apsesi şüphesiyle çocuğu derhal ameliyathaneye alıp acil açık insizyon ve drenaj planlamak",
                         "is_correct": False,
-                        "scenario_update": "İnce bağırsak düzeyindeki mekanik geçiş durmasında rektal lavman distansiyonu artırdı ve hastada şiddetli hipotansiyon gelişti.",
-                        "teaching_point": "İnce bağırsak düzeyindeki mekanik patolojilerde rektal lavman etkisizdir; hipotansiyon, perforasyon ve elektrolit bozukluğuna yol açabilir."
-                    }
-                ]
+                        "scenario_update": "Ateşi, trismusu, yutma güçlüğü veya sellüliti olmayan çocukta acil cerrahi drenaj planlanması gereksiz cerrahi invazyon riski oluşturdu.",
+                        "teaching_point": "Süpürasyon veya derin fasyal plan apsesi bulgusu bulunmayan asemptomatik servikal lenf nodlarında acil cerrahi insizyon kesinlikle yapılmaz.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Radyolojik Görüntüleme ve İnceleme",
-                "question": "Safralı kusma ve batın distansiyonu olan bu hastada bağırsak lümen içi hava-sıvı dağılımını gösteren ilk radyolojik tetkik nedir?",
+                "stage_title": "Laboratuvar ve Tetkik Stratejisi",
+                "question": "Fizik muayenesinde sol servikalde 1.5 cm mobil, hassasiyetsiz nodül saptanan, genel durumu iyi çocukta tetkik stratejiniz ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Radyasyon almaması için görüntüleme yapmayıp sadece tam idrar tahlili ve dışkıda parazit incelemesiyle yetinerek hastayı acilde izlemek",
-                        "is_correct": False,
-                        "scenario_update": "İdrar ve gaita tetkikleri normal sonuçlandı ancak batın içi distansiyon ilerleyerek solunum sıkıntısına ve şoka neden oldu.",
-                        "teaching_point": "Safralı kusma ve akut cerrahi batın tablosunda acil radyolojik görüntüleme zorunludur; idrar veya gaita tahlili cerrahi patolojiyi dışlayamaz."
-                    },
-                    {
-                        "text": "Birincil basamakta derhal genel anestezi altında acil kolonoskopi planlayarak kalın bağırsak mukozasını endoskopik olarak ayrıntılı biçimde incelemek",
-                        "is_correct": False,
-                        "scenario_update": "Akut distandü ince bağırsak patolojisinde kolonoskopi hiçbir tanısal katkı sağlamadı, aksine bağırsak perforasyonu riski yarattı.",
-                        "teaching_point": "İnce bağırsak düzeyindeki tablolarda kolonoskopi endike değildir; aşırı distandü lümende perforasyon tehlikesi oluşturur."
-                    },
-                    {
-                        "text": "Ayakta direkt batın grafisi çekerek bağırsak anslarındaki patolojik genişlemeyi ve hava-sıvı seviyelerini radyolojik olarak incelemek",
+                        "text": "Kırmızı bayrak bulguları ve sistemik semptom bulunmadığı için acil laboratuvar veya invaziv biyopsi yapmadan izlem kararı vermek",
                         "is_correct": True,
-                        "image": "assets/images/adbg_air_fluid.png",
-                        "image_caption": "ADBG: İnce bağırsak anslarında dilatasyon ve merdiven basamağı şeklinde yaygın hava-sıvı seviyeleri",
-                        "explanation": "Ayakta direkt batın grafisi, dilate bağırsak anslarını ve basamak tarzı hava-sıvı seviyelerini göstererek mekanik geçiş bozukluğunu doğrular.",
-                        "new_finding": "Ayakta Direkt Batın Grafisi: İnce bağırsak anslarında belirgin lümen dilatasyonu, orta batında merdiven basamağı şeklinde çok sayıda hava-sıvı seviyesi, kolonda gaz yokluğu izlendi; diyafram altı serbest hava saptanmadı."
+                        "explanation": "Viral enfeksiyon sonrası gelişen, <2 cm, mobil ve hassasiyetsiz lenf bezlerinde B semptomu yoksa rutin laboratuvar veya acil biyopsi gerekmez.",
+                        "new_finding": "Acil tetkik veya biyopsi istenmedi; aileye mevcut bulguların geçirilmiş üst solunum yolu enfeksiyonuna bağlı selim bağışıklık yanıtı olduğu açıklandı.",
                     },
                     {
-                        "text": "Görüntüleme istemeden doğrudan oral yoldan yoğun baryum sülfat içirerek sindirim sistemi pasaj grafisi çekmeye derhal acilde kalkışmak",
+                        "text": "Lenfoproliferatif hastalıkları ve lösemiyi ekarte etmek amacıyla acil serviste kemik iliği aspirasyonu ve eksizyonel lenf nodu biyopsisi planlamak",
                         "is_correct": False,
-                        "scenario_update": "Mekanik tıkanma zemininde verilen baryum lümende taşlaşarak impaksiyona yol açtı ve olası cerrahi girişimi zorlaştırdı.",
-                        "teaching_point": "Akut lümen obstrüksiyonu şüphesinde oral baryum verilmesi kontrendikedir; lümende sertleşir ve perforasyon riskini artırır."
-                    }
-                ]
+                        "scenario_update": "Hematoloji kliniği sistemik bulgusu, sitopenisi veya hepatosplenomegalisi olmayan hastada invaziv kemik iliği ve biyopsi endikasyonu bulunmadığını bildirdi.",
+                        "teaching_point": "Çocuklarda maligniteyi düşündüren sert/fiks kıvam, supraklaviküler yerleşim veya organomegali yoksa acil serviste biyopsi veya kemik iliği tetkiki istenmez.",
+                    },
+                    {
+                        "text": "Gizli granülomatöz enfeksiyonları araştırmak amacıyla acil serviste PPD deri testi, tüberküloz kültürü ve toraks bilgisayarlı tomografisi istemek",
+                        "is_correct": False,
+                        "scenario_update": "Toraks tomografisinde mediastinal lenfadenopati veya parankimal lezyon izlenmedi; çocuk gereksiz radyasyona maruz bırakıldı.",
+                        "teaching_point": "Kronik süpürasyon, fistülizasyon veya tüberküloz temas öyküsü olmayan izole servikal lenf nodlarında acil toraks tomografisi rutin olarak endike değildir.",
+                    },
+                    {
+                        "text": "Viral etyolojileri ayrıntılandırmak için EBV, CMV, Toksoplazma, Bartonella ve HIV serolojilerini kapsayan geniş enfeksiyon paneli kanı göndermek",
+                        "is_correct": False,
+                        "scenario_update": "Geniş serolojik panel sonuçlarının çıkmasının günler süreceği anlaşıldı; acil şartlarda hastanın klinik yönetimine hiçbir anlık katkı sağlamadı.",
+                        "teaching_point": "Sistemik ateş, hepatosplenomegali veya atipik lenfosit artışı olmayan selim lenf bezi büyümelerinde acil serviste geniş serolojik panel çalışılması maliyet-etkin değildir.",
+                    },
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Geçirilmiş batın cerrahisi, safralı kusma, karın distansiyonu ve grafide merdiven basamağı hava-sıvı seviyeleriyle kesin tanı nedir?",
+                "question": "Geçirilmiş viral enfeksiyon öyküsü, fizik muayenede mobil yumuşak nodül ve B semptomu yokluğuyla en olası klinik tanınız nedir?",
                 "options": [
                     {
-                        "text": "Akut Viral Gastroenterit",
+                        "text": "Akut Bakteriyel Süpüratif Lenfadenit",
                         "is_correct": False,
-                        "scenario_update": "Gastroenteritte sulu ishal ve kramp ağrıları olur; safralı fışkırır kusma ve yaygın hava-sıvı seviyeleri görülmez.",
-                        "teaching_point": "Gastroenteritte ishal ön plandadır; safralı kusma ve grafide basamak hava-sıvı seviyeleri mekanik bağırsak obstrüksiyonunu gösterir."
+                        "scenario_update": "Lenf nodunda hızlı büyüme, şiddetli hassasiyet, çevre dokuda kızarıklık, ısı artışı veya fluktuasyon saptanmadı.",
+                        "teaching_point": "Akut bakteriyel lenfadenit stafilokok veya streptokoklara bağlı olup eritemli, fluktuasyon veren, aşırı ağrılı ve sıklıkla ateşli seyreder.",
                     },
                     {
-                        "text": "Kronik Fonksiyonel Konstipasyon",
+                        "text": "Hodgkin Lenfoma Tutulumu",
                         "is_correct": False,
-                        "scenario_update": "Konstipasyonda safralı fışkırır kusma görülmez; grafide rektumda yoğun dışkı birikimi saptanır.",
-                        "teaching_point": "Fonksiyonel kabızlıkta safralı kusma beklenmez; safralı kusma cerrahi mekanik patolojinin kardinal belirtisidir."
+                        "scenario_update": "Nodülün sert-lastik kıvamda olmaması, çevreye fikse bulunmaması ve gece terlemesi ile kilo kaybının olmaması maligniteyi dışladı.",
+                        "teaching_point": "Hodgkin lenfomada lenf nodları tipik olarak ağrısız, sert, lastik kıvamında, fikse veya konglomeredir; sıklıkla supraklaviküler yerleşir ve B semptomları eşlik eder.",
                     },
                     {
-                        "text": "Pediatrik Siklik Kusma",
+                        "text": "Enfeksiyöz Mononükleoz (EBV Enfeksiyonu)",
                         "is_correct": False,
-                        "scenario_update": "Siklik kusmada tekrarlayan kusma atakları olur ancak batında masif distansiyon ve merdiven basamağı seviyeleri izlenmez.",
-                        "teaching_point": "Siklik kusma santral kökenli benign bir tablodur; karın distansiyonu ve mekanik hava-sıvı seviyeleri cerrahi ileus bulgusudur."
+                        "scenario_update": "Hastada yaygın posterior servikal lenfadenopati, eksüdatif tonsillit, ateş veya splenomegali bulgusu olmadığı görüldü.",
+                        "teaching_point": "EBV enfeksiyonunda tipik olarak belirgin farenjit, tonsiller eksüda, posterior servikal ağırlıklı yaygın adenopati ve hepatosplenomegali bulunur.",
                     },
                     {
-                        "text": "Mekanik Bağırsak Obstrüksiyonu",
+                        "text": "Reaktif Servikal Lenfadenopati",
                         "is_correct": True,
-                        "explanation": "Geçirilmiş cerrahi öyküsü, safralı kusma, distansiyon, obstipasyon ve ADBG'de merdiven basamağı hava-sıvı seviyeleri mekanik obstrüksiyonu (ileus) doğrular.",
-                        "new_finding": "Kesin tanı: Adezyona Bağlı Mekanik Bağırsak Obstrüksiyonu (Brid İleus). Acil cerrahi eksplorasyon kararı alındı."
-                    }
-                ]
+                        "explanation": "Geçirilmiş viral ÜSYE sonrası soliter, <2 cm, yumuşak-elastik, mobil, ağrısız ve inflamasyon bulgusu olmayan lenf bezi reaktif servikal lenfadenopati ile tam uyumludur.",
+                        "new_finding": "Klinik tanı Reaktif Servikal Lenfadenopati olarak kesinleştirildi.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Tedavi Yönetimi ve Konsültasyon",
-                "question": "Nazogastrik dekompresyon sağlanan ve grafisinde multipl hava-sıvı seviyeleri saptanan bu hastanın kesin tedavi ve takip stratejisi ne olmalıdır?",
+                "stage_title": "Tedavi ve İzlem Planı",
+                "question": "Reaktif servikal lenfadenopati tanısı alan bu stabil çocukta acil servisteki en doğru yönetim ve taburculuk planı hangisidir?",
                 "options": [
                     {
-                        "text": "Nazogastrik dekompresyon ve intravenöz hidrasyona devam ederek acil çocuk cerrahisi konsültasyonuyla operasyon kararı açısından yatırmak",
+                        "text": "Ampirik olarak iki hafta süreli yüksek doz oral amoksisilin-klavulanat ve parenteral aminoglikozid antibiyotik kombinasyonu reçete ederek hastayı taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Gereksiz geniş spektrumlu antibiyotik başlanan çocukta ciddi ishal ve gastrointestinal kramplar gelişti ancak lenf nodu boyutunda değişiklik olmadı.",
+                        "teaching_point": "Eritem, ısı artışı, fluktuasyon veya sistemik ateş olmayan reaktif lenfadenopatilerde antibiyotik tedavisi kesinlikle endike değildir ve zararlıdır.",
+                    },
+                    {
+                        "text": "Lenf nodunun hızlı gerilemesini sağlamak için yüksek doz oral kortikosteroid tedavisi başlayarak hastayı bir hafta sonra kontrole çağırmak",
+                        "is_correct": False,
+                        "scenario_update": "Steroid kullanımı olası gizli hematolojik malignitelerde tanısal gecikmeye yol açabileceği gibi çocukta iştah artışı ve geçici hipertansiyon oluşturdu.",
+                        "teaching_point": "Tanısı tam netleşmemiş lenfadenopatilerde kortikosteroid verilmesi histopatolojik değerlendirmeyi bozabileceğinden ve maligniteyi maskeleyebileceğinden kontrendikedir.",
+                    },
+                    {
+                        "text": "Gereksiz antibiyotik vermeden üç dört hafta sonra poliklinik kontrolü planlamak ve büyüme durumunda erken başvuru önermek",
                         "is_correct": True,
-                        "explanation": "Postoperatif adezyona bağlı mekanik obstrüksiyonda sürekli NPO, NG dekompresyon, İV kristaloid ve cerrahi değerlendirme standart yönetimdir.",
-                        "new_finding": "Çocuk cerrahisi hastayı servise devraldı; intravenöz sıvı resüsitasyonu ve nazogastrik dekompresyon sonrası acil eksploratris laparotomiyle brid ligasyonu yapıldı."
+                        "explanation": "Reaktif lenf nodlarının küçülmesi 4-6 hafta sürebilir. Bakteriyel süpürasyon yoksa antibiyotik endike değildir; kırmızı bayrak eğitimi ve 3-4 hafta sonra takip yeterlidir.",
+                        "new_finding": "Aileye nodülün haftalar içinde küçülebileceği, antibiyotiğe gerek olmadığı, boyutta artış veya ateş halinde hemen başvurmaları anlatılarak taburcu edildi.",
                     },
                     {
-                        "text": "Hastanın nazogastrik sondasını çekip tam yağlı sütle beslemeye başlamak ve çocuk polikliniğine elektif randevu vererek hemen göndermek",
+                        "text": "Lenf nodunun maligniteye dönüşüm riskini ekarte etmek amacıyla hastayı acil çocuk cerrahisine yatırarak aynı gün eksizyonel biyopsiye almak",
                         "is_correct": False,
-                        "scenario_update": "Sondası çekilip beslenen çocukta masif safralı aspirasyon ve solunum durması gelişti, acil resüsitasyon gerekti.",
-                        "teaching_point": "Mekanik obstrüksiyonda besleme yapılamaz; nazogastrik sonda çekilirse masif aspirasyon ve fatal komplikasyonlar kaçınılmazdır."
+                        "scenario_update": "Cerrahi ekip stabil, 1.5 cm mobil nodülü olan çocukta acil biyopsi endikasyonu olmadığını, gereksiz skar ve anestezi riski doğuracağını belirtti.",
+                        "teaching_point": "Çocuklarda reaktif lenfadenopatilerde acil cerrahi eksizyon endike değildir; en az 3-4 haftalık izlemde progresyon gösteren nodüllere biyopsi düşünülür.",
                     },
-                    {
-                        "text": "Tablonun kendiliğinden geçeceğini öngörerek oral laksatif ilaç reçete edip acil servisten taburculuk kararı alarak evine hızla yollamak",
-                        "is_correct": False,
-                        "scenario_update": "Mekanik adezyon varlığında verilen laksatifler lümen içi basıncı artırarak ince bağırsak perforasyonu ve fekal peritonit yaptı.",
-                        "teaching_point": "Mekanik obstrüksiyonda oral laksatifler kesinlikle kontrendikedir; proksimalde basıncı artırarak bağırsak gangreni ve perforasyona yol açar."
-                    },
-                    {
-                        "text": "Damar yolunu çekerek hastayı sedatize etmek ve yirmi dört saat boyunca hiçbir medikal destek vermeden evde gözlemek",
-                        "is_correct": False,
-                        "scenario_update": "Sıvı desteği kesilen ve evde izlenen çocukta üçüncü boşluk kayıplarına bağlı derin hipovolemik şok ve nekroz gelişti.",
-                        "teaching_point": "Mekanik obstrüksiyonlu çocuklarda masif sıvı kayıpları hipovolemik şoka götürür; agresif İV sıvı desteği ve cerrahi izlem hayatidir."
-                    }
-                ]
-            }
-        ]
-    }
+                ],
+            },
+        ],
+    },
 ]

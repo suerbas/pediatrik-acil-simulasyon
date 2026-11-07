@@ -7,7 +7,7 @@ ilk, uzun ve detaylı; yanlışlar o kadar alakasız ki hata yapmak mümkün de�
 ## Veri yapısı (değişmeyecek)
 Her vaka bir dict:
 ```python
-{'id': 'G01', 'category': '<mevcut kategoriyi AYNEN koru>', 'age': ..., 'gender': ..., 'complaint': ..., 'history': ...,
+{'id': 'Y01', 'category': '<mevcut kategoriyi AYNEN koru>', 'age': ..., 'gender': ..., 'complaint': ..., 'history': ...,
  'final_diagnosis': ..., 'disposition': ..., 'case_pearl': ...,
  'steps': [ {'stage_title': ..., 'question': ..., 'options': [ ... 4 seçenek ... ]}, ... ]}
 ```
@@ -32,14 +32,14 @@ Uygulama seçenekleri her vakada rastgele karıştırıyor, yine de ham veride d
    - Seçeneklerde parantezli ipucu ("(SSSS dışlamak için)", "(mastoidit açısından)", "(torsiyonu ekarte etmek için)") YOK.
    - `final_diagnosis` alanı ve tanı adımı/sonrası adımlar tanıyı serbestçe içerebilir.
    - `complaint` ve `history` de tanıyı söylememeli (zaten çoğu söylemiyor; kontrol et). `stage_title`'larda
-     "Sarı Alana devir" gibi ifadeler G17–G20'de 1. adımda tanı vermiyorsa kalabilir ama sonucu önceden söylemesin
+     "Sarı Alana devir" gibi ifadeler Y17–Y20'de 1. adımda tanı vermiyorsa kalabilir ama sonucu önceden söylemesin
      (örn. 1. adım başlığı "Yeşil Alanda Değerlendirme ve Alan Kararı" olsun, "...ve Sarı Alana Devir" değil).
 4. **Çeldiriciler gerçekçi olmalı.** Absürt/malpraktis karikatürü (hiç muayene etmeden BT, 14 gün meropenem, krutu kanatarak
    koparmak, nöroloji servisine yatırmak, ameliyathaneye indirmek) YASAK. Her yanlış seçenek, gerçek acil serviste iyi niyetli
    bir hekimin yapabileceği, savunulabilir görünen ama kılavuza göre eksik/hatalı bir yaklaşım olmalı:
    - **Muayene/triyaj adımı:** Hepsi makul muayene yaklaşımları; doğru olan kritik bir manevrayı/kırmızı bayrağı içerir,
      yanlışlar ya bir kilit noktayı atlar, ya erken hedefe yönelik tedavi/tetkike sıçrar, ya gereksiz alan değişikliği yapar,
-     ya da yanlış önceliklendirir. (G17–G20 dışında Sarı Alana devretmek makul görünen bir çeldirici olabilir.)
+     ya da yanlış önceliklendirir. (Y17–Y20 dışında Sarı Alana devretmek makul görünen bir çeldirici olabilir.)
    - **Tetkik adımı:** Gerçek ikilemler: hiç tetkik vs hızlı antijen/sürüntü vs hemogram+CRP vs idrar tetkiki vs USG vs
      grafi vs kültür; doğru olan kılavuza en uygun olan. Yanlış seçeneklerin `scenario_update`'i istenen tetkikin
      gerçekçi (çoğu zaman sınırda/yanıltıcı) sonucunu verip neden yönetimi değiştirmediğini/yanılttığını göstersin.
@@ -53,7 +53,7 @@ Uygulama seçenekleri her vakada rastgele karıştırıyor, yine de ham veride d
 5. **Klinik doğruluk:** Güncel kılavuzlar (AAP 2013 AOM, IDSA, GINA 2024, NICE, ESPGHAN 2014/güncel, WAO/EAACI anafilaksi,
    ISPAD 2022 DKA, AHA/PALS, NICE sepsis, Rumack-Matthew, AAP bronşiolit 2014/2023, Westley vb.). Dozlar doğru olsun.
    Türkiye pratiğinde ulaşılabilir ilaçlar tercih edilsin.
-6. **Travma vakası yok.** Mevcut vaka konusunu/tanısını, yaş/cinsiyeti, kategoriyi ve G17–G20'nin Sarı Alana devir yapısını
+6. **Travma vakası yok.** Mevcut vaka konusunu/tanısını, yaş/cinsiyeti, kategoriyi ve Y17–Y20'nin Sarı Alana devir yapısını
    (1. adım doğru seçeneğinde `'triggers_yellow_transfer': True`) KORU. Adım sayısı mevcutla aynı kalabilir (genelde 4).
    Gerekirse history'yi zenginleştirebilirsin ama tanıyı söyletme.
 7. Her yanlış seçenekte `scenario_update` (seçime göre senaryoda ne oldu — somut sonuç/değer) ve `teaching_point`

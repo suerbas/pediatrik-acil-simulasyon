@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Pediatrik Acil Simülasyonu - Yeşil Alan Vakaları (Part 5: G41 - G50)
+Pediatrik Acil Simülasyonu - Yeşil Alan Vakaları (Part 5: Y41 - Y50)
 Odak: Bulantı, Kusma, Karın Ağrısı, İshal (GİS Acilleri - Yeşil Alan Ayaktan Yönetim)
 Kılavuzlar: ESPGHAN, AAP, NASPGHAN, NICE
 """
 
-GREEN_CASES_PART5 = [{'id': 'G41',
+GREEN_CASES_PART5 = [{'id': 'Y41',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '2 Yaşında',
   'gender': 'Erkek',
@@ -156,7 +156,7 @@ GREEN_CASES_PART5 = [{'id': 'G41',
                           'teaching_point': 'Hafif-orta dehidratasyonda rehidratasyonla birlikte yaşa uygun normal '
                                             'beslenmeye hemen devam edilir; BRAT diyeti ve rutin süt kısıtlaması '
                                             'önerilmez.'}]}]},
- {'id': 'G42',
+ {'id': 'Y42',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '6 Yaşında',
   'gender': 'Kız',
@@ -302,7 +302,7 @@ GREEN_CASES_PART5 = [{'id': 'G41',
                           'new_finding': 'Çocuk ayaktan taburcu edildi. Ertesi gün aile ile yapılan görüşmede '
                                          'kusmasının gece kesildiği, sabah kahvaltı yaptığı öğrenildi. Partideki diğer '
                                          'çocuklar da 24 saat içinde iyileşti.'}]}]},
- {'id': 'G43',
+ {'id': 'Y43',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '5 Yaşında',
   'gender': 'Erkek',
@@ -452,154 +452,150 @@ GREEN_CASES_PART5 = [{'id': 'G41',
                           'new_finding': 'PEG 3350 ile 3 gün disimpaksiyon yapıldı, karındaki kitle kayboldu. İdame '
                                          'doza geçildi; 2 hafta sonraki kontrolde günlük yumuşak dışkılama başladı, '
                                          'çamaşır kirletmesi durdu.'}]}]},
- {'id': 'G44',
-  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
+ {'id': 'Y44',
+  'category': '👶 Ağlayan, Emmeyen, Huzursuz Bebek',
   'age': '6 Haftalık',
   'gender': 'Kız',
-  'complaint': 'Üç haftadır her akşam saatlerce süren, susturulamayan ağlama nöbetleri',
-  'history': "Ailesi anlatıyor: 'Üç haftadır her akşam saat 18:00 civarında başlıyor. Yüzü kızarıyor, bacaklarını "
-             'karnına çekiyor, ellerini yumruk yapıp 3-4 saat çığlık atarak ağlıyor. Gaz çıkarınca biraz rahatlıyor '
-             'gibi, sonra yine başlıyor. Gün içinde neşeli, emmesi iyi. Ateşi veya kusması olmadı. Bu akşam her '
-             "zamankinden farklı olarak kucakta da hiç susmadı, bu yüzden geldik. Biz uykusuzluktan tükendik.' Term "
-             'doğum, sadece anne sütü alıyor.',
-  'final_diagnosis': 'İnfantil Kolik (Roma IV Kriterleri)',
-  'disposition': 'Yeşil Alandan Aileye Güvence, Yatıştırma Teknikleri ve Ebeveyn Tükenmişliği Danışmanlığı ile '
-                 'Taburculuk',
-  'case_pearl': 'Beş aydan küçük, sağlıklı büyüyen bebekte açıklanamayan uzun ağlama nöbetleri infantil koliği '
-                'düşündürür; ancak tanı tam soyarak yapılan muayeneyle organik nedenler (saç turnikesi, korneal '
-                'abrazyon, fıtık, otitis, fraktür, idrar yolu enfeksiyonu) dışlandıktan sonra konur. Simetikon, '
-                'antispazmodikler ve asit baskılayıcılar etkisizdir. Ebeveyn tükenmişliği sorgulanmalı ve sarsılmış '
-                'bebek sendromu açısından önleyici danışmanlık verilmelidir.',
+  'complaint': 'Üç saattir aniden başlayan, emzirmeyle ve kucakta sallamayla susmayan şiddetli ağlama',
+  'history': "Annesi anlatıyor: 'Normalde çok sakin bir bebek, akşamları biraz huysuzlanır ama hemen susar. Bugün "
+             'öğleden sonra uykusundan çığlıkla uyandı, üç saattir ara vermeden ağlıyor. Memeyi birkaç kez aldı ama '
+             "hemen bırakıp yeniden ağladı.' Ateş, kusma, ishal yok. Gaz ve dışkı çıkışı olağan. Term doğmuş, gebelik "
+             've doğum sorunsuz. Yalnız anne sütü alıyor, kilo alımı iyi. Evde düşme veya bilinen bir kaza yok. Kat '
+             'kat giydirilmiş, ayağında çorap ve patik var.',
+  'final_diagnosis': 'Ayak Parmağında Kıl (Saç Teli) Turnike Sendromu',
+  'disposition': 'Saç Telinin Tam Çıkarılması ve Perfüzyon Kontrolü Sonrası Yeşil Alandan Taburculuk',
+  'case_pearl': 'Ani başlayan, avutulamayan ağlamada bebek mutlaka tamamen soyularak muayene edilmelidir: parmaklar, '
+                'penis/klitoris ve uvula çevresine dolanan saç teli ya da iplik zamanla ödemle gömülerek iskemi yapar. '
+                'Doğum sonrası anne saç dökülmesi tipik risk dönemidir. Lif tamamen çıkarılmalı; gömülü kalan ikinci '
+                'bir tur sık gözden kaçar. Parmak tabanında lif kalmadığından emin olunmalı ve perfüzyonun düzeldiği '
+                'izlenerek taburcu edilmelidir.',
   'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
-             'question': 'Akşamları uzun süre ağlayan, bu akşam kucakta da susmayan 6 haftalık bu bebekte muayenede '
-                         'öncelikli yaklaşımınız nedir?',
-             'options': [{'text': 'Ağlama sırasında bacakları karnına çekmesini karın kaynaklı kabul edip batın '
-                                  'palpasyonu ve oskültasyonu yaparak gaz giderici damla vermek',
+             'question': 'Ateşsiz, iyi beslenen ama üç saattir avutulamayan bu 6 haftalık bebeğin değerlendirmesinde '
+                         'ilk yaklaşımınız nedir?',
+             'options': [{'text': 'Akşam saatlerinde artan ağlama öyküsü nedeniyle tabloyu fonksiyonel kabul edip '
+                                  'simetikon damla ve gaz masajı önererek aileyi rahatlatmak',
                           'is_correct': False,
-                          'scenario_update': 'Batın muayenesi normal bulundu. Simetikon sonrası ağlama değişmedi; '
-                                             'diğer sistemler muayene edilmeden bebek gözleme alındı.',
-                          'teaching_point': 'Bacakları karna çekme spesifik değildir; gaz giderici damlaların '
-                                            'etkinliği gösterilmemiştir ve kapsamlı muayenenin yerine geçemez.'},
-                         {'text': 'Bebeği tamamen soyarak el-ayak parmaklarında saç turnikesi, korneada çizik, kasık '
-                                  'fıtığı, kulak zarları ve uzun kemiklerde hassasiyet dahil baştan ayağa muayene '
-                                  'etmek',
+                          'scenario_update': 'Bebek eve gönderildi; ağlama gece boyu sürdü ve sabah sağ ayakta '
+                                             'belirgin morarma ile geri getirildi.',
+                          'teaching_point': 'Ani başlayan, alışılmış örüntüye uymayan ve avutulamayan ağlama '
+                                            'fonksiyonel kabul edilmeden önce organik nedenler için baştan ayağa '
+                                            'muayene gerekir.'},
+                         {'text': 'Vital bulguları aldıktan sonra bebeği tamamen soyup parmakları, genital bölgeyi, '
+                                  'gözleri, ağız içini ve fontaneli sistematik olarak muayene etmek',
                           'is_correct': True,
-                          'explanation': 'Susturulamayan ağlama ile başvuran süt çocuğunda organik nedenler sistematik '
-                                         've tam soyulmuş muayeneyle aranmalıdır. Saç turnikesi, korneal abrazyon, '
-                                         'inkarsere fıtık ve istismara bağlı fraktürler yalnızca bu şekilde fark '
-                                         'edilir.',
-                          'new_finding': 'Vital Bulgular: Ateş 36.9°C, KTA 138/dk, SS 36/dk, SpO2 %99. Tartı 4.9 kg '
-                                         '(doğum 3.4 kg; günlük ortalama 35 g artış). Saç turnikesi yok. Flöresein ile '
-                                         'kornealar temiz. Kulak zarları doğal. Kasık kanallarında fıtık yok, dış '
-                                         'genitalya doğal. Fontanel düz, tonus normal. Kemiklerde hassasiyet ve ciltte '
-                                         'morluk yok. Muayene sırasında bebek emzik ile sakinleşti.'},
-                         {'text': 'Susmayan ağlama nedeniyle muayeneden önce idrar sondası ile tam idrar tetkiki ve '
-                                  'kültür almak, sonra bebeği giyinik halde muayene etmek',
+                          'explanation': 'Avutulamayan ağlamada nedenlerin önemli bir kısmı yalnızca bebek tamamen '
+                                         'soyulduğunda görülebilen bulgulardır. Parmaklar, genital bölge, kornea, ağız '
+                                         'içi ve fontanel atlanmadan değerlendirilmelidir.',
+                          'new_finding': 'Vital Bulgular: Ateş 36.9°C, KTA 168/dk (ağlarken), SS 42/dk, SpO2 %99, KDZ '
+                                         '2 sn. Fontanel normal, karın yumuşak, fıtık yok, genital muayene olağan. Sağ '
+                                         'ayak 3. parmak tabanında derin, çevresel bir oluk; oluk distalinde belirgin '
+                                         'ödem ve kızarıklık var. Olukta ince, koyu renkli bir lif seçiliyor. Parmak '
+                                         'ucu pembe, kapiller dolum 3 sn.'},
+                         {'text': 'Ateş olmasa da genç süt çocuğunda ciddi enfeksiyon dışlanmalı diyerek tam kan '
+                                  'sayımı, CRP, kan kültürü, idrar sondası ve lomber ponksiyon planlamak',
                           'is_correct': False,
-                          'scenario_update': 'İdrar tetkiki normal geldi. Giyinik muayenede sistemik bir sorun '
-                                             'bulunmadı ancak ayak parmakları ve kornealar değerlendirilmedi.',
-                          'teaching_point': 'Ateşsiz ve iyi görünen bebekte ilk adım tam soyulmuş fizik muayenedir; '
-                                            'tetkikler muayene bulgularına göre seçilir.'},
-                         {'text': 'Ailenin tükenmişliğini fark edip önce onlarla görüşmek, bebeğin vitallerini ve '
-                                  'tartısını alarak muayeneyi bebek sakinleştikten sonraki bir zamana bırakmak',
+                          'scenario_update': 'Girişimler sırasında bebek daha da huzursuzlandı; tüm sonuçlar normal '
+                                             'geldi, ağlamanın nedeni saatlerce bulunamadı.',
+                          'teaching_point': 'Ateşsiz ve iyi görünen bebekte invaziv sepsis taraması tam bir fizik '
+                                            'muayenenin yerini tutmaz; önce bebek soyularak dikkatle muayene '
+                                            'edilmelidir.'},
+                         {'text': 'Bağırsak kaynaklı aralıklı bir tıkanıklığı dışlamak için muayeneyi kısa tutup '
+                                  'hızlıca batın ultrasonografisi istemek ve sonucuna göre karar vermek',
                           'is_correct': False,
-                          'scenario_update': 'Bebek bir saat sonra uyudu ve muayene yüzeysel yapıldı; aile bebeğin '
-                                             'neden ağladığına dair bir açıklama almadan bekledi.',
-                          'teaching_point': 'Ebeveyn desteği önemlidir ancak organik nedenleri dışlayan tam muayene '
-                                            'geciktirilmemelidir.'}]},
-            {'stage_title': 'Tetkik Kararı',
-             'question': 'Muayenesi tamamen normal olan, iyi kilo alan ve emzikle sakinleşen bu bebekte tetkik '
-                         'yaklaşımınız ne olmalıdır?',
-             'options': [{'text': 'Tetkik istemeden aileyle ağlama günlüğünü gözden geçirmek, bebeğin acilde bir '
-                                  'beslenmesini ve sakinleşmesini gözlemleyip kırmızı bayrakları sorgulamak',
+                          'scenario_update': 'Ultrasonografi normal raporlandı; bekleme sırasında ayaktaki ödem arttı '
+                                             've patik çıkarılınca morarma fark edildi.',
+                          'teaching_point': 'Görüntüleme, tam muayene yapılmadan istenirse çorap içinde kalan ve '
+                                            'süreye duyarlı bulgular gecikir.'}]},
+            {'stage_title': 'Dolaşım Değerlendirmesi ve Aciliyet Kararı',
+             'question': 'Parmak tabanındaki oluk ve distal ödem saptandı. Bir sonraki adımınız ne olmalıdır?',
+             'options': [{'text': 'Parmakta kırık veya kemik yaralanması ihtimalini dışlamak için önce ayak grafisi '
+                                  'çektirmek, ardından ortopedi değerlendirmesi sonrasında girişim planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Grafi normal geldi; bekleme sürecinde parmak ucunda soluklaşma başladı.',
+                          'teaching_point': 'Çevresel sıkıştırma bulgusunda süreyle artan iskemi riski vardır; grafi '
+                                            'tanıya katkı sağlamaz ve girişimi geciktirir.'},
+                         {'text': 'Ödemi azaltmak için ayağı yükseltip soğuk uygulama yapmak ve bir saat sonra oluğun '
+                                  'daha net görülmesini bekleyerek yeniden değerlendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Bir saatlik beklemede ödem gerilemedi, aksine lif daha derine gömüldü ve '
+                                             'görünmez hale geldi.',
+                          'teaching_point': 'Sıkıştıran lif yerindeyken ödem kendiliğinden azalmaz; beklemek lifin '
+                                            'dokuya gömülmesini ve iskemiyi artırır.'},
+                         {'text': 'Arteriyel akımı belgelemek için girişimden önce acil renkli Doppler ultrasonografi '
+                                  'istemek ve radyoloji raporu gelince müdahaleye karar vermek',
+                          'is_correct': False,
+                          'scenario_update': 'Doppler için yaklaşık iki saat beklenildi; bu sürede bebek ağlamaya '
+                                             'devam etti ve ödem arttı.',
+                          'teaching_point': 'Tanı klinik muayeneyle konur; görüntüleme beklenmeden sıkıştıran cismin '
+                                            'hemen çıkarılması gerekir.'},
+                         {'text': 'Distal renk, ısı ve kapiller dolumu kaydedip iyi ışık ve büyüteçle oluğu '
+                                  'inceleyerek sıkıştıran cismi beklemeden çıkarmaya hazırlanmak',
                           'is_correct': True,
-                          'explanation': 'Normal muayene, iyi kilo alımı ve tipik ağlama paterni olan bebekte '
-                                         'laboratuvar tetkiki tanıya katkı sağlamaz. Beslenme gözlemi ve kırmızı '
-                                         'bayrak sorgusu (kusma, ateş, letarji, kilo kaybı) yeterlidir.',
-                          'new_finding': 'Bebek acilde etkin emdi, kusmadı, gaz çıkardıktan sonra uyudu. Ağlama '
-                                         'günlüğünde günde ortalama 3.5 saat, haftada 6 gün, akşam saatlerinde '
-                                         'yoğunlaşan nöbetler kaydedildi. Ateş, kusma veya dışkıda kan yok.'},
-                         {'text': 'Reflüye bağlı ağrıyı dışlamak için batın ultrasonografisi ve özofagus pH '
-                                  'monitorizasyonu planlamak üzere bebeği gastroenteroloji polikliniğine yönlendirmek',
-                          'is_correct': False,
-                          'scenario_update': 'Ultrasonografi normal bulundu; pH monitorizasyonu için randevu 2 ay '
-                                             'sonraya verildi ve aile kaygıyla beklemeye başladı.',
-                          'teaching_point': 'Kusma, beslenme reddi veya kilo kaybı olmayan ağlayan bebekte reflü '
-                                            'araştırması önerilmez; ağlama tek başına reflü göstergesi değildir.'},
-                         {'text': 'Süt alerjisini dışlamak için kan eozinofil sayısı ve inek sütü spesifik IgE düzeyi '
-                                  'istemek, sonuç gelene kadar annenin süt tüketimini kesmek',
-                          'is_correct': False,
-                          'scenario_update': 'Spesifik IgE negatif geldi. Bu sürede anneye gereksiz diyet kısıtlaması '
-                                             'uygulandı ve emzirme motivasyonu azaldı.',
-                          'teaching_point': 'Kanlı dışkı, egzama veya kusma gibi destekleyici bulgu yoksa alerji '
-                                            'testleri önerilmez; diyet kısıtlaması rutin değildir.'},
-                         {'text': 'Uzun ağlama nöbetleri nedeniyle olası nöbet aktivitesini değerlendirmek için kan '
-                                  'şekeri, elektrolitler ve elektroensefalografi planlamak',
-                          'is_correct': False,
-                          'scenario_update': 'Kan şekeri ve elektrolitler normal geldi; EEG randevusu verildi ve aile '
-                                             'bebekte nörolojik bir hastalık olduğu endişesine kapıldı.',
-                          'teaching_point': 'Nöbet düşündüren stereotipik hareket, göz deviasyonu veya bilinç '
-                                            'değişikliği yoksa nörolojik tetkik gerekmez.'}]},
+                          'explanation': 'Çevresel sıkıştırmada iskemi süreye bağlıdır. Başlangıç perfüzyonu '
+                                         'belgelenir ve görüntüleme beklenmeden aydınlatma ve büyütme altında girişime '
+                                         'geçilir.',
+                          'new_finding': 'Büyüteç altında oluk tabanında iki tur sarılmış, yaklaşık 0.1 mm '
+                                         'kalınlığında koyu kahverengi ince bir lif görüldü. Parmak ucu ılık ve pembe, '
+                                         'kapiller dolum 3 sn, dokuda nekroz bulgusu yok.'}]},
             {'stage_title': 'Klinik Tanı',
-             'question': 'Sağlıklı büyüyen, muayenesi normal 6 haftalık bebekte haftada 6 gün, günde 3 saati aşan '
-                         'akşam ağlama nöbetlerinin en olası nedeni nedir?',
-             'options': [{'text': 'İnek sütü proteini alerjisi',
+             'question': 'Öykü ve muayene bulgularına göre en olası tanınız nedir?',
+             'options': [{'text': 'Ayak parmağında akut paronişi',
                           'is_correct': False,
-                          'scenario_update': 'Kanlı-mukuslu dışkı, egzama, kusma veya kilo alımında duraklama yok.',
-                          'teaching_point': 'İzole ağlama, alerji tanısı için yeterli değildir.'},
-                         {'text': 'İnfantil diskezi',
+                          'scenario_update': 'Tırnak kıvrımında püy veya fluktuasyon yoktu; oluk tırnak çevresinde '
+                                             'değil parmak tabanındaydı.',
+                          'teaching_point': 'Paronişi tırnak kıvrımında lokalize şişlik ve püy ile seyreder, çevresel '
+                                            'oluk yapmaz.'},
+                         {'text': 'Böcek ısırığına bağlı lokal reaksiyon',
                           'is_correct': False,
-                          'scenario_update': 'Diskezide ağlama ve ıkınma yumuşak dışkılama öncesinde kısa sürelidir; '
-                                             'akşam saatlerinde uzun nöbetler beklenmez.',
-                          'teaching_point': 'Diskezi dışkılama ile zamansal ilişkili ve dakikalarla sınırlı bir '
-                                            'tablodur.'},
-                         {'text': 'İnfantil kolik',
+                          'scenario_update': 'Isırık noktası yoktu ve şişliği çevreleyen keskin sınırlı bir oluk '
+                                             'saptandı.',
+                          'teaching_point': 'Isırık reaksiyonunda merkezi punktum olur, çevresel daralma görülmez.'},
+                         {'text': 'Ayak parmağında kıl turnike sendromu',
                           'is_correct': True,
-                          'explanation': 'Beş aydan küçük, sağlıklı büyüyen bebekte belirgin bir neden olmadan '
-                                         'tekrarlayan, uzun süreli, yatıştırılması güç ağlama nöbetleri ve normal '
-                                         'muayene Roma IV infantil kolik tanısını karşılar.',
-                          'new_finding': 'Tanı: İnfantil Kolik (Roma IV kriterleri, organik nedenler dışlandı).'},
-                         {'text': 'Gastroözofageal reflü hastalığı',
+                          'explanation': 'Parmak tabanında çevresel oluk, distal ödem ve olukta görülen ince lif saç '
+                                         'teli turnikesini gösterir. Doğum sonrası anne saç dökülmesi ve çorap içi '
+                                         'tipik kaynaktır.',
+                          'new_finding': 'Tanı: Sağ ayak 3. parmakta saç teli turnikesi.'},
+                         {'text': 'Ayak parmağında başlangıç selüliti',
                           'is_correct': False,
-                          'scenario_update': 'Kusma, beslenme reddi, kilo kaybı veya ark yapma yok; ağlama beslenmeyle '
-                                             'ilişkili değil.',
-                          'teaching_point': 'Reflü hastalığı tanısı için kusmaya eşlik eden komplikasyon bulguları '
-                                            'gerekir.'}]},
+                          'scenario_update': 'Kızarıklık oluk distalinde sınırlıydı, ateş yoktu ve sıcaklık artışı '
+                                             'yoktu.',
+                          'teaching_point': 'Selülitte sınırları belirsiz yayılan eritem olur; keskin çevresel oluk '
+                                            'mekanik sıkışmayı gösterir.'}]},
             {'stage_title': 'Tedavi ve Taburculuk Planı',
-             'question': 'Bu bebeğin ailesine yönelik en uygun taburculuk planı hangisidir?',
-             'options': [{'text': 'Ağlama nöbetlerinde kullanılmak üzere simetikon damla ve rezene çayı önermek, '
-                                  'anneye süt ve kafein kısıtlaması yaparak taburcu etmek',
+             'question': 'Saç teli turnikesi olan bu bebekte doğru tedavi ve taburculuk yaklaşımı hangisidir?',
+             'options': [{'text': 'Kızarıklık enfeksiyon başlangıcı olabileceği için önce oral sefaleksin başlamak, '
+                                  'lifi çıkarmayı ödem azaldıktan sonraki kontrol muayenesine bırakmak',
                           'is_correct': False,
-                          'scenario_update': 'İki hafta sonra ağlama süresinde değişiklik olmadı; annenin kısıtlı '
-                                             'diyeti nedeniyle süt miktarı azaldı.',
-                          'teaching_point': 'Simetikonun etkinliği gösterilmemiştir, bitki çayları süt çocuğunda '
-                                            'önerilmez ve rutin anne diyeti kısıtlaması gereksizdir.'},
-                         {'text': 'Ağrıyı azaltmak amacıyla anne sütünü kesip hidrolize formüle geçmek ve bir hafta '
-                                  'sonra kontrolde formülün etkisini değerlendirmek',
-                          'is_correct': False,
-                          'scenario_update': 'Formüle geçişle ağlama değişmedi; emzirme sonlandı ve anne bu karardan '
-                                             'pişmanlık duydu.',
-                          'teaching_point': 'Alerji bulgusu olmayan bebekte anne sütünü kesmek önerilmez; hidrolize '
-                                            'formül yalnızca seçilmiş olgularda düşünülür.'},
-                         {'text': 'Tablonun selim olduğunu anlatıp yatıştırma tekniklerini göstermek, tükenince bebeği '
-                                  'güvenle bırakıp ara vermeyi ve asla sarsmamayı öğretmek',
+                          'scenario_update': 'Lif yerinde kaldığı için ertesi gün parmakta koyu morarma ve epidermal '
+                                             'soyulma gelişti.',
+                          'teaching_point': 'Tedavinin temeli sıkıştıran lifin hemen ve tamamen çıkarılmasıdır; '
+                                            'antibiyotik bunun yerini tutmaz.'},
+                         {'text': 'Büyüteç altında künt prob ve ince pensle lifi tamamen çıkarmak, oluk tabanında '
+                                  'kalıntı olmadığını doğrulayıp perfüzyonu 30-60 dakika izlemek',
                           'is_correct': True,
-                          'explanation': 'Tedavinin temeli aileye güvence, kundaklama, beyaz gürültü, ritmik sallama '
-                                         'gibi yatıştırma teknikleri ve ebeveyn tükenmişliğine yönelik danışmanlıktır. '
-                                         'Sarsılmış bebek sendromunu önleyici eğitim ve sosyal destek planı mutlaka '
-                                         'verilmelidir.',
-                          'new_finding': 'Ebeveynlere yatıştırma teknikleri uygulamalı gösterildi, dönüşümlü dinlenme '
-                                         'planı yapıldı ve aile hekimine 1 hafta sonra kontrol yazıldı. Kontrolde '
-                                         'ailenin baş etme becerisinin arttığı, ağlama süresinin azalmaya başladığı '
-                                         'görüldü.'},
-                         {'text': 'Ağlama nöbetlerinde kullanılmak üzere düşük doz oral antispazmodik damla başlamak '
-                                  've bebeğin uykusunu düzenlemek için akşam emzirme aralığını uzatmak',
+                          'explanation': 'Lif tamamen çıkarılmalı, ikinci bir tur kalmadığı büyütme altında '
+                                         'doğrulanmalıdır. Lif görülemiyor veya çıkarılamıyorsa cerrahi kesi gerekir. '
+                                         'Perfüzyon düzeldikten sonra taburculuk yapılır.',
+                          'new_finding': 'Lif iki tur halinde tamamen çıkarıldı. 45 dakika sonra ödem gerilemiş, '
+                                         'parmak ucu pembe, kapiller dolum 2 sn. Bebek sakinleşti ve emzirildi. Aileye '
+                                         'çorap ve eldiven içini kontrol etmesi anlatıldı.'},
+                         {'text': 'Lifin bir turu kesilip parmağın rengi düzelince işlemi yeterli kabul etmek ve '
+                                  'aileye ertesi gün aile hekimine kontrole gitmesini önermek',
                           'is_correct': False,
-                          'scenario_update': 'Antispazmodik sonrası bebekte uyku hali ve beslenme isteksizliği '
-                                             'gelişti; aile ilacı kendisi kesti.',
-                          'teaching_point': 'Antikolinerjik antispazmodikler 6 aydan küçük bebeklerde apne ve '
-                                            'konvülziyon riski nedeniyle kontrendikedir.'}]}]},
- {'id': 'G45',
+                          'scenario_update': 'Ertesi gün ödem yeniden arttı; oluk tabanında gömülü kalmış ikinci bir '
+                                             'tur saptandı.',
+                          'teaching_point': 'Saç teli genellikle birden fazla tur sarılır; tek turun kesilmesi yetmez, '
+                                            'büyütme altında tam çıkarım doğrulanmalıdır.'},
+                         {'text': 'Lifi kesmeye çalışmadan bölgeye tüy dökücü krem sürüp üzerini kapatmak, 24 saat '
+                                  'sonra lifin kendiliğinden çözülmesini evde beklemelerini istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Krem gömülü life ulaşmadı, bölgede kimyasal tahriş gelişti ve sıkışma '
+                                             'sürdü.',
+                          'teaching_point': 'Tüy dökücü krem yalnızca seçilmiş, yüzeyel saç telinde acil serviste kısa '
+                                            'süreli ve gözetim altında denenebilir; gömülü lifte etkisizdir ve evde '
+                                            'beklemek uygun değildir.'}]}]},
+ {'id': 'Y45',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '2 Aylık',
   'gender': 'Erkek',
@@ -745,7 +741,7 @@ GREEN_CASES_PART5 = [{'id': 'G41',
                                              'başladığı görüldü.',
                           'teaching_point': 'Alerjik proktokolitte nedensel tedavi alerjen eliminasyonudur; '
                                             'probiyotikler tek başına yeterli değildir.'}]}]},
- {'id': 'G46',
+ {'id': 'Y46',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '4 Yaşında',
   'gender': 'Kız',
@@ -891,154 +887,144 @@ GREEN_CASES_PART5 = [{'id': 'G41',
                                              'kardeşinde de benzer şikayet başladı.',
                           'teaching_point': 'Semptomatik ve kilo kaybı olan çocukta tedavi önerilir; tedavisiz izlem '
                                             'yalnızca asemptomatik taşıyıcılar için uygundur.'}]}]},
- {'id': 'G47',
+ {'id': 'Y47',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-  'age': '7 Yaşında',
+  'age': '3 Yaşında',
   'gender': 'Erkek',
-  'complaint': 'Üst solunum yolu enfeksiyonundan bir hafta sonra başlayan sağ alt karın ağrısı ve hafif ateş',
-  'history': "Ailesi anlatıyor: 'Bir hafta önce ateş, burun akıntısı ve boğaz ağrısı geçirdi, tam iyileşti derken iki "
-             'gündür karnının sağ alt tarafı sızlıyor. Ateşi evde 37.6°C ölçüldü. Kusması veya ishali yok, iştahı '
-             "biraz azaldı ama yemek yiyor. Zıplayınca sağ tarafında hafif batma oluyor, yürüyebiliyor.' Daha önce "
-             'benzer şikayeti olmamış.',
-  'final_diagnosis': 'Akut Mezenterik Lenfadenit',
-  'disposition': 'Yeşil Alanda USG ile Cerrahi Nedenlerin Dışlanması, Semptomatik Tedavi ve 24 Saatlik Yeniden '
-                 'Değerlendirme Planıyla Taburculuk',
-  'case_pearl': 'Viral üst solunum yolu enfeksiyonu sonrası sağ alt kadran ağrısı ve hafif ateşle gelen çocukta '
-                'mezenterik lenfadenit sık bir nedendir; ancak tanı apandisit dışlanmadan konmamalıdır. Normal '
-                'kalibrede (<6 mm), komprese edilebilen apendiksin USG ile gösterilmesi ve kümelenmiş, kısa aksı 8 '
-                "mm'yi aşan mezenterik lenf nodları tanıyı destekler. Tablo destek tedavisiyle düzelir; ağrı artarsa "
-                'yeniden değerlendirme şarttır.',
+  'complaint': 'Yarım saat önce ağzındaki madeni bir cismi yuttuğu düşünülüyor',
+  'history': "Babası anlatıyor: 'Ablasının kumbarasıyla oynuyordu, ağzına bir şey attığını gördüm, öksürdü ve sonra "
+             "yuttu. Ne olduğunu tam göremedim, para olabilir. Evde kumandalar ve oyuncaklar da var.' Şu anda "
+             'ağlamıyor, su içti. Kusma, salya akması, yutma güçlüğü, öksürük veya hırıltı yok. Daha önce yutma '
+             'sorunu, özofagus ameliyatı veya kronik hastalık yok.',
+  'final_diagnosis': 'Asemptomatik Midede Madeni Para (Gastrik Yabancı Cisim)',
+  'disposition': 'Normal Beslenme ve Dışkı Takibi Önerileriyle Yeşil Alandan Taburculuk',
+  'case_pearl': 'Yutulan madeni bir cisimde ilk soru pil olup olmadığıdır. Boyundan anüse ön-arka ve gerekirse yan '
+                'grafi çekilir: düğme pil kenarda çift halka (halo) ve yan grafide basamak görüntüsü verir, madeni '
+                'para tek ve düzgün konturludur. Özofagustaki para semptomluysa acil, asemptomatikse 12-24 saat içinde '
+                'çıkarılır. Mideye geçmiş asemptomatik para evden izlenir. 2-4 hafta içinde dışkıyla çıktığı '
+                'görülmezse grafi tekrarlanır.',
   'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
-             'question': 'Yakın zamanda üst solunum yolu enfeksiyonu geçiren, sağ alt kadran ağrısı ve hafif ateşi '
-                         'olan bu çocukta ilk değerlendirmeniz nasıl olmalıdır?',
-             'options': [{'text': 'Karın ağrısının kabızlığa bağlı olabileceğini düşünüp dışkılama alışkanlığını '
-                                  'sorgulamak ve muayene öncesinde gliserinli rektal lavman uygulamak',
-                          'is_correct': False,
-                          'scenario_update': 'Lavman sonrası çocuk az miktarda normal dışkı çıkardı; ağrısı değişmedi '
-                                             've karın muayenesi gecikti.',
-                          'teaching_point': 'Ateşli sağ alt kadran ağrısında lavman öncesinde cerrahi patolojiler '
-                                            'değerlendirilmelidir.'},
-                         {'text': 'Ağrının zamanla yer değiştirip değiştirmediğini, kusma-iştah değişimini sorgulayıp '
-                                  'sağ alt kadran hassasiyeti, defans, rebound, zıplama testi ve skrotal muayene '
-                                  'yapmak',
-                          'is_correct': True,
-                          'explanation': 'Sağ alt kadran ağrısında ağrının göçü, anoreksi ve kusma öyküsü ile '
-                                         'peritoneal irritasyon bulguları ve zıplama testi cerrahi patolojiyi '
-                                         'değerlendirmede temel bileşenlerdir. Erkek çocukta skrotal muayene '
-                                         'atlanmamalıdır.',
-                          'new_finding': 'Vital Bulgular: Ateş 37.5°C, KTA 92/dk, SS 20/dk, SpO2 %99. Ağrı başından '
-                                         'beri sağ alt kadranda, göç etmemiş. Kusma yok, iştah hafif azalmış. '
-                                         'Orofarenks hafif hiperemik, servikal küçük lenf nodları. Sağ alt kadranda '
-                                         'hafif-orta palpasyon hassasiyeti; istemsiz defans ve rebound yok. Tek ayak '
-                                         'üzerinde zıplayabiliyor, hafif rahatsızlık tarif ediyor. Testisler doğal.'},
-                         {'text': 'Ateş ve yakın zamandaki enfeksiyon öyküsü nedeniyle akciğer ve orofarenks '
-                                  'muayenesini önceleyip karın muayenesini analjezik etkisi geçtikten sonra yapmak',
-                          'is_correct': False,
-                          'scenario_update': 'Akciğer muayenesi normal bulundu. Karın muayenesi bir saat ertelendi ve '
-                                             'ağrının karakteri hakkında bilgi alınmadan zaman kaybedildi.',
-                          'teaching_point': 'Sağ alt kadran ağrılı çocukta karın muayenesi önceliklidir; analjezi '
-                                            'muayeneyi maskelemez ancak muayene ertelenmemelidir.'},
-                         {'text': 'Sağ alt kadran ağrısıyla gelen her çocukta olduğu gibi oral alımı kesip intravenöz '
-                                  'sıvı başlatmak ve muayeneden önce çocuk cerrahisini çağırmak',
-                          'is_correct': False,
-                          'scenario_update': 'Cerrahi ekip muayeneden önce çağrıldı; peritoneal bulgu saptanmadı ve '
-                                             'hasta ön değerlendirme yapılmadan acil konsülte edildiği için süreç '
-                                             'uzadı.',
-                          'teaching_point': 'Konsültasyon kararı klinik değerlendirme ve risk sınıflamasına göre '
-                                            'verilir; iyi görünen çocukta önce tam muayene yapılır.'}]},
-            {'stage_title': 'Tetkik Stratejisi',
-             'question': 'Peritoneal bulgusu olmayan ancak sağ alt kadranda hassasiyeti süren bu çocukta tetkik '
+             'question': 'Ne olduğu tam bilinmeyen metal bir cisim yutan, şu an yakınması olmayan bu çocukta ilk '
                          'yaklaşımınız nedir?',
-             'options': [{'text': 'Radyasyon riskine rağmen kesin sonuç almak amacıyla intravenöz kontrastlı batın '
-                                  'bilgisayarlı tomografisi çekip cerrahiye konsülte etmek',
-                          'is_correct': False,
-                          'scenario_update': 'Tomografide sağ alt kadranda birkaç lenf nodu görüldü; bulgu ultrasonla '
-                                             'da gösterilebilecek düzeydeydi ve çocuk gereksiz radyasyona maruz kaldı.',
-                          'teaching_point': 'Çocukta sağ alt kadran ağrısında ilk görüntüleme ultrasonografidir; '
-                                            'tomografi yalnızca USG tanısal olmadığında ve klinik şüphe sürdüğünde '
-                                            'düşünülür.'},
-                         {'text': 'Laboratuvar tetkiki olmadan yalnızca ayakta direkt batın grafisi çekip apendikolit '
-                                  'veya gaz-sıvı seviyesi yoksa taburcu etmek',
-                          'is_correct': False,
-                          'scenario_update': 'Grafide patolojik bulgu yoktu; ancak grafi apendiksi değerlendiremediği '
-                                             'için tablo aydınlatılmadan taburculuk düşünüldü.',
-                          'teaching_point': 'Direkt grafi sağ alt kadran ağrısında düşük duyarlılığa sahiptir ve tek '
-                                            'başına güvence vermez.'},
-                         {'text': 'Ateşli karın ağrısında idrar yolu enfeksiyonunu dışlamak için yalnızca tam idrar '
-                                  'tetkiki istemek ve normal gelirse antibiyotiksiz taburcu etmek',
-                          'is_correct': False,
-                          'scenario_update': 'Tam idrar tetkiki normal geldi; sağ alt kadran hassasiyeti açıklanmadan '
-                                             'çocuk taburcu edilecekti.',
-                          'teaching_point': 'İdrar tetkiki ayırıcı tanıda yararlıdır ancak lokalize sağ alt kadran '
-                                            'hassasiyetinde görüntüleme ve laboratuvar değerlendirmesinin yerini '
-                                            'tutmaz.'},
-                         {'text': 'Tam kan sayımı, CRP ve batın ultrasonografisi istemek; ultrasonda apendiksin '
-                                  'görüntülenmesini, çapını ve kompresibilitesini özellikle sorgulamak',
+             'options': [{'text': 'Havayolu, solunum sesleri, salya, yutma ve göğüs ağrısını değerlendirip cismin pil '
+                                  'olup olmadığını sorgulamak ve görüntülemeyle yerini belirlemeyi planlamak',
                           'is_correct': True,
-                          'explanation': 'Orta riskli sağ alt kadran ağrısında laboratuvar ve ultrasonografi birlikte '
-                                         'risk sınıflamasını belirler. Normal kalibrede ve komprese edilebilen '
-                                         'apendiksin gösterilmesi cerrahi patolojiyi büyük ölçüde dışlar.',
-                          'new_finding': 'Lökosit 8.400/mm³ (%55 nötrofil), CRP 8 mg/L. Batın USG: Apendiks 4.2 mm '
-                                         'çapında, komprese edilebilir, periapendiküler yağlanma yok. Sağ alt kadran '
-                                         'mezenter kökünde en büyüğü 11x6 mm, oval, ekojen hilusu korunmuş çok sayıda '
-                                         'kümelenmiş lenf nodu. Serbest sıvı yok.'}]},
+                          'explanation': 'Önce havayolu ve solunum güvenliği değerlendirilir. Cismin niteliği, '
+                                         'özellikle düğme pil olasılığı yönetimi tamamen değiştirdiği için öyküde ve '
+                                         'görüntülemede netleştirilmelidir.',
+                          'new_finding': 'Vital Bulgular: Ateş 36.7°C, KTA 108/dk, SS 24/dk, SpO2 %99. Huzursuzluk '
+                                         'yok, salya akması yok, sıvı yutuyor. Solunum sesleri eşit, stridor veya '
+                                         'hışıltı yok. Karın yumuşak, hassasiyet yok. Baba evdeki pil kapaklarının '
+                                         'kapalı olduğunu ve kumbaranın yanında bir eksik para bulunduğunu doğruladı.'},
+                         {'text': 'Cismi geri çıkarması için tuzlu su içirerek ya da parmakla öğürterek kusturmaya '
+                                  'çalışmak, cisim gelmezse görüntüleme planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Kusturma girişimi sırasında çocuk öksürdü ve ağladı; cisim çıkmadı, '
+                                             'aspirasyon riski yaratıldı.',
+                          'teaching_point': 'Yabancı cisim yutmada kusturma kontrendikedir; özofagusta takılma, '
+                                            'mukozal yaralanma ve aspirasyon riskini artırır.'},
+                         {'text': 'Çocuk sıvı yutabildiğine ve hiçbir yakınması olmadığına göre görüntülemeye gerek '
+                                  'görmeden dışkı takibi önererek ailesiyle taburcu etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Cismin niteliği ve yeri belirlenmeden taburcu edildi; aile ertesi gün '
+                                             'evde bir pilin eksik olduğunu fark edip geri döndü.',
+                          'teaching_point': 'Asemptomatik olmak özofagusta takılı cismi veya pili dışlamaz; niteliği '
+                                            'bilinmeyen metal cisimde görüntüleme yapılmalıdır.'},
+                         {'text': 'Cismin aşağı inmesini kolaylaştırmak için bir dilim ekmek veya muz yedirip ardından '
+                                  'bol su içirmek, sonra görüntüleme yapmak',
+                          'is_correct': False,
+                          'scenario_update': 'Katı besin verildikten sonra çocuk iki kez öğürdü; olası bir endoskopi '
+                                             'için açlık süresi de uzadı.',
+                          'teaching_point': 'Yeri belirlenmeden katı besin vermek özofagusta takılmayı '
+                                            'ağırlaştırabilir ve gerekebilecek endoskopiyi geciktirir.'}]},
+            {'stage_title': 'Görüntüleme Kararı',
+             'question': 'Cismin niteliği ve yerini belirlemek için en uygun görüntüleme hangisidir?',
+             'options': [{'text': 'Radyasyondan kaçınmak için yalnızca batın ultrasonografisi istemek ve cisim '
+                                  'görülmezse mideye geçmiş kabul ederek izlem planlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Ultrasonografide gaz nedeniyle cisim görülemedi; özofagus ise hiç '
+                                             'değerlendirilemedi.',
+                          'teaching_point': 'Metal yabancı cisimde ultrasonografi özofagusu göstermez; ilk basamak '
+                                            'boyundan anüse direkt grafidir.'},
+                         {'text': 'Yalnızca ayakta direkt batın grafisi çekmek, cisim batında görülmezse dışkıyla '
+                                  'çıkacağını varsayarak aileyi bilgilendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Batın grafisinde cisim görülmedi; boyun ve göğüs alana dahil edilmediği '
+                                             'için özofagustaki olası takılma değerlendirilmemiş oldu.',
+                          'teaching_point': 'Görüntü alanı boyundan anüse uzanmalıdır; özofagus en kritik takılma '
+                                            'yeridir.'},
+                         {'text': 'Boyundan anüse kadar ön-arka direkt grafi çekmek, cismin kenar konturunu '
+                                  'değerlendirmek ve gerekirse yan grafiyle tamamlamak',
+                          'is_correct': True,
+                          'explanation': 'Tek ön-arka grafi cismin yerini ve konturunu gösterir. Kenarda çift halka '
+                                         'veya yan grafide basamak görüntüsü pili düşündürür; düzgün tek kontur madeni '
+                                         'parayı destekler.',
+                          'new_finding': 'Boyun-göğüs-batın ön-arka grafi: Sol üst kadranda, diyafram altında, '
+                                         'yaklaşık 23 mm çaplı, tek ve düzgün konturlu, yuvarlak radyoopak cisim. '
+                                         'Kenarda çift halka görünümü yok. Boyun ve göğüs bölgesinde yabancı cisim '
+                                         'yok. Serbest hava yok.'},
+                         {'text': 'Cismin yerini ve olası mukozal hasarı aynı anda görmek için kontrastsız toraks ve '
+                                  'batın bilgisayarlı tomografisi istemek',
+                          'is_correct': False,
+                          'scenario_update': 'Tomografi için çocuk sedasyon ihtiyacıyla birlikte bekletildi; aynı '
+                                             'bilgi tek bir direkt grafiyle elde edilebilirdi.',
+                          'teaching_point': 'Komplikasyon şüphesi olmayan çocukta tomografi gereksiz radyasyon ve '
+                                            'sedasyon getirir; ilk tetkik direkt grafidir.'}]},
             {'stage_title': 'Klinik Tanı',
-             'question': 'Viral enfeksiyon sonrası sağ alt kadran ağrısı, normal apendiks ve kümelenmiş büyük lenf '
-                         'nodları saptanan bu çocukta tanı nedir?',
-             'options': [{'text': 'Akut mezenterik lenfadenit',
+             'question': 'Öykü ve görüntüleme bulgularına göre tanınız nedir?',
+             'options': [{'text': 'Midede düğme pil',
+                          'is_correct': False,
+                          'scenario_update': 'Kenarda çift halka görünümü yoktu ve baba pillerin yerinde olduğunu '
+                                             'doğrulamıştı.',
+                          'teaching_point': 'Düğme pil kenarda halo ve yan grafide basamak görüntüsü verir.'},
+                         {'text': 'Özofagusta takılı madeni para',
+                          'is_correct': False,
+                          'scenario_update': 'Cisim diyafram altında, sol üst kadrandaydı; boyun ve göğüs temizdi.',
+                          'teaching_point': 'Özofagustaki para çoğunlukla üst darlık düzeyinde, ön-arka grafide tam '
+                                            'yüz olarak görülür.'},
+                         {'text': 'Midede asemptomatik madeni para',
                           'is_correct': True,
-                          'explanation': 'Üst solunum yolu enfeksiyonunu izleyen sağ alt kadran ağrısı, normal '
-                                         "kalibrede komprese edilebilen apendiks ve kısa aksı 8 mm'yi aşan kümelenmiş "
-                                         'mezenterik lenf nodları mezenterik lenfaditi destekler.',
-                          'new_finding': 'Tanı: Akut Mezenterik Lenfadenit (apendiks normal).'},
-                         {'text': 'Sağ üreter taşına bağlı kolik',
+                          'explanation': 'Diyafram altında, sol üst kadranda tek ve düzgün konturlu yuvarlak cisim, '
+                                         'yakınması olmayan çocukta mideye geçmiş madeni parayı gösterir.',
+                          'new_finding': 'Tanı: Asemptomatik gastrik madeni para.'},
+                         {'text': 'Trakeobronşiyal yabancı cisim aspirasyonu',
                           'is_correct': False,
-                          'scenario_update': 'Kolik tarzda ağrı, hematüri ve hidronefroz yok.',
-                          'teaching_point': 'Renal kolik ani başlangıçlı, dalgalı ağrı ve idrar bulgularıyla '
-                                            'seyreder.'},
-                         {'text': 'Meckel divertiküliti',
-                          'is_correct': False,
-                          'scenario_update': 'Ultrasonda kör sonlanan inflame divertiküler yapı veya çevre yağlanması '
+                          'scenario_update': 'Solunum sesleri eşitti, hışıltı yoktu ve göğüs grafisinde yabancı cisim '
                                              'görülmedi.',
-                          'teaching_point': 'Meckel divertiküliti ultrasonda apendiksten ayrı inflame yapı olarak '
-                                            'izlenir.'},
-                         {'text': 'Erken evre akut apandisit',
-                          'is_correct': False,
-                          'scenario_update': 'Apendiks 4.2 mm, komprese edilebilir ve çevresinde inflamasyon yok; '
-                                             'laboratuvar normal.',
-                          'teaching_point': 'Normal apendiksin gösterilmesi apandisiti büyük ölçüde dışlar ancak '
-                                            'şikayet ilerlerse yeniden değerlendirme gerekir.'}]},
+                          'teaching_point': 'Aspirasyonda öksürük krizi sonrası tek taraflı hışıltı ve hava hapsi '
+                                            'beklenir.'}]},
             {'stage_title': 'Tedavi ve Taburculuk Planı',
-             'question': 'Bu çocuğun tedavi ve izlem planı nasıl olmalıdır?',
-             'options': [{'text': 'Cerrahi patolojiyi kesin olarak dışlamak için çocuğu oral alımı kapalı olarak 24 '
-                                  'saat çocuk cerrahisi servisinde seri muayeneyle izlemek',
-                          'is_correct': False,
-                          'scenario_update': 'Çocuk 24 saat aç izlendi; şikayetleri hızla gerileyen hastada gereksiz '
-                                             'yatış oldu.',
-                          'teaching_point': "Genel durumu iyi, ağrısı hafif ve USG'de apendiksi normal çocukta "
-                                            'güvenilir bir aileyle ayaktan izlem uygundur.'},
-                         {'text': 'Parasetamol ve hidrasyon önerip, ağrının artması, kusma, yürürken zorlanma veya '
-                                  'ateş yükselmesinde dönmeyi anlatarak 24 saat içinde yeniden değerlendirme planlamak',
+             'question': 'Mideye geçmiş, yakınması olmayan madeni para için en uygun izlem planı hangisidir?',
+             'options': [{'text': 'Normal beslenmeyle taburcu edip dışkı takibini önermek; karın ağrısı, kusma veya '
+                                  'kanama olursa dönmeleri, 2-4 haftada çıkmazsa grafi tekrarlamak',
                           'is_correct': True,
-                          'explanation': 'Mezenterik lenfadenit kendini sınırlayan bir tablodur; destek tedavisi '
-                                         "yeterlidir. Erken apandisitin USG'de gözden kaçabileceği unutulmamalı, net "
-                                         'dönüş kriterleri ve 24 saatlik yeniden değerlendirme planlanmalıdır.',
-                          'new_finding': 'Çocuk parasetamol ile taburcu edildi. 24. saatteki kontrolde ağrısı azalmış, '
-                                         'karın muayenesi rahattı; 72 saatte şikayetleri tamamen geçti.'},
-                         {'text': 'Lenf nodlarının boyutu nedeniyle lenfoma olasılığını dışlamak için tam kan sayımı, '
-                                  'LDH, ürik asit ve periferik yayma istemek ve onkolojiye yönlendirmek',
+                          'explanation': 'Mideye geçmiş asemptomatik madeni para çoğunlukla kendiliğinden atılır. '
+                                         'Rutin endoskopi veya laksatif gerekmez; uyarı bulguları ve tekrar grafi '
+                                         'zamanı aileye anlatılır.',
+                          'new_finding': 'Aile bilgilendirildi ve normal beslenmeyle taburcu edildi. Dördüncü gün '
+                                         'dışkıda madeni paranın çıktığını telefonla bildirdiler.'},
+                         {'text': 'Cisim midede beklerken mukozal hasar yapabileceği için aynı gün gastroenteroloji '
+                                  'ile elektif üst gastrointestinal endoskopi ayarlamak',
                           'is_correct': False,
-                          'scenario_update': 'Tetkikler normal geldi; aile onkoloji yönlendirmesi nedeniyle büyük '
-                                             'kaygı yaşadı.',
-                          'teaching_point': 'Ekojen hilusu korunmuş, oval, kümelenmiş reaktif nodlar enfeksiyon '
-                                            'sonrası beklenen bulgulardır; sistemik bulgu yoksa malignite araştırması '
-                                            'gerekmez.'},
-                         {'text': 'Bakteriyel süperenfeksiyon olasılığına karşı yedi gün oral amoksisilin-klavulanat '
-                                  'başlamak ve ağrı için parasetamol önererek bir hafta sonra kontrole çağırmak',
+                          'scenario_update': 'Endoskopi için çocuk aç bırakıldı ve genel anestezi aldı; işlem '
+                                             'sırasında para zaten duodenuma geçmişti.',
+                          'teaching_point': 'Mideye geçmiş asemptomatik madeni parada rutin endoskopi gerekmez; '
+                                            'endoskopi pil, mıknatıs, sivri cisim veya semptom varlığında düşünülür.'},
+                         {'text': 'Bağırsak geçişini hızlandırmak için birkaç gün laktüloz ya da polietilen glikol '
+                                  'başlamak ve günlük dışkıyı elekle kontrol etmelerini istemek',
                           'is_correct': False,
-                          'scenario_update': 'Antibiyotikle çocukta ishal gelişti; ağrısı zaten 48 saatte geriliyordu.',
-                          'teaching_point': 'Viral kökenli mezenterik lenfaditte rutin antibiyotik gerekmez.'}]}]},
- {'id': 'G48',
+                          'scenario_update': 'Laksatif ishale neden oldu ve dışkı takibi zorlaştı; paranın geçişi '
+                                             'hızlanmadı.',
+                          'teaching_point': 'Laksatiflerin madeni para geçişini hızlandırdığına dair kanıt yoktur; '
+                                            'normal beslenme yeterlidir.'},
+                         {'text': 'Paranın pilora geçişini görmek için çocuğu 24 saat hastanede gözleme alıp sabah '
+                                  'kontrol grafisiyle değerlendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Çocuk bir gece gereksiz yere yatırıldı; sabah grafisinde para hâlâ '
+                                             'midedeydi ve yönetim değişmedi.',
+                          'teaching_point': 'Asemptomatik gastrik madeni para için hastanede gözlem veya erken kontrol '
+                                            'grafisi gerekmez; ayaktan izlenir.'}]}]},
+ {'id': 'Y48',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '2.5 Yaşında',
   'gender': 'Erkek',
@@ -1177,141 +1163,142 @@ GREEN_CASES_PART5 = [{'id': 'G41',
                                              'sürüyordu.',
                           'teaching_point': 'Toddler diyaresinde ilaç veya takviyenin yeri yoktur; tedavi diyetin '
                                             'düzenlenmesidir.'}]}]},
- {'id': 'G49',
-  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-  'age': '3 Aylık',
+ {'id': 'Y49',
+  'category': '👶 Yenidoğan Acilleri',
+  'age': '3 Haftalık',
   'gender': 'Kız',
-  'complaint': 'Her beslenme sonrası ağzından kesilmiş süt çıkarması',
-  'history': "Annesi anlatıyor: 'Emzirdikten hemen sonra veya gaz çıkarırken günde 5-6 kez ağzından süt ya da yoğurt "
-             'gibi kesilmiş süt geliyor. Bunu yaparken ağlamıyor, gülümsüyor bile. Boğulur gibi olmuyor, morarmıyor. '
-             'Kilo alıyor. Ama komşular mutlaka mide ilacı başlamamız gerektiğini söylüyor, bir arkadaşımın bebeğine '
-             "de şurup verilmiş. Endişelendik.' Term doğum, sadece anne sütü alıyor.",
-  'final_diagnosis': 'Fizyolojik Gastroözofageal Reflü (Komplikasyonsuz)',
-  'disposition': 'Yeşil Alandan Aile Eğitimi, Asit Baskılayıcı İlaçtan Kaçınma ve Beslenme Önerileri ile Taburculuk',
-  'case_pearl': 'Süt çocuklarının yaklaşık yarısında görülen ağrısız, eforsuz, beslenme sonrası kusma; kilo alımı '
-                'normal, beslenme reddi ve solunum komplikasyonu yoksa fizyolojiktir ve genellikle 12-14 ayda düzelir. '
-                'Tanı kliniktir; tetkik ve asit baskılayıcı tedavi önerilmez (NASPGHAN/ESPGHAN 2018). Safralı veya '
-                'fışkırır kusma, kilo kaybı, letarji, fontanel bombeliği, 6 aydan sonra başlangıç kırmızı bayraktır.',
+  'complaint': 'Doğumdan sonraki ilk hafta başlayan ve hâlâ geçmeyen ciltte ve göz akında sararma',
+  'history': "Annesi anlatıyor: 'Doğumdan sonra 3. gün sarardı, çok yüksek değil denildi ve ışık tedavisi almadı. Üç "
+             "haftadır sarılık geçmedi, yüzü ve göğsü hâlâ sarı.' 39. haftada normal doğum, doğum ağırlığı 3200 g. "
+             'Yalnız anne sütü alıyor, günde 9-10 kez emiyor, günde 6-7 bez ıslatıyor. Dışkısı sarı ve hardal '
+             'kıvamında, idrarı açık renkli. Uykusu ve emmesi iyi. Anne ve bebeğin kan grubu aynı. Yenidoğan tarama '
+             'testlerinin sonuçları normal bildirilmiş.',
+  'final_diagnosis': 'Anne Sütü Sarılığı (Uzamış İndirekt Hiperbilirubinemi)',
+  'disposition': 'Emzirmeye Devam Edilerek Aile Hekimi ve Bilirubin Takibiyle Yeşil Alandan Taburculuk',
+  'case_pearl': "Term bebekte 14 günü aşan sarılık 'uzamış sarılık' olarak değerlendirilir ve her bebekte direkt "
+                "(konjuge) bilirubin bakılmalıdır. Direkt bilirubin >1 mg/dL veya totalin %20'sinden fazlaysa kolestaz "
+                'vardır ve biliyer atrezi için acil ileri tetkik gerekir. Akolik dışkı ve koyu idrar sorgulanır. İyi '
+                'kilo alan, dışkısı renkli, indirekt hiperbilirubinemili bebekte anne sütü sarılığı en sık nedendir. '
+                'Emzirme kesilmez.',
   'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
-             'question': 'Beslenme sonrası sık süt çıkaran, keyfi yerinde 3 aylık bu bebekte değerlendirmenin odağı ne '
-                         'olmalıdır?',
-             'options': [{'text': 'Kusma sıklığı nedeniyle sağ üst kadranda zeytin benzeri kitle aramak için bebeği '
-                                  'beslerken epigastriumu palpe edip acil batın ultrasonografisi planlamak',
+             'question': 'Üç haftalık, yalnız anne sütü alan ve hâlâ sarı olan bu bebeğin değerlendirmesinde öncelikli '
+                         'olarak ne yaparsınız?',
+             'options': [{'text': 'Sarılığın göğüs hizasında kaldığını görerek bunun beklenen bir süreç olduğunu '
+                                  'söyleyip herhangi bir değerlendirme yapmadan aileyi rahatlatmak',
                           'is_correct': False,
-                          'scenario_update': 'Kitle palpe edilmedi; ultrasonografi normal geldi. Kusmaların fışkırır '
-                                             'olmadığı ve bebeğin kilo aldığı sorgulanmamıştı.',
-                          'teaching_point': 'Fışkırır kusma ve kilo alamama olmadan pilor görüntülemesi gerekmez; '
-                                            'kusmanın niteliği öyküyle ayırt edilir.'},
-                         {'text': 'Kusmalara bağlı aspirasyon riskini değerlendirmek için muayeneyle birlikte akciğer '
-                                  'grafisi çekmek ve uyku sırasında apne monitörizasyonu önermek',
+                          'scenario_update': 'Bebek muayene edilmeden gönderildi; dışkı rengi, kilo alımı ve bilirubin '
+                                             'fraksiyonu hiç değerlendirilmedi.',
+                          'teaching_point': 'İki haftayı aşan sarılık her zaman değerlendirilmelidir; kolestaz '
+                                            'atlanırsa biliyer atrezide ameliyat şansı kaybedilebilir.'},
+                         {'text': 'Sarılık uzadığı için emzirmeyi hemen kesip mama başlatmak ve 48 saat sonra '
+                                  'sararmanın azalıp azalmadığını görmek üzere kontrole çağırmak',
                           'is_correct': False,
-                          'scenario_update': 'Akciğer grafisi normal geldi; aile apne monitörü almak için kaygıyla '
-                                             'arayışa girdi.',
-                          'teaching_point': 'Solunum belirtisi olmayan bebekte grafi ve monitörizasyon gereksizdir; '
-                                            'endişeyi artırır.'},
-                         {'text': 'Komşuların önerisini değerlendirip aileye güvence vermek amacıyla muayeneyi hızlıca '
-                                  'yapıp yalnızca tartıya bakmak, kilo alımı iyiyse sonraki aşı kontrolüne '
-                                  'yönlendirmek',
-                          'is_correct': False,
-                          'scenario_update': 'Tartı normal bulundu ancak kırmızı bayraklar sistematik sorgulanmadığı '
-                                             'için aile tam güvence alamadı ve ertesi gün başka merkeze başvurdu.',
-                          'teaching_point': 'Güvence ancak sistematik öykü ve muayeneyle verilebilir; kırmızı '
-                                            'bayrakların yokluğu açıkça belgelenmelidir.'},
-                         {'text': 'Kusmanın safralı veya fışkırır olup olmadığını, beslenme reddini ve solunum '
-                                  'belirtilerini sorgulayıp büyüme eğrisi ve fontanel muayenesiyle kırmızı bayrakları '
-                                  'aramak',
+                          'scenario_update': 'Anne emzirmeyi bıraktı, süt üretimi azaldı; bebek mamayı istemedi ve '
+                                             'tetkik yapılmadığı için neden belirsiz kaldı.',
+                          'teaching_point': 'Emzirmeyi rutin olarak kesmek önerilmez; önce uzamış sarılığın nedeni '
+                                            'araştırılmalıdır.'},
+                         {'text': 'Büyüme eğrisi, beslenme, dışkı ve idrar rengini sorgulayıp genel durumu, '
+                                  'hepatosplenomegaliyi ve sarılığın yaygınlığını muayenede değerlendirmek',
                           'is_correct': True,
-                          'explanation': 'Kusan süt çocuğunda ilk görev fizyolojik tabloyu organik nedenlerden '
-                                         'ayırmaktır. Safralı veya fışkırır kusma, kilo kaybı, beslenme reddi, '
-                                         'fontanel bombeliği ve letarji gibi kırmızı bayraklar yoksa tablo büyük '
-                                         'olasılıkla fizyolojiktir.',
-                          'new_finding': 'Vital Bulgular: Ateş 36.7°C, KTA 122/dk, SS 28/dk, SpO2 %100. Tartı 6.0 kg '
-                                         '(doğum 3.2 kg; günlük ortalama 31 g artış, 50. persentil). Muayene masasında '
-                                         'gülümsüyor. Fontanel düz, tonus normal. Akciğer sesleri doğal. Karın '
-                                         'yumuşak, epigastrik kitle yok. Kusmalar safrasız, fışkırır değil.'}]},
+                          'explanation': 'Uzamış sarılıkta kilo alımı, dışkının renkli olup olmadığı, idrar rengi ve '
+                                         'organomegali kolestatik ve hemolitik nedenleri ayırmada ilk ipuçlarıdır.',
+                          'new_finding': 'Vital Bulgular: Ateş 36.8°C, KTA 142/dk, SS 40/dk, SpO2 %99. Tartı 4150 g '
+                                         '(doğum ağırlığının üzerinde, günlük ortalama 45 g artış). Yüz, göğüs ve '
+                                         'karın üst kısmında sarılık, sklera ikterik. Karaciğer kosta kenarında, dalak '
+                                         'ele gelmiyor. Bezdeki dışkı sarı-hardal renginde, idrar açık sarı. Emme '
+                                         'refleksi ve tonus normal.'},
+                         {'text': 'Sarılık derin görünmese de bebeği hemen yenidoğan servisine yatırıp tetkik '
+                                  'sonuçları gelmeden yoğun fototerapi başlatmak',
+                          'is_correct': False,
+                          'scenario_update': 'Bebek anneden ayrıldı ve fototerapiye alındı; sonradan bilirubin '
+                                             'değerinin tedavi eşiğinin çok altında olduğu görüldü.',
+                          'teaching_point': 'Fototerapi kararı ölçülen bilirubin, saat-yaş ve risk faktörlerine göre '
+                                            'verilir; uzamış sarılıkta önce fraksiyon bakılır.'}]},
             {'stage_title': 'Tetkik Kararı',
-             'question': 'Kırmızı bayrağı olmayan, düzenli kilo alan bu bebekte tetkik yaklaşımınız ne olmalıdır?',
-             'options': [{'text': 'Elektrolit kaybını değerlendirmek amacıyla venöz kan gazı ve serum klor düzeyine '
-                                  'bakmak, normalse ilaç başlamadan taburcu etmek',
-                          'is_correct': False,
-                          'scenario_update': 'Kan gazı ve elektrolitler normal geldi; bebek kan alımı sırasında uzun '
-                                             'süre ağladı.',
-                          'teaching_point': 'Kilo alan, dehidratasyon bulgusu olmayan bebekte kan tetkiki gerekmez.'},
-                         {'text': 'Tetkik istemeden aileye mekanizmayı anlatmak ve acilde bir beslenmeyi gözlemleyerek '
-                                  'beslenme miktarını, sıklığını ve gaz çıkarma tekniğini değerlendirmek',
+             'question': 'İyi kilo alan, dışkısı renkli bu bebekte hangi tetkikler uygun olur?',
+             'options': [{'text': 'Total ve direkt bilirubin, tam kan sayımı ile retikülosit, tam idrar ve tiroid '
+                                  'fonksiyonunu istemek, yenidoğan tarama sonuçlarını teyit etmek',
                           'is_correct': True,
-                          'explanation': 'Komplikasyonsuz tabloda tanı kliniktir. pH-impedans, endoskopi veya grafi '
-                                         'önerilmez. Beslenme gözlemi aşırı besleme veya teknik sorunları ortaya '
-                                         'koyabilir.',
-                          'new_finding': 'Gözlenen emzirmede bebek etkin emdi; ardından gaz çıkarırken az miktarda süt '
-                                         'çıkardı, rahatsızlık göstermedi. Annenin bebeği beslenme hemen sonrasında '
-                                         'yatırdığı öğrenildi.'},
-                         {'text': 'Mide çıkış yolu ve anatomiyi değerlendirmek için baryumlu üst gastrointestinal '
-                                  'pasaj grafisi istemek ve sonuca göre ilaç kararı vermek',
+                          'explanation': 'Uzamış sarılıkta kolestazı dışlamak için direkt bilirubin şarttır. Hemoliz, '
+                                         'idrar yolu enfeksiyonu ve hipotiroidi de basit tetkiklerle dışlanır.',
+                          'new_finding': 'Total bilirubin 13.8 mg/dL, direkt bilirubin 0.5 mg/dL. Hb 14.6 g/dL, '
+                                         'retikülosit %1.2, periferik yaymada hemoliz bulgusu yok. Tam idrar normal. '
+                                         'TSH 3.1 mIU/L, serbest T4 normal.'},
+                         {'text': 'Yalnızca transkutan bilirubin ölçmek ve değer fototerapi eşiğinin altındaysa başka '
+                                  'bir tetkik yapmadan iki hafta sonraya kontrol vermek',
                           'is_correct': False,
-                          'scenario_update': 'Grafide işlem sırasında birkaç kez geri kaçış görüldü; bulgu yönetimi '
-                                             'değiştirmedi ve bebek radyasyona maruz kaldı.',
-                          'teaching_point': 'Kontrastlı grafi geri kaçışı tanımlamak için uygun değildir; yalnızca '
-                                            'anatomik anomali şüphesinde kullanılır.'},
-                         {'text': 'Süt alerjisini dışlamak için kan eozinofil sayısı ve inek sütü spesifik IgE '
-                                  'istemek, sonuç gelene dek annenin süt ürünlerini kesmesini önermek',
+                          'scenario_update': 'Transkutan değer 13 mg/dL çıktı; ancak direkt fraksiyon bilinmediği için '
+                                             'kolestaz dışlanamadı.',
+                          'teaching_point': 'Transkutan ölçüm fraksiyon ayırmaz; uzamış sarılıkta serumda direkt '
+                                            'bilirubin mutlaka bakılmalıdır.'},
+                         {'text': 'Kolestaz şüphesiyle tetkik beklemeden hepatobiliyer sintigrafi ve batın '
+                                  'ultrasonografisi isteyip çocuk gastroenterolojiye acil sevk planlamak',
                           'is_correct': False,
-                          'scenario_update': 'Testler normal geldi; anne gereksiz diyet kısıtlaması nedeniyle yorgun '
-                                             'düştü.',
-                          'teaching_point': 'Kanlı dışkı, egzama veya kilo alamama yoksa alerji testi önerilmez.'}]},
+                          'scenario_update': 'Sintigrafi için randevu verildi; sonradan direkt bilirubinin normal '
+                                             'olduğu ve tetkikin gereksiz olduğu anlaşıldı.',
+                          'teaching_point': 'İleri görüntüleme yalnızca direkt hiperbilirubinemi saptandığında '
+                                            'gerekir; ilk adım serum fraksiyonlarıdır.'},
+                         {'text': 'Enfeksiyon olasılığı nedeniyle tam kan sayımı, CRP, kan kültürü ve lomber ponksiyon '
+                                  'yapıp sonuçlar çıkana kadar ampirik antibiyotik başlamak',
+                          'is_correct': False,
+                          'scenario_update': 'İyi görünen ve kilo alan bebek invaziv girişimler ve antibiyotikle '
+                                             'hastanede tutuldu; kültürler negatif geldi.',
+                          'teaching_point': 'Genel durumu iyi, ateşsiz ve kilo alan bebekte uzamış sarılık tek başına '
+                                            'sepsis taraması gerektirmez.'}]},
             {'stage_title': 'Klinik Tanı',
-             'question': 'Ağrısız, eforsuz beslenme sonrası kusmaları olan, gülümseyen ve düzenli kilo alan 3 aylık '
-                         'bebekte tanı nedir?',
-             'options': [{'text': 'İnfantil hipertrofik pilor stenozu',
+             'question': 'Klinik ve laboratuvar bulgularına göre en olası tanınız nedir?',
+             'options': [{'text': 'Biliyer atrezi (erken dönem)',
                           'is_correct': False,
-                          'scenario_update': 'Kusmalar fışkırır değil, bebek kilo alıyor ve epigastrik kitle yok.',
-                          'teaching_point': 'Pilor stenozu fışkırır kusma, açlık ve kilo kaybıyla seyreder.'},
-                         {'text': 'Gastroözofageal reflü hastalığı',
+                          'scenario_update': 'Direkt bilirubin normaldi, dışkı renkliydi ve karaciğer büyük değildi.',
+                          'teaching_point': 'Biliyer atrezide direkt hiperbilirubinemi, akolik dışkı ve koyu idrar '
+                                            'olur.'},
+                         {'text': 'Konjenital hipotiroidiye bağlı uzamış sarılık',
                           'is_correct': False,
-                          'scenario_update': 'Beslenme reddi, kilo alamama, irritabilite veya solunum komplikasyonu '
-                                             'yok.',
-                          'teaching_point': 'Hastalık tanımı ancak komplikasyon veya rahatsız edici semptomlar varsa '
-                                            'kullanılır.'},
-                         {'text': 'İnek sütü proteini alerjisi',
+                          'scenario_update': 'TSH ve serbest T4 normaldi, kabızlık, makroglossi veya letarji yoktu.',
+                          'teaching_point': 'Hipotiroidide kabızlık, hipotoni, geniş fontanel ve yüksek TSH beklenir.'},
+                         {'text': 'Hemolitik hastalığa bağlı hiperbilirubinemi',
                           'is_correct': False,
-                          'scenario_update': 'Egzama, kanlı dışkı ve beslenme güçlüğü yok.',
-                          'teaching_point': 'Alerji tanısı için kusmaya eşlik eden ek bulgular aranmalıdır.'},
-                         {'text': 'Fizyolojik gastroözofageal reflü',
+                          'scenario_update': 'Hb ve retikülosit normaldi, kan grubu uyuşmazlığı ve yaymada hemoliz '
+                                             'yoktu.',
+                          'teaching_point': 'Hemolizde düşen hemoglobin, artmış retikülosit ve yaymada sferosit veya '
+                                            'fragmente eritrosit görülür.'},
+                         {'text': 'Anne sütü sarılığı',
                           'is_correct': True,
-                          'explanation': 'Kilo alımı normal, kırmızı bayrağı olmayan ve kusarken rahatsızlık '
-                                         'göstermeyen süt çocuğunda geri kaçış fizyolojiktir ve kendiliğinden düzelir.',
-                          'new_finding': 'Tanı: Fizyolojik Gastroözofageal Reflü (komplikasyonsuz).'}]},
+                          'explanation': 'İyi kilo alan, renkli dışkılı, yalnız anne sütüyle beslenen ve indirekt '
+                                         'hiperbilirubinemisi olan bebekte diğer nedenler dışlandığında en olası '
+                                         'tanıdır.',
+                          'new_finding': 'Tanı: Anne sütü sarılığı.'}]},
             {'stage_title': 'Tedavi ve Taburculuk Planı',
-             'question': 'Bu bebeğin ailesine yönelik en uygun plan hangisidir?',
-             'options': [{'text': 'Emzirmeyi bırakıp geri kaçışı azaltan özel koyulaştırılmış formüle geçmek ve '
-                                  'formülün etkisini iki hafta sonra değerlendirmek',
+             'question': 'Bu bebek için en uygun yönetim planı hangisidir?',
+             'options': [{'text': 'Emzirmeye 48 saat ara verip mama ile beslemek ve bilirubin düşüşü görülürse tanıyı '
+                                  'kesinleştirmiş olarak emzirmeye geri dönmek',
                           'is_correct': False,
-                          'scenario_update': 'Formüle geçişle emzirme sona erdi; geri kaçış yalnızca hafifçe azaldı.',
-                          'teaching_point': 'Anne sütüyle beslenen bebekte fizyolojik geri kaçış emzirmeyi bırakmak '
-                                            'için gerekçe değildir.'},
-                         {'text': 'Tablonun normal olduğunu ve 1 yaş civarında geçeceğini anlatmak, aşırı beslemeden '
-                                  'kaçınmayı ve beslenme sonrası dik tutmayı önermek, kırmızı bayrakları öğretmek',
+                          'scenario_update': 'Emzirme ara verilince anne sütü azaldı; bebek huzursuzlandı ve anne '
+                                             'kendini suçlu hissetti.',
+                          'teaching_point': 'Tanısal amaçlı emzirmeye ara vermek rutin önerilmez; emzirmeyi sürdürmek '
+                                            've izlemek yeterlidir.'},
+                         {'text': 'Bilirubini hızlı düşürmek için evde güneş ışığında tutmayı ve öğün aralarında '
+                                  'şekerli su ya da bitki çayı vermeyi önermek',
+                          'is_correct': False,
+                          'scenario_update': 'Bebeğe ek sıvılar verildi; emme sayısı azaldı ve kilo alımı yavaşladı.',
+                          'teaching_point': 'Su, şekerli su ve bitki çayı bilirubini düşürmez, emzirmeyi azaltır; '
+                                            'güneş ışığı güvenli bir tedavi yöntemi değildir.'},
+                         {'text': 'Emzirmeye devam etmeyi önermek, dışkı rengi kartını vermek ve aile hekimiyle 1-2 '
+                                  'hafta sonra bilirubin izlemi planlayarak taburcu etmek',
                           'is_correct': True,
-                          'explanation': 'Fizyolojik geri kaçışta temel yaklaşım güvence ve beslenme önerileridir. '
-                                         'Emzirme sürdürülür, ilaç verilmez. Safralı-fışkırır kusma, kilo kaybı veya '
-                                         'beslenme reddinde dönüş anlatılır.',
-                          'new_finding': 'Aileye yazılı bilgi verildi. Bir ay sonraki kontrolde kusmalar azalmış, '
-                                         'bebek düzenli kilo almaya devam ediyordu.'},
-                         {'text': 'Mide asidini azaltmak için dört hafta oral omeprazol başlamak, beslenme sonrası dik '
-                                  'tutmayı önermek ve ilaç bitiminde kontrole çağırmak',
+                          'explanation': 'Anne sütü sarılığı zararsızdır ve haftalar içinde kendiliğinden geriler. '
+                                         'Emzirme sürdürülür, akolik dışkı veya koyu idrar fark edilirse hemen '
+                                         'başvurmaları söylenir.',
+                          'new_finding': 'Aileye dışkı renk kartı verildi, emzirmenin sürdürülmesi önerildi. İki hafta '
+                                         "sonraki kontrolde total bilirubin 8.4 mg/dL'ye geriledi, tartı 4850 g."},
+                         {'text': 'Bilirubin metabolizmasını hızlandırmak için iki hafta ursodeoksikolik asit başlamak '
+                                  've tedavi sonunda yeniden bilirubin ölçümü yapmak',
                           'is_correct': False,
-                          'scenario_update': 'Kusma sıklığı değişmedi; bebek ikinci haftada akut gastroenterit ile '
-                                             'başvurdu.',
-                          'teaching_point': 'Fizyolojik tabloda asit baskılayıcılar etkisizdir ve enfeksiyon riskini '
-                                            'artırabilir.'},
-                         {'text': 'Kusmayı azaltmak için sağılmış anne sütüne pirinç unu ekleyerek koyulaştırmayı ve '
-                                  'bebeği gece yüzüstü yatırmayı önerip iki hafta sonra kontrole çağırmak',
-                          'is_correct': False,
-                          'scenario_update': 'Aile pirinç unuyla biberon kullanmaya başladı ve emzirme azaldı; yüzüstü '
-                                             'yatış önerisi ani bebek ölümü riski taşıyordu.',
-                          'teaching_point': 'Yüzüstü yatırma ani bebek ölümü sendromu riski nedeniyle önerilmez; anne '
-                                            'sütüyle beslenen bebekte kıvam artırıcı rutin değildir.'}]}]},
- {'id': 'G50',
+                          'scenario_update': 'İlaç gereksiz yere başlandı; indirekt hiperbilirubinemide etkisi '
+                                             'olmadığından seyir değişmedi.',
+                          'teaching_point': 'Ursodeoksikolik asit kolestatik hastalıklarda kullanılır; indirekt '
+                                            'hiperbilirubinemide yeri yoktur.'}]}]},
+ {'id': 'Y50',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '8 Yaşında',
   'gender': 'Kız',

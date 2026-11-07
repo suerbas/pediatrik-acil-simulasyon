@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Pediatrik Acil Simülasyonu - Yeşil Alan Vakaları (Part 6: G51 - G60)
+Pediatrik Acil Simülasyonu - Yeşil Alan Vakaları (Part 6: Y51 - Y60)
 Odak: Bulantı, Kusma, Karın Ağrısı, İshal (GİS Acilleri - Yeşil Alan Ayaktan Yönetim)
 Kılavuzlar: ESPGHAN, AAP, NASPGHAN, NICE, Centor/McIsaac
 """
 
-GREEN_CASES_PART6 = [{'id': 'G51',
+GREEN_CASES_PART6 = [{'id': 'Y51',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '4 Yaşında',
   'gender': 'Erkek',
@@ -154,7 +154,7 @@ GREEN_CASES_PART6 = [{'id': 'G51',
                                              'nedeniyle huzursuzlaştı.',
                           'teaching_point': 'Kapiller keton düşmeye başlayan ve oral glukozu tolere eden çocuk taburcu '
                                             'edilebilir; idrar ketonu kandan geç negatifleşir.'}]}]},
- {'id': 'G52',
+ {'id': 'Y52',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '3 Yaşında',
   'gender': 'Kız',
@@ -302,7 +302,7 @@ GREEN_CASES_PART6 = [{'id': 'G51',
                           'new_finding': 'Oral sefiksim başlandı. 48. saatte ateşi düştü, kusma kesildi. Kültürde '
                                          '100.000 cfu/mL sefiksime duyarlı E. coli üredi. Tedavi 10 güne tamamlandı; '
                                          'üriner USG normal bulundu.'}]}]},
- {'id': 'G53',
+ {'id': 'Y53',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '8 Yaşında',
   'gender': 'Kız',
@@ -450,7 +450,7 @@ GREEN_CASES_PART6 = [{'id': 'G51',
                           'new_finding': 'Aile ve çocukla ağrının mekanizması konuşuldu; okul rehber öğretmeniyle '
                                          'görüşme planlandı. Bir ay sonraki kontrolde sabah ağrılarının belirgin '
                                          'azaldığı, çocuğun okula düzenli gittiği öğrenildi.'}]}]},
- {'id': 'G54',
+ {'id': 'Y54',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '20 Aylık',
   'gender': 'Erkek',
@@ -599,7 +599,7 @@ GREEN_CASES_PART6 = [{'id': 'G51',
                                              'endomisyum antikoru ve biyopsi yapılamadı; tanı belirsiz kaldı.',
                           'teaching_point': 'Tanı uzman tarafından doğrulanmadan gluten kesilmemelidir; diyet '
                                             'serolojiyi ve histolojiyi normalleştirir.'}]}]},
- {'id': 'G55',
+ {'id': 'Y55',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '6 Yaşında',
   'gender': 'Erkek',
@@ -744,7 +744,7 @@ GREEN_CASES_PART6 = [{'id': 'G51',
                                          'değerlendirilir; yanıtsızlıkta efüzyon gibi komplikasyonlar araştırılır.',
                           'new_finding': 'Oral amoksisilin başlandı. 48. saatteki kontrolde ateşi düşmüş, solunum '
                                          "sayısı 24/dk'ya inmiş ve karın ağrısı kaybolmuştu. Tedavi tamamlandı."}]}]},
- {'id': 'G56',
+ {'id': 'Y56',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '7 Yaşında',
   'gender': 'Erkek',
@@ -891,7 +891,7 @@ GREEN_CASES_PART6 = [{'id': 'G51',
                           'new_finding': 'Bildirim yapıldı, kardeşe ve sınıf temaslılarına hepatit A aşısı önerildi. '
                                          'Dördüncü gün kontrolünde INR 1.0, bilirubin 4.2 mg/dL; çocuk iştahla yemek '
                                          'yiyordu. Üç haftada sarılık geriledi.'}]}]},
- {'id': 'G57',
+ {'id': 'Y57',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '15 Aylık',
   'gender': 'Kız',
@@ -1036,7 +1036,7 @@ GREEN_CASES_PART6 = [{'id': 'G51',
                                              'yeniden başlanınca ishal tekrarladı.',
                           'teaching_point': 'Aç bırakma ve kısıtlı diyetler önerilmez; hedef yalnızca laktoz yükünü '
                                             'geçici olarak azaltmaktır.'}]}]},
- {'id': 'G58',
+ {'id': 'Y58',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '7 Yaşında',
   'gender': 'Kız',
@@ -1181,151 +1181,149 @@ GREEN_CASES_PART6 = [{'id': 'G51',
                           'new_finding': 'Dönüş yolculuğunda çocuk ön koltukta, camı aralık, müzik dinleyerek ve ufka '
                                          'bakarak seyahat etti; ilaca gerek kalmadan kusmadan yolculuğu '
                                          'tamamladı.'}]}]},
- {'id': 'G59',
-  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-  'age': '6 Yaşında',
-  'gender': 'Erkek',
-  'complaint': 'Özellikle geceleri artan makat kaşıntısı ve huzursuz uyku',
-  'history': "Annesi anlatıyor: 'Üç haftadır geceleri uyuduktan bir-iki saat sonra poposunu kaşıyarak ağlayarak "
-             'uyanıyor. Gündüz kaşıntısı çok daha az. Dün gece fenerle baktığımda makatının etrafında yarım santim '
-             'boyunda, beyaz, ince iplik gibi kıpırdayan bir şey gördüm. İştahı biraz azaldı. Dört yaşındaki kızımda '
-             "da benzer kaşıntı başladı.' Çocuk kreşe ve futbol kursuna gidiyor. Kilo kaybı, ishal veya kanlı dışkı "
-             'yok. Tartı: 21 kg.',
-  'final_diagnosis': 'Enterobiyazis (Kıl Kurdu Enfeksiyonu)',
-  'disposition': 'Yeşil Alandan Tek Doz Antihelmintik, İki Hafta Sonra Tekrar Doz, Tüm Hane Halkının Eş Zamanlı '
-                 'Tedavisi ve Hijyen Eğitimi ile Taburculuk',
-  'case_pearl': 'Gece artan perianal kaşıntı, ailede benzer yakınma ve perianal bölgede görülen ince beyaz kurtlar '
-                'enterobiyazisi düşündürür. Dişi kurtlar geceleri perianal deriye yumurta bırakır; dışkı mikroskopisi '
-                'duyarsızdır, tanı sabah tuvalet ve banyo öncesi şeffaf yapışkan bant yöntemiyle konur. Tedavide '
-                'mebendazol 100 mg veya pirantel pamoat 11 mg/kg tek doz verilir ve 2 hafta sonra tekrarlanır; tüm '
-                'hane halkı eş zamanlı tedavi edilir.',
+ {'id': 'Y59',
+  'category': '🌡️ Ateş & Döküntü / Enfeksiyon',
+  'age': '15 Yaşında',
+  'gender': 'Kız',
+  'complaint': 'Beş gündür boğaz ağrısı, ateş ve halsizlik; iki gündür gövdede yaygın kaşıntılı döküntü',
+  'history': "Kendisi anlatıyor: 'Beş gündür boğazım çok ağrıyor, yutkunamıyorum, ateşim 39°C'ye çıkıyor. Çok "
+             "yorgunum, sabahları kalkamıyorum.' Üç gün önce başka bir merkezde boğaz enfeksiyonu denilerek "
+             'amoksisilin başlanmış. İlacın ikinci gününde gövdede ve kollarda kaşıntılı, kırmızı döküntüler çıkmış. '
+             'Göz kapaklarında şişlik fark etmiş. Kronik hastalığı ve bilinen ilaç alerjisi yok. Okulda voleybol '
+             'takımında oynuyor.',
+  'final_diagnosis': 'Enfeksiyöz Mononükleoz (EBV) ve Aminopenisiline Bağlı Makülopapüler Döküntü',
+  'disposition': 'Destek Tedavisi, Temas Sporu Kısıtlaması ve Aile Hekimi Takibiyle Yeşil Alandan Taburculuk',
+  'case_pearl': 'Ergende ateş, eksüdatif tonsillit, posterior servikal lenfadenopati, belirgin yorgunluk ve '
+                'splenomegali enfeksiyöz mononükleozu düşündürür. Aminopenisilin alan hastaların önemli bir kısmında '
+                'döküntü gelişir; bu gerçek penisilin alerjisi değildir. Tedavi destekleyicidir. Kortikosteroid '
+                'yalnızca havayolu daralması, ağır hemoliz veya trombositopeni gibi komplikasyonlarda verilir. Dalak '
+                'rüptürü riski nedeniyle en az 3-4 hafta temas sporundan kaçınılır.',
   'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
-             'question': 'Gece artan makat kaşıntısı ve kardeşinde benzer yakınması olan bu çocukta muayenede neye '
-                         'dikkat edersiniz?',
-             'options': [{'text': 'Perianal bölgeyi ekskoriasyon, sekonder enfeksiyon, fissür ve streptokokal dermatit '
-                                  'açısından incelemek, kız kardeşte vulvovajinit sorgulamak ve büyüme durumunu '
-                                  'değerlendirmek',
+             'question': 'Antibiyotiğe rağmen ateşi süren ve döküntü gelişen bu ergende muayenede nelere '
+                         'odaklanırsınız?',
+             'options': [{'text': 'Döküntüyü ilaç alerjisi olarak kabul edip amoksisilini kesmek, antihistaminik '
+                                  'başlamak ve tonsillit tedavisini klaritromisinle tamamlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Antibiyotik değiştirildi, ancak ateş ve yorgunluk sürdü; altta yatan '
+                                             'tablo değerlendirilmedi.',
+                          'teaching_point': 'Döküntüyü yalnızca ilaç reaksiyonu olarak ele almak, antibiyotiğe '
+                                            'yanıtsız boğaz ağrısının asıl nedenini gözden kaçırır.'},
+                         {'text': 'Havayolu açıklığını, tonsil ve uvula görünümünü, servikal lenf nodlarının yerini, '
+                                  'karaciğer ve dalak boyutunu ve döküntünün özelliğini değerlendirmek',
                           'is_correct': True,
-                          'explanation': 'Perianal kaşıntıda muayene kaşıntının komplikasyonlarını (ekskoriasyon, '
-                                         'sekonder bakteriyel enfeksiyon) ve ayırıcı tanıları (fissür, perianal '
-                                         'streptokokal dermatit) ortaya koyar. Kız çocuklarında kurtlar vulvovajinite '
-                                         'yol açabilir.',
-                          'new_finding': 'Vital Bulgular: Ateş 36.7°C, KTA 88/dk, TA 98/62 mmHg. Genel durumu iyi, '
-                                         'büyümesi normal. Karın rahat. Perianal bölgede kaşımaya bağlı lineer '
-                                         'ekskoriasyonlar ve hafif eritem; keskin sınırlı parlak kırmızı eritem, '
-                                         'fissür veya akıntı yok. Muayene sırasında görülebilen hareketli yapı '
-                                         'izlenmedi.'},
-                         {'text': 'Ailenin gördüğü yapıyı doğrulamak için muayenede rektal tuşe yapıp parmakta dışkı '
-                                  'örneği almak ve mikroskopiye göndermek',
+                          'explanation': 'Lenf nodlarının ön veya arka zincirde olması, organomegali ve tonsil '
+                                         'büyüklüğü ayırıcı tanıda ve havayolu riskinin değerlendirilmesinde '
+                                         'belirleyicidir.',
+                          'new_finding': 'Vital Bulgular: Ateş 38.8°C, KTA 104/dk, SS 18/dk, SpO2 %99, TA 108/66 mmHg. '
+                                         'Tonsiller 3+ hipertrofik, gri-beyaz eksüdalı, uvula orta hatta, stridor yok, '
+                                         'ağzı rahat açıyor. Bilateral posterior servikal zincirde çok sayıda 1.5-2 cm '
+                                         'hassas lenf nodu. Bilateral göz kapağı ödemi. Dalak kosta kenarını 3 cm '
+                                         'geçiyor, karaciğer 2 cm palpabl. Gövde ve kollarda birleşme eğilimli '
+                                         'makülopapüler döküntü, mukoza tutulumu yok.'},
+                         {'text': 'Tonsil eksüdası nedeniyle bakteriyel enfeksiyonun dirençli olduğunu düşünüp '
+                                  'intramüsküler benzatin penisilin uygulamak ve 48 saat sonra kontrole çağırmak',
                           'is_correct': False,
-                          'scenario_update': 'Rektal tuşe çocuk için travmatik oldu; dışkı örneğinde yumurta '
-                                             'görülmedi.',
-                          'teaching_point': 'Bu tabloda rektal tuşenin tanısal değeri yoktur; yumurtalar dışkıda değil '
-                                            'perianal deride bulunur.'},
-                         {'text': 'Huzursuz uyku ve iştahsızlık nedeniyle demir eksikliği ve davranış sorunlarını '
-                                  'öncelikli değerlendirip uyku hijyeni önermek ve hemogram istemek',
+                          'scenario_update': 'Penisilin uygulandı; döküntü yaygınlaştı ve kaşıntı arttı, ateş ve '
+                                             'yorgunluk değişmedi.',
+                          'teaching_point': 'Antibiyotiğe yanıtsız tonsillitte tedavi değiştirmeden önce lenf nodu '
+                                            'dağılımı ve organomegali değerlendirilmelidir.'},
+                         {'text': 'Ateş, döküntü ve göz kapağı şişliği nedeniyle sistemik vaskülit düşünüp '
+                                  'ekokardiyografi ve yüksek doz aspirin başlamak için hastayı Sarı Alana almak',
                           'is_correct': False,
-                          'scenario_update': 'Hemogram normal geldi; perianal bölge muayene edilmediği için kaşıntının '
-                                             'nedeni belirlenmedi.',
-                          'teaching_point': 'Huzursuz uyku burada kaşıntının sonucudur; öncelik perianal '
-                                            'değerlendirmedir.'},
-                         {'text': 'Perianal kaşıntıyı mantar enfeksiyonu kabul edip bölgeyi yüzeysel incelemek, '
-                                  'topikal antifungal krem başlamak ve iki hafta sonra kontrole çağırmak',
+                          'scenario_update': 'Ekokardiyografi normal bulundu; aspirin başlanması gereksiz kanama ve '
+                                             'Reye sendromu riski yarattı.',
+                          'teaching_point': 'Eksüdatif tonsillit, posterior servikal lenfadenopati ve organomegali bu '
+                                            'tablodan uzaklaştırır; önce tam muayene yapılmalıdır.'}]},
+            {'stage_title': 'Tetkik Kararı',
+             'question': 'Ön tablo değerlendirildikten sonra hangi tetkikleri istersiniz?',
+             'options': [{'text': 'Döküntü nedeniyle derhal deri biyopsisi planlamak, aynı zamanda serum IgE düzeyi ve '
+                                  'ilaç yama testi için dermatolojiye sevk etmek',
                           'is_correct': False,
-                          'scenario_update': 'Antifungal kreme rağmen gece kaşıntıları sürdü; kız kardeşteki '
-                                             'şikayetler de arttı.',
-                          'teaching_point': 'Gece artan kaşıntı ve ailede benzer yakınma paraziter etiyolojiyi '
-                                            'düşündürür; ampirik antifungal tedavi tanıyı geciktirir.'}]},
-            {'stage_title': 'Tetkik Stratejisi',
-             'question': 'Tanıyı doğrulamak için en uygun tetkik yöntemi hangisidir?',
-             'options': [{'text': 'Sabah uyanınca tuvalet ve banyodan önce perianal bölgeye şeffaf yapışkan bant '
-                                  'bastırıp lam üzerine yapıştırmak ve mikroskopta incelemek',
+                          'scenario_update': 'Biyopsi nonspesifik perivasküler infiltrasyon gösterdi; asıl hastalık '
+                                             'yine aydınlatılmadı.',
+                          'teaching_point': 'Tipik makülopapüler ilaç döküntüsü biyopsi gerektirmez; ateş ve '
+                                            'tonsillitin nedeni kan tetkikleriyle araştırılmalıdır.'},
+                         {'text': 'Yalnızca boğaz kültürü almak ve kültür sonucuna göre antibiyotik seçimini '
+                                  'düzenlemek, başka tetkik gerekmediğini söylemek',
+                          'is_correct': False,
+                          'scenario_update': 'Kültürde normal flora üredi; antibiyotik almış hastada sonuç '
+                                             'yorumlanamadı ve tablo açıklanamadı.',
+                          'teaching_point': 'Kültür antibiyotik sonrası yanlış negatif olabilir ve organomegali ile '
+                                            'lenfadenopatiyi açıklamaz.'},
+                         {'text': 'Lenfadenopati ve organomegaliyi açıklamak için acil boyun ve batın bilgisayarlı '
+                                  'tomografisi istemek, sonuca göre hematolojiye danışmak',
+                          'is_correct': False,
+                          'scenario_update': 'Tomografi lenfadenopati ve splenomegaliyi gösterdi ama nedeni '
+                                             'açıklamadı; hasta gereksiz radyasyon aldı.',
+                          'teaching_point': 'Organomegali ve lenfadenopatide ilk adım periferik yayma dahil kan '
+                                            'tetkikleridir; görüntüleme gerekirse ultrasonografi tercih edilir.'},
+                         {'text': 'Periferik yayma ile tam kan sayımı, karaciğer enzimleri ve heterofil antikor '
+                                  'testini istemek, gerekirse virüse özgü serolojiyle tamamlamak',
                           'is_correct': True,
-                          'explanation': 'Dişi kurtlar geceleri perianal deriye yumurta bırakır; sabah yıkanmadan önce '
-                                         'şeffaf bantla alınan örnek en duyarlı yöntemdir. Üç ardışık sabah yapılırsa '
-                                         "duyarlılık %90'ı aşar.",
-                          'new_finding': 'Ertesi sabah aile tarafından alınan bant örneğinin mikroskopisinde bir yüzü '
-                                         'düz, diğer yüzü bombeli, asimetrik, oval, ince kabuklu çok sayıda yumurta '
-                                         'görüldü.'},
-                         {'text': 'Üç ayrı günde dışkı örneği alarak parazit yumurtası ve kist açısından mikroskopik '
-                                  'inceleme yapmak, sonuçlar çıkana kadar tedaviyi ertelemek',
-                          'is_correct': False,
-                          'scenario_update': 'Üç dışkı örneği de negatif geldi; aile enfeksiyon olmadığını düşünerek '
-                                             'önlem almayı bıraktı.',
-                          'teaching_point': 'Bu parazitin yumurtaları dışkıya nadiren geçer; dışkı mikroskopisinin '
-                                            'duyarlılığı çok düşüktür.'},
-                         {'text': 'Perianal bölgeden steril eküvyonla sürüntü alıp bakteriyel ve fungal kültür '
-                                  'göndermek, kültür sonucuna göre tedaviyi düzenlemek',
-                          'is_correct': False,
-                          'scenario_update': 'Kültürde cilt florası üredi; sonuç yönetimi değiştirmedi ve tanı '
-                                             'gecikti.',
-                          'teaching_point': 'Kültür paraziter tanıda yararsızdır; yumurtaları göstermek için bant '
-                                            'yöntemi kullanılır.'},
-                         {'text': 'Eozinofil sayısı ve total IgE düzeyi için kan alıp eozinofili saptanırsa paraziter '
-                                  'enfeksiyon kabul ederek ampirik tedavi başlamak',
-                          'is_correct': False,
-                          'scenario_update': 'Eozinofil sayısı normal geldi; aile tedaviye gerek olmadığı sonucuna '
-                                             'vardı.',
-                          'teaching_point': 'Bu enfeksiyon dokuya invaze olmadığından eozinofili genellikle yoktur; '
-                                            'kan tetkikleri tanısal değildir.'}]},
+                          'explanation': 'Lenfositoz, atipik lenfositler ve transaminaz yüksekliği tanıyı destekler; '
+                                         'heterofil antikor ergende duyarlı bir hızlı testtir. Negatifse virüse özgü '
+                                         'serolojiyle doğrulanır.',
+                          'new_finding': 'Lökosit 14.200/mm³, lenfosit %62, atipik lenfosit %18, Hb 12.8 g/dL, '
+                                         'trombosit 162.000/mm³. ALT 112 U/L, AST 96 U/L, total bilirubin 0.9 mg/dL. '
+                                         'Heterofil antikor testi pozitif. Hızlı strep antijen testi negatif.'}]},
             {'stage_title': 'Klinik Tanı',
-             'question': 'Gece artan perianal kaşıntı, ailede benzer şikayet ve bant örneğinde asimetrik oval '
-                         'yumurtalar görülen bu çocukta tanı nedir?',
-             'options': [{'text': 'Perianal streptokokal dermatit',
-                          'is_correct': False,
-                          'scenario_update': 'Keskin sınırlı parlak eritem, ağrılı dışkılama veya kanlı dışkı yok; '
-                                             'bant örneğinde yumurtalar görüldü.',
-                          'teaching_point': 'Perianal streptokokal dermatitte hızlı antijen testi pozitiftir ve '
-                                            'parazit yumurtası görülmez.'},
-                         {'text': 'Ascaris lumbricoides enfeksiyonu',
-                          'is_correct': False,
-                          'scenario_update': 'Askaris yumurtaları dışkıda görülür ve perianal kaşıntı tipik değildir.',
-                          'teaching_point': 'Askariyazis çoğunlukla asemptomatik veya karın ağrısı, obstrüksiyon ve '
-                                            'akciğer bulgularıyla seyreder.'},
-                         {'text': 'Enterobiyazis (kıl kurdu)',
+             'question': 'Klinik ve laboratuvar bulgularına göre en olası tanınız nedir?',
+             'options': [{'text': 'Enfeksiyöz mononükleoz ve aminopenisilin döküntüsü',
                           'is_correct': True,
-                          'explanation': 'Gece perianal kaşıntı, ailede bulaş ve bant örneğinde bir yüzü düz, diğer '
-                                         'yüzü bombeli yumurtalar Enterobius vermicularis enfeksiyonunu doğrular.',
-                          'new_finding': 'Tanı: Enterobiyazis (Enterobius vermicularis).'},
-                         {'text': 'Atopik dermatit alevlenmesi',
+                          'explanation': 'Eksüdatif tonsillit, posterior servikal lenfadenopati, splenomegali, atipik '
+                                         'lenfositoz, transaminaz artışı ve pozitif heterofil antikor EBV '
+                                         'enfeksiyonunu gösterir. Amoksisilin sonrası döküntü bu tabloda sık görülür.',
+                          'new_finding': 'Tanı: EBV enfeksiyöz mononükleozu, amoksisiline bağlı makülopapüler '
+                                         'döküntü.'},
+                         {'text': 'Streptokoksik tonsillit ve gerçek penisilin alerjisi',
                           'is_correct': False,
-                          'scenario_update': 'Başka bölgelerde egzama yok, kaşıntı perianal bölgeye sınırlı ve ailede '
-                                             'bulaş var.',
-                          'teaching_point': 'Ailede eş zamanlı benzer kaşıntı bulaşıcı bir etkeni düşündürür.'}]},
-            {'stage_title': 'Tedavi ve Aile Planı',
-             'question': 'Bu çocuk ve ailesi için en uygun tedavi planı hangisidir?',
-             'options': [{'text': 'Yalnızca semptomlu çocuk ve kız kardeşine tek doz mebendazol vermek, diğer aile '
-                                  'bireylerini şikayet başlarsa tedavi etmek',
+                          'scenario_update': 'Hızlı antijen testi negatifti; splenomegali ve atipik lenfositoz '
+                                             'streptokoksik tonsillitle açıklanamazdı.',
+                          'teaching_point': 'Streptokoksik tonsillitte ön servikal lenfadenopati olur; splenomegali ve '
+                                            'atipik lenfositoz beklenmez.'},
+                         {'text': 'Sitomegalovirüs mononükleoz sendromu',
                           'is_correct': False,
-                          'scenario_update': 'Asemptomatik ebeveynden yeniden bulaş oldu; altı hafta sonra her iki '
-                                             'çocukta da kaşıntı tekrarladı.',
-                          'teaching_point': 'Hane halkında asemptomatik taşıyıcılık sıktır; tüm aile eş zamanlı tedavi '
-                                            'edilmelidir.'},
-                         {'text': 'Tüm hane halkına aynı gün tek doz mebendazol 100 mg veya pirantel pamoat 11 mg/kg '
-                                  'vermek, iki hafta sonra dozu tekrarlamak ve hijyen önlemlerini anlatmak',
+                          'scenario_update': 'Heterofil antikor pozitifti ve belirgin eksüdatif tonsillit vardı.',
+                          'teaching_point': 'CMV mononükleozunda farenjit ve lenfadenopati hafiftir, heterofil test '
+                                            'negatiftir.'},
+                         {'text': 'Akut lösemi ilk başvurusu',
+                          'is_correct': False,
+                          'scenario_update': 'Hb ve trombosit normaldi, yaymada blast yoktu.',
+                          'teaching_point': 'Lösemide sitopeniler ve yaymada blastlar beklenir; atipik lenfositler '
+                                            'reaktif hücrelerdir.'}]},
+            {'stage_title': 'Tedavi ve Taburculuk Planı',
+             'question': 'Bu hasta için en doğru tedavi ve taburculuk planı hangisidir?',
+             'options': [{'text': 'Tonsil ödemini hızla azaltmak ve hastalık süresini kısaltmak için beş gün oral '
+                                  'prednizolon başlayıp amoksisilini kesmek ve taburcu etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Steroid başlandı; yorgunluk süresi değişmedi ve havayolu sorunu olmayan '
+                                             'hastaya gereksiz ilaç verilmiş oldu.',
+                          'teaching_point': 'Kortikosteroidler komplike olmayan olguda önerilmez; havayolu daralması, '
+                                            'ağır hemoliz veya trombositopenide düşünülür.'},
+                         {'text': 'Amoksisilini kesip parasetamol veya ibuprofen, bol sıvı ve istirahat önermek; en az '
+                                  '3-4 hafta temas sporundan uzak durmasını söylemek',
                           'is_correct': True,
-                          'explanation': 'Antihelmintikler erişkin kurtları öldürür ancak yumurtalara etkisizdir; iki '
-                                         'hafta sonra yumurtadan çıkan yeni kurtlar için ikinci doz gerekir. Tırnak '
-                                         'kesimi, sabah banyo, el yıkama ve çarşaf-pijamaların sıcak yıkanması yeniden '
-                                         'bulaşı önler.',
-                          'new_finding': 'Tüm aileye aynı gün tek doz mebendazol verildi, iki hafta sonra tekrarlandı. '
-                                         'Çarşaf ve pijamalar sıcak suda yıkandı. Bir ay sonra iki çocuğun da '
-                                         'kaşıntısı tamamen geçmişti.'},
-                         {'text': 'Çocuğa tek doz albendazol 400 mg verip kontrol bant testi negatif olana kadar '
-                                  'haftalık örnek almak ve kardeşini ayrı odada yatırmak',
+                          'explanation': 'Tedavi destekleyicidir. Döküntü gerçek alerji değildir ve kayıtlara '
+                                         'penisilin alerjisi olarak yazılmamalıdır. Dalak rüptürü riski nedeniyle '
+                                         'temas sporu kısıtlanır.',
+                          'new_finding': 'Hasta destek tedavisiyle taburcu edildi. Döküntü bir haftada soldu, ateş 10. '
+                                         'günde geriledi. Dört hafta sonraki kontrolde dalak ele gelmiyordu ve '
+                                         'voleybola dönüşüne izin verildi.'},
+                         {'text': 'Döküntü nedeniyle tıbbi kayda kalıcı penisilin alerjisi yazmak, antibiyotiği '
+                                  'azitromisinle değiştirip beş gün daha devam ettirmek',
                           'is_correct': False,
-                          'scenario_update': 'Tek doz sonrası iki hafta içinde yeni kurtlar çıktı ve kaşıntı '
-                                             'tekrarladı; aile içi bulaş sürdü.',
-                          'teaching_point': 'Tek doz yetersizdir; iki hafta sonra tekrar doz ve tüm hanenin tedavisi '
-                                            'esastır.'},
-                         {'text': 'Çocuğa yedi gün boyunca günde iki kez mebendazol vermek, kreşe tedavi bitene kadar '
-                                  'göndermemek ve evcil hayvanı veterinere götürmek',
+                          'scenario_update': 'Hasta yanlış biçimde penisilin alerjisi olarak etiketlendi; ileride ilk '
+                                             'basamak antibiyotikler kullanılamayacak hale geldi.',
+                          'teaching_point': 'Bu tablodaki aminopenisilin döküntüsü gerçek alerji değildir; antibiyotik '
+                                            'endikasyonu da yoktur.'},
+                         {'text': 'Ateş düşünce bir hafta içinde okula ve spor antrenmanlarına dönebileceğini '
+                                  'söylemek, ilaç önermeden aile hekimi kontrolü planlamak',
                           'is_correct': False,
-                          'scenario_update': 'Uzun süreli tedavi gereksizdi; çocuk kreşten uzak kaldı ve evcil hayvan '
-                                             'gereksiz yere tedavi edildi.',
-                          'teaching_point': 'Bu parazit yalnızca insanda yaşar; evcil hayvanlar kaynak değildir. Kreşe '
-                                            'ara vermek gerekmez.'}]}]},
- {'id': 'G60',
+                          'scenario_update': 'İkinci haftada voleybol maçında sol üst kadrana darbe alan hasta '
+                                             'şiddetli karın ağrısıyla getirildi.',
+                          'teaching_point': 'Splenomegali olan hastada temas sporu ve ağır egzersiz en az 3-4 hafta '
+                                            'kısıtlanmalıdır.'}]}]},
+ {'id': 'Y60',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '6 Yaşında',
   'gender': 'Kız',

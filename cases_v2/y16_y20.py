@@ -1,672 +1,735 @@
 # -*- coding: utf-8 -*-
 """
-Sarı Alan Vakaları - Y16 - Y20 (v2 Şartnamesine Uygun Yeniden Yazım)
+Yeşil Alan Vakaları - Y16-Y20 (Yeniden Yazılmış v2)
+Y17, Y18, Y19, Y20 vakaları Yeşil Alana başvurup muayenede saptanan kritik bulgular nedeniyle
+Sarı Alana devredilerek yönetimine Sarı Alanda devam edilen vakalardır.
 """
 
 CASES = [
     {
         "id": "Y16",
-        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
-        "age": "7 Yaş",
+        "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
+        "age": "4 Yaş",
         "gender": "Erkek",
-        "complaint": "Fındıklı çikolata yedikten 15 dakika sonra vücutta yaygın kaşıntılı kabarıklıklar, dudaklarda şişlik, ses kısıklığı ve kıvrandırıcı karın ağrısı",
-        "history": "Ailesi 7 yaşındaki (25 kg) erkek çocuğu kucaklarında Sarı Alana getiriyor: 'Okuldan gelince arkadaşının ikram ettiği fındıklı çikolatadan iki ısırık aldı. Yaklaşık 10-15 dakika içinde boynu ve gövdesi kıpkırmızı olup kabardı, dudakları şişti. Şimdi boğazım düğümleniyor diyor, sesi boğuklaştı, hafif hırıltısı başladı ve karnım çok ağrıyor diyerek iki büklüm kıvranıyor.'",
-        "final_diagnosis": "Akut Sistemik Anafilaksi (Besin Kaynaklı IgE Aracılı Tip 1 Hipersensitivite Reaksiyonu)",
-        "disposition": "Sarı Alanda Acil İntramusküler Adrenalin (0.01 mg/kg) + Oksijen + İV Kristaloid Desteği + En Az 6-8 Saatlik Bifazik Reaksiyon Monitörizasyonu ve Otoenjektör Reçetesi ile Taburculuk",
-        "case_pearl": "Anafilaksi, alerjen maruziyeti sonrası dakikalar içinde cilt/mukoza bulgularına (ürtiker, anjiyoödem) ek olarak solunum (stridor, bronkospazm, dispne), dolaşım (hipotansiyon, taşikardi, hipoperfüzyon) veya şiddetli gastrointestinal semptomların (kıvrandırıcı kolik karın ağrısı, tekrarlayan kusma) eşlik ettiği yaşamı tehdit eden sistemik reaksiyondur. Tek birinci basamak hayat kurtarıcı ilaç uyluk anterolateral (vastus lateralis) kasına uygulanan İNTRAMUSKÜLER ADRENALİNDİR (1:1000, 0.01 mg/kg, çocukta maks 0.3-0.5 mg). Hasta sırtüstü yatırılıp bacakları yükseltilmeli, boş ventrikül sendromu riski nedeniyle aniden dik oturtulmamalı veya ayağa kaldırılmamalıdır. Bifazik reaksiyon riskine karşı en az 6-8 saat izlenmeli ve adrenalin otoenjektörü eğitimiyle taburcu edilmelidir.",
+        "complaint": "Burun delikleri ve ağız çevresinde kaşıntılı, sarı-kehribar rengi kabuklu yaralar",
+        "history": (
+            "Annesi anlatıyor: '4-5 gün önce burnunun altında sinek ısırığı gibi küçük bir kızarıklık vardı, "
+            "kaşıdıkça yayıldı. Şimdi burun kenarında ve çenesinde üzeri sarı bal kurumuş gibi kabuklu 3-4 "
+            "tane yara oldu. Ateşi yok, keyfi ve iştahı yerinde.'"
+        ),
+        "final_diagnosis": "Büllöz Olmayan İmpetigo (Non-büllöz İmpetigo - S. aureus / S. pyogenes)",
+        "disposition": "Yeşil Alandan Topikal Antibiyotik (Mupirosin/Fusidik Asit) ve Hijyen Eğitimi ile Taburculuk",
+        "case_pearl": (
+            "Çocuklarda en sık bakteriyel deri enfeksiyonu olan non-büllöz impetigoda burun ve ağız "
+            "çevresinde eritemli zeminde 'bal rengi krutlar' (honey-colored crusts) tipiktir. Sınırlı ve "
+            "az sayıda lezyonu olan, sistemik bulgusu bulunmayan vakalarda ilk tercih tedavi kabukların "
+            "ılık sabunlu suyla yumuşatılarak temizlenmesi ve topikal Mupirosin veya Fusidik asit "
+            "uygulanmasıdır."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Hasta Pozisyonu",
-                "question": "Şüpheli besin alımı sonrası cilt bulguları, ses kısıklığı ve karın ağrısı ile başvuran 7 yaşındaki (25 kg) çocukta ilk değerlendirme ve pozisyonlandırma yaklaşımınız ne olmalıdır?",
+                "stage_title": "Dermatolojik ve Sistemik Fizik Muayene",
+                "question": "Perioral ve perinazal kabuklu lezyonlarla başvuran bu çocukta fizik muayenede öncelikle neleri değerlendirmelisiniz?",
                 "options": [
                     {
-                        "text": "Hastayı solunumunu rahatlatmak amacıyla sedyede tam dik oturtmak, vital bulgularını ölçmek ve ağızdan hızlı etkili setirizin şurubu içirerek gözleme almak",
+                        "text": "Lezyon zeminindeki bakteriyel yükü hızla azaltmak amacıyla kabukları kuru gazlı bezle kazıyarak tamamen kaldırmak ve kanayan zemine povidon iyot solüsyonu sürerek sıkı kapalı pansuman yapmak",
                         "is_correct": False,
-                        "scenario_update": "Dik oturtulan çocukta venöz dönüşün aniden azalmasıyla baş dönmesi ve hipotansiyon gelişti; ayrıca yutma güçlüğü nedeniyle oral şurubu aspire etme tehlikesi yaşandı.",
-                        "teaching_point": "Sistemik aşırı duyarlılık tablolarında hasta aniden dik oturtulmamalı veya ayağa kaldırılmamalıdır; üst hava yolu ödemi bulgusu varken oral ilaç verilmesi aspirasyon riski taşır."
+                        "scenario_update": "Kuru halde zorla kaldırılan kabuklar yüzeyel dermiste kanamaya, şiddetli ağrıya ve çevre sağlam deriye oto-inokülasyon riskine yol açtı.",
+                        "teaching_point": "Yüzeyel epidermal kabuklar asla kuru kuruya kazınarak koparılmamalı; ılık su veya serum fizyolojikli kompresle yumuşatılarak nazikçe temizlenmelidir.",
                     },
                     {
-                        "text": "Hastayı hızla sırtüstü yatırıp alt ekstremitelerini yükseltmek, havayolu açıklığını, solunum seslerini, periferik perfüzyonu ve kan basıncını değerlendirerek monitörize oksijen başlamak",
+                        "text": "Lezyonların sayısını ve dağılımını, sarı-kehribar rengi krut yapısını, çevre deride basmakla soyulma veya derin endürasyon varlığını ve bölgesel lenf nodlarını muayene etmek",
                         "is_correct": True,
-                        "explanation": "Çoklu sistem tutulumu düşündüren akut aşırı duyarlılık tablolarında venöz dönüşü korumak için hasta supin pozisyona alınmalı ve hızla ABCDE değerlendirmesi yapılmalıdır.",
-                        "new_finding": "Vital Bulgular: KTA 142/dk, SS 30/dk, TA 84/50 mmHg, SpO2 %93, KDZ 3 saniye. Fizik Muayene: Alt ve üst dudakta belirgin ödem, uvula ödemli, gövdede yaygın eritematöz plaklar, inspiratuar kaba ses ve ses kısıklığı, oskültasyonda bilateral ekspiratuar hışıltı, batında yaygın hassasiyet mevcut."
+                        "explanation": "Yüzeyel sınırlı epidermal enfeksiyonu yaygın büllöz tablolardan, eksfoliyatif toksin aracılı soyulmalardan veya derin yumuşak doku enfeksiyonundan ayırt etmek tedavi yolunu belirler.",
+                        "new_finding": "Vital Bulgular: Ateş 36.7°C, KTA 95/dk. Perioral ve perinazal bölgede toplam 4 adet, 0.5-1 cm çapında, eritemli zeminde sarı-bal rengi krutlu plaklar mevcut. Yaygın bül yok, basmakla epidermis soyulması negatif, derin doku endürasyonu veya ısı artışı yok. Submandibuler 0.8 cm mobil reaktif lenf nodu dışında sistemik muayene doğal.",
                     },
                     {
-                        "text": "Öncelikle alerjen spesifik IgE ve triptaz düzeyi için kan örneği alıp damar yolu açmak, laboratuvar sonuçları çıkana kadar ilaç uygulamadan izlemek",
+                        "text": "Yüzün orta hattındaki deri enfeksiyonlarının kavernöz sinüs komşuluğu taşıması nedeniyle hastayı acil gözleme yatırarak damar yolu açmak ve kraniyal-oftalmolojik konsültasyon istemek",
                         "is_correct": False,
-                        "scenario_update": "Damar yolu açılması ve kan alınması sürecinde geçen dakikalar içinde üst hava yolu ödemi ilerledi, inspiratuar ses belirginleşti ve oksijen satürasyonu %88 düzeyine geriledi.",
-                        "teaching_point": "Akut solunum ve dolaşım tutulumu olan aşırı duyarlılık reaksiyonlarında tanı tamamen klinik bulgulara dayanır; laboratuvar tetkikleri acil müdahaleyi asla geciktirmemelidir."
+                        "scenario_update": "Ateşi, periorbital ödemi veya derin selülit bulgusu olmayan tamamen yüzeyel 4 adet lezyon için gereksiz invaziv girişim ve konsültasyon planlandı.",
+                        "teaching_point": "Kavernöz sinüs trombozu riski fasiyal üçgendeki derin fronkül veya ağır selülitlerde söz konusudur; epidermise sınırlı yüzeyel krutlu lezyonlarda yatış gerekmez.",
                     },
                     {
-                        "text": "Solunum sıkıntısını gidermek için öncelikle soğuk buhar ve nebulize salbutamol uygulamak, cilt döküntüleri için topikal kortikosteroid losyon sürerek yanıtı beklemek",
+                        "text": "Fizik muayeneyi yalnızca burun çevresiyle sınırlı tutup vezikül-krut ayrımı veya tüm vücut deri kontrolü yapmadan doğrudan geniş spektrumlu ampirik oral antibiyotik reçete etmek",
                         "is_correct": False,
-                        "scenario_update": "Nebulize salbutamol uygulamasına rağmen hastanın ses kısıklığı ve üst hava yolu obstrüksiyon bulguları gerilemedi, arteriyel kan basıncı 76/42 mmHg düzeyine düştü.",
-                        "teaching_point": "Nebulize bronkodilatörler üst hava yolu ödemini ve sistemik vasküler permeabilite artışını düzeltmez; yalnızca birincil parenteral tedaviye ek destek olarak kullanılabilir."
-                    }
-                ]
+                        "scenario_update": "Gövde ve ekstremiteler kontrol edilmediği için lezyonların gerçekten sınırlı olup olmadığı ve büllöz tutulum varlığı doğrulanamadı.",
+                        "teaching_point": "Deri enfeksiyonlarında tedavi seçimi lezyonların toplam yaygınlığına ve bül varlığına göre yapıldığından tüm deri yüzeyi incelenmelidir.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Farmakolojik Müdahale ve Uygulama Yolu",
-                "question": "Üst hava yolu ödemi, bronkospazm ve sınırda hipotansiyonu saptanan 25 kg ağırlığındaki bu hastada derhal uygulanması gereken ilk basamak ilaç ve uygulama şekli hangisidir?",
+                "stage_title": "Tetkik İstem Kararı",
+                "question": "Sınırlı sayıda (4 adet) perioral krutlu lezyonu olan, ateşi ve derin doku bulgusu bulunmayan bu çocukta hangi tetkikler istenmelidir?",
                 "options": [
                     {
-                        "text": "Damar yolundan 1 mg/kg metilprednizolon ve 1 mg/kg feniramin maleat yavaş puşe olarak uygulamak, klinik yanıt olmazsa ikinci basamakta vazopresör eklemek",
+                        "text": "Topikal veya sistemik tedaviye başlamadan önce krut altından bakteriyolojik yara sürüntü kültürü ve antibiyogram alarak üreme sonucuna göre hedefe yönelik antibiyotik planlamak",
                         "is_correct": False,
-                        "scenario_update": "İntravenöz antihistaminik ve kortikosteroid uygulamasından 10 dakika sonra hastanın stridoru şiddetlendi, siyanoz gelişti ve kan basıncı 68/35 mmHg düzeyine geriledi.",
-                        "teaching_point": "H1-antihistaminikler yalnızca cilt semptomlarını hafifletir, kortikosteroidlerin etkisi ise saatler sonra başlar; her iki ilaç da akut laringeal ödemi ve şoku önleyemez."
+                        "scenario_update": "Kültür sonucu 48-72 saat sonra S. aureus olarak raporlandı; bu sürede tedavisiz bekleyen çocukta oto-inokülasyonla yeni lezyonlar çıktı.",
+                        "teaching_point": "Tipik ve sınırlı yüzeyel piyodermilerde rutin yara kültürü önerilmez; kültür yalnızca tedaviye dirençli, tekrarlayan veya MRSA salgını şüphesi olan vakalarda alınır.",
                     },
                     {
-                        "text": "1:1000 konsantrasyondaki adrenalinden 0.25 mg çekerek sulandırmadan doğrudan periferik damar yolundan hızlı intravenöz bolus şeklinde puşe etmek ve sıvı yüklemek",
+                        "text": "Bakteriyel deri enfeksiyonu sonrası akut böbrek tutulumu riskini erken saptamak amacıyla tam idrar tetkiki, serum ASO titresi, kompleman C3 düzeyi ve renal fonksiyon testleri istemek",
                         "is_correct": False,
-                        "scenario_update": "Konsantre intravenöz adrenalin bolusu sonrasında hastada şiddetli hipertansif atak, göğüs ağrısı ve monitörde polimorfik ventriküler ekstrasistoller ile taşiaritmi gelişti.",
-                        "teaching_point": "1:1000 konsantrasyondaki adrenalin yalnızca intramusküler kullanım içindir; doğrudan intravenöz bolus uygulanması ölümcül ventriküler aritmilere ve intrakraniyal kanamaya yol açabilir."
+                        "scenario_update": "LABORATUVAR: TİT normal, ASO 80 IU/mL, C3 125 mg/dL, Kreatinin 0.35 mg/dL. Sonuçlar klinik yönetimi hiçbir şekilde değiştirmedi.",
+                        "teaching_point": "Akut poststreptokoksik glomerülonefrit deri enfeksiyonundan 2-6 hafta sonra gelişebilir; aktif, asemptomatik yüzeyel lezyon aşamasında rutin C3 veya idrar taraması endike değildir.",
                     },
                     {
-                        "text": "1:1000 konsantrasyondaki adrenalinden 0.25 mg dozunda uyluk anterolateral vastus lateralis kasına intramusküler uygulamak ve izotonik kristaloid desteği başlamak",
+                        "text": "Klinik görünüm yüzeyel epidermise sınırlı olduğu ve sistemik enfeksiyon bulgusu saptanmadığı için ek kan tetkiki veya sürüntü kültürü istemeden tanıya yönelmek",
                         "is_correct": True,
-                        "explanation": "Alfa-1 vazokonstriktör etkisiyle mukozal ödemi azaltan, beta-2 etkisiyle bronkodilatasyon sağlayan ve mast hücre degranülasyonunu durduran tek birinci basamak tedavi intramusküler adrenalindir.",
-                        "new_finding": "Sol vastus lateralis kasına 0.25 mg intramusküler adrenalin uygulandı ve 20 mL/kg %0.9 NaCl infüzyonu başlandı. 5 dakika içinde ses kısıklığı ve stridor geriledi, SpO2 %98, TA 102/64 mmHg, KTA 116/dk ölçüldü, döküntüler solmaya başladı."
+                        "explanation": "Genel durumu iyi, ateşi olmayan ve sınırlı sayıda tipik yüzeyel krutlu lezyonu bulunan çocuklarda tanı kliniktir; laboratuvar veya kültür tetkiki gerekmez.",
+                        "new_finding": "Ek laboratuvar veya kültür tetkiki istenmedi; klinik bulgularla tanı ve tedavi aşamasına geçildi.",
                     },
                     {
-                        "text": "1:1000 konsantrasyondaki adrenalinden 0.25 mg dozunda kolun deltoid bölgesine cilt altına enjekte etmek ve eş zamanlı nebulize budesonid tedavisi başlamak",
+                        "text": "Enfeksiyonun derin yumuşak dokuya yayılımını ve sistemik inflamatuar yanıtı değerlendirmek amacıyla tam kan sayımı, CRP, prokalsitonin ve periferik kan kültürü tetkikleri istemek",
                         "is_correct": False,
-                        "scenario_update": "Subkutan enjeksiyon sonrası ciltteki vazokonstriksiyon nedeniyle ilacın sistemik emilimi gecikti, 15 dakika geçmesine rağmen solunum sıkıntısı ve hipotansiyon düzelmedi.",
-                        "teaching_point": "Uyluk anterolateral (vastus lateralis) kasına intramusküler uygulama, subkutan veya deltoid kası uygulamasına göre çok daha hızlı ve yüksek zirve plazma konsantrasyonu sağlar."
-                    }
-                ]
+                        "scenario_update": "LABORATUVAR: WBC 8.400/mm³, CRP 2.1 mg/L, Prokalsitonin 0.04 ng/mL. Ateşsiz çocukta gereksiz kan alma işlemi yapıldı.",
+                        "teaching_point": "Ateş, bölgesel selülit veya toksik görünüm eşlik etmeyen lokalize yüzeyel deri enfeksiyonlarında sistemik akut faz reaktanları ve kan kültürü istenmez.",
+                    },
+                ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Alerjen besin teması sonrası dakikalar içinde cilt-mukoza, solunum ve gastrointestinal sistem bulgularının birlikte geliştiği bu tablonun kesin tanısı nedir?",
+                "question": "Klinik öykü ve fizik muayene bulgularıyla bu hastada en doğru tanı hangisidir?",
                 "options": [
                     {
-                        "text": "Besin Kaynaklı Akut Sistemik Anafilaksi",
+                        "text": "Non-büllöz İmpetigo",
                         "is_correct": True,
-                        "explanation": "Bilinen veya olası bir alerjen maruziyeti sonrası dakikalar içinde cilt/mukoza tutulumuna solunum ve persistan gastrointestinal bulguların eşlik etmesi WAO/EAACI kriterlerine göre kesin anafilaksi tanısı koydurur.",
-                        "new_finding": "Kesin tanı: Besin Kaynaklı Akut Sistemik Anafilaksi. İlk doz İM adrenalin ile havayolu ve dolaşım stabilizasyonu sağlandı."
+                        "explanation": "Burun ve ağız çevresinde kaşıma/mikrotravma sonrası gelişen, eritemli zeminde bal rengi kalın krutlarla karakterize yüzeyel lezyonlar non-büllöz impetigo için tipiktir.",
+                        "new_finding": "Kesin Tanı: Lokalize Non-büllöz İmpetigo.",
                     },
                     {
-                        "text": "Akut Jeneralize Ürtiker ve Anjiyoödem",
+                        "text": "Eksfoliyatif Büllöz İmpetigo",
                         "is_correct": False,
-                        "scenario_update": "İzole ürtiker ve anjiyoödemde laringeal stridor, bronkospazm, hipotansiyon veya şiddetli gastrointestinal sistem tutulumu bulunmaz.",
-                        "teaching_point": "Cilt ve mukoza bulgularına solunum, dolaşım veya şiddetli gastrointestinal semptomlardan en az birinin eşlik etmesi tabloyu izole ürtikerden çıkarıp anafilaksiye taşır."
+                        "scenario_update": "Hastada eksfoliyatif toksin A'ya bağlı gevşek, şeffaf-sarı sıvı dolu intakt büller veya bül yırtılması sonrası ince vernik benzeri yakalık (collarette) görünümü yoktur.",
+                        "teaching_point": "Büllöz impetigoda sağlam deride gelişen gevşek büller ve açıldığında çevresinde kalan ince skuamlı halka görülür; kalın bal rengi krutlar non-büllöz formun özelliğidir.",
                     },
                     {
-                        "text": "Herediter Anjiyoödem Akut Laringeal Atağı",
+                        "text": "Sekonder Enfekte Perioral Atopik Dermatit",
                         "is_correct": False,
-                        "scenario_update": "Herediter anjiyoödem bradikinin aracılıdır; kaşıntılı ürtiker plakları eşlik etmez ve adrenalin tedavisine yanıt vermez.",
-                        "teaching_point": "Herediter anjiyoödemde C1 esteraz inhibitör eksikliğine bağlı ürtikersiz, kaşıntısız ödem görülür; bu hastada yaygın kaşıntılı ürtiker ve adrenaline hızlı yanıt mevcuttur."
+                        "scenario_update": "Çocuğun özgeçmişinde kronik tekrarlayan kuruluk, fleksüral egzama veya atopi öyküsü olmayıp lezyonlar sağlıklı deride sinek ısırığı sonrası akut başlamıştır.",
+                        "teaching_point": "Kronik kserozis ve egzamatöz zemin olmadan sağlıklı deride akut başlayan bal rengi krutlu plaklar primer non-büllöz impetigodur.",
                     },
                     {
-                        "text": "Besin Proteini İlişkili Enterokolit Sendromu",
+                        "text": "Rekürren Herpes Simpleks Labialis",
                         "is_correct": False,
-                        "scenario_update": "Besin proteini ilişkili enterokolit sendromu (FPIES) IgE aracılı değildir; alımdan 1-4 saat sonra gecikmiş inatçı kusma ile seyreder, ürtiker ve stridor yapmaz.",
-                        "teaching_point": "Dakikalar içinde gelişen ürtiker, anjiyoödem ve laringeal ödem IgE aracılı Tip 1 aşırı duyarlılık reaksiyonunu (anafilaksi) gösterir."
-                    }
-                ]
+                        "scenario_update": "Lezyonlar dudak vermilion sınırında ağrılı-yanmalı prodromla çıkan grup halinde milimetrik veziküller değil, burun altı ve çene derisinde kaşıntılı bal rengi krutlu plaklardır.",
+                        "teaching_point": "Herpes labialis dudak mukokutanöz birleşiminde eritemli zeminde küme yapmış ağrılı küçük veziküllerle seyreder.",
+                    },
+                ],
             },
             {
-                "stage_title": "Sarı Alan Gözlem Süresi ve Taburculuk Planı",
-                "question": "İlk doz intramusküler adrenalin sonrası klinik bulguları tamamen düzelen 25 kg ağırlığındaki bu hastanın izlem ve taburculuk yönetimi nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Sınırlı sayıda (4 adet) lokalize non-büllöz impetigo lezyonu olan bu çocukta kılavuzlara göre ilk basamak tedavi ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Semptomları tamamen gerilediği için 1 saatlik gözlem sonunda oral antihistaminik reçete ederek taburcu etmek ve 1 hafta sonra alerji polikliniğine yönlendirmek",
-                        "is_correct": False,
-                        "scenario_update": "Erken taburcu edilen çocukta ilk ataktan 5 saat sonra evde tekrar alerjen teması olmaksızın şiddetli stridor ve hipotansiyonla seyreden bifazik reaksiyon gelişti.",
-                        "teaching_point": "Anafilaksi olgularının %5-20 kadarında ilk semptomlar düzeldikten saatler sonra bifazik reaksiyon gelişebildiğinden hastalar en az 6-8 saat gözlem altında tutulmalıdır."
-                    },
-                    {
-                        "text": "Hastayı 2 saat gözlemde tuttuktan sonra yalnızca oral metilprednizolon ve desloratadin şurup reçete ederek, adrenalin otoenjektörü yazmadan aileye diyet listesiyle taburcu etmek",
-                        "is_correct": False,
-                        "scenario_update": "Adrenalin otoenjektörü reçete edilmeyen hasta birkaç hafta sonra okulda gelişen kazara maruziyette ilk müdahale yapılamadığı için ağır solunum yetmezliği ile acile getirildi.",
-                        "teaching_point": "Besin anafilaksisi geçiren her çocuğa taburculukta mutlaka ağırlığına uygun adrenalin otoenjektörü reçete edilmeli ve aileye yazılı acil eylem planı verilmelidir."
-                    },
-                    {
-                        "text": "Bifazik reaksiyonu kesin olarak engellemek amacıyla 6 saatlik gözlem süresince her 2 saatte bir profilaktik düşük doz intramusküler adrenalin enjeksiyonu tekrarlamak",
-                        "is_correct": False,
-                        "scenario_update": "Semptomu kalmayan hastaya yapılan tekrarlayan gereksiz adrenalin enjeksiyonları şiddetli taşikardi, hipertansiyon, tremor ve anksiyeteye yol açtı.",
-                        "teaching_point": "Adrenalin yalnızca aktif semptom varlığında (ilk doza 5-15 dakikada yanıt alınamazsa veya semptomlar nüksederse) tekrarlanır; asemptomatik hastaya profilaktik tekrar doz yapılmaz."
-                    },
-                    {
-                        "text": "Bifazik reaksiyon riski açısından en az 6-8 saat monitörize gözlemde tutmak, taburculukta adrenalin otoenjektörü reçete ederek aileye uygulamalı eğitim vermek",
+                        "text": "Krutları ılık sabunlu suyla yumuşatarak temizlemek, günde 3 kez topikal %2 mupirosin krem sürmek ve 24 saat sonra kreşe dönebileceği bilgisiyle taburcu etmek",
                         "is_correct": True,
-                        "explanation": "Solunum tutulumu olan anafilaksi hastaları bifazik reaksiyon açısından en az 6-8 saat izlenmeli, taburculukta adrenalin otoenjektörü reçete edilerek çocuk alerji bölümüne yönlendirilmelidir.",
-                        "new_finding": "Hasta Sarı Alanda 8 saat boyunca monitörize izlendi ve bifazik reaksiyon gelişmedi. Aileye adrenalin otoenjektörü kullanımı maket üzerinde uygulamalı olarak öğretildi, yazılı eylem planı ve Çocuk Alerji randevusu verilerek güvenle taburcu edildi."
-                    }
-                ]
-            }
-        ]
+                        "explanation": "IDSA ve pediatrik dermatoloji rehberlerine göre sınırlı ve komplike olmayan non-büllöz impetigoda topikal mupirosin veya fusidik asit ilk tercihtir; oral antibiyotik kadar etkilidir ve yan etkisi daha azdır.",
+                        "new_finding": "Topikal %2 mupirosin krem, tırnakların kısa kesilmesi ve havlu ayrımı eğitimi verilerek hasta şifayla taburcu edildi.",
+                    },
+                    {
+                        "text": "Topikal tedavinin yüz bölgesinde yetersiz kalacağı düşüncesiyle doğrudan 10 gün süreyle oral amoksisilin-klavulanat (45 mg/kg/gün) reçete edip lezyonlar tamamen iyileşene dek kreşi yasaklamak",
+                        "is_correct": False,
+                        "scenario_update": "Sınırlı 4 lezyon için verilen 10 günlük sistemik geniş spektrumlu antibiyotik çocukta antibiyotik ilişkili ishale yol açtı.",
+                        "teaching_point": "Oral antibiyotik (sefaleksin veya amoksisilin-klavulanat) yalnızca çok sayıda/yaygın lezyon varlığında, büllöz impetigoda veya kreş salgınlarında tercih edilir; kreş izolasyonu etkili tedavinin 24. saatine kadardır.",
+                    },
+                    {
+                        "text": "Kaşıntı ve eritemi hızla baskılamak amacıyla günde 2 kez topikal mometazon furoat krem ile topikal ketokonazol kremi birlikte reçete ederek 1 hafta sonra poliklinik kontrolüne çağırmak",
+                        "is_correct": False,
+                        "scenario_update": "Bakteriyel piyodermiye uygulanan topikal kortikosteroid lokal bağışıklığı baskılayarak lezyonların tüm yanaklara yayılmasına neden oldu.",
+                        "teaching_point": "İmpetigo S. aureus ve S. pyogenes kaynaklı bakteriyel bir enfeksiyondur; topikal steroid ve antifungal kremler tabloyu ağırlaştırır.",
+                    },
+                    {
+                        "text": "Poststreptokoksik nefriti önlemek amacıyla tek doz intramüsküler benzatin penisilin G uygulamak ve lezyonların üzerini hava almayacak şekilde steril oklüzif sargıyla kapatarak evde izlemek",
+                        "is_correct": False,
+                        "scenario_update": "Non-büllöz impetigoda en sık etken beta-laktamaz salgılayan S. aureus olduğu için penisilin G etkisiz kaldı ve lezyonlar gerilemedi.",
+                        "teaching_point": "Non-büllöz impetigoda başat etken S. aureus olduğundan dar spektrumlu penisilinler etkisizdir; ayrıca antibiyotik tedavisi poststreptokoksik glomerülonefrit gelişimini engellemez.",
+                    },
+                ],
+            },
+        ],
     },
     {
         "id": "Y17",
         "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
-        "age": "13 Yaş",
+        "age": "9 Yaş",
         "gender": "Erkek",
-        "complaint": "Gece uykudan uyandıran sol kasık ve skrotumda ani başlayan şiddetli ağrı, şişlik, kızarıklık ve iki kez kusma",
-        "history": "13 yaşındaki erkek hasta babası tarafından sabah 06:00'da Sarı Alana getiriliyor: 'Gece saat 03:00 civarında sol kasığımda ve torbamda bıçak saplanır gibi çok şiddetli bir ağrıyla uyandım. Ağrının şiddetinden iki kez kustum. Sol tarafım şişti ve kızardı, yürürken bacağımı hareket ettiremiyorum. Ateşim, üşümem veya idrar yaparken yanmam olmadı.'",
-        "final_diagnosis": "Akut Sol Testis Torsiyonu (Spermatik Kord Torsiyonu ve Akut Testiküler İskemi)",
-        "disposition": "Sarı Alanda Acil Renkli Doppler USG + Eş Zamanlı Çocuk Cerrahisi / Üroloji Konsültasyonu ile Altın 6 Saat İçinde Acil Cerrahi Detorsiyon ve Bilateral Orşiopeksi",
-        "case_pearl": "Akut skrotal ağrı ve kusma ile başvuran her çocuk ve adölesanda aksi kanıtlanana kadar testis torsiyonu düşünülmelidir. Fizik muayenede en duyarlı bulgu ipsilateral kremasterik refleks kaybıdır; testisin skrotumda yüksek ve transvers (yatay) yerleşimi ile skrotal elevasyonla ağrının azalmaması (negatif Prehn bulgusu) tanıyı destekler. Organın kurtarılabilmesi için altın pencere ilk 6 saattir (>%90 kurtarılma oranı). Renkli Doppler USG'de parankimal kan akımının izlenmemesi ve spermatik kordda girdap (whirlpool) görünümü tipiktir. Zemininde sıklıkla bilateral çan tokmağı (bell-clapper) deformitesi bulunduğundan cerrahi eksplorasyonda detorsiyon sonrası mutlaka her iki testise bilateral orşiopeksi yapılmalıdır.",
+        "complaint": "Karın ağrısı, iştahsızlık ve 2 kez kusma",
+        "history": (
+            "Annesi Yeşil Alan polikliniğine 'üşüttü, midesini bozdu' diyerek getiriyor: 'Dün akşam "
+            "göbeğinin etrafında başlayan bir karın ağrısı vardı, gece 2 kez kustu. Bu sabah ağrısı karnının "
+            "sağ alt tarafına indi. Çok sevdiği börekten bile bir lokma yemedi. Arabayla hastaneye gelirken "
+            "kasislere girdikçe karnını tutup inledi ve muayene odasına hafif öne eğilerek yavaş yavaş "
+            "yürüdü.'"
+        ),
+        "final_diagnosis": "Akut Apandisit (Yeşil Alandan Sarı Alana Devir ve Cerrahi Yatış)",
+        "disposition": "Yeşil Alanda Saptanıp Sarı Alana Devir -> İV Sıvı/Analjezi/USG Doğrulaması -> Çocuk Cerrahisi Yatışı",
+        "case_pearl": (
+            "Göbek çevresinden (periumbilikal) başlayıp sağ alt kadrana (McBurney) göç eden ağrı, "
+            "iştahsızlık (anoreksi), ağrıdan sonra başlayan kusma ve sarsıntıyla/yürümekle artan ağrı "
+            "(topuk testi / kasis belirtisi) akut apandisit için çok güçlü ipuçlarıdır. Yeşil alana "
+            "'basit karın ağrısı/gastroenterit' diye başvuran bu hastalar muayene ile yakalanıp Sarı "
+            "Alana devredilmelidir."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Akut Skrotal ve Genital Muayene",
-                "question": "Gece uykudan uyandıran ani sol skrotal ağrı ve kusma ile başvuran 13 yaşındaki erkek hastada ilk fizik muayene yaklaşımınız ne olmalıdır?",
+                "stage_title": "Yeşil Alanda Fizik Muayene ve Alan Kararı",
+                "question": "Yeşil alana mide üşütmesi düşüncesiyle getirilen bu 9 yaşındaki çocukta ilk muayene ve alan kararınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Her iki gonadı pozisyon, aks ve hassasiyet açısından muayene etmek, kremasterik refleksi ve skrotal elevasyon yanıtını değerlendirmek",
+                        "text": "Kusma ve karın ağrısını viral mide-bağırsak enfeksiyonu olarak değerlendirip Yeşil Alanda intramüsküler ondansetron uygulamak, oral rehidratasyon sıvısı başlayarak 2 saat sonra ağızdan beslenme toleransını kontrol etmek",
+                        "is_correct": False,
+                        "scenario_update": "İshali olmayan ve sağ alt kadran peritoneal irritasyon bulgusu bulunan çocukta oral sıvı verilmesi kusmayı artırdı ve cerrahi tanı gecikti.",
+                        "teaching_point": "Ağrının kusmadan önce başladığı, ishali olmayan ve yürümekle/sarsıntıyla sağ alt kadran ağrısı tarifleyen çocukta batın muayenesi yapılmadan viral enfeksiyon tedavisi başlanmaz.",
+                    },
+                    {
+                        "text": "Sağ alt kadrandaki ağrıyı dışkı stazına bağlı kolik olarak yorumlayıp Yeşil Alanda rektal sodyum fosfat lavman uygulamak ve defekasyon sonrası ağrının tamamen gerileyip gerilemediğini gözlemlemek",
+                        "is_correct": False,
+                        "scenario_update": "Akut peritoneal irritasyon bulgusu olan hastaya yapılan rektal lavman intraluminal basıncı ve karın ağrısını şiddetlendirdi.",
+                        "teaching_point": "Ateş, anoreksi, göç eden karın ağrısı ve peritoneal duyarlılığı olan çocuklarda akut cerrahi batın dışlanmadan rektal lavman uygulanmaz.",
+                    },
+                    {
+                        "text": "Sağ alt kadranda spina iliaka anterior superior ile umblikus hattının dış üçte birlik noktasında lokalize defans ve geri çekme hassasiyetini değerlendirip hastayı Sarı Alana devretmek",
                         "is_correct": True,
-                        "explanation": "Akut skrotal ağrıda gonadın yerleşim aksı, elevasyonla ağrının değişimi ve kremasterik refleks varlığı vasküler acilleri inflamatuar süreçlerden ayırt etmede en değerli muayene bulgularıdır.",
-                        "new_finding": "Vital Bulgular: TA 124/78 mmHg, KTA 110/dk, Ateş 36.7°C. Fizik Muayene: Sol hemiskrotum hiperemik ve ödemli; sol gonad skrotum üst polünde yüksek ve transvers yerleşimli, palpasyonla ileri derecede hassas. Skrotal elevasyonla ağrıda azalma olmadı. Sol kremasterik refleks alınamadı. Sağ gonad ve sağ kremasterik refleks doğal, batın muayenesi rahat."
+                        "triggers_yellow_transfer": True,
+                        "explanation": "Göbek çevresinden sağ alt kadrana göç eden ağrı, anoreksi, kasislerde artan ağrı ve lokalize peritoneal irritasyon bulguları akut cerrahi batını gösterir; hasta derhal Sarı Alana alınmalıdır.",
+                        "new_finding": "Vital Bulgular: Ateş 38.2°C, KTA 112/dk. Batın muayenesinde sağ alt kadranda spina iliaka anterior superior ile umblikus hattının dış üçte birlik noktasında lokalize defans ve geri çekme hassasiyeti pozitif; sol alt kadran palpasyonuyla sağ alt kadranda ağrı ve topuk sarsıntı testi pozitif. Hasta Sarı Alana devredildi!",
                     },
                     {
-                        "text": "Şiddetli ağrı nedeniyle genital palpasyonu erteleyip öncelikle İV metamizol sodyum ve skrotuma sıcak kompres uygulayarak 1 saat sonra muayene etmek",
+                        "text": "Hastayı Yeşil Alanda tutarak önce ayakta direkt batın grafisi ve tam idrar tetkiki istemek, sonuçlar çıkana kadar oral parasetamol süspansiyon içirerek bekleme salonunda klinik seyri izlemek",
                         "is_correct": False,
-                        "scenario_update": "Muayene edilmeden uygulanan sıcak kompres ve bekleme süresi, dokunun metabolik oksijen tüketimini artırarak geri dönüşsüz parankimal iskemi süresini kısaltmış oldu.",
-                        "teaching_point": "Akut skrotal ağrıda fizik muayene asla ertelenmemeli ve vasküler perfüzyon bozukluğu dışlanmadan lokal sıcak uygulama kesinlikle yapılmamalıdır."
+                        "scenario_update": "Olası cerrahi girişim gerektiren hastaya ağızdan ilaç/sıvı verilmesi anestezi açlık süresini bozdu ve direkt batın grafisi tanısal katkı sağlamadı.",
+                        "teaching_point": "Akut cerrahi batın şüphesi saptanan hastada oral alım derhal kesilmeli, hasta Sarı Alana devredilmeli ve gereksiz direkt batın grafisi yerine ultrasonografi planlanmalıdır.",
                     },
-                    {
-                        "text": "İdrar yolu enfeksiyonu ve epididimit ön tanısıyla skrotal refleks bakmadan orta akım idrar örneği alıp ampirik İV seftriakson tedavisi başlamak",
-                        "is_correct": False,
-                        "scenario_update": "İdrar tetkiki beklenen ve antibiyotik başlanan hastada geçen saatler içinde sol skrotumdaki ödem arttı ve ağrı narkotik analjeziklere bile yanıtsız hale geldi.",
-                        "teaching_point": "Dizüri ve ateşi olmayan akut başlangıçlı skrotal ağrıda genital muayene ve vasküler değerlendirme yapılmadan enfeksiyon tedavisiyle vakit kaybedilmemelidir."
-                    },
-                    {
-                        "text": "Yansıyan renal kolik ve üreter taşını dışlamak amacıyla skrotal muayene öncesinde hastaya hızlıca intravenöz hidrasyon başlayıp kontrastsız tüm batın tomografisi çekmek",
-                        "is_correct": False,
-                        "scenario_update": "Tomografi çekimi ve raporlanması için geçen sürede renal taş saptanmadı ancak skrotal patolojiye yönelik kritik müdahale penceresi daraldı.",
-                        "teaching_point": "Skrotuma vuran ağrıda öncelik her zaman dikkatli bir genital muayenedir; muayene yapılmadan radyasyon içeren batın görüntülemelerine yönelinmemelidir."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Radyolojik Görüntüleme ve Zamanlama Stratejisi",
-                "question": "Kremasterik refleks kaybı, sol gonadda yüksek-transvers yerleşim ve elevasyonla ağrının azalmaması saptanan 3. saatindeki hastada bir sonraki adımınız ne olmalıdır?",
+                "stage_title": "Sarı Alanda İlk Yaklaşım ve Görüntüleme Kararı",
+                "question": "Hastayı Sarı Alana devraldınız. Bu aşamada ilk yönetim ve tetkik isteminiz nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Öncelikle tam kan sayımı, CRP, sedimantasyon ve idrar kültürü sonuçlarını beklemek, inflamatuar belirteçler normal gelirse radyolojik görüntüleme ve konsültasyon istemek",
-                        "is_correct": False,
-                        "scenario_update": "Laboratuvar sonuçlarının çıkması için geçen 90 dakika sonunda lökosit ve CRP hafif yüksek saptandı, bu sırada iskemi süresi 4.5 saati aştı.",
-                        "teaching_point": "Akut vasküler skrotal patolojilerde akut faz reaktanları normal veya hafif yüksek olabilir; laboratuvar beklemek organ kaybına yol açan tehlikeli bir gecikmedir."
-                    },
-                    {
-                        "text": "Semptomların başlangıcından itibaren henüz 3 saat geçtiği için sabah mesai saatinde elektif skrotal manyetik rezonans görüntüleme planlayarak hastayı gözlemde tutmak",
-                        "is_correct": False,
-                        "scenario_update": "Sabah mesai saatine kadar bekletilen hastada toplam iskemi süresi 8 saati geçti ve sol parankimde kalıcı koagülasyon nekrozu gelişti.",
-                        "teaching_point": "Akut skrotal perfüzyon bozukluğunda organın kurtarılabilmesi için altın pencere ilk 6 saattir; elektif görüntüleme için asla beklenemez."
-                    },
-                    {
-                        "text": "Radyolojik görüntüleme veya cerrahi konsültasyon istemeden önce acil serviste sedasyon altında dışarıdan zorlu manuel rotasyon manevrasını defalarca tekrarlayarak uygulamaya çalışmak",
-                        "is_correct": False,
-                        "scenario_update": "Körlemesine yapılan zorlu manuel manevra korddaki dolanmayı daha da sıkılaştırarak ağrıyı şiddetlendirdi ve cerrahi ekip çağrılmadığı için zaman kaybedildi.",
-                        "teaching_point": "Manuel müdahale asla acil cerrahi konsültasyonun ve ameliyathane hazırlığının yerini tutmaz; kontrolsüz manevralar rotasyon derecesini artırabilir."
-                    },
-                    {
-                        "text": "Oral alımı durdurup İV analjezi başlamak, derhal Çocuk Cerrahisi/Üroloji konsültasyonu isteyerek gecikmeden acil skrotal Renkli Doppler USG yaptırmak",
+                        "text": "Ağızdan alımı kesmek, damar yolu açıp izotonik sıvı ve intravenöz analjezi başlamak; hemogram, CRP, tam idrar tetkiki ve kademeli kompresyonlu batın ultrasonografisi istemek",
                         "is_correct": True,
-                        "explanation": "Yüksek klinik şüphede hasta derhal ameliyata hazırlanmalı, cerrahi ekip eş zamanlı çağrılmalı ve ameliyatı geciktirmeyecek şekilde hızlıca Renkli Doppler USG ile kan akımı değerlendirilmelidir.",
-                        "new_finding": "Tam İdrar Tetkiki: Lökosit ve eritrosit yok. Acil Skrotal Renkli Doppler USG: Sol gonad boyutları sağa göre artmış, parankim ekojenitesi heterojen görünümde; sol parankimde arteriyel ve venöz kan akımının tamamen izlenmemesi ve kord yapılarında girdap görünümü saptandı. Sağ gonadda kanlanmanın doğal olduğu raporlandı."
-                    }
-                ]
+                        "explanation": "Cerrahi akut batın şüphesinde ağızdan alımın kesilmesi, intravenöz hidrasyon, muayene bulgularını maskelemeyen uygun doz analjezi ve radyasyon içermeyen ilk basamak görüntüleme olarak ultrasonografi altın standarttır.",
+                        "new_finding": "LABORATUVAR: WBC 16.800/mm³ (%84 nötrofil), CRP 46 mg/L, TİT normal. BATIN USG: Sağ alt kadranda peristaltizmi olmayan, kompresyonla basılanamayan 9.5 mm çapında kör sonlanan tübüler lümen ve içinde 6 mm akustik gölgelenme veren kalsifiye odak ile çevre mezenterik yağ dokuda ekojenite artışı izlendi.",
+                    },
+                    {
+                        "text": "Fizik muayene bulgularını ve peritoneal irritasyonu maskelememek adına cerrahi konsültasyon tamamlanana kadar hiçbir analjezik ilaç vermemek, doğrudan oral ve intravenöz kontrastlı tüm batın bilgisayarlı tomografisi çekmek",
+                        "is_correct": False,
+                        "scenario_update": "Çocuk saatlerce şiddetli ağrı çekti ve ultrasonografi ile radyasyonsuz tanı konulabilecekken yüksek doz karın BT radyasyonuna maruz kaldı.",
+                        "teaching_point": "Güncel pediatrik cerrahi kılavuzlarına göre uygun doz intravenöz analjezi fizik muayene bulgularını maskelemez; ilk görüntüleme seçeneği ise BT değil ultrasonografidir.",
+                    },
+                    {
+                        "text": "Ağızdan alımı kesip damar yolu açmak, yalnızca ayakta direkt batın grafisi ve tam kan sayımı isteyerek görüntüleme yapmadan doğrudan ampirik intravenöz seftriakson ve metronidazol tedavisi başlamak",
+                        "is_correct": False,
+                        "scenario_update": "Ultrasonografik doğrulama ve cerrahi değerlendirme yapılmadan başlanan geniş spektrumlu antibiyotik klinik tabloyu kısmen baskılayarak kesin cerrahi kararı geciktirdi.",
+                        "teaching_point": "Sepsis veya yaygın peritonit bulgusu olmayan stabil hastada antibiyotik profilaksisi ultrasonografi ile tanı kesinleştirilip cerrahi karar verildikten sonra başlanır.",
+                    },
+                    {
+                        "text": "Sağ alt kadran ağrısının mezenterik lenfadenit veya idrar yolu enfeksiyonuna bağlı olabileceği düşüncesiyle ultrasonografiyi erteleyip idrar kültürü, gaita mikroskopisi ve viral antijen testleri sonuçlanana dek gözlemlemek",
+                        "is_correct": False,
+                        "scenario_update": "Görüntüleme ertelendiği için geçen 8 saat sonunda hastanın ateşi 39.1°C'ye yükseldi ve sağ alt kadrandaki defans tüm alt batına yayıldı.",
+                        "teaching_point": "Lokalize sağ alt kadran defansı ve geri çekme hassasiyeti olan çocukta ultrasonografi geciktirilmemelidir; lümende kalsifiye taş varlığında perforasyon riski saatler içinde artar.",
+                    },
+                ],
             },
             {
-                "stage_title": "Klinik Tanı",
-                "question": "Kremasterik refleks kaybı, yüksek-transvers gonad yerleşimi ve Renkli Doppler USG bulguları ışığında bu hastanın kesin tanısı nedir?",
+                "stage_title": "Sarı Alanda Kesin Tanı",
+                "question": "Klinik tablo, nötrofilik lökositoz ve ultrasonografi bulguları eşliğinde kesin tanınız nedir?",
                 "options": [
                     {
-                        "text": "Akut Bakteriyel Epididimo-Orşit",
+                        "text": "Akut Mezenterik Lenfadenit Sendromu",
                         "is_correct": False,
-                        "scenario_update": "Akut epididimo-orşitte kremasterik refleks genellikle korunmuştur ve Renkli Doppler USG incelemesinde parankim ve epididimde kan akımı belirgin artmıştır.",
-                        "teaching_point": "Epididimo-orşitte inflamasyona bağlı hipervaskülarite görülürken, bu hastada arteriyel ve venöz kan akımı tamamen kesilmiştir."
+                        "scenario_update": "Ultrasonografide çapı 9.5 mm'ye ulaşmış, basılanamayan ve içinde 6 mm apendikolit bulunan inflame apendiks doğrudan görüntülendi.",
+                        "teaching_point": "Mezenterik lenfadenitte apendiks normal çapta (<6 mm) ve kompresyonla basılanabilir özellikte olup sağ alt kadranda büyümüş reaktif lenf nodları izlenir.",
                     },
                     {
-                        "text": "Akut Sol Testis Torsiyonu",
+                        "text": "Akut Süpüratif Apandisit",
                         "is_correct": True,
-                        "explanation": "Ani başlayan skrotal ağrı, kusma, ipsilateral kremasterik refleks kaybı, yüksek-transvers yerleşim ve Doppler USG'de kan akımının izlenmemesi ile kordda girdap görünümü akut testis torsiyonunu kesinleştirir.",
-                        "new_finding": "Kesin tanı: Akut Sol Testis Torsiyonu. Semptom süresi 3.5 saat olup altın 6 saatlik cerrahi pencere içindedir."
+                        "explanation": "Yüksek klinik skor (PAS ≥7), nötrofilik lökositoz ve ultrasonografide >6 mm basılanamayan kör sonlanan apendiks ile lümende apendikolit saptanması Akut Apandisit tanısını kesinleştirir.",
+                        "new_finding": "Kesin Tanı: Akut Apandisit.",
                     },
                     {
-                        "text": "Testiküler Apendiks (Morgagni Hidatidi) Torsiyonu",
+                        "text": "Akut İleokolik İntususepsiyon (İnvajinasyon)",
                         "is_correct": False,
-                        "scenario_update": "Apendiks testis torsiyonunda ağrı daha hafif seyreder, testis üst polünde mavi nokta (blue dot) bulgusu görülür ve testisin kendi parankim kanlanması normaldir.",
-                        "teaching_point": "Morgagni hidatidi torsiyonunda Doppler USG'de testis parankim kan akımı korunmuştur; tam akım kaybı ve kordda girdap işareti spermatik kord torsiyonunu gösterir."
+                        "scenario_update": "Ultrasonografide iç içe geçmiş bağırsak ansına ait hedef işareti (target sign) değil, kör sonlanan 9.5 mm çapında tübüler apendiks ve apendikolit saptandı.",
+                        "teaching_point": "İnvajinasyon genellikle 3-36 ay arası çocuklarda kolik tarzı ağrı atakları ve ultrasonografide hedef/psödo-böbrek işareti ile seyreder.",
                     },
                     {
-                        "text": "İnkarsere İnguinal Herni ve Reaktif Hidrosel",
+                        "text": "Sağ Distal Üreterolitiazis (Renal Kolik)",
                         "is_correct": False,
-                        "scenario_update": "Hastanın inguinal kanalında uzanan barsak ansı saptanmamış olup Doppler USG'de spermatik kordda girdap görünümü ve testiküler avaskülarite mevcuttur.",
-                        "teaching_point": "İnguinal hernide kasık kanalından skrotuma uzanan kitle ve barsak sesleri saptanır; bu vakada primer patoloji spermatik kord torsiyonudur."
-                    }
-                ]
+                        "scenario_update": "Tam idrar tetkikinde hematüri saptanmadı, üriner sistem toplayıcı yapıları doğal bulundu ve kalsifiye odak üreterde değil apendiks lümeninde izlendi.",
+                        "teaching_point": "Normal idrar tetkiki, peritoneal irritasyon bulguları ve kalsifiye taşın kör sonlanan apendiks lümeninde yer alması üreter taşını dışlar.",
+                    },
+                ],
             },
             {
-                "stage_title": "Acil Cerrahi Yönetim ve Operasyon İlkeleri",
-                "question": "Semptomların 3.5 saatinde akut sol testis torsiyonu tanısı kesinleşen bu hastada uygulanması gereken doğru cerrahi yönetim hangisidir?",
+                "stage_title": "Sarı Alanda Tedavi ve Yatış Planı",
+                "question": "Apendikolit eşlikli akut apandisit tanısı kesinleşen bu 9 yaşındaki hastada en doğru yönetim hangisidir?",
                 "options": [
                     {
-                        "text": "İntravenöz fraksiyone olmayan heparin antikoagülasyonu ve vazodilatatör ilaç infüzyonu başlayarak 6 saat izlemek, kontrol görüntülemede akım dönmezse ameliyata almak",
+                        "text": "Lümende apendikolit bulunmasına rağmen perforasyon gelişmediği için ameliyatsız yönetim (non-operatif tedavi) amacıyla 10 gün oral amoksisilin-klavulanat reçete edip poliklinik kontrolüyle taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Mekanik olarak kendi etrafında dönmüş olan spermatik kord antikoagülan tedaviyle açılmadı ve 6 saatlik kritik süre aşılarak sol testis nekroze oldu.",
-                        "teaching_point": "Testis torsiyonu mekanik bir rotasyon sonucu gelişir; trombolitik veya antikoagülan tedavinin yeri yoktur, tek tedavi acil cerrahi detorsiyondur."
+                        "scenario_update": "Apendikolit varlığında ayaktan oral antibiyotikle eve gönderilen hasta 18 saat sonra perfore apandisit ve yaygın peritonit tablosuyla acile tekrar başvurdu.",
+                        "teaching_point": "Apendikolit (fekalit) varlığı ameliyatsız (non-operatif) antibiyotik tedavisinde yüksek başarısızlık ve erken perforasyon kriteridir; kesinlikle ayaktan taburcu edilmez.",
                     },
                     {
-                        "text": "Acil cerrahi eksplorasyona alarak sol spermatik kord detorsiyonu ve sol orşiopeksi yapmak, sağlam olan sağ testise ise hiçbir cerrahi işlem uygulamamak",
+                        "text": "Perforasyon bulgusu olmadığı için cerrahi konsültasyonu ertesi sabah poliklinik şartlarına bırakmak, acil serviste tek doz intramüsküler seftriakson uygulayarak ağrı kesici şurupla hastayı eve göndermek",
                         "is_correct": False,
-                        "scenario_update": "Sol testis kurtarıldı ancak anatomik yatkınlığı devam eden karşı testise fiksasyon yapılmadığı için 8 ay sonra sağ testis torsiyonu gelişti.",
-                        "teaching_point": "İntravajinal testis torsiyonunun temel nedeni olan çan tokmağı (bell-clapper) deformitesi olguların çoğunda bilateraldir; bu nedenle karşı testise de profilaktik orşiopeksi yapılması zorunludur."
+                        "scenario_update": "Gece boyunca evde ağrısı ve ateşi artan hastada apendiks lümenindeki taş zemininde nekroz ve lokalize perforasyon gelişti.",
+                        "teaching_point": "Akut apandisit tanısı konulan her çocuk acil servisten Çocuk Cerrahisi konsültasyonu ile yatırılarak izlenmelidir.",
                     },
                     {
-                        "text": "Altın 6 saat dolmadan acil cerrahi eksplorasyona almak, sol detorsiyon ve reperfüzyon sonrası her iki testise bilateral orşiopeksi uygulamak",
+                        "text": "Cerrahi girişim öncesinde kalın bağırsak temizliği sağlamak amacıyla yüksek hacimli rektal lavman ve oral polietilen glikol solüsyonu uygulayıp 24 saat sonra elektif cerrahi planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Akut inflame apendiks ve apendikolit varlığında verilen oral laksatif ve lavman intraluminal basıncı artırarak iyatrojenik perforasyona zemin hazırladı.",
+                        "teaching_point": "Akut apandisitte preoperatif mekanik bağırsak temizliği veya lavman kesinlikle kontrendikedir; hasta NPO tutulur.",
+                    },
+                    {
+                        "text": "Ağızdan aç izlemi sürdürerek intravenöz idame sıvı ve preoperatif profilaktik antibiyotik başlamak, acil Çocuk Cerrahisi konsültasyonu ile apendektomi için cerrahi servise yatırmak",
                         "is_correct": True,
-                        "explanation": "İlk 6 saat içinde yapılan acil cerrahi eksplorasyon ve detorsiyon ile testisin kurtarılma şansı %90'ın üzerindedir; karşı testisteki anatomik anomali riski nedeniyle bilateral orşiopeksi standart yaklaşımdır.",
-                        "new_finding": "Hasta 4. saatinde acil ameliyathaneye alındı; 540 derece dönmüş olan sol spermatik kord detorsiyone edildi. Ilık serum fizyolojik uygulaması sonrası sol testis hızla pembeleşti ve kanlanması geri döndü. Her iki testise bilateral orşiopeksi uygulanarak organ kaybı olmadan taburcu edildi."
+                        "explanation": "Apendikolit eşlikli akut apandisitte standart yaklaşım NPO, intravenöz hidrasyon, preoperatif profilaktik antibiyotik ve laparoskopik/açık apendektomi için Çocuk Cerrahisi servisine yatıştır.",
+                        "new_finding": "Çocuk Cerrahisi tarafından değerlendirilen hasta preoperatif hazırlıkları tamamlanarak laparoskopik apendektomi yapılmak üzere servise yatırıldı.",
                     },
-                    {
-                        "text": "Doppler USG incelemesinde arteriyel kan akımı hiç izlenmediği için testisin nekroze olduğunu kabul ederek detorsiyon denemeden doğrudan sol orşiektomi yapmak",
-                        "is_correct": False,
-                        "scenario_update": "Henüz 3.5 saatlik iskemisi olan ve detorsiyonla kurtarılabilecek canlılıktaki sol testis, reperfüzyon yanıtı beklenmeden gereksiz yere çıkarılmış oldu.",
-                        "teaching_point": "Doppler USG'de akım olmaması testisin öldüğünü değil torsiyone olduğunu gösterir; ameliyatta detorsiyon ve ılık kompres sonrası canlılık mutlaka değerlendirilmelidir."
-                    }
-                ]
-            }
-        ]
+                ],
+            },
+        ],
     },
     {
         "id": "Y18",
         "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
-        "age": "3.5 Yaş",
+        "age": "15 Aylık",
         "gender": "Kız",
-        "complaint": "Vücutta aniden ortaya çıkan çok sayıda toplu iğne başı büyüklüğünde kırmızı-mor döküntüler, bacaklarda morluklar ve diş eti kanaması",
-        "history": "Annesi 3.5 yaşındaki kızını Sarı Alana getiriyor: 'Yaklaşık iki hafta önce hafif bir üst solunum yolu enfeksiyonu geçirmişti ve tamamen iyileşmişti. Dün akşam banyo yaptırırken cildinde hiçbir şey yoktu; bu sabah uyandığında bacaklarında, kollarında ve gövdesinde yüzlerce minik kırmızı nokta ve birkaç büyük morluk fark ettim. Sabah dişini fırçalarken diş etleri kanadı ve ağız içinde kanlı kabarcıklar gördüm. Ateşi yok, iştahı ve neşesi yerinde.'",
-        "final_diagnosis": "Akut İmmün Trombositopenik Purpura (Primer Akut Pediatrik İTP - Mukozal Kanamalı)",
-        "disposition": "Sarı Alanda Tam Kan Sayımı ve Periferik Yayma Doğrulaması + Aktif Mukozal Kanama (Islak Purpura) ve Derin Trombositopeni Nedeniyle IVIG (0.8-1 g/kg) Tedavisi ve Servis Yatışı",
-        "case_pearl": "Pediatrik akut İTP, sıklıkla viral bir enfeksiyondan 1-4 hafta sonra genel durumu iyi olan çocukta aniden gelişen peteşi, ekimoz ve izole trombositopeni tablosudur. Tanıda altın kural: Fizik muayenede hepatosplenomegali veya patolojik lenfadenopati olmamalı, hemogramda diğer seriler (Hb, WBC) normal olmalı ve periferik yaymada blast veya şistosit bulunmadığı teyit edilmelidir. Ağız içi hemorajik büller ve diş eti kanaması ('ıslak purpura') ile PLT <10.000-20.000/mm³ varlığında intrakraniyal kanama riskini önlemek için IVIG (0.8-1 g/kg tek doz) veya kortikosteroid başlanır. Hayatı tehdit eden masif kanama olmadıkça trombosit transfüzyonu, İM enjeksiyon ve NSAİİ/aspirin kontrendikedir.",
+        "complaint": "Ateş, halsizlik ve bacaklarda yeni fark edilen küçük kırmızı-mor lekeler",
+        "history": (
+            "Annesi Yeşil Alana 'ateşi var ve isilik gibi birkaç döküntüsü çıktı' diyerek başvuruyor: "
+            "'Öğleden beri 39.2°C ateşi var, bir kez kustu. Normalde çok hareketli bir çocuktur ama son 2 "
+            "saattir omzuma başını koyup yatıyor, bacakları da biraz soğuk geldi. Bezini değiştirirken "
+            "uyluğunda ve bacağında toplu iğne başı gibi koyu kırmızı-mor 5-6 tane leke gördüm.'"
+        ),
+        "final_diagnosis": "Meningokoksemi (Ateş + Peteşiyal/Purpurik Döküntü ve Kompanse Septik Şok)",
+        "disposition": "Yeşil Alanda Saptanıp Derhal Sarı/Kırmızı Alana Devir -> Acil İV Seftriakson & Sıvı Resüsitasyonu -> Çocuk Yoğun Bakım Yatışı",
+        "case_pearl": (
+            "Ateşli bir çocukta BASMAKLA SOLMAYAN (cam bardak / vitropresyon testi pozitif) peteşi veya "
+            "purpura varlığı aksi kanıtlanana kadar Meningokoksemi / İnvaziv Bakteriyel Enfeksiyon "
+            "acilidir! Özellikle letarji, ekstremite soğukluğu ve kapiller dolum uzaması eşlik ediyorsa "
+            "dakikalar hayati önem taşır; LP veya görüntüleme beklenmeden kan kültürü alınıp ilk 1 saat "
+            "içinde İV 3. kuşak sefalosporin (Seftriakson/Sefotaksim) ve sıvı resüsitasyonu "
+            "başlanmalıdır."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Fizik Muayene ve Kanama Değerlendirmesi",
-                "question": "Yaygın peteşi, ekimoz ve diş eti kanaması ile başvuran ancak genel durumu iyi olan 3.5 yaşındaki çocukta ilk muayene ve yaklaşımınız ne olmalıdır?",
+                "stage_title": "Yeşil Alanda İlk Değerlendirme ve Alan Kararı",
+                "question": "Yeşil alana ateş, halsizlik ve bacaklarda yeni başlayan döküntü ile getirilen bu 15 aylık bebekte ilk muayene ve alan kararınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Koagülopati olasılığına karşı kan tetkiki öncesinde uyluk kasından intramusküler 5 mg K vitamini uygulamak ve diş eti ağrısı için oral ibuprofen vermek",
-                        "is_correct": False,
-                        "scenario_update": "İntramusküler enjeksiyon yapılan uyluk bölgesinde kısa sürede derin doku içi hematom gelişti ve verilen ibuprofen sonrası diş eti kanaması şiddetlendi.",
-                        "teaching_point": "Kanama diyatezi veya peteşiyal döküntüsü olan hastalarda kas içi enjeksiyonlar derin hematom riski nedeniyle, NSAİİ grubu ilaçlar ise agregasyon bozukluğu nedeniyle kontrendikedir."
-                    },
-                    {
-                        "text": "Vital bulguları ve nörolojik durumu değerlendirmek, ağız mukozasında hemorajik bülleri, lenfadenopati ve hepatosplenomegali varlığını kontrol ederek travmadan korumak",
+                        "text": "Çocuğu tamamen soyarak lezyonlara cam bardakla bası testi uygulamak; kapiller dolum zamanı, bilinç durumu ve periferik nabızları değerlendirip hastayı derhal Sarı Alana devretmek",
                         "is_correct": True,
-                        "explanation": "Peteşi ve ekimozla başvuran çocukta mukozal kanama varlığı intrakraniyal kanama riskini belirlerken, organomegali ve lenfadenopati kontrolü malign infiltratif süreçleri dışlamak için kritiktir.",
-                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 96/dk, SS 20/dk, TA 94/58 mmHg. Genel durumu iyi, bilinci açık, aktif. Ciltte yaygın basmakla solmayan peteşiler ve alt ekstremitelerde 2-3 cm çapında ekimozlar mevcut. Bukkal mukozada iki adet hemorajik bül ve diş eti kenarında sızıntı tarzında kanama izlendi. Servikal/aksiller patolojik lenfadenopati yok, karaciğer ve dalak kot altında ele gelmiyor, nörolojik muayene doğal."
+                        "triggers_yellow_transfer": True,
+                        "explanation": "Yüksek ateş, basmakla solmayan peteşi/purpura, letarji ve uzamış kapiller dolum zamanı fulminan seyirli invaziv bakteriyel enfeksiyon ve kompanse şokun alarm bulgularıdır; hasta saniyeler içinde Sarı/Kırmızı Alana alınmalıdır.",
+                        "new_finding": "Vital Bulgular: Ateş 39.4°C, KTA 178/dk, SS 42/dk, TA 82/45 mmHg, SpO2 %95. Alt ekstremitelerde ve gövde altında basmakla solmayan 2-4 mm peteşi ve erken ekimotik purpurik lezyonlar mevcut! Ekstremiteler soğuk, kapiller dolum zamanı 4 saniye, çocuk uykuya meyilli. Hasta derhal Sarı Alana devredildi!",
                     },
                     {
-                        "text": "Basmakla solmayan döküntüleri invaziv bakteriyel enfeksiyon kabul ederek fizik muayeneyi tamamlamadan lomber ponksiyon yapmak ve yüksek doz seftriakson başlamak",
+                        "text": "Ateşi düşürüp taşikardi ve halsizliğin gerileyip gerilemediğini görmek amacıyla Yeşil Alanda oral parasetamol süspansiyon verip ılık uygulama yapmak ve 1 saat sonra yeniden değerlendirmek",
                         "is_correct": False,
-                        "scenario_update": "Hemodinamik olarak stabil ve ateşsiz olan hastada trombosit düzeyi görülmeden yapılan lomber ponksiyon spinal epidural hematom riskini ciddi ölçüde artırdı.",
-                        "teaching_point": "Ateşi olmayan ve genel durumu iyi olan peteşili çocukta öncelikle kanama diyatezi değerlendirilmelidir; hemostaz teyit edilmeden lomber ponksiyon yapılması spinal hematom açısından kontrendikedir."
+                        "scenario_update": "Kritik 1 saatlik bekleme süresinde bacaklardaki mor lekeler hızla tüm gövdeye yayıldı, kapiller dolum 6 saniyeye çıktı ve hipotansif şok gelişti!",
+                        "teaching_point": "Ateşli bir çocukta basmakla solmayan peteşi/purpura ve perfüzyon bozukluğu varlığında antipiretik yanıtı beklenmez; dakikalar içinde resüsitasyon başlatılmalıdır.",
                     },
                     {
-                        "text": "Ağız içi hemorajik bülleri lokal travmaya bağlayıp kanama odaklarını povidon iyotlu gazlı bezle sertçe kazıyarak temizlemek ve gargara önermek",
+                        "text": "Bacaklardaki döküntüleri viral ekzantem veya kusmaya bağlı mekanik peteşi olarak değerlendirip Yeşil Alanda tam kan sayımı ve idrar tetkiki isteyerek bekleme salonunda sonuçları beklemek",
                         "is_correct": False,
-                        "scenario_update": "Mukozal hemorajik büllerin mekanik olarak kazınması durdurulamayan yaygın mukozal sızıntı kanamasına ve çocuğun kanı yutarak kusmasına yol açtı.",
-                        "teaching_point": "Ağız mukozasındaki hemorajik büller ciddi mukozal kanama göstergesidir; kesinlikle mekanik olarak patlatılmamalı veya travmatize edilmemelidir."
-                    }
-                ]
+                        "scenario_update": "Bekleme salonunda geçen 45 dakika içinde purpuralar birleşerek ekimotik plaklara dönüştü ve çocukta bilinç kaybı gelişti.",
+                        "teaching_point": "Kusmaya bağlı mekanik peteşiler yalnızca üst kaval kemiği hattının üzerinde, baş-boyun bölgesinde görülür; alt ekstremitedeki ateşli peteşi/purpura invaziv sepsis göstergesidir.",
+                    },
+                    {
+                        "text": "Yüksek ateş ve uykuya meyil öyküsü nedeniyle santral sinir sistemi enfeksiyonunu doğrulamak üzere Yeşil Alanda sedasyon hazırlığı yaparak öncelikle tanısal lomber ponksiyon işlemi planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Dolaşım bozukluğu ve olası koagülopatisi olan hastada resüsitasyon yapılmadan denenen lomber ponksiyon kardiyorespiratuar kollapsı tetikledi.",
+                        "teaching_point": "Perfüzyon bozukluğu (soğuk ekstremite, uzamış KDZ, letarji) ve yaygın purpura varlığında lomber ponksiyon kontrendikedir; önce ABC stabilizasyonu ve antibiyotik uygulanır.",
+                    },
+                ],
             },
             {
-                "stage_title": "Laboratuvar Tetkikleri ve Morfolojik İnceleme",
-                "question": "Organomegalisi olmayan ancak yaygın peteşi ve oral mukozal hemorajik bülleri saptanan bu çocukta doğrulama için hangi tetkikleri istemelisiniz?",
+                "stage_title": "Sarı Alanda İlk Saat Resüsitasyon ve Tetkik Yaklaşımı",
+                "question": "Hastayı Sarı Alana aldınız ve monitörize ettiniz. İlk 15-30 dakikadaki en doğru müdahale ve tetkik sırası nedir?",
                 "options": [
                     {
-                        "text": "Tam kan sayımı, retikülosit, koagülasyon parametreleri (PT, aPTT) ve mutlaka periferik kan yayması isteyerek diğer hücre serilerini ve morfolojiyi değerlendirmek",
+                        "text": "Beyin omurilik sıvısı kültürünün steril kalmasını önlemek amacıyla antibiyotik ve sıvı bolusu vermeden önce acil lomber ponksiyon uygulamak, ardından kraniyal bilgisayarlı tomografi görüntülemesine göndermek",
+                        "is_correct": False,
+                        "scenario_update": "Hemodinamisi unstabil ve trombositopenisi/koagülopatisi olan hastada LP ve BT için antibiyotiğin geciktirilmesi şoku derinleştirdi ve spinal hematom riski yarattı!",
+                        "teaching_point": "Şok bulguları ve purpura/koagülopati varlığında lomber ponksiyon kesinlikle yapılmaz; parenteral antibiyotik tedavisi LP veya görüntüleme için geciktirilemez.",
+                    },
+                    {
+                        "text": "Oksijen başlayıp damar yolu açarak kan kültürü, hemogram, koagülasyon, prokalsitonin ve kan gazı almak; beklemeksizin intravenöz seftriakson ve 20 mL/kg izotonik kristaloid bolusu uygulamak",
                         "is_correct": True,
-                        "explanation": "Edinsel izole kanama diyatezlerinde hemogramda hemoglobin ve lökosit serisinin normal olduğunun görülmesi ve periferik yaymada atipik hücre, blast veya şistosit bulunmadığının doğrulanması şarttır.",
-                        "new_finding": "Laboratuvar: WBC 7.600/mm³, Hb 12.6 g/dL, MCV 79 fL, PLT 6.000/mm³, Retikülosit %1.1, PT 12.1 sn, aPTT 28 sn, Fibrinojen 260 mg/dL. Periferik Yayma: Eritrosit normokrom normositer, şistosit veya fragmente eritrosit yok; lökosit dağılımı normal, blast veya atipik hücre izlenmedi; trombositler her alanda tekli ve nadir, yer yer iri trombositler görüldü."
+                        "explanation": "Pediatrik sepsis kılavuzlarına göre damar yolu açılır açılmaz kan kültürü alınır, lomber ponksiyon beklenmeden ilk saat içinde intravenöz seftriakson (100 mg/kg/gün dozunda) ve 20 mL/kg %0.9 NaCl bolusu verilir.",
+                        "new_finding": "Damar yolu açıldı, kan kültürü alındı ve ilk doz intravenöz seftriakson + 20 mL/kg %0.9 NaCl bolusu uygulandı. LABORATUVAR: WBC 21.400/mm³, PLT 88.000/mm³, CRP 115 mg/L, Prokalsitonin 18 ng/mL, Laktat 4.1 mmol/L, INR 1.6. Bolus sonrası KTA 145/dk'ya, KDZ 2 saniyeye geriledi.",
                     },
                     {
-                        "text": "Periferik kan yayması değerlendirmesi yapmadan doğrudan acil ameliyathane koşullarında genel sedasyon altında kemik iliği aspirasyonu ve trepan biyopsisi işlemi planlamak",
+                        "text": "Kan basıncı henüz 82/45 mmHg düzeyinde korunduğu için intravenöz sıvı bolusu vermekten kaçınmak; yalnızca idame hızında sıvı başlayıp kültür ve koagülasyon sonuçları çıkınca antibiyotik seçmek",
                         "is_correct": False,
-                        "scenario_update": "Tipik öyküsü ve normal fizik muayenesi olan küçük çocukta periferik yayma görülmeden yapılan invaziv kemik iliği girişimi işlem yerinde ciddi kanamaya neden oldu.",
-                        "teaching_point": "ASH ve uluslararası pediatrik hematoloji kılavuzlarına göre, fizik muayenesi ve periferik yayması tipik olan çocuklarda tanı için rutin kemik iliği aspirasyonu önerilmez."
+                        "scenario_update": "Çocuklarda hipotansiyon şokun çok geç bir bulgusudur; bolus verilmeyen ve antibiyotiği bekletilen hastada 30 dakika içinde dekompanse hipotansif şok gelişti.",
+                        "teaching_point": "Pediatrik kompanse şokta taşikardi, uzamış kapiller dolum ve soğuk ekstremite varlığında hipotansiyon gelişmesi beklenmeden derhal 20 mL/kg izotonik sıvı bolusu ve ampirik seftriakson başlanmalıdır.",
                     },
                     {
-                        "text": "Yalnızca cilt kanama zamanı, sedimantasyon ve CRP testleri isteyerek periferik yayma bakmadan hastaya acil taze donmuş plazma infüzyonu uygulamaya başlamak",
+                        "text": "Trombositopeni ve purpurik döküntülerin immün aracılı olabileceği düşüncesiyle antibiyotik başlamadan önce intravenöz immünglobulin ve yüksek doz metilprednizolon infüzyonu hazırlayarak acil çocuk hematoloji konsültasyonu istemek",
                         "is_correct": False,
-                        "scenario_update": "Koagülasyon faktör eksikliği olmayan hastaya verilen taze donmuş plazma kanamayı durdurmadı ve periferik yayma bakılmadığı için ayırıcı tanı eksik kaldı.",
-                        "teaching_point": "Peteşiyal ve mukozal kanamalarda birincil hemostaz bozukluğu ön plandadır; tanı için tam kan sayımı ve periferik yayma incelemesi zorunludur."
+                        "scenario_update": "Akut bakteriyel sepsis ve dissemine intravasküler koagülasyon tablosunda antibiyotik yerine immünsüpresif steroid verilmesi bakteriyemiyi hızlandırdı.",
+                        "teaching_point": "Yüksek ateş, letarji ve şok bulguları eşliğindeki akut purpura ve trombositopeni aksi kanıtlanana kadar invaziv bakteriyel sepsis ve DİK olarak yönetilir.",
                     },
-                    {
-                        "text": "Henüz hiçbir kan örneği almadan önce olası iç kanamaları taramak amacıyla sedasyon vererek kontrastlı beyin tomografisi ve batın ultrasonografisi çektirmek",
-                        "is_correct": False,
-                        "scenario_update": "Nörolojik muayenesi tamamen normal olan çocukta laboratuvar tetkiki yapılmadan radyoloji ünitesinde vakit kaybedildi ve sedasyon işlemi ek risk oluşturdu.",
-                        "teaching_point": "Nörolojik semptom veya bulgusu olmayan hastalarda rutin kraniyal görüntüleme endike değildir; öncelik hızlıca tam kan sayımı ve periferik yayma değerlendirmesidir."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Klinik Tanı",
-                "question": "Viral enfeksiyon sonrası gelişen peteşi, oral mukozal hemorajik büller, PLT 6.000/mm³ ve normal periferik yayma bulgularıyla kesin tanınız nedir?",
+                "stage_title": "Sarı Alanda Kesin Tanı",
+                "question": "Klinik tablo ve laboratuvar bulguları (lökositoz, trombositopeni, yüksek prokalsitonin/laktat, INR uzaması ve ateşli purpura) ile kesin tanınız nedir?",
                 "options": [
                     {
-                        "text": "Pediatrik Akut Lenfoblastik Lösemi (ALL)",
+                        "text": "Henoch-Schönlein Purpurası (IgA Vasküliti)",
                         "is_correct": False,
-                        "scenario_update": "Akut lösemide genellikle anemi/nötropeni gibi diğer serilerin tutulumu, hepatosplenomegali, lenfadenopati ve periferik yaymada blast hücreleri görülür.",
-                        "teaching_point": "Bu hastada organomegali yoktur, hemoglobin ve lökosit değerleri normaldir ve periferik yaymada blast izlenmemiştir."
-                    },
-                    {
-                        "text": "Edinsel Trombotik Trombositopenik Purpura (TTP)",
-                        "is_correct": False,
-                        "scenario_update": "Trombotik mikroanjiyopatilerde hemolitik anemi, retikülositoz ve periferik yaymada parçalanmış eritrositler (şistositler) bulunur.",
-                        "teaching_point": "Hastanın hemoglobini normal olup periferik yaymasında şistosit ve mikroanjiyopatik hemoliz bulgusu yoktur."
+                        "scenario_update": "IgA vaskülitinde çocuk toksik görünmez, septik şok gelişmez ve trombosit sayısı ile koagülasyon parametreleri tamamen normaldir.",
+                        "teaching_point": "Yüksek ateş, şok bulguları, yüksek prokalsitonin ve trombositopeni/koagülopati varlığında purpura vaskülit değil meningokoksemi ve DİK lehinedir.",
                     },
                     {
                         "text": "Akut İmmün Trombositopenik Purpura (İTP)",
-                        "is_correct": True,
-                        "explanation": "Viral enfeksiyon sonrası sağlıklı görünümde çocukta gelişen izole derin trombositopeni, normal eritrosit/lökosit serisi ve iri trombositler içeren normal periferik yayma akut primer İTP için tanısaldır.",
-                        "new_finding": "Kesin tanı: Akut İmmün Trombositopenik Purpura (Primer Akut İTP). Ağız içi ıslak purpura ve diş eti kanaması mevcut."
+                        "is_correct": False,
+                        "scenario_update": "İTP'de genel durumu çok iyi olan afebril çocukta izole trombositopeni görülür; lökositoz, INR uzaması, laktat yüksekliği ve şok bulunmaz.",
+                        "teaching_point": "Toksik görünüm, 39.4°C ateş, yüksek akut faz reaktanları ve koagülopati İTP tanısını kesin olarak dışlar.",
                     },
                     {
-                        "text": "Kalıtsal Von Willebrand Hastalığı Tip 1",
+                        "text": "Meningokoksemi ve Septik Şok",
+                        "is_correct": True,
+                        "explanation": "Akut yüksek ateş, alt ekstremitelerden hızla yayılan basmakla solmayan peteşi/purpura, taşikardi, uzamış KDZ, hiperlaktatemi ve tüketim koagülopatisi Meningokoksemi ve kompanse septik şok için tanısaldır.",
+                        "new_finding": "Kesin Tanı: Meningokoksemi (İnvaziv Meningokokal Hastalık) ve Kompanse Septik Şok.",
+                    },
+                    {
+                        "text": "Tipik Hemolitik Üremik Sendrom (HÜS)",
                         "is_correct": False,
-                        "scenario_update": "Von Willebrand hastalığı Tip 1'de trombosit sayısı tamamen normaldir; trombosit fonksiyon bozukluğuna bağlı mukozal kanama görülür.",
-                        "teaching_point": "PLT 6.000/mm³ düzeyinde derin trombositopeni Von Willebrand Tip 1 ile açıklanamaz; tablo edinsel immün yıkıma bağlı akut İTP'dir."
-                    }
-                ]
+                        "scenario_update": "Öyküde kanlı ishal prodromu olmayıp birkaç saat içinde hiperakut başlayan yüksek ateş, yaygın purpura ve septik şok tablosu mevcuttur.",
+                        "teaching_point": "HÜS genellikle kanlı ishal sonrası solukluk, oligo-anüri ve normal koagülasyon (INR normal) ile seyreder; hiperakut ateşli purpura ve şok meningokoksemidir.",
+                    },
+                ],
             },
             {
-                "stage_title": "Sarı Alanda Tedavi Seçimi ve Kanama Yönetimi",
-                "question": "Trombosit sayısı 6.000/mm³ olan ve ağız mukozasında aktif hemorajik bülleri (ıslak purpura) bulunan 3.5 yaşındaki İTP hastasında en uygun tedavi yaklaşımı hangisidir?",
+                "stage_title": "İzlem, İzolasyon ve Temaslı Kemoprofilaksisi",
+                "question": "İlk resüsitasyonu yapılan bu meningokoksemi hastasında yatış, izolasyon ve halk sağlığı yönetimi nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Trombosit sayısını hızla normale getirmek amacıyla acilen 2 ünite aferez trombosit süspansiyonu transfüze etmek ve 4 saat sonra taburcu etmek",
+                        "text": "Sıvı bolusu sonrası kapiller dolum zamanı düzeldiği için hastayı izolasyonsuz genel pediatri servisine yatırmak ve yalnızca ateş gelişen aile bireylerine oral amoksisilin profilaksisi önermek",
                         "is_correct": False,
-                        "scenario_update": "Transfüze edilen trombositler dolaşımdaki anti-trombosit otoantikorlar tarafından kısa sürede yıkıma uğradı, kontrol trombosit sayısı 8.000/mm³ kaldı ve mukozal kanama sürdü.",
-                        "teaching_point": "İTP patofizyolojisinde otoantikor aracılı periferik yıkım olduğundan, yaşamı tehdit eden masif kanama olmadıkça tek başına trombosit transfüzyonu etkisizdir ve önerilmez."
+                        "scenario_update": "Genel serviste izlenen hastada 4. saatte dirençli hipotansiyon ve adrenal yetmezlik gelişti; ayrıca amoksisilin nazofaringeal meningokok taşıyıcılığını eradike edemedi.",
+                        "teaching_point": "Meningokoksemi hastaları Çocuk Yoğun Bakım Ünitesinde damlacık izolasyonu altında izlenmeli ve tüm ev içi temaslılara asemptomatik olsalar dahi rifampisin, seftriakson veya siprofloksasin ile kemoprofilaksi verilmelidir.",
                     },
                     {
-                        "text": "Aktif mukozal kanama ve derin trombositopeni nedeniyle 0.8-1 g/kg tek doz IVIG infüzyonu (veya prednizolon) başlayarak hastayı servise yatırmak",
+                        "text": "İlk doz intravenöz seftriakson ve sıvı resüsitasyonu sonrası vital bulguları stabilize olan hastayı 6 saat acil gözlemde tutup günlük intramüsküler seftriakson tedavisiyle ayaktan kontrole çağırmak",
+                        "is_correct": False,
+                        "scenario_update": "Meningokoksemi ve erken DİK tablosundaki hastanın taburcu edilmesi saatler içinde gelişebilecek Waterhouse-Friderichsen sendromu nedeniyle ölümcül risk oluşturdu.",
+                        "teaching_point": "Meningokoksemi şüphesi veya tanısı olan hiçbir hasta acil servisten taburcu edilemez; yoğun bakım şartlarında yakın monitörizasyon zorunludur.",
+                    },
+                    {
+                        "text": "Hava yolu (negatif basınçlı oda) izolasyonu altında Çocuk Yoğun Bakım Ünitesine yatırmak ve hastanın kreş ile ev içi temaslılarına 10 gün süreyle oral trimetoprim-sülfametoksazol profilaksisi başlamak",
+                        "is_correct": False,
+                        "scenario_update": "Neisseria meningitidis hava yoluyla değil büyük damlacıklarla bulaşır ve trimetoprim-sülfametoksazol meningokok kemoprofilaksisinde önerilen bir ajan değildir.",
+                        "teaching_point": "Meningokok enfeksiyonlarında etkili antibiyotik tedavisinin ilk 24 saati boyunca damlacık izolasyonu uygulanır; kemoprofilakside rifampisin (2 gün), tek doz İM seftriakson veya erişkinde tek doz siprofloksasin kullanılır.",
+                    },
+                    {
+                        "text": "Damlacık izolasyonuyla Çocuk Yoğun Bakım Ünitesine yatırmak, hemodinamik ve DİK izlemi yapmak, zorunlu bildirimde bulunup ev içi temaslılara rifampisin veya seftriakson kemoprofilaksisi planlamak",
                         "is_correct": True,
-                        "explanation": "Ağız içi ıslak purpura ve diş eti kanaması varlığında intrakraniyal ve majör kanama riskini azaltmak için trombosit sayısını en hızlı yükselten IVIG (0.8-1 g/kg) veya kortikosteroid tedavisiyle yatış endikedir.",
-                        "new_finding": "Hastaya 0.8 g/kg dozunda IVIG infüzyonu uygulandı ve travma önlemleri alınarak pediatri servisine yatırıldı. 24. saatte yapılan kontrol hemogramda trombosit sayısı 52.000/mm³ düzeyine yükseldi, mukozal kanama tamamen durdu."
+                        "explanation": "Meningokoksemi hastası ilk 24 saat damlacık izolasyonu ile Çocuk Yoğun Bakım Ünitesinde izlenmeli, Sağlık Bakanlığı bildirimi yapılmalı ve yakın temaslılara en kısa sürede (tercihen ilk 24 saatte) kemoprofilaksi başlanmalıdır.",
+                        "new_finding": "Hasta damlacık izolasyonu altında Çocuk Yoğun Bakım Ünitesine yatırıldı ve ev içi yakın temaslılara kemoprofilaksi düzenlendi.",
                     },
-                    {
-                        "text": "Genel durumu iyi olduğu için aktif mukozal kanamaya rağmen hiçbir ilaç vermeden 3 ay sonra kontrole gelmek üzere eve göndermek",
-                        "is_correct": False,
-                        "scenario_update": "Tedavisiz eve gönderilen çocukta gece şiddetli epistaksis ve gastrointestinal sistem kanaması gelişerek acil servise hipovolemik tabloda tekrar başvuru gerçekleşti.",
-                        "teaching_point": "Sadece cilt bulgusu (kuru purpura) olan hafif olgularda yakın izlem seçilebilir; ancak ıslak purpura (aktif mukozal kanama) ve PLT <10.000/mm³ varlığında farmakolojik tedavi ve yatış gerekir."
-                    },
-                    {
-                        "text": "Birinci basamak acil tedavi olarak hastayı çocuk cerrahisine danışıp acil splenektomi ameliyatına hazırlamak ve profilaktik intravenöz antibiyotik tedavisi başlamak",
-                        "is_correct": False,
-                        "scenario_update": "Akut yeni tanı pediatrik olguda medikal tedavi denenmeden cerrahi planlanması hematoloji konsültasyonu ile durdurularak gereksiz organ kaybı önlendi.",
-                        "teaching_point": "Çocukluk çağı akut İTP olgularının %80-85 kadarı 6-12 ay içinde kendiliğinden tam remisyona girer; splenektomi yalnızca 12 aydan uzun süren dirençli kronik olgularda son basamakta düşünülür."
-                    }
-                ]
-            }
-        ]
+                ],
+            },
+        ],
     },
     {
         "id": "Y19",
-        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
-        "age": "2 Yaş",
+        "category": "🫁 Hırıltı & Solunum Sıkıntısı",
+        "age": "4.5 Aylık",
         "gender": "Erkek",
-        "complaint": "Büyükannesinin komodinin üzerindeki antihipertansif ilaç kutusundaki tabletlerden yutma; 2 saat sonra başlayan halsizlik, uyuklama, baş dönmesi ve soğuk terleme",
-        "history": "Ailesi 2 yaşındaki (12 kg) erkek çocuğu Sarı Alana getiriyor: 'Yaklaşık 1.5 saat önce büyükannesinin komodinin üzerindeki antihipertansif ilaç kutusunu açmış. Yerde üzerinde isim yazmayan yırtılmış boş blister folyolar bulduk, 10 mg'lık yuvarlak beyaz tabletlerden en az 5-6 tanesini çiğneyip yuttuğunu düşünüyoruz. İlk saatte hareketliydi ancak son yarım saattir rengi soldu, soğuk terliyor, ayakta duramıyor ve uykuya meyilli hale geldi.'",
-        "final_diagnosis": "Kalsiyum Kanal Blokeri (Amlodipin) İntoksikasyonu (Vazoplejik Şok, Metabolik Laktik Asidoz ve Hiperglisemi)",
-        "disposition": "Sarı Alanda Aktif Kömür + Kristaloid Bolusu + İV %10 Kalsiyum Glukonat + Yüksek Doz İnsülin-Öglisemi Tedavisi (HIET) ve Norepinefrin İnfüzyonu ile Çocuk Yoğun Bakım Ünitesine Yatış",
-        "case_pearl": "Kalsiyum Kanal Blokerleri (KKB - özellikle amlodipin, verapamil, diltiazem) küçük çocuklarda tek bir tabletle bile ölümcül olabilen ('One Pill Can Kill') kardiyovasküler toksinlerdir. Diğer antihipertansiflerden (beta-bloker, klonidin, ACEİ) en önemli ayırıcı özelliği: Pankreas beta hücrelerindeki L-tipi kalsiyum kanallarını bloke ederek insülin salınımını baskılaması ve HİPERGLİSEMİ + LAKTİK ASİDOZ + DİRENÇLİ HİPOTANSİYON yapmasıdır (beta-blokerler hipoglisemi ve bradikardi, klonidin ise miyozis ve solunum depresyonu yapar). Dihidropiridin grubu (amlodipin) erken dönemde refleks sinüs taşikardisi ile derin vazopleji yapar. Tedavide aktif kömür, izotonik sıvı, İV kalsiyum glukonat, norepinefrin ve en kritik metabolik antidot olarak Yüksek Doz İnsülin-Öglisemi Tedavisi (HIET: 1 Ü/kg bolus + 0.5-1 Ü/kg/saat infüzyon ve dekstroz desteği) uygulanır.",
+        "complaint": "Burun tıkanıklığı, öksürük ve bugün başlayan hızlı nefes alıp verme",
+        "history": (
+            "Annesi Yeşil Alana 'nezlesi ve öksürüğü var, şurup yazdırmak istiyorum' diyerek getiriyor: '3 "
+            "gündür burnu akıyordu ve hapşırıyordu. Ama bu sabahtan beri nefes alırken karnı ve "
+            "kaburgalarının arası içeri çöküyor, memeyi ağzına alıp 2-3 kez çekip nefes alamadığı için "
+            "bırakıyor. Bez sayısı da bugün yarıya düştü.'"
+        ),
+        "final_diagnosis": "Orta-Ağır Akut Bronşiolit (Hipoksemik ve Beslenme Güçlüğü Olan Süt Çocuğu)",
+        "disposition": "Yeşil Alanda Saptanıp Sarı Alana Devir -> Oksijen, Nazal Aspirasyon ve Hidrasyon -> Pediatri Servis Yatışı",
+        "case_pearl": (
+            "<2 yaş (özellikle <6 ay) bebeklerde viral ÜSYE prodromu sonrası gelişen ilk hışıltı "
+            "(wheezing), takipne ve çekilme Akut Bronşiolittir. Yeşil alana 'öksürük/nezle' diye başvuran "
+            "süt çocuklarında göğüs duvarı soyularak solunum sayısı, çekilmeler ve SpO2 mutlaka "
+            "ölçülmelidir. SpO2 <%90-92, belirgin çekilme, takipne (>60/dk) ve beslenememe Sarı Alana "
+            "devir ve yatış endikasyonudur."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Toksikolojik Değerlendirme ve Monitörizasyon",
-                "question": "Ne olduğu bilinmeyen antihipertansif tabletlerden çoklu miktarda yutma sonrası perfüzyon bozukluğu ve letarji ile başvuran 2 yaşındaki çocukta ilk değerlendirme yaklaşımınız ne olmalıdır?",
+                "stage_title": "Yeşil Alanda Solunum Değerlendirmesi ve Alan Kararı",
+                "question": "Yeşil alana öksürük ve burun tıkanıklığı ile getirilen bu 4.5 aylık bebekte ilk muayene ve alan kararınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Midedeki tabletleri hızla uzaklaştırmak amacıyla çocuğa acil serviste hipertonik tuzlu su içirerek veya farenksi uyararak zorla kusturma işlemi uygulamak",
+                        "text": "Üst solunum yolu enfeksiyonuna bağlı burun tıkanıklığı düşünerek Yeşil Alanda serum fizyolojik burun damlası uygulamak ve oksijen satürasyonu ölçmeden anneye bebeği emzirmesini söyleyerek bekletmek",
                         "is_correct": False,
-                        "scenario_update": "Uykuya meyilli olan çocukta zorla kusturma girişimi sırasında öğürme refleksi yetersiz kaldığı için mide içeriği akciğerlere aspire edildi ve hipoksi gelişti.",
-                        "teaching_point": "Akut zehirlenmelerde mekanik uyarıyla veya tuzlu su/ipeka ile kusturma girişimi aspirasyon pnömonisi ve hipernatremi riski nedeniyle kesinlikle kontrendikedir."
+                        "scenario_update": "Göğsü açılmayan ve SpO2 ölçümü yapılmayan bebekte emzirme sırasında şiddetli desatürasyon ve morarma gelişti.",
+                        "teaching_point": "Öksürük, emmeme ve hızlı nefes alma öyküsü olan her süt çocuğunda göğüs tamamen açılarak çekilmeler değerlendirilmeli ve pulse oksimetre ile SpO2 ölçülmelidir.",
                     },
                     {
-                        "text": "Kan basıncı ölçümü ve kan şekeri kontrolü yapmadan önce toksik ilacın böbreklerden atılımını hızlandırmak için intravenöz furosemid uygulayarak diürezi zorlamak",
-                        "is_correct": False,
-                        "scenario_update": "Zaten periferik vazodilatasyon ve hipotansiyonu olan hastada uygulanan loop diüretik intravasküler hacmi daha da azaltarak derin kardiyovasküler kollapsa yol açtı.",
-                        "teaching_point": "Antihipertansif ilaç zehirlenmelerinde zorlu diürezin yeri yoktur; diüretik verilmesi hipovolemiyi ve şok tablosunu ağırlaştırır."
-                    },
-                    {
-                        "text": "Pupil çaplarına bakarak opioid/alfa-2 agonist zehirlenmesi varsaymak ve vital bulguları görmeden doğrudan intravenöz yüksek doz nalokson bolusu puşe etmek",
-                        "is_correct": False,
-                        "scenario_update": "Pupilleri izokorik olan ve solunum depresyonu bulunmayan hastada ampirik nalokson uygulamasına rağmen hipotansiyon ve perfüzyon bozukluğu hiç düzelmedi.",
-                        "teaching_point": "Farklı antihipertansif sınıflarını ayırt etmek için öncelikle kan basıncı, kalp hızı, EKG, kapiller kan şekeri ve kan gazı parametreleri bütünsel değerlendirilmelidir."
-                    },
-                    {
-                        "text": "Kardiyak monitörizasyon, 12 derivasyonlu EKG, kan basıncı, kapiller dolum zamanı, kan şekeri ve kan gazı/laktat ölçümünü hızla yapmak",
+                        "text": "Bebeğin göğüs duvarını açarak solunum sayısını, interkostal-subkostal çekilmeleri, oskültasyon bulgularını ve oda havasında SpO2 değerini ölçüp hastayı Sarı Alana devretmek",
                         "is_correct": True,
-                        "explanation": "Bilinmeyen antihipertansif zehirlenmelerinde hipotansiyon derecesi, kalp hızı/ritmi, laktik asidoz ve özellikle glukoz düzeyi etken ilaç grubunu ayırt etmede en önemli klinik ipuçlarıdır.",
-                        "new_finding": "Vital Bulgular: TA 64/34 mmHg, KTA 142/dk, SS 28/dk, SpO2 %97, KDZ 4 saniye, ekstremiteler soğuk, pupiller izokorik ve miyozis yok. EKG: Sinüs taşikardisi, PR 130 ms, QRS 80 ms. Parmak ucu kan şekeri: 246 mg/dL. Venöz Kan Gazı: pH 7.24, HCO3 15 mmol/L, Baz Açığı -11, Laktat 4.8 mmol/L, K+ 3.9 mEq/L."
-                    }
-                ]
+                        "triggers_yellow_transfer": True,
+                        "explanation": "Süt çocuğunda takipne (>60/dk), interkostal/subkostal çekilme, beslenememe ve hipoksemi akut alt solunum yolu obstrüksiyonunun ağırlaştığını gösterir; hasta derhal Sarı Alana devredilmelidir.",
+                        "new_finding": "Vital Bulgular: Ateş 37.9°C, KTA 156/dk, Solunum Sayısı 64/dk, Oda havasında SpO2 %89. Belirgin subkostal ve interkostal çekilmeler ile burun kanadı solunumu mevcut. Oskültasyonda ekspiryum uzun, bilateral yaygın sibilan ronküsler ve ince krepitan raller duyuluyor. Hasta Sarı Alana devredildi!",
+                    },
+                    {
+                        "text": "Oskültasyonda duyulan sibilan ronküsler nedeniyle hastayı Yeşil Alanda tutarak 20 dakika arayla 3 doz nebülize salbutamol uygulamak ve oral prednizolon şurup vererek yanıtı beklemek",
+                        "is_correct": False,
+                        "scenario_update": "Oksijen desteği verilmeden Yeşil Alanda uygulanan ardışık salbutamol nebülleri bebeğin taşikardisini 190/dk'ya çıkardı, SpO2 %88'de kaldı ve solunum iş yükü azalmadı.",
+                        "teaching_point": "Hipoksemik (SpO2 <%90) süt çocuğu Yeşil Alanda tutulamaz; ayrıca küçük süt çocuklarının ilk viral alt solunum yolu hışıltısında rutin bronkodilatör ve steroid önerilmez.",
+                    },
+                    {
+                        "text": "Öksürük ve hızlı solunumu bakteriyel pnömoni başlangıcı kabul ederek Yeşil Alanda PA akciğer grafisi istemek ve oral amoksisilin-klavulanat ile dekstrometorfan şurup reçete edip eve göndermek",
+                        "is_correct": False,
+                        "scenario_update": "Hipoksemik ve beslenemeyen 4.5 aylık bebekte solunum yetmezliği riski atlandı ve süt çocuklarında kontrendike olan antitussif şurup reçete edildi.",
+                        "teaching_point": "Süt çocuklarında öksürük kesici (antitussif/mukolitik) ilaçlar kesinlikle kontrendikedir; hipoksemik bebek acil gözleme alınmalıdır.",
+                    },
+                ],
             },
             {
-                "stage_title": "Gastrointestinal Dekontaminasyon ve İlk Resüsitasyon",
-                "question": "Alımdan 1.5 saat sonra başvuran, derin hipotansiyonu (64/34 mmHg), metabolik laktik asidozu ve belirgin hiperglisemisi (246 mg/dL) olan 12 kg çocukta ilk basamak müdahaleniz ne olmalıdır?",
+                "stage_title": "Sarı Alanda Stabilizasyon ve Tedavi Yaklaşımı",
+                "question": "Sarı Alana devraldığınız (SpO2 %89, SS 64/dk, çekilmeleri olan ve ememeyen) bu 4.5 aylık bebekte kanıta dayalı ilk müdahale ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Hava yolunu koruyarak 1 g/kg aktif kömür vermek, 20 mL/kg izotonik kristaloid bolusu ve İV %10 kalsiyum glukonat (0.6 mL/kg) uygulamak",
+                        "text": "Rutin olarak tam kan sayımı, CRP ve akciğer grafisi çekmek; intravenöz metilprednizolon, ampisilin-sulbaktam ve sekresyon mobilizasyonu için agresif göğüs fizyoterapisi (tapotman) uygulamak",
+                        "is_correct": False,
+                        "scenario_update": "Agresif göğüs perküsyonu/tapotman bebeğin ağlamasını ve oksijen tüketimini artırarak desatürasyonu derinleştirdi; steroid ve antibiyotik klinik fayda sağlamadı.",
+                        "teaching_point": "Güncel uluslararası kılavuzlarda viral alt hava yolu obstrüksiyonunda rutin akciğer grafisi, kan tetkiki, sistemik/inhale kortikosteroidler, antibiyotikler ve göğüs fizyoterapisi önerilmemektedir.",
+                    },
+                    {
+                        "text": "Solunum sayısı 64/dk iken dehidratasyonu önlemek amacıyla bebeği biberonla beslemeye devam etmek ve eş zamanlı ardışık nebülize ipratropium bromür ile salbutamol kombinasyonu uygulamak",
+                        "is_correct": False,
+                        "scenario_update": "Dakikada 64 kez nefes alan bebekte emme-yutma-solunum koordinasyonu bozulduğu için mama aspirasyonu ve akut desatürasyon gelişti!",
+                        "teaching_point": "Solunum sayısı >60/dk olan süt çocuklarında aspirasyon riski çok yüksektir; takipne gerileyene kadar ağızdan beslenme kesilerek intravenöz veya nazogastrik hidrasyon sağlanmalıdır.",
+                    },
+                    {
+                        "text": "Başı 30 derece yükseltip nazal aspirasyon yapmak, SpO2 >%92 tutacak şekilde oksijen başlamak ve aspirasyon riski nedeniyle oral beslenmeyi kesip intravenöz hidrasyon sağlamak",
                         "is_correct": True,
-                        "explanation": "Erken dönemde aktif kömür gastrointestinal emilimi azaltır; izotonik sıvı bolusu damar içi hacmi desteklerken intravenöz kalsiyum tuzu miyokardiyal kontraktiliteyi ve vasküler tonusu artırır.",
-                        "new_finding": "12 gram aktif kömür uygulandı, 20 mL/kg %0.9 NaCl bolusu ve 0.6 mL/kg %10 kalsiyum glukonat yavaş intravenöz infüzyonla verildi. Müdahale sonrası kan basıncı 72/40 mmHg, KTA 136/dk, kan şekeri 258 mg/dL, kontrol laktat 4.5 mmol/L ölçüldü; hipoperfüzyon bulguları devam ediyor."
+                        "explanation": "Zorunlu burun solunumu yapan süt çocuklarında yüzeyel nazal aspirasyon üst hava yolu direncini düşürür; SpO2 <%90-92 olduğunda oksijen desteği ve SS >60/dk iken intravenöz/NG hidrasyon tedavinin kanıtlanmış temel taşlarıdır.",
+                        "new_finding": "Yüzeyel nazal aspirasyon ve 2 L/dk nemlendirilmiş oksijen desteği sonrası bebeğin SpO2 değeri %96'ya yükseldi, solunum sayısı 54/dk'ya geriledi. Damar yolu açılarak izotonik idame sıvı tedavisi başlandı.",
                     },
                     {
-                        "text": "Kan şekeri 246 mg/dL olduğu için diyabetik ketoasidoz protokolü başlatarak sadece 0.05 Ü/kg/saat düşük doz insülin ve hipotonik sıvı infüzyonu vermek",
+                        "text": "Nazal aspirasyon yapmadan doğrudan derin endotrakeal aspirasyon uygulamak, rutin arteriyel kan gazı almak ve solunum iş yükünü baskılamak amacıyla düşük doz intravenöz midazolam sedasyonu başlamak",
                         "is_correct": False,
-                        "scenario_update": "İdrarda ketonu negatif olan ve ilaç kaynaklı pankreatik insülin salınım baskılanması yaşayan hastada hipotonik sıvı uygulaması hipotansiyonu daha da derinleştirdi.",
-                        "teaching_point": "Vazoplejik şoktaki zehirlenme hastasında hiperglisemi primer diyabete değil, pankreas beta hücrelerindeki iyon kanalı blokajına bağlıdır; hipotonik sıvı verilmemelidir."
+                        "scenario_update": "Derin aspirasyon mukozal ödeme ve laringospazma yol açarken, verilen sedatif solunum dürtüsünü baskılayarak apne atağı tetikledi!",
+                        "teaching_point": "Derin nazofaringeal/trakeal aspirasyon mukozal travma ve refleks bradikardi/apne yaptığı için önerilmez; entübe olmayan solunum sıkıntılı süt çocuğuna sedatif verilmez.",
                     },
-                    {
-                        "text": "Derin hipotansiyonu düzeltmek amacıyla kristaloid sıvı veya kalsiyum desteği vermeden doğrudan periferik damardan beta-agonist izoproterenol ve sodyum nitroprusid infüzyonu başlatmak",
-                        "is_correct": False,
-                        "scenario_update": "Periferik vazodilatatör etki mekanizmasına sahip bu ilaçların verilmesi sistemik vasküler direnci tamamen düşürerek kan basıncını ölçülemeyecek düzeye indirdi.",
-                        "teaching_point": "Periferik vazodilatasyonun ön planda olduğu antihipertansif toksisitelerinde vazodilatatör ajanlar ve saf beta-2 agonistler hipotansiyonu ağırlaştırır."
-                    },
-                    {
-                        "text": "Alımdan 1.5 saat geçtiği için çok geniş çaplı orogastrik tüp takarak 3 litre musluk suyu ile mide lavajı yapmak ve aktif kömür vermemek",
-                        "is_correct": False,
-                        "scenario_update": "Küçük çocukta musluk suyu ile yapılan yüksek hacimli gastrik lavaj hiponatremiye, hipotermiye ve mide mukozası travmasına yol açarken emilimi engellemedi.",
-                        "teaching_point": "Çocuklarda rutin mide lavajı önerilmez ve musluk suyu su zehirlenmesine yol açar; uygun vakalarda 1 g/kg aktif kömür tercih edilmelidir."
-                    }
-                ]
+                ],
             },
             {
-                "stage_title": "Klinik Tanı ve Toksidrom Ayrımı",
-                "question": "Antihipertansif alımı sonrası derin hipotansiyon, refleks taşikardi, metabolik laktik asidoz ve belirgin hiperglisemi (258 mg/dL) birlikteliği hangi ilaç grubu zehirlenmesini gösterir?",
+                "stage_title": "Sarı Alanda Kesin Tanı",
+                "question": "Mevcut anamnez ve fizik muayene bulgularıyla bu 4.5 aylık bebekte kesin tanınız nedir?",
                 "options": [
                     {
-                        "text": "Beta-Bloker (Propranolol) Akut İntoksikasyonu",
-                        "is_correct": False,
-                        "scenario_update": "Beta-bloker zehirlenmesinde belirgin bradikardi ve glukoneogenez/glikojenoliz baskılanmasına bağlı hipoglisemi görülür; bu hastada refleks taşikardi ve belirgin hiperglisemi mevcuttur.",
-                        "teaching_point": "Antihipertansif zehirlenmesinde hiperglisemi kalsiyum kanal blokerlerini, hipoglisemi ise beta-blokerleri işaret eden en önemli metabolik ayırıcı bulgudur."
-                    },
-                    {
-                        "text": "Santral Alfa-2 Agonist (Klonidin) İntoksikasyonu",
-                        "is_correct": False,
-                        "scenario_update": "Klonidin zehirlenmesinde opioid benzeri toksidrom (toplu iğne başı miyozis, bradikardi, apne/solunum depresyonu ve koma) görülür; belirgin hiperglisemi beklenmez.",
-                        "teaching_point": "Hastada miyozis ve solunum depresyonu olmaması, aksine hiperglisemi ve laktik asidozla giden vazoplejik şok bulunması klonidin toksisitesini dışlar."
-                    },
-                    {
-                        "text": "Kalsiyum Kanal Blokeri (Amlodipin) İntoksikasyonu",
+                        "text": "Orta-Ağır Akut Bronşiolit",
                         "is_correct": True,
-                        "explanation": "L-tipi kalsiyum kanallarının blokajı vasküler düz kasta gevşeme (derin hipotansiyon ve refleks taşikardi), doku hipoperfüzyonu (laktik asidoz) ve pankreas beta hücrelerinden insülin salınımının durmasıyla karakteristik hiperglisemiye yol açar.",
-                        "new_finding": "Kesin tanı: Kalsiyum Kanal Blokeri (Amlodipin) İntoksikasyonu. Ailenin evden getirdiği ilaç kutusu da Amlodipin 10 mg olarak doğrulandı."
+                        "explanation": "4.5 aylık süt çocuğunda 3 günlük viral ÜSYE prodromu sonrası gelişen ilk wheezing/ince ral atağı, takipne (64/dk), çekilmeler, hipoksemi (SpO2 %89) ve beslenme güçlüğü Orta-Ağır Akut Bronşiolit tanısını koydurur.",
+                        "new_finding": "Kesin Tanı: Orta-Ağır Akut Bronşiolit.",
                     },
                     {
-                        "text": "Anjiyotensin Dönüştürücü Enzim İnhibitörü İntoksikasyonu",
+                        "text": "Akut Viral Laringotrakeit (Krup)",
                         "is_correct": False,
-                        "scenario_update": "ACE inhibitörü alımları çocuklarda genellikle hafif-orta hipotansiyon ve hiperkalemi ile seyreder; erken dönemde ağır laktik asidoz ve 258 mg/dL düzeyinde hiperglisemi yapmaz.",
-                        "teaching_point": "Dirençli vazoplejik şok, laktik asidoz ve pankreatik insülin blokajına bağlı hiperglisemi triadı ACE inhibitörlerinden ziyade kalsiyum kanal blokeri toksisitesine özgüdür."
-                    }
-                ]
+                        "scenario_update": "Hastada inspiratuar stridor ve havlar tarzda kaba öksürük değil, ekspiryum uzaması, yaygın sibilan ronküsler ve ince krepitan raller mevcuttur.",
+                        "teaching_point": "Krup üst hava yolu (subglottik) darlığıdır ve inspiratuar stridorla seyreder; bronşiolit ise alt solunum yollarının (bronşiollerin) obstrüksiyonudur.",
+                    },
+                    {
+                        "text": "Bronşiyal Yabancı Cisim Aspirasyonu",
+                        "is_correct": False,
+                        "scenario_update": "Henüz ek gıdaya geçmemiş 4.5 aylık bebekte ani başlayan boğulma/öksürük krizi öyküsü olmayıp 3 günlük rinit prodromu ve bilateral simetrik oskültasyon bulguları vardır.",
+                        "teaching_point": "Viral prodrom ve bilateral simetrik sibilan ronküs/ince raller akut bronşiolit lehinedir; yabancı cisim aspirasyonunda ani başlangıç ve asimetrik solunum sesleri beklenir.",
+                    },
+                    {
+                        "text": "Akut Bakteriyel Lober Pnömoni",
+                        "is_correct": False,
+                        "scenario_update": "Bebekte toksik görünüm, yüksek ateş veya fokal konsolidasyon (bronşiyal solunum sesi/matite) yerine yaygın bilateral sibilan ronküsler ve ekspiryum uzaması ön plandadır.",
+                        "teaching_point": "Subfebril ateş ve yaygın bilateral wheezing/ince raller süt çocuğunda viral bronşiolit için tipiktir.",
+                    },
+                ],
             },
             {
-                "stage_title": "Spesifik Antidot (HIET) ve Yoğun Bakım Yönetimi",
-                "question": "Sıvı ve İV kalsiyum glukonata rağmen hipotansiyonu (72/40 mmHg) ve laktik asidozu süren Kalsiyum Kanal Blokeri zehirlenmeli bu çocukta en etkili spesifik tedavi nedir?",
+                "stage_title": "Sarı Alanda Yatış ve İzlem Kararı",
+                "question": "Oda havasında hipoksemisi (SpO2 %89), takipnesi ve beslenme güçlüğü olan 4.5 aylık bu bebekte son kararınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Yalnızca intravenöz glukagon (0.05 mg/kg) tek doz puşe uygulayıp Dekstroz veya insülin vermeden hastayı 6 saat sonra pediatri servisine çıkarmak",
+                        "text": "Oksijen altında SpO2 değeri %96'ya yükseldiği için oksijen desteğini kesip evde kullanmak üzere nebülize salbutamol ve budesonid reçete ederek 24 saat sonra poliklinik kontrolüyle taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Tek doz glukagon uygulaması kusmayı tetikledi ve kalsiyum kanal blokajına bağlı vazoplejik şoku düzeltmekte yetersiz kalarak hipotansiyonun derinleşmesine yol açtı.",
-                        "teaching_point": "Glukagon beta-bloker zehirlenmelerinde cAMP artışıyla yardımcı olabilir ancak ağır kalsiyum kanal blokeri şokunda tek başına yetersizdir; temel metabolik antidot yüksek doz insülindir."
+                        "scenario_update": "Oksijen kesildikten 20 dakika sonra bebeğin SpO2 değeri tekrar %88'e düştü, subkostal çekilmeleri arttı ve emmeyi reddetti.",
+                        "teaching_point": "Oda havasında SpO2 <%90-92 olan ve oral alımı yarıdan fazla azalmış küçük süt çocuğu acil servisten taburcu edilemez.",
                     },
                     {
-                        "text": "Yüksek doz insülin-öglisemi protokolü (1 Ü/kg bolus, 0.5-1 Ü/kg/saat infüzyon + dekstroz) ve norepinefrin başlayarak Çocuk Yoğun Bakıma yatırmak",
+                        "text": "Acil gözlemde tek doz intramüsküler deksametazon ve seftriakson uyguladıktan sonra 2 saat izleyip solunum sayısı 54/dk düzeyindeyken oral beslenmeye geçerek hastayı eve göndermek",
+                        "is_correct": False,
+                        "scenario_update": "Etkisiz medikal tedavilerle eve gönderilen bebek gece solunum yorgunluğu ve dehidratasyon nedeniyle acil servise yeniden getirildi.",
+                        "teaching_point": "Orta-ağır bronşiolitte parenteral steroid veya antibiyotik yatış ihtiyacını ortadan kaldırmaz; hasta oksijen ve hidrasyon desteği için yatırılmalıdır.",
+                    },
+                    {
+                        "text": "Rutin olarak tüm orta-ağır bronşiolit hastalarına uygulanan erken endotrakeal entübasyon ve mekanik ventilasyon amacıyla bebeği doğrudan üçüncü basamak yoğun bakım ünitesine entübe ederek nakletmek",
+                        "is_correct": False,
+                        "scenario_update": "Nazal aspirasyon ve düşük akımlı oksijenle SpO2'si %96'ya çıkan ve apnesi olmayan bebekte gereksiz invaziv mekanik ventilasyon girişimi planlandı.",
+                        "teaching_point": "Düşük akımlı oksijen veya HFNC ile stabilize olan, apnesi ve hiperkapnik solunum yetmezliği bulunmayan orta-ağır bronşiolit vakaları genel pediatri servisinde izlenir.",
+                    },
+                    {
+                        "text": "Oda havasında hipoksemisi, takipnesi ve beslenme güçlüğü süren 4.5 aylık bebeği oksijen desteği, hidrasyon ve yakın solunum/apne izlemi amacıyla Pediatri servisine yatırmak",
                         "is_correct": True,
-                        "explanation": "Kalsiyum kanal blokeri toksisitesinde yüksek doz insülin-öglisemi tedavisi (HIET) miyokardın karbonhidrat kullanımını sağlayarak güçlü inotropik etki gösterir; vazopleji için norepinefrin eklenerek yoğun bakımda izlenir.",
-                        "new_finding": "Yüksek doz insülin (1 Ü/kg bolus ardından 1 Ü/kg/saat infüzyon), %10 Dekstroz ve norepinefrin infüzyonu başlatıldı. Saatlik glukoz ve potasyum takibiyle Çocuk Yoğun Bakım Ünitesine alınan hastanın 3. saatte kan basıncı 94/56 mmHg düzeyine ulaştı ve laktat 1.6 mmol/L değerine geriledi."
+                        "explanation": "Oda havasında SpO2 <%90-92 olması, orta-ağır solunum sıkıntısı (belirgin çekilmeler, takipne) ve oral beslenmenin yarıdan fazla azalması kesin hastane yatış endikasyonudur.",
+                        "new_finding": "Bebek nemlendirilmiş oksijen ve intravenöz hidrasyon desteği altında Çocuk Sağlığı ve Hastalıkları servisine yatırıldı.",
                     },
-                    {
-                        "text": "İdrar pH değerini 7.5-8.0 aralığında tutacak şekilde yüksek doz intravenöz sodyum bikarbonat alkalinizasyonu ve acil aralıklı hemodiyaliz işlemi başlatmak",
-                        "is_correct": False,
-                        "scenario_update": "Plazma proteinlerine yüksek oranda (%95 üzerinde) bağlanan ve dağılım hacmi geniş olan ilaç hemodiyalizle temizlenemedi ve hemodinamik instabilite sürdü.",
-                        "teaching_point": "Amlodipin gibi kalsiyum kanal blokerleri proteine yüksek oranda bağlandığı ve geniş dağılım hacmine sahip olduğu için hemodiyaliz veya idrar alkalinizasyonu ile uzaklaştırılamaz."
-                    },
-                    {
-                        "text": "Kalsiyum kanal blokajını geri döndürmek amacıyla intravenöz fizostigmin salisilat ve pridostigmin vererek kolinerjik uyarıyı artırmak ve genel serviste izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Kolinerjik ajanların uygulanması miyokardiyal iletimi baskılayarak hastada ağır bradikardi, atriyoventriküler blok ve bronkore gelişmesine neden oldu.",
-                        "teaching_point": "Antikolinesteraz ilaçların kalsiyum kanal blokeri zehirlenmesinde yeri yoktur; ağır bradikardi ve AV blok yaparak kardiyovasküler kollapsı hızlandırırlar."
-                    }
-                ]
-            }
-        ]
+                ],
+            },
+        ],
     },
     {
         "id": "Y20",
-        "category": "👁️ Göz Şikayetleri",
-        "age": "4 Yaş",
+        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
+        "age": "7 Yaş",
         "gender": "Erkek",
-        "complaint": "Sol göz kapaklarında kızarıklık, şiddetli şişlik, gözünü açamama, göz hareketleriyle artan ağrı ve yüksek ateş",
-        "history": "Ailesi 4 yaşındaki erkek çocuğu Sarı Alana getiriyor: 'Dört gündür koyu kıvamlı burun akıntısı ve hafif ateşi vardı. Dün sabah sol gözünün iç köşesinde ve kapaklarında kızarıklık başladı; bu sabah ise göz kapakları tamamen şişti, morumsu-kırmızı bir renk aldı ve ateşi 39.2°C'ye yükseldi. Sağa sola bakmasını istediğimizde sol gözünü ettiremiyor ve gözünün arkasında çok şiddetli ağrı olduğunu söyleyerek ağlıyor.'",
-        "final_diagnosis": "Akut Orbital Selülit ve Medial Subperiosteal Abse (Akut Etmoid Sinüzit Komplikasyonu)",
-        "disposition": "Sarı Alanda Acil Kontrastlı Orbital ve Paranazal Sinüs BT + İV Geniş Spektrumlu Antibiyotik (Seftriakson + Vankomisin) + Oftalmoloji ve KBB Konsültasyonu ile Yatış",
-        "case_pearl": "Göz kapağında kızarıklık ve şişlikle başvuran çocukta en kritik adım yüzeyel (preseptal) enfeksiyonu derin (orbital/postseptal) enfeksiyondan ayırt etmektir. Orbital selülit en sık akut etmoid sinüzitin ince lamina papyracea kemiğinden orbita içine yayılmasıyla gelişir. Klinik kırmızı bayraklar: 1) Ekstraoküler göz hareketlerinde kısıtlılık (oftalmopleji), 2) Göz hareketleriyle şiddetli ağrı, 3) Proptozis (globun öne yer değiştirmesi), 4) Kemozis (konjonktival ödem), 5) Görme azalması veya aferent pupil defektidir (RAPD). Bu bulgulardan biri bile varsa acil İV kontrastlı Orbital ve Paranazal BT çekilmeli, subperiosteal abse araştırılmalı, İV Seftriakson + Vankomisin (veya Ampisilin-Sulbaktam) başlanarak KBB ve Göz konsültasyonu ile yatırılmalıdır.",
+        "complaint": "Kaşıntı, kızarıklık ve yeni başlayan öksürük / kusma",
+        "history": (
+            "Babası Yeşil Alana 'alerji oldu, kaşınıyor' diyerek getiriyor: 'Yarım saat önce doğum günü "
+            "partisinde fıstıklı pasta yemişti. Önce boynunda ve kollarında kaşıntılı kabarıklıklar çıktı. "
+            "Yeşil alan sırasında beklerken 2 kez kustu, şimdi de boğazım daralıyor diyor, sesi biraz "
+            "çatallı çıkıyor ve kuru kuru öksürmeye başladı.'"
+        ),
+        "final_diagnosis": "Anafilaksi (Besin Alerjeni Tetikli Çoklu Sistem Tutulumu)",
+        "disposition": "Yeşil Alanda Saptanıp Derhal Sarı/Kırmızı Alana Devir -> Acil İM Adrenalin -> Gözlem ve Adrenalin Oto-enjektör Reçetesi",
+        "case_pearl": (
+            "Bilinen veya olası bir alerjen maruziyeti sonrası dakikalar-saatler içinde başlayan "
+            "deri/mukoza bulgularına (ürtiker, anjiyoödem, kaşıntı) SOLUNUM (stridor, ses kısıklığı, "
+            "wheezing, dispne), DOLAŞIM (hipotansiyon, taşikardi, senkop) veya GİS (dirençli kusma, kramp "
+            "tarzı karın ağrısı) bulgularından en az birinin eşlik etmesi ANAFİLAKSİDİR! İlk ve hayat "
+            "kurtarıcı tedavi uyluk anterolateraline (vastus lateralis) İM Adrenalin (0.01 mg/kg, 1:1000) "
+            "uygulanmasıdır."
+        ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Oftalmolojik Muayene ve Kırmızı Bayraklar",
-                "question": "Akut rinosinüzit öyküsü sonrası tek taraflı göz kapağı ödemi, eritem ve yüksek ateşle başvuran 4 yaşındaki çocukta ilk fizik muayenede neleri değerlendirmelisiniz?",
+                "stage_title": "Yeşil Alanda Değerlendirme ve Acil Müdahale Kararı",
+                "question": "Yeşil alana kaşıntı ve döküntü şikayetiyle giren ancak kusma, ses boğukluğu ve öksürük eklenen bu 7 yaşındaki çocukta ilk kararınız ne olmalıdır?",
                 "options": [
                     {
-                        "text": "Göz kapakları çok ödemli olduğu için kapakları hiç aralamadan dıştan inspeksiyonla yetinmek ve topikal tobramisin damla başlayıp 48 saat sonra kontrole çağırmak",
+                        "text": "Hastayı Sarı Alana devredip periferik damar yolu açarak öncelikle intravenöz feniramin ve 1-2 mg/kg metilprednizolon uygulamak, yalnızca arteriyel hipotansiyon gelişirse intramüsküler adrenalin planlamak",
                         "is_correct": False,
-                        "scenario_update": "Göz küresi ve ekstraoküler hareketler değerlendirilmeden eve gönderilen hastada 12 saat içinde sol gözde aferent pupil defekti ve kalıcı görme kaybı gelişti.",
-                        "teaching_point": "Ateşli periorbital ödem ve eritemle başvuran her çocukta göz kapakları nazikçe aralanarak göz küresi pozisyonu, göz hareketleri ve pupil refleksleri mutlaka değerlendirilmelidir."
+                        "scenario_update": "Antihistaminik ve etkisi saatler sonra başlayan kortikosteroid laringeal ödemi durduramadı; hastanın stridoru artarak SpO2 değeri %84'e geriledi!",
+                        "teaching_point": "Çoklu sistem tutulumu ve hava yolu obstrüksiyonu bulgularında adrenalin için hipotansiyon gelişmesi beklenmez; antihistaminik ve steroidler adrenalinin yerini asla tutmaz.",
                     },
                     {
-                        "text": "Şişliği indirmek amacıyla sol göz üzerine sıcak nemli kompres uygulamak ve ağrısını kesmek için topikal tetrakain anestezik göz damlası damlatmak",
+                        "text": "Yeşil Alanda oral setirizin şurup ve soğuk buhar uygulayarak 30 dakika beklemek, kusması devam ederse intramüsküler ondansetron yapıp klinik semptomların gerileyip gerilemediğini kontrol etmek",
                         "is_correct": False,
-                        "scenario_update": "Yüzeyel anestezik damla derin oküler ağrıyı geçirmediği gibi kornea epitel toksisitesine yol açtı ve sıcak uygulama derin dokulardaki ödemi artırdı.",
-                        "teaching_point": "Derin orbita dokularını ilgilendiren akut bakteriyel enfeksiyon şüphesinde sıcak kompres ve topikal anestezik damlalar tanısal süreci geciktirir ve kontrendikedir."
+                        "scenario_update": "Oral antihistaminik ve antiemetik ile Yeşil Alanda bekletilen çocukta dakikalar içinde tam üst hava yolu obstrüksiyonu ve hipoksik bradikardi gelişti!",
+                        "teaching_point": "Alerjen maruziyeti sonrası deri bulgularına solunum ve gastrointestinal semptomların eklenmesi hayatı tehdit eden sistemik reaksiyonu gösterir; Yeşil Alanda bekletilemez.",
                     },
                     {
-                        "text": "Vital bulgularla birlikte görme keskinliğini, ekstraoküler göz hareketlerini, globun öne yer değiştirmesini, konjonktival ödemi ve aferent pupil defektini değerlendirmek",
+                        "text": "Çoklu sistem tutulumu (deri-mukoza, gastrointestinal ve akut solunum obstrüksiyonu) saptayarak hastayı Sarı/Kırmızı Alana devretmek ve vastus lateralis kas içine 0.01 mg/kg adrenalin uygulamak",
                         "is_correct": True,
-                        "explanation": "Göz kapağı enfeksiyonlarında derin orbita yapıların etkilenip etkilenmediğini belirleyen temel bulgular ekstraoküler hareket kısıtlılığı, ağrılı göz hareketleri, proptozis, kemozis ve pupil reaksiyonlarıdır.",
-                        "new_finding": "Vital Bulgular: Ateş 39.2°C, KTA 132/dk, SS 24/dk, TA 100/62 mmHg. Oftalmolojik Muayene: Sol alt ve üst göz kapağında şiddetli eritem, ısı artışı ve ödem; sol gözde öne doğru yer değiştirme (proptozis), yukarı ve dışa bakışta ağrılı hareket kısıtlılığı, konjonktival ödem (kemozis) saptandı. Pupiller izokorik, direkt ve indirekt ışık refleksleri pozitif, rölatif aferent pupil defekti yok."
+                        "triggers_yellow_transfer": True,
+                        "explanation": "Şüpheli besin alımı sonrası dakikalar içinde gelişen ürtiker + tekrarlayan kusma + laringeal/bronşiyal obstrüksiyon bulgularında ilk ve hayat kurtarıcı basamak uyluk üst-dış yanından (vastus lateralis) intramüsküler 0.01 mg/kg (1:1000) adrenalin uygulanması ve Sarı/Kırmızı Alana devirdir.",
+                        "new_finding": "Vital Bulgular: KTA 142/dk, SS 32/dk, TA 88/52 mmHg, SpO2 %92. Yaygın ürtiker plakları, alt dudakta ödem, seste boğukluk, inspiratuar stridor ve bilateral ekspiratuar wheezing mevcut. Hasta derhal Sarı Alana alındı ve sol uyluk anterolateralinden 0.25 mg intramüsküler adrenalin uygulandı!",
                     },
                     {
-                        "text": "Böcek ısırığına bağlı lokal alerjik reaksiyon düşünerek göz muayenesini tamamlamadan intramusküler feniramin ve deksametazon uygulayıp hastayı 2 saat gözleme almak",
+                        "text": "Solunum seslerindeki boğukluk ve hışıltıyı akut bronkospazm olarak değerlendirip Yeşil Alanda yalnızca ardışık nebülize salbutamol ve inhale budesonid uygulayarak hastayı oturur pozisyonda yakından izlemek",
                         "is_correct": False,
-                        "scenario_update": "Antihistaminik ve tek doz steroid uygulamasına rağmen hastanın yüksek ateşi, göz ağrısı ve göz hareket kısıtlılığı ilerlemeye devam etti.",
-                        "teaching_point": "Yüksek ateş, pürülan rinit öyküsü ve tek taraflı ağrılı göz kapağı şişliğinde alerjik anjiyoödemden önce akut bakteriyel enfeksiyon ve derin doku yayılımı dışlanmalıdır."
-                    }
-                ]
+                        "scenario_update": "Nebülize salbutamol üst hava yolundaki (laringeal) anjiyoödemi ve sistemik mediyatör salınımını engelleyemediği için stridor ve dolaşım bozukluğu ilerledi.",
+                        "teaching_point": "İnhale beta-2 agonistler laringeal ödemi ve mukozal kapiller sızıntıyı düzeltmez; birincil tedavi alfa-1 ve beta-2 agonisti olan intramüsküler adrenalindir.",
+                    },
+                ],
             },
             {
-                "stage_title": "Radyolojik Görüntüleme ve Laboratuvar Planı",
-                "question": "Sol gözde proptozis, yukarı ve dışa bakışta ağrılı hareket kısıtlılığı ve kemozis saptanan bu hastada en uygun tetkik yaklaşımı hangisidir?",
+                "stage_title": "Sarı Alanda İkincil Destek ve Resüsitasyon Yönetimi",
+                "question": "Sarı Alanda ilk doz intramüsküler adrenalin uygulandı. Bu aşamada eş zamanlı yapılması gereken doğru destek tedavileri nelerdir?",
                 "options": [
                     {
-                        "text": "Yalnızca iki yönlü direkt Waters ve Caldwell paranazal sinüs grafisi çekmek, hemogram alarak radyasyon riski nedeniyle kesitsel görüntülemeden kaçınmak",
-                        "is_correct": False,
-                        "scenario_update": "Direkt sinüs grafisinde etmoid sinüslerde bulanıklık görülse de orbita içi yumuşak dokular ve kemik duvar komşuluğundaki koleksiyon değerlendirilemedi.",
-                        "teaching_point": "Proptozis ve ekstraoküler hareket kısıtlılığı varlığında direkt grafiler orbita içi yayılımı ve abse formasyonunu göstermede tamamen yetersizdir."
-                    },
-                    {
-                        "text": "Damar yolu açıp hemogram, CRP ve kan kültürü almak; acil intravenöz kontrastlı orbital ve paranazal sinüs BT çekmek",
+                        "text": "Uygun pozisyon verip oksijen başlamak, damar yolu açarak 20 mL/kg izotonik kristaloid, bronkospazm için nebülize salbutamol ve yardımcı olarak H1-antihistaminik ile metilprednizolon uygulamak",
                         "is_correct": True,
-                        "explanation": "Proptozis, kemozis ve ağrılı göz hareket kısıtlılığı derin intraorbital tutulumu gösterir; koleksiyon veya abse varlığını saptamak için altın standart ilk görüntüleme kontrastlı orbital ve paranazal BT çekimidir.",
-                        "new_finding": "Laboratuvar: WBC 19.200/mm³ (%85 nötrofil), CRP 112 mg/L, kan kültürü alındı. İV Kontrastlı Orbital ve Paranazal Sinüs BT: Sol etmoid ve maksiller sinüste tam opasifikasyon, lamina papyracea komşuluğunda orbita medial duvarında 12x5 mm boyutunda periferik kontrastlanan koleksiyon, sol medial rektus kasında ödem ve globda anterolateral yer değiştirme saptandı. Kavernöz sinüs yapıları doğal izlendi."
+                        "explanation": "İntramüsküler adrenalin sonrası hava yolu/oksijen desteği, damar yolu açılarak intravasküler hacim desteği (%0.9 NaCl), alt hava yolu obstrüksiyonu için nebülize salbutamol ve ikincil ilaçlar uygulanır; 5-15 dakikada yanıt değerlendirilir.",
+                        "new_finding": "İntramüsküler adrenalin, oksijen, izotonik sıvı desteği ve nebülize salbutamol sonrası 8. dakikada ses boğukluğu ve wheezing düzeldi; SpO2 %99, TA 105/68 mmHg, KTA 110/dk ölçüldü.",
                     },
                     {
-                        "text": "Radyolojik görüntüleme yapmadan önce olası intrakraniyal yayılımı dışlamak amacıyla acil serviste lomber ponksiyon yapmak ve konjonktival sürüntü kültürü sonucunu beklemek",
+                        "text": "İlk doz intramüsküler adrenalinden hemen 2 dakika sonra tam yanıt alınamadığı düşüncesiyle 1:1000 konsantrasyondaki adrenalini sulandırmadan 0.25 mg dozunda hızlı intravenöz puşe olarak uygulamak",
                         "is_correct": False,
-                        "scenario_update": "Meninks irritasyon bulgusu olmayan hastada kesitsel görüntüleme öncesi lomber ponksiyon planlanması asıl anatomik odağın ve koleksiyonun saptanmasını geciktirdi.",
-                        "teaching_point": "Fokal intraorbital bulguları olan hastada öncelikli tanı aracı kontrastlı orbital ve paranazal BT incelemesidir; konjonktival sürüntü kültürü derin doku etkenini yansıtmaz."
+                        "scenario_update": "Sulandırılmamış (1:1000) adrenalinin hızlı intravenöz puşe yapılması şiddetli hipertansif kriz ve ventriküler taşikardi atağı tetikledi!",
+                        "teaching_point": "Adrenalin 5-15 dakika arayla intramüsküler olarak tekrarlanabilir; sulandırılmamış (1:1000) intravenöz puşe adrenalin ölümcül kardiyak aritmi ve miyokardiyal iskemiye yol açar.",
                     },
                     {
-                        "text": "Herhangi bir radyolojik görüntüleme yapmadan doğrudan acil serviste lokal anestezi altında üst göz kapağı oluğundan enjektörle ponksiyon ve aspirasyon denemek",
+                        "text": "Solunumunun rahatlaması ve kusmasının geçmesi için çocuğu sedyeden kaldırarak acil servis koridorunda yürütmek ve ağızdan bol su içirerek alerjenin mideden hızla temizlenmesini sağlamak",
                         "is_correct": False,
-                        "scenario_update": "Körlemesine yapılan iğne aspirasyonu girişimi sırasında derin koleksiyona ulaşılamadığı gibi ekstraoküler kas ve glob perforasyonu tehlikesi yaşandı.",
-                        "teaching_point": "Orbita içi koleksiyonlar anatomik olarak kemik duvar ile periorbita arasında derin yerleşimlidir; kesitsel görüntüleme olmadan acil serviste körlemesine iğne girişimi kesinlikle kontrendikedir."
-                    }
-                ]
+                        "scenario_update": "Vazodilatasyon ve kapiller sızıntısı olan hastanın aniden ayağa kaldırılması venöz dönüşü düşürerek senkop ve hipotansif kollapsa neden oldu!",
+                        "teaching_point": "Akut sistemik alerjik reaksiyon sırasında hasta kesinlikle ayağa kaldırılmaz veya yürütülmez (boş ventrikül sendromu / ani kardiyak arrest riski); sırtüstü bacaklar yükseltilmiş veya solunum sıkıntısı varsa bacaklar uzatılarak yarı oturur pozisyonda tutulur.",
+                    },
+                    {
+                        "text": "Stridor ve wheezing bulguları devam ederken oksijen veya sıvı desteği vermeden önce kesin tanı koymak amacıyla serum triptaz düzeyi ve spesifik IgE sonuçları çıkana dek beklemek",
+                        "is_correct": False,
+                        "scenario_update": "Laboratuvar sonucu beklenirken oksijen ve sıvı desteği geciktirildiği için hipoksemi ve taşikardi derinleşti.",
+                        "teaching_point": "Serum triptaz düzeyi tanıyı retrospektif desteklemek için alınabilir ancak sonuçları saatler-günler sürer; acil stabilizasyon hiçbir laboratuvar testi için bekletilmez.",
+                    },
+                ],
             },
             {
-                "stage_title": "Klinik ve Radyolojik Kesin Tanı",
-                "question": "Proptozis, ağrılı oftalmopleji, kemozis ve BT incelemesinde sol orbita medial duvarında 12x5 mm koleksiyon saptanan hastanın kesin tanısı nedir?",
+                "stage_title": "Sarı Alanda Kesin Tanı",
+                "question": "Öykü, fizik muayene ve tedavi yanıtı birlikte değerlendirildiğinde bu hastada kesin tanınız nedir?",
                 "options": [
                     {
-                        "text": "Komplike Olmayan Akut Preseptal (Periorbital) Selülit",
+                        "text": "İzole Akut Ürtiker ve Anjiyoödem",
                         "is_correct": False,
-                        "scenario_update": "Preseptal selülitte enfeksiyon septum orbitale önündeki cilt ve cilt altı dokuyla sınırlıdır; proptozis, ağrılı hareket kısıtlılığı ve intraorbital koleksiyon görülmez.",
-                        "teaching_point": "Proptozis, kemozis ve ekstraoküler hareket kısıtlılığı varlığı preseptal selüliti dışlar ve postseptal (orbital) tutulumu kanıtlar."
+                        "scenario_update": "Hastada yalnızca deri-mukoza bulguları değil, eş zamanlı ses boğukluğu/stridor, bilateral wheezing, hipoksemi ve tekrarlayan kusma mevcuttur.",
+                        "teaching_point": "Deri-mukoza bulgularına solunum, dolaşım veya şiddetli gastrointestinal sistem bulgularından en az birinin eşlik etmesi izole ürtiker değil anafilaksidir.",
                     },
                     {
-                        "text": "Akut Bakteriyel Dakriyosistit ve Pürülan Konjonktivit",
+                        "text": "Akut Trakeobronşiyal Yabancı Cisim Aspirasyonu",
                         "is_correct": False,
-                        "scenario_update": "Dakriyosistit lakrimal kese bölgesinde lokalize şişlik yapar; globda öne itilme, ekstraoküler kas ödemi ve medial duvar koleksiyonu oluşturmaz.",
-                        "teaching_point": "Hastadaki bulgular lakrimal kese ile sınırlı olmayıp etmoid sinüzite sekonder postseptal orbita boşluğu tutulumunu göstermektedir."
+                        "scenario_update": "Fıstıklı pasta yedikten 30 dakika sonra yaygın ürtiker, dudak ödemi ve kusma ile başlayan ve intramüsküler adrenaline hızla yanıt veren tablo mevcuttur.",
+                        "teaching_point": "Yaygın ürtiker-anjiyoödem, kusma ve intramüsküler adrenaline dramatik yanıt mekanik obstrüksiyonu değil sistemik IgE aracılı anafilaksiyi gösterir.",
                     },
                     {
-                        "text": "Steril İdiyopatik Orbital İnflamatuar Psödotümör Sendromu",
+                        "text": "Besin Kaynaklı Akut Bakteriyel Gastroenterit",
                         "is_correct": False,
-                        "scenario_update": "Orbital psödotümör enfeksiyöz olmayan steril bir inflamasyondur; akut pürülan rinosinüzit, yüksek ateş, belirgin lökositoz ve etmoid komşuluğunda abse ile seyretmez.",
-                        "teaching_point": "Akut rinosinüzit zemininde yüksek ateş, CRP yüksekliği ve lamina papyracea komşuluğunda koleksiyon varlığı bakteriyel orbital selüliti doğrular."
+                        "scenario_update": "Enterotoksin kaynaklı besin zehirlenmesinde yaygın ürtiker, dudak anjiyoödemi, laringeal stridor ve bronkospazm görülmez.",
+                        "teaching_point": "Alerjen besin alımı sonrası dakikalar içinde gelişen kusmaya deri ve solunum yolu obstrüksiyonunun eşlik etmesi anafilaksi tanı kriteridir.",
                     },
                     {
-                        "text": "Akut Orbital Selülit ve Subperiosteal Abse",
+                        "text": "Besin Tetikli Akut Anafilaksi",
                         "is_correct": True,
-                        "explanation": "Proptozis, ağrılı oftalmopleji ve kemozis kliniğine BT'de etmoid sinüzit ve lamina papyracea komşuluğunda periferik kontrastlanan koleksiyon eşlik etmesi akut orbital selülit ve subperiosteal abse tanısını kesinleştirir.",
-                        "new_finding": "Kesin tanı: Akut Orbital Selülit ve Sol Medial Subperiosteal Abse (Chandler Evre III - Etmoid Sinüzit Komplikasyonu)."
-                    }
-                ]
+                        "explanation": "WAO/EAACI kriterlerine göre olası alerjen (yer fıstığı) maruziyeti sonrası dakikalar içinde başlayan deri/mukoza tutulumuna (ürtiker, dudak ödemi) solunum (stridor, wheezing, hipoksemi) ve GİS (kusma) bulgularının eşlik etmesi kesin Anafilaksi tanısı koydurur.",
+                        "new_finding": "Kesin Tanı: Besin (Yer Fıstığı) Tetikli Anafilaksi.",
+                    },
+                ],
             },
             {
-                "stage_title": "Multidisipliner Konsültasyon ve Tedavi Yönetimi",
-                "question": "Etmoid sinüzite sekonder akut orbital selülit ve 12x5 mm medial subperiosteal abse tanısı alan 4 yaşındaki hastada doğru yönetim planı hangisidir?",
+                "stage_title": "Gözlem Süresi ve Taburculuk Planı",
+                "question": "Tedavi sonrası semptomları tamamen düzelen bu anafilaksi hastasında gözlem süresi ve taburculuk planı nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "İV Seftriakson ve Vankomisin (veya Ampisilin-Sulbaktam) başlayarak hastayı yatırmak, acil Göz ve KBB konsültasyonu ile cerrahi drenaj açısından değerlendirmek",
+                        "text": "İntramüsküler adrenalin sonrası 15. dakikada tüm bulgular ve vital değerler tamamen normale döndüğü için oral antihistaminik reçete ederek hastayı 1. saatin sonunda eve taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Erken taburcu edilen hastada 5 saat sonra evde alerjenle yeni temas olmaksızın bifazik anafilaksi atağı gelişti ve evde oto-enjektör bulunmadığı için hayati tehlike yaşandı!",
+                        "teaching_point": "Anafilaksi hastalarının %5-20'sinde ilk ataktan 4-24 saat sonra bifazik reaksiyon gelişebildiğinden hastalar en az 6-12 saat (ağır solunum/hipotansiyon varsa daha uzun) gözlemlenmelidir.",
+                    },
+                    {
+                        "text": "Bifazik reaksiyon riski nedeniyle hastayı en az 6-12 saat gözlemlemek; taburculukta adrenalin oto-enjektör reçete edip kullanım eğitimi, fıstık eliminasyonu ve Çocuk Alerji randevusu vermek",
                         "is_correct": True,
-                        "explanation": "Orbital selülit ve subperiosteal abse varlığında S. pneumoniae, S. aureus (MRSA dahil), H. influenzae ve anaeropları kapsayan geniş spektrumlu parenteral antibiyotik başlanmalı, >10 mm abse veya görme tehdidinde KBB/Oftalmoloji ile endoskopik drenaj planlanmalıdır.",
-                        "new_finding": "Hastaya İV Seftriakson (100 mg/kg/gün) ve İV Vankomisin (60 mg/kg/gün) başlanarak yatışı yapıldı. KBB ve Göz Hastalıkları konsültasyonu ile endoskopik etmoidektomi ve subperiosteal abse drenajı gerçekleştirildi; hasta görme kaybı gelişmeden şifayla taburcu edildi."
+                        "explanation": "Bifazik anafilaksi riski nedeniyle özellikle solunum/dolaşım tutulumu olan vakalar en az 6-12 saat izlenmeli; taburculukta 0.15 mg/0.30 mg kiloya uygun Adrenalin oto-enjektör reçetesi, yazılı eylem planı ve Çocuk Alerji yönlendirmesi mutlaka yapılmalıdır.",
+                        "new_finding": "Hasta Sarı Alanda 8 saat sorunsuz izlendi; Adrenalin oto-enjektör kullanım eğitimi, yazılı anafilaksi eylem planı ve Çocuk Alerji randevusu verilerek güvenle taburcu edildi.",
                     },
                     {
-                        "text": "Yüksek doz oral amoksisilin-klavulanat (90 mg/kg/gün) şurup ve nazal dekonjestan sprey reçete ederek günlük poliklinik kontrolü şartıyla hastayı taburcu etmek",
+                        "text": "Hastayı 8 saat gözlemledikten sonra sadece oral prednizolon ve desloratadin şurup reçete etmek, adrenalin oto-enjektör kararını 1 ay sonraki Çocuk Alerji poliklinik kontrolüne bırakmak",
                         "is_correct": False,
-                        "scenario_update": "Ayaktan oral antibiyotikle eve gönderilen hastada subperiosteal abse genişleyerek optik sinir basısına ve kavernöz sinüs trombozuna ilerledi.",
-                        "teaching_point": "Oral antibiyotik tedavisi yalnızca komplike olmayan hafif preseptal selülitte düşünülebilir; orbital selülit ve subperiosteal abse mutlak hastane yatışı ve İV tedavi endikasyonudur."
+                        "scenario_update": "Poliklinik randevusunu bekleyen çocuk 10 gün sonra eser miktarda fıstık içeren bir bisküvi yedikten sonra evde tekrar anafilaksi geçirdi ve oto-enjektörü olmadığı için müdahale gecikti.",
+                        "teaching_point": "Besin tetikli anafilaksi geçiren her hastaya Adrenalin oto-enjektör acil servisten taburcu edilirken reçete edilmeli ve aileye uygulama pratiği gösterilmelidir.",
                     },
                     {
-                        "text": "Parenteral antibiyotik tedavisi başlamadan önce 48 saat süreyle yalnızca intravenöz yüksek doz metilprednizolon uygulayarak intraorbital doku ödeminin gerilemesini beklemek",
+                        "text": "Reaksiyonun gerçekten yer fıstığına bağlı olup olmadığını kesinleştirmek amacıyla taburculuk öncesinde acil gözlem odasında doktor gözetiminde düşük doz oral besin yükleme (provokasyon) testi yapmak",
                         "is_correct": False,
-                        "scenario_update": "Etkin antimikrobiyal koruma olmadan tek başına verilen yüksek doz sistemik steroid bakteriyel enfeksiyonun intrakraniyal boşluğa hızla yayılmasına neden oldu.",
-                        "teaching_point": "Bakteriyel orbital selülitte uygun intravenöz antibiyotik tedavisi başlanmadan tek başına sistemik kortikosteroid uygulanması enfeksiyonun yayılımını hızlandırır."
+                        "scenario_update": "Akut anafilaksi atağından hemen sonra acil serviste tekrar alerjen verilmesi şiddetli ve dirençli ikinci bir anafilaktik şok tablosunu tetikledi!",
+                        "teaching_point": "Acil serviste besin provokasyon testi kesinlikle yapılmaz; şüpheli besin diyetten tamamen çıkarılır ve tanısal testler ataktan en az 4-6 hafta sonra Çocuk Alerji kliniğinde planlanır.",
                     },
-                    {
-                        "text": "Yalnızca topikal moksifloksasin göz damlası ve düşük doz intramusküler sefazolin uygulayarak KBB veya Göz konsültasyonu istemeden acil gözlemde izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Kan-beyin ve orbita geçişi yetersiz olan birinci kuşak sefalosporin ve topikal damla altında abse boyutu büyüdü ve görme keskinliği azaldı.",
-                        "teaching_point": "Subperiosteal abseli orbital selülitte santral sinir sistemi geçişi yüksek geniş spektrumlu İV antibiyotikler ve acil Oftalmoloji/KBB değerlendirmesi şarttır."
-                    }
-                ]
-            }
-        ]
-    }
+                ],
+            },
+        ],
+    },
 ]

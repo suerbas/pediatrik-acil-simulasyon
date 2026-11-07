@@ -50,6 +50,40 @@ export default function Drawer({ caseId, onClose, onSolved }) {
     if (finished) onSolved(caseId)
   }, [finished, caseId, onSolved])
 
+  // Vital/lab baloncuğunu panelin içinde tut: sağa/sola taşarsa kaydır, üstte yer yoksa alta aç.
+  useEffect(() => {
+    const body = bodyRef.current
+    if (!body) return
+    const place = (e) => {
+      const val = e.target.closest?.('.med-val')
+      const tip = val?.querySelector('.med-tooltip')
+      if (!tip) return
+      tip.style.left = '0px'
+      tip.style.top = ''
+      tip.style.bottom = ''
+      requestAnimationFrame(() => {
+        const box = body.getBoundingClientRect()
+        const t = tip.getBoundingClientRect()
+        const v = val.getBoundingClientRect()
+        const pad = 8
+        let shift = 0
+        if (t.right > box.right - pad) shift = box.right - pad - t.right
+        if (t.left + shift < box.left + pad) shift = box.left + pad - t.left
+        tip.style.left = `${shift}px`
+        if (t.top < box.top + pad) {
+          tip.style.bottom = 'auto'
+          tip.style.top = `${v.height + 6}px`
+        }
+      })
+    }
+    body.addEventListener('pointerover', place)
+    body.addEventListener('focusin', place)
+    return () => {
+      body.removeEventListener('pointerover', place)
+      body.removeEventListener('focusin', place)
+    }
+  }, [data])
+
   // Yeni aşamaya geçince soruyu görünür alana getir.
   useEffect(() => {
     if (stepIdx > 0) questionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -81,7 +115,7 @@ export default function Drawer({ caseId, onClose, onSolved }) {
     bodyRef.current?.scrollTo({ top: 0 })
   }
 
-  const zone = data?.zone ?? (caseId.startsWith('Y') ? 'yellow' : 'green')
+  const zone = data?.zone ?? (caseId.startsWith('S') ? 'yellow' : 'green')
 
   return (
     <div className="drawer-layer">

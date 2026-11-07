@@ -1,315 +1,148 @@
 # -*- coding: utf-8 -*-
 """
-Sarı Alan Vakaları - Y06-Y10 (v2 Şartnamesine Uygun Yeniden Yazım)
+Yeşil Alan Vakaları - Bölüm 2 (Y06 - Y10)
+Şartname v2 kurallarına göre yeniden yazılmış klinik simülasyon vakaları.
 """
 
 CASES = [
     {
         "id": "Y06",
         "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
-        "age": "10 Yaş",
+        "age": "6 Yaş",
         "gender": "Kız",
-        "complaint": "Karın ağrısı, tekrarlayan kusma, derin ve hızlı nefes alma, belirgin halsizlik",
+        "complaint": "Vücutta aniden çıkan kaşıntılı kızarıklıklar ve kabarıklıklar",
         "history": (
-            "Sarı Alana halsiz ve bitkin halde getiriliyor: 'Dün akşamdan beri karnı çok ağrıyor ve 6 kez "
-            "kustu. İshali veya ateşi hiç olmadı ama çok derin ve hızlı nefes alıp veriyor. Son 3 haftadır "
-            "çok su içiyordu, geceleri 3-4 kez idrara kalkıyordu ve iştahı açık olmasına rağmen 4 kilo zayıfladı.'"
+            "Çocuk kollarını kaşıyarak diyor ki: 'Doktor abla/abi, her yerim çok kaşınıyor!' Annesi anlatıyor: "
+            "'İki saat önce sırtında ve kollarında sivrisinek ısırığı gibi kabarık, etrafı kızarık döküntüler "
+            "çıktı. Bir yerdekiler solarken başka yerde yenileri beliriyor. Nefes darlığı, ses kısıklığı, dudak "
+            "şişmesi veya kusması olmadı. Üç gün önce hafif burun akıntısı vardı, bugün de ilk kez çilekli "
+            "paketli bir atıştırmalık yedi.'"
         ),
-        "final_diagnosis": "Diyabetik Ketoasidoz (DKA - Yeni Tanı Tip 1 Diabetes Mellitus)",
-        "disposition": (
-            "Sarı Alanda İlk Saat İzotonik Sıvı Restorasyonu + Potasyum Destekli Rehidratasyon ve İV Regüler "
-            "İnsülin İnfüzyonu -> Çocuk Yoğun Bakım Yatışı"
-        ),
+        "final_diagnosis": "Akut Ürtiker (Anafilaksi Bulgusu Olmayan)",
+        "disposition": "Yeşil Alandan İkinci Kuşak H1 Antihistaminik Tedavisi ve Anafilaksi Uyarı Eğitimi ile Taburculuk",
         "case_pearl": (
-            "Karın ağrısı, kusma ve takipne ile başvuran çocuklarda ishal yoksa ve poliüri, polidipsi, kilo "
-            "kaybı eşlik ediyorsa Diyabetik Ketoasidoz (DKA) akut batın veya solunum yolu enfeksiyonu ile sıkça "
-            "karışır. ISPAD 2022 kılavuzuna göre İV bolus insülin ve rutin sodyum bikarbonat serebral ödem "
-            "riskini artırdığı için kontrendikedir; ilk saat %0.9 NaCl restorasyonu sonrası 0.05-0.1 U/kg/saat "
-            "İV regüler insülin infüzyonu başlanır."
+            "Ani gelişen eritematöz-ödematöz plaklarla başvuran her çocukta ilk adım sistemik tutulumu (solunum, "
+            "kardiyovasküler, gastrointestinal -> Anafilaksi) dışlamaktır. İzole akut ürtikerde ilk tercih tedavi "
+            "sedasyon yapmayan 2. kuşak H1-antihistaminiklerdir; rutin laboratuvar veya alerji paneli acil serviste istenmez."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Yatak Başı Yaklaşım",
-                "question": (
-                    "Karın ağrısı, kusma ve derin-hızlı solunumla getirilen 10 yaşındaki bu hastada ilk "
-                    "değerlendirmede öncelikli yaklaşımınız ne olmalıdır?"
-                ),
+                "stage_title": "Sistemik Tarama ve Fizik Muayene",
+                "question": "Kaşıntılı döküntülerle başvuran bu çocukta ilk klinik değerlendirmede en öncelikli yaklaşım hangisidir?",
                 "options": [
                     {
-                        "text": (
-                            "Solunum sıkıntısı ve takipne ön planda olduğu için hemen geri solumasız maskeyle "
-                            "oksijen başlayıp ardışık üç doz nebülize salbutamol ve sistemik metilprednizolon uygulamak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Akciğer oskültasyonu tamamen doğal ve SpO2 değeri %100 olan hastada verilen "
-                            "beta-agonist ve sistemik kortikosteroid sonrası kan şekeri 610 mg/dL düzeyine "
-                            "yükseldi, takipnesi ve letarjisi daha da derinleşti."
-                        ),
-                        "teaching_point": (
-                            "Akciğer oskültasyonu doğal ve satürasyonu normal olan bir çocukta derin ve hızlı "
-                            "solunum paterni alt solunum yolu obstrüksiyonunu değil, ağır metabolik asidozun "
-                            "solunumsal kompansasyonunu düşündürmelidir."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Asidotik tipte derin ve takipneik solunum paternini, dehidratasyon derecesini ve "
-                            "bilinç durumunu değerlendirip derhal parmak ucu kan şekeri ile kan ketonu bakmak"
-                        ),
+                        "text": "Hava yolu ödemi, solunum sesleri, tansiyon ve gastrointestinal bulguları sorgulayıp lezyonların basmakla solup solmadığını muayene etmek",
                         "is_correct": True,
-                        "explanation": (
-                            "Poliüri, polidipsi, kilo kaybı, kusma ve akciğer bulgusu olmaksızın derin-hızlı "
-                            "solunumla başvuran çocukta ağır hiperglisemi ve metabolik asidoz tablosu yatak "
-                            "başı kapiller glukoz ve keton ölçümüyle ilk dakikada saptanmalıdır."
-                        ),
-                        "new_finding": (
-                            "Vital Bulgular: Ateş 36.7°C, KTA 132/dk, SS 34/dk, TA 100/65 mmHg, SpO2 %100. "
-                            "Solunum asidotik tipte derin ve takipneik paternde; akciğer oskültasyonu bilateral "
-                            "doğal. Nefeste belirgin aseton kokusu mevcut. Ağız mukozası kuru, kapiller dolum "
-                            "3 saniye, GKS 14. Parmak ucu kan şekeri 465 mg/dL, kapiller kan ketonu 5.8 mmol/L saptandı."
-                        ),
+                        "explanation": "Akut başlayan kaşıntılı ödematöz plaklar sistemik alerjik reaksiyonun ilk bulgusu olabileceğinden hava yolu, solunum, dolaşım ve mukoza tutulumu mutlaka değerlendirilmelidir.",
+                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 96/dk, SS 20/dk, TA 100/65 mmHg, SpO2 %99. Dudak, dil ve uvulada ödem yok. Akciğer oskültasyonu doğal, stridor veya wheezing yok. Gövde ve ekstremitelerde basmakla solan, sınırları belirgin eritematöz-ödematöz gezici plaklar mevcut.",
                     },
                     {
-                        "text": (
-                            "Şiddetli karın ağrısı ve tekrarlayan kusma nedeniyle akut cerrahi batın düşünerek "
-                            "oral alımı kesmek, nazogastrik dekompresyon yapmak ve acil batın ultrasonografisi "
-                            "için radyolojiye göndermek"
-                        ),
+                        "text": "Kütanöz lezyonların yaygınlığını dikkate alarak sistemik reaksiyon gelişimini önlemek amacıyla uyluk anterolateralinden intramüsküler adrenalin uygulayıp hastayı monitörize etmek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Yatak başı kan şekeri bakılmadan radyoloji ünitesine gönderilen hastanın "
-                            "ultrasonografisinde serbest sıvı veya akut cerrahi patoloji saptanmadı; ancak işlem "
-                            "sırasında hastanın uykuya meyili ve dehidratasyonu belirgin şekilde arttı."
-                        ),
-                        "teaching_point": (
-                            "Ağır metabolik asidoz ve ketonemi tablosu şiddetli karın ağrısı ve kusma ile akut "
-                            "cerrahi batını taklit edebilir; görüntüleme öncesinde yatak başı kan şekeri ve kan "
-                            "gazı mutlaka kontrol edilmelidir."
-                        ),
+                        "scenario_update": "Solunum ve dolaşım bulgusu olmayan çocukta intramüsküler adrenalin uygulaması sonrası taşikardi (158/dk), titreme, solukluk ve belirgin anksiyete gelişti.",
+                        "teaching_point": "İntramüsküler adrenalin yalnızca mukokütanöz bulgulara solunum, kardiyovasküler veya şiddetli gastrointestinal sistem tutulumunun eşlik ettiği sistemik reaksiyonlarda endikedir; izole deri tutulumunda uygulanmaz.",
                     },
                     {
-                        "text": (
-                            "Tekrarlayan kusma ve dehidratasyon nedeniyle damar yolu açıp intravenöz ondansetron "
-                            "uygulamak ve kan şekeri bakmadan %5 dekstroz içeren hipotonik sıvıyı hızlı infüzyonla başlamak"
-                        ),
+                        "text": "Damar yolu açarak parenteral birinci kuşak H1-antihistaminik ve metilprednizolon uygulamak üzere hastayı doğrudan Sarı Alana devretmek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Kan şekeri ölçülmeden verilen dekstrozlu hipotonik sıvı sonrası hastanın mevcut "
-                            "hiperglisemisi daha da arttı ve serum efektif osmolaritesindeki ani dalgalanma "
-                            "nedeniyle baş ağrısı ile konvülziyon riski ortaya çıktı."
-                        ),
-                        "teaching_point": (
-                            "Hiperglisemi ve dehidratasyon kuşkusu olan hastalarda kapiller glukoz görülmeden "
-                            "dekstroz içeren veya hipotonik sıvılar kesinlikle başlanmamalı; ilk hacim "
-                            "genişletme yalnız izotonik kristaloid ile yapılmalıdır."
-                        ),
+                        "scenario_update": "Sarı Alana alınan hastanın tüm yaşamsal bulguları stabil seyretti; parenteral birinci kuşak antihistaminik sonrasında çocukta belirgin sedasyon gelişti.",
+                        "teaching_point": "Sistemik tutulumu ve anjiyoödemi olmayan, yaşamsal bulguları stabil hastalarda parenteral sedatif antihistaminik veya rutin intravenöz steroid uygulaması yerine oral tedavi tercih edilir.",
+                    },
+                    {
+                        "text": "Lezyonların vaskülitik veya enfeksiyöz etiyolojisini ayırt etmek için deri lezyonlarının kenarlarını işaretleyip öncelikle dermatoskopik inceleme ve punch biyopsi planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Sağlık personeli hazırlık yaparken çocuğun sırtındaki ilk plakların kendiliğinden solduğu, buna karşın ön kolda yeni plakların çıktığı gözlendi.",
+                        "teaching_point": "Yirmi dört saatten kısa sürede yer değiştirip iz bırakmadan solan akut gezici plaklarda deri biyopsisi endike değildir; biyopsi yalnızca 24-48 saatten uzun süren sabit, purpurik veya ağrılı lezyonlarda düşünülür.",
                     },
                 ],
             },
             {
-                "stage_title": "Laboratuvar İncelemesi ve Metabolik Değerlendirme",
-                "question": (
-                    "Parmak ucu kan şekeri 465 mg/dL ve kan ketonu 5.8 mmol/L saptanan bu hastada ilk "
-                    "laboratuvar ve izlem planınız ne olmalıdır?"
-                ),
+                "stage_title": "Tetkik İstem Kararı",
+                "question": "Sistemik tutulumu olmayan ve genel durumu iyi olan bu hastada acil serviste hangi tetkik yaklaşımı seçilmelidir?",
                 "options": [
                     {
-                        "text": (
-                            "Sadece venöz glukoz ve tam idrar tetkiki göndermek, sonuçları beklemeden kan "
-                            "şekerini hızla düşürmek için 0.15 U/kg intravenöz puşe regüler insülin uygulamak"
-                        ),
+                        "text": "Besin tetikleyicisini netleştirmek amacıyla acil serviste total IgE ve çilek dahil spesifik IgE paneli istemek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Serum potasyum düzeyi ve asidoz derecesi görülmeden yapılan intravenöz bolus "
-                            "insülin sonrası potasyum hızla hücre içine kaydı; monitörde T dalga düzleşmesi, "
-                            "belirgin U dalgaları ve ventriküler ekstrasistoller gelişti."
-                        ),
-                        "teaching_point": (
-                            "Ağır hiperglisemi ve ketonemi yönetiminde intravenöz bolus insülin hem akut "
-                            "hipokalemik aritmi hem de hızlı osmolarite düşüşüne bağlı beyin ödemi riskini "
-                            "artırdığı için kesinlikle kontrendikedir."
-                        ),
+                        "scenario_update": "Kan alma işlemi çocuğu huzursuz etti; laboratuvar spesifik IgE sonuçlarının bir hafta sonra çıkacağını bildirdi ve acil yönetim değişmedi.",
+                        "teaching_point": "İlk kez gelişen ve sistemik bulgu içermeyen akut mukokütanöz ataklarda acil serviste spesifik IgE veya geniş alerji taraması yapılması kılavuzlarda önerilmez.",
                     },
                     {
-                        "text": (
-                            "Arteriyel kan gazı ve serum elektrolitlerini almak, derin takipneyi azaltmak "
-                            "amacıyla kan gazı sonucunu beklemeden 2 mEq/kg intravenöz sodyum bikarbonat infüzyonu başlamak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Erken uygulanan sodyum bikarbonat infüzyonu sonrası hastada paradoksal santral "
-                            "sinir sistemi asidozu, hipokalemi eğilimi ve doku oksijen sunumunda bozulma "
-                            "gelişerek bilinç durumu GKS 11 düzeyine geriledi."
-                        ),
-                        "teaching_point": (
-                            "Metabolik asidozlu hiperglisemik krizlerde rutin sodyum bikarbonat uygulaması "
-                            "paradoksal serebral asidoz ve beyin ödemi riski taşır; sıvı ve insülin infüzyonu "
-                            "ile keton üretimi durduğunda asidoz kendiliğinden düzelir."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Venöz kan gazı, biyokimya ve HbA1c istemek, ancak ilk saat sıvı tedavisini "
-                            "beklemeden eş zamanlı olarak 0.1 U/kg/saat hızında intravenöz insülin infüzyonunu başlatmak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "İlk saat izotonik sıvı restorasyonu tamamlanmadan erken başlanan insülin "
-                            "infüzyonu, intravasküler hacim henüz dolmadan glukozun hızla düşmesine ve sistemik "
-                            "hipotansiyon ile serebral hipoperfüzyona yol açtı."
-                        ),
-                        "teaching_point": (
-                            "Güncel kılavuzlara göre insülin infüzyonu ilk başvuruda hemen başlanmaz; önce 1 "
-                            "saatlik izotonik sıvı restorasyonu yapılmalı ve serum potasyum düzeyi görüldükten "
-                            "sonra insülin infüzyonuna geçilmelidir."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Venöz kan gazı, serum elektrolitleri, düzeltilmiş sodyum hesabı, üre, kreatinin, "
-                            "fosfor, magnezyum, tam idrar tetkiki, HbA1c ve potasyum izlemi için EKG istemek"
-                        ),
+                        "text": "Hiçbir laboratuvar veya alerji testi istemeden mevcut öykü ve fizik muayene bulgularıyla klinik tanı koymak",
                         "is_correct": True,
-                        "explanation": (
-                            "Venöz pH ve bikarbonat ile metabolik tablonun ağırlığı belirlenir; ölçülen sodyum "
-                            "üzerinden düzeltilmiş sodyum hesaplanmalı ve insülin öncesi bazal potasyum düzeyi "
-                            "ile EKG mutlaka değerlendirilmelidir."
-                        ),
-                        "new_finding": (
-                            "LABORATUVAR: Venöz Kan Gazı pH 7.12, pCO2 20 mmHg, HCO3 6.4 mmol/L, Baz Açığı -21, "
-                            "Laktat 1.8 mmol/L. Glukoz 465 mg/dL, Ölçülen Na 131 mEq/L, Hesaplanan Düzeltilmiş "
-                            "Na 137 mEq/L, K 4.6 mEq/L, Cl 96 mEq/L, Fosfor 3.8 mg/dL, Üre 42 mg/dL, Kreatinin "
-                            "0.72 mg/dL. TİT: Glukoz +++, Keton +++. HbA1c %11.8. EKG: Sinüs taşikardisi, T dalgaları normal."
-                        ),
+                        "explanation": "Uluslararası rehberlere göre sistemik reaksiyon bulgusu taşımayan akut olgularda rutin kan veya alerji tetkiki önerilmez; çocuklarda en sık tetikleyici yakın zamanlı viral enfeksiyonlardır.",
+                        "new_finding": "Tetkik istenmedi; hastanın genel durumu, orofarenks muayenesi ve solunum bulguları tamamen stabil seyretti.",
+                    },
+                    {
+                        "text": "Enfeksiyöz tetikleyicileri ve gizli inflamasyonu değerlendirmek için tam kan sayımı, CRP, sedimentasyon ve boğaz kültürü istemek",
+                        "is_correct": False,
+                        "scenario_update": "LABORATUVAR SONUCU: WBC 8.900/mm³, eozinofil %3, CRP 3.1 mg/L, sedimentasyon 11 mm/saat. Sonuçlar tedavi planında hiçbir değişiklik sağlamadı.",
+                        "teaching_point": "Ateşi ve odak bulgusu olmayan akut kütanöz plaklarda rutin akut faz reaktanları veya kültür tetkikleri tanı ve tedaviyi değiştirmez.",
+                    },
+                    {
+                        "text": "Kompleman aracılı veya otoimmün süreçleri dışlamak üzere serum C3, C4, CH50, ANA ve tiroid otoantikorlarını istemek",
+                        "is_correct": False,
+                        "scenario_update": "İstenen kompleman ve otoantikor tetkikleri normal sınırlarda raporlandı ve gereksiz maliyet ile bekleme süresine yol açtı.",
+                        "teaching_point": "Otoimmün ve kompleman incelemeleri yalnızca altı haftadan uzun süren kronik olgularda veya vaskülit şüphesi varlığında poliklinik koşullarında planlanır.",
                     },
                 ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": (
-                    "Mevcut klinik bulgular ve laboratuvar sonuçları (Glukoz 465 mg/dL, venöz pH 7.12, "
-                    "HCO3 6.4 mmol/L, kan ketonu 5.8 mmol/L) doğrultusunda kesin tanınız nedir?"
-                ),
+                "question": "Mevcut anamnez ve fizik muayene bulgularıyla en olası klinik tanınız nedir?",
                 "options": [
                     {
-                        "text": "Orta-Ağır Diyabetik Ketoasidoz (Yeni Tanı Tip 1 DM)",
+                        "text": "Eritema Multiforme Minör",
+                        "is_correct": False,
+                        "scenario_update": "Lezyonların üç halkalı sabit hedef tahtası görünümünde olmadığı ve saatler içinde yer değiştirip solduğu yeniden doğrulandı.",
+                        "teaching_point": "Eritema multiformede lezyonlar simetrik, sabit (günlerce aynı yerde kalan) ve tipik santral koyu halkalı hedef görünümündedir.",
+                    },
+                    {
+                        "text": "Henoch-Schönlein Purpurası (IgA Vasküliti)",
+                        "is_correct": False,
+                        "scenario_update": "Lezyonların basmakla tamamen solduğu, alt ekstremite ağırlıklı palpabl purpura niteliği taşımadığı ve artralji bulunmadığı görüldü.",
+                        "teaching_point": "IgA vaskülitinde döküntüler basmakla solmayan palpabl purpura karakterindedir; nadiren başlangıçta ödematöz görünse de kısa sürede purpurik hal alır.",
+                    },
+                    {
+                        "text": "İzole Akut Ürtiker",
                         "is_correct": True,
-                        "explanation": (
-                            "ISPAD 2022 kriterlerine göre kan şekeri >200 mg/dL, venöz pH <7.30 veya HCO3 "
-                            "<15 mmol/L ve ketonemi ≥3.0 mmol/L varlığı DKA tanısını koydurur; pH 7.12 ve HCO3 "
-                            "6.4 mmol/L orta-ağır DKA ile uyumludur."
-                        ),
-                        "new_finding": "Kesin Tanı: Orta-Ağır Diyabetik Ketoasidoz (Yeni Tanı Tip 1 Diabetes Mellitus).",
+                        "explanation": "Basmakla solan, kaşıntılı, 24 saatten kısa sürede yer değiştiren eritematöz-ödematöz plaklar ve sistemik bulgu olmaması izole akut ürtiker tanısını doğrular.",
+                        "new_finding": "Tanı: Akut Ürtiker (anafilaksi bulgusu olmaksızın).",
                     },
                     {
-                        "text": "Ketoasidoz Olmayan Hiperglisemik Hiperosmolar Durum (HHD)",
+                        "text": "Viral Makülopapüler Ekzantem",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Hastada belirgin ketonemi (5.8 mmol/L) ve derin metabolik asidoz (pH 7.12, HCO3 "
-                            "6.4 mmol/L) mevcut olup tablo HHD kriterleri ile uyumlu değildir."
-                        ),
-                        "teaching_point": (
-                            "Hiperglisemik Hiperosmolar Durumda kan şekeri >600 mg/dL ve efektif osmolarite "
-                            ">320 mOsm/kg iken belirgin ketozis ve ağır asidoz (pH >7.25, HCO3 >15) beklenmez."
-                        ),
-                    },
-                    {
-                        "text": "Akut Dekompanse Metabolik Asidoz ve Stres Hiperglisemisi",
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Hastanın 3 haftalık poliüri-polidipsi öyküsü, 465 mg/dL glukoz değeri, 5.8 mmol/L "
-                            "ketonemisi ve %11.8 HbA1c düzeyi geçici stres hiperglisemisini dışlamaktadır."
-                        ),
-                        "teaching_point": (
-                            "Stres hiperglisemisinde HbA1c normaldir (<%5.7) ve ağır ketonemi ile derin "
-                            "metabolik asidoz görülmez."
-                        ),
-                    },
-                    {
-                        "text": "Akut Salisilat İntoksikasyonuna Bağlı Metabolik Asidoz",
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Hastada ilaç alım öyküsü yoktur; üç haftalık ozmotik diürez semptomları, aşikâr "
-                            "hiperglisemi ve yüksek HbA1c salisilat zehirlenmesiyle açıklanamaz."
-                        ),
-                        "teaching_point": (
-                            "Salisilat zehirlenmesi solunumsal alkaloz ve yüksek anyon açıklı metabolik asidoz "
-                            "yapabilir ancak kan şekeri 465 mg/dL ve HbA1c %11.8 yeni tanı Tip 1 DM göstergesidir."
-                        ),
+                        "scenario_update": "Döküntülerin günlerce sabit kalan makülopapüler elemanlar değil, saatler içinde yer değiştiren belirgin dermal ödem plakları olduğu görüldü.",
+                        "teaching_point": "Viral makülopapüler ekzantemler basmakla solabilir ancak saatler içinde kaybolup başka bölgede çıkan gezici dermal ödem plakları oluşturmaz.",
                     },
                 ],
             },
             {
-                "stage_title": "Sarı Alanda İlk Saat Tedavisi ve Serebral Ödemden Korunma",
-                "question": (
-                    "Orta-ağır DKA tanısı konulan ve serum potasyumu 4.6 mEq/L olan bu hastada beyin ödemi "
-                    "riskini en aza indiren tedavi planı hangisidir?"
-                ),
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu hastada semptom kontrolü ve güvenli taburculuk için en uygun tedavi yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": (
-                            "İlk saatte 20 mL/kg %0.45 NaCl hipotonik sıvı yüklemek, 0.1 U/kg İV puşe insülin "
-                            "yapmak ve pH 7.12 olduğu için 1 mEq/kg sodyum bikarbonat vermek"
-                        ),
+                        "text": "Birinci kuşak oral hidroksizin şurup ve 7 günlük oral prednizolon başlayıp şüpheli tüm meyveleri diyetten kalıcı olarak çıkarmak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Hipotonik sıvı yüklemesi, İV bolus insülin ve sodyum bikarbonat uygulaması sonrası "
-                            "3. saatte hastada şiddetli baş ağrısı, bradikardi, sistemik hipertansiyon ve bilinç "
-                            "kaybı ile akut serebral ödem gelişti."
-                        ),
-                        "teaching_point": (
-                            "DKA tedavisinde hipotonik sıvı bolusu, İV puşe insülin ve rutin bikarbonat "
-                            "verilmesi serum efektif osmolaritesini hızla düşürerek ölümcül beyin ödemine yol açar."
-                        ),
+                        "scenario_update": "Hidroksizin kullanan çocukta ertesi gün okulda ağır uyku hali ve dikkat dağınıklığı gelişti; uzun süreli steroide bağlı huzursuzluk ortaya çıktı.",
+                        "teaching_point": "Akut ürtikerde birinci basamak tedavi sedasyon yapmayan ikinci kuşak H1-antihistaminiklerdir; komplike olmayan vakalarda rutin sistemik kortikosteroid ve kanıtlanmamış kalıcı diyet kısıtlaması önerilmez.",
                     },
                     {
-                        "text": (
-                            "İlk saatte 10 mL/kg %0.9 NaCl vermek, potasyum 4.6 mEq/L olduğu için sıvıya hiç "
-                            "potasyum eklemeden 0.2 U/kg/saat yüksek doz İV insülin infüzyonu başlamak"
-                        ),
+                        "text": "Viral prodrom öyküsü nedeniyle oral amoksisilin-klavulanat ve kaşıntı/inflamasyon kontrolü için düzenli ibuprofen süspansiyon reçete ederek taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Potasyum desteği eklenmeden yüksek dozda başlanan insülin infüzyonu sonrası 2. "
-                            "saatte serum potasyumu 2.4 mEq/L düzeyine düştü ve hastada ciddi hipokalemik aritmi gelişti."
-                        ),
-                        "teaching_point": (
-                            "İnsülin potasyumu hızla hücre içine sokar; idrar çıkışı olan ve serum K <5.5 mEq/L "
-                            "olan her DKA hastasında rehidratasyon sıvısına mutlaka 40 mEq/L potasyum eklenmelidir."
-                        ),
+                        "scenario_update": "İbuprofen dozundan iki saat sonra çocuğun gövdesindeki ürtiker plakları hızla arttı ve üst dudakta hafif anjiyoödem gelişti.",
+                        "teaching_point": "Akut ürtikerde non-steroid antiinflamatuar ilaçlar (ibuprofen vb.) lökotrien sentezini artırarak ürtiker ve anjiyoödemi alevlendirebilir; ateş/ağrı durumunda parasetamol tercih edilmelidir.",
                     },
                     {
-                        "text": (
-                            "İlk saat 10-20 mL/kg %0.9 NaCl verdikten sonra 40 mEq/L potasyum eklenmiş sıvıyla "
-                            "defisiti 24-48 saate yaymak ve 0.05-0.1 U/kg/saat İV regüler insülin başlamak"
-                        ),
+                        "text": "Yalnızca kalamin losyon ve soğuk uygulama önerip sistemik antihistaminik vermeden 24 saat acil gözlem odasında yatırmak",
+                        "is_correct": False,
+                        "scenario_update": "Sistemik H1-antihistaminik verilmeyen çocuğun gece boyunca şiddetli kaşıntısı devam etti ve uyuyamadı; yaşamsal bulguları ise tamamen normal kaldı.",
+                        "teaching_point": "İzole akut ürtikerde 24 saatlik hastane yatışı gerekmez; oral ikinci kuşak H1-antihistaminik semptomları etkin biçimde kontrol eder.",
+                    },
+                    {
+                        "text": "İkinci kuşak oral H1-antihistaminik başlamak, non-steroid antiinflamatuarlardan kaçınmayı önermek ve sistemik alerji uyarılarını anlatarak taburcu etmek",
                         "is_correct": True,
-                        "explanation": (
-                            "ISPAD 2022 kılavuzuna göre ilk saat yalnız izotonik sıvı verilir; 1. saatin "
-                            "sonunda potasyum içeren rehidratasyon sıvısı ve 0.05-0.1 U/kg/saat düşük doz İV "
-                            "regüler insülin infüzyonu başlanarak hasta yoğun bakıma yatırılır."
-                        ),
-                        "new_finding": (
-                            "İlk saat %0.9 NaCl restorasyonu sonrası potasyum destekli sıvı ve 0.1 U/kg/saat "
-                            "İV regüler insülin infüzyonu başlandı; kan şekeri 250 mg/dL altına indiğinde sıvıya "
-                            "%5 dekstroz eklenerek Çocuk Yoğun Bakım Ünitesine devredildi."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "İlk saatte %0.9 NaCl infüzyonu ile birlikte subkütan hızlı etkili insülin lispro "
-                            "uygulamak ve kusması durunca hastayı endokrinoloji poliklinik kontrolü önerisiyle taburcu etmek"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Orta-ağır dehidratasyonu ve pH 7.12 asidozu olan hastada subkütan insülin emilimi "
-                            "yetersiz kaldı; 4. saatte metabolik asidozu derinleşen hastada bilinç bulanıklığı arttı."
-                        ),
-                        "teaching_point": (
-                            "Orta ve ağır DKA (pH <7.20) hastalarında doku perfüzyonu bozuk olduğundan subkütan "
-                            "insülin yerine titre edilebilir İV regüler insülin infüzyonu kullanılmalı ve hasta "
-                            "mutlaka yatırılmalıdır."
-                        ),
+                        "explanation": "EAACI/GA²LEN/EDF/WAO rehberlerine göre akut ürtikerde ilk tercih standart doz 2. kuşak oral H1-antihistaminiktir; aileye lezyonların birkaç gün dalgalanabileceği ve anafilaksi kırmızı bayrakları anlatılmalıdır.",
+                        "new_finding": "Oral setirizin/desloratadin tedavisi düzenlendi; nefes darlığı, ses kısıklığı, dil-dudak şişmesi veya tekrarlayan kusma olursa derhal acile başvuru eğitimi verilerek taburcu edildi.",
                     },
                 ],
             },
@@ -317,309 +150,143 @@ CASES = [
     },
     {
         "id": "Y07",
-        "category": "👶 Ağlayan, Emmeyen, Huzursuz Bebek",
-        "age": "9 Aylık",
+        "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
+        "age": "7 Yaş",
         "gender": "Erkek",
-        "complaint": "Aralıklı şiddetli ağlama krizleri, bacaklarını karnına çekme, safralı kusma ve ataklar arasında belirgin uyuklama",
+        "complaint": "Yanaklarda belirgin kızarıklık ve kollarında dantel gibi döküntü",
         "history": (
-            "Annesi Sarı Alana getiriyor: 'Sabah saatlerinden beri 15-20 dakikada bir aniden çığlık atarak "
-            "ağlamaya başlıyor, rengi soluyor ve iki bacağını karnına doğru çekiyor. Kriz 2-3 dakika sürüp "
-            "geçince tamamen bitkin düşüp uyukluyor. Az önce 2 kez sarı-yeşil renkli kustu.'"
+            "Çocuk gayet neşeli bir şekilde muayene masasında oturuyor: 'Arkadaşlarım yanaklarıma boya mı sürdün "
+            "veya güneşte mi yandın diye sordu ama hiç acımıyor, sadece kollarımdaki kızarıklıklar sıcakta biraz "
+            "belli oluyor.' Annesi anlatıyor: 'Bir hafta önce hafif bir kırgınlığı ve burun akıntısı olmuştu, "
+            "geçti sanmıştık. Dün iki yanağı parlak kırmızı oldu, bugün de kollarının dış yüzünde ve gövdesinde "
+            "kafes veya dantel gibi pembe döküntüler fark ettik. Genel durumu ve iştahı çok iyi.'"
         ),
-        "final_diagnosis": "İleoçekal İnvajinasyon (İntususepsiyon)",
-        "disposition": (
-            "Sarı Alanda NPO + Nazogastrik Dekompresyon + İV Sıvı Resüsitasyonu -> USG Eşliğinde "
-            "Hidrostatik/Pnömatik Redüksiyon ve Çocuk Cerrahisi Yatışı"
-        ),
+        "final_diagnosis": "Eritema İnfeksiyozum (Beşinci Hastalık - Parvovirus B19)",
+        "disposition": "Yeşil Alandan Semptomatik İzlem ve Bulaştırıcılık/Gebe Teması Bilgilendirmesi ile Taburculuk",
         "case_pearl": (
-            "3 ay - 3 yaş arası süt çocuklarında periyodik kıvrandırıcı ağlama atakları, ataklar arasında "
-            "belirgin letarji ve safralı kusma İleoçekal İnvajinasyon için tipiktir. Mukuslu-kanlı dışkılama "
-            "geç bir bulgudur. Tanıda altın standart Batın USG (transvers kesitte hedef tahtası / target sign) "
-            "olup, perforasyon veya peritonit yoksa ilk basamak tedavi hidrostatik veya pnömatik enema redüksiyonudur."
+            "Parvovirus B19'un neden olduğu Eritema İnfeksiyozum'da (Beşinci Hastalık) yanaklarda parlak malar "
+            "eritem ('tokatlanmış yüz') ve ekstremitelerde retiküler (dantelvari) döküntü tipiktir. Döküntü "
+            "çıktığında hasta artık bulaştırıcı değildir ve okula gidebilir; ancak kronik hemolitik anemili "
+            "bireylerde aplastik kriz ve gebelerde fetal hidrops riski unutulmamalıdır."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Fizik Muayene",
-                "question": (
-                    "Periyodik kıvrandırıcı ağlama atakları, ataklar arası letarji ve safralı kusması olan 9 "
-                    "aylık bu bebekte ilk muayenede öncelikli yaklaşımınız ne olmalıdır?"
-                ),
+                "stage_title": "Fizik Muayene ve Risk Faktörü Sorgulama",
+                "question": "Bu hastada ilk fizik muayene ve anamnez derinleştirmesinde öncelikle neyi değerlendirmelisiniz?",
                 "options": [
                     {
-                        "text": (
-                            "Ataklar arasındaki belirgin uykuya meyil ve kusmayı santral sinir sistemi "
-                            "enfeksiyonu bulgusu kabul ederek batın muayenesini erteleyip acil lomber ponksiyon hazırlığı yapmak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Lomber ponksiyon hazırlığı sırasında bebek tekrar bacaklarını karnına çekerek "
-                            "şiddetli ağlama krizi geçirdi ve bol miktarda safralı kustu; işlem sonunda BOS "
-                            "bulguları tamamen normal saptandı."
-                        ),
-                        "teaching_point": (
-                            "Süt çocuklarında periyodik karın ağrısı atakları arasında gelişen derin letarji, "
-                            "endojen opioid salınımına bağlı klasik bir klinik bulgudur; safralı kusma "
-                            "varlığında öncelikle akut batın muayenesi yapılmalıdır."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Ağlama krizlerini süt çocuğu gaz sancısı olarak değerlendirip simetikon damla ve "
-                            "rektal gliserin fitil uyguladıktan sonra bebeği Yeşil Alanda gözleme almak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Uygulanan gliserin fitil sonrası bezde mukuslu ve koyu pembe-kırmızı kanlı dışkı "
-                            "görüldü; bebeğin safralı kusmaları devam etti ve taşikardisi derinleşerek kapiller "
-                            "dolum zamanı 4 saniyeye uzadı."
-                        ),
-                        "teaching_point": (
-                            "Dokuz aylık bir bebekte yeni başlayan periyodik kıvrandırıcı ağlama krizleri, "
-                            "letarji ve safralı kusma asla fonksiyonel gaz sancısı olarak değerlendirilemez; "
-                            "mekanik bağırsak tıkanıklığı dışlanmalıdır."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Vital bulguları, atak dışı bilinç durumunu, sağ üst kadran palpasyonu ile sağ alt "
-                            "kadran boşluğunu ve bezdeki dışkıyı değerlendirmek"
-                        ),
+                        "text": "Yanaklardaki malar eritemi, ağız çevresi solukluğunu ve ekstremitelerdeki retiküler döküntüyü inceleyip bilinen hemolitik anemi veya gebe temasını sorgulamak",
                         "is_correct": True,
-                        "explanation": (
-                            "Kolik tarzda ağlama atakları, safralı kusma ve letarji ile başvuran süt çocuğunda "
-                            "batın kadranlarının dikkatli palpasyonu, peritoneal irritasyon kontrolü ve "
-                            "rektal/bez muayenesi en kritik ilk adımdır."
-                        ),
-                        "new_finding": (
-                            "Vital Bulgular: Ateş 37.3°C, KTA 148/dk, SS 32/dk, TA 88/52 mmHg, KDZ 2-3 sn. Bebek "
-                            "muayene başında uykuya meyilli iken aniden bacaklarını karnına çekerek ağlama atağı "
-                            "geçirdi. Sakinleştiğinde sağ üst kadranda 3x2 cm boyutunda silindirik kitle palpe "
-                            "edildi, sağ alt kadran boş hissedildi. Bezde mukuslu ve pembe-kırmızı kanlı dışkı "
-                            "bulaşı görüldü. Tahta karın bulgusu yok."
-                        ),
+                        "explanation": "Karakteristik iki evreli döküntü paterni klinik tanıyı yönlendirir; etkenin eritroid öncüllere tropizmi nedeniyle kronik hemolitik anemi ve ev içi gebelik teması mutlaka sorgulanmalıdır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 88/dk, SS 18/dk. Genel durum çok iyi. Her iki yanakta parlak kırmızı malar eritem, perioral solukluk ve ekstremite ekstansör yüzlerinde dantelvari (retiküler) makülopapüler döküntü mevcut. Orofarenks doğal, lenfadenopati veya organomegali yok. Bilinen kan hastalığı ve evde gebe teması yok.",
                     },
                     {
-                        "text": (
-                            "Kusmayı durdurmak amacıyla hemen intravenöz ondansetron yapıp ağızdan oral "
-                            "rehidratasyon sıvısı denemesine başlamak ve iki saat sonra batın muayenesini tekrarlamak"
-                        ),
+                        "text": "Yüzdeki malar eritem nedeniyle akut fotosensitif bağ dokusu hastalığı düşünerek eklem muayenesi yapıp hastayı acil gözlemde monitörize etmek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Ağızdan verilen sıvıyı hemen safralı olarak kusan bebekte batın distansiyonu "
-                            "belirginleşti ve 2 saatlik gecikme sonucunda kapiller dolum zamanı uzayarak "
-                            "hipovolemi bulguları ağırlaştı."
-                        ),
-                        "teaching_point": (
-                            "Safralı kusma aksi kanıtlanana kadar mekanik intestinal obstrüksiyon göstergesidir; "
-                            "bu hastalarda oral alım derhal kesilmeli ve antiemetik verilerek oral besleme "
-                            "denemesi yapılmamalıdır."
-                        ),
+                        "scenario_update": "Eklem muayenesinde artrit bulgusu saptanmadı; 1 hafta önceki viral prodrom ve ekstremitelerdeki tipik dantelvari patern göz ardı edilmiş oldu.",
+                        "teaching_point": "Kısa viral prodromu izleyen akut çift taraflı malar eritem, perioral solukluk ve ekstremitelerde retiküler döküntü okul çağı çocuklarında öncelikle karakteristik viral ekzantemi düşündürür.",
+                    },
+                    {
+                        "text": "Yüksek bulaştırıcılıklı solunum yolu ekzantemi şüphesiyle hastayı derhal negatif basınçlı izolasyon odasına alıp ağız içinde Koplik lekesi aramak",
+                        "is_correct": False,
+                        "scenario_update": "İzolasyon odasına alınan çocuğun ateşinin olmadığı, öksürük/koriza/konjonktivit bulgusu taşımadığı ve bukkal mukozasının tamamen doğal olduğu görüldü.",
+                        "teaching_point": "Ateşsiz, genel durumu çok iyi olan ve 3C bulgusu (öksürük, koriza, konjonktivit) bulunmayan retiküler döküntülü çocukta kızamık izolasyonu endike değildir.",
+                    },
+                    {
+                        "text": "Yanaklardaki eritem ve perioral solukluğu bakteriyel toksin aracılı döküntü lehine yorumlayıp öncelikle tonsiller eksüda ve Pastia çizgilerini aramak",
+                        "is_correct": False,
+                        "scenario_update": "Orofarenks muayenesinde tonsiller doğal bulundu, çilek dili saptanmadı ve döküntünün zımpara kağıdı dokusunda değil düz-retiküler yapıda olduğu görüldü.",
+                        "teaching_point": "Bakteriyel ekzotoksin kaynaklı döküntülerde akut yüksek ateş, eksüdatif tonsillofarenjit ve deride pütürlü zımpara kağıdı hissi veren yaygın noktasal papüller beklenir.",
                     },
                 ],
             },
             {
-                "stage_title": "Sarı Alanda Stabilizasyon ve Görüntüleme Seçimi",
-                "question": (
-                    "Safralı kusması, sağ üst kadranda palpe edilen kitlesi ve mukuslu-kanlı dışkısı olan bu "
-                    "bebekte ilk stabilizasyon ve görüntüleme planınız ne olmalıdır?"
-                ),
+                "stage_title": "Tetkik İstem Kararı",
+                "question": "Bilinen kronik hastalığı olmayan ve muayene bulguları tipik olan bu çocukta hangi tetkik yaklaşımı uygundur?",
                 "options": [
                     {
-                        "text": (
-                            "Oral alımı kesmek, nazogastrik dekompresyon sağlamak, %0.9 NaCl ile intravenöz "
-                            "sıvı resüsitasyonu başlamak ve acil batın ultrasonografisi istemek"
-                        ),
+                        "text": "Tanıyı mikrobiyolojik olarak kesinleştirmek için acil serviste viral spesifik IgM/IgG serolojisi ve kantitatif kan PCR testi istemek",
+                        "is_correct": False,
+                        "scenario_update": "Damar yolu açılırken çocuk ağladı; dış laboratuvara gönderilen seroloji ve PCR sonuçlarının 4 gün sonra çıkacağı öğrenildi.",
+                        "teaching_point": "İmmünkompetan ve hematolojik hastalığı bulunmayan çocuklarda karakteristik retiküler ekzantem evresinde serolojik veya moleküler doğrulama testlerine gerek yoktur.",
+                    },
+                    {
+                        "text": "Eritroid seri baskılanmasını ve olası aplastik krizi taramak amacıyla tam kan sayımı, retikülosit yüzdesi ve periferik yayma istemek",
+                        "is_correct": False,
+                        "scenario_update": "LABORATUVAR SONUCU: Hb 12.8 g/dL, Hct %38, Retikülosit %1.1, WBC 7.200/mm³, PLT 265.000/mm³. Tüm hematolojik parametreler normal saptandı.",
+                        "teaching_point": "Sağlıklı çocuklarda eritropoezdeki geçici duraklama klinik anemiye yol açmaz; tam kan sayımı ve retikülosit yalnızca kronik hemolitik anemisi (orak hücre, sferositoz vb.) olanlarda endikedir.",
+                    },
+                    {
+                        "text": "Hiçbir laboratuvar veya görüntüleme tetkiki istemeden mevcut karakteristik öykü ve fizik muayene bulgularıyla klinik tanı koymak",
                         "is_correct": True,
-                        "explanation": (
-                            "Akut mekanik bağırsak obstrüksiyonu şüphesinde oral alımın kesilmesi, nazogastrik "
-                            "dekompresyon, izotonik sıvı desteği ve yüksek duyarlılığa sahip batın "
-                            "ultrasonografisi altın standart yaklaşımdır."
-                        ),
-                        "new_finding": (
-                            "Nazogastrik sondadan safralı mide içeriği drene edildi ve 20 mL/kg %0.9 NaCl bolusu "
-                            "sonrası KTA 126/dk düzeyine geriledi. BATIN USG: Sağ üst kadranda transvers kesitte "
-                            "iç içe geçmiş konsantrik ekojenik ve hipoekoik bağırsak halkaları (3.2 cm çapında), "
-                            "longitudinal kesitte ise tübüler katmanlı bağırsak segmenti izlendi. Batın içinde "
-                            "serbest hava saptanmadı."
-                        ),
+                        "explanation": "Sağlıklı çocuklarda tipik malar eritem ve ekstremitelerde dantelvari döküntü varlığında tanı tamamen kliniktir; ek kan tetkiki yönetimi değiştirmez.",
+                        "new_finding": "Tetkik istenmedi; tanı klinik bulgularla netleştirildi ve aile bilgilendirme aşamasına geçildi.",
                     },
                     {
-                        "text": (
-                            "Sadece ayakta direkt batın grafisi çekmek ve grafide hava-sıvı seviyesi görülmezse "
-                            "mekanik tıkanıklığı dışlayarak hastaya oral beslenme denemesi yapmak"
-                        ),
+                        "text": "Atipik bakteriyel farenjit ve streptokoksik ekzantemi dışlamak için hızlı antijen testi, boğaz kültürü ve ASO titresi istemek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Çekilen direkt batın grafisinde yalnızca sağ alt kadranda gaz azlığı izlendi, "
-                            "belirgin hava-sıvı seviyesi görülmedi; ancak oral besleme sonrası bebeğin safralı "
-                            "kusması ve letarjisi şiddetlendi."
-                        ),
-                        "teaching_point": (
-                            "Direkt batın grafisi erken dönemde %25-30 oranında tamamen normal olabilir ve "
-                            "mekanik obstrüksiyonu dışlamaz; yalnızca perforasyon (serbest hava) şüphesinde ek "
-                            "bilgi sağlar."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Damar yolu açıp sedasyon uyguladıktan sonra ultrasonografi beklemeksizin kontrastlı "
-                            "tüm batın bilgisayarlı tomografisi çekerek bağırsak lümenini ve mezenteri değerlendirmek"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Dokuz aylık bebek yüksek doz iyonizan radyasyona ve sedasyon riskine maruz kaldı; "
-                            "ayrıca kontrast hazırlığı nedeniyle kesin tedavi 2 saat gecikti."
-                        ),
-                        "teaching_point": (
-                            "Süt çocuklarında bu klinik tabloda ultrasonografi %98-100 duyarlılık ve özgüllüğe "
-                            "sahiptir; radyasyon ve sedasyon gerektiren bilgisayarlı tomografi ilk basamakta "
-                            "endike değildir."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Mukuslu ve kanlı dışkılama nedeniyle akut bakteriyel enterokolit düşünerek gaita "
-                            "kültürü göndermek, intravenöz seftriakson başlamak ve görüntülemeyi ertesi güne bırakmak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Antibiyotik tedavisine rağmen bebeğin kıvrandırıcı ağlama atakları ve safralı "
-                            "kusmaları devam etti; 12 saat sonra batın distansiyonu, ateş ve peritoneal "
-                            "irritasyon bulguları gelişti."
-                        ),
-                        "teaching_point": (
-                            "Mukuslu-kanlı dışkı bakteriyel dizanteri ile karışabilir; ancak safralı kusma, "
-                            "periyodik ağlama krizleri ve sağ üst kadranda kitle varlığında acil ultrasonografi "
-                            "geciktirilmemelidir."
-                        ),
+                        "scenario_update": "Hızlı antijen testi negatif sonuçlandı, ASO 90 IU/mL geldi; farenjit bulgusu olmayan çocukta gereksiz sürüntü ve kan işlemi yapıldı.",
+                        "teaching_point": "Ateş ve boğaz ağrısı olmayan, orofarenksi doğal saptanan retiküler döküntülü hastada boğaz kültürü veya ASO istemenin tanısal değeri yoktur.",
                     },
                 ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": (
-                    "Klinik tablo ve batın ultrasonografisinde saptanan iç içe geçmiş konsantrik bağırsak "
-                    "halkaları görünümü doğrultusunda kesin tanınız nedir?"
-                ),
+                "question": "Bu hastada mevcut bulgularla kesin tanınız nedir?",
                 "options": [
                     {
-                        "text": "İnfantil Hipertrofik Pilor Stenozu",
+                        "text": "Kızıl (Akut Streptokoksik Ekzantem)",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Pilor stenozu yaşamın ilk 3-6 haftasında safrasız fışkırır kusma ile seyreder; 9 "
-                            "aylık bebekte safralı kusma ve kanlı dışkı pilor stenozu ile uyumsuzdur."
-                        ),
-                        "teaching_point": (
-                            "Hipertrofik pilor stenozunda tıkanıklık pilor düzeyinde olduğu için kusma her "
-                            "zaman safrasızdır ve hipokloremik hipokalemik metabolik alkaloz görülür."
-                        ),
+                        "scenario_update": "Orofarenkste eksüda/hiperemi olmadığı, ateşin bulunmadığı ve döküntünün zımpara kağıdı karakteri taşımadığı tekrar değerlendirildi.",
+                        "teaching_point": "Kızılda perioral solukluk görülebilse de yüksek ateş, akut tonsillofarenjit, çilek dili ve kıvrım yerlerinde koyulaşan noktasal pütürlü döküntü eşlik eder.",
                     },
                     {
-                        "text": "Akut İnvaziv Bakteriyel Gastroenterit (Şigelloz)",
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Ultrasonografide saptanan 3.2 cm çapındaki iç içe geçmiş bağırsak halkaları (hedef "
-                            "işareti) enfeksiyöz koliti değil mekanik invajinasyonu göstermektedir."
-                        ),
-                        "teaching_point": (
-                            "Bakteriyel enterokolitte yüksek ateş ve sık sulu-kanlı ishal ön plandadır; USG de "
-                            "hedef tahtası (target sign) bulgusu görülmez."
-                        ),
-                    },
-                    {
-                        "text": "Meckel Divertikülüne Bağlı Alt GİS Kanaması",
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Meckel divertikülü tipik olarak ağrısız masif rektal kanama yapar; bu hastada ise "
-                            "şiddetli kolik ağrı atakları ve USG ile kanıtlanmış invajinasyon mevcuttur."
-                        ),
-                        "teaching_point": (
-                            "Meckel divertikülü süt çocuğunda invajinasyon için bir sürükleyici nokta (lead "
-                            "point) olabilir ancak mevcut akut klinik tablo ileoçekal invajinasyondur."
-                        ),
-                    },
-                    {
-                        "text": "Akut İleoçekal İnvajinasyon (İntususepsiyon)",
+                        "text": "Eritema İnfeksiyozum (Beşinci Hastalık)",
                         "is_correct": True,
-                        "explanation": (
-                            "Distal ileumun çekum ve çıkan kolon lümeni içine teleskop gibi girmesiyle oluşan "
-                            "ileoçekal invajinasyon, USG de transvers kesitte hedef tahtası (target/donut sign) "
-                            "ve longitudinal kesitte psödo-böbrek görünümü verir."
-                        ),
-                        "new_finding": "Kesin Tanı: Akut İleoçekal İnvajinasyon (İntususepsiyon).",
+                        "explanation": "Hafif prodromdan 1 hafta sonra gelişen parlak malar eritem ('tokatlanmış yüz') ve ekstremitelerde retiküler (dantelvari) döküntü Parvovirus B19 enfeksiyonunun patognomonik bulgusudur.",
+                        "new_finding": "Tanı: Eritema İnfeksiyozum (Beşinci Hastalık - Parvovirus B19).",
+                    },
+                    {
+                        "text": "Kızamıkçık (Akut Rubella Enfeksiyonu)",
+                        "is_correct": False,
+                        "scenario_update": "Muayenede retroauriküler, posterior servikal veya suboksipital ağrılı lenfadenopati saptanmadı ve döküntü dantelvari karakterdeydi.",
+                        "teaching_point": "Rubellada belirgin retroauriküler/suboksipital lenfadenopati ve yüzden başlayıp hızla gövdeye yayılan pembe makülopapüler döküntü görülür; retiküler patern tipik değildir.",
+                    },
+                    {
+                        "text": "Roseola İnfantum (Altıncı Hastalık)",
+                        "is_correct": False,
+                        "scenario_update": "Hasta 7 yaşında olup 3-4 gün süren yüksek ateşin aniden düşmesiyle gövdeden başlayan döküntü öyküsü bulunmamaktadır.",
+                        "teaching_point": "Roseola İnfantum tipik olarak 6 ay - 2 yaş arasında görülür ve birkaç gün süren yüksek ateşin krizle düşmesini takiben gövdede makülopapüler döküntü yapar.",
                     },
                 ],
             },
             {
-                "stage_title": "Sarı Alanda Tedavi Seçimi ve Yatış Planı",
-                "question": (
-                    "Perforasyon, peritonit veya dekompanse şok bulgusu olmayan bu ileoçekal invajinasyon "
-                    "hastasında en uygun tedavi ve izlem yaklaşımı hangisidir?"
-                ),
+                "stage_title": "Tedavi, İzlem ve Okula Dönüş Kararı",
+                "question": "Aile çocuğun tedavisi ve yarın okula gidip gidemeyeceği konusunda bilgi istiyor. En doğru yaklaşım hangisidir?",
                 "options": [
                     {
-                        "text": (
-                            "Radyolojik redüksiyon girişimi perforasyon riski taşıdığı için enema denemeden "
-                            "hastayı doğrudan acil eksploratris laparotomi ve bağırsak rezeksiyonu için ameliyathaneye almak"
-                        ),
+                        "text": "Döküntü solana kadar 7 gün ev izolasyonu raporu düzenlemek, kaşıntı olmasa da oral antihistaminik ve topikal steroid krem başlamak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Peritonit veya perforasyon bulgusu olmayan hastada ameliyatsız redüksiyon şansı "
-                            "kullanılmadan yapılan laparotomi, gereksiz genel anestezi ve cerrahi morbiditeye yol açtı."
-                        ),
-                        "teaching_point": (
-                            "Cerrahi laparotomi yalnızca serbest hava (perforasyon), yaygın peritonit, refrakter "
-                            "şok veya radyolojik redüksiyonun başarısız olduğu durumlarda endikedir."
-                        ),
+                        "scenario_update": "Bulaştırıcılığı sona ermiş olan çocuk gereksiz yere bir hafta okuldan geri kaldı ve semptomsuz lezyonlara gereksiz topikal steroid uygulandı.",
+                        "teaching_point": "Eritema İnfeksiyozum'da döküntü immün kompleks aracılıdır; döküntü çıktığında viremi ve bulaştırıcılık bitmiştir, bu nedenle okuldan izolasyon önerilmez.",
                     },
                     {
-                        "text": (
-                            "Çocuk Cerrahisi konsültasyonu ile ultrasonografi veya skopi eşliğinde hidrostatik "
-                            "veya pnömatik enema redüksiyonu uygulamak ve gözlem için yatırmak"
-                        ),
+                        "text": "İlaç gerekmediğini, döküntü çıktığında bulaştırıcılığın bittiğini, okula gidebileceğini ve döküntünün sıcakla birkaç hafta tekrarlayabileceğini anlatıp taburcu etmek",
                         "is_correct": True,
-                        "explanation": (
-                            "Komplike olmayan ileoçekal invajinasyonda ilk tercih %85-90 başarı oranına sahip "
-                            "ultrasonografi eşliğinde hidrostatik (serum fizyolojik) veya skopi eşliğinde "
-                            "pnömatik (hava) redüksiyondur; işlem sonrası erken nüks (%5-10) açısından hasta izlenir."
-                        ),
-                        "new_finding": (
-                            "Çocuk Cerrahisi ve Radyoloji işbirliği ile USG kılavuzluğunda hidrostatik "
-                            "redüksiyon başarıyla uygulandı; ileoçekal valvden serbest sıvı geçişi doğrulandı "
-                            "ve hasta 24 saatlik gözlem için yatırıldı."
-                        ),
+                        "explanation": "Parvovirus B19 enfeksiyonunda bulaştırıcılık döküntü öncesi prodromal dönemdedir; ekzantem evresinde çocuk bulaştırıcı değildir. Sıcak banyo, egzersiz ve güneşle döküntünün 1-3 hafta dalgalanabileceği aileye açıklanmalıdır.",
+                        "new_finding": "Aileye bulaştırıcılığın geçtiği, okula devam edebileceği ve döküntünün sıcak/egzersizle geçici olarak belirginleşebileceği anlatılarak hasta taburcu edildi.",
                     },
                     {
-                        "text": (
-                            "Ultrasonografi eşliğinde hidrostatik redüksiyon başarıyla tamamlandıktan hemen "
-                            "sonra oral beslenmeye geçip hastayı 1. saatte acil servisten eve taburcu etmek"
-                        ),
+                        "text": "Viral replikasyonu baskılamak ve eklem komplikasyonlarını önlemek amacıyla 5 gün oral asiklovir süspansiyon başlayıp evde istirahat önermek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "İşlemden 1 saat sonra eve gönderilen bebekte 6 saat sonra evde tekrar şiddetli "
-                            "ağlama krizleri ve safralı kusma ile erken rekürrens (nüks) gelişti."
-                        ),
-                        "teaching_point": (
-                            "Başarılı hidrostatik veya pnömatik redüksiyon sonrasında vakaların %5-10 unda "
-                            "özellikle ilk 24 saat içinde erken nüks görülebileceğinden hastalar yakın gözlem "
-                            "altında tutulmalıdır."
-                        ),
+                        "scenario_update": "Başlanan asiklovir tedavisi tek sarmallı DNA virüsü olan Parvovirus B19 üzerinde hiçbir etki göstermedi ve gereksiz ilaç maruziyeti oluşturdu.",
+                        "teaching_point": "Asiklovir yalnızca herpesvirüs ailesine (HSV, VZV) etkilidir; Parvovirus B19 enfeksiyonunda antiviral tedavinin yeri yoktur.",
                     },
                     {
-                        "text": (
-                            "Bağırsak ansının kendiliğinden açılabileceğini düşünerek enema redüksiyonu yapmadan "
-                            "sadece intravenöz sıvı ve spazmolitik ilaç verip 24 saat klinik izlemde beklemek"
-                        ),
+                        "text": "Çocuğun okula dönüşüne izin vermek ancak sınıfındaki tüm çocuklara ve öğretmenlere profilaktik oral antibiyotik başlanmasını yazılı olarak önermek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "İleoçekal invajinasyonda sadece sıvı ve spazmolitik ile beklenmesi sonucu bağırsak "
-                            "duvarında venöz konjesyon, transmural iskemi, nekroz ve 18. saatte perforasyon gelişti."
-                        ),
-                        "teaching_point": (
-                            "İleoçekal (kolonik) invajinasyonlar kendiliğinden açılmaz ve acil redüksiyon "
-                            "gerektirir; yalnız asemptomatik, kısa segment (<2 cm) ince bağırsak (ileo-ileal) "
-                            "invajinasyonları yakın USG takibiyle izlenebilir."
-                        ),
+                        "scenario_update": "Okul yönetimi ve veliler arasında gereksiz panik oluştu; viral bir etken için uygunsuz antibiyotik profilaksisi gündeme geldi.",
+                        "teaching_point": "Parvovirus B19 için temaslılara antibiyotik profilaksisi uygulanmaz; yalnızca temaslılar arasında gebe veya kronik hemolitik anemili birey varsa kendi hekimine yönlendirilir.",
                     },
                 ],
             },
@@ -627,314 +294,142 @@ CASES = [
     },
     {
         "id": "Y08",
-        "category": "🧠 Nörolojik Belirtiler & Konvülziyon",
-        "age": "4 Yaş",
-        "gender": "Erkek",
-        "complaint": "Yüksek ateş (40.1°C), şiddetli baş ağrısı, fışkırır tarzda kusma, ışıktan rahatsız olma ve uykuya meyil",
+        "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
+        "age": "10 Aylık",
+        "gender": "Kız",
+        "complaint": "Üç gün süren yüksek ateşin düşmesiyle birlikte gövdede çıkan döküntü",
         "history": (
-            "Sarı Alana kucakta getiriliyor: 'Dün akşamdan beri ateşi 40°C'ye çıktı, ateş düşürücülere rağmen "
-            "düşmüyor. Başım çok ağrıyor deyip ağlıyor, odanın ışığını açtığımızda gözlerini sıkıca kapatıyor. "
-            "Bugün 4 kez fışkırır gibi kustu ve boynunu öne doğru eğmek istemiyor. Son 1 saattir sorularımıza "
-            "çok yavaş cevap veriyor.'"
+            "Annesi endişeyle anlatıyor: 'Doktor hanım/bey, kızımın 3 gün boyunca 39.5°C'ye varan ateşi oldu, "
+            "ateş düşürücüyle düşüp tekrar çıkıyordu ama keyfi ve emmesi fena değildi. Bu sabah ateşi tamamen "
+            "düştü, rahatladık; fakat öğleden sonra karnında, göğsünde ve sırtında pembe-kırmızı lekeler çıktı! "
+            "Dün verdiğimiz ateş düşürücü şuruptan alerji mi oldu diye çok korktuk.'"
         ),
-        "final_diagnosis": "Akut Bakteriyel Menenjit (Pnömokoksik Menenjit - S. pneumoniae)",
-        "disposition": (
-            "Sarı Alanda Kan Kültürü + Lomber Ponksiyon -> İlk Antibiyotik Dozu Öncesi İV Deksametazon + "
-            "Menenjit Dozunda Seftriakson ve Vankomisin -> Çocuk Yoğun Bakım Yatışı"
-        ),
+        "final_diagnosis": "Roseola İnfantum (Altıncı Hastalık / Ekzantema Subitum - HHV-6)",
+        "disposition": "Yeşil Alandan İlaç Alerjisi Olmadığının Anlatılması ve Destek Önerileri ile Taburculuk",
         "case_pearl": (
-            "Yüksek ateş, baş ağrısı, fışkırır tarzda kusma, fotofobi, letarji ve meninks irritasyon bulguları "
-            "(ense sertliği, Kernig ve Brudzinski) Akut Bakteriyel Menenjit için klasiktir. Lomber ponksiyon "
-            "kontrendikasyonu (herniasyon bulgusu, fokal nörolojik defisit, kardiyopulmoner instabilite, "
-            "koagülopati/purpura) yoksa hızla LP yapılmalı; ilk antibiyotik dozundan hemen önce/eş zamanlı "
-            "0.15 mg/kg İV Deksametazon ve ardından menenjit dozunda Seftriakson (100 mg/kg/gün) + Vankomisin "
-            "(60 mg/kg/gün) başlanmalıdır."
+            "Altı ay - 2 yaş arası süt çocuklarında 3-4 gün süren yüksek ateşin aniden (kriz şeklinde) düşmesiyle "
+            "gövdeden başlayan, kaşıntısız, basmakla solan gül pembesi makülopapüler döküntü Roseola İnfantum "
+            "(HHV-6/7) için klasiktir. Sıklıkla ateş döneminde kullanılan antipiretik veya antibiyotik alerjisi ile "
+            "karıştırılır; çocuğa yanlışlıkla 'ilaç alerjisi' etiketi konulmamalıdır."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Nörolojik ve Sistemik Değerlendirme",
-                "question": (
-                    "40.1°C ateşi, fotofobisi, fışkırır tarzda kusması ve uykuya meyili olan 4 yaşındaki bu "
-                    "çocukta ilk muayenede öncelikli yaklaşımınız ne olmalıdır?"
-                ),
+                "stage_title": "Fizik Muayene",
+                "question": "Ateşi düştükten sonra gövdede döküntüsü çıkan bu 10 aylık bebekte ilk muayenede neyi değerlendirmelisiniz?",
                 "options": [
                     {
-                        "text": (
-                            "Vital bulguları, GKS ve pupilleri, fokal nörolojik defisitleri, pasif boyun "
-                            "fleksiyonunda direnç ile kalça-diz ekstansiyon manevralarını ve döküntüyü değerlendirmek"
-                        ),
+                        "text": "Ateş düşürücüye bağlı erken sistemik alerjik reaksiyon düşünerek hızla uyluktan intramüsküler adrenalin uygulayıp damar yolu açmak",
+                        "is_correct": False,
+                        "scenario_update": "Yaşamsal bulguları normal, kaşıntısı veya solunum sıkıntısı olmayan bebekte adrenalin enjeksiyonu sonrası ciddi taşikardi ve huzursuzluk gelişti.",
+                        "teaching_point": "Ateş düştükten sonra ortaya çıkan, kaşıntısız, ödematöz plak içermeyen ve sistemik bulgunun eşlik etmediği makülopapüler döküntülerde adrenalin endikasyonu yoktur.",
+                    },
+                    {
+                        "text": "Yaşamsal bulgular, genel görünüm, ön fontanel, yumuşak damaktaki eritematöz papüller ve gövdedeki döküntünün basmakla solma özelliğini değerlendirmek",
                         "is_correct": True,
-                        "explanation": (
-                            "Akut santral sinir sistemi enfeksiyonu şüphesinde hem spinal zar irritasyon "
-                            "bulguları hem de kafa içi basınç artışı bulguları (bradikardi, hipertansiyon, "
-                            "anizokori, fokal defisit) ve purpurik döküntü hızla kontrol edilmelidir."
-                        ),
-                        "new_finding": (
-                            "Vital Bulgular: Ateş 40.0°C, KTA 138/dk, SS 28/dk, TA 102/65 mmHg, SpO2 %98, KDZ "
-                            "2 sn. GKS 13 (uykuya meyilli, sesli uyaranla göz açıyor). Pasif boyun "
-                            "fleksiyonunda belirgin direnç mevcut; boyun öne eğildiğinde kalça ve dizlerde "
-                            "refleks fleksiyon gelişiyor ve uyluk fleksiyonda iken bacak ekstansiyonunda "
-                            "ağrılı kısıtlılık saptanıyor. Pupiller izokorik, papilödem veya fokal nörolojik "
-                            "defisit yok, ciltte peteşi/purpura yok."
-                        ),
+                        "explanation": "Üç günlük yüksek ateşin kriz şeklinde düşmesi, bebeğin aktif/huzurlu görünümü ve gövdeden başlayan basmakla solan makülopapüler döküntü karakteristik viral ekzantem seyrini gösterir.",
+                        "new_finding": "Vital Bulgular: Ateş 36.5°C, KTA 115/dk, SS 26/dk. Bebek etrafa gülümsüyor, aktif. Ön fontanel normal bombelikte. Gövde, boyun ve sırt ağırlıklı, basmakla solan 2-5 mm çaplı gül pembesi makülopapüler döküntüler mevcut; peteşi/purpura ve kaşıntı yok. Yumuşak damakta hafif eritematöz papüller izlendi.",
                     },
                     {
-                        "text": (
-                            "Şiddetli baş ağrısı, kusma ve ışıktan rahatsız olmayı pediatrik migren atağı olarak "
-                            "değerlendirip karanlık odada intravenöz parasetamol ve ondansetron vererek izlemek"
-                        ),
+                        "text": "Üç gün süren yüksek ateş ve yeni başlayan döküntüyü santral sinir sistemi enfeksiyonu bulgusu kabul ederek acil lomber ponksiyon hazırlığı yapmak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Yalnızca analjezik ve antiemetik verilerek bekletilen çocukta 1 saat sonra "
-                            "jeneralize tonik-klonik konvülziyon gelişti ve bilinç durumu GKS 9 düzeyine geriledi."
-                        ),
-                        "teaching_point": (
-                            "Kırk derece ateş, letarji ve pasif boyun fleksiyonunda direnç bulunan bir çocukta "
-                            "tablo asla primer baş ağrısı veya migren olarak açıklanamaz; akut santral sinir "
-                            "sistemi enfeksiyonu dışlanmalıdır."
-                        ),
+                        "scenario_update": "Ateşi tamamen düşmüş, ön fontaneli normal ve gülümseyerek oyun oynayan bebekte invaziv girişim hazırlığı aileyi çok endişelendirdi.",
+                        "teaching_point": "Ateşi krizle düşmüş, genel durumu çok iyi, ön fontaneli normal ve döküntüsü basmakla solan süt çocuğunda lomber ponksiyon endike değildir.",
                     },
                     {
-                        "text": (
-                            "Yüksek ateş ve baş ağrısını akut bakteriyel rinosinüzite bağlayarak nörolojik "
-                            "muayene yapmadan intravenöz amoksisilin-klavulanat uygulayıp gözlem odasında ateşin düşmesini beklemek"
-                        ),
+                        "text": "Döküntülerin olası bakteriyel sepsis kaynağı olabileceğini düşünerek bebeği Sarı Alana devredip geniş spektrumlu intravenöz antibiyotik hazırlamak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Standart dozda verilen amoksisilin-klavulanat kan-beyin bariyerini yeterli düzeyde "
-                            "geçemedi; 3 saat içinde hastanın uykuya meyili derinleşti ve periferik dolaşım "
-                            "bozukluğu gelişti."
-                        ),
-                        "teaching_point": (
-                            "Fışkırır tarzda kusma, fotofobi, bilinç değişikliği ve boyun hareketlerinde "
-                            "kısıtlılık varlığında üst solunum yolu enfeksiyonu düşünülerek standart doz "
-                            "antibiyotikle yetinilmesi ağır komplikasyonlara yol açar."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Uykuya meyilli çocuğu muayene etmeden ve damar yolu açmadan önce kafa içi kitleyi "
-                            "dışlamak amacıyla doğrudan kraniyal manyetik rezonans görüntülemeye göndermek"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Stabilizasyon ve ilk değerlendirme yapılmadan uzun süreli MR çekimine gönderilen "
-                            "hastada radyoloji ünitesinde ateşli konvülziyon gelişti ve acil müdahale gecikti."
-                        ),
-                        "teaching_point": (
-                            "Akut ateşli ve letarjik çocukta ilk adım yatak başı vital bulguların, dolaşımın ve "
-                            "nörolojik muayenenin değerlendirilmesidir; stabilizasyon sağlanmadan hasta uzun "
-                            "süreli görüntülemeye gönderilmez."
-                        ),
+                        "scenario_update": "Sarı Alana alınan bebeğin kapiller dolumu 1 saniye, ateşi 36.5°C ve aktivitesi tam olarak izlendi; toksik görünüm saptanmadı.",
+                        "teaching_point": "Basmakla solan pembe makülopapüler döküntüsü olan, ateşi düşmüş ve perfüzyonu normal bir süt çocuğunda meningokoksemi veya bakteriyel sepsis düşünülmez.",
                     },
                 ],
             },
             {
-                "stage_title": "Laboratuvar ve Beyin Omurilik Sıvısı İnceleme Yaklaşımı",
-                "question": (
-                    "Hemodinamisi stabil olan, papilödemi, fokal nörolojik defisiti veya cilt döküntüsü "
-                    "bulunmayan bu hastada inceleme ve girişim planınız ne olmalıdır?"
-                ),
+                "stage_title": "Tetkik İstem Kararı",
+                "question": "Genel durumu çok iyi, ateşi düşmüş ve tipik gövde döküntüsü saptanmış bu bebekte hangi tetkik yaklaşımı doğrudur?",
                 "options": [
                     {
-                        "text": (
-                            "Kan kültürü ve lomber ponksiyon yapmadan hemen antibiyotik başlamak, 24 saat sonra "
-                            "klinik yanıt alındıktan sonra beyin omurilik sıvısı örneği almak"
-                        ),
+                        "text": "Geçirilmiş üç günlük yüksek ateşin gizli bakteriyel odağını dışlamak için tam kan sayımı, CRP, kan kültürü ve mesane sondası ile idrar kültürü almak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Kontrendikasyon olmadığı halde ertelenen ve antibiyotik verildikten 24 saat sonra "
-                            "yapılan lomber ponksiyonda beyin omurilik sıvısı kültürü steril kaldı; etken ve "
-                            "antibiyotik duyarlılığı saptanamadı."
-                        ),
-                        "teaching_point": (
-                            "Herniasyon riski, fokal defisit, şok veya koagülopati gibi bir kontrendikasyon "
-                            "yoksa antibiyotik dozundan hemen önce kan kültürü ve lomber ponksiyon yapılarak "
-                            "etken izolasyonu sağlanmalıdır."
-                        ),
+                        "scenario_update": "LABORATUVAR SONUCU: WBC 5.200/mm³ (%70 lenfosit), CRP 1.9 mg/L, tam idrar tetkiki normal. İyileşme evresindeki bebekte gereksiz invaziv kateterizasyon yapıldı.",
+                        "teaching_point": "Odağı belirsiz ateş döneminde idrar tetkiki önemli olsa da, ateş tamamen düşüp karakteristik viral ekzantem ortaya çıktığında tanı netleşmiştir ve invaziv sepsis taraması yapılmaz.",
                     },
                     {
-                        "text": (
-                            "Papilödem ve fokal defisit olmamasına rağmen önce kraniyal bilgisayarlı tomografi "
-                            "çekmek ve radyoloji raporu çıkana kadar 3 saat boyunca antibiyotik vermeden beklemek"
-                        ),
+                        "text": "Antipiretik ilaç duyarlılığını doğrulamak amacıyla acil serviste parasetamol spesifik IgE, triptaz düzeyi ve oral ilaç provokasyon testi planlamak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Kraniyal BT tamamen normal raporlandı; ancak 3 saatlik süreçte antibiyotik "
-                            "başlanmadığı için hastada septik şok ve ağır nörolojik kötüleşme gelişti."
-                        ),
-                        "teaching_point": (
-                            "Fokal nörolojik defisit, papilödem, koma (GKS <10) veya immünsüpresyon yoksa lomber "
-                            "ponksiyon öncesi rutin kraniyal BT endike değildir; görüntüleme yapılacaksa bile "
-                            "kan kültürü alınıp ampirik tedavi geciktirilmeden başlanmalıdır."
-                        ),
+                        "scenario_update": "Laboratuvarda parasetamol için rutin spesifik IgE kiti bulunmadığı bildirildi; akut dönemde provokasyon girişimi ise gereksiz zaman kaybına yol açtı.",
+                        "teaching_point": "Ateşin düşmesiyle başlayan kaşıntısız makülopapüler döküntü ilaç reaksiyonu değil, viral enfeksiyonun doğal iyileşme evresi olan ekzantem dönemidir.",
                     },
                     {
-                        "text": (
-                            "Damar yolu açarak kan kültürü, hemogram, CRP, prokalsitonin ve eş zamanlı glukoz "
-                            "alıp kontrendikasyon bulunmadığından steril koşullarda lomber ponksiyon uygulamak"
-                        ),
+                        "text": "Hiçbir laboratuvar veya görüntüleme tetkiki istemeden tipik klinik seyir ve fizik muayene bulgularıyla tanı koymak",
                         "is_correct": True,
-                        "explanation": (
-                            "Hemodinamik instabilite, fokal nörolojik bulgu veya papilödem olmayan hastada kan "
-                            "kültürü ve eş zamanlı kan şekeri alınarak derhal lomber ponksiyon yapılmalı ve "
-                            "beyin omurilik sıvısı incelenmelidir."
-                        ),
-                        "new_finding": (
-                            "KAN: WBC 24.500/mm³, CRP 165 mg/L, Prokalsitonin 14 ng/mL, Eş zamanlı Kan Şekeri "
-                            "100 mg/dL, Koagülasyon normal. BOS BULGULARI: Görünüm bulanık, açılış basıncı "
-                            "artmış, hücre sayımı 1.850/mm³ (%92 parçalı çekirdekli lökosit), BOS proteini "
-                            "185 mg/dL, BOS glukozu 18 mg/dL (BOS/kan glukoz oranı 0.18). Gram boyamada bol "
-                            "lökosit ve Gram pozitif diplokoklar görüldü."
-                        ),
+                        "explanation": "Üç gün yüksek ateş sonrası ateşin düşmesiyle çıkan karakteristik makülopapüler döküntü evresinde tanı tamamen kliniktir; laboratuvar tetkiki gerekmez.",
+                        "new_finding": "Ek tetkik istenmedi; klinik değerlendirme tanı için yeterli görülerek aile eğitimi aşamasına geçildi.",
                     },
                     {
-                        "text": (
-                            "Lomber ponksiyon invaziv bir işlem olduğu için yalnızca kan kültürü, tam idrar "
-                            "tetkiki ve nazofarengeal viral sürüntü göndererek klinik izleme almak"
-                        ),
+                        "text": "Kızamık ve kızamıkçık serolojisi (IgM/IgG) ile boğaz sürüntüsünden solunum yolu viral PCR paneli göndererek sonuç çıkana kadar gözlemde tutmak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Nazofarengeal sürüntü ve idrar tetkiki negatif sonuçlandı; beyin omurilik sıvısı "
-                            "incelenmediği için santral sinir sistemi enfeksiyonunun şiddeti ve etkeni belirlenemedi."
-                        ),
-                        "teaching_point": (
-                            "Santral sinir sistemi enfeksiyonu şüphesinde kesin etiyolojik ayrım ve uygun tedavi "
-                            "süresi yalnızca beyin omurilik sıvısı analizi (hücre, protein, glukoz, Gram boyama "
-                            "ve kültür/PCR) ile belirlenebilir."
-                        ),
+                        "scenario_update": "Seroloji sonuçlarının ertesi gün çıkacağı öğrenildi; bebek acil gözlem odasında gereksiz yere saatlerce bekletildi.",
+                        "teaching_point": "Öksürük, koriza, konjonktivit ve ateş olmadan ateşin düşmesini takiben gövdeden başlayan döküntüde kızamık serolojisi veya acil gözlem yatışı endike değildir.",
                     },
                 ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": (
-                    "Bulanık görünümde BOS, 1.850/mm³ nötrofil hakimiyetli pleositoz, yüksek BOS proteini "
-                    "(185 mg/dL), düşük BOS glukozu (18 mg/dL) ve Gram (+) diplokok bulgusu ile kesin tanınız nedir?"
-                ),
+                "question": "Bu hastada mevcut öykü ve muayene bulgularıyla kesin tanınız nedir?",
                 "options": [
                     {
-                        "text": "Akut Enteroviral (Aseptik) Menenjit",
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Viral menenjitlerde BOS genellikle berraktır, hücre sayısı çoğunlukla <500/mm³ "
-                            "olup lenfosit hakimiyeti vardır, BOS glukozu normaldir ve Gram boyamada bakteri görülmez."
-                        ),
-                        "teaching_point": (
-                            "Belirgin hipoglikoraji (BOS/kan glukoz oranı <0.4), yüksek protein (>100 mg/dL), "
-                            ">1000/mm³ nötrofilik pleositoz ve pozitif Gram boyama bakteriyel menenjiti gösterir."
-                        ),
-                    },
-                    {
-                        "text": "Akut Bakteriyel Menenjit (Pnömokoksik Menenjit)",
+                        "text": "Roseola İnfantum (Ekzantema Subitum)",
                         "is_correct": True,
-                        "explanation": (
-                            "Bulanık BOS, >1000/mm³ PNL hakimiyeti, belirgin hipoglikoraji (18 mg/dL), yüksek "
-                            "protein ve Gram boyamada Gram (+) diplokokların görülmesi Streptococcus pneumoniae "
-                            "kaynaklı akut bakteriyel menenjit için tanısaldır."
-                        ),
-                        "new_finding": "Kesin Tanı: Akut Bakteriyel Menenjit (Streptococcus pneumoniae).",
+                        "explanation": "Altı ay - 2 yaş arası bebekte 3-4 gün süren yüksek ateşin aniden düşmesi ve hemen ardından gövdeden başlayan kaşıntısız gül pembesi makülopapüler döküntü Roseola İnfantum'un klasik tablosudur.",
+                        "new_finding": "Tanı: Roseola İnfantum (HHV-6 / Altıncı Hastalık).",
                     },
                     {
-                        "text": "Herpes Simpleks Virüs (HSV-1) Ensefaliti",
+                        "text": "Parasetamole Bağlı Makülopapüler İlaç Erüpsiyonu",
                         "is_correct": False,
-                        "scenario_update": (
-                            "HSV ensefalitinde fokal nöbetler, temporal lob bulguları, BOS ta lenfositik "
-                            "pleositoz, eritrosit varlığı ve normal/hafif düşük glukoz beklenir; Gram (+) diplokok görülmez."
-                        ),
-                        "teaching_point": (
-                            "Gram boyamada Gram (+) diplokok saptanması ve ağır hipoglikoraji doğrudan "
-                            "pnömokoksik bakteriyel menenjiti doğrular."
-                        ),
+                        "scenario_update": "Döküntüde kaşıntı veya eozinofili bulgusu olmadığı, tablonun ateşin krizle düşmesini izleyen klasik viral seyir olduğu doğrulandı.",
+                        "teaching_point": "İlaç erüpsiyonları genellikle kaşıntılıdır, ilacın ilk dozlarından ziyade günler süren duyarlanma sonrası gelişir ve ateşin kriz şeklinde düşmesiyle eş zamanlı tipik viral dizilim göstermez.",
                     },
                     {
-                        "text": "Santral Sinir Sistemi Tüberküloz Menenjiti",
+                        "text": "Kızamık (Akut Morbilli Enfeksiyonu)",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Tüberküloz menenjiti haftalar süren subakut prodromla başlar, BOS ta lenfosit "
-                            "hakimiyeti vardır ve Gram boyamada Gram (+) diplokok izlenmez."
-                        ),
-                        "teaching_point": (
-                            "Akut 24 saatlik fulminan başlangıç, nötrofilik pleositoz ve Gram (+) diplokoklar "
-                            "akut piyojenik pnömokoksik menenjit tablosudur."
-                        ),
+                        "scenario_update": "Bebekte döküntü çıktığında ateşin tamamen düştüğü, döküntünün saç çizgisi/kulak arkasından değil gövdeden başladığı ve 3C bulgusunun olmadığı görüldü.",
+                        "teaching_point": "Kızamıkta döküntü çıktığında ateş en yüksek seviyesindedir, çocuk düşkün görünür ve döküntü kulak arkasından başlayıp aşağı yayılır.",
+                    },
+                    {
+                        "text": "Akut İnvaziv Meningokoksemi Tablosu",
+                        "is_correct": False,
+                        "scenario_update": "Döküntülerin basmakla tamamen solduğu (peteşiyal/purpurik olmadığı), bebeğin ateşsiz ve gayet neşeli olduğu teyit edildi.",
+                        "teaching_point": "Meningokoksemide toksik görünüm, dolaşım bozukluğu ve basmakla solmayan peteşiyal/purpurik lezyonlar görülür.",
                     },
                 ],
             },
             {
-                "stage_title": "Sarı Alanda Ampirik Antibiyoterapi, Steroid Zamanlaması ve Yatış",
-                "question": (
-                    "Akut bakteriyel menenjit tanısı konulan 4 yaşındaki bu hastada kılavuzlara en uygun ilk "
-                    "doz tedavi ve yatış protokolü hangisidir?"
-                ),
+                "stage_title": "Tedavi ve Aile Bilgilendirmesi",
+                "question": "Bu aşamada bebeğin tedavisi ve ailenin ilaç alerjisi endişesi için en doğru yaklaşım hangisidir?",
                 "options": [
                     {
-                        "text": (
-                            "Standart enfeksiyon dozunda 50 mg/kg/gün İV seftriakson monoterapisi başlamak, "
-                            "vankomisin eklememek ve inflamasyonu baskılamak için deksametazonu antibiyotikten 6 saat sonra uygulamak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Düşük doz seftriakson BOS ta yeterli bakterisidal konsantrasyona ulaşamadı, "
-                            "sefalosporin dirençli pnömokok olasılığı kapsanmadı ve antibiyotikten saatler sonra "
-                            "verilen deksametazon işitme kaybını önlemede etkisiz kaldı."
-                        ),
-                        "teaching_point": (
-                            "Bakteriyel menenjitte seftriakson mutlaka 100 mg/kg/gün (menenjit dozu) verilmeli, "
-                            "dirençli S. pneumoniae için vankomisin (60 mg/kg/gün) eklenmeli ve deksametazon ilk "
-                            "antibiyotik dozundan önce/eş zamanlı uygulanmalıdır."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Kan-beyin bariyerini geçmesi için İV ampisilin ve gentamisin kombinasyonu başlamak, "
-                            "enfeksiyonu yayabileceği düşüncesiyle kortikosteroid vermekten kaçınmak ve genel servise yatırmak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Yenidoğan döneminden sonra ampisilin + gentamisin kombinasyonu penisilin dirençli "
-                            "S. pneumoniae için yetersiz kaldı ve hastada sensorinöral işitme kaybı gelişti."
-                        ),
-                        "teaching_point": (
-                            "Bir aydan büyük çocuklarda ampirik bakteriyel menenjit tedavisinde 3. kuşak "
-                            "sefalosporin (seftriakson/sefotaksim) + vankomisin kullanılır; ilk doz öncesi "
-                            "deksametazon işitme kaybı ve nörolojik sekeli azaltır."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Menenjit dozunda 100 mg/kg/gün İV seftriakson ve 60 mg/kg/gün İV vankomisin "
-                            "başlamak, ödemi azaltmak için hastaya günlük %50 fazla hipotonik idame sıvısı vermek"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Aşırı ve hipotonik sıvı verilen hastada uygunsuz ADH salınımı sendromu (SIADH) "
-                            "zemininde serum sodyumu 124 mEq/L düzeyine düştü ve beyin ödemi ile konvülziyon gelişti."
-                        ),
-                        "teaching_point": (
-                            "Bakteriyel menenjitte SIADH riski yüksek olduğundan aşırı ve hipotonik sıvı "
-                            "yüklemesinden kaçınılmalı; övolemiyi koruyacak şekilde izotonik idame sıvısı "
-                            "tercih edilerek sodyum yakından izlenmelidir."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "İlk antibiyotik dozundan önce 0.15 mg/kg İV deksametazon uygulayıp 100 mg/kg/gün "
-                            "İV seftriakson ve 60 mg/kg/gün İV vankomisin başlayarak yatırmak"
-                        ),
+                        "text": "İlaç gerekmediğini, tablonun ateş düşürücü alerjisi olmadığını ve döküntülerin birkaç gün içinde iz bırakmadan solacağını anlatarak taburcu etmek",
                         "is_correct": True,
-                        "explanation": (
-                            "IDSA ve AAP kılavuzlarına göre >1 ay çocuklarda ampirik menenjit tedavisi "
-                            "Seftriakson (100 mg/kg/gün, 2 dozda) + Vankomisin (60 mg/kg/gün, 4 dozda) "
-                            "kombinasyonudur; ilk antibiyotik dozundan hemen önce/eş zamanlı verilen "
-                            "Deksametazon (0.15 mg/kg) bakteriyolize bağlı subaraknoid inflamasyonu ve işitme "
-                            "kaybını azaltır."
-                        ),
-                        "new_finding": (
-                            "İlk doz öncesi 0.15 mg/kg İV Deksametazon, ardından menenjit dozunda İV Seftriakson "
-                            "ve Vankomisin uygulandı; hasta yakın nörolojik izlem ve SIADH/elektrolit takibi "
-                            "amacıyla Çocuk Yoğun Bakım Ünitesine yatırıldı."
-                        ),
+                        "explanation": "Roseola İnfantum'da döküntü çıkışı iyileşme evresini gösterir; hekimin en kritik görevi gereksiz ilaçları önlemek ve çocuğa yanlış 'parasetamol alerjisi' etiketi konulmasının önüne geçmektir.",
+                        "new_finding": "Ailenin ilaç alerjisi endişesi giderildi, ileride parasetamol kullanabilecekleri ve döküntünün 1-3 günde kendiliğinden geçeceği anlatılarak bebek taburcu edildi.",
+                    },
+                    {
+                        "text": "Çocuğun elektronik sağlık kaydına 'Parasetamol Alerjisi' işlemek, beş gün oral setirizin damla ve kısa süreli oral prednizolon reçete etmek",
+                        "is_correct": False,
+                        "scenario_update": "Yanlış ilaç alerjisi kaydı nedeniyle bebeğin sonraki ateşli hastalıklarında antipiretik kullanımı kısıtlandı ve gereksiz steroid maruziyeti oluştu.",
+                        "teaching_point": "Roseola İnfantum döküntüsünü ilaç alerjisi sanarak çocuğu temel antipiretiklerden mahrum bırakmak sık yapılan bir hatadır; kaşıntısız viral ekzantemde antihistaminik ve steroid verilmez.",
+                    },
+                    {
+                        "text": "Human Herpesvirus-6 viremisini baskılamak ve febril nöbet riskini önlemek amacıyla 7 gün oral asiklovir veya valasiklovir süspansiyon başlamak",
+                        "is_correct": False,
+                        "scenario_update": "Ateşi zaten düşmüş ve iyileşme fazına girmiş olan bebekte etkisiz ve gereksiz antiviral tedavi kullanılmış oldu.",
+                        "teaching_point": "İmmünkompetan çocuklarda Roseola İnfantum kendi kendini sınırlar; hem asiklovir HHV-6'ya karşı etkisizdir hem de döküntü evresinde hastalık zaten iyileşmiştir.",
+                    },
+                    {
+                        "text": "Döküntülerin sekonder bakteriyel enfeksiyonunu önlemek için topikal mupirosin krem ve 5 gün oral amoksisilin süspansiyon reçete ederek kontrole çağırmak",
+                        "is_correct": False,
+                        "scenario_update": "Sağlam derideki makülopapüler viral döküntü için verilen oral antibiyotik bebekte antibiyotik ilişkili ishale neden oldu.",
+                        "teaching_point": "Bütünlüğü bozulmamış, vezikül veya krut içermeyen viral makülopapüler döküntülerde topikal veya sistemik antibiyotiklerin hiçbir yeri yoktur.",
                     },
                 ],
             },
@@ -942,307 +437,142 @@ CASES = [
     },
     {
         "id": "Y09",
-        "category": "👶 Ağlayan, Emmeyen, Huzursuz Bebek",
-        "age": "6 Aylık",
-        "gender": "Kız",
-        "complaint": "İki gündür düşmeyen 39.8°C ateş, belirgin huzursuzluk, tekrarlayan kusma ve emmede azalma",
+        "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
+        "age": "2.5 Yaş",
+        "gender": "Erkek",
+        "complaint": "Ağız içinde ağrılı yaralar, yemek yemeyi reddetme, avuç içi ve ayak tabanında döküntü",
         "history": (
-            "Annesi Sarı Alana getiriyor: 'İki gündür ateşi 39.8°C'ye kadar çıkıyor, ateş düşürücü verince "
-            "38.5°C'ye ancak iniyor ve titreyerek tekrar yükseliyor. Burnu akmıyor, öksürmüyor, ishali de yok "
-            "ama bugün 3 kez kustu ve çok huzursuz. Bezini açtığımızda idrarının normalden daha ağır koktuğunu fark ettik.'"
+            "Annesi anlatıyor: 'İki gündür ağzından salyası akıyor, çok sevdiği yemekleri bile ağzına götürüp "
+            "ağlayarak bırakıyor. Dün 38.2°C ateşi oldu. Bugün de avuç içlerinde, ayak tabanlarında ve bez "
+            "bölgesinde kırmızı küçük su toplamış döküntüler fark ettik. Su ve soğuk sütü azar azar içebiliyor, "
+            "bezini normal ıslatıyor.'"
         ),
-        "final_diagnosis": "Akut Piyelonefrit (Ateşli Üst İdrar Yolu Enfeksiyonu)",
-        "disposition": (
-            "Sarı Alanda Steril Mesane Kateterizasyonu ile Kültür + Kan Tetkikleri -> Parenteral Antibiyoterapi "
-            "(İV Seftriakson), Üriner USG Planı ve Çocuk Servisi Yatışı"
-        ),
+        "final_diagnosis": "El-Ayak-Ağız Hastalığı (Enterovirus / Coxsackievirus A16 - A6)",
+        "disposition": "Yeşil Alandan Ağrı Kontrolü, Soğuk/Yumuşak Gıda-Sıvı Desteği ve İzlem ile Taburculuk",
         "case_pearl": (
-            "2-24 ay arası süt çocuklarında odağı belirsiz ≥39°C ateş varlığında en sık ciddi bakteriyel "
-            "enfeksiyon Akut Piyelonefrittir. Tuvalet eğitimi olmayan ateşli bebekte antibiyotik başlanmadan "
-            "önce steril mesane kateterizasyonu veya suprapubik aspirasyon ile idrar kültürü alınmalıdır; torba "
-            "idrarı yüksek kontaminasyon oranı nedeniyle kültür için kullanılmaz. Kusması olan veya küçük süt "
-            "çocuklarında parenteral antibiyoterapi başlanır ve Üriner Sistem USG planlanır."
+            "Oral mukozada ağrılı vezikül/ülserler ve avuç içi, ayak tabanı ile gluteal bölgede eritemli zeminde "
+            "eliptik veziküller El-Ayak-Ağız hastalığı için tipiktir. En sık komplikasyonu ağrılı oral lezyonlara "
+            "bağlı yutma güçlüğü ve dehidratasyondur; tedavide sistemik analjezi ve soğuk/asitsiz sıvılarla "
+            "hidrasyonun sürdürülmesi esastır."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Odak Araştırması ve Sistemik Muayene",
-                "question": (
-                    "İki gündür 39.8°C ateşi, huzursuzluğu ve kusması olan 6 aylık bu kız bebekte ilk "
-                    "değerlendirmede yaklaşımınız ne olmalıdır?"
-                ),
+                "stage_title": "Fizik Muayene ve Hidrasyon Kontrolü",
+                "question": "Bu hastada ilk fizik muayenede öncelikle hangi bulguları değerlendirmelisiniz?",
                 "options": [
                     {
-                        "text": (
-                            "Solunum semptomu olmasa bile yüksek ateş ve kusmayı gizli bakteriyel pnömoni "
-                            "bulgusu kabul ederek fizik muayeneyi erteleyip doğrudan arka-ön akciğer grafisi çektirmek"
-                        ),
+                        "text": "Ağız içindeki vezikülleri abeslangla kazıyarak psödomembran varlığını kontrol etmek ve avuç içindeki lezyonları steril iğneyle drene etmek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Takipnesi, çekilmesi ve öksürüğü olmayan bebekte çekilen akciğer grafisi tamamen "
-                            "normal saptandı; bebek gereksiz radyasyona maruz kaldı ve asıl enfeksiyon odağı aydınlatılamadı."
-                        ),
-                        "teaching_point": (
-                            "Solunum sayısı ve akciğer oskültasyonu tamamen normal olan, öksürük veya rinit "
-                            "bulgusu bulunmayan ateşli süt çocuklarında rutin akciğer grafisi önerilmez."
-                        ),
+                        "scenario_update": "Ağrılı oral ülserlere yapılan mekanik müdahale mukozal kanamaya ve çocuğun şiddetli ağlayarak ağızdan sıvı alımını tamamen reddetmesine yol açtı.",
+                        "teaching_point": "Oral mukozadaki viral vezikül ve ülserler kesinlikle kazınmaz, akral derideki veziküller ise sekonder bakteriyel enfeksiyon riski nedeniyle patlatılmaz.",
                     },
                     {
-                        "text": (
-                            "Altıncı ayda başlayan yüksek ateş ve huzursuzluğu diş çıkarma dönemine bağlayarak "
-                            "oral ibuprofen şurup verip bebeği Yeşil Alandan eve taburcu etmek"
-                        ),
+                        "text": "Akral yerleşimli lezyonları bakteriyel septik emboli veya invaziv döküntü kabul ederek hastayı hızla Sarı Alana devredip damar yolu açmak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Ateş düşürücü verilerek eve gönderilen bebek 18 saat sonra 40.2°C ateş, letarji, "
-                            "uzamış kapiller dolum zamanı ve septik şok tablosuyla acil servise tekrar getirildi."
-                        ),
-                        "teaching_point": (
-                            "Diş çıkarma süreci hiçbir zaman ≥38.5°C üzerinde yüksek ateş ve tekrarlayan kusma "
-                            "nedeni olarak kabul edilemez; 39.8°C ateşte gizli bakteriyel enfeksiyon odağı "
-                            "mutlaka araştırılmalıdır."
-                        ),
+                        "scenario_update": "Sarı Alana alınan çocuğun yaşamsal bulguları ve kapiller dolumu tamamen normal bulundu; lezyonların purpurik değil gri-beyaz veziküller olduğu görüldü.",
+                        "teaching_point": "Genel durumu iyi olan çocukta oral ülserlere eşlik eden avuç içi, ayak tabanı ve gluteal eliptik veziküller tipik viral enantem-ekzantem kompleksidir.",
                     },
                     {
-                        "text": (
-                            "Ateşi hızla kontrol altına almak ve bakteriyemi riskini önlemek için kültür "
-                            "örnekleri almadan hemen intramüsküler 50 mg/kg seftriakson uygulayıp gözleme almak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Örnek alınmadan yapılan seftriakson enjeksiyonu sonrasında bebeğin ateşi kısmen "
-                            "geriledi ancak daha sonra alınan kültürlerde üreme olmadığından kesin tanı ve "
-                            "antibiyogram duyarlılığı belirlenemedi."
-                        ),
-                        "teaching_point": (
-                            "Hemodinamik olarak stabil olan ateşli süt çocuğunda ampirik antibiyotik verilmeden "
-                            "önce mutlaka uygun yöntemle mikrobiyolojik kültür örnekleri alınmalıdır."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Vital bulguları, periferik dolaşımı, ön fontanel ve nörolojik durumu, "
-                            "kulak-boğaz-akciğer-cilt muayenesini ve suprapubik ile kostovertebral bölge hassasiyetini eksiksiz olarak değerlendirmek"
-                        ),
+                        "text": "Orofarenks ve bukkal mukozadaki ülserleri, avuç içi-ayak tabanı-gluteal vezikülleri, hidrasyon durumunu ve miyokloni/ataksi gibi nörolojik bulguları değerlendirmek",
                         "is_correct": True,
-                        "explanation": (
-                            "Odağı ilk bakışta belli olmayan ≥39°C ateşli süt çocuğunda tüm sistemlerin "
-                            "muayenesi yapılmalı, meninks irritasyonu dışlanmalı ve üriner sistem muayenesi "
-                            "dahil gizli enfeksiyon odakları taranmalıdır."
-                        ),
-                        "new_finding": (
-                            "Vital Bulgular: Ateş 39.7°C, KTA 160/dk, SS 36/dk, TA 86/50 mmHg, KDZ 2 sn. Bebek "
-                            "huzursuz ancak uyanık, ön fontanel normal bombelikte, pasif boyun fleksiyonu "
-                            "serbest. Otoskopi, orofarenks ve akciğer oskültasyonu tamamen doğal, ciltte "
-                            "döküntü yok. Suprapubik bölge ve kostovertebral açı palpasyonunda bebeğin ağlaması "
-                            "ve huzursuzluğu belirgin artıyor."
-                        ),
+                        "explanation": "Karakteristik oral ve akral vezikül dağılımı tanıyı yönlendirir; ağrılı yutma nedeniyle hidrasyon durumu ve nadir santral sinir sistemi tutulumu bulguları mutlaka kontrol edilmelidir.",
+                        "new_finding": "Vital Bulgular: Ateş 37.9°C, KTA 116/dk, SS 24/dk. Dil, bukkal mukoza ve yumuşak damakta eritemli haleli 3-4 mm ağrılı vezikül ve ülserler mevcut. Avuç içlerinde, ayak tabanlarında ve gluteal bölgede eliptik gri-beyaz vezikülopapüler lezyonlar var. Ağız mukozası nemli, gözyaşı var, dehidratasyon yok. Nörolojik muayene doğal.",
+                    },
+                    {
+                        "text": "Ağız içi muayeneyi çocuğun ağlamasını artırmamak için tamamen atlayıp yalnızca sırt ve gövde derisinde polimorfik döküntü aramak",
+                        "is_correct": False,
+                        "scenario_update": "Sırt ve göğüste döküntü saptanmadı; ağız içi ve mukoza ıslaklığı değerlendirilmediği için beslenme reddi nedeni ve hidrasyon durumu eksik kaldı.",
+                        "teaching_point": "Salya artışı ve beslenme reddi ile başvuran küçük çocukta orofarenks lezyonlarının ve mukoza nemliliğinin görülmesi temel muayene basamağıdır.",
                     },
                 ],
             },
             {
-                "stage_title": "Uygun Örnek Alma Yöntemi ve Laboratuvar Planı",
-                "question": (
-                    "Görünür üst solunum yolu odağı saptanmayan, 39.7°C ateşi ve kusması olan 6 aylık bu kız "
-                    "bebekte kesin odak tespiti için hangi tetkikleri nasıl istemelisiniz?"
-                ),
+                "stage_title": "Tetkik İstem Kararı",
+                "question": "Dehidratasyonu ve nörolojik bulgusu olmayan, tipik oral-akral vezikülleri saptanan bu çocukta hangi tetkik yaklaşımı seçilmelidir?",
                 "options": [
                     {
-                        "text": (
-                            "Perine cildine steril olmayan toplama torbası yapıştırarak hem tam idrar tetkiki "
-                            "hem de idrar kültürü göndermek ve kan tetkiki almadan sonucu beklemek"
-                        ),
+                        "text": "Avuç içindeki vezikül tabanından kazıntı alarak Tzanck yayması, Herpes Simpleks PCR ve Varisella Zoster IgM serolojisi istemek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Torba örneğinde lökosit esteraz pozitif saptandı; ancak aynı torbadan gönderilen "
-                            "kültürde perine florası bulaşına bağlı üç farklı mikroorganizma (karışık deri "
-                            "florası) ürediği için sonuç geçersiz sayıldı."
-                        ),
-                        "teaching_point": (
-                            "Tuvalet eğitimi olmayan çocuklarda torba örneği %85 e varan yalancı pozitiflik "
-                            "(kontaminasyon) oranına sahiptir; torba yalnız taramada negatif çıkarsa dışlama "
-                            "sağlar, kültür için asla kullanılmaz."
-                        ),
+                        "scenario_update": "LABORATUVAR SONUCU: Tzanck yaymasında multinükleer dev hücre görülmedi, HSV ve VZV testleri negatif sonuçlandı; işlem çocuğu gereksiz travmatize etti.",
+                        "teaching_point": "Oral ülser ve avuç içi/ayak tabanı/gluteal eliptik vezikül birlikteliği klinik olarak tanı koydurucudur; rutin Tzanck yayması veya herpes serolojisi istenmez.",
                     },
                     {
-                        "text": (
-                            "Steril mesane kateterizasyonu ile tam idrar tetkiki, mikroskopi ve idrar kültürü "
-                            "almak; hemogram, CRP, prokalsitonin ve kan kültürü göndermek"
-                        ),
+                        "text": "Orofarenksteki lezyonlar nedeniyle bakteriyel tonsillofarenjiti dışlamak üzere hızlı streptokok antijen testi ve boğaz kültürü almak",
+                        "is_correct": False,
+                        "scenario_update": "Hızlı antijen testi negatif çıktı; ülserli bukkal mukoza ve dile sürüntü çubuğu değdirilmesi şiddetli ağrıya neden oldu.",
+                        "teaching_point": "Ön oral kavitede (dil, bukkal mukoza) vezikül-ülserler ve el-ayak lezyonları ile seyreden tabloda bakteriyel boğaz kültürü endikasyonu yoktur.",
+                    },
+                    {
+                        "text": "Yemek yemeyi reddettiği için klinik dehidratasyon bulgusu olmasa bile rutin kan gazı, serum elektrolitleri, üre ve kreatinin istemek",
+                        "is_correct": False,
+                        "scenario_update": "LABORATUVAR SONUCU: Na 137 mEq/L, K 4.2 mEq/L, Glukoz 86 mg/dL, Üre 19 mg/dL, pH 7.40. Tüm değerler normal geldi.",
+                        "teaching_point": "Sıvı alabilen, idrar çıkışı normal olan ve fizik muayenede dehidratasyon bulgusu saptanmayan çocukta rutin venöz biyokimya tetkiki gerekmez.",
+                    },
+                    {
+                        "text": "Ek laboratuvar tetkiki istemeden tipik anatomik lezyon dağılımı ve normal hidrasyon bulgularıyla klinik tanı koymak",
                         "is_correct": True,
-                        "explanation": (
-                            "AAP kılavuzuna göre tuvalet eğitimi olmayan ateşli süt çocuğunda antibiyotik "
-                            "öncesi kültür için altın standart steril mesane kateterizasyonu veya suprapubik "
-                            "aspirasyondur; kusması olan bebekte akut faz reaktanları ve kan kültürü de alınmalıdır."
-                        ),
-                        "new_finding": (
-                            "KATETER İDRARI: Görünüm bulanık, Lökosit Esteraz +++, Nitrit Pozitif (+), "
-                            "Mikroskopide her sahada 40-50 lökosit ve bol bakteri. KAN TETKİKLERİ: WBC "
-                            "19.600/mm³ (%80 nötrofil), CRP 94 mg/L, Prokalsitonin 3.8 ng/mL, Üre 24 mg/dL, "
-                            "Kreatinin 0.35 mg/dL. İdrar ve kan kültürleri ekime gönderildi."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Yalnızca parmak ucu CRP ve tam kan sayımı bakmak, lökositoz saptanırsa "
-                            "kateterizasyon ile bebeği huzursuz etmeden doğrudan oral amoksisilin-klavulanat başlamak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "İdrar incelemesi ve kültürü alınmadan başlanan oral antibiyotik kusma nedeniyle "
-                            "tolere edilemedi; ayrıca enfeksiyon odağı kanıtlanamadığı için uygun görüntüleme "
-                            "ve izlem planı yapılamadı."
-                        ),
-                        "teaching_point": (
-                            "Odağı belirsiz yüksek ateşi olan <24 ay süt çocuklarında tek başına hemogram ve "
-                            "CRP odak belirlemez; antibiyotik öncesi mutlaka kateter veya suprapubik "
-                            "aspirasyonla idrar örneği alınmalıdır."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Kateterizasyon yerine bebeğin bezini sıkıp alınan idrarda dipstick testi yapmak ve "
-                            "negatif çıkarsa üriner kaynaklı enfeksiyonu tamamen dışlayarak taburcu etmek"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Bezden sıkılarak alınan örnekte bezin emici polimerleri lökositleri tuttuğu ve "
-                            "küçük bebeklerde sık mesane boşalması nedeniyle nitrit negatif kaldığı için tanı atlandı."
-                        ),
-                        "teaching_point": (
-                            "Bezden sıkılarak alınan örnek güvenilir değildir; ayrıca süt çocukları sık idrar "
-                            "yaptığından mesanede bekleme süresi kısa olur ve nitrit testi %50 den fazla vakada "
-                            "yalancı negatif çıkabilir."
-                        ),
+                        "explanation": "Oral mukozada vezikül/ülserler ve akral-gluteal vezikülopapüler döküntü karakteristik bir klinik sendromdur; komplike olmayan vakalarda laboratuvar testi önerilmez.",
+                        "new_finding": "Tetkik istenmedi; acil serviste çocuğun soğuk sütü yudumlayarak kusmadan tolere edebildiği gözlendi.",
                     },
                 ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": (
-                    "39.8°C ateş, kusma, CRP 94 mg/L, Prokalsitonin 3.8 ng/mL ve kateter idrarında belirgin "
-                    "piyüri ile nitrit pozitifliği saptanan bu bebekte kesin tanınız nedir?"
-                ),
+                "question": "Bu hastada mevcut bulgularla kesin tanınız nedir?",
                 "options": [
                     {
-                        "text": "Ateşsiz Akut Basit Sistit (Alt İYE)",
+                        "text": "Primer Herpetik Gingivostomatit",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Hastada 39.8°C ateş, tekrarlayan kusma ve belirgin akut faz reaktan yüksekliği "
-                            "(CRP 94 mg/L, PCT 3.8 ng/mL) mevcut olup tablo alt üriner sistemle sınırlı değildir."
-                        ),
-                        "teaching_point": (
-                            "Süt çocuklarında ≥38.5-39°C ateş ve sistemik inflamasyon bulguları eşlik eden idrar "
-                            "yolu enfeksiyonları renal parankim tutulumunu (akut piyelonefrit) gösterir."
-                        ),
+                        "scenario_update": "Hastanın diş etlerinde yaygın hiperemi, şişlik veya kolay kanama (gingivit) olmadığı; buna karşın el, ayak ve gluteal veziküllerin bulunduğu görüldü.",
+                        "teaching_point": "Herpetik gingivostomatitte yüksek ateş, belirgin diş eti ödemi/kanaması ve perioral veziküller ön plandadır; avuç içi, ayak tabanı ve gluteal vezikül beklenmez.",
                     },
                     {
-                        "text": "Asemptomatik Bakteriüri ve Viral ÜSYE",
+                        "text": "Suçiçeği (Varisella Enfeksiyonu)",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Hastada viral üst solunum yolu bulgusu yoktur; kateter idrarında her sahada 40-50 "
-                            "lökosit (belirgin piyüri) ve yüksek prokalsitonin gerçek doku invazyonunu kanıtlamaktadır."
-                        ),
-                        "teaching_point": (
-                            "Asemptomatik bakteriüride klinik semptom, yüksek akut faz reaktanı ve gerçek "
-                            "piyüri bulunmaz; tedavi gerektirmez."
-                        ),
+                        "scenario_update": "Saçlı deri ve gövdede farklı evrelerde (makül, papül, vezikül, krut bir arada) kaşıntılı santripetal döküntü saptanmadı.",
+                        "teaching_point": "Suçiçeğinde döküntü saçlı deri ve gövdeden başlar (merkezden perifere yayılır) ve polimorfiktir; avuç içi ve ayak tabanı tutulumu nadirdir.",
                     },
                     {
-                        "text": "Akut Piyelonefrit (Ateşli Üst İdrar Yolu Enfeksiyonu)",
+                        "text": "El-Ayak-Ağız Hastalığı",
                         "is_correct": True,
-                        "explanation": (
-                            "Yüksek ateş, kusma, CRP ve prokalsitonin yüksekliği ile birlikte kateter idrarında "
-                            "piyüri ve nitrit pozitifliği akut renal parankimal enfeksiyonu (Akut Piyelonefrit) doğrular."
-                        ),
-                        "new_finding": "Kesin Tanı: Akut Piyelonefrit (Ateşli Üst İdrar Yolu Enfeksiyonu).",
+                        "explanation": "Oral vezikül/ülserler ile avuç içi, ayak tabanı ve gluteal bölgedeki eliptik veziküller enteroviral El-Ayak-Ağız hastalığını doğrular.",
+                        "new_finding": "Tanı: El-Ayak-Ağız Hastalığı (Enteroviral veziküler stomatit ve ekzantem).",
                     },
                     {
-                        "text": "Akut Poststreptokoksik Glomerülonefrit (APSGN)",
+                        "text": "Akut Herpangina (İzole Faringeal Enantem)",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Altı aylık bebekte APSGN son derece nadirdir; ayrıca yüksek ateş, prokalsitonin "
-                            "yüksekliği ve nitrit pozitifliği bakteriyel piyelonefrit için tipiktir."
-                        ),
-                        "teaching_point": (
-                            "APSGN genellikle >2-3 yaş çocuklarda streptokoksik enfeksiyondan 1-3 hafta sonra "
-                            "makroskopik hematüri, ödem ve hipertansiyon ile başvurur; nitrit pozitifliği görülmez."
-                        ),
+                        "scenario_update": "Hastada yalnızca arka farenks/tonsiller plikada sınırlı lezyonlar değil, aynı zamanda el ayası, ayak tabanı ve gluteal bölgede veziküller mevcut.",
+                        "teaching_point": "Yine enterovirüslerin neden olduğu herpanginada vezikül ve ülserler yalnızca yumuşak damak, uvula ve ön tonsiller plikalarda yer alır; el ve ayak döküntüsü bulunmaz.",
                     },
                 ],
             },
             {
-                "stage_title": "Sarı Alanda Tedavi, Görüntüleme Zamanlaması ve Yatış Planı",
-                "question": (
-                    "Tekrarlayan kusması olan 6 aylık bu akut piyelonefrit hastasında kılavuzlara en uygun "
-                    "antibiyoterapi, görüntüleme ve izlem planı hangisidir?"
-                ),
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu hastada ağrı yönetimi, beslenme ve taburculuk için en doğru yaklaşım hangisidir?",
                 "options": [
                     {
-                        "text": (
-                            "Servise yatırarak İV seftriakson ve sıvı tedavisi başlamak, üriner sistem "
-                            "ultrasonografisi planlamak ve toplam antibiyoterapi süresini 10-14 güne tamamlamak"
-                        ),
+                        "text": "Beslenmeden 30 dakika önce sistemik analjezik, soğuk-yumuşak-asitsiz gıdalar, bol sıvı desteği ve kırmızı bayrak eğitimi ile taburcu etmek",
                         "is_correct": True,
-                        "explanation": (
-                            "Kusması/oral intoleransı olan 6 aylık akut piyelonefrit hastası yatırılarak "
-                            "parenteral 3. kuşak sefalosporin (örn. Seftriakson 50-75 mg/kg/gün) ile tedavi "
-                            "edilir; <2 yaş ilk ateşli İYE de anatomik anomalileri değerlendirmek için Üriner "
-                            "USG yapılır ve tedavi 10-14 güne tamamlanır."
-                        ),
-                        "new_finding": (
-                            "Hasta Çocuk Servisine yatırılarak İV Seftriakson ve hidrasyon başlandı. 48. saatte "
-                            "ateşi düştü, kusması durdu; kateter kültüründe >100.000 CFU/mL duyarlı E. coli "
-                            "üredi. Yapılan Üriner USG normal saptandı ve 10 günlük tedaviye tamamlanmak üzere "
-                            "oral sefiksim ile taburcu edildi."
-                        ),
+                        "explanation": "El-Ayak-Ağız hastalığında spesifik antiviral yoktur; öğün öncesi sistemik analjezi ve soğuk/nötr gıdalar (yoğurt, soğuk süt, püre) oral ağrıyı azaltarak dehidratasyonu önler.",
+                        "new_finding": "Sistemik analjezik ve soğuk/yumuşak beslenme planı düzenlendi; idrar azalması, uykuya meyil veya sıçrama/dengesizlik olursa başvuru eğitimi ve haftalar sonra tırnak değişimi (onikomadezis) olabileceği bilgisi verilerek taburcu edildi.",
                     },
                     {
-                        "text": (
-                            "Oral nitrofurantoin süspansiyon reçete ederek kusması için ondansetron vermek ve "
-                            "poliklinikte kontrol edilmek üzere hastayı acil servisten eve taburcu etmek"
-                        ),
+                        "text": "Oral asiklovir süspansiyon ve sekonder enfeksiyon profilaksisi için amoksisilin başlamak, yemeklerden önce ağız içine yoğun topikal lidokain sprey sıkmak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Nitrofurantoin renal parankimde ve kanda terapötik konsantrasyona ulaşamadığı ve "
-                            "bebek oral ilacı kustuğu için 24 saat sonra ürosepsis tablosu gelişti."
-                        ),
-                        "teaching_point": (
-                            "Nitrofurantoin ve fosfomisin yalnızca ateşsiz alt İYE (sistit) tedavisinde "
-                            "kullanılır; böbrek dokusu düzeyleri yetersiz olduğundan akut piyelonefrit "
-                            "tedavisinde kesinlikle kontrendikedir."
-                        ),
+                        "scenario_update": "Asiklovir ve antibiyotik enterovirüslere etki etmedi; 2.5 yaşındaki çocukta yutulan topikal lidokain öğürme refleksini baskıladı ve sistemik toksisite riski yarattı.",
+                        "teaching_point": "Enterovirüslere asiklovir veya antibiyotik etki etmez; küçük çocuklarda oral topikal lidokain (konvülziyon, aritmi ve aspirasyon riski nedeniyle) kesinlikle önerilmez.",
                     },
                     {
-                        "text": (
-                            "İntravenöz seftriakson başlamak ve vezikoüreteral reflüyü saptamak amacıyla henüz "
-                            "ateşli enfeksiyon devam ederken hemen bugün işeme sistoüretrografisi (VSUG) çekmek"
-                        ),
+                        "text": "Bağışıklığı güçlendirmek amacıyla bol taze sıkılmış portakal-limon suyu ve sıcak kemik suyu çorbası içirilmesini önerip analjezik vermeden taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Aktif piyelonefrit sırasında yapılan retrograd kontrastlı mesane kateterizasyonu "
-                            "bakteriyemiyi tetikledi ve enflamasyona bağlı geçici vezikoüreteral reflü "
-                            "nedeniyle yanıltıcı sonuç elde edildi."
-                        ),
-                        "teaching_point": (
-                            "İlk ateşli İYE geçiren <2 yaş çocukta ilk basamak görüntüleme Üriner USG dir; VSUG "
-                            "rutin yapılmaz (yalnız USG de hidronefroz/skar bulgusu veya atipik/tekrarlayan İYE "
-                            "varsa enfeksiyon düzeldikten sonra çekilir)."
-                        ),
+                        "scenario_update": "Asitli narenciye suları ve sıcak çorba ülserli oral mukozada şiddetli yanma yaptığı için çocuk ağızdan sıvı alımını tamamen kesti.",
+                        "teaching_point": "Oral mukoza ülserlerinde asitli, tuzlu, baharatlı ve sıcak gıda/içecekler ağrıyı şiddetlendirir; soğuk veya oda ısısında nötr sıvılar tercih edilmelidir.",
                     },
                     {
-                        "text": (
-                            "Acil serviste tek doz intramüsküler seftriakson uyguladıktan sonra toplam 3 günlük "
-                            "kısa süreli oral trimetoprim-sülfametoksazol reçete ederek hastayı taburcu etmek"
-                        ),
+                        "text": "Oral ülserlerin iyileşmesini hızlandırmak için 5 gün oral prednizolon şurup başlamak ve el-ayak veziküllerine potasyum permanganatlı sıcak banyo uygulamak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Kusması devam eden 6 aylık bebekte 3 günlük kısa süreli ve E. coli direnci yüksek "
-                            "olan TMP-SMX tedavisi yetersiz kaldı; enfeksiyon nüks ederek renal skar riski arttı."
-                        ),
-                        "teaching_point": (
-                            "Akut piyelonefritte 3 günlük kısa süreli tedavi yetersizdir (7-14 gün gerekir); "
-                            "ayrıca kusması olan süt çocuğunda başlangıç tedavisi parenteral yoldan yapılmalıdır."
-                        ),
+                        "scenario_update": "Kortikosteroid kullanımı akut enteroviral enfeksiyon seyrinde mukozal iyileşmeyi sağlamadığı gibi viral replikasyon açısından risk oluşturdu.",
+                        "teaching_point": "Komplike olmayan El-Ayak-Ağız hastalığında sistemik kortikosteroidler kontrendikedir; veziküller kendi kendine kuruyup iyileşir.",
                     },
                 ],
             },
@@ -1251,308 +581,141 @@ CASES = [
     {
         "id": "Y10",
         "category": "🫁 Hırıltı & Solunum Sıkıntısı",
-        "age": "2 Yaş",
+        "age": "10 Yaş",
         "gender": "Erkek",
-        "complaint": "Sakin dururken bile duyulan tiz nefes alma sesi (stridor), kaba öksürük ve boyun çukurunda çekilme",
+        "complaint": "Üç haftadır özellikle gece yatınca ve sabah kalkınca artan öksürük, burun tıkanıklığı ve geniz akıntısı",
         "history": (
-            "Gece 03:30'da ailesi kucağında Sarı Alana getiriyor: 'Dün akşamdan beri sesi kısıktı ve hafif "
-            "nezlesi vardı, gece yarısı havlar gibi kaba bir öksürük başladı. Son 1 saattir hiç ağlamazken, "
-            "kucağımızda sakin otururken bile nefes alırken boğazından tiz bir ses çıkıyor ve boynunun çukuru "
-            "içeri çöküyor.'"
+            "Hasta kendisi anlatıyor: 'Doktor bey/hanım, gündüz okulda pek öksürmüyorum ama akşam yastığa başımı "
+            "koyunca ve sabah uyanınca boğazımda bir şey gıdıklanıyor gibi öksürüyorum, sürekli boğazımı "
+            "temizleme ihtiyacı hissediyorum. Burnum da çok kaşınıyor ve sabahları üst üste hapşırıyorum. Ateşim "
+            "hiç çıkmadı, beden eğitimi dersinde koşarken nefesim daralmıyor veya göğsümden ıslık sesi gelmiyor.'"
         ),
-        "final_diagnosis": "Orta-Ağır Akut Viral Laringotrakeit (Orta-Ağır Krup)",
-        "disposition": (
-            "Sarı Alanda Nebülize L-Adrenalin + Tek Doz 0.6 mg/kg Deksametazon -> En Az 3-4 Saat Rebound "
-            "Stridor Gözlemi Sonrası Taburculuk"
-        ),
+        "final_diagnosis": "Alerjik Rinit ve Postnazal Akıntı Sendromuna (Üst Hava Yolu Öksürük Sendromu) Bağlı Öksürük",
+        "disposition": "Yeşil Alandan İntranazal Kortikosteroid / Antihistaminik ve Alerjen Önlemleri ile Taburculuk",
         "case_pearl": (
-            "İstirahatte (çocuk sakinken) duyulan inspiratuar stridor ve suprasternal/interkostal çekilmeler "
-            "Orta-Ağır Krup (Westley skoru ≥3) göstergesidir. Tedavide tek doz Deksametazon (0.6 mg/kg oral/İM) "
-            "ile birlikte Nebülize L-Adrenalin (0.5 mL/kg, maks 5 mL, 1:1000) uygulanır. Nebülize adrenalinin "
-            "etkisi ~2 saatte sona erip rebound stridor gelişebileceğinden hasta en az 3-4 saat Sarı Alanda "
-            "gözlemlenmeden taburcu edilmez."
+            "Ateşsiz, özellikle yatınca ve sabah kalkınca belirginleşen, boğaz temizleme hareketi, burun kaşıntısı "
+            "ve hapşırığın eşlik ettiği öksürüklerde en sık neden Alerjik Rinit ve buna bağlı Postnazal Akıntıdır. "
+            "Orta-ağır veya persistan semptomlarda en etkili birinci basamak antiinflamatuar tedavi intranazal "
+            "kortikosteroid spreylerdir."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Sakin Değerlendirme ve Hava Yolu Muayenesi",
-                "question": (
-                    "Gece yarısı başlayan kaba öksürük, istirahatte inspiratuar stridor ve suprasternal çekilme "
-                    "ile getirilen 2 yaşındaki bu çocukta ilk yaklaşımınız ne olmalıdır?"
-                ),
+                "stage_title": "Odaklı Fizik Muayene",
+                "question": "Pozisyonel öksürük ve burun semptomları ile başvuran bu çocukta fizik muayenede öncelikle hangi bulguları aramalısınız?",
                 "options": [
                     {
-                        "text": (
-                            "Hava yolu açıklığını net görmek için çocuğu annesinden ayırıp muayene masasına "
-                            "yatırarak abeslang ile zorlu orofarenks muayenesi yapmak ve damar yolu açmak"
-                        ),
+                        "text": "Üç haftayı bulan öksürük nedeniyle üst hava yolu muayenesini atlayıp yalnızca bazal akciğer oskültasyonu ve parmaklarda çomaklaşma kontrolü yapmak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Annesinden ayrılan ve abeslang ile zorlanan çocuğun şiddetli ağlaması dinamik üst "
-                            "hava yolu darlığını artırdı; türbülan hava akımı sonucu stridor şiddetlendi ve "
-                            "SpO2 %85 düzeyine düştü."
-                        ),
-                        "teaching_point": (
-                            "Akut üst hava yolu obstrüksiyonu ve stridoru olan çocuklarda ağlama ve ajitasyon "
-                            "negatif intratorasik basıncı artırarak dinamik darlığı ağırlaştırır; zorlu "
-                            "orofarenks muayenesi ve gereksiz ağrılı işlemlerden kaçınılmalıdır."
-                        ),
+                        "scenario_update": "Akciğer oskültasyonu tamamen normal saptandı; ancak burun boşluğu ve orofarenks arka duvarı incelenmediği için öksürüğün asıl anatomik kaynağı gözden kaçtı.",
+                        "teaching_point": "Yatınca ve sabah uyanınca artan, boğaz temizleme ile karakterize öksürüklerde rinoskopik muayene ve arka farenks duvarı değerlendirmesi atlanmamalıdır.",
                     },
                     {
-                        "text": (
-                            "Çocuğu anne kucağında hiç ağlatmadan genel görünümünü, bilinç durumunu, "
-                            "istirahatteki stridorunu, suprasternal-interkostal çekilmelerini, akciğer hava girişini ve oksijen satürasyonunu değerlendirmek"
-                        ),
+                        "text": "Nazal konkalarda soluk-mavimsi ödem, burun sırtında yatay çizgi, arka farenkste kaldırım taşı görünümü ve akciğer seslerini değerlendirmek",
                         "is_correct": True,
-                        "explanation": (
-                            "Akut üst hava yolu darlığı olan çocukta ajitasyonu önlemek temel ilkedir; çocuk "
-                            "ebeveyn kucağında sakin tutulurken bilinç, istirahatte stridor, çekilmeler, hava "
-                            "girişi ve SpO2 değerlendirilerek klinik ağırlık belirlenir."
-                        ),
-                        "new_finding": (
-                            "Vital Bulgular: Ateş 38.0°C, KTA 144/dk, SS 38/dk, Oda havasında SpO2 %93. Çocuk "
-                            "anne kucağında sakin otururken dahi belirgin inspiratuar stridor duyuluyor, "
-                            "suprasternal ve interkostal çekilmeleri mevcut, akciğer bazallerinde hava girişi "
-                            "hafif azalmış. Bilinci açık, siyanoz yok, toksik görünüm veya ağızdan salya akışı "
-                            "(drooling) yok."
-                        ),
+                        "explanation": "Kronik burun kaşıntısı ve geniz akıntısı yakınmalarında soluk-ödemli nazal konkalar ve arka farenks duvarında lenfoid folikül hipertrofisi (kaldırım taşı görünümü) tanısal anahtardır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 82/dk, SS 16/dk, SpO2 %99. Burun sırtında enine katlantı izi, rinoskopide bilateral alt konkalar soluk-mavimsi ve ödemli, berrak sekresyon mevcut. Orofarenks arka duvarında mukoid akıntı ve lenfoid folikül hipertrofisi (kaldırım taşı görünümü) var. Akciğer oskültasyonu tamamen doğal, ral/ronküs/wheezing yok.",
                     },
                     {
-                        "text": (
-                            "Sakinleştirmek ve solunum çabasını azaltmak amacıyla hemen 0.1 mg/kg intravenöz "
-                            "midazolam uygulayıp çocuğu sırtüstü düz pozisyonda monitörize izleme almak"
-                        ),
+                        "text": "Gece öksürüğünü alt hava yolu obstrüksiyonu kabul ederek muayene öncesinde 3 doz nebülize salbutamol verip oskültasyon yanıtını değerlendirmek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Verilen sedatif ilaç üst hava yolu kas tonusunu ve solunum dürtüsünü baskıladı; "
-                            "düz yatırılan çocukta tam hava yolu obstrüksiyonu ve derin hipoksemi gelişti."
-                        ),
-                        "teaching_point": (
-                            "Üst hava yolu obstrüksiyonu olan çocuklarda sedatif ilaçlar solunum çabasını ve "
-                            "hava yolu tonusunu baskılayarak solunum arrestine yol açabileceği için kesinlikle "
-                            "kontrendikedir."
-                        ),
+                        "scenario_update": "Bronkodilatör nebülizasyon sonrası hastada taşikardi ve el titremesi gelişti; hışıltısı olmayan hastanın geniz akıntısı ve boğaz gıdıklanması hissinde değişiklik olmadı.",
+                        "teaching_point": "Efor dispnesi, hışıltı veya ekspiratuar uzaması olmayan, yalnızca yatınca geniz akıntısıyla öksüren hastada ampirik bronkodilatör yüklemesi uygun değildir.",
                     },
                     {
-                        "text": (
-                            "Subglottik darlık derecesini objektif olarak görüntülemek için tedavi başlamadan "
-                            "önce çocuğu radyoloji ünitesine göndererek ön-arka ve yan boyun grafisi çektirmek"
-                        ),
+                        "text": "Yabancı cisim aspirasyonu veya endobronşiyal kitleyi dışlamak için hastayı aç bırakıp acil fleksibl bronkoskopi açısından çocuk göğüs hastalıklarına danışmak",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Tedavi verilmeden radyolojiye gönderilen ve çekim sırasında pozisyon verilmeye "
-                            "çalışılan çocukta ağlama ile birlikte stridor ve retraksiyonlar ağırlaşarak "
-                            "hipoksemi derinleşti."
-                        ),
-                        "teaching_point": (
-                            "Tipik klinik bulgularla başvuran akut üst hava yolu obstrüksiyonunda boyun grafisi "
-                            "rutin olarak endike değildir ve acil medikal tedaviyi geciktirmemelidir."
-                        ),
+                        "scenario_update": "Ani boğulma öyküsü olmayan, bilateral solunum sesleri eşit ve doğal saptanan çocukta invaziv bronkoskopi endikasyonu bulunmadı.",
+                        "teaching_point": "Ani başlangıçlı boğulma öyküsü, asimetrik solunum sesi veya fokal oskültasyon bulgusu olmayan üst hava yolu kaynaklı öksürükte bronkoskopi düşünülmez.",
                     },
                 ],
             },
             {
-                "stage_title": "Sarı Alanda Akut Medikal Müdahale Seçimi",
-                "question": (
-                    "İstirahatte belirgin inspiratuar stridoru, suprasternal çekilmeleri ve oda havasında %93 "
-                    "satürasyonu olan bu çocukta hemen uygulanması gereken tedavi protokolü hangisidir?"
-                ),
+                "stage_title": "Tetkik İstem Kararı",
+                "question": "Rinoskopi ve orofarenks bulguları tipik, akciğer oskültasyonu tamamen doğal olan bu hastada acil serviste hangi tetkik gerekir?",
                 "options": [
                     {
-                        "text": (
-                            "Yalnızca soğuk buhar (mist) uygulaması yapmak ve subglottik mukozal ödemi çözmek "
-                            "için 20 dakika arayla üç doz nebülize salbutamol başlamak"
-                        ),
+                        "text": "Paranazal sinüslerin durumunu ve akciğer parankimini görüntülemek amacıyla Waters sinüs grafisi, PA akciğer grafisi ve sinüs BT istemek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Soğuk buhar çocuğun yüzünü rahatsız ederek ağlamasını artırdı; verilen nebülize "
-                            "salbutamol üst hava yolu ödemini çözmediği gibi taşikardiyi artırdı ve stridor devam etti."
-                        ),
-                        "teaching_point": (
-                            "Soğuk buhar uygulamasının klinik etkinliği kanıtlanmamıştır; beta-2 agonist olan "
-                            "salbutamol ise alt hava yolu bronkospazmında etkilidir, subglottik üst hava yolu "
-                            "ödeminde kullanılmaz."
-                        ),
+                        "scenario_update": "GÖRÜNTÜLEME SONUCU: PA akciğer grafisi normal; sinüs görüntülemesinde yalnızca bilateral alt konka hipertrofisi ve hafif mukozal kalınlaşma izlendi.",
+                        "teaching_point": "Pürülan akıntı, ateş veya yüz ağrısı olmayan berrak sekresyonlu mukozal ödem tablosunda rutin radyografi veya sinüs tomografisi endike değildir; gereksiz radyasyon verir.",
                     },
                     {
-                        "text": (
-                            "Tek başına 0.15 mg/kg oral deksametazon verip taşikardi yan etkisinden kaçınmak "
-                            "amacıyla nebülize adrenalin uygulamadan stridorun geçmesini 30 dakika beklemek"
-                        ),
+                        "text": "Atipik bakteriyel enfeksiyon ve boğmaca olasılığını dışlamak için tam kan sayımı, CRP, Mycoplasma IgM ve nazofaringeal Bordetella PCR istemek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Kortikosteroidlerin antiinflamatuar etkisi en erken 2-4 saat içinde başladığından, "
-                            "nebülize adrenalin verilmeyen hastanın istirahatteki stridoru, çekilmeleri ve "
-                            "hipoksemisi ilk saat boyunca devam etti."
-                        ),
-                        "teaching_point": (
-                            "İstirahatte stridor ve belirgin çekilmesi olan orta-ağır vakalarda yalnız "
-                            "deksametazon yeterli hızlı rahatlama sağlamaz; dakikalar içinde etki eden nebülize "
-                            "L-adrenalin mutlaka eklenmelidir."
-                        ),
+                        "scenario_update": "LABORATUVAR SONUCU: WBC 6.800/mm³, CRP 0.8 mg/L; seroloji ve PCR sonuçlarının günler sonra çıkacağı bildirildi.",
+                        "teaching_point": "Boğulur tarzda paroksismal öksürük nöbeti, inspiratuar 'whoop' sesi, kusma veya ateş olmayan, tipik nazal kaşıntı/hapşırıkla seyreden tabloda enfeksiyon tetkiki istenmez.",
                     },
                     {
-                        "text": (
-                            "Nebülize L-adrenalin (0.5 mL/kg, maksimum 5 mL, 1:1000) ile birlikte tek doz "
-                            "0.6 mg/kg deksametazon uygulamak ve oksijen sağlamak"
-                        ),
+                        "text": "Acil serviste solunum fonksiyon testi (spirometri), fraksiyone ekshale nitrik oksit (FeNO) ve geniş aeroalerjen deri prick testi uygulamak",
+                        "is_correct": False,
+                        "scenario_update": "Acil servis koşullarında spirometri ve deri prick testi yapılamadı; hastanın taburculuğu gereksiz yere gecikti.",
+                        "teaching_point": "İleri alerji deri testleri ve solunum fonksiyon ölçümleri acil servis tetkiki değildir; gerektiğinde çocuk alerji polikliniğinde planlanır.",
+                    },
+                    {
+                        "text": "Acil serviste ek laboratuvar veya görüntüleme tetkiki istemeden mevcut öykü ve rinoskopik muayene bulgularıyla klinik tanı koymak",
                         "is_correct": True,
-                        "explanation": (
-                            "Alfa-adrenerjik vazokonstriksiyon yapan nebülize L-adrenalin subglottik mukozal "
-                            "ödemi 10-30 dakikada hızla çözer; eş zamanlı verilen 0.6 mg/kg deksametazon ise "
-                            "2-4 saatte devreye girerek kalıcı antiinflamatuar etki sağlar."
-                        ),
-                        "new_finding": (
-                            "5 mL (1:1000) Nebülize L-Adrenalin, 0.6 mg/kg Deksametazon ve oksijen desteği "
-                            "uygulandıktan 20 dakika sonra istirahatteki stridor tamamen kayboldu, suprasternal "
-                            "çekilmeler geriledi ve oda havasında SpO2 %98 düzeyine yükseldi."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Üst hava yolu enfeksiyonunu kontrol altına almak için intravenöz "
-                            "ampisilin-sulbaktam ve metilprednizolon yükleyip eş zamanlı intramüsküler feniramin maleat uygulamak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "İntramüsküler enjeksiyon ve damar yolu işlemi çocuğu şiddetle ağlattı; viral "
-                            "kaynaklı non-histaminerjik subglottik ödemde antibiyotik ve antihistaminik hiçbir "
-                            "akut yarar sağlamadı."
-                        ),
-                        "teaching_point": (
-                            "Viral subglottik ödemde antibiyotiklerin ve H1 antihistaminiklerin yeri yoktur; "
-                            "akut hava yolu rahatlaması için nebülize adrenalin ve sistemik deksametazon standart tedavidir."
-                        ),
+                        "explanation": "Tipik pozisyonel öksürük, burun kaşıntısı, soluk-ödemli nazal konkalar ve normal akciğer oskültasyonu varlığında tanı kliniktir; acil serviste ek tetkik gerekmez.",
+                        "new_finding": "Gereksiz radyasyon ve kan tetkikinden kaçınılarak klinik bulgularla tanı ve tedavi planına geçildi.",
                     },
                 ],
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": (
-                    "Havlar tarzda kaba öksürük, ses kısıklığı, istirahatte inspiratuar stridor ve nebülize "
-                    "adrenalin + deksametazon tedavisine hızlı yanıt doğrultusunda kesin tanınız nedir?"
-                ),
+                "question": "Bu hastada mevcut anamnez ve fizik muayene bulgularıyla en doğru klinik tanı nedir?",
                 "options": [
                     {
-                        "text": "Orta-Ağır Akut Viral Laringotrakeit (Orta-Ağır Krup)",
+                        "text": "Alerjik Rinit ve Postnazal Akıntı",
                         "is_correct": True,
-                        "explanation": (
-                            "Viral prodrom sonrası gece başlayan havlar tarzda öksürük, ses kısıklığı, "
-                            "istirahatte inspiratuar stridor, çekilmeler (Westley skoru 5) ve nebülize "
-                            "adrenaline hızlı yanıt Orta-Ağır Viral Krup tanısını doğrular."
-                        ),
-                        "new_finding": "Kesin Tanı: Orta-Ağır Akut Viral Laringotrakeit (Orta-Ağır Krup - Westley Skoru 5).",
+                        "explanation": "Sabah hapşırıkları, burun kaşıntısı, soluk-mavimsi ödemli konkalar, arka farenkste kaldırım taşı görünümü ve yatınca artan öksürük Alerjik Rinit ve Postnazal Akıntı Sendromunu (Üst Hava Yolu Öksürük Sendromu) doğrular.",
+                        "new_finding": "Tanı: Alerjik Rinit ve Postnazal Akıntıya Bağlı Öksürük.",
                     },
                     {
-                        "text": "Sekonder Akut Eksüdatif Bakteriyel Trakeit",
+                        "text": "Öksürük Varyant Bronşiyal Astım Tablosu",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Bakteriyel trakeitte çok yüksek ateş, toksik görünüm, koyu pürülan trakeal "
-                            "sekresyonlar ve nebülize adrenaline yanıtsızlık görülür; bu hasta ise adrenaline "
-                            "20 dakikada tam yanıt verdi."
-                        ),
-                        "teaching_point": (
-                            "Nebülize adrenalin ve deksametazona dramatik yanıt veren, toksik görünümü olmayan "
-                            "tablo viral laringotrakeittir."
-                        ),
+                        "scenario_update": "Hastanın öksürüğünün kuru/egzersizle tetiklenen karakterde olmadığı, belirgin burun tıkanıklığı ve görünür postnazal mukoid akıntıya sekonder geliştiği değerlendirildi.",
+                        "teaching_point": "Öksürük varyant astımda egzersiz, soğuk hava veya gülme ile tetiklenen kuru öksürük ön plandadır; belirgin postnazal sekresyon ve faringeal kaldırım taşı görünümü üst hava yolu kaynağını gösterir.",
                     },
                     {
-                        "text": "Akut Bakteriyel Supraglottit (Akut Epiglottit)",
+                        "text": "Akut Bakteriyel Rinosinüzit Enfeksiyonu",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Akut epiglottitte havlar tarzda öksürük beklenmez; ani başlayan yüksek ateş, "
-                            "toksik görünüm, yutma güçlüğü, ağızdan salya akışı (drooling) ve tripod pozisyonu görülür."
-                        ),
-                        "teaching_point": (
-                            "Havlar tarzda öksürük ve ses kısıklığı subglottik bölge (krup) tutulumunu "
-                            "gösterir; supraglottitte ise boğuk (hot potato) ses ve salya akışı ön plandadır."
-                        ),
+                        "scenario_update": "Hastada pürülan sarı-yeşil burun akıntısı, ateş, yüz/diş ağrısı veya 'çift hastalanma' öyküsü bulunmamaktadır.",
+                        "teaching_point": "Akut bakteriyel rinosinüzitte 10 günü aşan pürülan nazal akıntı, yüksek ateş (≥39°C) veya başlangıçtaki iyileşmeyi izleyen klinik kötüleşme görülür.",
                     },
                     {
-                        "text": "Konjenital Laringomalazi ve Gastroözofageal Reflü",
+                        "text": "Uzamış Bakteriyel Bronşit Tablosu",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Laringomalazi yaşamın ilk haftalarında başlayan, sırtüstü yatınca ve beslenirken "
-                            "artan kronik stridor nedenidir; 2 yaşında akut başlayan ateşli tablo viral kruptur."
-                        ),
-                        "teaching_point": (
-                            "İki yaşında akut viral prodromla başlayan havlar öksürük ve stridor konjenital "
-                            "laringomalazi değil akut viral laringotrakeittir."
-                        ),
+                        "scenario_update": "Hastanın öksürüğünün 4 haftayı aşan sürekli balgamlı (ıslak) karakterde olmadığı, gündüzleri olmayıp yalnızca yatınca geniz akıntısıyla tetiklendiği doğrulandı.",
+                        "teaching_point": "Uzamış bakteriyel bronşitte >4 hafta süren, pozisyondan bağımsız devamlı ıslak/prodüktif öksürük vardır ve 2 haftalık uygun antibiyoterapiye yanıt verir.",
                     },
                 ],
             },
             {
-                "stage_title": "Sarı Alan Gözlem Süresi (Rebound Stridor İzlemi) ve Taburculuk",
-                "question": (
-                    "Nebülize L-adrenalin uygulamasından 30 dakika sonra stridoru ve çekilmeleri tamamen "
-                    "düzelen çocuk için ailesi eve gitmek istiyor. Doğru yaklaşımınız nedir?"
-                ),
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu hastada semptomları kontrol altına almak için en uygun tedavi ve izlem planı hangisidir?",
                 "options": [
                     {
-                        "text": (
-                            "Çocuğun istirahatte stridoru kalmadığı ve oksijen satürasyonu %98 olduğu için evde "
-                            "kullanmak üzere salbutamol şurup reçete ederek hemen taburcu etmek"
-                        ),
+                        "text": "İki hafta boyunca günde 3 kez topikal oksimetazolin nazal sprey ve gece öksürüğü için dekstrometorfan şurup reçete ederek taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": (
-                            "Tedaviden 30 dakika sonra taburcu edilen çocukta 90. dakikada nebülize adrenalinin "
-                            "vazokonstriktör etkisi sona erdi; evde ağır rebound stridor ve çekilmeler "
-                            "tekrarlayarak acil servise geri getirildi."
-                        ),
-                        "teaching_point": (
-                            "Nebülize L-adrenalinin etkisi yaklaşık 2 saat içinde biter ve subglottik ödem "
-                            "tekrarlayabilir (rebound fenomeni); bu nedenle hiçbir hasta ilk 1 saat içinde "
-                            "taburcu edilmemelidir."
-                        ),
+                        "scenario_update": "Beş günden uzun süre topikal oksimetazolin kullanan çocukta şiddetli rebound burun tıkanıklığı (rinitis medikamentoza) gelişti ve öksürük kesilmedi.",
+                        "teaching_point": "Topikal alfa-adrenerjik nazal dekongestanlar 3-5 günden uzun kullanıldığında rinitis medikamentozaya yol açar; alerjik rinitin idame tedavisinde yeri yoktur.",
                     },
                     {
-                        "text": (
-                            "Hastayı sadece 1 saat gözlemde tutup stridor tekrarlamazsa evde buhar makinesiyle "
-                            "uygulamaları için aileye adrenalin ampul reçete ederek taburcu etmek"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Bir saatlik gözlem rebound stridoru dışlamak için yetersiz kaldı; ayrıca evde "
-                            "kontrolsüz dozda uygulanan nebülize adrenalin çocukta ciddi taşikardi ve "
-                            "ajitasyona yol açtı."
-                        ),
-                        "teaching_point": (
-                            "Nebülize adrenalin sonrası gözlem süresi en az 3-4 saat olmalıdır ve nebülize "
-                            "adrenalin yalnızca hastane ortamında monitörize edilerek uygulanır, eve reçete edilmez."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Tek doz nebülize adrenalin alan her krup hastasında entübasyon riski yüksek "
-                            "olduğundan klinik yanıt tam olsa bile çocuk yoğun bakıma yatırmak"
-                        ),
-                        "is_correct": False,
-                        "scenario_update": (
-                            "Tek doz nebülize adrenalin ve deksametazon sonrası tamamen düzelen ve 4 saat "
-                            "boyunca istirahatte stridoru tekrarlamayan hastada gereksiz yoğun bakım yatışı yapıldı."
-                        ),
-                        "teaching_point": (
-                            "Tek doz nebülize adrenalin ve deksametazon sonrası 3-4 saatlik gözlemde "
-                            "istirahatte stridoru ve çekilmesi tekrarlamayan hastalar yatış gerekmeden güvenle "
-                            "taburcu edilebilir; yatış tekrarlayan adrenalin gereksiniminde endikedir."
-                        ),
-                    },
-                    {
-                        "text": (
-                            "Rebound stridor riski nedeniyle en az 3-4 saat izlemek; 4. saatte istirahatte "
-                            "stridor ve çekilme yoksa kırmızı bayraklarla taburcu etmek"
-                        ),
+                        "text": "İntranazal kortikosteroid sprey, ikinci kuşak oral antihistaminik, serum fizyolojik nazal yıkama ve alerjen önlemleri ile taburcu etmek",
                         "is_correct": True,
-                        "explanation": (
-                            "Nebülize adrenalinin etkisi ~2 saatte geçerken deksametazonun etkisi 2-4 saatte "
-                            "başlar; hasta en az 3-4 saat izlenmeli, bu sürede istirahatte stridor tekrarlamaz, "
-                            "SpO2 normal ve oral alımı iyi ise taburcu edilmelidir."
-                        ),
-                        "new_finding": (
-                            "Hasta Sarı Alanda 4 saat boyunca izlendi; rebound stridor veya çekilme gelişmedi, "
-                            "oda havasında SpO2 %99 ve sıvı alımı iyi olduğu görülerek aileye kırmızı bayrak "
-                            "eğitimi verilip taburcu edildi."
-                        ),
+                        "explanation": "ARIA kılavuzuna göre orta-ağır veya persistan alerjik rinit ve postnazal akıntıda en etkili tedavi intranazal kortikosteroid sprey (örn. mometazon/flutikazon), nazal serum fizyolojik lavajı ve ikinci kuşak oral H1-antihistaminiktir.",
+                        "new_finding": "Doğru intranazal sprey kullanım tekniği (nazal septuma değil lateral duvara/aynı taraf kulak yönüne doğru) uygulamalı gösterilerek ve reçetesi düzenlenerek hasta taburcu edildi.",
+                    },
+                    {
+                        "text": "Geniz akıntısını kurutmak amacıyla 14 gün oral amoksisilin-klavulanat ve birinci kuşak sedatif antihistaminik (klorfeniramin) kombinasyonu başlamak",
+                        "is_correct": False,
+                        "scenario_update": "Antibiyotik alerjik mukozal ödemi düzeltmedi; birinci kuşak antihistaminik ise gündüz okul başarısını düşüren sedasyon ve sekresyonlarda koyulaşma yaptı.",
+                        "teaching_point": "Alerjik rinit ve postnazal akıntıda antibiyotik endikasyonu yoktur; birinci kuşak antihistaminikler antikolinerjik etkileriyle sekresyonu koyulaştırıp sedasyon yaptığı için tercih edilmez.",
+                    },
+                    {
+                        "text": "İntranazal tedavi vermeden doğrudan yüksek doz inhale flutikazon ve gerektiğinde salbutamol inhaler başlayıp üç ay sonra kontrole çağırmak",
+                        "is_correct": False,
+                        "scenario_update": "Alt hava yoluna yönelik inhaler tedavi burun mukozasındaki alerjik inflamasyonu etkilemediği için hastanın burun tıkanıklığı ve geniz akıntısı devam etti.",
+                        "teaching_point": "Astım bulgusu olmayan izole üst hava yolu öksürük sendromunda ağızdan kullanılan bronşiyal inhalerler değil, nazal mukozaya yönelik intranazal kortikosteroid sprey kullanılmalıdır.",
                     },
                 ],
             },

@@ -76,7 +76,7 @@ def export_case(case: dict) -> dict:
         })
     return {
         "id": case["id"],
-        "zone": "yellow" if case["id"].startswith("Y") else "green",
+        "zone": "yellow" if case["id"].startswith("S") else "green",
         "age": age,
         "gender": case["gender"],
         "category": case["category"],
@@ -107,7 +107,7 @@ def main():
             json.dump(export_case(case), f, ensure_ascii=False, separators=(",", ":"))
         index.append({
             "id": case["id"],
-            "zone": "yellow" if case["id"].startswith("Y") else "green",
+            "zone": "yellow" if case["id"].startswith("S") else "green",
             "age": case["age"],
             "gender": case["gender"],
             "category": case["category"],

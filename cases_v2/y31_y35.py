@@ -1,150 +1,151 @@
 # -*- coding: utf-8 -*-
 """
-Sarı Alan Vakaları - Y31-Y35 (v2 Şartnamesine Uygun Yeniden Yazım)
+Yeşil Alan Vakaları - Y31-Y35 (v2 Şartnamesine Uygun)
 """
 
 CASES = [
     {
         "id": "Y31",
-        "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
-        "age": "2 Yaş",
+        "category": "🫁 Hırıltı & Solunum Sıkıntısı",
+        "age": "9 Yaş",
         "gender": "Erkek",
-        "complaint": "Bezinde aniden başlayan, ağrısız, yoğun vişne çürüğü ve parlak kırmızı renkli rektal kanama ile solukluk",
+        "complaint": "Bir haftadır geçmeyen kuru öksürük, halsizlik, hafif ateş ve baş ağrısı",
         "history": (
-            "Ailesi daha önce sağlıklı olan 2 yaşındaki erkek çocuğu bezinde yoğun kanama fark ederek Sarı Alana getiriyor: "
-            "'Yaklaşık iki saat önce altını değiştirirken bezinin tamamen taze kırmızı ve vişne çürüğü renkli kanla kaplandığını "
-            "gördük. Çocuğun hiçbir karın ağrısı kıvranması, ağlama nöbeti veya kusması olmadı. Bir saat sonra bezinde tekrar "
-            "bol miktarda pıhtılı kanama oldu ve ten rengi belirgin şekilde soldu.'"
+            "Dokuz yaşındaki erkek çocuk, yaklaşık bir haftadır devam eden inatçı, kesik kesik kuru öksürük "
+            "şikayetiyle getirildi. Ailesi çocuğun okul performansının belirgin düştüğünü, eşlik eden baş ağrısı, "
+            "boğazda gıcıklanma ve hafif ateşinin (en yüksek 37.8°C) olduğunu belirtiyor. Evde verilen parasetamol ve "
+            "soğuk algınlığı şuruplarına rağmen öksürük nöbetlerinde gerileme olmamış; nefes darlığı, göğüs ağrısı "
+            "ya da dudaklarında morarma tarif edilmiyor."
         ),
-        "final_diagnosis": "Meckel Divertikülü Kanaması (Ektopik Gastrik Mukoza Ülserasyonu)",
-        "disposition": "Sarı Alanda İV Damar Yolu + İzotonik Sıvı Resüsitasyonu + Kan Grubu ve Çapraz Karşılaştırma + Çocuk Cerrahisi Konsültasyonu ile Cerrahi Rezeksiyon İçin Yatış",
+        "final_diagnosis": "Toplum Kökenli Atipik Pnömoni (Mycoplasma pneumoniae Enfeksiyonu)",
+        "disposition": "Yeşil Alandan Ayaktan Oral Makrolid Tedavisi ve Poliklinik Kontrolü ile Taburculuk",
         "case_pearl": (
-            "Meckel divertikülü, omfalomezenterik kanalın kapanma kusuru sonucu gelişen en sık konjenital gastrointestinal anomalidir "
-            "('2'ler kuralı': toplumun %2'sinde görülür, ileoçekal valvden yaklaşık 2 fit proksimaldedir, 2 inç uzunluğundadır, "
-            "sıklıkla 2 yaş altında semptom verir). En yaygın prezantasyon, ektopik mide mukozasından salgılanan aside bağlı komşu "
-            "ileum mukozasında gelişen ağrısız, yoğun alt gastrointestinal sistem kanamasıdır (vişne çürüğü veya parlak kırmızı rektal kanama). "
-            "Karın muayenesinde defans veya hassasiyet saptanmaz, batın tamamen rahattır. Tanıda altın standart yöntem Tc-99m perteknetat "
-            "sintigrafisidir (Meckel sintigrafisi); ektopik gastrik mukoza perteknetatı tutarak sağ alt kadranda fokal aktivite artışı gösterir. "
-            "Tedavi cerrahi kama rezeksiyonu veya divertikülektomidir."
+            "Okul çağı çocuklarında ve adolesanlarda sinsi başlangıçlı inatçı kuru öksürük, baş ağrısı ve subfebril ateşe "
+            "eşlik eden bilateral dağınık raller varlığında atipik pnömoni akla gelmelidir. Fizik muayene ve radyolojik "
+            "bulgular hastanın genel klinik tablosuna göre beklenenden çok daha belirgindir (klinik-radyolojik diskordans). "
+            "Hücre duvarı bulunmayan bu etkene karşı beta-laktamlar etkisiz olup birinci basamak ampirik tedavide oral "
+            "makrolidler (klaritromisin veya azitromisin) ilk seçenektir."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda İlk Değerlendirme ve Hemodinamik Stabilizasyon",
-                "question": "Masif ağrısız rektal kanama, solukluk ve belirgin taşikardisi olan 2 yaşındaki bu hastada ilk yaklaşımınız ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Bu hastada ilk değerlendirmede odaklanmanız gereken en uygun klinik muayene yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Cerrahi konsültasyon öncesinde kanama odağını netleştirmek amacıyla hastaya nazogastrik tüp takıp bol miktarda soğuk serum fizyolojikle mide lavajı uygulamak",
+                        "text": "Genel durumu ve vital bulguları hızlıca kontrol edip hastayı beklemeden acil bronkodilatatör nebülizasyonu amacıyla Sarı Alana devretmek",
                         "is_correct": False,
-                        "scenario_update": "Nazogastrik lavajda berrak mide içeriği geldi, kanama izlenmedi ancak lavaj işlemi esnasında çocuk aşırı ajite olarak taşikardisi arttı.",
-                        "teaching_point": "Ağrısız masif alt gastrointestinal kanamalı ve taşikardik çocuklarda ilk öncelik invaziv nazogastrik lavaj değil, acil damar yolu açılarak hemodinamik resüsitasyonun sağlanmasıdır.",
+                        "scenario_update": "Nebülize salbutamol inhalasyonu sonrasında hastanın kalp tepe atımı 124/dk'ya yükseldi ancak inatçı kuru öksürüğünde ve dinleme bulgularında hiçbir rahatlama sağlanamadı.",
+                        "teaching_point": "Solunum sıkıntısı, çekilme ve belirgin bronkospazmı olmayan stabil hastalarda ayırıcı muayene tamamlanmadan Sarı Alana devir ve ampirik bronkodilatatör uygulaması gereksizdir.",
                     },
                     {
-                        "text": "Geniş iki damar yolu açarak izotonik kristaloid bolusu başlatmak, tam kan sayımı, kan grubu ve çapraz karşılama göndermek",
+                        "text": "Vital bulguları, solunum sayısını, oksijen satürasyonunu ölçmek ve bilateral tüm akciğer alanlarını derin inspiryumda dikkatle dinlemek",
                         "is_correct": True,
-                        "explanation": "Masif kanamalı ve kompanse şok bulguları (taşikardi, solukluk) olan çocukta öncelik damar yolu güvenliği, hacim resüsitasyonu ve acil kan hazırlığıdır.",
-                        "new_finding": "Vital bulgular: Ateş 36.8°C, KTA 155/dk, SS 28/dk, TA 88/52 mmHg, SpO2 %98, CRT 3 saniye. Batın muayenesi tamamen rahat, distansiyon, defans veya rebound yok. Rektal tuşede parlak kırmızı kan ve pıhtı izlendi, fissür saptanmadı. 20 mL/kg izotonik sonrası KTA 132/dk'ya geriledi.",
+                        "explanation": "Okul çağı çocuğunda uzamış öksürük varlığında solunum iş yükü değerlendirilmeli ve fokal veya yaygın akciğer sesleri eksiksiz oskülte edilmelidir.",
+                        "new_finding": "Vital Bulgular: Ateş 37.7°C, KTA 86/dk, Solunum Sayısı 20/dk, SpO2 %98 (oda havasında), Kan Basıncı 105/65 mmHg. Çocuk rahat, dispne veya retraksiyon yok. Orofarenks hafif hiperemik. Akciğer oskültasyonunda bilateral alt zonlarda dağınık ince raller ve hafif bilateral ekspiratuar hışıltı duyuldu; tübüler ses veya fokal sessiz alan saptanmadı.",
                     },
                     {
-                        "text": "Kanamanın anal fissürden kaynaklanıp kaynaklanmadığını ayırt etmek amacıyla hastaya derin sedasyon vererek acil tanısal anoskopi ve rektoskopi yapmak",
+                        "text": "Üst solunum yolu semptomları ön planda olduğundan orofarenks ve otoskopik muayeneyle yetinip akciğer oskültasyonunu derinleştirmeden semptomatik tedaviye geçmek",
                         "is_correct": False,
-                        "scenario_update": "Derin sedasyon uygulanan hipovolemik çocukta kan basıncı 75/40 mmHg düzeyine geriledi ve anoskopide yalnızca proksimalden gelen yoğun kan görüldü.",
-                        "teaching_point": "Hemodinamik resüsitasyon tamamlanmadan ve damar yolu açılmadan yapılan sedasyon ve endoskopik girişimler hipovolemik şoku derinleştirerek hayati risk oluşturur.",
+                        "scenario_update": "Yalnızca orofarenks incelenerek postnazal akıntı tanısıyla gönderilmek istenen hastada derin oskültasyon yapılmadığı için akciğer parankimindeki yaygın raller atlanmış oldu.",
+                        "teaching_point": "Bir haftadır süren inatçı öksürük ve baş ağrısı olan okul çağı çocuğunda alt solunum yolu tutulumunu dışlamak için ayrıntılı akciğer oskültasyonu zorunludur.",
                     },
                     {
-                        "text": "Oral beslenmeyi açık tutarak koagülasyon parametreleri sonuçlanana kadar hastayı monitörize gözlem odasında izlemek ve oral demir damlası başlamak",
+                        "text": "Ateş ve uzamış öksürüğü olan hastada kardiyopulmoner muayeneyi öteleyip hızlıca damar yolu açarak kan tetkikleri hazırlığına girişmek",
                         "is_correct": False,
-                        "scenario_update": "Oral hidrasyon verilmeye çalışılırken hasta kustu, takip eden bezinde tekrar yoğun parlak kırmızı kanama oldu ve taşikardi 160/dk'ya yükseldi.",
-                        "teaching_point": "Aktif masif gastrointestinal kanaması olan çocuklarda oral alım aspirasyon riski ve acil cerrahi olasılığı nedeniyle derhal kapatılmalı, parenteral hidrasyon verilmelidir.",
+                        "scenario_update": "Genel durumu iyi ve satürasyonu normal olan hastada invaziv damar yolu girişimi çocukta aşırı ajitasyon ve strese yol açtı.",
+                        "teaching_point": "Hemodinamisi stabil, oda havasında oksijenasyonu normal çocuklarda invaziv girişimlerden önce ayrıntılı fizik muayene ve klinik değerlendirme tamamlanmalıdır.",
                     },
                 ],
             },
             {
-                "stage_title": "Laboratuvar Tetkikleri ve İleri Görüntüleme Yönteminin Belirlenmesi",
-                "question": "Hemodinamisi stabilize edilen, ağrısız alt gastrointestinal kanaması ve rahat batın muayenesi olan çocukta öncelikli görüntüleme yaklaşımınız ne olmalıdır?",
+                "stage_title": "Tetkik ve Radyolojik Görüntüleme Kararı",
+                "question": "Akciğer oskültasyonunda bilateral yaygın ince raller ve hafif hışıltı duyulan hastada en uygun tetkik ve görüntüleme yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Kolon lümenindeki olası vasküler lezyonları doğrudan saptamak amacıyla bağırsak temizliği yapmadan acil tanısal ve terapotik kolonoskopi planlamak",
+                        "text": "İnfiltrasyon varlığını ve komplikasyonları acil servis şartlarında en duyarlı şekilde netleştirmek için kontrastlı toraks tomografisi çekilmesini planlamak",
                         "is_correct": False,
-                        "scenario_update": "Kolonda yoğun pıhtı ve taze kan bulunması nedeniyle mukozal yüzeyler net değerlendirilemedi ve kanama odağı tespit edilemedi.",
-                        "teaching_point": "Masif alt gastrointestinal kanamalarda hazırlıksız acil kolonoskopinin tanısal değeri düşüktür; lümendeki kan mukozal vizualizasyonu engeller.",
+                        "scenario_update": "Toraks tomografisi çekilmesi hastanın yüksek dozda iyonizan radyasyona maruz kalmasına yol açtı ve klinik yönetimde beklenen ek faydayı sağlamadı.",
+                        "teaching_point": "Çocukluk çağı toplum kökenli alt solunum yolu enfeksiyonlarında bilgisayarlı tomografi rutin tanı aracı değildir; gereksiz radyasyon riski taşır.",
                     },
                     {
-                        "text": "Batın içi serbest havayı ve olası bağırsak perforasyonunu ekarte etmek amacıyla ayakta direkt batın ve sol lateral grafi çekmek",
+                        "text": "Akut enfeksiyon odağını dışlamak amacıyla rutin tam kan sayımı, sedimentasyon, CRP ve prokalsitonin düzeylerini içeren geniş biyokimya paneli istemek",
                         "is_correct": False,
-                        "scenario_update": "Direkt batın grafilerinde serbest hava veya obstrüksiyon bulgusu saptanmadı, tanıya ve klinik yönetime herhangi bir katkı sağlamadı.",
-                        "teaching_point": "Ağrısız rektal kanamada perforasyon veya mekanik obstrüksiyon kliniği yoksa direkt grafilerin tanısal duyarlılığı ve yönetime katkısı son derece düşüktür.",
+                        "scenario_update": "LABORATUVAR: WBC 8.400/mm³ (nötrofil %58, lenfosit %34), Hb 13.1 g/dL, PLT 285.000/mm³, CRP 16 mg/L, Prokalsitonin 0.08 ng/mL. Sonuçlar patognomonik ayrım sağlamadı.",
+                        "teaching_point": "Klinik tablosu hafif, genel durumu iyi olan okul çağı çocuklarında kan parametreleri bakteriyel ve viral ayrımında özgül değildir.",
                     },
                     {
-                        "text": "Ektopik mide mukozasını görüntülemek amacıyla nükleer tıp ünitesiyle koordine olarak teknesyum doksan dokuz em perteknetat sintigrafisi planlamak",
+                        "text": "Akciğer parankim tutulumunu ve infiltrasyon paternini değerlendirmek amacıyla arka-ön (PA) akciğer grafisi çekilmesini talep etmek",
                         "is_correct": True,
-                        "explanation": "Pediatrik yaş grubunda ağrısız masif alt gastrointestinal kanamanın en sık nedeni ektopik gastrik mukoza içeren konjenital anomalilerdir ve sintigrafi altın standarttır.",
-                        "new_finding": "Laboratuvar: Hb 7.8 g/dL, Hct %23.8, BK 8.400/mm³, Trombosit 290.000/mm³, Koagülasyon testleri doğal. Sintigrafi: Sağ alt kadranda, mide mukozasıyla eş zamanlı perteknetat tutulumu gösteren fokal radyoaktivite artışı izlendi.",
+                        "explanation": "Oskültasyonda dinleme bulgusu olan ve uzamış öksürüğü bulunan çocukta PA akciğer grafisi parankimal tutulumun yaygınlığını ve paternini göstermede temel incelemedir.",
+                        "new_finding": "PA Akciğer Grafisi: Bilateral perihiler belirginleşme, alt zonlarda yaygın retikülonodüler ve peribronşial interstisyel infiltratlar saptandı; lober konsolidasyon veya plevral sıvı izlenmedi.",
+                        "image": "assets/images/cxr_atypical_pneumonia.png",
+                        "image_caption": "PA Akciğer Grafisi: Bilateral perihiler ve retikülonodüler infiltratlar",
                     },
                     {
-                        "text": "İntususepsiyonu kesin olarak dışlamak amacıyla batın ultrasonografisi çekmek ve işlem esnasında hidrostatik redüksiyon için lavman hazırlığı yapmak",
+                        "text": "Klinik bulguların viral bronşiolit düşündürdüğünü varsayarak hiçbir görüntüleme veya tetkik yapmadan hastayı doğrudan semptomatik tedavilerle taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Batın ultrasonografisinde hedef tahtası görünümü saptanmadı, lavman hazırlığı gereksiz zaman kaybına ve mukozal irritasyona yol açtı.",
-                        "teaching_point": "Ağrısız, vişne çürüğü kanamalarda ve rahat batın muayenesinde intususepsiyon ön planda düşünülmez; lavman uygulanması gereksiz ve zararlıdır.",
+                        "scenario_update": "Görüntüleme yapılmadığı için bilateral belirgin interstisyel infiltrasyon tespit edilemedi ve uygun antimikrobiyal başlanması gecikti.",
+                        "teaching_point": "Dokuz yaşındaki bir çocukta bir haftadır süren öksürük ve bilateral raller varlığında görüntüleme yapılmadan alt solunum yolu parankim tutulumu dışlanamaz.",
                     },
                 ],
             },
             {
-                "stage_title": "Klinik ve Sintigrafik Bulgularla Kesin Tanı",
-                "question": "Ağrısız masif rektal kanama, derin anemi ve sintigrafide sağ alt kadranda ektopik mide mukozası saptanan hastada kesin tanınız nedir?",
+                "stage_title": "Klinik Tanı",
+                "question": "Klinik seyri, fizik muayene bulguları ve akciğer grafisi değerlendirildiğinde bu hastada en olası tanı hangisidir?",
                 "options": [
                     {
-                        "text": "Meckel divertikülü kanaması",
+                        "text": "Toplum Kökenli Atipik Pnömoni",
                         "is_correct": True,
-                        "explanation": "İki yaş altı çocukta ağrısız masif vişne çürüğü rektal kanama ve sintigrafide ektopik gastrik mukoza tespiti Meckel divertikülü kanamasını kesinleştirir.",
-                        "new_finding": "Kesin tanı: Meckel divertikülü kanaması (ektopik gastrik mukoza zemininde gelişen ileal ülser kanaması).",
+                        "explanation": "Okul çağında sinsi seyirli kuru öksürük, subfebril ateş, baş ağrısı ve bilateral retikülonodüler infiltrasyon Mycoplasma pneumoniae kaynaklı atipik pnömoni ile tipiktir.",
+                        "new_finding": "Klinik ve radyolojik bulgularla Atipik Pnömoni tanısı doğrulandı.",
                     },
                     {
-                        "text": "İleokolik invajinasyon",
+                        "text": "Pnömokok Kaynaklı Lober Pnömoni",
                         "is_correct": False,
-                        "scenario_update": "İnvajinasyonda kolik tarzı aralıklı şiddetli karın ağrısı, safralı kusma ve palpabl kitle beklenir; sintigrafide ektopik mukoza tutulumu olmaz.",
-                        "teaching_point": "Ağrısız masif vişne çürüğü kanama invajinasyondan ziyade Meckel divertikülü kanaması için karakteristiktir.",
+                        "scenario_update": "Lober pnömonide beklenen ani yüksek ateş, toksik görünüm, takipne ve grafide segmental veya lober yoğun konsolidasyon bulguları hastada saptanmadı.",
+                        "teaching_point": "Tipik bakteriyel pnömonilerde ani başlangıç, yüksek ateş, taşipne, inleme ve grafide fokal konsolidasyon ile bronkogram bulguları ön plandadır.",
                     },
                     {
-                        "text": "Juvenil rektal polip",
+                        "text": "Akut Viral Trakeobronşit",
                         "is_correct": False,
-                        "scenario_update": "Juvenil polipler genellikle dışkılamanın sonunda damlama şeklinde parlak kırmızı kanama yapar ve masif anemiye nadiren yol açar.",
-                        "teaching_point": "Rektal polipler masif vişne çürüğü kanama veya ektopik gastrik mukoza sintigrafi pozitifliği göstermez.",
+                        "scenario_update": "Grafide saptanan belirgin bilateral retikülonodüler ve peribronşial parankim infiltrasyonu basit trakeobronşit tablosunun çok ötesinde parankimal tutuluma işaret etti.",
+                        "teaching_point": "Akut bronşitte akciğer grafisi genellikle doğaldır; parankimal interstisyel ve alveoler infiltratların varlığı pnömoni lehinedir.",
                     },
                     {
-                        "text": "Nekrotizan enterokolit",
+                        "text": "Yabancı Cisim Aspirasyonu",
                         "is_correct": False,
-                        "scenario_update": "Nekrotizan enterokolit prematüre yenidoğanlarda distandü batın, safralı kusma ve pnömatozis intestinalis ile seyreder; 2 yaşında beklenmez.",
-                        "teaching_point": "Nekrotizan enterokolit yenidoğan dönemine özgü bir tablodur; 2 yaşındaki sağlıklı çocukta ağrısız kanama nedeni değildir.",
+                        "scenario_update": "Hastada ani gelişen boğulma öyküsü, tek taraflı lokalize havalanma azlığı, atelektazi veya hava hapsi bulgusu izlenmedi.",
+                        "teaching_point": "Yabancı cisim aspirasyonu ani başlangıçlı öksürük ve tek taraflı oskültasyon/grafi bulgularıyla seyreder; bir haftalık sinsi enfeksiyöz prodrom beklenmez.",
                     },
                 ],
             },
             {
-                "stage_title": "Cerrahi Konsültasyon ve Kesin Tedavi Yönetimi",
-                "question": "Meckel divertikülü kanaması tanısı kesinleşen ve anemisi olan 2 yaşındaki bu hastanın acil servisteki nihai yönetim planı nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Atipik pnömoni tanısı konulan genel durumu iyi bu çocuk için en uygun tedavi ve taburculuk protokolü hangisidir?",
                 "options": [
                     {
-                        "text": "Kanama kendiliğinden durduğu için oral proton pompa inhibitörü ve demir damlası reçete ederek hastayı cerrahi poliklinik kontrolüne yönlendirmek",
+                        "text": "Ampirik olarak oral yüksek doz amoksisilin-klavulanat süspansiyon reçete edip yedi gün sonra çocuk hastalıkları polikliniği kontrolüne çağırmak",
                         "is_correct": False,
-                        "scenario_update": "Taburcu edilmesi planlanan hastada üç saat sonra tekrar masif rektal kanama ve derin hipovolemik şok tablosu gelişti.",
-                        "teaching_point": "Meckel divertikülü kanamaları aralıklı ve masif tekrarlayabilir; cerrahi rezeksiyon yapılmadan medikal tedaviyle taburcu edilemez.",
+                        "scenario_update": "Hücre duvarı sentez inhibitörü olan aminopenisilin başlanan hastanın 72 saat sonraki kontrolünde kuru öksürük ve halsizlik yakınmalarında hiçbir gerileme olmadı.",
+                        "teaching_point": "Mycoplasma pneumoniae hücre duvarına sahip olmadığından penisilinler, sefalosporinler ve diğer beta-laktam antibiyotiklere yapısal olarak tamamen dirençlidir.",
                     },
                     {
-                        "text": "Cerrahi müdahale öncesinde gastrointestinal kanama odağını elektrokoterle yakmak amacıyla acil terapotik çift balonlu enteroskopi ünitesine derhal sevk etmek",
+                        "text": "Çocuğu acil serviste müşahedeye alıp intravenöz seftriakson infüzyonu ve eş zamanlı nebülize kortikosteroid tedavisi uygulayarak pediatri servisine yatırmak",
                         "is_correct": False,
-                        "scenario_update": "İnvaziv enteroskopi esnasında ileum lümeni perfore oldu ve hasta acil laparatomiye alınmak zorunda kaldı.",
-                        "teaching_point": "Meckel divertikülü kanamasında endoskopik hemostaz endike değildir; standart tedavi cerrahi rezeksiyondur.",
+                        "scenario_update": "Solunum sıkıntısı ve hipoksemisi olmayan stabil hasta gereksiz yere hastaneye yatırıldı ve etkisiz bir antibiyotik grubuna maruz bırakıldı.",
+                        "teaching_point": "Hafif seyirli, oral alımı tam ve satürasyonu normal atipik pnömoni olguları ayaktan oral makrolid tedavisiyle güvenle yönetilebilir; yatış endikasyonu yoktur.",
                     },
                     {
-                        "text": "Kanamanın tekrarlamasını önlemek amacıyla traneksamik asit infüzyonu başlayarak hastayı çocuk gastroenteroloji servisinde yakın medikal izleme almak",
+                        "text": "Antibiyotik başlamaksızın yalnızca oral dekstrometorfan içeren antitussif şurup ve antipiretik parasetamol vererek hastayı semptomatik taburculuk planıyla evine göndermek",
                         "is_correct": False,
-                        "scenario_update": "Antifibrinolitik tedavi kanamayı geçici durdursa da anatomik anomaliyi çözmedi ve hastanede yatarken rekanalizasyonla kanama nüksetti.",
-                        "teaching_point": "Ektopik gastrik mukozaya bağlı ülser kanamasında medikal tedaviler kesin çözüm sağlamaz; çocuk cerrahisi tarafından cerrahi eksizyon şarttır.",
+                        "scenario_update": "Öksürük kesici şurup sekresyonların atılmasını engelleyerek öksürük krizlerini artırdı ve hastanın klinik semptomları iki gün içinde kötüleşti.",
+                        "teaching_point": "Çocukluk çağı pnömonilerinde antitussif şurupların yeri yoktur; etiyolojiye yönelik makrolid başlanması klinik iyileşmeyi hızlandırır ve bulaşıcılığı azaltır.",
                     },
                     {
-                        "text": "Çocuk cerrahisi ile konsülte edilerek eritrosit süspansiyonu desteği eşliğinde acil cerrahi rezeksiyon için ameliyathaneye ve servise almak",
+                        "text": "Ayaktan oral makrolid (klaritromisin veya azitromisin) tedavisi planlayıp, hidrasyon ve kırmızı bayrak eğitimiyle kontrole çağırmak",
                         "is_correct": True,
-                        "explanation": "Semptomatik Meckel divertikülünün kesin tedavisi cerrahidir (divertikülektomi veya segmental ileum rezeksiyonu); derin anemi için kan transfüzyonu eşlik etmelidir.",
-                        "new_finding": "Eritrosit süspansiyonu transfüzyonu eşliğinde çocuk cerrahisi tarafından laparoskopik Meckel divertikülektomisi başarıyla uygulandı; hasta şifa ile taburcu edildi.",
+                        "explanation": "Okul çağı atipik pnömonisinde mikoplazmaya etkili ilk seçenek oral makrolidlerdir; genel durumu iyi hasta ayaktan güvenle izlenebilir.",
+                        "new_finding": "Hastaya oral klaritromisin tedavisi planlandı, dinlenme ve hidrasyon önerildi; 48-72 saat içinde kontrol veya nefes darlığında acile başvuru anlatıldı.",
                     },
                 ],
             },
@@ -152,143 +153,145 @@ CASES = [
     },
     {
         "id": "Y32",
-        "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
-        "age": "12 Yaş",
+        "category": "👁️ Göz Şikayetleri",
+        "age": "7 Yaş",
         "gender": "Kız",
-        "complaint": "Aniden başlayan, kıvrandırıcı sol alt kadran karın ağrısı ve tekrarlayan safrasız kusma",
+        "complaint": "Her iki gözde yoğun kaşıntı, ovuşturma, sulanma ve göz kapaklarında şişlik",
         "history": (
-            "12 yaşındaki kız hasta ailesi tarafından şiddetli karın ağrısı nedeniyle Sarı Alana getiriliyor: "
-            "'Yaklaşık dört saat önce ders çalışırken sol kasığına bıçak saplanır gibi aniden başlayan çok şiddetli bir ağrı oldu. "
-            "Ağrı dalgalar halinde geliyor, iki büklüm kıvranıyor ve arka arkaya üç kez mide içeriği kustu. "
-            "Daha önce benzer bir ağrısı hiç olmamıştı, son adeti iki hafta önceydi ve idrar yaparken yanması yok.'"
+            "Yedi yaşındaki kız çocuk, ilkbahar aylarının başlamasıyla birlikte her iki gözünde yaklaşık 5 gündür "
+            "giderek artan şiddetli kaşıntı, sürekli gözlerini ovuşturma, sulanma ve kızarıklık yakınmasıyla getirildi. "
+            "Ailesi sabahları çapaklanma olmadığını, göz kapaklarının hafif şiş göründüğünü ve akıntının berrak su gibi "
+            "olduğunu ifade ediyor. Çocuğun daha önce bilinen astım veya besin duyarlılığı öyküsü bulunmuyor; ancak son "
+            "günlerde açık havada ve parkta vakit geçirdikten sonra göz şikayetlerinin belirginleştiği belirtiliyor. "
+            "Görmede bulanıklık, gözde zonklayıcı ağrı veya ateş bildirilmiyor."
         ),
-        "final_diagnosis": "Akut Sol Over Torsiyonu (Adneksiyal Torsiyon)",
-        "disposition": "Sarı Alanda Oral Stop + Damar Yolu + İV Hidrasyon + Analjezi + Acil Çocuk Cerrahisi ve Jinekoloji Konsültasyonu ile Laparoskopik Detorsiyon İçin Ameliyathaneye Yatış",
+        "final_diagnosis": "Akut Alerjik Konjonktivit",
+        "disposition": "Yeşil Alandan Ayaktan Topikal Antihistaminik/Mast Hücre Stabilizatörü ve Korunma Önlemleriyle Taburculuk",
         "case_pearl": (
-            "Over torsiyonu, over ve fallop tüpünün kendi vasküler pedikülü etrafında dönerek venöz staz, ödem ve takiben arteriyel iskemiye yol açtığı "
-            "acil jinekolojik-cerrahi bir durumdur. Adölesan kızlarda aniden başlayan tek taraflı, şiddetli, kolik tarzda alt kadran ağrısı ve kusma ile prezante olur. "
-            "Tanıda ilk tercih Renkli Doppler ultrasonografidir (stroması ödemli ve büyümüş over, periferik yerleşimli foliküller, vasküler pedikülde 'whirlpool' "
-            "burgu işareti ve azalmış/kaybolmuş akım; akım izlenmesi torsiyonu ekarte ettirmez). Zaman over canlılığı için kritiktir; altın standart tedavi "
-            "doku nekrotik görünse dahi ooferektomi değil, organ koruyucu acil laparoskopik detorsiyondur."
+            "Alerjik konjonktivitin kardinal semptomu yoğun kaşıntı ve gözleri ovuşturmadır. Genellikle bilateral tutulum, "
+            "seröz sulanma, kemozis ve tarsal konjonktivada papiller reaksiyon görülür; pürülan çapaklanma ve görme kaybı "
+            "beklenmez. Tedavide birinci basamak yaklaşım alerjenden korunma, soğuk kompres, koruyucusuz suni gözyaşı ve "
+            "topikal çift etkili H1-antihistaminik / mast hücre stabilizatörü (örn. olopatadin damla) kombinasyonudur. "
+            "Göz hekimi kontrolü olmadan topikal kortikosteroidler asla başlanmamalıdır."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Akut Alt Kadran Ağrılı Hastaya İlk Yaklaşım",
-                "question": "Aniden başlayan şiddetli sol alt kadran ağrısı ve kusması olan 12 yaşındaki kız hastada ilk muayene ve stabilizasyon yaklaşımınız ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Oftalmolojik Muayene",
+                "question": "Bu hastada göz semptomlarını değerlendirirken ilk aşamada uygulamanız gereken en uygun muayene yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Damar yolu açıp intravenöz hidrasyon ve analjezi sağlamak, batın muayenesinde peritoneal irritasyon ve pelvik kitle bulgularını incelemek",
+                        "text": "Görme keskinliğini test etmeden doğrudan topikal lokal anestezik damlatıp kornea duyarlılığını pamuk uçlu aplikatörle değerlendirmeye odaklanmak",
+                        "is_correct": False,
+                        "scenario_update": "Topikal anestezik uygulanması geçici rahatlama sağlasa da görme keskinliği baştan belgelenmedi ve gereksiz kornea manipülasyonu huzursuzluğa yol açtı.",
+                        "teaching_point": "Tüm göz başvurularında invaziv veya ağrılı işlemlerden önce görme keskinliği mutlaka değerlendirilmeli; rutin anestezik damla kullanılmamalıdır.",
+                    },
+                    {
+                        "text": "Şikayetlerin yalnızca tek bir gözde yoğunlaştığını varsayıp diğer gözü muayene etmeden doğrudan fundus oftalmoskopik incelemesine geçmek",
+                        "is_correct": False,
+                        "scenario_update": "Oftalmoskop ışığı çocuğun fotofobisini artırırken, her iki göz kapağı ve konjonktiva karşılaştırmalı olarak yeterince incelenemedi.",
+                        "teaching_point": "Kaşıntı ve sulanma yakınmalarında bilateral karşılaştırmalı ön segment muayenesi esastır; arka segment incelemesi ilk basamak muayene önceliği değildir.",
+                    },
+                    {
+                        "text": "Görme keskinliğini değerlendirmek, göz kapaklarını, konjonktival hiperemiyi, akıntı niteliğini ve üst kapak tarsal konjonktivasını dikkatle incelemek",
                         "is_correct": True,
-                        "explanation": "Akut batın kliniği olan hastada öncelikle hemodinamik stabilizasyon ve analjezi sağlanmalı, peritoneal bulgular ve pelvik kitle varlığı araştırılmalıdır.",
-                        "new_finding": "Vital bulgular: Ateş 37.0°C, KTA 116/dk, SS 20/dk, TA 110/70 mmHg. Karın muayenesinde sol alt kadranda belirgin hassasiyet ve defans mevcut, sağ alt kadran rahat. Pelvik bölgede sol tarafta derin palpasyonla dolgunluk ve hassas kitle hissi alınıyor. İntravenöz parasetamol sonrası ağrının kıvrandırıcı şiddeti devam ediyor.",
+                        "explanation": "Bilateral kaşıntı ve sulanmada görme keskinliği belgelenmeli, tarsal papiller yapılar, hiperemi paterni ve çapak niteliği ayırt edilmelidir.",
+                        "new_finding": "Görme keskinliği bilateral tam (Snellen 10/10). Göz kapaklarında hafif ödem, bilateral bulber konjonktivada yaygın soluk pembe hiperemi ve hafif kemozis saptandı. Pürülan çapak yok, sulu berrak sekresyon mevcut. Üst göz kapağı eversiyonunda üst tarsal konjonktivada ince diffüz papiller hipertrofi izlendi. Kornea berrak, pupil ışık refleksleri bilateral doğal.",
                     },
                     {
-                        "text": "Gastrointestinal spazmı rahatlatmak amacıyla antispazmodik ve antiemetik uygulayıp ağrı hafifleyene kadar fizik muayeneyi geciktirerek hastayı sakinleştirmek",
+                        "text": "Göz muayenesini inspeksiyonla sınırlı tutup hastayı hızla sedate ederek acil şartlarda genişletilmiş biyomikroskopik yarık lamba incelemesine yönlendirmek",
                         "is_correct": False,
-                        "scenario_update": "Antispazmodik sonrası kusma baskılandı ancak sol alt kadrandaki kıvrandırıcı iskemi ağrısı ve peritonit bulguları hızla şiddetlendi.",
-                        "teaching_point": "Akut cerrahi batın şüphesi olan hastalarda tanı konulmadan antispazmodik verilmesi tabloyu maskeleyebilir ve kritik cerrahi zaman penceresinin kaçırılmasına yol açar.",
-                    },
-                    {
-                        "text": "Olası ektopik gebelik veya rüptüre korpus luteumu dışlamak amacıyla analjezik vermeden hastaya acil bimanual vajinal muayene yapmak",
-                        "is_correct": False,
-                        "scenario_update": "Virgo adölesan hastada gereksiz ve travmatik bimanual muayene girişimi şiddetli anksiyete ve ajitasyona yol açtı, tanısal fayda sağlamadı.",
-                        "teaching_point": "Pediatrik ve adölesan grupta pelvik patolojilerin değerlendirilmesinde bimanual vajinal muayene rutin uygulanmaz; rektal veya non-invaziv transabdominal ultrasonografi tercih edilir.",
-                    },
-                    {
-                        "text": "Ağrının renal kolik kaynaklı olduğunu düşünerek yüksek doz intramüsküler nonsteroid antiinflamatuar yapmak ve iki litre oral su içirmek",
-                        "is_correct": False,
-                        "scenario_update": "Oral sıvı alımı sonrası hasta tekrar safrasız mide içeriği kustu ve oral stop prensibi bozulduğu için anestezi hazırlığı gecikti.",
-                        "teaching_point": "Akut batın şüpheli ve kusan hastalarda oral alım kesinlikle kesilmeli, renal kolik varsayımıyla cerrahi patolojiler atlanmamalıdır.",
+                        "scenario_update": "Kooperasyonu tam olan yedi yaşındaki çocukta gereksiz sedasyon planlanması aileyi endişelendirdi ve acil servis işleyişini aksattı.",
+                        "teaching_point": "Kooperatif çocuklarda sedasyona gerek olmaksızın basit büyüteç, el lambası ve gerekirse biyomikroskopla ayrıntılı ön segment muayenesi rahatlıkla yapılabilir.",
                     },
                 ],
             },
             {
-                "stage_title": "Laboratuvar İncelemeleri ve İlk Basamak Radyolojik İnceleme",
-                "question": "Sol alt kadranda hassas kitle ve peritoneal irritasyon saptanan adölesan kız hastada öncelikli tanısal görüntüleme yönteminiz ne olmalıdır?",
+                "stage_title": "Tetkik ve İleri İnceleme Kararı",
+                "question": "Bilateral papiller konjonktival hiperemi, berrak sulanma ve yoğun kaşıntısı olan bu çocukta en uygun tetkik yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Peritoneal kalsifikasyon ve bağırsak obstrüksiyonunu dışlamak için acil ayakta direkt batın grafisi ve sol lateral dekübit grafi çekmek",
-                        "is_correct": False,
-                        "scenario_update": "Direkt batın grafilerinde sol alt kadranda nonspesifik yumuşak doku gölgesi dışında patoloji izlenmedi ve tanısal gecikme yaşandı.",
-                        "teaching_point": "Direkt grafiler pelvik patolojilerin tanısında yetersizdir; yumuşak doku ve vasküler detay vermez.",
-                    },
-                    {
-                        "text": "Pelvik patolojileri ve apandisiti aynı anda kesin olarak dışlamak amacıyla acil intravenöz kontrastlı tüm batın bilgisayarlı tomografisi çekmek",
-                        "is_correct": False,
-                        "scenario_update": "Bilgisayarlı tomografide sol pelvik bölgede kitle teyit edildi ancak adölesan hasta gereksiz yüksek doz gonadal iyonizan radyasyona maruz kaldı.",
-                        "teaching_point": "Adölesan kızlarda akut pelvik ağrının ilk basamak görüntülemesi radyasyon içermeyen ultrasonografidir; BT ancak şüpheli veya komplike olgularda düşünülür.",
-                    },
-                    {
-                        "text": "İnflamasyon belirteçlerini izlemek için tam kan sayımı ve CRP gönderip sonuçlar çıkana kadar radyolojik görüntüleme yapmadan beklemek",
-                        "is_correct": False,
-                        "scenario_update": "Sonuçlar beklenirken geçen iki saatte hastanın ağrısı dayanılmaz hale geldi ve gonadal dokunun iskemik süresi uzadı.",
-                        "teaching_point": "Akut organ iskemisi şüphesinde laboratuvar sonuçları beklenmeden acil ultrasonografik görüntüleme organize edilmelidir; zaman doku canlılığı demektir.",
-                    },
-                    {
-                        "text": "Radyasyon maruziyetinden kaçınarak sol pelvik bölgeyi ve kan akımını değerlendirmek için acil pelvik renkli Doppler ultrasonografi istemek",
+                        "text": "Klinik bulgular tanı için yeterli olduğundan gereksiz laboratuvar tetkiki veya konjonktival sürüntü kültürü almadan tanıya ilerlemek",
                         "is_correct": True,
-                        "explanation": "Pediatrik ve adölesan kızlarda akut pelvik kitle ve ağrının altın standart ilk basamak görüntülemesi pelvik renkli Doppler ultrasonografidir.",
-                        "new_finding": "Laboratuvar: Lökosit 12.200/mm³, CRP 8 mg/L, beta-hCG negatif, TİT doğal. Renkli Doppler USG: Sol pelvik lojda 48x35 mm boyutlarında, stroması belirgin ödemli ve periferinde küçük kistik yapılar dizilmiş kitle izlendi. Vasküler pedikülde burgu görünümü saptandı ve arteriyel-venöz kan akımında ileri derecede azalma izlendi. Sağ taraf anatomik yapısı tamamen doğal.",
+                        "explanation": "Mevsimsel özellik gösteren, pürülan olmayan kaşıntılı bilateral tablolarda öykü ve tipik muayene tanı koydurucudur, laboratuvar gerekmez.",
+                        "new_finding": "Tetkik istenmedi; hastanın klinik ve muayene bulgularının tipik mevsimsel ön segment inflamasyonuyla örtüştüğü belirlendi.",
+                    },
+                    {
+                        "text": "Bakteriyel veya klamidyal patojenleri ekarte etmek amacıyla bilateral konjonktival kazıntı örneği alarak Giemsa ve Gram boyama yaptırmak",
+                        "is_correct": False,
+                        "scenario_update": "Konjonktivadan invaziv sürüntü ve kazıntı alınması çocukta yoğun ağrıya, submukozal peteşiyel kanamaya ve belirgin huzursuzluğa yol açtı.",
+                        "teaching_point": "Pürülan akıntısı veya neonatal dönem öyküsü olmayan çocuklarda ağrılı konjonktival kazıntı veya yayma endike değildir.",
+                    },
+                    {
+                        "text": "Etiyolojiyi saptamak amacıyla acil serviste geniş inhalan spesifik IgE paneli, total IgE ve periferik yaymada eozinofil sayımı istemek",
+                        "is_correct": False,
+                        "scenario_update": "LABORATUVAR: Total IgE 140 IU/mL, Eozinofil %4, tam kan sayımı normal. Spesifik IgE paneli sonuçlarının ise günler sonra çıkacağı öğrenildi.",
+                        "teaching_point": "Akut acil başvurularda spesifik IgE veya alerji panelleri yönetimi değiştirmez; bu testler gerekirse elektif poliklinik şartlarında planlanmalıdır.",
+                    },
+                    {
+                        "text": "Sistemik vaskülit ve otoimmün üveit birlikteliğini dışlamak amacıyla ANA, RF, eritrosit sedimentasyon hızı ve HLA-B27 tarama testleri göndermek",
+                        "is_correct": False,
+                        "scenario_update": "Gönderilen otoantikor ve romatolojik paneller tamamen negatif sonuçlandı; gereksiz kan alımı ve yüksek maliyet dışında katkı sağlamadı.",
+                        "teaching_point": "Görme bozukluğu, siliyer enjeksiyon, pupil düzensizliği veya ön kamara hücresi olmayan saf yüzeyel tablolarda sistemik otoimmün tarama endike değildir.",
                     },
                 ],
             },
             {
-                "stage_title": "Klinik ve Doppler Bulguları ile Kesin Tanı",
-                "question": "Büyümüş ve ödemli sol gonadal yapı, periferik foliküller ve pedikülde burgu işaretiyle akım kaybı saptanan hastada kesin tanınız nedir?",
+                "stage_title": "Klinik Tanı",
+                "question": "Anamnez, mevsimsel özellikler ve fizik muayene bulguları ışığında bu hastada en olası klinik tanınız nedir?",
                 "options": [
                     {
-                        "text": "Rüptüre hemorajik over kisti",
+                        "text": "Akut Bakteriyel Konjonktivit",
                         "is_correct": False,
-                        "scenario_update": "Hemorajik kist rüptüründe batında serbest sıvı ve kist kollapsı görülür; vasküler pedikülde burgu ve stromal büyüme izlenmez.",
-                        "teaching_point": "Stromal ödem, belirgin büyüme ve vasküler burgu bulgusu kist rüptüründen ziyade torsiyona işaret eder.",
+                        "scenario_update": "Bakteriyel enfeksiyonlarda beklenen sabahları göz kapaklarını yapıştıran kalın pürülan akıntı ve mat hiperemi tablosu hastada bulunmadı.",
+                        "teaching_point": "Bakteriyel formlarda pürülan sekresyon ve kirpiklerde kabuklanma belirgindir; yoğun kaşıntı ve seröz sulanma ise tipik değildir.",
                     },
                     {
-                        "text": "Pelvik inflamatuar hastalık",
+                        "text": "Epidemik Keratokonjonktivit",
                         "is_correct": False,
-                        "scenario_update": "Pelvik inflamatuar hastalıkta bilateral hassasiyet, vajinal akıntı ve yüksek ateş beklenir; tek taraflı burgu işareti görülmez.",
-                        "teaching_point": "Ani başlangıçlı tek taraflı kitle ve akım kaybı enfeksiyondan ziyade vasküler torsiyon ile uyumludur.",
+                        "scenario_update": "Adenoviral keratokonjonktivitte sık rastlanan preauriküler hassas lenfadenopati, korneal subepitelyal infiltratlar ve yoğun ağrı hastada saptanmadı.",
+                        "teaching_point": "Viral epidemik tablolarda preauriküler lenf nodu büyümesi, folliküler hipertrofi ve bulaşıcılık belirginken, kaşıntı ana semptom değildir.",
                     },
                     {
-                        "text": "Akut sol over torsiyonu",
+                        "text": "Ön Blefarit ve Meibomian Disfonksiyonu",
+                        "is_correct": False,
+                        "scenario_update": "Kapak kenarlarında kepeklenme, kirpik diplerinde silendirik manşonlar veya meibomian bezi tıkanıklığı muayenede izlenmedi.",
+                        "teaching_point": "Blefaritte inflamasyon göz kapağı kenarında ve kirpik diplerinde lokalizedir; konjonktival papiller hipertrofi ve kemozis ön planda olmaz.",
+                    },
+                    {
+                        "text": "Akut Alerjik Konjonktivit",
                         "is_correct": True,
-                        "explanation": "Adölesan kızda ani başlangıçlı alt kadran ağrısı, büyümüş ödemli parankim, periferik foliküller ve pedikülde burgu işareti akut over torsiyonu için patognomoniktir.",
-                        "new_finding": "Kesin tanı: Akut sol over torsiyonu (sol adneksiyal torsiyon).",
-                    },
-                    {
-                        "text": "Akut sol taraflı apandisit",
-                        "is_correct": False,
-                        "scenario_update": "Situs inversus veya sol yerleşimli apandisitte USG'de kör sonlanan tübüler yapı izlenir; pelvik kitle ve gonadal iskemi görülmez.",
-                        "teaching_point": "Ultrasonografide sol gonadal stromanın büyümesi ve vasküler pedikülün dönmesi apandisit ile uyumlu değildir.",
+                        "explanation": "Mevsimsel artış, her iki gözde yoğun kaşıntı, berrak sulanma, kemozis ve üst tarsal papiller hipertrofi alerjik konjonktivit için klasiktir.",
+                        "new_finding": "Klinik tanı Akut Alerjik Konjonktivit olarak kesinleşti.",
                     },
                 ],
             },
             {
-                "stage_title": "Acil Cerrahi Tedavi ve Detorsiyon Yönetimi",
-                "question": "Akut sol over torsiyonu tanısı kesinleşen 12 yaşındaki adölesan hastada gonadal rezervi korumaya yönelik en uygun cerrahi yaklaşım nedir?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Akut alerjik konjonktivit tanısı kesinleşen bu hastanın tedavisinde en uygun yaklaşım ve aile bilgilendirmesi hangisidir?",
                 "options": [
                     {
-                        "text": "Dokunun iskemik ve nekrotik görünümde olma ihtimali nedeniyle zaman hiç kaybetmeden tek taraflı açık ooferektomi operasyonu planlamak",
+                        "text": "Enflamasyonu hızla baskılamak amacıyla topikal deksametazon damlayı günde dört kez iki hafta süreyle kullanması talimatıyla reçete etmek",
                         "is_correct": False,
-                        "scenario_update": "Detorsiyon denenmeden doğrudan ooferektomi yapılması adölesan hastanın gelecekteki over rezervini ve fertilitesini geri dönüşsüz olarak azalttı.",
-                        "teaching_point": "Pediatrik ve adölesan torsiyonlarda over siyah/nekrotik görünse dahi doku reperfüzyon potansiyeli yüksektir; ilk tercih her zaman detorsiyondur.",
+                        "scenario_update": "Göz hekimi kontrolü olmaksızın başlanan topikal steroid damla nedeniyle hastada ilerleyen haftalarda intraoküler basınç artışı riski doğdu.",
+                        "teaching_point": "Topikal kortikosteroidler katarakt ve glokom gibi ciddi komplikasyon riskleri nedeniyle oftalmolog takibi olmadan acil servisten asla başlanmamalıdır.",
                     },
                     {
-                        "text": "Çocuk cerrahisi ve jinekoloji ile acil laparoskopik detorsiyon planlayarak doku görünümünden bağımsız organ koruyucu yaklaşım uygulamak",
+                        "text": "Topikal olopatadin damla, koruyucusuz suni gözyaşı, soğuk kompres uygulaması ve gözleri ovuşturmaktan kaçınma eğitimiyle ayaktan taburcu etmek",
                         "is_correct": True,
-                        "explanation": "Pediatrik torsiyonlarda altın standart, nekrotik görünümde dahi dokunun korunarak detorsiyon yapılması ve over canlılığının izlenmesidir.",
-                        "new_finding": "Acil laparoskopide 720 derece torsiyone ve siyanotik sol over detorsiyone edildi; 15 dakika içinde pembeleşerek kan akımının geri döndüğü görüldü ve organ korundu.",
+                        "explanation": "Çift etkili H1-antihistaminik/mast hücre stabilizatörü (olopatadin), suni gözyaşı ve soğuk uygulama kaşıntıyı hızla dindirir ve güvenlidir.",
+                        "new_finding": "Reçetesi düzenlenen hastanın ailesine polen mevsiminde pencereleri kapalı tutma, güneş gözlüğü takma ve ovuşturmama uyarısı yapıldı.",
                     },
                     {
-                        "text": "İntravenöz geniş spektrumlu antibiyotik ve antikoagülan başlayarak sol pelvik kitleyi yirmi dört saatlik konservatif takip altına almak",
+                        "text": "Sekonder enfeksiyon gelişimini önlemek amacıyla profilaktik topikal tobramisin damla ile birlikte sistemik birinci kuşak oral antihistaminik şurup başlamak",
                         "is_correct": False,
-                        "scenario_update": "Konservatif takip altında geçen saatlerde over dokusunda tam hemorajik enfarktüs ve gangren gelişti, over kaybedildi.",
-                        "teaching_point": "Torsiyon mekanik bir vasküler tıkanıklıktır; medikal tedavi ile düzelmez, gecikilen her saat over kaybı riskini katlar.",
+                        "scenario_update": "Gereksiz antibiyotik kullanımı oküler florayı bozdu; sedatif oral antihistaminik ise okul çağındaki çocukta belirgin uyuklama ve dikkat dağınıklığı yaptı.",
+                        "teaching_point": "Alerjik olgularda profilaktik topikal antibiyotiğin yeri yoktur; sistemik birinci kuşak antihistaminikler ise sedasyon yapar ve göz kuruluğunu artırabilir.",
                     },
                     {
-                        "text": "Ağrı kesici infüzyonunu artırıp pelvik kist gerilemesini izlemek üzere hastayı acil servisten elektif jinekoloji polikliniğine yönlendirmek",
+                        "text": "Semptomları hızla geriletmek amacıyla gözleri steril gazlı bezle 48 saat kapatıp (oklüzyon pansumanı) kesin istirahat önermek",
                         "is_correct": False,
-                        "scenario_update": "Taburcu edilmeye çalışılan hastada peritonit ve sepsis tablosu gelişti, acil laparatomi ile nekrotik doku rezeke edildi.",
-                        "teaching_point": "Over torsiyonu acil cerrahi endikasyonudur; elektif poliklinik takibi yapılamaz.",
+                        "scenario_update": "Göz kapama işlemi lokal sıcaklığı ve alerjen temas süresini artırarak kaşıntıyı şiddetlendirdi ve çocukta aşırı tedirginliğe yol açtı.",
+                        "teaching_point": "Alerjik veya enfeksiyöz oküler inflamasyonlarda gözün kapatılması lokal ısıyı ve nemi artırarak tabloyu kötüleştirir; oklüzyon kontrendikedir.",
                     },
                 ],
             },
@@ -296,144 +299,147 @@ CASES = [
     },
     {
         "id": "Y33",
-        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
-        "age": "3 Yaş",
+        "category": "👁️ Göz Şikayetleri",
+        "age": "2.5 Aylık",
         "gender": "Erkek",
-        "complaint": "Bir hafta önceki ishal sonrası giderek artan halsizlik, solukluk, açıklanamayan belirgin çarpıntı ve hızlı soluma",
+        "complaint": "Doğumdan beri sağ gözde sürekli sulanma ve kirpikte hafif mukoid yapışma",
         "history": (
-            "3 yaşındaki erkek çocuk ailesi tarafından halsizlik ve hızlı nefes alıp verme şikayetiyle Sarı Alana getiriliyor: "
-            "'Yaklaşık bir hafta önce hafif ateş ve sulu ishal geçirmişti, ishali düzeldi ancak son iki gündür yataktan kalkmak istemiyor, "
-            "hiçbir şey yemiyor ve göğsü kuş gibi çok hızlı çarpıyor. Vücudunda belirgin bir ateş olmamasına rağmen kalbi durmaksızın "
-            "çok hızlı atıyor ve emerken ya da su içerken hemen yorulup terliyor.'"
+            "İki buçuk aylık erkek bebek, annesi tarafından sağ gözünde neredeyse doğumdan itibaren devam eden "
+            "sürekli sulanma, yaşarma ve özellikle sabahları uyanırken kirpik diplerinde hafif yapışkan sarımsı-beyaz "
+            "akıntı şikayetiyle getirildi. Annesi sol gözünde hiçbir sorun olmadığını, sağ gözünü ise günde birkaç kez "
+            "temizlemek zorunda kaldığını belirtiyor. Bebeğin gözünde kızarıklık, kapaklarda belirgin şişlik veya morarma "
+            "tarif edilmiyor. Emmesi, kilo alımı ve genel gelişimi mükemmel olan bebeğin ateşi hiç olmamış; dış merkezde "
+            "daha önce verilen antibiyotikli damlalar kullanıldığı sürece akıntıyı azaltmış ancak kesildikten sonra sulanma "
+            "aynen devam etmiş."
         ),
-        "final_diagnosis": "Akut Viral Enfeksiyon Sonrası Miyokardit (Kardiyak Dekompanzasyon)",
-        "disposition": "Sarı Alanda Oksijen + Damar Yolu + Sıvı Kısıtlaması + İnotropik Destek + Çocuk Kardiyoloji ve Çocuk Yoğun Bakım Ünitesine Acil Yatış",
+        "final_diagnosis": "Konjenital Nazolakrimal Kanal Tıkanıklığı (Dakriyostenoz)",
+        "disposition": "Yeşil Alandan Ayaktan Lakrimal Kese Masajı (Crigler Masajı) ve Aile Eğitimi ile Taburculuk",
         "case_pearl": (
-            "Pediatrik miyokardit, sıklıkla geçirilmiş viral bir enfeksiyonu (enterovirus, adenovirus, parvovirus B19 vb.) takiben gelişen "
-            "miyosit hasarı ve miyokard disfonksiyonudur. Ateş olmaksızın açıklanamayan persistan taşikardi, hepatomegali, galo ritmi ve takipne "
-            "erken kalp yetersizliğinin kritik kırmızı bayraklarıdır. Telekardiyografide kardiyomegali ve pulmoner venöz konjesyon, EKG'de düşük "
-            "voltaj veya ST-T değişiklikleri, Troponin I ve NT-proBNP yüksekliği tipiktir. Erken dönemde aşırı sıvı yüklemesinden kaçınılmalı "
-            "(sıvı kısıtlaması), inotropik destek (milrinon, dopamin vb.) ve gerektiğinde mekanik dolaşım desteği (ECMO) için hasta hızla "
-            "çocuk kardiyoloji yoğun bakımına yatırılmalıdır."
+            "Süt çocukluğunda doğumdan itibaren görülen, tek veya çift taraflı persistan sulanma ve mukoid akıntının en sık "
+            "nedeni Hasner valvinin açılmamasıyla karakterize konjenital nazolakrimal kanal tıkanıklığıdır (dakriyostenoz). "
+            "Sklera beyaz, kornea saydamdır ve konjonktival hiperemi eşlik etmez (akut konjonktivitten temel farkı). "
+            "Olguların %90'ından fazlası 1 yaşına kadar konservatif izlem ve doğru uygulanan Crigler masajı ile kendiliğinden "
+            "düzelir. Akut dakriyosistit (medial kantusta hiperemi, fluktuasyon, ateş) gelişmedikçe rutin profilaktik antibiyotik "
+            "veya erken invaziv sondalama önerilmez."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Açıklanamayan Taşikardiye İlk Yaklaşım",
-                "question": "Ateşi olmamasına rağmen belirgin taşikardisi ve solunum sıkıntısı olan 3 yaşındaki çocukta ilk muayene önceliğiniz ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Bu bebekte semptomların kaynağını netleştirmek ve acil patolojileri dışlamak için en uygun fizik muayene yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Taşikardiyi dehidratasyona bağlayarak hızla yirmi mililitre kilogram izotonik serum fizyolojiği yarım saat içinde intravenöz infüzyonla göndermek",
-                        "is_correct": False,
-                        "scenario_update": "Hızlı sıvı bolusu sonrası akciğerlerde raller arttı, karaciğer 5 cm'ye büyüdü ve hasta akut pulmoner ödeme girdi.",
-                        "teaching_point": "Kardiyak disfonksiyona bağlı taşikardi ve hepatomegalisi olan çocuklara kontrolsüz sıvı bolusu verilmesi akut kalp yetersizliğini ağırlaştırır.",
-                    },
-                    {
-                        "text": "Çocuğun huzursuzluğunu yatıştırmak amacıyla yüksek doz oral sedatif uygulayıp tam sakinleşmesini bekledikten sonra rutin fizik muayeneyi tamamlamak",
-                        "is_correct": False,
-                        "scenario_update": "Sedasyon uygulanan hastada solunum depresyonu ve hipoksi gelişti, zayıf olan hemodinamik kompanzasyon bozuldu.",
-                        "teaching_point": "Açıklanamayan taşikardi ve taşipnesi olan çocukta sedasyon uygulanması solunum ve kardiyovasküler kollapsa zemin hazırlar.",
-                    },
-                    {
-                        "text": "Havayolu ve solunumu destekleyip kalp seslerini, periferik nabızları, galo ritmini ve karaciğer boyutunu dikkatle muayene etmek",
+                        "text": "Bilateral kornea saydamlığını, sklera ve konjonktivayı incelemek, medial kantal bölgeye nazik bası uygulayarak reflüyü değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Ateşle orantısız taşikardisi olan çocukta kalp yetersizliği bulguları (S3 galo, hepatomegali, zayıf nabızlar) öncelikle taranmalıdır.",
-                        "new_finding": "Vital bulgular: Ateş 37.1°C, KTA 170/dk (ritmik, zayıf dolgunlukta), SS 48/dk, TA 82/52 mmHg, SpO2 %92 (oda havasında), CRT 3.5 saniye. Kalp seslerinde belirgin taşikardi ve üçüncü kalp sesi (S3 galo ritmi) duyuldu, patolojik üfürüm yok. Solunum seslerinde bilateral bazallerde krepitan raller mevcut. Karaciğer kot kavsi altında 3.5 cm palpabl. Periferik nabızlar filiform.",
+                        "explanation": "Tek taraflı sulanmada kornea saydamlığı kontrol edilmeli (glokom dışlanmalı), konjonktivanın sakinliği görülmeli ve kese basısıyla mukoid reflü aranmalıdır.",
+                        "new_finding": "Sağ gözde artmış lakrimal göllenme mevcut. Sklera beyaz, bulber konjonktiva tamamen sakin, kızarıklık veya hiperemi yok. Kornea tamamen saydam ve çapı normal (buftalmus bulgusu yok), ışık refleksi doğal. Sağ medial kantal lakrimal kese üzerine işaret parmağıyla basıldığında punktumdan berrak-mukoid sekresyon reflüsü izlendi; lakrimal kese üzerinde eritem, endurasyon veya fluktuasyon yok. Sol göz muayenesi tamamen doğal.",
                     },
                     {
-                        "text": "Solunum sıkıntısını bronkospazma bağlayarak ardışık üç doz nebulize salbutamol ve oral deksametazon başlayıp klinik yanıtı izlemek",
+                        "text": "Bebekte konjenital glokomu kesinleştirmek amacıyla acil serviste lokal anestezik eşliğinde doğrudan tonometri ile göz içi basıncı ölçmek",
                         "is_correct": False,
-                        "scenario_update": "Nebulize beta-agonist uygulaması sonrası hastanın kalp tepe atımı 195/dk'ya fırladı ve kardiyak iş yükü belirgin arttı.",
-                        "teaching_point": "Pulmoner konjesyona bağlı ral ve taşipnesi olan olgularda astım tedavisi verilmesi taşikardiyi ve miyokardiyal oksijen tüketimini artırır.",
+                        "scenario_update": "Bebek ajite oldu ve ağladı; ağlama sırasında ölçülen göz içi basıncı yalancı yüksek çıktı ve gereksiz yere endişe yarattı.",
+                        "teaching_point": "Kornea çapı normal, korneası tamamen saydam olan ve fotofobisi bulunmayan bir süt çocuğunda acil invaziv tonometri endike değildir.",
+                    },
+                    {
+                        "text": "Yalnızca dış inspeksiyonla yetinip göz küresine ve lakrimal bölgeye hiç dokunmadan bebeği hızla göz hastalıkları servisine yatırmak",
+                        "is_correct": False,
+                        "scenario_update": "Medial kantal bası testi yapılmadığı için sekresyonun lakrimal keseden kaynaklandığı anlaşılamadı ve gereksiz yatış talebi konsültan hekimce reddedildi.",
+                        "teaching_point": "İnflamatuar odak veya kitle bulgusu olmayan izole sulanmalarda lakrimal kese palpasyonu yapılmalı, yatış yerine ayaktan yönetim planlanmalıdır.",
+                    },
+                    {
+                        "text": "Göz kapağını forsepsle zorlayarak evert etmek ve konjonktiva fornikslerinde gizli yabancı cisim veya forseps travması aramak",
+                        "is_correct": False,
+                        "scenario_update": "Forsepsle zorlu eversiyon bebeğin konjonktivasında travmatik mikrohematoma ve yoğun ağlamaya yol açarak muayeneyi imkansız hale getirdi.",
+                        "teaching_point": "Doğumdan beri süregelen, kapak lezyonu veya akut batma bulgusu olmayan bebeklerde travmatik forseps uygulamaları kontrendikedir.",
                     },
                 ],
             },
             {
-                "stage_title": "Kardiyovasküler İnceleme ve Laboratuvar Tetkik Planı",
-                "question": "Galo ritmi, hepatomegali ve persistan taşikardisi saptanan bu hastada tanıya yönelik en uygun ilk tetkik kombinasyonu nedir?",
+                "stage_title": "Tetkik ve Yaklaşım Stratejisi",
+                "question": "Kornea ve sklerası doğal, yalnızca kese basısıyla punktumdan mukoid reflü veren bu bebekte en uygun tanısal yaklaşım hangisidir?",
                 "options": [
                     {
-                        "text": "Gastrointestinal enfeksiyon odağını saptamak için gaita mikroskopisi, viral antijen paneli ve batın ultrasonografisi ile tetkik sürecini başlatmak",
+                        "text": "Akut dakriyosistit ve apse formasyonunu ekarte etmek amacıyla acil intravenöz kontrastlı paranazal ve orbita bilgisayarlı tomografisi çektirmek",
                         "is_correct": False,
-                        "scenario_update": "Gaita tetkikleri normal geldi ancak tetkik sürecinde kardiyak pompa yetersizliği derinleşti ve periferik dolaşım bozuldu.",
-                        "teaching_point": "Kardiyak dekompanzasyon bulguları olan hastada geçirilmiş gastroenterite yönelik tetkikler tanısal önceliğe sahip değildir; kardiyovasküler inceleme şarttır.",
+                        "scenario_update": "Medial kantusta selülit, ısı artışı veya fluktuasyon olmayan bebeğe yüksek doz radyasyon verilmiş oldu ve tomografi normal raporlandı.",
+                        "teaching_point": "Medial kantusta eritem, hassasiyet ve kitle gibi akut inflamasyon bulgusu yoksa görüntüleme (BT/MRG) gereksizdir.",
                     },
                     {
-                        "text": "Oksijen desteği verip on iki derivasyonlu elektrokardiyografi çekmek, telekardiyografi istemek ve natriüretik peptit ile nekroz enzimlerini göndermek",
+                        "text": "Bakteriyel kolonizasyonu tam tanımlamak için punktumdan gelen mukoid sekresyondan acil aerop-anaerop kültür ve antibiyogram örneği göndermek",
+                        "is_correct": False,
+                        "scenario_update": "Kültürde normal flora elemanı olan koagülaz negatif stafilokok üredi; bu durum gereksiz geniş spektrumlu antibiyotik başlanması ikilemi yarattı.",
+                        "teaching_point": "Konjonktival hiperemi ve sistemik bulgu olmayan izole mukoid göllenmelerde rutin sekresyon kültürü yönetimi değiştirmez.",
+                    },
+                    {
+                        "text": "Drenaj yollarının anatomik açıklığını doğrulamak için genel anestezi altında acil dakriyosistografi ve floroskopik kontrast inceleme planlamak",
+                        "is_correct": False,
+                        "scenario_update": "İki buçuk aylık asemptomatik bebekte gereksiz genel anestezi riski ve floroskopi maruziyeti gündeme gelerek işlem ertelendi.",
+                        "teaching_point": "Süt çocuklarında lakrimal sistem radyolojik kontrast incelemeleri invazivdir; komplikasyonsuz olgularda birinci basamakta yeri yoktur.",
+                    },
+                    {
+                        "text": "Ek bir laboratuvar veya görüntüleme tetkiki istemeden, fizik muayene bulgularıyla klinik tanıya varıp aile eğitimine odaklanmak",
                         "is_correct": True,
-                        "explanation": "Kardiyak disfonksiyon şüphesinde EKG ritim ve iletiyi, telekardiyografi kalp boyutunu, nekroz enzimleri ve natriüretik peptitler miyosit hasarını ve yetersizliği belgeler.",
-                        "new_finding": "EKG: Sinüs taşikardisi (172/dk), prekordiyal derivasyonlarda düşük QRS voltajı ve yaygın ST-T değişiklikleri izlendi. Telekardiyografi: Kardiyotorasik indeks 0.64 (belirgin kardiyomegali) ve pulmoner vasküler konjesyon. Laboratuvar: CK-MB 64 U/L (yüksek), NT-proBNP 9.600 pg/mL (belirgin yüksek), Lökosit 10.800/mm³, CRP 12 mg/L.",
-                    },
-                    {
-                        "text": "Yalnızca rutin hemogram ve idrar tahlili isteyerek taşikardinin kendiliğinden düzelmesi için hastayı iki saat kardiyak monitörizasyonsuz bekletmek",
-                        "is_correct": False,
-                        "scenario_update": "Monitörizasyonsuz bekletilen hastada taşikardi devam etti, bilinci letarjikleşti ve kapiller dolum zamanı beş saniyeye uzadı.",
-                        "teaching_point": "Ağır taşikardi ve konjestif yetersizlik bulgusu olan hasta monitörize edilmeli ve acil kardiyolojik tetkikler geciktirilmemelidir.",
-                    },
-                    {
-                        "text": "Olası intoksikasyonları ekarte etmek amacıyla acil kranial bilgisayarlı tomografi ve toksikoloji tarama paneli isteyip diğer tetkikleri ertelemek",
-                        "is_correct": False,
-                        "scenario_update": "Kranial tomografi normal sonuçlandı ancak hasta tomografi odasında taşipneik ve soğuk terleme içinde kaldı.",
-                        "teaching_point": "Nörolojik odak olmaksızın izole taşikardi ve hepatomegalide öncelik santral sinir sistemi görüntülemesi değil kardiyovasküler değerlendirmedir.",
+                        "explanation": "Öykü ve tipik kese bası bulgusuyla klinik tanı kesinleştirilir; infant döneminde komplikasyonsuz olgularda hiçbir tetkik gerekmez.",
+                        "new_finding": "Tetkik istenmedi; lakrimal kese bölgesinde inflamasyon veya selülit bulgusu olmadığı, tablonun selim seyirli konjenital süreçle uyumlu olduğu teyit edildi.",
                     },
                 ],
             },
             {
-                "stage_title": "Klinik ve Laboratuvar Bulguları ile Kesin Tanı",
-                "question": "Viral enfeksiyon sonrası gelişen galo ritmi, kardiyomegali ve belirgin nekroz belirteçleri saptanan hastada kesin tanınız nedir?",
+                "stage_title": "Klinik Tanı",
+                "question": "Doğumdan beri tek taraflı sulanma, beyaz sklera ve punktum reflüsü olan bu bebekte en olası tanı hangisidir?",
                 "options": [
                     {
-                        "text": "Akut viral miyokardit",
+                        "text": "Akut Bakteriyel Konjonktivit",
+                        "is_correct": False,
+                        "scenario_update": "Konjonktivitte beklenen belirgin konjonktival hiperemi, kemozis ve yaygın pürülan eksüda bu bebekte mevcut değildi.",
+                        "teaching_point": "Bakteriyel konjonktivitte bulber konjonktiva kırmızıdır; skleranın beyaz ve sakin olması akıntının lakrimal göllenmeye bağlı olduğunu gösterir.",
+                    },
+                    {
+                        "text": "Konjenital Nazolakrimal Kanal Tıkanıklığı",
                         "is_correct": True,
-                        "explanation": "Geçirilmiş viral enfeksiyon, açıklanamayan taşikardi, galo ritmi, kardiyomegali, düşük voltaj EKG ve belirgin kardiyak enzim yüksekliği miyokardit tanısını kesinleştirir.",
-                        "new_finding": "Kesin tanı: Akut viral enfeksiyon sonrası miyokardit (sol ventrikül sistolik disfonksiyonu ve erken kardiyojenik şok tablosu). Troponin I düzeyi 4.2 ng/mL saptandı.",
+                        "explanation": "Doğumdan itibaren tek taraflı epifora, mukoid göllenme, beyaz sklera ve kese basısıyla punktumdan reflü dakriyostenoz için patognomoniktir.",
+                        "new_finding": "Klinik tanı Konjenital Nazolakrimal Kanal Tıkanıklığı (Dakriyostenoz) olarak kesinleşti.",
                     },
                     {
-                        "text": "Konjenital uzun QT sendromu",
+                        "text": "Konjenital İnfantil Glokom",
                         "is_correct": False,
-                        "scenario_update": "Uzun QT sendromunda EKG'de QTc uzaması ve polimorfik ventriküler taşikardi atakları görülür; kardiyomegali ve nekroz belirteçleri beklenmez.",
-                        "teaching_point": "Kardiyomegali, pulmoner ödem ve enzim yüksekliği primer iyon kanalopatisi değil miyokard doku hasarı bulgusudur.",
+                        "scenario_update": "Glokomda görülen korneal bulanıklık (ödem), kornea çapında genişleme (buftalmus) ve belirgin fotofobi hastada saptanmadı.",
+                        "teaching_point": "Konjenital glokomda kornea mat ve büyüktür, bebek ışıktan aşırı rahatsız olur; korneanın berrak ve normal çapta olması bu tanıyı dışlar.",
                     },
                     {
-                        "text": "Ağır bakteriyel bronkopnömoni",
+                        "text": "Akut Enfeksiyöz Dakriyosistit",
                         "is_correct": False,
-                        "scenario_update": "Pnömonide yüksek ateş, pürülan sekresyon ve lober konsolidasyon beklenir; izole kardiyomegali ve NT-proBNP yüksekliği açıklanamaz.",
-                        "teaching_point": "Akciğerdeki raller ve takipne primer akciğer enfeksiyonundan ziyade sol kalp yetersizliğine bağlı pulmoner venöz konjesyonu gösterir.",
-                    },
-                    {
-                        "text": "Hipovolemik dehidratasyon şoku",
-                        "is_correct": False,
-                        "scenario_update": "Hipovolemik şokta kalp gölgesi küçülür ve hepatomegali olmaz; burada kardiyomegali ve hepatomegali hipervolemik/konjestif yetersizliği kanıtlar.",
-                        "teaching_point": "Hepatomegali ve kardiyomegali varlığı hipovolemiyi dışlar; tablonun kardiyojenik olduğunu gösterir.",
+                        "scenario_update": "Dakriyosistitte medial kantusta kızarıklık, gergin şişlik, fluktuasyon, yoğun ağrı ve sistemik ateş bulunur; bu bebekte kese sakindir.",
+                        "teaching_point": "Dakriyosistit kanal tıkanıklığının akut pürülan ve flegmonöz bir komplikasyonudur; lokal eritem ve kitle olmadan tanı konulamaz.",
                     },
                 ],
             },
             {
-                "stage_title": "Acil Yoğun Bakım Tedavisi ve İnotropik Yönetim",
-                "question": "Akut miyokardit ve düşük debili kardiyak pompa yetersizliği saptanan 3 yaşındaki bu hastada en uygun yönetim planı nedir?",
+                "stage_title": "Tedavi ve Aile Eğitimi",
+                "question": "Konjenital nazolakrimal kanal tıkanıklığı tanısı alan 2.5 aylık bebeğin yönetiminde en uygun yaklaşım hangisidir?",
                 "options": [
                     {
-                        "text": "Kalp debisini artırmak amacıyla bolus intravenöz izotonik serum yükleyip hastayı genel pediatri servisinde takip altına almak",
+                        "text": "Kanalı mekanik olarak hemen açmak amacıyla bebeğe acil sedasyon altında genel anesteziyle lakrimal kanal sondalaması (probing) uygulamak",
                         "is_correct": False,
-                        "scenario_update": "İzotonik yüklemesi sonrası pulmoner venöz göllenme derinleşti ve hasta entübe edilmek zorunda kaldı.",
-                        "teaching_point": "Miyokarditte aşırı ön yük kardiyak yetersizliği dekompanse eder; sıvı kısıtlaması esastır, kontrolsüz bolus kontrendikedir.",
+                        "scenario_update": "Erken dönemde gereksiz invaziv girişim planlanması ailede büyük tedirginlik yarattı ve anestezi komplikasyonu riski oluşturdu.",
+                        "teaching_point": "Konjenital dakriyostenozda spontan düzelme oranı bir yaşına kadar %90'ın üzerindedir; erken sondalama ilk basamakta önerilmez.",
                     },
                     {
-                        "text": "Taşikardiyi hızla kırmak amacıyla intravenöz yüksek doz beta bloker bolusu uygulayıp hastayı acil gözlem ünitesinde izlemek",
+                        "text": "Gözdeki mukoid sekresyonu tamamen baskılamak için günde dört kez topikal tobramisin ve deksametazon kombine damlasını bir ay kullandırmak",
                         "is_correct": False,
-                        "scenario_update": "Negatif inotrop etkili beta bloker miyokard kontraktilitesini tamamen çökerterek ağır kardiyojenik şoka yol açtı.",
-                        "teaching_point": "Akut dekompanse miyokarditte beta blokerler negatif inotropik etkileri nedeniyle kesinlikle kontrendikedir.",
+                        "scenario_update": "Uzun süreli topikal steroid kullanımı bebekte göz içi basınç artışı riski yaratırken, antibiyotik kesildiğinde göllenme aynen devam etti.",
+                        "teaching_point": "Akut enfeksiyon olmaksızın rutin topikal antibiyotik veya steroid kullanımı etkisizdir ve dirençli mikroorganizma ile glokom riski taşır.",
                     },
                     {
-                        "text": "Ağır klinik tabloyu geriletmek amacıyla acil plazmaferez planlayarak hastayı taburcu edip çocuk kardiyoloji polikliniğine yönlendirmek",
-                        "is_correct": False,
-                        "scenario_update": "Taburcu edilmesi düşünülen düşük debili hastada evde kardiyak arrest riski ve mortalite son derece yüksektir.",
-                        "teaching_point": "Kardiyojenik şok riski taşıyan akut miyokardit hastaları acil servisten taburcu edilemez; yoğun bakımda sürekli izlem şarttır.",
-                    },
-                    {
-                        "text": "Sıvı kısıtlaması uygulayıp inotropik infüzyon desteği hazırlayarak hastayı çocuk kardiyoloji yoğun bakım ünitesine acilen yatırmak",
+                        "text": "Ilık suyla temizlik, nazolakrimal kese üzerine Crigler masajı tekniği eğitimi ve bir yaşına kadar konservatif izlem önermek",
                         "is_correct": True,
-                        "explanation": "Dekompanse miyokarditte tedavi yaklaşımı sıvı kısıtlaması, kardiyak debiyi artıracak inotropik destek (örn. milrinon, düşük doz epinefrin) ve yoğun bakım takibidir.",
-                        "new_finding": "Oksijen, milrinon infüzyonu ve sıvı kısıtlaması altında çocuk kardiyoloji yoğun bakım ünitesine nakledildi; ekokardiyografide EF %35 saptandı ve ECMO hazırlığıyla izleme alındı.",
+                        "explanation": "Hasner membranını açmak için günde 2-3 kez uygulanan Crigler masajı (aşağı hidrostatik bası) ve hijyen birinci basamak standart tedavidir.",
+                        "new_finding": "Anneye lakrimal keseden aşağıya burun kanadına doğru hidrostatik masaj tekniği gösterildi; akut dakriyosistit uyarı işaretleri anlatılarak taburcu edildi.",
+                    },
+                    {
+                        "text": "Lakrimal yollara silikon tüp entübasyonu yapılması amacıyla hastayı acilen üçüncü basamak oküloplastik cerrahi kliniğine sevk etmek",
+                        "is_correct": False,
+                        "scenario_update": "Henüz konservatif yöntemler denenmeden üçüncü basamağa sevk edilmesi ailenin gereksiz sağlık kurumu dolaşmasına yol açtı.",
+                        "teaching_point": "Silikon tüp entübasyonu veya cerrahi müdahaleler tekrarlayan başarısız sondalamalar sonrası ileri yaşlarda düşünülen invaziv tedavilerdir.",
                     },
                 ],
             },
@@ -441,144 +447,148 @@ CASES = [
     },
     {
         "id": "Y34",
-        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
-        "age": "8 Yaş",
-        "gender": "Kız",
-        "complaint": "Aniden başlayan şiddetli çarpıntı, göğüste baskı hissi, hafif baş dönmesi ve halsizlik",
+        "category": "👁️ Göz Şikayetleri",
+        "age": "5 Yaş",
+        "gender": "Erkek",
+        "complaint": "Sağ gözde ani başlayan batma, yabancı cisim hissi, sulanma ve ışıktan rahatsız olma",
         "history": (
-            "8 yaşındaki kız çocuğu okulda beden eğitimi dersinde aniden fenalaşarak ailesiyle birlikte Sarı Alana getiriliyor: "
-            "'Kızımız koşarken birdenbire kalbinin göğsünden fırlayacak gibi çarptığını söyledi. Göğsünde sıkışma hissi, halsizlik "
-            "ve hafif sersemlik oldu ancak bayılmadı, senkop veya nöbet geçirmedi. Daha önce bilinen bir kalp rahatsızlığı, "
-            "ritim bozukluğu veya ilaç maruziyeti bulunmuyor.'"
+            "Beş yaşındaki erkek çocuk, yaklaşık 2 saat önce parkta kum havuzunda oynarken arkadaşının savurduğu "
+            "kum ve tozların yüzüne gelmesi sonrası sağ gözünde aniden gelişen şiddetli ağrı, batma hissi, sürekli "
+            "göz kırpma, sulanma ve ışığa bakamama şikayetiyle getirildi. Annesi çocuğun sağ gözünü eliyle sürekli "
+            "ovuşturmaya çalıştığını, gözünü açmakta çok zorlandığını ve evde suyla yıkamalarına rağmen batma hissinin "
+            "hiç geçmediğini ifade ediyor. Çocuğun delici bir cisim teması, göze darbe veya kimyasal madde maruziyeti "
+            "öyküsü bulunmuyor."
         ),
-        "final_diagnosis": "Ventriküler Taşikardi (Hemodinamik Olarak Stabil Geniş QRS Taşikardi)",
-        "disposition": "Sarı Alanda Monitörizasyon + Oksijen + İV Damar Yolu + İV Amiodaron İnfüzyonu + Senkronize Kardiyoversiyon Hazırlığı + Çocuk Kardiyoloji Yoğun Bakımına Yatış",
+        "final_diagnosis": "Korneal Abrazyon (Yüzeyel Kornea Epitel Defekti)",
+        "disposition": "Yeşil Alandan Ayaktan Topikal Profilaktik Antibiyotikli Damla, Analjezi ve Kontrol Randevusu ile Taburculuk",
         "case_pearl": (
-            "Pediatrik taşikardilerde QRS süresi (>0.09-0.10 sn) geniş taşiaritmiler aksi kanıtlanmadıkça ventriküler taşikardi kabul edilir. "
-            "Ventriküler taşikardilerde yönetim hemodinamik stabiliteye göre belirlenir: Nabızsız veya unstabil (hipotansiyon, bilinç değişikliği, şok) "
-            "olgularda acil elektriksel kardiyoversiyon/defibrilasyon gerekirken; bilinci açık ve normotansif stabil olgularda elektriksel kardiyoversiyon "
-            "yerine antiaritmik infüzyonu (tercihen İV Amiodaron 5 mg/kg, 20-60 dakikada infüzyon, veya Prokainamid) ilk tercihtir. "
-            "Stabil olgularda vagal manevralar veya adenozin primer tedavi değildir (aberran iletili SVT şüphesi dışında ventriküler taşikardiyi "
-            "sonlandırmaz ve hemodinamiyi bozabilir). Her zaman senkronize kardiyoversiyon cihazı hazır bulundurulmalıdır."
+            "Çocuklarda yabancı cisim veya sürtünme öyküsü sonrası ani başlayan tek taraflı batma, ağrı, fotofobi ve "
+            "blefarospazm varlığında korneal abrazyon ilk akla gelmelidir. Muayenede üst ve alt göz kapakları evert "
+            "edilerek fornikslerde saklı yabancı cisim taranmalı, ardından vital boyama stripi ve kobalt mavisi ışıkla "
+            "epitel defekti gösterilmelidir. Tedavide profilaktik topikal antibiyotik damla ve oral analjezik yeterlidir. "
+            "Gözün kapatılması (oklüzyon) epitel rejenerasyonunu geciktirdiği ve enfeksiyon riskini artırdığı için güncel "
+            "kılavuzlarda kontrendikedir. Topikal anestezikler toksik keratit riski nedeniyle asla eve reçete edilmemelidir."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Ani Başlayan Çarpıntıya İlk Yaklaşım",
-                "question": "Aniden başlayan şiddetli çarpıntı ve göğüste baskı hissi olan 8 yaşındaki bu çocukta ilk muayene ve yaklaşımınız nasıl olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Parkta gözüne kum kaçtığı belirtilen ve blefarospazmı olan bu çocukta ilk aşamada en uygun muayene yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Taşikardiyi hızla kırmak amacıyla ritmi ve hemodinamiyi hiç değerlendirmeden bilateral karotis sinüs masajı ve orbital bası uygulamak",
+                        "text": "Blefarospazmı aşmak için göz kapaklarını ekartörle zorlayarak aralamak ve kornea yüzeyini steril kuru gazlı bezle silerek temizlemek",
                         "is_correct": False,
-                        "scenario_update": "Bilateral karotis ve orbital bası ağrıyı ve ajitasyonu artırdı; taşikardide hiçbir düzelme olmadı ve vagal manevra başarısız kaldı.",
-                        "teaching_point": "Pediatrik yaş grubunda orbital bası retina dekolmanı riski nedeniyle kesinlikle kontrendikedir; ritim tipi bilinmeden körlemesine vagal manevra yapılmamalıdır.",
+                        "scenario_update": "Kuru gazlı bezle mekanik silme girişimi kornea yüzeyel dokusunda ek mikrotravmaya ve çocuğun şiddetli ağlamasına neden oldu.",
+                        "teaching_point": "Göz yüzeyi asla kuru gazlı bezle silinmemelidir; kornea epitel bütünlüğünü korumak için nazik irrigasyon ve dikkatli inspeksiyon esastır.",
                     },
                     {
-                        "text": "Hastayı monitörize edip damar yolu açmak, kan basıncı, bilinç durumu ve periferik perfüzyon ile ritmi değerlendirmek",
+                        "text": "Ayrıntılı ön segment muayenesini yapmadan önce hastaya ağrıyı kesmesi için eve reçete edilmek üzere topikal proparakain damlatmak",
+                        "is_correct": False,
+                        "scenario_update": "Muayene tamamlanmadan damla verilmesi semptomları maskeledi; topikal anesteziklerin kontrolsüz kullanımı ciddi toksik keratit riski taşır.",
+                        "teaching_point": "Topikal anestezikler yalnızca hekim gözetiminde tanısal amaçla tek doz uygulanabilir; evde analjezik amaçlı kullanımı kesinlikle kontrendikedir.",
+                    },
+                    {
+                        "text": "Göz kapaklarını muayene etmeksizin penetran göz yaralanması şüphesiyle çocuğu hiçbir işlem yapmadan doğrudan cerrahi ameliyathaneye sevk etmek",
+                        "is_correct": False,
+                        "scenario_update": "Basit kum teması olan çocuk gereksiz cerrahi hazırlığa alındı; ön segment ve kapak değerlendirmesi yapılmadığı için süreç aksadı.",
+                        "teaching_point": "Öyküde künt veya penetran delici yaralanma mekanizması yoksa, gereksiz sevk öncesinde standart acil ön segment muayenesi tamamlanmalıdır.",
+                    },
+                    {
+                        "text": "Görme keskinliğini değerlendirmek, tek damla anestezik sonrası kapakları evert ederek fornikslerde saklı partikülleri serum fizyolojikle yıkamak",
                         "is_correct": True,
-                        "explanation": "Taşiaritmi ile başvuran hastada ilk adım hastanın hemodinamik stabilitesini (bilinç, tansiyon, perfüzyon) belirlemek ve kardiyak monitörizasyonu sağlamaktır.",
-                        "new_finding": "Vital bulgular: Bilinç açık ve koopere, KTA 190/dk (düzenli), SS 22/dk, TA 95/62 mmHg, SpO2 %98, CRT 2 saniye. Periferik nabızlar zayıflamış ancak net alınıyor. Kardiyak muayenede taşikardi dışında üfürüm yok, akciğer sesleri doğal, periferik ödem veya hepatomegali saptanmadı. Hasta normotansif ve hemodinamik olarak stabildir.",
-                    },
-                    {
-                        "text": "Hastanın bilinci açık ve genel durumu iyi olduğu için sakinleştirici oral sedatif vererek karanlık bir odada dinlendirmek",
-                        "is_correct": False,
-                        "scenario_update": "Dinlenmeyle taşikardi gerilemedi, hasta göğüs ağrısı ve aşırı halsizlik hissetmeye devam etti.",
-                        "teaching_point": "Dakikada 190 atımlı taşikardiler primer aritmik patolojilerdir; dinlenme veya sedasyonla düzelmez, acil tanısal elektrokardiyografi gerektirir.",
-                    },
-                    {
-                        "text": "Taşikardik her ritim bozukluğunda ilk basamak olan hızlı intravenöz puşe adenozin uygulaması için defibrilatörsüz acil hazırlık yapmak",
-                        "is_correct": False,
-                        "scenario_update": "Ritim tipi ve QRS morfolojisi incelenmeden hazırlanan puşe adenozin yaklaşımı, olası ventriküler aritmilerde dekompanzasyon riskini artırdı.",
-                        "teaching_point": "Ritim tipi elektrokardiyografi ile analiz edilmeden ve defibrilasyon hazırlığı tamamlanmadan körlemesine adenozin puşesi uygulanması tehlikelidir.",
+                        "explanation": "Şiddetli blefarospazmda tek damla anestezik muayeneyi kolaylaştırır; kapak eversiyonu fornikste gizli yabancı cisimleri temizlemek için zorunludur.",
+                        "new_finding": "Görme keskinliği sol gözde 10/10, sağ gözde fotofobi nedeniyle 8/10. Sağ gözde siliyer ve konjonktival hiperemi mevcut, ön kamara derinliği normal, hifema yok, pupil ışık refleksleri doğal. Üst ve alt göz kapakları evert edilerek forniksler serum fizyolojikle yıkandı; konjonktivada kalıcı yabancı cisim veya çapak izlenmedi.",
                     },
                 ],
             },
             {
-                "stage_title": "On İki Derivasyonlu Elektrokardiyografi ve Ritim Analizi",
-                "question": "Hemodinamisi stabil olan ancak belirgin taşikardisi devam eden bu hastada tanısal ritim analizi için ne yapılmalıdır?",
+                "stage_title": "Tetkik ve İleri İnceleme Kararı",
+                "question": "Forniksleri yıkanan ancak kornea yüzeyinde batması devam eden bu çocukta epitel bütünlüğünü değerlendirmek için en uygun adım hangisidir?",
                 "options": [
                     {
-                        "text": "Acil on iki derivasyonlu elektrokardiyografiyle ventriküler aktivasyon süresini, atriyoventriküler ilişkiyi ve füzyon vuruşlarını analiz etmek",
+                        "text": "Göz küresi bütünlüğünü ve intraoküler yabancı cisim varlığını değerlendirmek amacıyla acil bilgisayarlı orbita ve kafa tomografisi çektirmek",
+                        "is_correct": False,
+                        "scenario_update": "Yüzeyel toz teması olan hastaya çekilen orbita tomografisi normal sonuçlandı; çocuk gereksiz iyonizan radyasyon almış oldu.",
+                        "teaching_point": "Metalik veya yüksek enerjili delici yabancı cisim şüphesi bulunmayan yüzeyel irritasyon olgularında bilgisayarlı tomografi endike değildir.",
+                    },
+                    {
+                        "text": "Vital boyama stripi uygulayarak biyomikroskop veya oftalmoskop altında kobalt mavisi filtreli ışıkla kornea epitel yüzeyini incelemek",
                         "is_correct": True,
-                        "explanation": "Taşiaritmilerde kesin tanı 12 derivasyonlu elektrokardiyografi ile konur; QRS süresi, AV dissosiasyon ve füzyon vuruşları ayırıcı tanıda anahtardır.",
-                        "new_finding": "12 Derivasyonlu EKG: Düzenli ritim, kalp tepe atımı 192/dk, QRS süresi 120 milisaniye (yaşa göre uzamış / >0.10 sn), P dalgaları ile QRS arasında bağımsızlık (belirgin atriyoventriküler dissosiasyon), aralarda yakalama ve füzyon vuruları izlendi.",
+                        "explanation": "Kobalt mavisi ışık altında vital boyama epitel defektlerini net olarak görünür kılar ve perforasyon bulgusu olan Seidel testine olanak tanır.",
+                        "new_finding": "Kobalt mavisi ışık altında kornea alt-orta kadranda yüzeyel epitel defektiyle uyumlu parlak yeşil boyanma izlendi. Ön kamara derinliği doğal, Seidel testi negatif (aköz sızıntısı yok).",
+                        "image": "assets/images/corneal_abrasion.png",
+                        "image_caption": "Korneal Flöresein İncelemesi: Kornea yüzeyinde lineer epitel abrazyonu",
                     },
                     {
-                        "text": "Elektrokardiyografi çekmeden önce ritmi sonlandırmak amacıyla hastaya derin nefes aldırıp ıkındırarak arka arkaya vagal manevralar denemek",
+                        "text": "Olası fungal veya bakteriyel keratitleri erkenden tespit etmek için kornea yüzeyinden bistüri ucuyla kazıntı alıp mikrobiyolojiye göndermek",
                         "is_correct": False,
-                        "scenario_update": "Tekrarlanan vagal manevralar taşikardi hızını veya ritmini değiştirmedi, hastanın göğüs kafesindeki sıkıntı hissi devam etti.",
-                        "teaching_point": "Ventriküler kökenli taşiaritmiler atriyoventriküler nodu içermediği için vagal manevralara yanıt vermez; zaman kaybetmeden EKG çekilmelidir.",
+                        "scenario_update": "Akut travmatik yüzeyel defekti olan çocukta korneal kazıntı uygulanması ağrıyı artırdı ve iyileşme sürecini geciktirerek lezyonu derinleştirdi.",
+                        "teaching_point": "İnfiltrat veya ülser tablosu olmayan akut travmatik epitel hasarlarında kornea kazıntısı yapılmaz; epitel rejenerasyonuna zarar verir.",
                     },
                     {
-                        "text": "Yalnızca tek derivasyonlu monitör şeridi izleyerek kardiyak enzim ve elektrolit sonuçları çıkana kadar hiçbir girişim yapmamak",
+                        "text": "Korneal lezyonu doğrulamak amacıyla ultrasonik pakimetri ile kornea kalınlığını ve endotel hücre yoğunluğunu acil serviste cihazla ölçmek",
                         "is_correct": False,
-                        "scenario_update": "Tek derivasyonda P dalgaları ve füzyon vuruları ayırt edilemedi, ritmin mekanizması aydınlatılamadığı için tanısal süreç kilitlendi.",
-                        "teaching_point": "Taşiaritmilerin ayırıcı tanısında tek derivasyonlu monitör şeridi yetersizdir; AV dissosiasyon ve QRS morfolojisi için tam 12 derivasyonlu EKG şarttır.",
-                    },
-                    {
-                        "text": "Ritim bozukluğunun olası intrakranial nedenlerini dışlamak amacıyla elektrokardiyografiyi erteleyip acil beyin manyetik rezonans görüntüleme istemek",
-                        "is_correct": False,
-                        "scenario_update": "Radyoloji hazırlığı esnasında EKG çekimi gecikti ve hastanın kardiyak dekompanzasyon riski arttı.",
-                        "teaching_point": "Taşikardi ile başvuran hastada ilk ve en acil tanı aracı elektrokardiyografidir; beyin görüntülemelerinin acil ritim tanısında yeri yoktur.",
+                        "scenario_update": "Pakimetri probunun korneaya teması çocukta yoğun batmaya ve iritasyona yol açtı, yüzey hasarının genişlemesine sebep oldu.",
+                        "teaching_point": "Ultrasonik pakimetri veya endotel mikroskopisi akut yüzey epitel defektlerinin acil yönetiminde yeri olmayan elektif oftalmolojik incelemelerdir.",
                     },
                 ],
             },
             {
-                "stage_title": "Elektrokardiyografik Bulgularla Kesin Tanı",
-                "question": "EKG'de QRS süresi >0.10 sn, AV dissosiasyon ve füzyon vuruşları saptanan stabil hastada kesin tanınız nedir?",
+                "stage_title": "Klinik Tanı",
+                "question": "Vital boyama altında korneada yeşil renkli lineer epitel defekti saptanan bu hastada en olası klinik tanı nedir?",
                 "options": [
                     {
-                        "text": "Dar QRS supraventriküler taşikardi",
+                        "text": "Bakteriyel Kornea Ülseri",
                         "is_correct": False,
-                        "scenario_update": "SVT'de QRS süresi normaldir (<0.09 sn) ve genellikle AV dissosiasyon veya füzyon vuruları görülmez.",
-                        "teaching_point": "QRS süresi uzamış taşikardilerde AV dissosiasyon ve füzyon vurularının varlığı SVT'yi dışlar.",
+                        "scenario_update": "Kornea ülserinde (mikrobik keratit) beklenen stromal beyaz infiltrat, ön kamarada hipopiyon ve çevre dokuda yoğun nekroz hastada yoktu.",
+                        "teaching_point": "Bakteriyel keratitte stromal infiltrasyon ve pürülan eksüda görülür; akut travmatik yüzeyel abrazyonda ise stroma saydamdır.",
                     },
                     {
-                        "text": "Aberran iletili sinüs taşikardisi",
+                        "text": "Akut Ön Üveit",
                         "is_correct": False,
-                        "scenario_update": "Sinüs taşikardisinde her QRS öncesinde normal P dalgası bulunur ve hız genellikle yaşa bağlı fizyolojik sınırlardadır.",
-                        "teaching_point": "Hızın 190/dk olması, AV dissosiasyon bulunması sinüs taşikardisi ile bağdaşmaz.",
+                        "scenario_update": "Ön üveitte görülen siliyer kızarıklık, ön kamara hücresi (tyndall), miyotik ve düzensiz pupil gibi bulgular hastada mevcut değildi.",
+                        "teaching_point": "Ön üveit intraoküler inflamasyondur; kornea epitel defekti ve vital boya tutulumu üveitin primer bir bulgusu değildir.",
                     },
                     {
-                        "text": "Ortodromik atriyoventriküler reentran taşikardi",
-                        "is_correct": False,
-                        "scenario_update": "Ortodromik AVRT'de antegrad ileti AV noddan geçtiği için QRS kompleksi dar ve normal morfolojidedir.",
-                        "teaching_point": "Uzamış QRS ve AV dissosiasyon ortodromik AVRT tablosuyla uyumsuzdur.",
-                    },
-                    {
-                        "text": "Hemodinamik stabil ventriküler taşikardi",
+                        "text": "Korneal Abrazyon",
                         "is_correct": True,
-                        "explanation": "QRS süresinin uzamış olması (>0.10 sn), atriyoventriküler dissosiasyon ve füzyon vuruşları ventriküler taşikardi için tanı koydurucudur; normotansif olması stabil olduğunu gösterir.",
-                        "new_finding": "Kesin tanı: Hemodinamik olarak stabil monomorfik ventriküler taşikardi.",
+                        "explanation": "Toz kaçması öyküsü, ani batma, fotofobi ve vital boyamada yüzeyel epitel defekti görülmesi korneal abrazyon için tanı koydurucudur.",
+                        "new_finding": "Klinik tanı Korneal Abrazyon (Yüzeyel Epitel Defekti) olarak kesinleştirildi.",
+                    },
+                    {
+                        "text": "Akut Açı Kapanması Glokomu",
+                        "is_correct": False,
+                        "scenario_update": "Glokom krizinde izlenen fikse dilate pupil, sığ ön kamara, tahta sertliğinde göz küresi ve kornea epitel ödemi hastada yoktu.",
+                        "teaching_point": "Akut glokom çocuklarda son derece nadirdir ve yüksek göz içi basıncıyla seyreder; yüzeyel lineer epitel defekti oluşturmaz.",
                     },
                 ],
             },
             {
-                "stage_title": "Stabil Taşiaritminin Farmakolojik Tedavisi ve Yönetimi",
-                "question": "Bilinci açık, normotansif ve hemodinamik olarak stabil ventriküler taşikardi saptanan 8 yaşındaki bu hastada en uygun tedavi yaklaşımı nedir?",
+                "stage_title": "Tedavi ve Taburculuk Protokolü",
+                "question": "Korneal abrazyon tanısı alan bu hastanın acil servis tedavisi ve taburculuk planı aşağıdakilerden hangisi olmalıdır?",
                 "options": [
                     {
-                        "text": "Bilinci açık hastaya yeterli sedoanaljezi uygulamadan derhal iki yüz joule asenkron defibrilasyon şoku vererek ritmi sonlandırmak",
-                        "is_correct": False,
-                        "scenario_update": "Stabil hastaya sedasyonsuz ve asenkron yüksek doz şok verilmesi ağır miyokardiyal travma, ağrı ve ventriküler fibrilasyon tetikledi.",
-                        "teaching_point": "Defibrilasyon yalnızca nabızsız VT veya ventriküler fibrilasyonda uygulanır; stabil hastada acil şok endikasyonu yoktur, antiaritmik infüzyon gerekir.",
-                    },
-                    {
-                        "text": "Ritmi düzeltmek amacıyla arka arkaya üç kez hızlı puşe intravenöz adenozin uygulayıp hastayı servise taburcu etmek",
-                        "is_correct": False,
-                        "scenario_update": "Adenozin ventriküler kaynaklı taşikardiyi sonlandırmadı, geçici bradikardi ve hipotansiyon atağına yol açtı.",
-                        "teaching_point": "Adenozin AV nod bağımlı SVT'lerde etkilidir; ventriküler taşikardilerde tedavi edici değildir ve hastayı instabil hale getirebilir.",
-                    },
-                    {
-                        "text": "Senkronize kardiyoversiyon hazırlığı eşliğinde intravenöz amiodaron infüzyonu başlayarak hastayı çocuk kardiyoloji yoğun bakım ünitesinde izlemek",
+                        "text": "Topikal profilaktik antibiyotik damla, oral analjezik reçete edip, gözü kesinlikle kapatmayarak ertesi gün kontrole çağırmak",
                         "is_correct": True,
-                        "explanation": "Hemodinamik olarak stabil ventriküler taşikardide ilk basamak farmakolojik kardiyoversiyondur (İV amiodaron 5 mg/kg, 20-60 dakikada); olası dekompanzasyon için kardiyoversiyon hazır tutulmalıdır.",
-                        "new_finding": "Amiodaron infüzyonunun 35. dakikasında ritim sinüse döndü (KTA 94/dk, dar QRS). Çocuk kardiyoloji yoğun bakım ünitesinde sürekli monitörizasyona alındı.",
+                        "explanation": "Topikal antibiyotik sekonder enfeksiyonu önler; gözün kapatılmaması (oklüzyon yapılmaması) epitelin oksijenlenmesini ve hızla iyileşmesini sağlar.",
+                        "new_finding": "Hastaya topikal tobramisin damla ve oral analjezik başlandı; gözün kapatılmaması gerektiği tembihlendi ve ertesi gün kontrolü planlandı.",
                     },
                     {
-                        "text": "Hastayı monitörden ayırıp oral digoksin tedavisi başlayarak ertesi gün çocuk kardiyoloji poliklinik kontrolüne gelmek üzere taburcu etmek",
+                        "text": "Ağrıyı dindirmek amacıyla göze kırk sekiz saat sıkı basılı göz bandajı uygulayıp antibiyotiksiz şekilde evine göndermek",
                         "is_correct": False,
-                        "scenario_update": "Monitörden ayrılan hastada ventriküler taşikardi dekompanse olarak senkop ve hipotansif şok gelişti.",
-                        "teaching_point": "Ventriküler taşikardili hiçbir hasta acil servisten oral ilaçla taburcu edilemez; yoğun bakımda sürekli ritim takibi zorunludur.",
+                        "scenario_update": "Gözün kapatılması kornea yüzeyinde hipoksiye yol açarak epitel iyileşmesini geciktirdi ve bakteriyel süperenfeksiyon riskini belirgin şekilde artırdı.",
+                        "teaching_point": "Güncel rehberlere göre korneal abrazyonlarda gözün kapatılması (patching) iyileşmeyi hızlandırmaz, ağrıyı azaltmaz ve enfeksiyon riskini artırır.",
+                    },
+                    {
+                        "text": "Hastanın göz ağrısı oldukça evde kendi kendine damlatması için topikal proparakain içeren lokal anestezik damlayı reçete etmek",
+                        "is_correct": False,
+                        "scenario_update": "Evde kontrolsüz anestezik kullanan hastada kornea epitel rejenerasyonu durdu ve toksik keratite bağlı kalıcı korneal opasite gelişti.",
+                        "teaching_point": "Topikal anesteziklerin reçete edilmesi kornea epitel hücre toksisitesi, kalıcı erozyon ve korneal perforasyon riski nedeniyle kesinlikle kontrendikedir.",
+                    },
+                    {
+                        "text": "Korneadaki reaktif inflamasyonu hızla baskılamak amacıyla topikal deksametazon içeren kortikosteroidli göz damlasını bir hafta boyunca günde altı kez uygulamak",
+                        "is_correct": False,
+                        "scenario_update": "Steroid damla lokal immün yanıtı baskılayarak epitel defektinin derinleşmesine ve sekonder bakteriyel keratit gelişmesine yol açtı.",
+                        "teaching_point": "Epitel defekti varlığında topikal steroid kullanımı enfeksiyonu alevlendirir, yara iyileşmesini bozar ve korneal erimeye neden olabilir.",
                     },
                 ],
             },
@@ -586,144 +596,148 @@ CASES = [
     },
     {
         "id": "Y35",
-        "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
-        "age": "9 Yaş",
-        "gender": "Erkek",
-        "complaint": "Gezici eklem ağrısı, diz ve ayak bileğinde şişlik, kızarıklık, subfebril ateş ve halsizlik",
+        "category": "🧠 Nörolojik Belirtiler & Konvülziyon",
+        "age": "2 Aylık",
+        "gender": "Kız",
+        "complaint": "Uykuya dalarken kollarda ve bacaklarda ani sıçrama ve titreme hareketleri",
         "history": (
-            "9 yaşındaki erkek çocuk ailesi tarafından eklem şişlikleri nedeniyle Sarı Alana getiriliyor: "
-            "'Üç hafta önce şiddetli boğaz ağrısı ve yüksek ateşi olmuştu, doktora götürmedik ve kendiliğinden geçmişti. "
-            "Dört gün önce sağ dizi aniden şişti, kızardı ve dokununca şiddetli ağrıyordu. İki gün sonra sağ dizi hafiflerken "
-            "bu kez sol ayak bileği şişti ve basamaz hale geldi. Çocuğumuz aşırı halsiz ve çabuk yoruluyor.'"
+            "İki aylık kız bebek, anne ve babası tarafından uykuya dalma esnasında kollarında ve bacaklarında "
+            "ortaya çıkan tekrarlayıcı, hızlı, sıçrama ve atma benzeri hareketler nedeniyle panik halinde acil servise "
+            "getirildi. Ailesi bu hareketlerin yaklaşık bir haftadır özellikle gece uykuya dalarken ve hafif uykuda fark "
+            "edildiğini, günde birkaç kez 15-30 saniye sürdüğünü ve nöbet geçirdiğinden korktuklarını ifade ediyor. "
+            "Anne, bebeğe dokunup uyandırdıklarında veya sıçrayan kolunu/bacağını nazikçe tuttuklarında hareketlerin "
+            "hemen durduğunu fark ettiklerini belirtiyor. Uyanıkken bebeğin hareketleri, etrafa ilgisi, gülümsemesi ve "
+            "anne sütüyle emmesi tamamen normaldir; ateş, kusma, kafa travması veya ailede erken yaşta epilepsi öyküsü yoktur."
         ),
-        "final_diagnosis": "Akut Romatizmal Ateş (Kardit ve Gezici Poliartrit / Jones Kriterleri)",
-        "disposition": "Sarı Alanda İV Damar Yolu + Yatak İstirahati + Oral Penisilin V / Benzatin Penisilin G + Antiinflamatuar Tedavi + Çocuk Kardiyoloji ve Romatoloji Servisine Yatış",
+        "final_diagnosis": "Yenidoğanın / İnfantın Selim Uyku Miyoklonusu (Benign Sleep Myoclonus)",
+        "disposition": "Yeşil Alandan Aileye Ayrıntılı Bilgilendirme ve Güvence Verilerek İlaçsız Taburculuk",
         "case_pearl": (
-            "Akut romatizmal ateş (ARA), tedavi edilmemiş A Grubu Beta-Hemolitik Streptokok (AGBHS) farenjitinden 2-4 hafta sonra gelişen "
-            "sistemik otoimmün bir tablodur. Tanı revize Jones kriterlerine dayanır: Geçirilmiş streptokok enfeksiyonu kanıtı (ASO yüksekliği veya "
-            "pozitif boğaz kültürü) eşliğinde 2 majör veya 1 majör + 2 minör kriter gereklidir. Majör kriterler: Gezici poliartrit, kardit "
-            "(en sık mitral kapak yetersizliği), Sydenham koresi, eritema marjinatum ve subkutan nodüllerdir. Minör kriterler: Ateş, artralji, "
-            "yüksek ESH/CRP ve EKG'de uzamış PR intervalidir (1. derece AV blok). Tedavide streptokok eradikasyonu (benzatin penisilin veya oral penisilin), "
-            "kardit ve artrit için antiinflamatuar tedavi (aspirin veya steroid) ve sekonder profilaksi esastır."
+            "Yenidoğanın ve infantın selim uyku miyoklonusu, yalnızca uyku sırasında (özellikle Non-REM uykusunda) "
+            "ortaya çıkan, ritmik veya aritmik hızlı sıçramalarla karakterize tamamen fizyolojik ve geçici bir tablodur. "
+            "En kritik tanısal ve ayırt edici özelliği: Bebek uyandırıldığında veya sıçrayan ekstremite nazikçe tutulduğunda "
+            "hareketlerin anında sonlanmasıdır (epileptik nöbetlerde ekstremiteyi tutmak veya uyandırmak hareketi durdurmaz). "
+            "Uyanıkken nörolojik muayene ve gelişim tamamen normaldir, EEG negatiftir. Antiepileptik tedavi kesinlikle "
+            "kontrendikedir (fenobarbital veya benzodiazepinler tabloyu kötüleştirebilir). Genellikle yaşamın ilk 6 ayı "
+            "içinde kendiliğinden tamamen kaybolur."
         ),
         "steps": [
             {
-                "stage_title": "Sarı Alanda Gezici Artritli Hastaya İlk Yaklaşım",
-                "question": "Üç hafta önceki farenjit sonrası gezici eklem tutulumu gelişen 9 yaşındaki çocukta ilk muayene önceliğiniz ne olmalıdır?",
+                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
+                "question": "Uyku sırasında sıçrama şikayetiyle getirilen bu bebekte patolojiyi aydınlatmak için en uygun ilk klinik yaklaşım hangisidir?",
                 "options": [
                     {
-                        "text": "Eklem şişliğini primer septik artrit kabul ederek eklemi aspire edip acil cerrahi artrotomi için ortopediye devretmek",
+                        "text": "Ailenin video kaydını ve öyküyü dinlemeksizin bebeği hızla solunum arresti riskiyle entübasyon hazırlığı yaparak resüsitasyon odasına almak",
                         "is_correct": False,
-                        "scenario_update": "Eklem aspirasyonunda pürülan mayi gelmedi; gereksiz invaziv artrotomi girişimi gezici karakterdeki sistemik inflamasyonu aydınlatamadı.",
-                        "teaching_point": "Gezici karakterdeki poliartritlerde tek ekleme odaklanıp cerrahi artrotomi yapmak hatalıdır; sistemik ve kardiyovasküler muayene önceliklidir.",
+                        "scenario_update": "Genel durumu mükemmel, pembe ve spontan soluyan bebekte agresif resüsitasyon hazırlığı ailede yoğun panik ve travmaya yol açtı.",
+                        "teaching_point": "Uyanıkken tamamen normal, vital bulguları stabil ve aktif sıkıntısı olmayan bebeklerde gereksiz invaziv resüsitatif yaklaşımlardan kaçınılmalıdır.",
                     },
                     {
-                        "text": "Yalnızca eklem ultrasonografisi isteyerek kardiyovasküler oskültasyon yapmadan yüksek doz intramüsküler analjezik uygulayıp hastayı yatakta dinlendirmek",
-                        "is_correct": False,
-                        "scenario_update": "Analjezik ağrıyı geçici azalttı ancak kardiyak oskültasyon yapılmadığı için apeksteki belirgin pansistolik üfürüm gözden kaçırıldı.",
-                        "teaching_point": "Geçirilmiş farenjit ve gezici artrit öyküsünde kardiyak oskültasyon hayatidir; kardit bulguları atlanmamalıdır.",
-                    },
-                    {
-                        "text": "Geçirilmiş farenjit öyküsünü göz ardı edip travmatik bağ yaralanması ön tanısıyla bilateral alt ekstremiteye alçı uygulamak",
-                        "is_correct": False,
-                        "scenario_update": "Alçı tespiti uygulanan eklemde enflamasyon ve ısı artışı devam etti, sistemik hastalık tablosu ilerledi.",
-                        "teaching_point": "Travma öyküsü olmayan, bir eklemden diğerine göç eden artrit tablosunda ortopedik immobilizasyon değil sistemik etiyoloji araştırılmalıdır.",
-                    },
-                    {
-                        "text": "Eklem bulgularını değerlendirirken kalp seslerini dikkatle oskülte ederek apekste pansistolik üfürüm ve kapak disfonksiyonunu araştırmak",
+                        "text": "Vital bulguları, uyanıkken nörolojik muayeneyi, primitif refleksleri değerlendirmek ve uykudaki hareketlerin ekstremiteyi tutmakla durup durmadığını sorgulamak",
                         "is_correct": True,
-                        "explanation": "Geçirilmiş farenjit sonrası gezici poliartrit tablosunda subklinik veya klinik kardit gelişimini saptamak için kardiyak oskültasyon zorunludur.",
-                        "new_finding": "Vital bulgular: Ateş 38.3°C, KTA 110/dk, SS 20/dk, TA 105/65 mmHg. Sol ayak bileğinde belirgin eritem, şişlik, sıcaklık artışı ve hareket kısıtlılığı mevcut; sağ dizde hafif hassasiyet izlendi. Kardiyak oskültasyonda apekste aksillaya yayılan 3/6 pansistolik üfürüm duyuldu, S3 veya perikardiyal frotman yok. Ciltte döküntü veya subkutan nodül saptanmadı.",
+                        "explanation": "Uyanıkken nörolojik normallik ve hareketlerin ekstremite nazikçe tutulduğunda veya uyandığında anında durması fizyolojik ve epileptik olmayan ayrımında anahtardır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 128/dk, SS 34/dk, SpO2 %99, Kan Şekeri 94 mg/dL. Genel durum çok iyi, etrafla ilgili, aktif hareketli. Fontanel normal bombelikte, baş çevresi persentili %50. Nörolojik muayenede kas tonusu, derin tendon refleksleri, Moro, yakalama ve emme refleksleri tamamen fizyolojik. Ailenin telefonla çektiği video izlendiğinde uykuya dalarken bilateral kollarda senkron ve asenkron ritmik sıçramalar izlendi; anne kolu tuttuğunda hareketin derhal durduğu görüldü.",
+                    },
+                    {
+                        "text": "Hareketleri epileptik status olarak kabul edip damar yolu dahi açılmadan rektal diazepam uygulayarak nöroloji yoğun bakımına sevki başlatmak",
+                        "is_correct": False,
+                        "scenario_update": "Uykudan uyandırıldığında tamamen normal olan bebeğe gereksiz benzodiazepin uygulanması solunum depresyonuna ve sedasyona yol açtı.",
+                        "teaching_point": "Ekstremite tutulmasıyla duran ve uyanıkken görülmeyen hareketler epileptik değildir; gereksiz antiepileptik uygulanması zararlıdır.",
+                    },
+                    {
+                        "text": "Yalnızca kalp seslerini ve batın muayenesini yapıp nörolojik değerlendirmeyi ve hareketin videosunu incelemeyi sonraya ertelemek",
+                        "is_correct": False,
+                        "scenario_update": "Video kaydı incelenmediği ve nörolojik muayene yapılmadığı için paroksizmal hareketin karakteri ve epileptik olmayan doğası anlaşılamadı.",
+                        "teaching_point": "Paroksizmal motor olaylarda aile tarafından çekilen videolar ve ayrıntılı nörolojik muayene en değerli tanısal araçlardır.",
                     },
                 ],
             },
             {
-                "stage_title": "Laboratuvar Belirteçleri ve Kardiyak İnceleme",
-                "question": "Gezici eklem tutulumu ve mitral üfürüm saptanan bu hastada sistemik tutulumu netleştirecek tetkik planınız ne olmalıdır?",
+                "stage_title": "Tetkik ve Klinik Yaklaşım Stratejisi",
+                "question": "Uyanıkken nörolojik muayenesi tamamen doğal olan ve tutmakla duran sıçramaları bulunan bu bebekte en uygun inceleme yaklaşımı hangisidir?",
                 "options": [
                     {
-                        "text": "Gezici eklem tutulumunu aydınlatmak amacıyla her iki diz ve ayak bileğine kontrastlı manyetik rezonans görüntüleme tetkiki çekmek",
+                        "text": "Konvülziyon etiyolojisini ve santral sinir sistemi enfeksiyonlarını ekarte etmek amacıyla acil lomber ponksiyon yaparak beyin omurilik sıvısı incelemek",
                         "is_correct": False,
-                        "scenario_update": "Manyetik rezonansta eklem içi efüzyon ve sinovyal kalınlaşma dışında etiyolojik tanıya katkı sağlayan ek bilgi elde edilemedi.",
-                        "teaching_point": "Artrit tanısında eklem MRG rutin tetkik değildir; geçirilmiş streptokok enfeksiyonu ve kardiyak tutulumu göstermez.",
+                        "scenario_update": "Ateşi olmayan, uyanıkken aktif ve fontaneli sakin bebeğe invaziv lomber ponksiyon yapılması gereksiz komplikasyon riski yarattı.",
+                        "teaching_point": "Sistemik enfeksiyon bulgusu, ateşi veya nörolojik defisiti olmayan, fizyolojik hareket özellikleri taşıyan bebeklerde lomber ponksiyon endike değildir.",
                     },
                     {
-                        "text": "Sistemik etiyolojiyi araştırmadan yalnızca serum kan glukozu ve böbrek fonksiyon testleri isteyerek hastayı gözlemde tutmak",
+                        "text": "İntrakraniyal yapısal anomali veya kanamayı dışlamak amacıyla acil serviste genel anestezi altında kontrastlı kranial manyetik rezonans görüntüleme istemek",
                         "is_correct": False,
-                        "scenario_update": "Böbrek testleri normal geldi ancak kardiyak kapak tutulumu ve streptokok belirteçleri araştırılmadığı için tanı gecikti.",
-                        "teaching_point": "Gezici artrit ve üfürüm tablosunda ASO, akut faz reaktifleri ve elektrokardiyografi istenmeden hasta bekletilemez.",
+                        "scenario_update": "İki aylık sağlıklı bebeğin sedasyon ve anestezi alarak MRG'ye girmesi solunum sekresyon artışına ve hastanede gereksiz kalışa yol açtı.",
+                        "teaching_point": "Fokal nörolojik bulgusu olmayan, baş çevresi ve nöromotor gelişimi normal bebeklerde acil kranial MRG gereksiz bir tetkiktir.",
                     },
                     {
-                        "text": "Streptokok belirteçleri, akut faz reaktifleri ve olası ileti bozukluklarını saptamak amacıyla elektrokardiyografi ile ekokardiyografi planlamak",
+                        "text": "Tipik klinik ve video özellikleri doğrultusunda acil invaziv tetkik veya görüntüleme yapmadan selim tabloyu açıklayıp izleme almak",
                         "is_correct": True,
-                        "explanation": "Tanı için geçirilmiş streptokok kanıtı (ASO), minör kriterler (ESH, CRP, uzamış PR) ve kardit kanıtı (ekokardiyografide kapak yetersizliği) gereklidir.",
-                        "new_finding": "Laboratuvar: ASO >800 IU/mL (normal <200), CRP 68 mg/L, ESH 75 mm/saat, Lökosit 13.600/mm³, Boğaz kültürü negatif. EKG: Sinüs ritmi, PR intervali 0.20 sn (yaşa göre uzamış, 1. derece AV blok). Ekokardiyografi: Mitral kapakta kalınlaşma, hafif-orta derecede mitral yetersizlik jeti saptandı; sol ventrikül fonksiyonları normal.",
+                        "explanation": "Öykü, tutulunca durma özelliği ve normal nörolojik muayene epileptik olmayan fizyolojik süreci gösterir; acil tetkik gerekmez.",
+                        "new_finding": "Tetkik istenmedi; paroksizmal olayın yalnızca uykuda ortaya çıkışı ve dokunmakla sonlanmasının selim fizyolojik bir motor fenomene işaret ettiği belirlendi.",
                     },
                     {
-                        "text": "Viral artrit düşüncesiyle hiçbir laboratuvar tetkiki istemeden hastaya yalnızca semptomatik lokal buz uygulaması ve istirahat önermek",
+                        "text": "Hemen acil 24 saatlik video-EEG monitorizasyonu başlatmak için bebeği üçüncü basamak epilepsi izlem merkezine yatış amacıyla sevk etmek",
                         "is_correct": False,
-                        "scenario_update": "Buz uygulamasıyla eklem ağrısı gerilemedi, üfürümün nedeni aydınlatılamadı ve kardiyak tutulum ilerleme riskiyle karşı karşıya kaldı.",
-                        "teaching_point": "Üfürüm eşlik eden gezici artritlerde viral etiyoloji varsayımıyla tetkiksiz izlem kabul edilemez; streptokok immünolojik yanıtı araştırılmalıdır.",
+                        "scenario_update": "Acil sevk edilen bebeğe yapılan rutin uyanıklık ve uyku kayıtlarında epileptiform deşarj saptanmadı; aile aşırı anksiyeteye sürüklendi.",
+                        "teaching_point": "Tipik benign tablolarda acil EEG şart değildir; gerek duyulursa elektif şartlarda poliklinik kontrolünde planlanabilir.",
                     },
                 ],
             },
             {
-                "stage_title": "Jones Kriterleri Işığında Kesin Tanı",
-                "question": "Belgelenmiş streptokok enfeksiyonu, kardit, gezici poliartrit, yüksek akut faz reaktifleri ve uzamış PR saptanan hastada kesin tanınız nedir?",
+                "stage_title": "Klinik Tanı",
+                "question": "Yalnızca uykuda beliren, tutmakla anında duran sıçramaları ve normal nörolojik muayenesi olan bu infantta en olası tanı nedir?",
                 "options": [
                     {
-                        "text": "Juvenil idiyopatik artrit",
-                        "is_correct": False,
-                        "scenario_update": "JİA'da artrit en az altı hafta sebat eder, gezici karakterde değildir ve geçirilmiş streptokok kanıtı veya PR uzaması beklenmez.",
-                        "teaching_point": "Kısa sürede eklem değiştiren gezici poliartrit ve kardit tablosu juvenil idiyopatik artritten ziyade akut romatizmal ateşe işaret eder.",
-                    },
-                    {
-                        "text": "Akut romatizmal ateş",
+                        "text": "Yenidoğanın Selim Uyku Miyoklonusu",
                         "is_correct": True,
-                        "explanation": "Yüksek ASO varlığında 2 majör kriter (kardit, gezici poliartrit) ve 2 minör kriter (ateş, uzamış PR, yüksek ESH/CRP) Jones kriterlerine göre kesin akut romatizmal ateş tanısı koydurur.",
-                        "new_finding": "Kesin tanı: Akut romatizmal ateş (mitral valvülit/kardit ve gezici poliartrit).",
+                        "explanation": "Yalnızca uykuda görülen, ekstremite tutulunca veya bebek uyanınca derhal duran ve nörolojik gelişimi etkilemeyen tablo selim uyku miyoklonusudur.",
+                        "new_finding": "Klinik tanı Yenidoğanın / İnfantın Selim Uyku Miyoklonusu (Benign Sleep Myoclonus) olarak kesinleşti.",
                     },
                     {
-                        "text": "Poststreptokoksik reaktif artrit",
+                        "text": "İnfantil Spazm Sendromu",
                         "is_correct": False,
-                        "scenario_update": "Poststreptokoksik reaktif artritte eklem tutulumu gezici değildir, aspirine dramatik yanıt vermez ve kardit veya EKG'de PR uzaması eşlik etmez.",
-                        "teaching_point": "Kardiyak valvülit ve PR uzaması varlığı tabloyu reaktif artritten ayırır, akut romatizmal ateşi kesinleştirir.",
+                        "scenario_update": "İnfantil spazmda (West sendromu) uyanırken kümelenen ani fleksiyon/ekstansiyon spazmları, hipsaritmi ve gelişimsel duraklama görülür.",
+                        "teaching_point": "İnfantil spazmlar uyanıkken kümeler halinde gelir, tutmakla durmaz ve ağır psikomotor gerileme ile EEG'de hipsaritmi eşlik eder.",
                     },
                     {
-                        "text": "Sistemik lupus eritematozus",
+                        "text": "Erken İnfantil Epileptik Ensefalopati",
                         "is_correct": False,
-                        "scenario_update": "SLE'de malar döküntü, fotosensitivite, böbrek tutulumu ve pozitif otoantikorlar (ANA, anti-dsDNA) beklenir; geçirilmiş streptokokla ilişkili değildir.",
-                        "teaching_point": "Ateş, kardit ve geçirilmiş streptokok farenjiti SLE'den ziyade romatizmal kardit tablosudur.",
+                        "scenario_update": "Ağır epileptik ensefalopatilerde bebeğin uyanıklığı bozuktur, hipotoni, emme güçlüğü ve tedaviye dirençli multifokal nöbetler mevcuttur.",
+                        "teaching_point": "Epileptik ensefalopatilerde ağır nörolojik bozukluk ve kesintisiz nöbet aktivitesi vardır; bu bebek uyanıkken tamamen sağlıklıdır.",
+                    },
+                    {
+                        "text": "Aşırı İrkilme Hastalığı",
+                        "is_correct": False,
+                        "scenario_update": "Hiperekplekside (aşırı irkilme) burun ucuna vurulduğunda uyanıkken abartılı irkilme ve yaygın hipertoni saptanır; bu hastada test negatiftir.",
+                        "teaching_point": "Hiperekpleksi dokunsal/işitsel uyaranla tetiklenen uyanıkken de olan şiddetli spazmdır; uykuda spontan oluşan izole sıçramalardan farklıdır.",
                     },
                 ],
             },
             {
-                "stage_title": "Eradikasyon, Antiinflamatuar Tedavi ve İzlem Planı",
-                "question": "Akut romatizmal ateş tanısı kesinleşen 9 yaşındaki bu hastanın medikal tedavisi ve hospitalizasyon yönetimi nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Aile Bilgilendirmesi",
+                "question": "Selim uyku miyoklonusu tanısı konulan 2 aylık bebeğin acil servis yönetimi ve taburculuk yaklaşımı nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Streptokok eradikasyonu için penisilin başlamak, antiinflamatuar tedavi planlayıp kardit izlemi amacıyla hastayı çocuk servisine yatırmak",
+                        "text": "Nöbetlerin tekrarlamasını engellemek amacıyla idame oral fenobarbital şurup tedavisi başlayıp bir ay sonra çocuk nörolojisi polikliniğine kontrole çağırmak",
+                        "is_correct": False,
+                        "scenario_update": "Başlanan fenobarbital miyoklonik hareketleri baskılamadığı gibi bebekte derin sedasyon, emme tembelliği ve solunum ritim bozukluğuna yol açtı.",
+                        "teaching_point": "Selim uyku miyoklonusunda antiepileptikler etkisizdir; hatta benzodiazepin ve fenobarbital hareketlerin sıklığını paradoksal olarak artırabilir.",
+                    },
+                    {
+                        "text": "Bebeğin uyku esnasında hipoksiye girebileceği endişesiyle aileye ev tipi kardiyopulmoner monitör cihazı reçete ederek hastaneye yatış planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Ev tipi monitör sürekli yalancı alarmlar vererek ailenin anksiyetesini ve tükenmişliğini artırdı; bebeğin uykusu gereksiz yere bölündü.",
+                        "teaching_point": "Bu durum solunum durması veya kardiyak aritmi yapmaz; ev monitörü endikasyonu yoktur ve ebeveyn kaygısını artırmaktan başka işe yaramaz.",
+                    },
+                    {
+                        "text": "İstemsiz kas spazmlarını çözmek amacıyla oral baklofen damla reçete ederek bebeği acil servisten herhangi bir takip önermeksizin taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Baklofen kullanımı iki aylık bebekte santral hipotoni ve letarji tablosu oluşturarak acil servise tekrar başvuruya neden oldu.",
+                        "teaching_point": "Fizyolojik ve selim olan bu durumda hiçbir kas gevşetici veya santral etkili ilacın yeri yoktur; ciddi yan etki doğurur.",
+                    },
+                    {
+                        "text": "İlaç vermeksizin aileyi tablonun selim ve geçici olduğu konusunda rahatlatıp rutin çocuk polikliniği takibiyle taburcu etmek",
                         "is_correct": True,
-                        "explanation": "Akut romatizmal ateşte yaklaşım streptokok eradikasyonu (benzatin penisilin G veya oral penisilin V), kardit/artrit için antiinflamatuar tedavi ve yatak istirahatidir.",
-                        "new_finding": "Tek doz intramüskler benzatin penisilin G yapıldı, antiinflamatuar tedavi ve yatak istirahati altında kardit izlemi için çocuk kardiyoloji servisine yatırıldı.",
-                    },
-                    {
-                        "text": "Kapak tutulumu saptandığı için hastayı derhal acil açık kalp ameliyatına alarak mekanik mitral kapak protezi takmak",
-                        "is_correct": False,
-                        "scenario_update": "Akut enflamasyon evresinde kapak dokuları frajildir; medikal tedavi denenmeden cerrahiye alınması ağır komplikasyonlara yol açar.",
-                        "teaching_point": "Akut romatizmal karditte öncelik cerrahi değil medikal antiinflamatuar tedavidir; cerrahi yalnızca dirençli ve medikal tedaviye yanıtsız akut kalp yetersizliğinde düşünülür.",
-                    },
-                    {
-                        "text": "Hiçbir medikal tedavi vermeden yalnızca mutlak yatak istirahati önererek hastayı doğrudan evine taburcu edip kontrole çağırmak",
-                        "is_correct": False,
-                        "scenario_update": "Tedavi edilmeyen hastada streptokok taşıyıcılığı devam etti, kapak tutulumu ilerleyerek kalıcı kronik romatizmal kapak hastalığına dönüştü.",
-                        "teaching_point": "Antibiyotik eradikasyonu ve antiinflamatuar tedavi yapılmaksızın taburculuk kabul edilemez; kalıcı kapak hasarı riski yüksektir.",
-                    },
-                    {
-                        "text": "Akut inflamasyonu baskılamak amacıyla yüksek doz intravenöz immünoglobulin infüzyonu uygulayıp başka hiçbir antibiyotik tedavisi vermemek",
-                        "is_correct": False,
-                        "scenario_update": "İntravenöz immünoglobulin romatizmal karditte kanıtlanmış etkinliğe sahip değildir ve streptokok eradikasyonunu sağlamadığı için enfeksiyon devam etti.",
-                        "teaching_point": "Akut romatizmal ateşte IVIG standart tedavi değildir; penisilin ile streptokok eradikasyonu ve antiinflamatuar tedavi şarttır.",
+                        "explanation": "Tablo fizyolojiktir, 6-12 ayda kendiliğinden geçer; aileye güvence vermek, uyanıkken nöbet veya gelişim geriliği olursa başvurmasını tembihlemek esastır.",
+                        "new_finding": "Aileye durumun selim doğası açıklandı, hareketlerin genellikle ilk 6 ayda kaybolacağı anlatıldı ve gereksiz ilaçtan kaçınılarak taburcu edildi.",
                     },
                 ],
             },

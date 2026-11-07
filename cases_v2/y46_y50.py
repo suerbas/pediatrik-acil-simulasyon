@@ -1,137 +1,137 @@
 # -*- coding: utf-8 -*-
 """
-Sarı Alan Vakaları - Y46-Y50 (v2 Şartnamesine Uygun Yeniden Yazım)
+Yeşil Alan Vakaları - Y46-Y50 (v2 Şartnamesine Uygun Yeniden Yazım)
 """
 
 CASES = [
     {
         "id": "Y46",
         "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
-        "age": "3 Yaşında",
+        "age": "4 Yaşında",
         "gender": "Kız",
-        "complaint": "Kanlı ishalin ardından başlayan aşırı halsizlik, solukluk, bacaklarda kırmızı noktalar ve idrar miktarında azalma",
-        "history": "Ailesi anlatıyor: 'Bir hafta önce kramp tarzında karın ağrısı ve kanlı ishali başladı, ateşi pek olmadı. Başka bir yerde oral antibiyotik verdiler. İki gündür ishali azaldı ama dünden beri bembeyaz oldu, bacaklarında küçük kırmızı-mor noktalar çıktı, gözlerinin çevresi şişti. Son 18 saattir bezi neredeyse kuru.' İshal başlamadan önce bir çiftlik ziyaretinde çiğ süt içmiş. Tartı: 14 kg.",
-        "final_diagnosis": "Tipik (STEC İlişkili) Hemolitik Üremik Sendrom",
-        "disposition": "Sarı Alanda Sıkı Sıvı Dengesi, Gereksiz Trombosit Transfüzyonundan Kaçınma, Antihipertansif Tedavi ve Diyaliz Hazırlığıyla Çocuk Nefroloji-Yoğun Bakım Yatışı",
-        "case_pearl": "Kanlı ishalden 5-10 gün sonra mikroanjiyopatik hemolitik anemi (şistositler, LDH artışı, Coombs negatif), trombositopeni ve akut böbrek hasarı tipik tablodur. Tedavi destekleyicidir: sıvı dengesi (insensibl kayıp + çıkış), hipertansiyon ve elektrolit kontrolü, gerekirse diyaliz. Trombosit transfüzyonu yalnızca aktif kanama veya invaziv işlem için yapılır. Antibiyotik, antimotilite ajanlar ve NSAİİ'lerden kaçınılır. Nörolojik tutulum yakından izlenir.",
+        "complaint": "İki haftadır geçmeyen kötü kokulu cıvık ishal, karında şişkinlik ve gaz sancısı",
+        "history": "Annesi anlatıyor: 'Yaklaşık iki hafta önce köydeki yazlıktan döndük, orada kuyu suyu içiyordu. Dönüşten birkaç gün sonra günde 3-4 kez açık renkli, çok kötü kokulu, köpüklü, yağlı gibi parlayan cıvık kaka yapmaya başladı. Kan görmedim. Karnı sürekli guruldıyor, çok geğiriyor, iştahı azaldı. Ateşi olmadı. Pantolonları bollaştı.' Kreşe gidiyor. Tartı: 15.5 kg (iki hafta önce 16 kg).",
+        "final_diagnosis": "Giardiyaz (Giardia duodenalis Enfeksiyonu)",
+        "disposition": "Yeşil Alandan Oral Metronidazol, Hijyen ve Su Güvenliği Eğitimi ile Ayaktan Taburculuk",
+        "case_pearl": "İki haftayı aşan, yağlı-köpüklü, kötü kokulu ishal, şişkinlik, geğirme ve kilo kaybı Giardia enfeksiyonunu düşündürür; kuyu suyu, kreş ve kamp öyküsü önemli ipuçlarıdır. Tanıda dışkı antijen testi veya PCR tek mikroskopiden daha duyarlıdır; mikroskopi seçilirse kistler aralıklı atıldığı için farklı günlerde 3 örnek incelenmelidir. Tedavide metronidazol 15 mg/kg/gün (3 dozda, 5-7 gün), tek doz tinidazol 50 mg/kg veya 3 gün nitazoksanid kullanılır; asemptomatik taşıyıcıların rutin tedavisi önerilmez.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Sıvı Durumu",
-                "question": "Kanlı ishal sonrası solukluk, peteşi, ödem ve idrar azalması olan bu 3 yaşındaki çocukta ilk değerlendirmede neye odaklanırsınız?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "İki haftadır yağlı görünümlü ishali ve kilo kaybı olan bu 4 yaşındaki kız çocuğunda ilk değerlendirmede neye odaklanırsınız?",
                 "options": [
                     {
-                        "text": "İdrar azlığını dehidratasyona bağlayıp kan basıncını ölçmeden 20 mL/kg serum fizyolojik bolusunu iki kez vermek ve idrar çıkışını beklemek",
+                        "text": "İshalin sürmesini laktoz intoleransı kabul ederek beslenme öyküsünü sorgulamak, süt ürünlerini kesip bir hafta sonra kontrole çağırmak",
                         "is_correct": False,
-                        "scenario_update": "İkinci bolus sonrası solunum hızı 40/dk'ya çıktı, oksijen satürasyonu %92'ye düştü; akciğerlerde yaygın raller duyuldu.",
-                        "teaching_point": "Ödemli, hipertansif ve oligürik çocukta sıvı yüklenmesi vardır; bolus tedavisi pulmoner ödeme yol açabilir."
+                        "scenario_update": "Süt ürünleri kesildi; bir hafta sonra ishal ve kilo kaybı devam ediyordu, etken araştırılmamıştı.",
+                        "teaching_point": "Sekonder laktoz intoleransı birçok enterik enfeksiyona eşlik edebilir; ancak altta yatan etken araştırılmadan diyet değişikliği tek başına yeterli değildir."
                     },
                     {
-                        "text": "Bacaklardaki peteşiler nedeniyle olası beyin içi kanama riskini önlemek için tetkik sonuçlarını beklemeden trombosit süspansiyonu istemek ve başlanan oral antibiyotiğe devam etmek",
+                        "text": "Uzamış ishali olan çocukta önce damar yolu açarak elektrolit, albümin ve tam kan sayımı almak, muayeneyi sonuçlar geldikten sonra tamamlamak",
                         "is_correct": False,
-                        "scenario_update": "Kanaması olmayan çocuğa trombosit verilmek üzereydi; değerlendirme yapılmadan transfüzyon istemi hematoloji tarafından durduruldu.",
-                        "teaching_point": "Peteşi tek başına transfüzyon endikasyonu değildir; önce tanı ve klinik değerlendirme gerekir."
+                        "scenario_update": "Elektrolitler ve albümin normal geldi; hidrasyonu iyi olan çocuğa gereksiz girişim yapıldı ve öykü eksik kaldı.",
+                        "teaching_point": "Hidrasyonu iyi, genel durumu iyi çocukta ilk adım öykü ve muayenedir; kan tetkikleri seçici istenir."
                     },
                     {
-                        "text": "Kan basıncını, ödem ve akciğer sesleriyle sıvı yükünü, perfüzyonu, bilinci ve kanama bulgularını değerlendirip kan şekeri ve idrar çıkışını izlemek",
+                        "text": "Uzamış ishal nedeniyle hidrasyon durumunu, büyüme eğrisini, karın distansiyonunu ve ödem-solukluk gibi malabsorpsiyon bulgularını değerlendirip ayrıntılı maruziyet öyküsü almak",
                         "is_correct": True,
-                        "explanation": "Oligürik akut böbrek hasarında çocuk dehidrate değil sıvı yüklü olabilir; sıvı tedavisi bu ayrıma göre belirlenir. Hipertansiyon ve bilinç değişikliği ciddi tutulum bulgularıdır.",
-                        "new_finding": "Vital Bulgular: Ateş 37.2°C, KTA 136/dk, SS 26/dk, TA 118/76 mmHg (yaşına göre yüksek), SpO2 %98, KDZ 2 sn. İleri derecede soluk, skleralar hafif ikterik. Göz kapaklarında ve pretibial bölgede gode bırakan ödem. Akciğerlerde bazalde hafif raller. Alt ekstremitelerde peteşiler, aktif kanama yok. Bilinç açık, irritabl. Kapiller kan şekeri 98 mg/dL. Mesane kateterinden 10 mL idrar geldi."
+                        "explanation": "İki haftayı aşan ishalde akut dehidratasyonun yanı sıra büyüme etkilenmesi ve malabsorpsiyon bulguları değerlendirilmelidir. Su kaynağı, seyahat, kreş ve hayvan teması gibi maruziyetler etiyolojiye yön verir.",
+                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 98/dk, SS 20/dk, TA 94/60 mmHg, KDZ 1.5 sn. Tartı 15.5 kg (iki haftada 500 g kayıp), boy persentili korunmuş. Hidrasyonu iyi. Karın hafif distandü, timpanik, periumbilikal hafif hassasiyet; defans yok. Bağırsak sesleri hiperaktif. Ödem, solukluk, ağız kenarında çatlak yok. Perianal bölge doğal."
                     },
                     {
-                        "text": "İshalin sürmemesi için loperamid başlamak, karın ağrısı için ibuprofen vermek ve ödem nedeniyle albümin infüzyonu planlamak",
+                        "text": "Karın distansiyonu nedeniyle cerrahi bir sorunu ekarte etmek için sağ alt kadranı ve rebound bulgusunu değerlendirip ayakta direkt batın grafisi planlamak",
                         "is_correct": False,
-                        "scenario_update": "İbuprofen böbrek fonksiyonunu daha da bozdu; antimotilite ajan ve albümin tabloyu kötüleştirdi.",
-                        "teaching_point": "Bu tabloda antimotilite ajanlar ve NSAİİ'ler kontrendikedir."
+                        "scenario_update": "Peritoneal bulgu saptanmadı. Grafide yaygın gaz distansiyonu görüldü ve non-spesifik olarak raporlandı; maruziyet öyküsü alınmadı.",
+                        "teaching_point": "Ateşsiz, iki haftalık yağlı ishal ve gaz şişkinliği cerrahi tablo düşündürmez; öykü ve malabsorpsiyon bulgularına odaklanılmalıdır."
                     }
                 ]
             },
             {
-                "stage_title": "Laboratuvar Değerlendirmesi",
-                "question": "Hipertansif, ödemli ve oligürik bu çocukta hangi tetkikler öncelikli olarak istenmelidir?",
+                "stage_title": "Tetkik Stratejisi",
+                "question": "Kuyu suyu maruziyeti olan, iki haftadır yağlı-köpüklü ishali süren bu çocukta en uygun tanısal yaklaşım hangisidir?",
                 "options": [
                     {
-                        "text": "Menenjit ve sepsisi dışlamak için kan kültürü alıp lomber ponksiyon yapmak, sonuçlar gelene kadar geniş spektrumlu antibiyotik başlamak",
-                        "is_correct": False,
-                        "scenario_update": "Trombositopenik çocukta lomber ponksiyon kanama riski taşıdı ve ertelendi; temel hematolojik ve renal tetkikler gecikti.",
-                        "teaching_point": "Bu tabloda öncelik hemoliz, trombositopeni ve böbrek fonksiyonunun değerlendirilmesidir."
-                    },
-                    {
-                        "text": "Hemogram, periferik yayma, LDH, direkt Coombs, böbrek fonksiyonları, elektrolitler, kan gazı, tam idrar ve dışkıda enterohemorajik E. coli tetkiki istemek",
+                        "text": "Dışkıda protozoon antijen testi istemek veya farklı günlerde alınan üç örnekte mikroskopik inceleme yapmak; kan tetkikini klinik gerektirmedikçe istememek",
                         "is_correct": True,
-                        "explanation": "Periferik yaymada şistositler, LDH artışı ve Coombs negatifliği mikroanjiyopatik hemolizi gösterir. Potasyum, asidoz ve üre diyaliz kararını etkiler. Dışkı kültürü ve toksin tetkiki etiyolojiyi doğrular.",
-                        "new_finding": "Hb 6.4 g/dL, lökosit 14.200/mm³, trombosit 36.000/mm³. Periferik yaymada bol şistosit, polikromazi. Retikülosit %6, LDH 1820 U/L, indirekt bilirubin 2.4 mg/dL, direkt Coombs negatif. BUN 138 mg/dL, kreatinin 2.7 mg/dL, K 5.9 mEq/L, Na 131 mEq/L, pH 7.28, HCO3 15 mmol/L. İdrarda hematüri ve proteinüri. Dışkı toksin PCR pozitif. PT ve aPTT normal."
+                        "explanation": "Uzamış yağlı ishal ve su maruziyetinde protozoon araştırması önceliklidir. Dışkı antijen testi veya PCR tek mikroskopiden duyarlıdır; mikroskopide kistler aralıklı atıldığından üç ayrı örnek incelenmelidir.",
+                        "new_finding": "Dışkı protozoon antijen testi pozitif. Mikroskopide armut biçimli, iki çekirdekli, hareketli kamçılı trofozoitler ve oval dört çekirdekli kistler görüldü; lökosit ve eritrosit yok. Gizli kan negatif."
                     },
                     {
-                        "text": "Solukluk ve peteşiler nedeniyle akut lösemi olasılığını düşünüp acil kemik iliği aspirasyonu planlamak ve sonuç çıkana kadar sıvı ve transfüzyon kararlarını ertelemek",
+                        "text": "Karın şişliği ve kilo kaybını değerlendirmek için batın ultrasonografisi ve tam kan sayımı isteyip dışkı incelemesini ultrason sonucuna göre planlamak",
                         "is_correct": False,
-                        "scenario_update": "Aspirasyon için sedasyon gerekti; bu sürede potasyum yükseldi ve sıvı dengesi yönetilmedi.",
-                        "teaching_point": "Periferik yayma çoğu zaman tanıyı yönlendirir; kemik iliği incelemesi atipik bulgularda düşünülür."
+                        "scenario_update": "Ultrasonografide sıvı dolu ince bağırsak ansları dışında bulgu yoktu; tam kan sayımı normaldi ve tablo aydınlatılamadı.",
+                        "teaching_point": "Uzamış ishalde görüntüleme etkeni göstermez; dışkı incelemesi ilk basamak tetkiktir."
                     },
                     {
-                        "text": "Kanlı ishal sonrası karın ağrısı nedeniyle kontrastlı batın bilgisayarlı tomografisi çekmek ve kolit komplikasyonlarını değerlendirmek",
+                        "text": "Dışkı kültürü göndermek ve sonuç gelene kadar ampirik oral siprofloksasin başlayarak bakteriyel etkenleri kapsamak, bir hafta sonra kontrole çağırmak",
                         "is_correct": False,
-                        "scenario_update": "Kontrast madde zaten bozulmuş böbrek fonksiyonunu daha da kötüleştirdi.",
-                        "teaching_point": "Akut böbrek hasarında nefrotoksik kontrast maddeden kaçınılmalıdır; karın bulgusu yoksa görüntüleme gerekmez."
+                        "scenario_update": "Dışkı kültüründe patojen üremedi. Antibiyotik sonrası ishal azalmadı; çocuk bir hafta sonra aynı şikayetlerle geldi.",
+                        "teaching_point": "Ateşsiz, kansız, yağlı uzamış ishalde bakteriyel etken olasılığı düşüktür; ampirik antibiyotik tanıyı geciktirir."
+                    },
+                    {
+                        "text": "Malabsorpsiyon nedeniyle doku transglutaminaz IgA, total IgA, ter testi ve dışkı elastaz düzeyini birlikte isteyip sonuçlara göre gastroenterolojiye yönlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "Serolojik testler ve elastaz normal geldi; ter testi için randevu verildi. Sonuçlar beklenirken ishal sürdü ve etken araştırılmadı.",
+                        "teaching_point": "Akut maruziyet sonrası başlayan iki haftalık ishalde kronik malabsorpsiyon taramasından önce enfeksiyöz etkenler araştırılmalıdır."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Kanlı ishal sonrası Coombs negatif hemolitik anemi, şistositler, trombositopeni ve akut böbrek hasarı olan bu çocukta tanı nedir?",
+                "question": "Kuyu suyu maruziyeti, yağlı-köpüklü uzamış ishal, şişkinlik ve dışkıda armut biçimli iki çekirdekli trofozoitler görülen bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "Otoimmün hemolitik anemi",
+                        "text": "Kriptosporidium enfeksiyonu",
                         "is_correct": False,
-                        "scenario_update": "Direkt Coombs negatif, şistositler var ve böbrek hasarı eşlik ediyor.",
-                        "teaching_point": "Otoimmün hemolizde Coombs pozitiftir ve sferositler görülür."
+                        "scenario_update": "Kriptosporidiyumda bol sulu ishal baskındır ve tanı modifiye asit-fast boyama veya PCR ile konur; kamçılı trofozoit görülmez.",
+                        "teaching_point": "Mikroskopik morfoloji protozoonların ayırıcı tanısında belirleyicidir."
                     },
                     {
-                        "text": "Tipik hemolitik üremik sendrom (STEC)",
+                        "text": "Çölyak hastalığı",
+                        "is_correct": False,
+                        "scenario_update": "Akut maruziyet sonrası başlangıç ve dışkıda protozoonların görülmesi şikayetleri açıklıyor.",
+                        "teaching_point": "Çölyak hastalığı uzun süreli malabsorpsiyon ve büyüme geriliğiyle seyreder; enfeksiyon dışlanmadan düşünülmez."
+                    },
+                    {
+                        "text": "Giardia duodenalis enfeksiyonu",
                         "is_correct": True,
-                        "explanation": "Kanlı ishal sonrası mikroanjiyopatik hemolitik anemi, trombositopeni ve akut böbrek hasarı üçlüsü ile dışkıda toksin pozitifliği Shiga toksini üreten E. coli ilişkili tipik hemolitik üremik sendromu doğrular.",
-                        "new_finding": "Tanı: Tipik (STEC İlişkili) Hemolitik Üremik Sendrom."
+                        "explanation": "Kontamine su maruziyeti, yağlı-köpüklü kötü kokulu ishal, şişkinlik, geğirme, kilo kaybı ve dışkıda iki çekirdekli kamçılı trofozoitler Giardia duodenalis enfeksiyonunu doğrular.",
+                        "new_finding": "Tanı: Giardiyaz (Giardia duodenalis)."
                     },
                     {
-                        "text": "Trombotik trombositopenik purpura",
+                        "text": "Amipli dizanteri",
                         "is_correct": False,
-                        "scenario_update": "Bu yaşta nadirdir; kanlı ishal öyküsü ve toksin pozitifliği tipik tabloyu destekliyor.",
-                        "teaching_point": "TTP'de ADAMTS13 aktivitesi ileri derecede düşüktür; nörolojik bulgular ön plandadır."
-                    },
-                    {
-                        "text": "Sepsise bağlı yaygın damar içi pıhtılaşma",
-                        "is_correct": False,
-                        "scenario_update": "PT ve aPTT normal, fibrinojen tüketimi yok, çocuk septik görünmüyor.",
-                        "teaching_point": "Yaygın damar içi pıhtılaşmada koagülasyon testleri bozulur."
+                        "scenario_update": "Amip enfeksiyonunda kanlı-mukuslu dışkı ve tenezm beklenir; bu çocukta dışkıda kan ve lökosit yok.",
+                        "teaching_point": "Entamoeba trofozoitleri tek çekirdekli ve eritrosit fagosite eder; kamçılı değildir."
                     }
                 ]
             },
             {
-                "stage_title": "Destek Tedavisi ve Yatış",
-                "question": "Bu çocuğun acil serviste tedavi planı nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu 15.5 kg'lık çocuğun tedavi ve izlem planı nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Ödemi gidermek ve böbreği zorlamak için yüksek doz intravenöz furosemid ile birlikte 20 mL/kg serum fizyolojik bolusu vermek, idrar çıkışı başlarsa çocuğu genel serviste izlemek",
+                        "text": "Oral metronidazol 30-50 mg/kg/gün dozunu üç eşit dozda on gün vermek ve tedavi sonrası iyileşmeyi göstermek için dışkı antijen testini tekrarlamak",
                         "is_correct": False,
-                        "scenario_update": "Bolus sonrası pulmoner ödem gelişti; furosemide yanıt alınamadı ve acil diyaliz gerekti.",
-                        "teaching_point": "Oligürik akut böbrek hasarında bolus sıvı yükü artırır; diüretik yanıtı sınırlıdır."
+                        "scenario_update": "Yüksek doz ve uzun süreli tedaviyle çocukta bulantı, metalik tat ve iştahsızlık gelişti; tekrar testi semptomsuz çocukta gereksiz bulundu.",
+                        "teaching_point": "Bu doz aralığı amip enfeksiyonu için kullanılır; giardiyazda 15 mg/kg/gün yeterlidir. Semptomları düzelen çocukta kontrol testi gerekmez."
                     },
                     {
-                        "text": "İlk basamak tedavi olarak acil plazmaferez ve eculizumab başlamak, sıvı dengesini yoğun bakımda sonradan düzenlemek",
-                        "is_correct": False,
-                        "scenario_update": "Plazmaferez için santral kateter ve uzun hazırlık gerekti; hiperkalemi ve hipertansiyon bu sürede tedavisiz kaldı.",
-                        "teaching_point": "Tipik tabloda destek tedavisi esastır; plazmaferez ve eculizumab atipik veya ağır nörolojik tutulumlu olgularda düşünülür."
-                    },
-                    {
-                        "text": "Trombositopeniyi düzeltmek için trombosit süspansiyonu vermek, enfeksiyonun sürmemesi için antibiyotiği intravenöz seftriaksonla değiştirmek ve idame sıvısı başlamak",
-                        "is_correct": False,
-                        "scenario_update": "Trombosit sonrası çocukta bilinç değişikliği gelişti; antibiyotik ve idame sıvısı sıvı yükünü artırdı.",
-                        "teaching_point": "Gereksiz trombosit transfüzyonu mikroanjiyopatiyi ağırlaştırabilir; antibiyotik önerilmez."
-                    },
-                    {
-                        "text": "Antibiyotiği kesmek, sıvıyı insensibl kayıp artı idrar çıkışıyla sınırlamak, hiperkalemiyi ve hipertansiyonu tedavi etmek, kanama yoksa trombosit vermemek ve diyaliz hazırlığıyla yatırmak",
+                        "text": "Oral metronidazol 15 mg/kg/gün dozunu üç eşit dozda 5-7 gün vermek, el hijyeni ve kaynatılmış su kullanımını anlatmak, semptomlu aile bireylerini değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Sıvı yüklü oligürik çocukta sıvı kısıtlanır. Antibiyotikler toksin salınımını artırabilir. Trombosit transfüzyonu mikrotrombüsleri artırabileceğinden yalnızca kanama veya işlem için yapılır. Hiperkalemi, sıvı yüklenmesi, ağır asidoz ve üremi diyaliz endikasyonlarıdır.",
-                        "new_finding": "Antibiyotik kesildi, sıvı kısıtlandı, hiperkalemi için salbutamol ve kalsiyum glukonat verildi, nifedipin ile kan basıncı kontrol edildi. Hb 6 g/dL'nin altına inince yavaş eritrosit transfüzyonu yapıldı. Çocuk nefrolojisi periton diyalizi başlattı; üç haftada böbrek fonksiyonu düzeldi."
+                        "explanation": "Semptomatik giardiyazda metronidazol 15 mg/kg/gün (3 dozda, 5-7 gün) etkin bir seçenektir; alternatif olarak tek doz tinidazol 50 mg/kg veya 3 gün nitazoksanid kullanılabilir. Bulaşın önlenmesi için hijyen ve su güvenliği eğitimi verilir.",
+                        "new_finding": "Metronidazol başlandı, aileye su kaynatma ve el yıkama önerileri verildi. Bir hafta sonraki kontrolde dışkı kıvamı normale döndü, şişkinlik geçti ve çocuk 300 g aldı."
+                    },
+                    {
+                        "text": "Tek doz oral mebendazol vermek ve iki hafta sonra dozu tekrarlamak, tüm aile bireylerine de aynı tedaviyi eş zamanlı uygulamak",
+                        "is_correct": False,
+                        "scenario_update": "İki doz mebendazole rağmen ishal ve şişkinlik sürdü; çocuk üç hafta sonra kilo kaybıyla başvurdu.",
+                        "teaching_point": "Mebendazol helmintlere etkilidir; protozoon enfeksiyonlarında ilk seçenek değildir."
+                    },
+                    {
+                        "text": "Tablo kendiliğinden düzeleceği için antiparaziter vermeden yalnızca laktozsuz diyet, probiyotik ve hijyen önerileriyle iki hafta izlemek",
+                        "is_correct": False,
+                        "scenario_update": "İki hafta sonra ishal devam ediyordu, kilo kaybı 1 kg'a ulaştı ve kardeşinde de benzer şikayet başladı.",
+                        "teaching_point": "Semptomatik ve kilo kaybı olan çocukta tedavi önerilir; tedavisiz izlem yalnızca asemptomatik taşıyıcılar için uygundur."
                     }
                 ]
             }
@@ -140,131 +140,131 @@ CASES = [
     {
         "id": "Y47",
         "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
-        "age": "3 Haftalık",
+        "age": "3 Yaşında",
         "gender": "Erkek",
-        "complaint": "Aniden başlayan koyu yeşil kusma, karında şişlik ve beslenmeyi reddetme",
-        "history": "Ailesi anlatıyor: 'Doğumdan beri sorunsuz emiyordu. Üç saat önce aniden koyu yeşil renkte kustu, sonra iki kez daha kustu. Emmeyi bıraktı, inliyor, karnı şişmeye başladı. Son birkaç saattir gaz ve kaka çıkarmadı.' Term doğmuş, mekonyumu ilk gün çıkmış. Ateş yok. Tartı: 3.8 kg.",
-        "final_diagnosis": "İntestinal Malrotasyon ve Orta Bağırsak Volvulusu",
-        "disposition": "Sarı Alanda Nazogastrik Dekompresyon, Damar Yolu, Sıvı Resüsitasyonu ve Geniş Spektrumlu Antibiyotik Sonrası Acil Çocuk Cerrahisi (Ladd Prosedürü)",
-        "case_pearl": "Yenidoğan ve küçük bebekte safralı (yeşil) kusma, aksi kanıtlanana kadar cerrahi acildir. Orta bağırsak volvulusu saatler içinde tüm ince bağırsağın iskemisine yol açabilir. Stabil bebekte tanı acil üst gastrointestinal kontrastlı grafiyle konur; peritonit veya şok varsa görüntüleme beklenmeden ameliyata alınır. Tedavi resüsitasyon, dekompresyon, antibiyotik ve acil Ladd prosedürüdür.",
+        "complaint": "Yarım saat önce ağzındaki madeni bir cismi yuttuğu düşünülüyor",
+        "history": "Babası anlatıyor: 'Ablasının kumbarasıyla oynuyordu, ağzına bir şey attığını gördüm, öksürdü ve sonra yuttu. Ne olduğunu tam göremedim, para olabilir. Evde kumandalar ve oyuncaklar da var.' Şu anda ağlamıyor, su içti. Kusma, salya akması, yutma güçlüğü, öksürük veya hırıltı yok. Daha önce yutma sorunu, özofagus ameliyatı veya kronik hastalık yok.",
+        "final_diagnosis": "Asemptomatik Midede Madeni Para (Gastrik Yabancı Cisim)",
+        "disposition": "Normal Beslenme ve Dışkı Takibi Önerileriyle Yeşil Alandan Taburculuk",
+        "case_pearl": "Yutulan madeni bir cisimde ilk soru pil olup olmadığıdır. Boyundan anüse ön-arka ve gerekirse yan grafi çekilir: düğme pil kenarda çift halka (halo) ve yan grafide basamak görüntüsü verir, madeni para tek ve düzgün konturludur. Özofagustaki para semptomluysa acil, asemptomatikse 12-24 saat içinde çıkarılır. Mideye geçmiş asemptomatik para evden izlenir. 2-4 hafta içinde dışkıyla çıktığı görülmezse grafi tekrarlanır.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Stabilizasyon",
-                "question": "Koyu yeşil kusma, karın şişliği ve inlemesi olan bu 3 haftalık bebekte ilk yaklaşımınız nedir?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Ne olduğu tam bilinmeyen metal bir cisim yutan, şu an yakınması olmayan bu çocukta ilk yaklaşımınız nedir?",
                 "options": [
                     {
-                        "text": "Kusmanın mama intoleransına bağlı olduğunu düşünüp hidrolize mamaya geçmek, küçük hacimlerle besleyerek iki saat gözlemlemek",
-                        "is_correct": False,
-                        "scenario_update": "Beslenen bebek yeniden yeşil kustu ve aspirasyon gelişti; perfüzyonu kötüleşti.",
-                        "teaching_point": "Safralı kusması olan bebek beslenmez; mama değişikliği yaklaşımı yoktur."
-                    },
-                    {
-                        "text": "Sepsis olasılığı nedeniyle önce lomber ponksiyon, kan ve idrar kültürü alıp antibiyotik başlamak, cerrahi değerlendirmeyi kültür sonuçlarından sonra planlamak",
-                        "is_correct": False,
-                        "scenario_update": "Lomber ponksiyon sırasında bebek yeniden kustu; cerrahi bildirim saatlerce gecikti.",
-                        "teaching_point": "Safralı kusmada cerrahi değerlendirme ertelenmemelidir; sepsis tetkikleri cerrahi süreci geciktirmeden yapılır."
-                    },
-                    {
-                        "text": "Havayolu, solunum ve perfüzyonu değerlendirip oral alımı kesmek, nazogastrik sondayla mideyi boşaltmak, damar yolu açıp sıvı vermek ve çocuk cerrahisini hemen çağırmak",
+                        "text": "Havayolu, solunum sesleri, salya, yutma ve göğüs ağrısını değerlendirip cismin pil olup olmadığını sorgulamak ve görüntülemeyle yerini belirlemeyi planlamak",
                         "is_correct": True,
-                        "explanation": "Safralı kusma Treitz bağı distalinde obstrüksiyonu gösterir ve cerrahi acildir. Dekompresyon aspirasyonu önler; resüsitasyon ve erken cerrahi bildirim bağırsak canlılığı için zaman kazandırır.",
-                        "new_finding": "Vital Bulgular: Ateş 37.1°C, KTA 166/dk, SS 44/dk, TA 72/42 mmHg, SpO2 %97, KDZ 3.5 sn. Bebek soluk ve inliyor. Karın distandü, epigastriumda hassasiyet; belirgin defans yok. Nazogastrik sondadan 30 mL koyu yeşil sıvı geldi. 10 mL/kg serum fizyolojik sonrası KDZ 2.5 sn. Kapiller kan şekeri 82 mg/dL. Çocuk cerrahisine haber verildi."
+                        "explanation": "Önce havayolu ve solunum güvenliği değerlendirilir. Cismin niteliği, özellikle düğme pil olasılığı yönetimi tamamen değiştirdiği için öyküde ve görüntülemede netleştirilmelidir.",
+                        "new_finding": "Vital Bulgular: Ateş 36.7°C, KTA 108/dk, SS 24/dk, SpO2 %99. Huzursuzluk yok, salya akması yok, sıvı yutuyor. Solunum sesleri eşit, stridor veya hışıltı yok. Karın yumuşak, hassasiyet yok. Baba evdeki pil kapaklarının kapalı olduğunu ve kumbaranın yanında bir eksik para bulunduğunu doğruladı."
                     },
                     {
-                        "text": "Gaz ve dışkı çıkışı olmadığı için rektal uyarı ve gliserinli fitil uygulamak, dışkılama sonrası karın şişliğinin azalmasını beklemek",
+                        "text": "Cismi geri çıkarması için tuzlu su içirerek ya da parmakla öğürterek kusturmaya çalışmak, cisim gelmezse görüntüleme planlamak",
                         "is_correct": False,
-                        "scenario_update": "Rektal uyarı sonrası az miktarda kanlı mukus geldi; zaman kaybedildi ve bebeğin durumu ağırlaştı.",
-                        "teaching_point": "Rektal kanama bağırsak iskemisinin geç bulgusu olabilir; obstrüksiyon şüphesinde lavman veya fitil uygulanmaz."
+                        "scenario_update": "Kusturma girişimi sırasında çocuk öksürdü ve ağladı; cisim çıkmadı, aspirasyon riski yaratıldı.",
+                        "teaching_point": "Yabancı cisim yutmada kusturma kontrendikedir; özofagusta takılma, mukozal yaralanma ve aspirasyon riskini artırır."
+                    },
+                    {
+                        "text": "Çocuk sıvı yutabildiğine ve hiçbir yakınması olmadığına göre görüntülemeye gerek görmeden dışkı takibi önererek ailesiyle taburcu etmek",
+                        "is_correct": False,
+                        "scenario_update": "Cismin niteliği ve yeri belirlenmeden taburcu edildi; aile ertesi gün evde bir pilin eksik olduğunu fark edip geri döndü.",
+                        "teaching_point": "Asemptomatik olmak özofagusta takılı cismi veya pili dışlamaz; niteliği bilinmeyen metal cisimde görüntüleme yapılmalıdır."
+                    },
+                    {
+                        "text": "Cismin aşağı inmesini kolaylaştırmak için bir dilim ekmek veya muz yedirip ardından bol su içirmek, sonra görüntüleme yapmak",
+                        "is_correct": False,
+                        "scenario_update": "Katı besin verildikten sonra çocuk iki kez öğürdü; olası bir endoskopi için açlık süresi de uzadı.",
+                        "teaching_point": "Yeri belirlenmeden katı besin vermek özofagusta takılmayı ağırlaştırabilir ve gerekebilecek endoskopiyi geciktirir."
                     }
                 ]
             },
             {
                 "stage_title": "Görüntüleme Kararı",
-                "question": "Resüsitasyona yanıt veren, peritonit bulgusu olmayan bu bebekte hangi görüntüleme yöntemi tercih edilmelidir?",
+                "question": "Cismin niteliği ve yerini belirlemek için en uygun görüntüleme hangisidir?",
                 "options": [
                     {
-                        "text": "Acil üst gastrointestinal kontrastlı grafi çekmek ve duodenojejunal bileşkenin yerini ve kontrast geçişini değerlendirmek",
+                        "text": "Radyasyondan kaçınmak için yalnızca batın ultrasonografisi istemek ve cisim görülmezse mideye geçmiş kabul ederek izlem planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Ultrasonografide gaz nedeniyle cisim görülemedi; özofagus ise hiç değerlendirilemedi.",
+                        "teaching_point": "Metal yabancı cisimde ultrasonografi özofagusu göstermez; ilk basamak boyundan anüse direkt grafidir."
+                    },
+                    {
+                        "text": "Yalnızca ayakta direkt batın grafisi çekmek, cisim batında görülmezse dışkıyla çıkacağını varsayarak aileyi bilgilendirmek",
+                        "is_correct": False,
+                        "scenario_update": "Batın grafisinde cisim görülmedi; boyun ve göğüs alana dahil edilmediği için özofagustaki olası takılma değerlendirilmemiş oldu.",
+                        "teaching_point": "Görüntü alanı boyundan anüse uzanmalıdır; özofagus en kritik takılma yeridir."
+                    },
+                    {
+                        "text": "Boyundan anüse kadar ön-arka direkt grafi çekmek, cismin kenar konturunu değerlendirmek ve gerekirse yan grafiyle tamamlamak",
                         "is_correct": True,
-                        "explanation": "Stabil bebekte üst gastrointestinal kontrastlı grafi altın standarttır; duodenojejunal bileşkenin konumu ve duodenumdaki obstrüksiyon paterni tanıyı koyar. Ultrason deneyimli ellerde destekleyicidir ancak normal olması tanıyı dışlamaz.",
-                        "new_finding": "Üst gastrointestinal grafi: duodenojejunal bileşke omurganın sağında yerleşmiş; kontrast duodenumun üçüncü kısmında spiral şekilde dönerek ilerliyor ve daralıyor, distale geçiş çok az."
+                        "explanation": "Tek ön-arka grafi cismin yerini ve konturunu gösterir. Kenarda çift halka veya yan grafide basamak görüntüsü pili düşündürür; düzgün tek kontur madeni parayı destekler.",
+                        "new_finding": "Boyun-göğüs-batın ön-arka grafi: Sol üst kadranda, diyafram altında, yaklaşık 23 mm çaplı, tek ve düzgün konturlu, yuvarlak radyoopak cisim. Kenarda çift halka görünümü yok. Boyun ve göğüs bölgesinde yabancı cisim yok. Serbest hava yok."
                     },
                     {
-                        "text": "Ayakta direkt batın grafisi çekmek, distal gaz görülürse obstrüksiyonu dışlayıp bebeği gözlem odasında izlemek",
+                        "text": "Cismin yerini ve olası mukozal hasarı aynı anda görmek için kontrastsız toraks ve batın bilgisayarlı tomografisi istemek",
                         "is_correct": False,
-                        "scenario_update": "Grafide distal gaz vardı ve bebek gözleme alındı; iki saat sonra karın daha da gerildi.",
-                        "teaching_point": "Direkt grafi normal veya nonspesifik olabilir; distal gaz bu tabloyu dışlamaz."
-                    },
-                    {
-                        "text": "Bağırsak duvarını ayrıntılı değerlendirmek için intravenöz ve oral kontrastlı batın bilgisayarlı tomografisi istemek ve sonuca göre cerrahiyi çağırmak",
-                        "is_correct": False,
-                        "scenario_update": "Oral kontrast verilen bebek kustu ve tomografi için sedasyon gerekti; cerrahi bir saat gecikti.",
-                        "teaching_point": "BT bu yaşta ilk tercih değildir ve cerrahiyi geciktirmemelidir."
-                    },
-                    {
-                        "text": "Kolonu değerlendirmek için baryumlu kolon grafisi çekmek ve geçiş bozukluğu saptanırsa rektal biyopsi planlamak",
-                        "is_correct": False,
-                        "scenario_update": "Kolon grafisi çekumun yerini dolaylı gösterdi ancak duodenal obstrüksiyonu değerlendirmedi; tanı gecikti.",
-                        "teaching_point": "Kolon grafisi distal obstrüksiyonlarda kullanılır; proksimal safralı kusmada üst grafi tercih edilir."
+                        "scenario_update": "Tomografi için çocuk sedasyon ihtiyacıyla birlikte bekletildi; aynı bilgi tek bir direkt grafiyle elde edilebilirdi.",
+                        "teaching_point": "Komplikasyon şüphesi olmayan çocukta tomografi gereksiz radyasyon ve sedasyon getirir; ilk tetkik direkt grafidir."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Ani safralı kusma, karın distansiyonu ve üst gastrointestinal grafide sağda yerleşmiş duodenojejunal bileşke ile spiral daralma olan bu bebekte tanı nedir?",
+                "question": "Öykü ve görüntüleme bulgularına göre tanınız nedir?",
                 "options": [
                     {
-                        "text": "Malrotasyon ve orta bağırsak volvulusu",
+                        "text": "Midede düğme pil",
+                        "is_correct": False,
+                        "scenario_update": "Kenarda çift halka görünümü yoktu ve baba pillerin yerinde olduğunu doğrulamıştı.",
+                        "teaching_point": "Düğme pil kenarda halo ve yan grafide basamak görüntüsü verir."
+                    },
+                    {
+                        "text": "Özofagusta takılı madeni para",
+                        "is_correct": False,
+                        "scenario_update": "Cisim diyafram altında, sol üst kadrandaydı; boyun ve göğüs temizdi.",
+                        "teaching_point": "Özofagustaki para çoğunlukla üst darlık düzeyinde, ön-arka grafide tam yüz olarak görülür."
+                    },
+                    {
+                        "text": "Midede asemptomatik madeni para",
                         "is_correct": True,
-                        "explanation": "Duodenojejunal bileşkenin orta hattın sağında olması rotasyon bozukluğunu, kontrastın spiral daralması ise mezenter çevresinde dönmeyi gösterir.",
-                        "new_finding": "Tanı: İntestinal Malrotasyon ve Orta Bağırsak Volvulusu."
+                        "explanation": "Diyafram altında, sol üst kadranda tek ve düzgün konturlu yuvarlak cisim, yakınması olmayan çocukta mideye geçmiş madeni parayı gösterir.",
+                        "new_finding": "Tanı: Asemptomatik gastrik madeni para."
                     },
                     {
-                        "text": "Nekrotizan enterokolit",
+                        "text": "Trakeobronşiyal yabancı cisim aspirasyonu",
                         "is_correct": False,
-                        "scenario_update": "Term ve önceden sağlıklı bebek; grafide pnömatozis yok, bulgular duodenal düzeyde.",
-                        "teaching_point": "Nekrotizan enterokolit çoğunlukla prematürelerde ve beslenme sonrası görülür."
-                    },
-                    {
-                        "text": "Duodenal web",
-                        "is_correct": False,
-                        "scenario_update": "Duodenojejunal bileşke yer değiştirmiş ve spiral daralma var; web sabit bir daralma yapar.",
-                        "teaching_point": "Duodenal web genellikle daha erken veya daha sinsi bulgu verir ve rotasyon bozukluğu içermez."
-                    },
-                    {
-                        "text": "Hirschsprung enterokoliti",
-                        "is_correct": False,
-                        "scenario_update": "Mekonyum ilk gün çıkmış ve obstrüksiyon proksimal duodenal düzeyde.",
-                        "teaching_point": "Hirschsprung hastalığında distal obstrüksiyon ve mekonyum gecikmesi beklenir."
+                        "scenario_update": "Solunum sesleri eşitti, hışıltı yoktu ve göğüs grafisinde yabancı cisim görülmedi.",
+                        "teaching_point": "Aspirasyonda öksürük krizi sonrası tek taraflı hışıltı ve hava hapsi beklenir."
                     }
                 ]
             },
             {
-                "stage_title": "Cerrahi Tedavi",
-                "question": "Bu bebeğin tedavisi nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Mideye geçmiş, yakınması olmayan madeni para için en uygun izlem planı hangisidir?",
                 "options": [
                     {
-                        "text": "Bebeğin perfüzyonu tamamen normale dönene kadar 48 saat yoğun bakımda stabilize etmek, ardından laparoskopik cerrahiyi planlamak",
-                        "is_correct": False,
-                        "scenario_update": "Bekleme sırasında laktat yükseldi ve perfüzyon yeniden bozuldu; iskemi ilerledi.",
-                        "teaching_point": "Resüsitasyon cerrahiyle eş zamanlı yürütülür; bağırsak iskemisi stabilizasyon için beklemez."
-                    },
-                    {
-                        "text": "Görüntüleme eşliğinde kontrastlı lavmanla bağırsak dönüşünü düzeltmeye çalışmak ve başarılı olursa cerrahiden kaçınmak",
-                        "is_correct": False,
-                        "scenario_update": "Lavman dönmüş mezenteri etkilemedi; cerrahi gereksiz yere gecikti.",
-                        "teaching_point": "Rotasyon bozukluğu ve dönme cerrahi olarak düzeltilir; görüntüleme eşliğinde redüksiyon yöntemi yoktur."
-                    },
-                    {
-                        "text": "Nazogastrik dekompresyon ve sıvı tedavisiyle 24 saat izlemek, kusma azalırsa bebeği beslemeye başlayıp elektif cerrahiyi birkaç hafta sonraya planlamak",
-                        "is_correct": False,
-                        "scenario_update": "İzlemin altıncı saatinde bebekte kanlı dışkı ve şok gelişti; ameliyatta geniş bağırsak nekrozu saptandı.",
-                        "teaching_point": "Bu tablo saatlerle yarışan bir cerrahi acildir; konservatif izlem kabul edilemez."
-                    },
-                    {
-                        "text": "Resüsitasyonu sürdürüp geniş spektrumlu antibiyotik başlamak ve bebeği gecikmeden acil laparotomiye almak; detorsiyon ve Ladd prosedürünü planlamak",
+                        "text": "Normal beslenmeyle taburcu edip dışkı takibini önermek; karın ağrısı, kusma veya kanama olursa dönmeleri, 2-4 haftada çıkmazsa grafi tekrarlamak",
                         "is_correct": True,
-                        "explanation": "Acil laparotomide bağırsak saat yönünün tersine çevrilerek detorsiyon yapılır, Ladd bantları kesilir, mezenter genişletilir ve apendektomi eklenir. Erken cerrahi bağırsak kaybını ve kısa bağırsak sendromunu önler.",
-                        "new_finding": "Ampisilin, gentamisin ve metronidazol başlandı. Acil laparotomide 360 derece dönmüş mezenter detorse edildi; ılık kompres sonrası bağırsaklar pembeleşti. Ladd prosedürü tamamlandı, rezeksiyon gerekmedi."
+                        "explanation": "Mideye geçmiş asemptomatik madeni para çoğunlukla kendiliğinden atılır. Rutin endoskopi veya laksatif gerekmez; uyarı bulguları ve tekrar grafi zamanı aileye anlatılır.",
+                        "new_finding": "Aile bilgilendirildi ve normal beslenmeyle taburcu edildi. Dördüncü gün dışkıda madeni paranın çıktığını telefonla bildirdiler."
+                    },
+                    {
+                        "text": "Cisim midede beklerken mukozal hasar yapabileceği için aynı gün gastroenteroloji ile elektif üst gastrointestinal endoskopi ayarlamak",
+                        "is_correct": False,
+                        "scenario_update": "Endoskopi için çocuk aç bırakıldı ve genel anestezi aldı; işlem sırasında para zaten duodenuma geçmişti.",
+                        "teaching_point": "Mideye geçmiş asemptomatik madeni parada rutin endoskopi gerekmez; endoskopi pil, mıknatıs, sivri cisim veya semptom varlığında düşünülür."
+                    },
+                    {
+                        "text": "Bağırsak geçişini hızlandırmak için birkaç gün laktüloz ya da polietilen glikol başlamak ve günlük dışkıyı elekle kontrol etmelerini istemek",
+                        "is_correct": False,
+                        "scenario_update": "Laksatif ishale neden oldu ve dışkı takibi zorlaştı; paranın geçişi hızlanmadı.",
+                        "teaching_point": "Laksatiflerin madeni para geçişini hızlandırdığına dair kanıt yoktur; normal beslenme yeterlidir."
+                    },
+                    {
+                        "text": "Paranın pilora geçişini görmek için çocuğu 24 saat hastanede gözleme alıp sabah kontrol grafisiyle değerlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "Çocuk bir gece gereksiz yere yatırıldı; sabah grafisinde para hâlâ midedeydi ve yönetim değişmedi.",
+                        "teaching_point": "Asemptomatik gastrik madeni para için hastanede gözlem veya erken kontrol grafisi gerekmez; ayaktan izlenir."
                     }
                 ]
             }
@@ -273,131 +273,131 @@ CASES = [
     {
         "id": "Y48",
         "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
-        "age": "13 Yaşında",
+        "age": "2.5 Yaşında",
         "gender": "Erkek",
-        "complaint": "Üç saattir süren ani başlangıçlı sağ alt karın ve kasık ağrısı, bulantı ve iki kez kusma",
-        "history": "Kendisi anlatıyor: 'Sabah uykudan ağrıyla uyandım. Ağrı karnımın sağ alt tarafında ve kasığımda, çok şiddetli. İki kez kustum. Yürürken iki büklüm oluyorum.' Triyajda karın ağrısı olarak değerlendirilmiş; genital bölge sorgulanmamış. Ayrıntılı sorgulamada geçen ay benzer ama birkaç dakikada geçen bir ağrısı olduğu öğrenildi. Ateş, idrar yanması ve travma yok. Tartı: 48 kg.",
-        "final_diagnosis": "Sağ Testis Torsiyonu",
-        "disposition": "Sarı Alanda Oral Alımın Kesilmesi, Analjezi ve Görüntüleme İçin Gecikmeden Acil Skrotal Eksplorasyon (Detorsiyon ve Bilateral Orşiopeksi)",
-        "case_pearl": "Karın ağrısı olan her erkek çocukta genital muayene yapılmalıdır; adölesanlar skrotal ağrıyı utanma nedeniyle karın ağrısı olarak tarif edebilir. Ani başlangıç, kusma, yüksek yerleşimli ve yatay duran testis ile kremaster refleksinin kaybı torsiyonu düşündürür. Testis kurtarılma oranı ilk 6 saatte %90'ın üzerindedir. Klinik şüphe yüksekse Doppler ultrason beklenmeden cerrahiye gidilir. Manuel detorsiyon geçici bir önlemdir, cerrahinin yerini tutmaz.",
+        "complaint": "İki aydır günde 4-5 kez, içinde sindirilmemiş besin parçaları olan cıvık dışkılama",
+        "history": "Annesi anlatıyor: 'Yaklaşık 2 aydır günde 4-5 kez kaka yapıyor. Sabah ilk kakası şekilli, öğleden sonra ve akşama doğru cıvıklaşıyor. İçinde bezelye, havuç, mısır parçaları aynen duruyor. Geceleri uykusunda hiç kaka yapmıyor. Kan veya mukus görmedim. Çok hareketli, iştahlı, neşeli. Kuzeninin çölyak olması bizi çok korkuttu.' Çocuk gün içinde biberonla içecek tüketiyor; ayrıntılı beslenme öyküsü henüz alınmadı.",
+        "final_diagnosis": "Kronik Non-spesifik Diyare (Toddler Diyaresi)",
+        "disposition": "Yeşil Alandan Beslenme Düzenlemesi (Meyve Suyu Kısıtlaması, Yeterli Yağ ve Lif) ve Güvence ile Taburculuk",
+        "case_pearl": "6 ay-5 yaş arasında, büyümesi normal, gündüz olan, gece kesilen, sindirilmemiş sebze parçaları içeren cıvık dışkılama toddler diyaresini düşündürür. Neden çoğunlukla aşırı meyve suyu (fruktoz-sorbitol) ve düşük yağlı diyettir. Tanı büyümenin normal olması ve alarm bulgularının yokluğuna dayanır; meyve suyu kısıtlanır, yağ alımı normalleştirilir, ilaç gerekmez. Büyüme geriliği varsa çölyak ve diğer malabsorpsiyon nedenleri araştırılır.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Genital Muayene",
-                "question": "Ani başlangıçlı sağ alt karın ve kasık ağrısıyla gelen bu 13 yaşındaki erkek çocukta muayenede neye öncelik verirsiniz?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "İki aydır gündüz cıvık dışkılaması olan, aktif görünen bu 2.5 yaşındaki çocukta değerlendirmenin en kritik bileşeni nedir?",
                 "options": [
                     {
-                        "text": "Karın muayenesine ek olarak mahremiyeti sağlayıp skrotumu incelemek; testislerin konumu, duruş ekseni, hassasiyeti, skrotal ödem ve kremaster refleksini değerlendirmek",
+                        "text": "Kreş öyküsü nedeniyle paraziter enfeksiyonu öncelikli düşünüp perianal bölgeyi muayene etmek ve ampirik tek doz mebendazol vermek",
+                        "is_correct": False,
+                        "scenario_update": "Perianal bölge doğaldı; mebendazol sonrası dışkılama paterni değişmedi.",
+                        "teaching_point": "Ampirik antiparaziter tedavi ishalin nedenini aydınlatmaz; önce büyüme ve beslenme öyküsü değerlendirilmelidir."
+                    },
+                    {
+                        "text": "Büyüme eğrisini önceki ölçümlerle karşılaştırmak, ayrıntılı 24 saatlik beslenme ve sıvı öyküsü almak, malabsorpsiyon ve kronik hastalık bulgularını muayenede aramak",
                         "is_correct": True,
-                        "explanation": "Kasık ve alt karın ağrısının kaynağı skrotum olabilir. Yüksek yerleşimli, yatay duran ve hassas testis ile kremaster refleksinin yokluğu acil cerrahi tabloyu düşündürür.",
-                        "new_finding": "Vital Bulgular: Ateş 37.0°C, KTA 108/dk, SS 20/dk, TA 112/70 mmHg. Karında sağ alt kadranda hafif hassasiyet, defans ve rebound yok. Sağ hemiskrotum ödemli ve hafif eritemli; sağ testis yukarı çekilmiş, yatay duruyor ve dokunmakla çok hassas. Sağ kremaster refleksi alınamıyor; testisi kaldırmak ağrıyı azaltmıyor. Sol testis normal."
+                        "explanation": "Kronik ishalde büyüme hızının korunup korunmadığı organik ve fonksiyonel nedenleri ayıran en önemli bulgudur. Ayrıntılı beslenme öyküsü fonksiyonel ishalin nedenini sıklıkla ortaya koyar.",
+                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 96/dk, TA 92/56 mmHg. Tartı 13.5 kg (50. p), boy 92 cm (50. p); son 1 yılda persentil kaybı yok. Canlı, hareketli. Karın yumuşak, distansiyon yok, organomegali yok. Ödem, solukluk, dermatit, çomak parmak yok. Perianal bölge doğal. Beslenme öyküsü: günde 4-5 biberon (yaklaşık 1 litre) hazır elma suyu, yağsız süt, az yağlı yemekler."
                     },
                     {
-                        "text": "Triyaj notuna dayanarak muayeneyi karınla sınırlı tutmak, sağ alt kadran hassasiyeti nedeniyle batın ultrasonu isteyip cerrahi konsültasyonu sonuca göre planlamak",
+                        "text": "Dışkıda besin parçaları görülmesini pankreas yetersizliği bulgusu kabul ederek solunum sistemi muayenesine ve ter testi planlamasına odaklanmak",
                         "is_correct": False,
-                        "scenario_update": "Batın ultrasonu normal geldi; genital muayene yapılmadan iki saat geçti.",
-                        "teaching_point": "Karın ağrılı erkek çocukta genital muayene atlanmamalıdır; skrotal acil karın ağrısı olarak kendini gösterebilir."
+                        "scenario_update": "Akciğer muayenesi normaldi. Ter testi için randevu alındı; büyüme ve beslenme öyküsü değerlendirilmedi.",
+                        "teaching_point": "Sindirilmemiş sebze parçaları küçük çocukta hızlı geçişe bağlı olabilir; normal büyüyen çocukta pankreas yetersizliği düşük olasılıktır."
                     },
                     {
-                        "text": "İdrar yolu enfeksiyonu veya taş olasılığına karşı önce tam idrar tetkiki ve böbrek ultrasonu istemek, ağrı için intravenöz parasetamol verip sonuçları beklemek",
+                        "text": "Kronik ishal nedeniyle hidrasyon bulgularını değerlendirip karın palpasyonu yapmak ve kuzenindeki tanıyı göz önüne alarak muayene sonrası çölyak serolojisini hemen istemek",
                         "is_correct": False,
-                        "scenario_update": "İdrar ve böbrek ultrasonu normal geldi; skrotal muayene yapılmadan değerli zaman kaybedildi.",
-                        "teaching_point": "Normal idrar tetkiki skrotal patolojiyi dışlamaz."
-                    },
-                    {
-                        "text": "Ağrının gaz ve kabızlığa bağlı olduğunu düşünüp lavman uygulamak ve rahatladıktan sonra yeniden muayene etmek",
-                        "is_correct": False,
-                        "scenario_update": "Lavman sonrası ağrı değişmedi; muayene bir saat ertelendi.",
-                        "teaching_point": "Ani başlangıçlı şiddetli ağrı ve kusma fonksiyonel bir nedenle açıklanmamalıdır."
+                        "scenario_update": "Hidrasyon normal bulundu; çölyak serolojisi gönderildi. Büyüme eğrisi ve beslenme öyküsü değerlendirilmediği için tablonun nedeni ortaya çıkmadı.",
+                        "teaching_point": "Kronik ishalde tetkik kararı büyüme eğrisi ve ayrıntılı beslenme öyküsüyle verilir; aile öyküsü tek başına serolojiyi zorunlu kılmaz."
                     }
                 ]
             },
             {
-                "stage_title": "Acil Karar ve Görüntüleme",
-                "question": "Yatay duran, yüksek yerleşimli hassas testisi ve kayıp kremaster refleksi olan bu çocukta sonraki adım nedir?",
+                "stage_title": "Tetkik Kararı",
+                "question": "Büyümesi normal, alarm bulgusu olmayan ve günde yaklaşık 1 litre meyve suyu içen bu çocukta tetkik yaklaşımınız nedir?",
                 "options": [
                     {
-                        "text": "Acil serviste testisi içten dışa çevirerek manuel düzeltme denemek, ağrı geçerse çocuğu taburcu edip elektif cerrahi randevusu vermek",
+                        "text": "Kuzende çölyak bulunduğu için doku transglutaminaz IgA ile birlikte tam kan sayımı, ferritin, albümin ve dışkı elastaz düzeyini istemek, sonuçlara göre diyet planlamak",
                         "is_correct": False,
-                        "scenario_update": "Manuel girişim sonrası ağrı kısmen azaldı ancak çocuk taburcu edildikten sonra ağrı tekrarladı.",
-                        "teaching_point": "Manuel girişim cerrahiye kadar geçici bir önlemdir; başarılı görünse bile acil cerrahi gerekir."
+                        "scenario_update": "Tüm sonuçlar normal geldi; aile sonuç beklerken yoğun kaygı yaşadı ve diyet önerisi ertelendi.",
+                        "teaching_point": "İkinci derece akrabada çölyak tek başına tarama endikasyonu değildir; büyümesi normal, alarm bulgusu olmayan çocukta önce diyet düzenlemesi yapılır."
                     },
                     {
-                        "text": "Skrotal ödem ve eritem nedeniyle epididimit olasılığını düşünüp idrar kültürü alarak oral antibiyotik başlamak, skrotal destek ve soğuk uygulama önerip 48 saat sonra kontrole çağırmak",
+                        "text": "Dışkıda gizli kan, kalprotektin, parazit incelemesi ve dışkı kültürü isteyip sonuçlar normalse iki hafta sonra diyet değişikliği önermek",
                         "is_correct": False,
-                        "scenario_update": "Çocuk eve gönderildi; ağrı sürdü ve ertesi gün başvurduğunda testis kurtarılamadı.",
-                        "teaching_point": "Ani başlangıç, kusma ve kayıp kremaster refleksi epididimitten çok iskemik tabloyu düşündürür."
+                        "scenario_update": "Kalprotektin sınırda yüksek geldi ve tekrar ölçüm planlandı; bu süre içinde meyve suyu tüketimi devam etti.",
+                        "teaching_point": "Küçük çocuklarda kalprotektin normal değerleri daha yüksektir ve gereksiz tetkik zinciri başlatabilir; tetkik klinik şüpheye göre istenmelidir."
                     },
                     {
-                        "text": "Klinik şüphe yüksek olduğu için oral alımı kesip analjezi vermek, çocuk cerrahisi veya ürolojiyi hemen çağırmak; Doppler ultrasonu yalnızca cerrahiyi geciktirmeyecekse yaptırmak",
+                        "text": "İshal kronikleştiği için çocuğu gastroenteroloji polikliniğine sevk etmek ve endoskopi değerlendirmesi yapılana kadar glutensiz diyet başlatmak",
+                        "is_correct": False,
+                        "scenario_update": "Glutensiz diyet sonrası dışkılama değişmedi; diyetle birlikte olası bir serolojik tanı da değerlendirilemez hale geldi.",
+                        "teaching_point": "Tanı konmadan glutensiz diyet başlanmamalıdır; bu hem gereksiz kısıtlamaya hem de olası tanının maskelenmesine yol açar."
+                    },
+                    {
+                        "text": "Tetkik istemeden meyve suyu tüketimini kısıtlayıp yağ ve lif alımını düzenleyen bir deneme yapmak, iki hafta sonra dışkılama günlüğüyle kontrol etmek",
                         "is_correct": True,
-                        "explanation": "Testis canlılığı iskemi süresine bağlıdır. Yüksek klinik şüphede (örneğin yüksek TWIST skoru) görüntüleme beklenmeden eksplorasyon yapılır; Doppler belirsiz olgularda değerlidir.",
-                        "new_finding": "Cerrahi ekip hemen bilgilendirildi. Ameliyathane hazırlanırken acil serviste yapılan yatak başı Doppler ultrasonda sağ testiste kan akımı izlenmedi, kordda girdap görünümü vardı; sol testis normaldi."
-                    },
-                    {
-                        "text": "Radyoloji birimi gece çalışmadığı için Doppler ultrasonu sabaha planlamak, analjezi ve soğuk uygulamayla çocuğu serviste izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Sabah Doppler ultrasona kadar dokuz saat geçti; testis kanlanması geri döndürülemez şekilde bozuldu.",
-                        "teaching_point": "Görüntülemeye erişim yoksa klinik tanıyla eksplorasyon yapılır; bekleme organ kaybına yol açar."
+                        "explanation": "Büyümesi normal, gece dışkılaması, kan ve kilo kaybı olmayan çocukta aşırı meyve suyu ve düşük yağ alımı fonksiyonel ishali açıklar. Tetkik yerine diyet denemesi hem tanısal hem tedavidir.",
+                        "new_finding": "Laboratuvar tetkiki istenmedi. Aile ile birlikte iki haftalık beslenme planı ve dışkılama günlüğü hazırlandı."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Ani başlangıçlı kasık-skrotal ağrı, kusma, yatay duran yüksek testis, kayıp kremaster refleksi ve Doppler'de kanlanma kaybı olan bu çocukta tanı nedir?",
+                "question": "Normal büyüyen, gündüz cıvık, gece dışkılaması olmayan, sebze parçaları içeren dışkılaması ve yüksek meyve suyu tüketimi olan bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "Apendiks testis torsiyonu",
+                        "text": "Çölyak hastalığı",
                         "is_correct": False,
-                        "scenario_update": "Hassasiyet tüm testiste, mavi nokta işareti yok ve testis kanlanması kaybolmuş.",
-                        "teaching_point": "Apendiks testis torsiyonunda hassasiyet üst kutupta lokalizedir ve testis kanlanması normaldir."
+                        "scenario_update": "Büyüme eğrisi korunmuş, distansiyon, anemi ve hipoalbüminemi bulgusu yok.",
+                        "teaching_point": "Malabsorpsiyon tablosunda büyüme hızında yavaşlama beklenir."
                     },
                     {
-                        "text": "Sağ testis torsiyonu",
+                        "text": "Postenfeksiyöz laktoz intoleransı",
+                        "is_correct": False,
+                        "scenario_update": "Öncesinde akut gastroenterit öyküsü yok; dışkılama süt alımıyla değil meyve suyu ile ilişkili.",
+                        "teaching_point": "Sekonder laktoz intoleransı genellikle akut enfeksiyon sonrası gelişir ve şişkinlik, asidik dışkı eşlik eder."
+                    },
+                    {
+                        "text": "İnflamatuvar bağırsak hastalığı",
+                        "is_correct": False,
+                        "scenario_update": "Kanlı dışkı, gece dışkılaması, kilo kaybı ve perianal hastalık yok.",
+                        "teaching_point": "İnflamatuvar hastalıkta alarm bulguları ve büyüme etkilenmesi beklenir."
+                    },
+                    {
+                        "text": "Kronik non-spesifik (toddler) diyare",
                         "is_correct": True,
-                        "explanation": "Ani başlangıçlı ağrı, kusma, yüksek ve yatay testis, kremaster refleks kaybı ve Doppler'de akım yokluğu spermatik kordun dönmesiyle gelişen testis iskemisini gösterir; önceki kısa atak aralıklı dönmeyi düşündürür.",
-                        "new_finding": "Tanı: Sağ Testis Torsiyonu."
-                    },
-                    {
-                        "text": "Akut epididimoorşit",
-                        "is_correct": False,
-                        "scenario_update": "Ateş ve idrar yakınması yok, başlangıç ani ve Doppler'de kanlanma artmamış aksine kaybolmuş.",
-                        "teaching_point": "Epididimitte Doppler'de kanlanma artışı görülür ve kremaster refleksi genellikle korunur."
-                    },
-                    {
-                        "text": "Akut apandisit",
-                        "is_correct": False,
-                        "scenario_update": "Karında peritoneal bulgu yok; patoloji skrotumda gösterildi.",
-                        "teaching_point": "Kasığa yayılan ağrıda skrotal muayene ayırıcı tanıyı netleştirir."
+                        "explanation": "6 ay-5 yaş arası, büyümesi normal, gündüz cıvık, gece dışkılaması olmayan çocukta aşırı fruktoz-sorbitol içeren meyve suyu ve düşük yağ alımı toddler diyaresine neden olur.",
+                        "new_finding": "Tanı: Kronik Non-spesifik Diyare (Toddler Diyaresi)."
                     }
                 ]
             },
             {
-                "stage_title": "Cerrahi Tedavi",
-                "question": "Bu çocuğun cerrahi yönetimi nasıl olmalıdır?",
+                "stage_title": "Diyet Düzenlemesi ve Aile Rehberliği",
+                "question": "Bu çocuğun ailesine verilecek en uygun öneri hangisidir?",
                 "options": [
                     {
-                        "text": "Testis canlılığından emin olmak için ameliyattan önce skrotal manyetik rezonans çekmek ve sonuca göre orşiektomi kararı vermek",
+                        "text": "Dışkı sıklığını azaltmak için birkaç gün düşük doz loperamid vermek ve aynı süre içinde meyve suyu tüketimini yarıya indirmesini önermek",
                         "is_correct": False,
-                        "scenario_update": "MR için iki saat beklendi; iskemi süresi uzadı.",
-                        "teaching_point": "Canlılık ameliyatta değerlendirilir; ek görüntüleme cerrahiyi geciktirmemelidir."
+                        "scenario_update": "Loperamid sonrası çocukta karın şişliği ve uykuya meyil gelişti; aile ilacı kesip acile başvurdu.",
+                        "teaching_point": "Küçük çocuklarda loperamid ileus ve santral sinir sistemi yan etkileri nedeniyle önerilmez."
                     },
                     {
-                        "text": "Acil skrotal eksplorasyonla detorsiyon yapmak, canlılığı değerlendirmek; canlıysa her iki testisi sabitlemek, canlı değilse orşiektomi ve karşı tarafa orşiopeksi uygulamak",
+                        "text": "Meyve suyunu sulandırarak sürdürmek, posalı gıdaları ve sebzeleri tamamen kesmek ve bağırsağı dinlendirmek için bir hafta pirinç lapası ağırlıklı beslemek",
+                        "is_correct": False,
+                        "scenario_update": "Kısıtlı diyetle dışkılama azalmadı, çocuk iştahsızlaştı ve kilo almadı.",
+                        "teaching_point": "Lif kısıtlaması ve kısıtlayıcı diyetler önerilmez; asıl hedef fruktoz-sorbitol yükünü azaltmak ve yeterli yağ alımını sağlamaktır."
+                    },
+                    {
+                        "text": "Meyve suyunu kesip su vermek, tam yağlı süt ve yemeklere yağ eklemek, lifi sürdürmek ve aileye güvence vermek",
                         "is_correct": True,
-                        "explanation": "Eksplorasyonda kord çözülür ve testis ılık kompresle değerlendirilir. Anatomik yatkınlık genellikle iki taraflı olduğundan karşı testis de sabitlenir.",
-                        "new_finding": "Semptomların dördüncü saatinde eksplorasyon yapıldı; 540 derece dönmüş kord çözüldü, testis ılık kompres sonrası pembeleşti. Bilateral orşiopeksi yapıldı. Üç ay sonraki kontrolde testis boyutları simetrikti."
+                        "explanation": "Meyve suyunun kısıtlanması ozmotik yükü azaltır; yeterli yağ alımı gastrik boşalmayı ve bağırsak geçişini yavaşlatır. Lif normal düzeyde sürdürülür. Tablonun büyümeyi etkilemediği konusunda aileye güvence verilir.",
+                        "new_finding": "İki hafta sonraki kontrolde meyve suyu kesilmişti; dışkılama sayısı günde 1-2'ye indi, dışkı şekilli hale geldi. Çocuk kilosunu korudu."
                     },
                     {
-                        "text": "Doppler ultrasonda testis kanlanması tamamen kaybolduğu için detorsiyon denemeden doğrudan orşiektomi yapmak ve sağlam karşı testise herhangi bir girişim yapmamak",
+                        "text": "Dışkı sıklığını azaltmak için bir hafta probiyotik ve günlük çinko desteği başlamak, mevcut beslenme düzenini değiştirmeden kontrole çağırmak",
                         "is_correct": False,
-                        "scenario_update": "Erken dönemde gelen, kurtarılabilir testis gereksiz yere çıkarıldı; karşı taraf korumasız kaldı.",
-                        "teaching_point": "Önce detorsiyon ve canlılık değerlendirmesi yapılır; ilk saatlerde testisler çoğunlukla kurtarılabilir."
-                    },
-                    {
-                        "text": "Detorsiyon sonrası testis canlı göründüğü için yalnızca etkilenen testisi sabitlemek ve karşı taraf için izlem önermek",
-                        "is_correct": False,
-                        "scenario_update": "İki yıl sonra karşı testiste torsiyon gelişti.",
-                        "teaching_point": "Karşı testiste aynı anatomik yatkınlık bulunduğundan orşiopeksi iki taraflı yapılır."
+                        "scenario_update": "İki hafta sonra dışkılama paterni aynıydı; meyve suyu tüketimi sürüyordu.",
+                        "teaching_point": "Toddler diyaresinde ilaç veya takviyenin yeri yoktur; tedavi diyetin düzenlenmesidir."
                     }
                 ]
             }
@@ -405,132 +405,132 @@ CASES = [
     },
     {
         "id": "Y49",
-        "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
-        "age": "6 Yaşında",
-        "gender": "Erkek",
-        "complaint": "Kıvrandıran şiddetli karın ağrısı, dışkıda kan, dizlerde şişlik ve bacaklarda kabarık kırmızı-mor döküntüler",
-        "history": "Ailesi anlatıyor: 'İki hafta önce boğaz ağrısı ve burun akıntısı geçirdi. Dün bacaklarında ve kalçasında, bastırınca solmayan kabarık kırmızı-mor lekeler çıktı. Bu sabah karnını tutup kıvrandıran çok şiddetli ağrısı başladı, bir kez koyu kırmızı kanlı kaka yaptı. İki dizi şişti, basmak istemiyor.' Ateşi yok, genel durumu ağrı dışında iyi. Bilinen hastalığı ve ilaç kullanımı yok. Tartı: 21 kg.",
-        "final_diagnosis": "IgA Vasküliti (Henoch-Schönlein Purpurası) - Ciddi Gastrointestinal ve Renal Tutulum",
-        "disposition": "Sarı Alanda Analjezi, İntravenöz Sıvı, İnvajinasyonun Dışlanması ve Sistemik Kortikosteroid ile Pediatri Servisine Yatış",
-        "case_pearl": "Çocukluk çağının en sık vaskülitidir. Trombositopeni olmadan alt ekstremite ve kalçada palpabl purpura, artrit-artralji, kolik karın ağrısı ve böbrek tutulumu tipiktir. En önemli akut komplikasyon çoğunlukla ileoileal invajinasyondur; şiddetli karın ağrısında ultrasonla dışlanmalıdır. Şiddetli karın ağrısında kortikosteroid yarar sağlar ancak böbrek tutulumunu önlemez. Böbrek tutulumu için en az 6-12 ay idrar ve kan basıncı izlemi gerekir.",
+        "category": "👶 Yenidoğan Acilleri",
+        "age": "3 Haftalık",
+        "gender": "Kız",
+        "complaint": "Doğumdan sonraki ilk hafta başlayan ve hâlâ geçmeyen ciltte ve göz akında sararma",
+        "history": "Annesi anlatıyor: 'Doğumdan sonra 3. gün sarardı, çok yüksek değil denildi ve ışık tedavisi almadı. Üç haftadır sarılık geçmedi, yüzü ve göğsü hâlâ sarı.' 39. haftada normal doğum, doğum ağırlığı 3200 g. Yalnız anne sütü alıyor, günde 9-10 kez emiyor, günde 6-7 bez ıslatıyor. Dışkısı sarı ve hardal kıvamında, idrarı açık renkli. Uykusu ve emmesi iyi. Anne ve bebeğin kan grubu aynı. Yenidoğan tarama testlerinin sonuçları normal bildirilmiş.",
+        "final_diagnosis": "Anne Sütü Sarılığı (Uzamış İndirekt Hiperbilirubinemi)",
+        "disposition": "Emzirmeye Devam Edilerek Aile Hekimi ve Bilirubin Takibiyle Yeşil Alandan Taburculuk",
+        "case_pearl": "Term bebekte 14 günü aşan sarılık 'uzamış sarılık' olarak değerlendirilir ve her bebekte direkt (konjuge) bilirubin bakılmalıdır. Direkt bilirubin >1 mg/dL veya totalin %20'sinden fazlaysa kolestaz vardır ve biliyer atrezi için acil ileri tetkik gerekir. Akolik dışkı ve koyu idrar sorgulanır. İyi kilo alan, dışkısı renkli, indirekt hiperbilirubinemili bebekte anne sütü sarılığı en sık nedendir. Emzirme kesilmez.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Döküntünün Niteliği",
-                "question": "Solmayan döküntü, şiddetli karın ağrısı, kanlı dışkı ve diz şişliği olan bu çocukta ilk değerlendirmede neye odaklanırsınız?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Üç haftalık, yalnız anne sütü alan ve hâlâ sarı olan bu bebeğin değerlendirmesinde öncelikli olarak ne yaparsınız?",
                 "options": [
                     {
-                        "text": "Kabarık döküntüyü alerjik ürtiker kabul edip intravenöz antihistaminik ve steroid vermek, karın ağrısı ile kanlı dışkıyı gastroenterite bağlayıp oral sıvı denemesi yapmak",
+                        "text": "Sarılığın göğüs hizasında kaldığını görerek bunun beklenen bir süreç olduğunu söyleyip herhangi bir değerlendirme yapmadan aileyi rahatlatmak",
                         "is_correct": False,
-                        "scenario_update": "Döküntünün solmadığı ve ele geldiği fark edilmedi; karın ağrısı ve kanlı dışkı değerlendirilmedi.",
-                        "teaching_point": "Solmayan döküntü ürtiker değildir; sistematik değerlendirme gerektirir."
+                        "scenario_update": "Bebek muayene edilmeden gönderildi; dışkı rengi, kilo alımı ve bilirubin fraksiyonu hiç değerlendirilmedi.",
+                        "teaching_point": "İki haftayı aşan sarılık her zaman değerlendirilmelidir; kolestaz atlanırsa biliyer atrezide ameliyat şansı kaybedilebilir."
                     },
                     {
-                        "text": "Diz şişliği nedeniyle septik artriti dışlamak için iki dizden acil eklem aspirasyonu yapmak ve sinovyal sıvıyı kültüre göndermek",
+                        "text": "Sarılık uzadığı için emzirmeyi hemen kesip mama başlatmak ve 48 saat sonra sararmanın azalıp azalmadığını görmek üzere kontrole çağırmak",
                         "is_correct": False,
-                        "scenario_update": "Ateşsiz, çok eklemli tabloda aspirasyon gereksizdi; çocuk ağrılı işlem yaşadı ve karın değerlendirmesi gecikti.",
-                        "teaching_point": "Ateşsiz, simetrik, döküntüyle birlikte olan artrit sistemik bir hastalığı düşündürür."
+                        "scenario_update": "Anne emzirmeyi bıraktı, süt üretimi azaldı; bebek mamayı istemedi ve tetkik yapılmadığı için neden belirsiz kaldı.",
+                        "teaching_point": "Emzirmeyi rutin olarak kesmek önerilmez; önce uzamış sarılığın nedeni araştırılmalıdır."
                     },
                     {
-                        "text": "Ateş, perfüzyon ve genel görünümle sepsisi dışlamak; döküntünün dağılımını ve ele gelip gelmediğini, eklemleri, karın, kan basıncı ve testisleri değerlendirmek",
+                        "text": "Büyüme eğrisi, beslenme, dışkı ve idrar rengini sorgulayıp genel durumu, hepatosplenomegaliyi ve sarılığın yaygınlığını muayenede değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Solmayan döküntüde ilk görev hayatı tehdit eden sepsisi dışlamaktır. Simetrik, alt ekstremite ve kalçaya yerleşen palpabl purpura vaskülitik bir süreci düşündürür. Karında kitle invajinasyonu, hipertansiyon böbrek tutulumunu gösterebilir.",
-                        "new_finding": "Vital Bulgular: Ateş 37.4°C, KTA 116/dk, SS 22/dk, TA 106/64 mmHg, SpO2 %99, KDZ 2 sn. Genel durumu ağrı dışında iyi. Bilateral alt ekstremitelerde ve kalçada simetrik, basmakla solmayan, ele gelen purpurik döküntüler; gövde ve yüz temiz. Her iki dizde şişlik ve hareket ağrısı. Karında yaygın kolik hassasiyet, kitle ve peritonit bulgusu yok. Testisler normal."
+                        "explanation": "Uzamış sarılıkta kilo alımı, dışkının renkli olup olmadığı, idrar rengi ve organomegali kolestatik ve hemolitik nedenleri ayırmada ilk ipuçlarıdır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 142/dk, SS 40/dk, SpO2 %99. Tartı 4150 g (doğum ağırlığının üzerinde, günlük ortalama 45 g artış). Yüz, göğüs ve karın üst kısmında sarılık, sklera ikterik. Karaciğer kosta kenarında, dalak ele gelmiyor. Bezdeki dışkı sarı-hardal renginde, idrar açık sarı. Emme refleksi ve tonus normal."
                     },
                     {
-                        "text": "Kanlı dışkı nedeniyle çocuğu aç bırakıp acil kolonoskopi için gastroenterolojiye danışmak ve muayeneyi endoskopi sonrasına bırakmak",
+                        "text": "Sarılık derin görünmese de bebeği hemen yenidoğan servisine yatırıp tetkik sonuçları gelmeden yoğun fototerapi başlatmak",
                         "is_correct": False,
-                        "scenario_update": "Endoskopi için hazırlık başlatıldı; döküntü, eklemler ve kan basıncı değerlendirilmedi.",
-                        "teaching_point": "Endoskopi bu tabloda ilk adım değildir; tanı çoğunlukla klinik bulgularla konur."
+                        "scenario_update": "Bebek anneden ayrıldı ve fototerapiye alındı; sonradan bilirubin değerinin tedavi eşiğinin çok altında olduğu görüldü.",
+                        "teaching_point": "Fototerapi kararı ölçülen bilirubin, saat-yaş ve risk faktörlerine göre verilir; uzamış sarılıkta önce fraksiyon bakılır."
                     }
                 ]
             },
             {
-                "stage_title": "Laboratuvar ve Ultrasonografi",
-                "question": "Ateşsiz, palpabl purpura, artrit ve şiddetli karın ağrısı olan bu çocukta hangi tetkikler öncelikli olarak istenmelidir?",
+                "stage_title": "Tetkik Kararı",
+                "question": "İyi kilo alan, dışkısı renkli bu bebekte hangi tetkikler uygun olur?",
                 "options": [
                     {
-                        "text": "Lösemi ve aplastik anemiyi dışlamak için acil kemik iliği aspirasyonu planlamak ve periferik yaymayı hematolojiye göndermek",
-                        "is_correct": False,
-                        "scenario_update": "Kan sayımı normalken kemik iliği incelemesi gereksizdi; çocuk sedasyon riskine maruz kaldı.",
-                        "teaching_point": "Normal hemogramda kemik iliği incelemesi gerekmez."
-                    },
-                    {
-                        "text": "Karın ağrısı ve kanlı dışkı nedeniyle intravenöz kontrastlı batın bilgisayarlı tomografisi çekmek ve idrar tetkikini taburculukta istemek",
-                        "is_correct": False,
-                        "scenario_update": "Tomografi ultrasonla elde edilebilecek bilgiyi verdi; böbrek tutulumu bir gün geç fark edildi.",
-                        "teaching_point": "Çocukta karın değerlendirmesinde ultrason ilk tercihtir; idrar tetkiki ilk değerlendirmenin parçasıdır."
-                    },
-                    {
-                        "text": "Tanıyı kesinleştirmek için bacaktaki purpurik lezyondan acil deri biyopsisi yapıp immünfloresan incelemeye göndermek ve sonuç çıkana kadar analjezi dışındaki tedavileri ertelemek",
-                        "is_correct": False,
-                        "scenario_update": "Biyopsi sonucu günler sürdü; bu sürede karın ağrısı ve kanama tedavisiz kaldı.",
-                        "teaching_point": "Biyopsi atipik olgularda değerlidir; tipik klinikte tedaviyi geciktirmemelidir."
-                    },
-                    {
-                        "text": "Tam kan sayımı, koagülasyon, BUN-kreatinin, albümin ve tam idrar ile idrarda protein/kreatinin oranı istemek; invajinasyonu dışlamak için batın ultrasonu yapmak",
+                        "text": "Total ve direkt bilirubin, tam kan sayımı ile retikülosit, tam idrar ve tiroid fonksiyonunu istemek, yenidoğan tarama sonuçlarını teyit etmek",
                         "is_correct": True,
-                        "explanation": "Normal trombosit sayısı ve koagülasyon purpuranın trombositopeni veya koagülopatiye bağlı olmadığını gösterir. İdrar ve böbrek fonksiyonları renal tutulumu belirler. Şiddetli karın ağrısında ultrason invajinasyon ve intramural hematomu gösterir.",
-                        "new_finding": "Trombosit 350.000/mm³, lökosit 12.400/mm³, Hb 11.8 g/dL, PT ve aPTT normal, kreatinin 0.4 mg/dL, albümin 3.8 g/dL. İdrarda mikroskopik hematüri, protein/kreatinin oranı 0.6 mg/mg. Batın ultrasonu: ileum duvarında intramural hematomla uyumlu segmenter kalınlaşma; invajinasyon saptanmadı."
+                        "explanation": "Uzamış sarılıkta kolestazı dışlamak için direkt bilirubin şarttır. Hemoliz, idrar yolu enfeksiyonu ve hipotiroidi de basit tetkiklerle dışlanır.",
+                        "new_finding": "Total bilirubin 13.8 mg/dL, direkt bilirubin 0.5 mg/dL. Hb 14.6 g/dL, retikülosit %1.2, periferik yaymada hemoliz bulgusu yok. Tam idrar normal. TSH 3.1 mIU/L, serbest T4 normal."
+                    },
+                    {
+                        "text": "Yalnızca transkutan bilirubin ölçmek ve değer fototerapi eşiğinin altındaysa başka bir tetkik yapmadan iki hafta sonraya kontrol vermek",
+                        "is_correct": False,
+                        "scenario_update": "Transkutan değer 13 mg/dL çıktı; ancak direkt fraksiyon bilinmediği için kolestaz dışlanamadı.",
+                        "teaching_point": "Transkutan ölçüm fraksiyon ayırmaz; uzamış sarılıkta serumda direkt bilirubin mutlaka bakılmalıdır."
+                    },
+                    {
+                        "text": "Kolestaz şüphesiyle tetkik beklemeden hepatobiliyer sintigrafi ve batın ultrasonografisi isteyip çocuk gastroenterolojiye acil sevk planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Sintigrafi için randevu verildi; sonradan direkt bilirubinin normal olduğu ve tetkikin gereksiz olduğu anlaşıldı.",
+                        "teaching_point": "İleri görüntüleme yalnızca direkt hiperbilirubinemi saptandığında gerekir; ilk adım serum fraksiyonlarıdır."
+                    },
+                    {
+                        "text": "Enfeksiyon olasılığı nedeniyle tam kan sayımı, CRP, kan kültürü ve lomber ponksiyon yapıp sonuçlar çıkana kadar ampirik antibiyotik başlamak",
+                        "is_correct": False,
+                        "scenario_update": "İyi görünen ve kilo alan bebek invaziv girişimler ve antibiyotikle hastanede tutuldu; kültürler negatif geldi.",
+                        "teaching_point": "Genel durumu iyi, ateşsiz ve kilo alan bebekte uzamış sarılık tek başına sepsis taraması gerektirmez."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Enfeksiyon sonrası trombositopeni olmadan palpabl purpura, artrit, kanlı dışkıyla kolik karın ağrısı ve hematüri-proteinüri olan bu çocukta tanı nedir?",
+                "question": "Klinik ve laboratuvar bulgularına göre en olası tanınız nedir?",
                 "options": [
                     {
-                        "text": "Akut lenfoblastik lösemi",
+                        "text": "Biliyer atrezi (erken dönem)",
                         "is_correct": False,
-                        "scenario_update": "Hemogram normal, organomegali ve lenfadenopati yok.",
-                        "teaching_point": "Lösemide sitopeniler ve kemik ağrısı beklenir."
+                        "scenario_update": "Direkt bilirubin normaldi, dışkı renkliydi ve karaciğer büyük değildi.",
+                        "teaching_point": "Biliyer atrezide direkt hiperbilirubinemi, akolik dışkı ve koyu idrar olur."
                     },
                     {
-                        "text": "Meningokoksik sepsis (purpura fulminans)",
+                        "text": "Konjenital hipotiroidiye bağlı uzamış sarılık",
                         "is_correct": False,
-                        "scenario_update": "Ateş yok, genel durum iyi, perfüzyon normal ve döküntü simetrik alt ekstremite yerleşimli.",
-                        "teaching_point": "Meningokoksemide hızlı ilerleyen purpura, ateş ve toksik görünüm vardır."
+                        "scenario_update": "TSH ve serbest T4 normaldi, kabızlık, makroglossi veya letarji yoktu.",
+                        "teaching_point": "Hipotiroidide kabızlık, hipotoni, geniş fontanel ve yüksek TSH beklenir."
                     },
                     {
-                        "text": "IgA vasküliti (Henoch-Schönlein purpurası)",
+                        "text": "Hemolitik hastalığa bağlı hiperbilirubinemi",
+                        "is_correct": False,
+                        "scenario_update": "Hb ve retikülosit normaldi, kan grubu uyuşmazlığı ve yaymada hemoliz yoktu.",
+                        "teaching_point": "Hemolizde düşen hemoglobin, artmış retikülosit ve yaymada sferosit veya fragmente eritrosit görülür."
+                    },
+                    {
+                        "text": "Anne sütü sarılığı",
                         "is_correct": True,
-                        "explanation": "EULAR/PRINTO/PRES kriterlerine göre alt ekstremite baskın palpabl purpura ile birlikte karın ağrısı, artrit ve böbrek tutulumu IgA vaskülitini tanımlar.",
-                        "new_finding": "Tanı: IgA Vasküliti (Henoch-Schönlein Purpurası) - ciddi gastrointestinal ve renal tutulum."
-                    },
-                    {
-                        "text": "İmmün trombositopenik purpura",
-                        "is_correct": False,
-                        "scenario_update": "Trombosit sayısı normal, döküntü palpabl ve artrit eşlik ediyor.",
-                        "teaching_point": "İmmün trombositopenide purpura trombositopeniye bağlıdır ve ele gelmez."
+                        "explanation": "İyi kilo alan, renkli dışkılı, yalnız anne sütüyle beslenen ve indirekt hiperbilirubinemisi olan bebekte diğer nedenler dışlandığında en olası tanıdır.",
+                        "new_finding": "Tanı: Anne sütü sarılığı."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve Yatış",
-                "question": "Şiddetli karın ağrısı, kanlı dışkı ve böbrek tutulumu olan bu çocuğun tedavisi nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu bebek için en uygun yönetim planı hangisidir?",
                 "options": [
                     {
-                        "text": "Hematüri ve proteinüri nedeniyle böbrek kaybını önlemek için acil siklofosfamid ve plazmaferez başlamak, karın ağrısı için sürekli opioid infüzyonuyla çocuğu yoğun bakımda izlemek",
+                        "text": "Emzirmeye 48 saat ara verip mama ile beslemek ve bilirubin düşüşü görülürse tanıyı kesinleştirmiş olarak emzirmeye geri dönmek",
                         "is_correct": False,
-                        "scenario_update": "Hafif böbrek tutulumunda yoğun immünsüpresyon gereksizdi; çocuk ciddi yan etki riskine maruz kaldı.",
-                        "teaching_point": "Yoğun immünsüpresyon nefrotik düzeyde proteinüri veya hızla ilerleyen böbrek yetmezliğinde, biyopsi sonrası planlanır."
+                        "scenario_update": "Emzirme ara verilince anne sütü azaldı; bebek huzursuzlandı ve anne kendini suçlu hissetti.",
+                        "teaching_point": "Tanısal amaçlı emzirmeye ara vermek rutin önerilmez; emzirmeyi sürdürmek ve izlemek yeterlidir."
                     },
                     {
-                        "text": "Eklem ve karın ağrısı için yüksek doz ibuprofen başlamak, kanama azaldığı için oral beslenmeye geçip çocuğu idrar izlemi planlamadan taburcu etmek",
+                        "text": "Bilirubini hızlı düşürmek için evde güneş ışığında tutmayı ve öğün aralarında şekerli su ya da bitki çayı vermeyi önermek",
                         "is_correct": False,
-                        "scenario_update": "İbuprofen sonrası gastrointestinal kanama arttı; böbrek tutulumu izlenmedi.",
-                        "teaching_point": "Gastrointestinal kanama ve böbrek tutulumunda NSAİİ'lerden kaçınılır; böbrek izlemi zorunludur."
+                        "scenario_update": "Bebeğe ek sıvılar verildi; emme sayısı azaldı ve kilo alımı yavaşladı.",
+                        "teaching_point": "Su, şekerli su ve bitki çayı bilirubini düşürmez, emzirmeyi azaltır; güneş ışığı güvenli bir tedavi yöntemi değildir."
                     },
                     {
-                        "text": "Servise yatırıp intravenöz sıvı ve analjezi vermek, prednizolon 1-2 mg/kg/gün başlamak, invajinasyon bulgularını izlemek ve 6-12 ay idrar ile kan basıncı takibi planlamak",
+                        "text": "Emzirmeye devam etmeyi önermek, dışkı rengi kartını vermek ve aile hekimiyle 1-2 hafta sonra bilirubin izlemi planlayarak taburcu etmek",
                         "is_correct": True,
-                        "explanation": "Şiddetli karın ağrısında kortikosteroid ağrıyı ve komplikasyon riskini azaltır. İnvajinasyon tedavi sırasında da gelişebilir. Steroid böbrek tutulumunu önlemediğinden uzun süreli idrar ve kan basıncı izlemi gerekir.",
-                        "new_finding": "İntravenöz sıvı, parasetamol ve metilprednizolon başlandı. 24 saatte karın ağrısı belirgin geriledi, kanama durdu. Steroid iki haftada azaltılarak kesildi; nefroloji izleminde proteinüri üç ayda kayboldu."
+                        "explanation": "Anne sütü sarılığı zararsızdır ve haftalar içinde kendiliğinden geriler. Emzirme sürdürülür, akolik dışkı veya koyu idrar fark edilirse hemen başvurmaları söylenir.",
+                        "new_finding": "Aileye dışkı renk kartı verildi, emzirmenin sürdürülmesi önerildi. İki hafta sonraki kontrolde total bilirubin 8.4 mg/dL'ye geriledi, tartı 4850 g."
                     },
                     {
-                        "text": "Enfeksiyon sonrası başladığı için intravenöz seftriakson başlamak ve kortikosteroidi böbrek tutulumunu önlemek amacıyla üç ay sürdürmek",
+                        "text": "Bilirubin metabolizmasını hızlandırmak için iki hafta ursodeoksikolik asit başlamak ve tedavi sonunda yeniden bilirubin ölçümü yapmak",
                         "is_correct": False,
-                        "scenario_update": "Antibiyotiğin rolü yoktu; uzun steroid kullanımı yan etkilere yol açtı ve böbrek tutulumunu önlemedi.",
-                        "teaching_point": "Profilaktik uzun süreli steroid böbrek tutulumunu önlemez; antibiyotik endikasyonu yoktur."
+                        "scenario_update": "İlaç gereksiz yere başlandı; indirekt hiperbilirubinemide etkisi olmadığından seyir değişmedi.",
+                        "teaching_point": "Ursodeoksikolik asit kolestatik hastalıklarda kullanılır; indirekt hiperbilirubinemide yeri yoktur."
                     }
                 ]
             }
@@ -539,131 +539,131 @@ CASES = [
     {
         "id": "Y50",
         "category": "🤢 Karın Ağrısı, Kusma & İshal (GİS)",
-        "age": "4 Aylık",
-        "gender": "Erkek",
-        "complaint": "Sağ kasıkta aniden beliren, içeri girmeyen sert şişlik ve durdurulamayan ağlama",
-        "history": "Ailesi anlatıyor: 'İki saat önce bezini değiştirirken sağ kasığında ceviz büyüklüğünde sert bir şişlik fark ettik. Doğduğundan beri ağladığında kasığında çıkıp yatınca kaybolan bir kabarıklık oluyordu, doktora göstermeyi düşünüyorduk. Bu kez geri gitmedi. Elle bastırınca çok ağlıyor. Yarım saattir sakinleşmiyor, bir kez süt kustu.' 34. haftada prematüre doğmuş. Ateş yok. Tartı: 6.5 kg.",
-        "final_diagnosis": "İnkarsere Sağ İndirekt İnguinal Herni (Strangülasyon Bulgusu Olmayan)",
-        "disposition": "Sarı Alanda Analjezi ve Sedasyonla Nazik Manuel Redüksiyon, Başarı Sonrası 24-48 Saat İçinde Cerrahi Onarım İçin Çocuk Cerrahisine Yatış",
-        "case_pearl": "Bebeklerde, özellikle prematürelerde inguinal kanalın kapanmaması nedeniyle bağırsak sıkışma riski yüksektir. Ağrılı, sert, geri itilemeyen kasık şişliği inkarserasyonu düşündürür. Strangülasyon bulguları (cilt renk değişikliği, ödem, peritonit, kanlı dışkı, sepsis) yoksa analjezi ve sedasyon altında nazik manuel redüksiyon ilk tedavidir ve çoğunlukla başarılıdır. Başarılı redüksiyon sonrası doku ödemi gerilediğinde, nüks riski nedeniyle 24-48 saat içinde cerrahi onarım yapılır. Başarısız redüksiyon veya strangülasyon acil cerrahi gerektirir.",
+        "age": "8 Yaşında",
+        "gender": "Kız",
+        "complaint": "Ateş için sık ibuprofen kullanımı sonrası başlayan mide yanması ve bir kez koyu renkli kusma",
+        "history": "Annesi anlatıyor: 'Üç gündür grip nedeniyle ateşi vardı; ateş düşmediği için günde 4-5 kez, çoğu zaman aç karnına ibuprofen şurup verdim. Dün gece mide kazınması ve yanma başladı. Bu sabah bir kez az miktarda kahve telvesi gibi koyu renkli kustu. Kakası siyah değil. Baş dönmesi veya bayılması olmadı.' Ateşi bugün yok. Daha önce mide şikayeti yok. Kullanılan şurup 100 mg/5 mL; dozları ölçü kaşığıyla değil çay kaşığıyla vermiş. Tartı: 26 kg.",
+        "final_diagnosis": "NSAİİ (İbuprofen) İlişkili Akut Hemorajik Gastrit",
+        "disposition": "Yeşil Alandan NSAİİ Kesilmesi, Oral Proton Pompa İnhibitörü ve Kırmızı Bayrak Eğitimi ile Taburculuk",
+        "case_pearl": "Aç karnına ve sık aralıklarla kullanılan NSAİİ çocukta da mukozal hasara ve üst gastrointestinal kanamaya yol açabilir. Hemodinamisi stabil, hemoglobini normal, melenası olmayan ve kanaması kendiliğinden durmuş çocukta ilacın kesilmesi ve oral PPI (omeprazol yaklaşık 1 mg/kg/gün) yeterlidir; acil endoskopi gerekmez. Tekrarlayan kanama, melena, taşikardi veya Hb düşüşünde yatış ve endoskopi planlanır. Ailenin doz ölçümü ve dozlar arası süre konusunda eğitimi önemlidir.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Kasık Muayenesi",
-                "question": "Sağ kasıkta içeri girmeyen ağrılı şişliği olan bu 4 aylık bebekte muayenede neyi değerlendirirsiniz?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Bir kez koyu renkli kusan, mide yanması tarif eden bu çocukta ilk değerlendirmede önceliğiniz nedir?",
                 "options": [
                     {
-                        "text": "Durdurulamayan ağlamanın infantil kolik olabileceğini düşünüp bebeği kucakta sakinleştirmek, şişlik bir saat içinde kendiliğinden kaybolursa aileye poliklinik randevusu vermek",
-                        "is_correct": False,
-                        "scenario_update": "Bir saat sonra şişlik hâlâ yerindeydi ve bebek ikinci kez kustu.",
-                        "teaching_point": "Ağrılı, geri gitmeyen kasık şişliği acil değerlendirme gerektirir; beklemek iskemi riskini artırır."
-                    },
-                    {
-                        "text": "Analjezi vermeden ve muayene etmeden şişliği hemen güçlü elle bastırarak içeri itmeye çalışmak ve birkaç kez yinelemek",
-                        "is_correct": False,
-                        "scenario_update": "Zorlamayla bebek çok ağladı, karın içi basınç arttı ve şişlik daha da gerildi.",
-                        "teaching_point": "Redüksiyon öncesi değerlendirme, analjezi ve sedasyon gerekir; kaba ve tekrarlayan girişim doku hasarına yol açar."
-                    },
-                    {
-                        "text": "Şişliği sıvı birikimi kabul edip steril iğneyle aspirasyon yapmak ve aspirasyon sonrası şişlik küçülürse bebeği taburcu etmek",
-                        "is_correct": False,
-                        "scenario_update": "Aspirasyon planlanırken transilüminasyonun negatif olduğu fark edildi; iğneyle bağırsak yaralanması riski doğdu.",
-                        "teaching_point": "Kasık şişliğine asla iğneyle girilmez; transilüminasyon pozitifliği bile bağırsak içeriğini tam dışlamaz."
-                    },
-                    {
-                        "text": "Vital bulgular ve perfüzyonu değerlendirmek; şişliğin kıvamını, hassasiyetini, üzerindeki cilt rengini, testisin konumunu, transilüminasyonu ve karında obstrüksiyon bulgularını incelemek",
+                        "text": "Ortostatik nabız ve tansiyon dahil hemodinamiyi, kapiller dolumu, konjonktiva solukluğunu değerlendirmek, karın muayenesi yapıp perianal inspeksiyonla dışkı rengini kontrol etmek",
                         "is_correct": True,
-                        "explanation": "Cilt renk değişikliği, ödem ve toksik görünüm iskemiyi düşündürür. Testis konumu ve transilüminasyon kordon kisti, hidrosel ve inmemiş testis torsiyonunu ayırır. Distansiyon ve safralı kusma obstrüksiyonu gösterir.",
-                        "new_finding": "Vital Bulgular: Ateş 37.3°C, KTA 162/dk, SS 40/dk, SpO2 %99, KDZ 2 sn. Bebek huzursuz ama iyi görünümlü. Sağ inguinal kanaldan skrotuma uzanan 3x2 cm, sert, hassas, geri itilemeyen şişlik; üzerindeki cilt rengi normal, ödemsiz. Transilüminasyon negatif. Sağ testis skrotumda ayrı olarak palpe ediliyor. Karın hafif distandü, yumuşak; bağırsak sesleri normal. Bezde kan yok."
+                        "explanation": "Üst gastrointestinal kanama şüphesinde ilk öncelik hemodinamik stabilitenin değerlendirilmesidir. Ortostatik değişiklikler, solukluk ve melena kanamanın boyutunu gösterir; karın muayenesi perforasyon bulgularını dışlar.",
+                        "new_finding": "Vital Bulgular: Ateş 37.0°C, KTA 94/dk (ayağa kalkınca 100/dk), SS 20/dk, TA 104/66 mmHg, KDZ 1.5 sn. Genel durumu iyi, konjonktivalar pembe. Karın yumuşak, epigastriumda orta hassasiyet; defans ve rebound yok. Perianal inspeksiyonda bezde normal kahverengi dışkı, melena yok. Ağız ve burunda kanama odağı yok."
+                    },
+                    {
+                        "text": "Kahve telvesi kusmanın kaynağını doğrulamak için nazogastrik sonda takıp serum fizyolojik ile lavaj yapmak, aspirat temizlenince vital bulgu ve karın muayenesini tamamlamak",
+                        "is_correct": False,
+                        "scenario_update": "Lavaj sıvısı berrak geldi; çocuk işlem sırasında çok ağladı ve öğürdü. Hemodinami değerlendirmesi gecikti.",
+                        "teaching_point": "Stabil çocukta nazogastrik lavaj tanısal ya da tedavi edici değildir; ilk adım hemodinamik değerlendirmedir."
+                    },
+                    {
+                        "text": "Kusmanın burun kanamasından yutulan kan olabileceğini düşünüp ağırlıklı olarak kulak-burun-boğaz muayenesi yapmak ve ardından taburculuğu değerlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "Burunda kanama odağı saptanmadı. Hemodinami ve karın muayenesi sistematik yapılmadığı için kanamanın kaynağı ve boyutu belirsiz kaldı.",
+                        "teaching_point": "Yutulan kan ayırıcı tanıda düşünülmelidir ancak hemodinamik ve karın muayenesinin yerini almaz."
+                    },
+                    {
+                        "text": "Epigastrik ağrı nedeniyle muayene öncesinde intravenöz parasetamol ve ondansetron yapmak, ağrı geçince karın muayenesini ve vital bulguları değerlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "İlaçlar sonrası çocuk rahatladı; ancak ilk vital bulgular ve ortostatik değerlendirme yapılmadan zaman geçti.",
+                        "teaching_point": "Kanama şüphesinde semptomatik tedavi öncesinde hemodinami ve muayene kaydedilmelidir."
                     }
                 ]
             },
             {
-                "stage_title": "Hazırlık ve Görüntüleme Kararı",
-                "question": "Cilt rengi normal, iyi görünümlü, peritonit bulgusu olmayan bu bebekte sonraki adım nedir?",
+                "stage_title": "Tetkik Stratejisi",
+                "question": "Hemodinamisi stabil, melenası olmayan, bir kez az miktarda koyu kusan bu çocukta tetkik yaklaşımınız nedir?",
                 "options": [
                     {
-                        "text": "Bağırsak tıkanıklığını değerlendirmek için kontrastlı batın bilgisayarlı tomografisi istemek ve sonuç gelene kadar bebeği beslemeye devam etmek",
+                        "text": "Helicobacter pylori enfeksiyonunu dışlamak için dışkı antijen testi istemek ve sonuç pozitif gelirse eradikasyon tedavisi planlamak",
                         "is_correct": False,
-                        "scenario_update": "Tomografi için sedasyon gerekti ve beslenen bebek kustu; işlemler gecikti.",
-                        "teaching_point": "Kasık şişliğinde BT gereksizdir; olası girişim için bebek aç tutulur."
+                        "scenario_update": "Test sonucu iki gün sonra negatif geldi; acil yönetim açısından bilgi sağlamadı.",
+                        "teaching_point": "Akut kanamada dışkı antijen testi ve eradikasyon planı ilk basamak değildir; ayrıca yakın dönem PPI kullanımı yanlış negatifliğe yol açabilir."
                     },
                     {
-                        "text": "Ayakta direkt batın grafisi çekmek, hava-sıvı seviyesi yoksa redüksiyon denemeden bebeği servise yatırıp izlemek",
+                        "text": "Ateş öyküsü nedeniyle tam kan sayımı, CRP, kan kültürü ve batın ultrasonografisi isteyip kanamanın enfeksiyonla ilişkisini araştırmak",
                         "is_correct": False,
-                        "scenario_update": "Grafi nonspesifikti; redüksiyon ertelendikçe kasıktaki şişlik gerginleşti.",
-                        "teaching_point": "Normal grafi sıkışmayı dışlamaz; kontrendikasyon yoksa redüksiyon geciktirilmemelidir."
+                        "scenario_update": "CRP hafif yüksek, kültür negatif ve ultrasonografi normal geldi; sonuçlar kanamanın nedenini açıklamadı.",
+                        "teaching_point": "Tetkikler klinik soruya yönelik olmalıdır; kanamanın en olası nedeni ilaç öyküsünde saklıdır."
                     },
                     {
-                        "text": "Cilt rengi normal ve strangülasyon bulgusu olmadığı için bebeği redüksiyon denemeden aileyle birlikte taburcu edip birkaç hafta içinde elektif cerrahi randevusu vermek",
-                        "is_correct": False,
-                        "scenario_update": "Eve gönderilmek üzere olan bebekte sıkışma sürüyordu; iskemi riski göz ardı edildi.",
-                        "teaching_point": "Sıkışmış bağırsak redükte edilmeden bebek taburcu edilmez."
-                    },
-                    {
-                        "text": "Oral alımı kesip damar yolu açmak, analjezi ve sedasyon hazırlığı yapıp çocuk cerrahisine haber vermek; tanı net değilse ultrason yaptırmak",
+                        "text": "Tam kan sayımı ve dışkıda gizli kan istemek, hemoglobin normal ve kusma tekrarlamıyorsa ek tetkik planlamadan ilaç öyküsünü ayrıntılı netleştirmek",
                         "is_correct": True,
-                        "explanation": "Analjezi ve sedasyon kas gevşemesini sağlayarak redüksiyon başarısını artırır. Olası cerrahi için aç tutulur. Muayene tanısal değilse ultrason kanal içindeki içeriği ve kanlanmayı gösterir.",
-                        "new_finding": "Damar yolu açıldı, intranazal fentanil ve ardından intravenöz midazolam verildi. Çocuk cerrahisi bilgilendirildi. Yatak başı ultrasonda sağ inguinal kanalda peristaltizmi azalmış bağırsak ansı, duvarında kanlanma korunmuş; serbest sıvı yok."
+                        "explanation": "Stabil hastada başlangıç hemoglobini kanamanın boyutunu ve izlem gereksinimini belirler. Ayrıntılı ilaç öyküsü (doz, sıklık, aç karnına kullanım) mukozal hasarın nedenini ortaya koyar.",
+                        "new_finding": "Hb 12.4 g/dL, Hct %37, trombosit 280.000/mm³, MCV normal. Dışkıda gizli kan pozitif. İlaç öyküsünde günde 4-5 kez, her seferinde yaklaşık 10-12 mg/kg ibuprofen verildiği, dozlar arasında 4 saatten kısa aralıklar olduğu ve çoğunun aç karnına olduğu belirlendi."
+                    },
+                    {
+                        "text": "Tam kan sayımı, kan grubu ve koagülasyon testleri istemek ve bilinmeyen kaynaklı kanama nedeniyle aynı gün çocuk gastroenterolojisinden acil endoskopi talep etmek",
+                        "is_correct": False,
+                        "scenario_update": "Hemoglobin normal geldi; gastroenterolog stabil hastada acil endoskopi gerekmediğini belirtti ve çocuk saatlerce aç bekletildi.",
+                        "teaching_point": "Stabil, kanaması durmuş ve açık bir tetikleyicisi olan çocukta acil endoskopi endike değildir."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Doğumdan beri ağlayınca çıkan, şimdi sert, hassas ve geri itilemeyen, transilüminasyon negatif, testisi ayrı palpe edilen ve cilt bulgusu olmayan kasık şişliği olan bu bebekte tanı nedir?",
+                "question": "Aç karnına sık NSAİİ kullanımı sonrası epigastrik yanma, kahve telvesi kusma, stabil hemodinami ve normal hemoglobin varlığında en olası tanı nedir?",
                 "options": [
                     {
-                        "text": "İnguinal lenfadenit",
+                        "text": "Mallory-Weiss yırtığı",
                         "is_correct": False,
-                        "scenario_update": "Şişlik inguinal kanal boyunca skrotuma uzanıyor ve bağırsak içeriyor; ateş ve cilt bulgusu yok.",
-                        "teaching_point": "Lenfadenit kanal dışında, yüzeyel ve hareketli bir kitle olarak ele gelir."
+                        "scenario_update": "Kanamadan önce tekrarlayan şiddetli öğürme veya kusma öyküsü yok.",
+                        "teaching_point": "Mallory-Weiss yırtığında hematemez tekrarlayan kusmaların ardından gelişir."
                     },
                     {
-                        "text": "İnmemiş testis torsiyonu",
-                        "is_correct": False,
-                        "scenario_update": "Sağ testis skrotumda ayrı olarak palpe ediliyor.",
-                        "teaching_point": "Boş skrotumla birlikte kasıkta hassas kitle inmemiş testis torsiyonunu düşündürür."
-                    },
-                    {
-                        "text": "İnkarsere sağ indirekt inguinal herni",
+                        "text": "NSAİİ ilişkili akut hemorajik gastrit",
                         "is_correct": True,
-                        "explanation": "Daha önce redükte olan kasık şişliğinin geri itilememesi, hassasiyet ve ultrasonda kanalda bağırsak ansı inkarserasyonu gösterir. Cilt bulgusu olmaması ve korunmuş kanlanma strangülasyon lehine değildir.",
-                        "new_finding": "Tanı: İnkarsere Sağ İndirekt İnguinal Herni (strangülasyon bulgusu yok)."
+                        "explanation": "Sık ve aç karnına ibuprofen kullanımı prostaglandin aracılı mukozal korumayı bozarak erozif-hemorajik gastrite yol açar; az miktarda hematemez ve epigastrik yanma tipik bulgulardır.",
+                        "new_finding": "Tanı: NSAİİ (İbuprofen) İlişkili Akut Hemorajik Gastrit."
                     },
                     {
-                        "text": "Akut kordon kisti (hidrosel)",
+                        "text": "Akut kolesistit",
                         "is_correct": False,
-                        "scenario_update": "Transilüminasyon negatif, şişlik ağrılı ve ultrasonda bağırsak ansı izlendi.",
-                        "teaching_point": "Hidrosel ve kordon kisti genellikle ağrısız ve transilüminasyon pozitiftir."
+                        "scenario_update": "Sağ üst kadran hassasiyeti, Murphy bulgusu ve sarılık yok; hematemez kolesistit bulgusu değildir.",
+                        "teaching_point": "Epigastrik yanma ve hematemez mide-duodenum kaynaklı patolojiyi düşündürür."
+                    },
+                    {
+                        "text": "Özofageal varis kanaması",
+                        "is_correct": False,
+                        "scenario_update": "Kronik karaciğer hastalığı, splenomegali veya portal hipertansiyon bulgusu yok.",
+                        "teaching_point": "Varis kanaması genellikle masif ve hemodinamik etkilenmeyle seyreder."
                     }
                 ]
             },
             {
-                "stage_title": "Redüksiyon ve Cerrahi Zamanlaması",
-                "question": "Analjezi ve sedasyon altındaki bu bebekte tedavi nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Hemoglobini normal ve stabil olan bu 26 kg'lık çocuğun tedavi planı nasıl olmalıdır?",
                 "options": [
                     {
-                        "text": "Redüksiyon sonrası bebeği aynı gün taburcu edip onarımı bebek bir yaşına gelince planlamak, aileye bandaj kullanmasını önermek",
+                        "text": "İbuprofen dozunu azaltıp parasetamol ile dönüşümlü vermeyi sürdürmek, mide koruması için her dozdan önce antasit süspansiyonu kullanmasını ve ilacı tok karnına vermesini önermek",
                         "is_correct": False,
-                        "scenario_update": "Üç hafta sonra yeniden sıkışma gelişti; bu kez cilt renk değişikliğiyle başvurdu.",
-                        "teaching_point": "Sıkışma öyküsü olan bebekte nüks riski yüksektir; onarım birkaç gün içinde yapılır ve bandaj önerilmez."
+                        "scenario_update": "İbuprofen sürdürülünce iki gün sonra epigastrik ağrı arttı ve çocuk tekrar koyu renkli kustu.",
+                        "teaching_point": "Mukozal kanama gelişen çocukta NSAİİ kesilmelidir; antasit tek başına yeterli koruma sağlamaz."
                     },
                     {
-                        "text": "Bebeğin bacaklarını fleksiyona alıp kanal girişini sabitleyerek nazik ve sürekli basıyla manuel redüksiyon yapmak; başarılıysa gözleyip 24-48 saat içinde cerrahi onarım planlamak",
+                        "text": "İbuprofeni kesmek, yaklaşık 1 mg/kg/gün oral omeprazol başlamak, ateş için parasetamol önermek ve melena veya kan kusmada dönüşü anlatmak",
                         "is_correct": True,
-                        "explanation": "Sedasyon altında nazik ve sürekli bası çoğu olguda başarılıdır. Redüksiyon sonrası kusma, distansiyon ve peritonit izlenir. Doku ödemi gerilediğinde, nüks ve yeniden sıkışma riski nedeniyle onarım ertelenmeden yapılır. Başarısızlıkta acil cerrahi gerekir.",
-                        "new_finding": "Nazik sürekli bası ile bağırsak ansı hafif bir kayma hissiyle karın içine döndü. Bebek sakinleşti ve uykuya daldı. Gözlemde kusma ve distansiyon olmadı; 36. saatte açık herniotomi yapıldı ve ertesi gün taburcu edildi."
+                        "explanation": "Tedavinin temeli suçlu ilacın kesilmesi ve mukozal iyileşmeyi sağlayan asit baskılamadır. Ateş için doğru dozda parasetamol kullanımı ve kırmızı bayraklar ayrıntılı anlatılır; 2-4 hafta PPI genellikle yeterlidir.",
+                        "new_finding": "Omeprazol 20 mg/gün başlandı, aileye parasetamol doz tablosu ve ölçü kaşığı kullanımı gösterildi. 48 saat sonraki kontrolde mide yanması gerilemişti, kusma tekrarlamadı, dışkı rengi normaldi."
                     },
                     {
-                        "text": "Prematüre bebekte nüks riski yüksek olduğu için redüksiyon denemeden doğrudan acil cerrahiye almak, ödemli dokuda onarım yapmak ve karşı tarafı rutin olarak eksplore etmek",
+                        "text": "Yatırarak intravenöz pantoprazol infüzyonu başlamak, 24 saat oral alımı kapatmak ve ertesi gün kontrol hemoglobini ile endoskopi planlamak",
                         "is_correct": False,
-                        "scenario_update": "Ödemli dokuda acil cerrahi komplikasyon riskini artırdı; redüksiyon büyük olasılıkla başarılı olacaktı.",
-                        "teaching_point": "Strangülasyon yoksa önce redüksiyon denenir; ödem gerilediğinde yapılan cerrahi daha güvenlidir."
+                        "scenario_update": "Stabil çocuk gereksiz yere yatırıldı ve aç bırakıldı; kontrol hemoglobini değişmedi, endoskopi iptal edildi.",
+                        "teaching_point": "Hemodinamisi stabil, Hb'si normal ve kanaması durmuş çocukta yatış, intravenöz PPI ve acil endoskopi gerekmez."
                     },
                     {
-                        "text": "Redüksiyonu kolaylaştırmak için bebeği Trendelenburg pozisyonunda bırakıp şişliğe buz uygulamak ve dört saat kendiliğinden gerilemesini beklemek",
+                        "text": "İbuprofeni kesip yalnızca sukralfat süspansiyonu başlamak, beslenmeyi sulu gıdalarla sınırlamak ve bir hafta sonra kontrole çağırmak",
                         "is_correct": False,
-                        "scenario_update": "Dört saatlik beklemede şişlik gerilemedi; buz uygulaması bebekte soğuk hasarı riski yarattı ve iskemi süresi uzadı.",
-                        "teaching_point": "Kendiliğinden gerileme beklenmez; analjezi-sedasyon altında aktif redüksiyon yapılır. Bebekte buz uygulaması önerilmez."
+                        "scenario_update": "Sukralfat sonrası çocuk kabızlık geliştirdi; yanma yakınması yavaş geriledi.",
+                        "teaching_point": "Asit baskılama ilk seçenektir; sukralfat ikinci basamak bir mukozal koruyucudur ve kısıtlayıcı diyet gerekmez."
                     }
                 ]
             }

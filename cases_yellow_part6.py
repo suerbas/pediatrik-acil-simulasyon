@@ -1,153 +1,144 @@
 # -*- coding: utf-8 -*-
 """
-Pediatrik Acil Simülasyonu - Sarı Alan Vakaları (Part 6: Y51 - Y60)
+Pediatrik Acil Simülasyonu - Sarı Alan Vakaları (Part 6: S51 - S60)
 Odak: Bulantı, Kusma, Karın Ağrısı, İshal (GİS Acilleri - Sarı Alan Monitörizasyon & Stabilizasyon)
 Kılavuzlar: ESPGHAN, AAP, PALS, NASPGHAN, APSA (Pediatric Surgery)
 """
 
-YELLOW_CASES_PART6 = [{'id': 'Y51',
-  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-  'age': '5 Yaşında',
-  'gender': 'Kız',
-  'complaint': 'Kramp tarzında karın ağrısı, karında şişlik, yeşil kusma ve 24 saattir gaz-dışkı çıkaramama',
-  'history': "Ailesi anlatıyor: 'Bir yıl önce patlamış apandisit nedeniyle açık ameliyat oldu. Dün akşam aralıklı "
-             'kramp şeklinde karın ağrısı başladı, bu sabah koyu yeşil kusmaya başladı. Bir yudum su bile içse '
-             "kusuyor. Bir gündür ne gaz ne kaka çıkardı, karnı davul gibi şişti.' Ateşi 37.5°C. Tartı: 19 kg.",
-  'final_diagnosis': 'Adezyona Bağlı İnce Bağırsak Obstrüksiyonu (Strangülasyon Bulgusu Olmayan)',
-  'disposition': 'Sarı Alanda Nazogastrik Dekompresyon, İntravenöz Sıvı-Elektrolit Düzeltmesi ve Çocuk Cerrahisiyle '
-                 'Seri Muayene İçin Yatış',
-  'case_pearl': 'Geçirilmiş karın ameliyatı sonrası kolik ağrı, safralı kusma, distansiyon ve gaz-dışkı çıkaramama '
-                'yapışıklığa bağlı ince bağırsak tıkanıklığını düşündürür; çocuklarda en sık perfore apandisit sonrası '
-                'görülür. Strangülasyon bulgusu (sürekli ağrı, ateş, taşikardi, peritonit, lökositoz, laktat artışı) '
-                'yoksa nazogastrik dekompresyon, sıvı-elektrolit düzeltmesi ve seri muayene ile başlanır; suda çözünür '
-                'kontrast hem tanısal hem tedavi edicidir. Klinik kötüleşme veya 24-48 saatte düzelmeme cerrahi '
-                'gerektirir.',
-  'steps': [{'stage_title': 'İlk Değerlendirme ve Dekompresyon',
-             'question': 'Geçirilmiş karın ameliyatı olan, safralı kusan ve karnı şiş bu 5 yaşındaki çocukta ilk '
-                         'yaklaşımınız nedir?',
-             'options': [{'text': 'Tıkanıklığı aşmak için metoklopramid ve laktüloz başlamak, çocuğu sıvı diyetle '
-                                  'gözlem odasında izlemek',
+YELLOW_CASES_PART6 = [{'id': 'S51',
+  'category': '⚡ Alerji, Zehirlenme & Diğer Aciller',
+  'age': '2 Yaşında (12 kg)',
+  'gender': 'Erkek',
+  'complaint': 'Bir saat önce su şişesine konmuş lavabo açıcı sıvıdan içtikten sonra ağlama, salya akması ve su içmeyi '
+               'reddetme',
+  'history': "Annesi anlatıyor: 'Mutfak lavabosunu açmak için kullandığımız sıvıyı su şişesine boşaltmıştım, tezgâhta "
+             "kalmış. Oğlum bir yudum alıp çığlık attı, hemen ağzını yıkadım ve süt içirmeye çalıştım ama içmedi.' Bir "
+             'kez kusmuş, kusmukta kan yok. Öksürük, ses kısıklığı veya nefes darlığı yok. Ürün şişesi yanında; '
+             "etikette 'sodyum hidroksit içerir' yazıyor. Daha önce sağlıklı.",
+  'final_diagnosis': 'Alkali Korozif Madde (Lavabo Açıcı) Yutmasına Bağlı Zargar Evre 2b Özofagus Yanığı',
+  'disposition': 'Ağızdan Beslenme Kesilerek IV Sıvı, PPİ ve Darlık İzlemi Planıyla Çocuk Gastroenteroloji Yatışı',
+  'case_pearl': 'Korozif madde yutmada kusturma, nötralize etme, mide lavajı ve aktif kömür kontrendikedir. Ağız '
+                'içinde lezyon olmaması özofagus hasarını dışlamaz. Semptomatik çocukta (salya, kusma, yutamama, '
+                'stridor) özofagus hasarı yüksek olasılıktır. Endoskopi ilk 24 saatte (perforasyon riski nedeniyle 5. '
+                'günden sonra değil) yapılmalıdır. Zargar sınıflaması prognozu belirler: evre 2b ve üzerinde darlık '
+                'riski yüksektir. Darlık için 3. haftada kontrastlı grafi ile izlem yapılır.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Lavabo açıcı içtikten sonra salyası akan bu çocukta ilk yaklaşımınız nedir?',
+             'options': [{'text': 'Maddeyi nötralize etmek için seyreltik sirke veya limon suyu içirmek, ardından bol '
+                                  'süt vererek midedeki maddeyi seyreltmeye çalışmak',
                           'is_correct': False,
-                          'scenario_update': 'Prokinetik sonrası kramp ağrıları arttı ve kusma sürdü.',
-                          'teaching_point': 'Mekanik tıkanıklıkta prokinetik ve laksatifler kontrendikedir.'},
-                         {'text': 'Kusmayı azaltmak için intravenöz ondansetron verip yarım saat sonra oral sıvı '
-                                  'denemesi yapmak ve ağrı kesici olarak oral ibuprofen önermek',
+                          'scenario_update': 'Sıvı verildikten sonra çocuk kustu; korozif madde özofagusa yeniden '
+                                             'temas etti ve ağlaması arttı.',
+                          'teaching_point': 'Nötralizasyon ısı açığa çıkarır ve kusmayı tetikler; korozif yutmada '
+                                            'ağızdan hiçbir şey verilmez.'},
+                         {'text': 'Mide sondası takıp lavaj yapmak ve ardından toksini bağlamak için aktif kömür '
+                                  'vermek, sonra muayeneyi tamamlamak',
                           'is_correct': False,
-                          'scenario_update': 'Çocuk sıvıyı hemen safralı kustu; aspirasyon riski oluştu ve sıvı açığı '
-                                             'derinleşti.',
-                          'teaching_point': 'Safralı kusması olan çocukta oral deneme yapılmaz; antiemetik tıkanıklığı '
-                                            'maskeleyebilir.'},
-                         {'text': 'Oral alımı kesip nazogastrik sondayla mideyi boşaltmak, damar yolu açıp sıvı ve '
-                                  'analjezi vermek, iskemi bulgularını ve fıtık deliklerini değerlendirmek',
+                          'scenario_update': 'Sonda yerleştirme sırasında çocuk öğürdü ve kustu; aktif kömür '
+                                             'endoskopik görüşü engelleyecek şekilde mukozayı kapladı.',
+                          'teaching_point': 'Korozif maddelerde lavaj ve aktif kömür kontrendikedir; perforasyon riski '
+                                            'taşır ve endoskopiyi zorlaştırır.'},
+                         {'text': 'Havayolunu stridor, ses değişikliği ve solunum sıkıntısı açısından değerlendirip '
+                                  'ağızdan alımı kesmek, ağız içini incelemek ve damar yolu açmak',
                           'is_correct': True,
-                          'explanation': 'Dekompresyon kusmayı ve aspirasyon riskini azaltır; sıvı kaybı izotonik '
-                                         'sıvıyla düzeltilir. Sürekli ağrı, ateş, taşikardi ve peritoneal bulgular '
-                                         'bağırsak iskemisini düşündürür; inguinal fıtık da tıkanıklık nedeni '
-                                         'olabileceğinden muayene edilir.',
-                          'new_finding': 'Vital Bulgular: Ateş 37.5°C, KTA 134/dk, SS 28/dk, TA 94/58 mmHg, KDZ 2.5 '
-                                         'sn. Sağ alt kadranda eski insizyon skarı. Karın belirgin distandü, timpanik; '
-                                         'metalik tınlamalı bağırsak sesleri, yaygın hafif hassasiyet, defans ve '
-                                         'rebound yok. Fıtık delikleri boş. Nazogastrik sondadan 180 mL safralı sıvı '
-                                         'geldi. 20 mL/kg serum fizyolojik sonrası KTA 112/dk.'},
-                         {'text': 'Uzun süredir dışkılamadığı için kabızlığa bağlı ağrı olduğunu düşünüp fosfatlı '
-                                  'lavman uygulamak ve dışkılama sonrası ağrının azalmasını beklemek',
+                          'explanation': 'Laringeal ödem havayolunu tehdit edebilir. Ağızdan alım kesilir; ağız içi '
+                                         'bulgular kaydedilir ancak lezyon olmaması özofagus hasarını dışlamaz.',
+                          'new_finding': 'Vital Bulgular: Ateş 36.9°C, KTA 132/dk, SS 26/dk, SpO2 %99. Stridor ve ses '
+                                         'kısıklığı yok, solunum rahat. Dilin ucu ve sağ yanak mukozasında beyazımsı, '
+                                         'hassas ödemli alanlar; dudak köşesinde eritem. Sürekli salya akıyor, '
+                                         'yutkunmayı reddediyor. Göğüs ve karın muayenesi olağan, deri altı amfizemi '
+                                         'yok.'},
+                         {'text': 'Ağız içinde belirgin yara olmadığını varsayarak yalnızca ağzı yıkamak, bir saat '
+                                  'gözlemde su içebiliyorsa aileyi evden izlem önerisiyle göndermek',
                           'is_correct': False,
-                          'scenario_update': 'Lavman sonrası çok az dışkı geldi; kusma ve distansiyon sürdü, '
-                                             'dekompresyon gecikti.',
-                          'teaching_point': 'Safralı kusma ve distansiyonla birlikte gaz-dışkı çıkaramama kabızlıkla '
-                                            'açıklanmaz; lavman bu tabloyu düzeltmez.'}]},
-            {'stage_title': 'Laboratuvar ve Görüntüleme',
-             'question': 'Dekompresyon ve sıvı tedavisi başlanan bu çocukta hangi tetkikler öncelikli olarak '
-                         'istenmelidir?',
-             'options': [{'text': 'Tam kan sayımı, elektrolitler, BUN-kreatinin, kan gazı ve laktat istemek; ayakta ve '
-                                  'yatarak direkt batın grafisi çekmek',
+                          'scenario_update': 'Çocuk sıvıyı yine reddetti; ertesi gün ateş ve göğüs ağrısıyla '
+                                             'getirildi.',
+                          'teaching_point': 'Semptomatik çocukta özofagus hasarı olasılığı yüksektir; ağız bulgusu '
+                                            'olmasa bile ileri değerlendirme gerekir.'}]},
+            {'stage_title': 'Tetkik ve Endoskopi Kararı',
+             'question': 'Havayolu güvende olan bu çocukta hangi tetkik ve zamanlama doğrudur?',
+             'options': [{'text': 'Hasarı göstermek için hemen baryumlu özofagus grafisi çekmek ve grafi normalse '
+                                  'endoskopi yapmadan beslenmeye başlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Erken baryum grafisi mukozal hasarı göstermedi; baryum ayrıca sonraki '
+                                             'endoskopik değerlendirmeyi zorlaştırdı.',
+                          'teaching_point': 'Akut dönemde kontrastlı grafi hasarın derinliğini göstermez; ilk '
+                                            'değerlendirme endoskopidir, kontrast grafi darlık izleminde kullanılır.'},
+                         {'text': 'Kesin bilgi için yutmadan sonraki ilk saat içinde, çocuk aç olmasa bile hemen acil '
+                                  'endoskopi yaptırmak ve sonucuna göre plan yapmak',
+                          'is_correct': False,
+                          'scenario_update': 'Çok erken yapılan endoskopi hasarın tam sınırlarını göstermedi; tam mide '
+                                             'nedeniyle aspirasyon riski yüksekti.',
+                          'teaching_point': 'Endoskopi hasar sınırlarının belirginleştiği 12-24. saatlerde, uygun '
+                                            'açlık sonrası yapılmalıdır.'},
+                         {'text': 'Akciğer grafisi ve kan gazını alıp ağızdan alımı kesmek, IV sıvı ve PPİ başlamak; '
+                                  'endoskopiyi ilk 24 saat içinde planlamak',
                           'is_correct': True,
-                          'explanation': 'Kusmayla oluşan elektrolit kayıpları ve böbrek fonksiyonu sıvı tedavisini '
-                                         'belirler. Lökositoz, asidoz ve laktat artışı iskemiyi düşündürür. Direkt '
-                                         'grafi tıkanıklığın düzeyini ve serbest havayı gösterir.',
-                          'new_finding': 'Lökosit 12.800/mm³, Na 134, K 3.2, Cl 96 mEq/L, BUN 44 mg/dL, kreatinin 0.5 '
-                                         'mg/dL, pH 7.38, laktat 1.4 mmol/L. Ayakta direkt grafi: santral yerleşimli '
-                                         'dilate ince bağırsak ansları ve merdiven basamağı şeklinde çok sayıda '
-                                         'hava-sıvı seviyesi; kolon ve rektumda gaz yok, diyafram altında serbest hava '
-                                         'yok.',
-                          'image': 'assets/images/adbg_air_fluid.png',
-                          'image_caption': 'Ayakta Direkt Batın Grafisi'},
-                         {'text': 'Kolon kaynaklı bir sorunu dışlamak için acil kolonoskopi planlamak ve barsak '
-                                  'temizliği için oral solüsyon vermek',
+                          'explanation': 'Akciğer grafisi mediastinit ve perforasyon için ilk taramadır. Endoskopi '
+                                         'yaralanmanın derecesini ve tedavi planını belirler; 24 saat içinde '
+                                         'yapılmalı, 5. günden sonra perforasyon riski nedeniyle ertelenmemelidir.',
+                          'new_finding': 'Akciğer grafisi normal, serbest hava veya mediastinal genişleme yok. Kan '
+                                         'gazı normal. 16. saatte yapılan endoskopi: Orta ve distal özofagusta '
+                                         'çevresel, eksüdalı, beyaz plaklı derin ülserasyonlar; midede yaygın '
+                                         'hiperemi, perforasyon yok.'},
+                         {'text': 'Endoskopiye gerek olmadığını düşünüp toraks ve batın bilgisayarlı tomografisi '
+                                  'çekmek ve özofagus duvar kalınlığına göre karar vermek',
                           'is_correct': False,
-                          'scenario_update': 'Oral solüsyon verilen çocuk masif kustu ve distansiyon arttı.',
-                          'teaching_point': 'Tıkanıklık bulguları olan çocukta oral barsak hazırlığı kontrendikedir.'},
-                         {'text': 'Tıkanıklık yerini göstermek için oral baryumlu pasaj grafisi çekmek ve kontrast '
-                                  'kolona geçene kadar seri grafilerle izlemek',
-                          'is_correct': False,
-                          'scenario_update': 'Çocuk baryumu kustu; tıkanıklık proksimalinde biriken baryum olası '
-                                             'cerrahiyi zorlaştıracaktı.',
-                          'teaching_point': 'Tıkanıklıkta baryum kullanılmaz; gerekirse suda çözünür kontrast tercih '
-                                            'edilir.'},
-                         {'text': 'Yalnızca tam kan sayımı istemek, lökosit normal sınırdaysa enfeksiyon olmadığını '
-                                  'kabul edip görüntüleme yapmadan çocuğu servise göndermek',
-                          'is_correct': False,
-                          'scenario_update': 'Elektrolit bozukluğu ve tıkanıklığın düzeyi değerlendirilmeden çocuk '
-                                             'servise gönderildi.',
-                          'teaching_point': 'Tıkanıklık şüphesinde görüntüleme ve elektrolit değerlendirmesi '
-                                            'zorunludur.'}]},
+                          'scenario_update': 'Tomografide özofagus duvarında hafif kalınlaşma görüldü; mukozal hasarın '
+                                             'derecesi değerlendirilemedi.',
+                          'teaching_point': 'Tomografi perforasyon şüphesinde yararlıdır, ancak mukozal hasarın '
+                                            'sınıflaması için endoskopinin yerini tutmaz.'}]},
             {'stage_title': 'Klinik Tanı',
-             'question': 'Geçirilmiş laparotomi sonrası kolik ağrı, safralı kusma, distansiyon, gaz-dışkı çıkaramama '
-                         've grafide merdiven basamağı hava-sıvı seviyeleri olan bu çocukta tanı nedir?',
-             'options': [{'text': 'Adezyona bağlı ince bağırsak obstrüksiyonu',
+             'question': 'Endoskopi bulgularına göre yaralanmanın sınıflaması nedir?',
+             'options': [{'text': 'Zargar evre 1 (yalnız ödem ve hiperemi)',
+                          'is_correct': False,
+                          'scenario_update': 'Endoskopide ödem ve hiperemiden öte, derin ve çevresel ülserler vardı.',
+                          'teaching_point': 'Evre 1 yalnızca ödem ve hiperemidir; darlık riski çok düşüktür.'},
+                         {'text': 'Zargar evre 2a (yüzeyel ülserler)',
+                          'is_correct': False,
+                          'scenario_update': 'Ülserler yüzeyel değil, derin ve çevreseldi.',
+                          'teaching_point': 'Evre 2a yüzeyel ülser, erozyon ve eksüda ile sınırlıdır.'},
+                         {'text': 'Zargar evre 3a (fokal nekroz)',
+                          'is_correct': False,
+                          'scenario_update': 'Kahverengi-siyah nekroz alanı görülmedi.',
+                          'teaching_point': 'Evre 3 nekrozla karakterizedir; 3a fokal, 3b yaygın nekrozdur.'},
+                         {'text': 'Zargar evre 2b (derin veya çevresel ülserler)',
                           'is_correct': True,
-                          'explanation': 'Geçirilmiş perfore apandisit ameliyatı sonrası gelişen yapışıklıklar ince '
-                                         'bağırsağı sıkıştırarak mekanik tıkanıklık yapar; ateş, peritonit ve laktat '
-                                         'artışının olmaması strangülasyon lehine değildir.',
-                          'new_finding': 'Tanı: Adezyona Bağlı İnce Bağırsak Obstrüksiyonu (strangülasyon bulgusu '
-                                         'yok).'},
-                         {'text': 'Hipokalemiye bağlı paralitik ileus',
-                          'is_correct': False,
-                          'scenario_update': 'Potasyum hafif düşük; kolik ağrı, metalik bağırsak sesleri ve kolonda '
-                                             'gaz yokluğu mekanik bir nedeni gösteriyor.',
-                          'teaching_point': 'Paralitik ileusta bağırsak sesleri azalır ve gaz kolona kadar yaygındır.'},
-                         {'text': 'Sigmoid volvulusu',
-                          'is_correct': False,
-                          'scenario_update': 'Grafide kolon dilatasyonu yok; dilatasyon santral ince bağırsakta.',
-                          'teaching_point': 'Sigmoid volvulusu çocuklarda nadirdir ve dev kolon ansı görüntüsü verir.'},
-                         {'text': 'Akut viral gastroenterit',
-                          'is_correct': False,
-                          'scenario_update': 'İshal yok, gaz-dışkı çıkışı durmuş ve grafide tıkanıklık bulgusu var.',
-                          'teaching_point': 'Gastroenteritte kusma genellikle safrasızdır ve ishal eşlik eder.'}]},
-            {'stage_title': 'Tedavi ve İzlem',
-             'question': 'Strangülasyon bulgusu olmayan bu çocuğun tedavi planı nasıl olmalıdır?',
-             'options': [{'text': 'Tüm yapışıklık tıkanıklıklarının cerrahi gerektirdiğini düşünüp çocuğu hemen '
-                                  'laparotomiye almak ve yapışıklıkları tamamen açmak',
-                          'is_correct': False,
-                          'scenario_update': 'Konservatif tedaviyle düzelebilecek tablo için erken cerrahi yapıldı; '
-                                             'yeni yapışıklık riski arttı.',
-                          'teaching_point': 'Strangülasyon bulgusu yoksa önce konservatif tedavi denenir.'},
-                         {'text': 'Bakteriyel translokasyonu önlemek için geniş spektrumlu antibiyotik başlamak ve '
-                                  'tıkanıklık çözülene kadar bir hafta total parenteral beslenmeyle izlemek',
-                          'is_correct': False,
-                          'scenario_update': 'Rutin antibiyotik ve uzun süreli bekleme gereksizdi; çocuk santral '
-                                             'kateter komplikasyon riskiyle karşılaştı.',
-                          'teaching_point': 'Basit tıkanıklıkta rutin antibiyotik önerilmez; 48 saatte düzelmeyen '
-                                            'tablo cerrahiyle değerlendirilir.'},
-                         {'text': 'Nazogastrik sondayı çekip sıvı diyete başlamak, gaz çıkışı olursa aynı gün taburcu '
-                                  'etmek ve ağrı için oral analjezik önermek',
-                          'is_correct': False,
-                          'scenario_update': 'Erken beslenme sonrası yeniden safralı kusma başladı; çocuk tekrar '
-                                             'başvurdu.',
-                          'teaching_point': 'Beslenme tıkanıklığın çözüldüğüne dair klinik ve radyolojik kanıttan '
-                                            'sonra başlanır.'},
-                         {'text': 'Nazogastrik dekompresyonu, potasyumlu izotonik sıvıyı ve analjeziyi sürdürmek, '
-                                  'çocuk cerrahisiyle seri muayene ve gerekirse suda çözünür kontrast çalışması '
-                                  'planlamak',
+                          'explanation': 'Çevresel, eksüdalı derin ülserasyonlar Zargar evre 2b özofagus yanığını '
+                                         'gösterir; bu evrede darlık riski yüksektir.',
+                          'new_finding': 'Tanı: Alkali korozif yutmaya bağlı Zargar evre 2b özofagus yanığı.'}]},
+            {'stage_title': 'Tedavi ve İzlem Planı',
+             'question': 'Evre 2b özofagus yanığı olan bu çocuk için en uygun tedavi planı hangisidir?',
+             'options': [{'text': 'Ağızdan beslenmeyi kesip IV sıvı, PPİ ve analjezi vermek; tolere edince sıvı gıdaya '
+                                  'geçmek ve 3. haftada darlık için kontrastlı grafi planlamak',
                           'is_correct': True,
-                          'explanation': 'Strangülasyon bulgusu olmayan yapışıklık tıkanıklıklarının çoğu konservatif '
-                                         'tedaviyle çözülür. Suda çözünür kontrastın 24 saatte kolona geçmesi '
-                                         'düzelmeyi öngörür. Kötüleşme veya 24-48 saatte yanıt alınamaması cerrahi '
-                                         'gerektirir.',
-                          'new_finding': 'Konservatif tedavi sürdürüldü; nazogastrik sondadan suda çözünür kontrast '
-                                         'verildi. 18. saatte kontrast kolonda görüldü, çocuk gaz çıkardı. Sonda '
-                                         'çekildi, beslenme başlandı ve dördüncü gün taburcu edildi.'}]}]},
- {'id': 'Y52',
+                          'explanation': 'Destek tedavisi ve beslenme planı esastır. Ekip, kısa süreli yüksek doz '
+                                         'metilprednizolonu evre 2b için değerlendirebilir. Antibiyotik rutin '
+                                         'değildir. Darlık riski nedeniyle kontrastlı grafi ile izlem yapılır.',
+                          'new_finding': 'Yedinci gün salya geriledi ve sıvı gıdaya geçildi. Üçüncü hafta kontrastlı '
+                                         "grafide distal özofagusta 2 cm'lik hafif daralma saptandı ve dilatasyon "
+                                         'programına alındı.'},
+                         {'text': 'Çocuk salya akıtmayı bıraktığında ağız lezyonları iyileşiyor kabul edip ikinci gün '
+                                  'normal diyetle taburcu etmek, darlık izlemi planlamamak',
+                          'is_correct': False,
+                          'scenario_update': 'Altı hafta sonra çocuk katı gıdaları yutamama ve kilo kaybıyla '
+                                             'getirildi; ileri derecede darlık saptandı.',
+                          'teaching_point': 'Evre 2b yanıkta darlık sık gelişir; semptomlar düzelse de kontrastlı '
+                                            'grafiyle izlem gerekir.'},
+                         {'text': 'Enfeksiyonu önlemek için iki hafta geniş spektrumlu IV antibiyotik başlamak ve '
+                                  'beslenmeyi yalnızca total parenteral beslenmeyle sürdürmek',
+                          'is_correct': False,
+                          'scenario_update': 'Uzun süreli antibiyotik ishale neden oldu; santral kateter enfeksiyonu '
+                                             'gelişti.',
+                          'teaching_point': 'Rutin antibiyotik önerilmez; mümkün olan en kısa sürede enteral '
+                                            'beslenmeye geçilmelidir.'},
+                         {'text': 'Darlığı önlemek için ilk hafta içinde endoskopik balon dilatasyonu yapmak ve '
+                                  'ardından haftalık dilatasyon seanslarına başlamak',
+                          'is_correct': False,
+                          'scenario_update': 'Erken dilatasyon sırasında özofagus duvarında perforasyon gelişti.',
+                          'teaching_point': 'Akut dönemde (ilk 3-4 hafta) dilatasyon perforasyon riski taşır; darlık '
+                                            'geliştikten sonra yapılır.'}]}]},
+ {'id': 'S52',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '8 Yaşında',
   'gender': 'Erkek',
@@ -285,7 +276,7 @@ YELLOW_CASES_PART6 = [{'id': 'Y51',
                           'scenario_update': 'Ağır hastalıkta yanıt yetersiz kaldı; kardeşte de benzer ishal başladı.',
                           'teaching_point': 'Metronidazol ağır olmayan olgularda seçenektir; ağır hastalıkta oral '
                                             'vankomisin tercih edilir. Alkol sporları etkisizleştirmez.'}]}]},
- {'id': 'Y53',
+ {'id': 'S53',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '11 Yaşında',
   'gender': 'Kız',
@@ -423,7 +414,7 @@ YELLOW_CASES_PART6 = [{'id': 'Y51',
                           'new_finding': 'Ringer laktat ve morfin sürdürüldü. İkinci gün ağrı azaldı, düşük yağlı '
                                          'diyetle oral beslenme başlandı. Etiyoloji araştırması için poliklinik izlemi '
                                          'planlandı; çocuk beşinci gün taburcu edildi.'}]}]},
- {'id': 'Y54',
+ {'id': 'S54',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '2 Aylık',
   'gender': 'Erkek',
@@ -564,7 +555,7 @@ YELLOW_CASES_PART6 = [{'id': 'Y51',
                           'scenario_update': 'Aktif enterokolit ve sepsis sırasında yapılan cerrahi yüksek '
                                              'komplikasyon riski taşıdı; cerrahi ekip ameliyatı erteledi.',
                           'teaching_point': 'Kesin cerrahi akut enterokolit tedavi edildikten sonra planlanır.'}]}]},
- {'id': 'Y55',
+ {'id': 'S55',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '4 Yaşında',
   'gender': 'Kız',
@@ -715,7 +706,7 @@ YELLOW_CASES_PART6 = [{'id': 'Y51',
                                          'saatlik kan şekeri ve nörolojik izlem yapıldı. Nakil merkeziyle görüşülerek '
                                          'çocuk yoğun bakım ambulansıyla sevk edildi; orada nakil listesine '
                                          'alındı.'}]}]},
- {'id': 'Y56',
+ {'id': 'S56',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '5 Yaşında',
   'gender': 'Erkek',
@@ -855,7 +846,7 @@ YELLOW_CASES_PART6 = [{'id': 'Y51',
                           'scenario_update': 'Drene edilecek apse olmadığı için girişim yapılamadı; zaman kaybedildi.',
                           'teaching_point': 'Perkütan drenaj apse varlığında uygulanır; inflame yapı rezeksiyon '
                                             'gerektirir.'}]}]},
- {'id': 'Y57',
+ {'id': 'S57',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '18 Aylık',
   'gender': 'Kız',
@@ -992,7 +983,7 @@ YELLOW_CASES_PART6 = [{'id': 'Y51',
                                              'yeni seyirmeler başladı.',
                           'teaching_point': 'Hasta çocuklarda hipotonik idame sıvısı hiponatremiyi ağırlaştırır; izlem '
                                             'sürdürülmelidir.'}]}]},
- {'id': 'Y58',
+ {'id': 'S58',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '3 Yaşında',
   'gender': 'Erkek',
@@ -1131,7 +1122,7 @@ YELLOW_CASES_PART6 = [{'id': 'Y51',
                                              'gelişti.',
                           'teaching_point': 'Bolus yalnızca perfüzyon bozukluğu sürüyorsa tekrarlanır; sonrasında '
                                             'hesaplanmış açık ve idame verilir.'}]}]},
- {'id': 'Y59',
+ {'id': 'S59',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '5 Yaşında',
   'gender': 'Kız',
@@ -1272,141 +1263,141 @@ YELLOW_CASES_PART6 = [{'id': 'Y51',
                                          'dozu hidrokortizon planlandı. Kan ve asit kültüründe penisiline duyarlı S. '
                                          'pneumoniae üredi. 72 saatte ateş düştü; tedavi 10 güne tamamlandı ve '
                                          'pnömokok aşıları planlandı.'}]}]},
- {'id': 'Y60',
-  'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
-  'age': '2 Yaşında',
+ {'id': 'S60',
+  'category': '🌡️ Ateş & Döküntü / Enfeksiyon',
+  'age': '5 Haftalık (4.5 kg)',
   'gender': 'Erkek',
-  'complaint': 'Oyuncak kumandasındaki yassı yuvarlak pili yuttuktan sonra göğüs ağrısı, salya akıtma ve yutamama',
-  'history': "Ailesi anlatıyor: 'Yaklaşık 45 dakika önce oyuncak arabanın kumandasının kapağını açmış, içindeki madeni "
-             'para büyüklüğündeki yassı yuvarlak lityum pili ağzına atıp yutmuş. O andan beri göğsünün üstünü gösterip '
-             "ağlıyor, tükürüğünü yutamıyor, salyası akıyor. Su içirmeye çalıştık, hemen öğürüp çıkardı.' Öksürük ve "
-             'nefes darlığı yok. Bilinen hastalığı yok. Tartı: 12 kg.',
-  'final_diagnosis': 'Özofagusta Takılı Düğme Pil',
-  'disposition': 'Sarı Alanda Oral Alımın Kesilmesi, Bal Uygulaması ve İlk 2 Saat İçinde Acil Endoskopik Çıkarma, '
-                 'Sonrasında Gecikmiş Komplikasyon İzlemi',
-  'case_pearl': 'Özofagusta takılan lityum düğme pil, mukozada hidroksit iyonu oluşturarak 2 saat içinde ciddi yanık '
-                'yapabilir; perforasyon, trakeoözofageal fistül ve aortoözofageal fistül gelişebilir. Çıkarma süresi '
-                'saatlerle ölçülür. Çocuk 1 yaşından büyükse ve yutma 12 saat içindeyse endoskopiyi geciktirmeden 10 '
-                'dakikada bir 10 mL bal verilmesi (en fazla 6 doz) hasarı azaltır. Ön-arka grafide çift halka, yan '
-                'grafide basamaklanma görülür. Çıkarma sonrası haftalarca gecikmiş komplikasyonlar açısından izlem '
-                'gerekir.',
-  'steps': [{'stage_title': 'İlk Değerlendirme ve Acil Önlemler',
-             'question': '45 dakika önce yassı yuvarlak lityum pil yutan, salya akıtan ve yutamayan bu 2 yaşındaki '
-                         'çocukta ilk yaklaşımınız nedir?',
-             'options': [{'text': 'Hava yolunu değerlendirip oral alımı kesmek, işlemi geciktirmeden 10 mL bal vermek, '
-                                  'acil grafi çekip endoskopi ekibini çağırmak',
+  'complaint': 'Bu gece başlayan 38.6°C ateş ve iki öğündür daha az emme',
+  'history': "Annesi anlatıyor: 'Gece huzursuzlandı, ateşini ölçtüm 38.6°C çıktı. Emiyor ama her zamankinden kısa "
+             "emiyor. Bir kez kustu.' İshal, öksürük, burun akıntısı yok. Evde hasta kimse yok. 39. haftada normal "
+             'doğum, doğum sonrası sorun yok, annede doğum öncesi enfeksiyon ya da GBS taraması bilgisi yok. Aşıları '
+             'güncel; son aşısı doğumda yapılmış. Sünnetsiz. Evde ateş düşürücü verilmemiş.',
+  'final_diagnosis': 'Ateşli Süt Çocuğunda E. coli İdrar Yolu Enfeksiyonu (Piyelonefrit) ve Bakteriyemi',
+  'disposition': 'Parenteral Seftriakson ile Çocuk Servisine Yatış, Böbrek Ultrasonografisi ve Kültür Takibi',
+  'case_pearl': 'AAP 2021 kılavuzuna göre 22-28 günlük ve 29-60 günlük iyi görünen ateşli bebekler farklı yönetilir. '
+                '29-60 günde idrar tetkiki, kan kültürü ve inflamatuvar belirteçler (prokalsitonin >0.5 ng/mL, CRP >20 '
+                'mg/L, mutlak nötrofil >4000/mm³) değerlendirilir. İnflamatuvar belirteçler anormalse lomber ponksiyon '
+                'düşünülür, parenteral antibiyotik verilir ve hasta yatırılır. İdrar tetkiki pozitif ve belirteçler '
+                'normalse seçilmiş olgular ayaktan izlenebilir.',
+  'steps': [{'stage_title': 'İlk Klinik Değerlendirme ve Fizik Muayene',
+             'question': 'Ateşi olan 5 haftalık bu bebeğin ilk değerlendirmesinde hangi yaklaşım doğrudur?',
+             'options': [{'text': 'Ateşin kaynağını görmek için ilk önce akciğer grafisi istemek, grafi normalse viral '
+                                  'enfeksiyon kabul edip parasetamol ile taburcu etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Grafi normal geldi ve bebek taburcu edildi; 12 saat sonra beslenmeyi '
+                                             'bırakmış ve hipotonik olarak geri getirildi.',
+                          'teaching_point': 'Solunum bulgusu olmayan ateşli küçük bebekte akciğer grafisi rutin '
+                                            'değildir; odak saptanamayınca ciddi bakteriyel enfeksiyon taraması '
+                                            'yapılmalıdır.'},
+                         {'text': 'Görünümü, perfüzyonu ve vitalleri değerlendirmek; fontanel, cilt, göbek ve genital '
+                                  'bölge dahil tam muayene yapıp ateşi rektal yoldan doğrulamak',
                           'is_correct': True,
-                          'explanation': 'Salya ve yutamama özofagusta takılmayı düşündürür. 1 yaşından büyük çocukta '
-                                         'ilk 12 saat içinde bal, pil yüzeyini kaplayarak mukoza hasarını azaltır; '
-                                         'ancak çıkarma işlemi asla geciktirilmez.',
-                          'new_finding': 'Vital Bulgular: Ateş 37.0°C, KTA 128/dk, SS 26/dk, TA 94/56 mmHg, SpO2 %99. '
-                                         'Ajite, göğsünün üstünü gösteriyor, salya akıyor. Stridor ve solunum '
-                                         'sıkıntısı yok, akciğer sesleri eşit. Hematemez yok. 10 mL bal verildi; '
-                                         'endoskopi ekibi bilgilendirildi.'},
-                         {'text': 'Pili mideye itmek için bol su ve ekmek yedirmek, ardından dışkıyla çıkmasını '
-                                  'beklemek üzere aileyi evde izleme yönlendirmek',
+                          'explanation': 'Bebeğin genel görünümü, yaşı ve muayene yönetimi belirler. 60 günden küçük '
+                                         'bebekte odak saptanmasa da ciddi bakteriyel enfeksiyon riski yüksektir.',
+                          'new_finding': 'Vital Bulgular: Rektal ateş 38.7°C, KTA 172/dk, SS 46/dk, SpO2 %99, TA 82/48 '
+                                         'mmHg, KDZ 2 sn. Genel görünüm iyi, uyanık, iyi teselli ediliyor, emme '
+                                         'refleksi var. Fontanel normal. Döküntü yok, göbek temiz. Akciğer sesleri '
+                                         'normal. Karın yumuşak. Sünnetsiz, genital muayene olağan. Odak saptanmadı.'},
+                         {'text': 'Ateş evde ölçüldüğü için muayenede ateş yüksek değilse bebeği kundaklamaya bağlı '
+                                  'ısınma olarak değerlendirip ateş takibi önermek',
                           'is_correct': False,
-                          'scenario_update': 'Çocuk suyu ve ekmeği kustu; özofagusta takılı pil yerinde kalmaya devam '
-                                             'etti.',
-                          'teaching_point': 'Özofagusta takılı cisim için zorlama beslenme aspirasyon riskini artırır '
-                                            've hasarı durdurmaz.'},
-                         {'text': 'Pilin ağızdan çıkması için ipeka şurubu ile kusturmaya çalışmak ve yarım saat '
-                                  'içinde kusma olmazsa boyun-göğüs grafisi çekmek',
+                          'scenario_update': 'Bebek soyulup ölçüldüğünde ateş hâlâ yüksekti; değerlendirme gecikti.',
+                          'teaching_point': 'Ailenin ölçtüğü ateş küçük bebekte ciddi kabul edilir; kundaklama ateşi '
+                                            'anlamlı biçimde yükseltmez.'},
+                         {'text': 'Bebeği muayene etmeden önce rektal parasetamol vermek ve ateş düştüğünde genel '
+                                  'durumu iyiyse ek değerlendirme gerekmediğini kabul etmek',
                           'is_correct': False,
-                          'scenario_update': 'Kusturma girişimi sonrası çocuk öğürdü ama pil çıkmadı; aspirasyon riski '
-                                             'oluştu.',
-                          'teaching_point': 'Yutulan cisimlerde kusturma kontrendikedir; aspirasyon riskini artırır.'},
-                         {'text': 'Çocuk stabil olduğu için ailenin aç kalma süresini tamamlamasını bekleyip '
-                                  'endoskopiyi ertesi sabaha planlamak',
-                          'is_correct': False,
-                          'scenario_update': 'Bekleme süresinde çocukta hematemez gelişti; endoskopide derin özofagus '
-                                             'yanığı saptandı.',
-                          'teaching_point': 'Bu tabloda endoskopi aç kalma süresi beklenmeden acil yapılır; hasar '
-                                            'dakikalar-saatler içinde gelişir.'}]},
-            {'stage_title': 'Görüntüleme',
-             'question': 'Bal verilen ve endoskopi ekibi bilgilendirilen bu çocukta hangi görüntüleme yapılmalıdır?',
-             'options': [{'text': 'Özofagus hasarını değerlendirmek için endoskopiden önce intravenöz kontrastlı '
-                                  'toraks tomografisi çekmek',
-                          'is_correct': False,
-                          'scenario_update': 'Tomografi endoskopiyi bir saat geciktirdi; bu sürede mukoza hasarı '
-                                             'ilerledi.',
-                          'teaching_point': 'Tomografi gerekirse çıkarma sonrası komplikasyon değerlendirmesi için '
-                                            'yapılır; çıkarmayı geciktirmez.'},
-                         {'text': 'Cismin yerini ve özofagus hasarını kesinleştirmek için oral kontrastlı özofagus '
-                                  'grafisi çekmek ve kontrastın mideye geçişini izlemek',
-                          'is_correct': False,
-                          'scenario_update': 'Çocuk kontrastı aspire etti ve öksürmeye başladı.',
-                          'teaching_point': 'Yutamayan çocukta oral kontrast aspirasyon riski taşır ve gereksizdir.'},
-                         {'text': 'Boyun, göğüs ve karını kapsayan ön-arka ve yan grafi çekmek; cismin yerini, şeklini '
-                                  've kenar özelliklerini değerlendirmek',
+                          'scenario_update': 'Ateş parasetamolle düştü ve bebek daha iyi göründü; ciddi enfeksiyon '
+                                             'değerlendirilmedi.',
+                          'teaching_point': 'Antipiretiğe yanıt bakteriyel ve viral enfeksiyonu ayırmaz; küçük bebekte '
+                                            'değerlendirme ateşe yanıttan bağımsızdır.'}]},
+            {'stage_title': 'Tetkik Kararı',
+             'question': 'İyi görünen, odak saptanmayan bu bebekte hangi tetkikleri istersiniz?',
+             'options': [{'text': 'Kateterle idrar tetkiki ve kültürü, kan kültürü ile birlikte hemogramda mutlak '
+                                  'nötrofil sayısı, CRP ve prokalsitonin istemek',
                           'is_correct': True,
-                          'explanation': 'Ön-arka grafide çift halka, yan grafide basamaklanma lityum pili madeni '
-                                         'paradan ayırır. Yan grafi negatif kutbun yönünü ve hasarın en çok olacağı '
-                                         'tarafı gösterir.',
-                          'new_finding': 'Ön-arka ve yan grafi: üst özofagusta (C6-T1 düzeyi) 20 mm çaplı yuvarlak '
-                                         'metalik opasite; ön-arka görüntüde çift halka, yan görüntüde kenarda '
-                                         'basamaklanma. Cilt altı amfizem ve mediastinal hava yok.',
-                          'image': 'assets/images/adbg_button_battery.png',
-                          'image_caption': 'Boyun-Göğüs Grafisi (Ön-Arka ve Yan)'},
-                         {'text': 'Radyasyon riskini azaltmak için grafi çekmeden yalnızca metal dedektörüyle yerini '
-                                  'belirlemek ve endoskopiyi buna göre planlamak',
+                          'explanation': '29-60 günlük bebekte idrar tetkiki ve inflamatuvar belirteçler risk '
+                                         'sınıflamasını belirler. İdrar örneği kateterle alınmalıdır; torba idrarı '
+                                         'kontaminasyon nedeniyle kültür için uygun değildir.',
+                          'new_finding': 'Tam idrar: Lökosit esteraz +++, nitrit pozitif, mikroskopide 85 lökosit/HPF, '
+                                         'bakteri bol. Kan: Lökosit 19.600/mm³, mutlak nötrofil 12.400/mm³, CRP 64 '
+                                         'mg/L, prokalsitonin 2.1 ng/mL. Kan ve idrar kültürleri gönderildi.'},
+                         {'text': 'Torba ile idrar toplayıp tam idrar tetkiki yapmak, sonuç normalse diğer kan '
+                                  'tetkiklerine gerek duymadan bebeği ayaktan izlemek',
                           'is_correct': False,
-                          'scenario_update': 'Dedektör cismin şeklini ve türünü göstermedi; madeni para ile pil ayrımı '
-                                             'yapılamadı.',
-                          'teaching_point': 'Grafi cismin türünü, yerini ve komplikasyonları gösterdiği için '
-                                            'zorunludur.'}]},
+                          'scenario_update': 'Torba idrarı perine florasıyla kontamine oldu ve sonuç yorumlanamadı; '
+                                             'kan tetkikleri yapılmadığı için risk değerlendirilemedi.',
+                          'teaching_point': '60 günden küçük ateşli bebekte idrar kateterle alınmalı ve kan kültürü '
+                                            'ile inflamatuvar belirteçler değerlendirilmelidir.'},
+                         {'text': 'Yalnız hemogram ve CRP istemek; CRP 20 mg/L altındaysa idrar ve kültür gerekmeden '
+                                  'viral enfeksiyon kabul edip evde izlemek',
+                          'is_correct': False,
+                          'scenario_update': 'CRP yüksek geldi ancak idrar ve kan kültürü alınmadan antibiyotik '
+                                             'başlandığı için etken ve kaynak saptanamadı.',
+                          'teaching_point': 'Kültür alınmadan antibiyotik başlanırsa tanı ve tedavi süresi '
+                                            'belirsizleşir; idrar örneği her ateşli küçük bebekte gerekir.'},
+                         {'text': 'Solunum yolu viral panel ve nazofaringeal sürüntü göndermek, virüs pozitifse '
+                                  'bakteriyel tetkik yapmadan destek tedavisiyle izlemek',
+                          'is_correct': False,
+                          'scenario_update': 'Panelde rinovirüs pozitif çıktı ve bakteriyel tetkik yapılmadı; bebek '
+                                             'ertesi gün ağır genel durumla getirildi.',
+                          'teaching_point': 'Pozitif viral test, küçük bebekte eşlik eden bakteriyel enfeksiyonu '
+                                            'özellikle idrar kaynaklıyı dışlamaz.'}]},
             {'stage_title': 'Klinik Tanı',
-             'question': "Grafide üst özofagusta çift halka ve basamaklanma gösteren 20 mm'lik yuvarlak metalik "
-                         'opasite saptanan bu çocukta tanı nedir?',
-             'options': [{'text': 'Özofagusta takılı düğme pil',
+             'question': 'Klinik ve laboratuvar bulgularına göre en olası tanınız nedir?',
+             'options': [{'text': 'Ateşli idrar yolu enfeksiyonu (piyelonefrit)',
                           'is_correct': True,
-                          'explanation': 'Öyküyle birlikte çift halka ve basamaklanma işareti özofagusta takılı lityum '
-                                         'düğme pili doğrular; acil endoskopik çıkarma gerektirir.',
-                          'new_finding': 'Tanı: Özofagusta Takılı Lityum Düğme Pil.'},
-                         {'text': 'Retrofaringeal apse',
+                          'explanation': 'Odak saptanmayan ateşli küçük bebekte piyüri, nitrit pozitifliği ve belirgin '
+                                         'yüksek inflamatuvar belirteçler ateşli idrar yolu enfeksiyonunu gösterir. Bu '
+                                         'yaşta bakteriyemi eşlik edebilir.',
+                          'new_finding': 'Tanı: Ateşli idrar yolu enfeksiyonu (piyelonefrit). 18. saatte kan ve idrar '
+                                         'kültüründe E. coli üredi.'},
+                         {'text': 'Geç başlangıçlı GBS menenjiti',
                           'is_correct': False,
-                          'scenario_update': 'Ateş ve boyun hareket kısıtlılığı yok; grafide metalik cisim var.',
-                          'teaching_point': 'Retrofaringeal apse ateş, boyun sertliği ve prevertebral yumuşak doku '
-                                            'genişlemesiyle seyreder.'},
-                         {'text': 'Akut viral krup',
+                          'scenario_update': 'Fontanel normaldi, bebek iyi görünüyordu ve idrar tetkiki enfeksiyonun '
+                                             'kaynağını gösterdi.',
+                          'teaching_point': 'Menenjit dışlanması için BOS gerekir; ancak idrar bulguları burada '
+                                            'kaynağı açıklamaktadır.'},
+                         {'text': 'Enteroviral ateşli hastalık',
                           'is_correct': False,
-                          'scenario_update': 'Stridor ve havlar tarzda öksürük yok; yutma öyküsü ve metalik cisim var.',
-                          'teaching_point': 'Krupta inspiratuvar stridor ve havlar öksürük öne çıkar.'},
-                         {'text': 'Özofagusta takılı madeni para',
+                          'scenario_update': 'Belirgin piyüri ve prokalsitonin yüksekliği viral bir tabloyla uyumlu '
+                                             'değildi.',
+                          'teaching_point': 'Viral enfeksiyonda prokalsitonin genellikle 0.5 ng/mL altındadır.'},
+                         {'text': 'Aşı sonrası ateş',
                           'is_correct': False,
-                          'scenario_update': 'Madeni para grafide tek, homojen bir disk olarak görülür; çift halka ve '
-                                             'basamaklanma yoktur.',
-                          'teaching_point': 'Çift halka işareti lityum pili madeni paradan ayırır ve aciliyeti '
-                                            'belirler.'}]},
-            {'stage_title': 'Çıkarma ve İzlem',
-             'question': 'Bu çocuğun tedavi ve izlem planı nasıl olmalıdır?',
-             'options': [{'text': 'İlk 2 saat içinde genel anestezi altında endoskopik çıkarma yapmak, mukoza hasarını '
-                                  'değerlendirmek ve gecikmiş fistül-perforasyon belirtileri için haftalarca izlemek',
+                          'scenario_update': 'Son aşı doğumda yapılmıştı, tablo aşıyla zamansal ilişki göstermiyordu.',
+                          'teaching_point': 'Aşıya bağlı ateş genellikle aşıdan sonraki 24-48 saatte görülür.'}]},
+            {'stage_title': 'Tedavi ve Yatış Planı',
+             'question': 'Bu bebek için en uygun tedavi planı hangisidir?',
+             'options': [{'text': 'Genel durumu iyi olduğu için oral sefiksim reçete edip ertesi gün kontrole çağırmak '
+                                  've kültür sonucunu telefonla bildirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Bebek evde iki kez kustu ve ilacı tutamadı; ertesi gün bakteriyemi '
+                                             'tablosuyla yeniden getirildi.',
+                          'teaching_point': 'İnflamatuvar belirteçleri anormal olan 60 günden küçük bebek ayaktan oral '
+                                            'tedaviyle izlenmez.'},
+                         {'text': 'Tek doz intramüsküler seftriakson yapıp 24 saat sonra kontrol muayenesi planlamak '
+                                  've lomber ponksiyona gerek görmeden taburcu etmek',
+                          'is_correct': False,
+                          'scenario_update': 'Ertesi gün kan kültüründe E. coli ürediği bildirildi ve bebek yatırılmak '
+                                             'üzere yeniden çağrıldı.',
+                          'teaching_point': 'Ayaktan izlem yalnızca inflamatuvar belirteçleri normal, idrarı pozitif '
+                                            've iyi görünen seçilmiş bebeklerde düşünülebilir.'},
+                         {'text': 'Lomber ponksiyonu değerlendirip parenteral seftriakson ile yatırmak, kültüre göre '
+                                  'tedaviyi düzenlemek ve böbrek ultrasonografisi planlamak',
                           'is_correct': True,
-                          'explanation': 'Hasar süreyle orantılı olduğundan çıkarma acil yapılır. Endoskopide yanığın '
-                                         'derinliği ve yönü kaydedilir; aortoözofageal fistül gibi hayatı tehdit eden '
-                                         'komplikasyonlar haftalar sonra gelişebileceğinden aile hematemez, ateş ve '
-                                         'göğüs ağrısı konusunda bilgilendirilir.',
-                          'new_finding': 'Yutmadan 1 saat 40 dakika sonra endoskopik olarak çıkarıldı; arka duvarda '
-                                         'yüzeyel yanık saptandı, asetik asitle yıkandı. Aileye gecikmiş komplikasyon '
-                                         'belirtileri anlatıldı; iki hafta sonraki kontrolde yutma normaldi.'},
-                         {'text': 'Mukozayı korumak için intravenöz proton pompası inhibitörü ve sukralfat başlamak, '
-                                  'pil mideye geçebileceği için 24 saat sonra kontrol grafisiyle endoskopi '
-                                  'gereksinimini değerlendirmek',
+                          'explanation': '29-60 günlük bebekte inflamatuvar belirteçler anormalse lomber ponksiyon '
+                                         'önerilir ve parenteral antibiyotikle yatış yapılır. Bakteriyemide toplam '
+                                         'tedavi süresi uzar. İlk ateşli idrar yolu enfeksiyonunda böbrek '
+                                         'ultrasonografisi yapılır.',
+                          'new_finding': 'BOS normal (hücre 3/mm³, glukoz 48 mg/dL, protein 62 mg/dL), BOS kültürü '
+                                         'steril kaldı. Seftriakson başlandı, ateş 36. saatte düştü. Kan kültüründe ve '
+                                         'idrarda üreyen E. coli seftriaksona duyarlıydı. Böbrek ultrasonografisinde '
+                                         'sağda hafif pelvis dilatasyonu saptandı.'},
+                         {'text': 'Vezikoüreteral reflü olasılığı nedeniyle önce acil işeme sistoüretrografisi çekmek '
+                                  've reflü saptanırsa antibiyotik tedavisine başlamak',
                           'is_correct': False,
-                          'scenario_update': 'Bekleme sırasında mukoza hasarı ilerledi; endoskopide derin nekroz '
-                                             'saptandı.',
-                          'teaching_point': 'İlaçlar çıkarmanın yerini tutmaz; pil acilen çıkarılmalıdır.'},
-                         {'text': 'Acil serviste sedasyonsuz Foley kateteriyle körlemesine çekerek pili çıkarmak ve '
-                                  'çocuğu hemen taburcu etmek',
-                          'is_correct': False,
-                          'scenario_update': 'Girişim sırasında çocuk öğürdü ve pil hava yoluna doğru yer değiştirdi; '
-                                             'acil anestezi gerekti.',
-                          'teaching_point': 'Lityum pil doğrudan görüş altında çıkarılmalı ve mukoza hasarı '
-                                            'değerlendirilmelidir.'},
-                         {'text': 'Pilin mideye geçmesi için laksatif vermek ve dışkıyla çıkana kadar günlük grafiyle '
-                                  'evde izlemek',
-                          'is_correct': False,
-                          'scenario_update': 'Pil özofagusta kaldı; ikinci gün ateş ve hematemez gelişti.',
-                          'teaching_point': 'Özofagustaki pil kendiliğinden ilerlemeyi beklemeden acil '
-                                            'çıkarılmalıdır.'}]}]}]
+                          'scenario_update': 'Akut dönemde yapılan işeme sistoüretrografisi bebeğin huzursuzluğunu '
+                                             'artırdı ve antibiyotik başlangıcı gecikti.',
+                          'teaching_point': 'Akut enfeksiyonda antibiyotik geciktirilmez; işeme sistoüretrografisi '
+                                            'seçilmiş olgularda daha sonra planlanır.'}]}]}]

@@ -134,7 +134,7 @@ export default function App() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => loadSearchIndex().then(setSearchIndex).catch(() => {})}
-            placeholder="Tüm arşivde ara: menenjit, yoğun bakım, kusma, G14…"
+            placeholder="Tüm arşivde ara: menenjit, yoğun bakım, kusma, Y14…"
           />
         </label>
       </div>

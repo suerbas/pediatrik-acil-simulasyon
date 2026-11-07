@@ -1,137 +1,137 @@
 # -*- coding: utf-8 -*-
 """
-Sarı Alan Vakaları - Y66-Y70 (v2 Şartnamesine Uygun Yeniden Yazım)
+Yeşil Alan Vakaları - Y66-Y70 (v2 Şartnamesine Uygun Yeniden Yazım)
 """
 
 CASES = [
     {
         "id": "Y66",
-        "category": "🩸 Hematolojik & Onkolojik Aciller",
-        "age": "6 Yaşında",
+        "category": "👶 Ağlayan, Emmeyen, Huzursuz Bebek",
+        "age": "2 Aylık",
         "gender": "Erkek",
-        "complaint": "Lösemi tedavisi alan çocukta üşüme-titreme ile başlayan 38.9°C ateş ve halsizlik",
-        "history": "Ailesi anlatıyor: 'Akut lenfoblastik lösemi tedavisi alıyor, son kemoterapisini 9 gün önce aldı. Göğsünde port var. Bir saat önce titreyerek ateşlendi, 38.9°C ölçtük. Halsiz, yemek yemiyor. Port bölgesinde kızarıklık yok.' Öksürük, ishal ve idrar yakınması yok. Hematoloji ateşlenirse hemen gelmelerini söylemiş. Penisilin alerjisi yok. Tartı: 20 kg.",
-        "final_diagnosis": "Kemoterapi Sonrası Febril Nötropeni (Yüksek Risk, Santral Venöz Kateterli)",
-        "disposition": "Sarı Alanda İlk 60 Dakikada Kültür Sonrası İntravenöz Antipsödomonal Beta-Laktam ile Çocuk Hematoloji-Onkoloji Yatışı",
-        "case_pearl": "Kemoterapi alan çocukta tek ölçümde ≥38.3°C ya da bir saat süren ≥38.0°C ateş ve mutlak nötrofil sayısı <500/mm³ (veya 48 saatte <500'e düşmesi beklenen) acil durumdur. Nötropenik hastada enflamasyon bulguları silik olabilir; ilk belirti yalnızca ateştir. Kan kültürü (kateterin tüm lümenlerinden, mümkünse periferden) alındıktan sonra antipsödomonal beta-laktam monoterapisi (sefepim, piperasilin-tazobaktam) başvurudan itibaren 60 dakika içinde verilmelidir. Hipotansiyon, kateter giriş yeri enfeksiyonu veya MRSA kolonizasyonunda vankomisin eklenir. Rektal ölçüm ve rektal muayene yapılmaz.",
+        "complaint": "Her dışkılama öncesi 15-20 dakika yüzü kızararak ıkınma, ağlama ve bacaklarını karnına çekme",
+        "history": "Ebeveynleri anlatıyor: 'Yalnızca anne sütü alıyor. İki haftadır kaka yapmadan önce yüzü kıpkırmızı olana kadar ıkınıyor, 15-20 dakika ağlıyor. Sonunda yaptığı kaka yumuşacık, hardal sarısı. Yapınca hemen sakinleşiyor. Kabız diye makatına yağlı kulak çubuğu soktuk, gliserinli fitil verdik ama her seferinde aynı şey oluyor.' Doğumdan sonraki ilk gün mekonyum çıkarmış. Kusma ve ateş yok. Ayda 900 g alıyor. Tartı: 5.4 kg.",
+        "final_diagnosis": "İnfant Diskezi (Roma IV)",
+        "disposition": "Yeşil Alandan Fizyolojik Sürecin Açıklanması ve Rektal Uyarıların Bırakılması Eğitimi ile Taburculuk",
+        "case_pearl": "9 aylıktan küçük, sağlıklı bebekte yumuşak dışkı çıkarmadan önce en az 10 dakika süren ıkınma ve ağlama, karın içi basınç artışı ile pelvik taban gevşemesinin henüz koordine olmamasından kaynaklanır (Roma IV). Dışkının yumuşak olması kabızlığı dışlar. Mekonyumun gecikmemesi, normal büyüme ve normal muayene güvence verir. Rektal uyarı (çubuk, termometre, fitil) bebeği dışkılama için dış uyarıya koşullandırabileceğinden bırakılmalıdır; laksatif gerekmez.",
         "steps": [
             {
-                "stage_title": "Triaj ve İlk Değerlendirme",
-                "question": "Kemoterapi alan, portu olan ve titreyerek ateşlenen bu çocukta ilk yaklaşımınız nedir?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Dışkılama öncesi uzun süre ıkınan ve ağlayan bu 2 aylık bebekte öykü ve muayenede neye odaklanırsınız?",
                 "options": [
                     {
-                        "text": "Ateşin nedenini netleştirmek için önce tam kan sayımı sonucunu beklemek, nötrofil düşükse antibiyotik başlamayı değerlendirmek",
-                        "is_correct": False,
-                        "scenario_update": "Hemogram sonucu 75 dakika sonra çıktı; antibiyotik penceresi kaçırıldı.",
-                        "teaching_point": "Ampirik antibiyotik nötrofil sonucunu beklemeden, başvurudan itibaren 60 dakika içinde verilmelidir."
-                    },
-                    {
-                        "text": "Hemen izole odaya almak; perfüzyonu değerlendirmek, port bölgesi, ağız, deri ve perianal bölgeyi rektal muayene yapmadan incelemek",
+                        "text": "Mekonyum çıkış zamanını, büyüme eğrisini ve dışkı kıvamını sorgulamak; karın distansiyonu, anüs yeri ve çapı, fissür, anal refleks ve lumbosakral bölgeyi muayene etmek",
                         "is_correct": True,
-                        "explanation": "Bağışıklığı baskılanmış çocuk enfeksiyondan korunmalı ve şok açısından hızla değerlendirilmelidir. Mukozit, kateter enfeksiyonu, selülit ve perianal apse sık odaklardır. Rektal girişim bakteriyemi riski nedeniyle yapılmaz.",
-                        "new_finding": "Vital Bulgular: Ateş 38.9°C, KTA 136/dk, SS 24/dk, SpO2 %98, TA 98/58 mmHg, KDZ 2 sn. Bilinç açık, halsiz. Ağızda hafif mukozit, port giriş yeri temiz, kızarıklık ve hassasiyet yok. Akciğer sesleri doğal. Perianal bölgede kızarıklık yok. Deri lezyonu yok."
+                        "explanation": "Mekonyum gecikmesi, büyüme geriliği, distansiyon ve anal anomali organik nedenleri (Hirschsprung, anorektal malformasyon, spinal disrafizm) düşündürür. Dışkının yumuşak olması gerçek kabızlığı dışlar.",
+                        "new_finding": "Vital Bulgular: Ateş 36.8°C, KTA 128/dk, SS 34/dk. Tartı 5.4 kg (50. persentil). Bebek sakin, gülümsüyor. Karın yumuşak, distansiyon ve kitle yok. Anüs normal yerleşimli ve normal çaplı, fissür yok; anal refleks canlı. Lumbosakral bölgede gamze, kıl tutamı veya leke yok."
                     },
                     {
-                        "text": "Ateşin doğruluğunu kontrol etmek için rektal ölçüm yapmak ve olası perianal odağı aramak için parmakla rektal muayene uygulamak",
+                        "text": "Ikınmayı kabızlık kabul edip ayrıntılı muayeneye gerek görmeden laktüloz şurubu başlamak, gliserinli fitili her dışkılamada sürdürmelerini önermek",
                         "is_correct": False,
-                        "scenario_update": "Rektal muayene sonrası mukozada küçük bir kanama oldu; bakteriyemi riski arttı.",
-                        "teaching_point": "Nötropeni olasılığı olan çocukta rektal ölçüm, rektal muayene ve fitil kullanılmaz."
+                        "scenario_update": "Laktüloz sonrası dışkı sulandı, gaz ve huzursuzluk arttı; ıkınma süresi değişmedi.",
+                        "teaching_point": "Yumuşak dışkı kabızlık değildir; laksatif ve rektal uyarı gereksizdir."
                     },
                     {
-                        "text": "Bekleme salonunda sıra beklemesine izin vermek, ateş düşürücü verip bir saat sonra ateşi kontrol ederek hekime almak",
+                        "text": "Ağlama atakları ve bacaklarını karnına çekmesi nedeniyle invajinasyonu düşünüp acil karın ultrasonografisi istemek ve sonuç gelene kadar emzirmeye ara verip bebeği aç bırakmak",
                         "is_correct": False,
-                        "scenario_update": "Bekleme salonunda geçen 80 dakikada çocukta taşikardi ve soğuk ekstremiteler gelişti.",
-                        "teaching_point": "Kemoterapi alan ateşli çocuk triajda öncelikli alınır; antibiyotiğe kadar geçen süre sağkalımı etkiler."
+                        "scenario_update": "Ultrasonografi normal geldi; iyi görünümlü bebek iki saat aç bekletildi.",
+                        "teaching_point": "Yalnızca dışkılamayla ilişkili, dışkı çıkınca geçen yakınmada invajinasyon düşünülmez; 2 aylık bebekte de nadirdir."
+                    },
+                    {
+                        "text": "Annenin beslenmesinin bebekte gaz yaptığını düşünüp anneye süt, baklagil ve sebze içermeyen kısıtlı diyet önermek ve bir hafta sonra kontrol etmek",
+                        "is_correct": False,
+                        "scenario_update": "Annenin kısıtlı diyeti emzirmeyi zorlaştırdı; bebeğin yakınmaları değişmedi.",
+                        "teaching_point": "Kanıt olmadan annenin diyetini kısıtlamak emzirmeyi tehlikeye atar."
                     }
                 ]
             },
             {
-                "stage_title": "Kültürler ve Antibiyotik Zamanlaması",
-                "question": "Hemodinamisi şu an stabil olan bu çocukta tetkik ve tedavi sıralaması nasıl olmalıdır?",
+                "stage_title": "Tetkik Kararı",
+                "question": "Büyümesi normal, mekonyumu zamanında çıkmış, muayenesi normal ve dışkısı yumuşak olan bu bebekte tetkik yaklaşımınız nedir?",
                 "options": [
                     {
-                        "text": "Ateş kaynağını göstermek için önce akciğer grafisi, batın ultrasonu ve ekokardiyografi yaptırmak, odak bulunursa antibiyotik seçmek",
+                        "text": "Tiroid fonksiyon testleri, serum kalsiyum, elektrolitler ve çölyak serolojisi isteyip normal çıkarsa fonksiyonel bir sorun olduğunu söylemek",
                         "is_correct": False,
-                        "scenario_update": "Görüntülemeler iki saat sürdü ve odak bulunamadı; antibiyotik gecikti.",
-                        "teaching_point": "Bu hastaların çoğunda odak bulunmaz; ampirik tedavi görüntüleme beklenmeden başlanır."
+                        "scenario_update": "Tetkikler normal geldi; yenidoğan taraması zaten normaldi ve kan alımı bebeği çok huzursuz etti.",
+                        "teaching_point": "Yalnızca anne sütü alan 2 aylık bebekte çölyak serolojisi anlamsızdır; metabolik tetkikler bu tabloda gereksizdir."
                     },
                     {
-                        "text": "Kültür alamadan portu çıkarmak için cerrahiye danışmak ve kateter ucu kültürü gelene kadar antibiyotiği ertelemek",
+                        "text": "Hirschsprung hastalığını dışlamak için kontrastlı kolon grafisi ve rektal emme biyopsisi planlamak, sonuçlara göre aileye bilgi vermek",
                         "is_correct": False,
-                        "scenario_update": "Cerrahi görüş saatler aldı; port yerinde enfeksiyon bulgusu yoktu ve çıkarılması gereksizdi.",
-                        "teaching_point": "Kateter çıkarılması tünel enfeksiyonu, septik tromboz veya dirençli bakteriyemide gündeme gelir."
+                        "scenario_update": "Kolon grafisi normal geldi; biyopsi ailenin onayıyla iptal edildi ancak bebek gereksiz radyasyona maruz kaldı.",
+                        "teaching_point": "Zamanında mekonyum, yumuşak dışkı ve normal büyüme Hirschsprung olasılığını çok düşürür."
                     },
                     {
-                        "text": "Port ve periferden kan kültürü, hemogram, CRP ve biyokimya almak; 60 dakika içinde antipsödomonal antibiyotik başlamak",
+                        "text": "Anorektal manometri ile sfinkter fonksiyonunu değerlendirmek için çocuk gastroenterolojisine sevk etmek ve bu sürede fitile devam etmelerini önermek",
+                        "is_correct": False,
+                        "scenario_update": "Sevk randevusu haftalar sonrasına verildi; fitil uygulamasına devam edildi.",
+                        "teaching_point": "Manometri bu tabloda endike değildir; rektal uyarı bırakılmalıdır."
+                    },
+                    {
+                        "text": "Kırmızı bayrakların yokluğunu aileyle gözden geçirip herhangi bir tetkik istememek ve yakınmaların fizyolojik nedenini açıklamaya hazırlanmak",
                         "is_correct": True,
-                        "explanation": "Kültürler antibiyotik öncesinde alınır ancak tedaviyi geciktirmemelidir. İdrar kültürü idrar sondası olmadan alınabiliyorsa gönderilir. Akciğer grafisi solunum bulgusu varsa çekilir.",
-                        "new_finding": "Kültürler alındı, başvurunun 40. dakikasında antibiyotik verildi. Lökosit 400/mm³, mutlak nötrofil sayısı 162/mm³, Hb 8.4 g/dL, trombosit 38.000/mm³, CRP 46 mg/L. Laktat 1.6 mmol/L. Kreatinin ve karaciğer testleri normal. Tam idrar normal."
-                    },
-                    {
-                        "text": "Ateşli ancak iyi görünen çocuğa oral amoksisilin-klavulanat verip ertesi gün hematoloji polikliniğine kontrole göndermek",
-                        "is_correct": False,
-                        "scenario_update": "Gece evde çocuk hipotansif hale geldi ve septik şokla getirildi.",
-                        "teaching_point": "Yüksek riskli hastada ilk tedavi yatırılarak intravenöz yoldan verilir."
+                        "explanation": "Safralı kusma, distansiyon, mekonyum gecikmesi, büyüme geriliği, kanlı dışkı ve anal anomali yokluğunda tanı kliniktir. Tetkik yönetimi değiştirmez ve aile kaygısını artırabilir.",
+                        "new_finding": "Kırmızı bayrak saptanmadı. Tetkik istenmedi; ebeveynler gözlem sırasında bebeğin ıkınma sonrası yumuşak dışkı yaptığını ve hemen rahatladığını gördü."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Kemoterapiden 9 gün sonra 38.9°C ateşi ve mutlak nötrofil sayısı 162/mm³ olan, belirgin odağı bulunmayan bu çocukta tanı nedir?",
+                "question": "Sağlıklı, iyi büyüyen 2 aylık bebekte yumuşak dışkı çıkarmadan önce 10 dakikadan uzun ıkınma ve ağlama varsa tanı nedir?",
                 "options": [
                     {
-                        "text": "Kateter ilişkili tünel enfeksiyonu",
+                        "text": "Hirschsprung hastalığı",
                         "is_correct": False,
-                        "scenario_update": "Port giriş yeri ve tünel hattında kızarıklık, hassasiyet veya akıntı yok.",
-                        "teaching_point": "Tünel enfeksiyonunda kateter hattı boyunca selülit görülür."
+                        "scenario_update": "Mekonyum ilk gün çıkmış, distansiyon yok, büyüme normal.",
+                        "teaching_point": "Hirschsprung hastalığı gecikmiş mekonyum, distansiyon ve kusmayla seyreder."
                     },
                     {
-                        "text": "Kemoterapiye bağlı ilaç ateşi",
+                        "text": "Fonksiyonel kabızlık",
                         "is_correct": False,
-                        "scenario_update": "Son kemoterapiden 9 gün geçmiş ve ağır nötropeni var; enfeksiyon dışlanmadan bu tanı konmaz.",
-                        "teaching_point": "Nötropenik hastada ateş, aksi kanıtlanana kadar enfeksiyon kabul edilir."
+                        "scenario_update": "Dışkı yumuşak ve kıvamı normal; sert, ağrılı dışkılama yok.",
+                        "teaching_point": "Kabızlık tanısı sert ve seyrek dışkılama gerektirir."
                     },
                     {
-                        "text": "Kemoterapi sonrası febril nötropeni",
+                        "text": "Akut anal fissür",
+                        "is_correct": False,
+                        "scenario_update": "Perianal muayenede fissür yok, dışkıda kan yok.",
+                        "teaching_point": "Fissürde ağrılı dışkılama ve dışkı üzerinde parlak kırmızı kan görülür."
+                    },
+                    {
+                        "text": "İnfant diskezi",
                         "is_correct": True,
-                        "explanation": "Kemoterapi alan çocukta ≥38.3°C ateş ve mutlak nötrofil sayısının 500/mm³'ün altında olması febril nötropeniyi tanımlar.",
-                        "new_finding": "Tanı: Kemoterapi Sonrası Febril Nötropeni (yüksek risk, santral venöz kateterli)."
-                    },
-                    {
-                        "text": "Tümör lizis sendromu",
-                        "is_correct": False,
-                        "scenario_update": "Potasyum, fosfor, ürik asit ve kreatinin normal; tedavinin başlangıç dönemi değil.",
-                        "teaching_point": "Tümör lizis sendromu genellikle tedavinin ilk günlerinde metabolik bozukluklarla ortaya çıkar."
+                        "explanation": "Roma IV'e göre 9 aydan küçük, sağlıklı bebekte yumuşak dışkı çıkarmadan önce en az 10 dakika süren ıkınma ve ağlama infant diskezisidir.",
+                        "new_finding": "Tanı: İnfant Diskezi."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve Yatış",
-                "question": "Bu çocuğun tedavi planı hangisidir?",
+                "stage_title": "Aile Eğitimi ve Taburculuk",
+                "question": "Bu bebeğin ailesine hangi öneriyi verirsiniz?",
                 "options": [
                     {
-                        "text": "Nötrofil sayısını hızla artırmak için granülosit transfüzyonu yapmak ve antibiyotiği yalnızca kültür üremesi olursa başlamak",
+                        "text": "Simetikon damla ve probiyotik başlamak, karın masajını her öğünden sonra yapmalarını önermek ve yakınma sürerse iki hafta sonra laktüloza geçmek",
                         "is_correct": False,
-                        "scenario_update": "Granülosit transfüzyonu bu aşamada endike değildi; antibiyotiksiz kalan çocukta tablo ağırlaştı.",
-                        "teaching_point": "Kültür sonucu beklenmeden ampirik antibiyotik sürdürülmelidir."
+                        "scenario_update": "Damla ve probiyotik yakınmayı değiştirmedi; aile laktüloz için yeniden başvurdu.",
+                        "teaching_point": "Bu tabloda ilaç tedavisinin yararı yoktur; güvence verme ve eğitim yeterlidir."
                     },
                     {
-                        "text": "Tek doz intravenöz seftriakson verip çocuğu evde oral siprofloksasinle izlemek ve 48 saat sonra yeniden değerlendirmek",
+                        "text": "Dışkılamayı kolaylaştırmak için her ağlama ataklarında makata termometre ucu ile nazikçe uyarı vermelerini ve günde bir kez gliserinli fitil kullanmalarını önermek",
                         "is_correct": False,
-                        "scenario_update": "Seftriakson Pseudomonas'ı kapsamadı; evde ateşi süren çocuk yeniden başvurdu.",
-                        "teaching_point": "Ayaktan tedavi yalnızca düşük riskli seçilmiş hastalarda düşünülür; lösemide indüksiyon ve kateter yüksek risktir."
+                        "scenario_update": "Bebek her dışkılama için uyarıya ihtiyaç duyar hale geldi; yakınmalar uzadı.",
+                        "teaching_point": "Rektal uyarı bebeğin doğal dışkılama koordinasyonunu öğrenmesini geciktirir."
                     },
                     {
-                        "text": "İlk tedaviye rutin olarak vankomisin, amikasin ve amfoterisin B eklemek ve tüm antibiyotikleri en az üç hafta sürdürmek",
-                        "is_correct": False,
-                        "scenario_update": "Gereksiz kombinasyon tedavisi sonrası kreatinin yükseldi ve işitme testinde bozulma saptandı.",
-                        "teaching_point": "Stabil hastada monoterapi yeterlidir; rutin kombinasyon toksisiteyi artırır."
-                    },
-                    {
-                        "text": "Sefepim veya piperasilin-tazobaktam monoterapisini sürdürüp hematoloji servisine yatırmak; hipotansiyon veya kateter enfeksiyonu gelişirse vankomisin eklemek",
+                        "text": "Durumun birkaç haftada kendiliğinden geçeceğini açıklamak, çubuk-fitil gibi rektal uyarıları bırakmalarını ve emzirmeye aynı şekilde devam etmelerini önermek",
                         "is_correct": True,
-                        "explanation": "Antipsödomonal beta-laktam monoterapisi ilk seçenektir. Rutin vankomisin önerilmez; hemodinamik bozulma, kateter giriş yeri enfeksiyonu, pnömoni veya gram pozitif üreme durumunda eklenir. 96 saati aşan ateşte mantar enfeksiyonu araştırılır.",
-                        "new_finding": "Sefepim ile 48. saatte ateş düştü, kan kültürü negatif kaldı. Nötrofil sayısı 7. günde 600/mm³'ün üzerine çıktı ve antibiyotik kesildi."
+                        "explanation": "Bebek zamanla karın içi basıncını artırırken pelvik tabanı gevşetmeyi öğrenir. Rektal uyarılar bu öğrenmeyi geciktirir ve bebeği dış uyarıya koşullandırabilir; laksatif ve diyet değişikliği gerekmez.",
+                        "new_finding": "Rektal uyarılar bırakıldı. Üç hafta sonraki kontrolde bebek ağlamadan, kısa sürede yumuşak dışkı yapıyordu."
+                    },
+                    {
+                        "text": "Anne sütünün yetersiz olabileceğini düşünüp hidrolize formül mamaya geçmelerini ve dışkıyı yumuşatmak için günde iki kez meyve suyu vermelerini önermek",
+                        "is_correct": False,
+                        "scenario_update": "Emzirme azaldı, bebek mamayı reddetti ve 2 aylık bebeğe meyve suyu verildi.",
+                        "teaching_point": "Emzirme sürdürülmeli; 6 aydan küçük bebeğe meyve suyu önerilmez."
                     }
                 ]
             }
@@ -139,132 +139,132 @@ CASES = [
     },
     {
         "id": "Y67",
-        "category": "🩸 Hematolojik & Onkolojik Aciller",
-        "age": "9 Yaşında",
+        "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
+        "age": "18 Aylık",
         "gender": "Kız",
-        "complaint": "Bacaklarda, sırtta ve göğüste dayanılmaz ağrı; evde verilen ağrı kesicilere yanıt yok",
-        "history": "Ailesi anlatıyor: 'Kalıtsal bir kan hastalığı var, hidroksiüre kullanıyor. Dün akşam soğuk havada okul gezisinden döndükten sonra bacaklarında ve belinde ağrı başladı. Evde ibuprofen ve parasetamol verdik, geçmedi. Ağrısı 10 üzerinden 9 diyor, ağlıyor, yürüyemiyor.' Bugün az su içmiş. Ateş, öksürük ve nefes darlığı yok. Önceki ağrı ataklarında morfin almış. Bilinen hemoglobin değeri 7.8 g/dL. Tartı: 28 kg.",
-        "final_diagnosis": "Orak Hücre Anemisinde Akut Vazo-Oklüzif Ağrı Krizi",
-        "disposition": "Sarı Alanda 60 Dakika İçinde İntravenöz Opioid, NSAİİ, İdame Sıvı ve Teşvik Spirometrisi ile Çocuk Hematoloji Yatışı",
-        "case_pearl": "Orak hücre hastalığında soğuk, dehidratasyon, enfeksiyon ve stres vazo-oklüzyonu tetikler. Ağrı krizinde hedef, triajdan sonraki 60 dakika içinde (ideal 30 dakika) intravenöz veya intranazal opioid vermek ve 15-30 dakikada bir yeniden değerlendirmektir. Aşırı sıvı akut göğüs sendromunu tetikleyebileceği için idame sıvı verilir. Teşvik spirometrisi akut göğüs sendromunu önler. Ateş fonksiyonel aspleni nedeniyle acil kabul edilir. Hb'nin bazal değerden ≥2 g/dL düşmesi dalak sekestrasyonu veya aplastik krizi düşündürür.",
+        "complaint": "Bez değişiminde vajina girişinin kapalı göründüğünün fark edilmesi ve idrarın ince bir çizgi halinde öne doğru fışkırması",
+        "history": "Annesi anlatıyor: 'Dün akşam bezini değiştirirken vajina girişi sanki yokmuş gibi, kapanmış gördüm. Çişini yaparken idrar ince bir çizgi gibi öne doğru fışkırıyor, bazen bezi idrardan sonra da damlıyor. Ateşi yok, ağlamadan çiş yapıyor. Bez bölgesinde sık sık pişik oluyordu. Doğduğunda her şey normaldi, sonradan mı kapandı, ameliyat mı gerekecek çok korktuk.' Büyüme gelişmesi normal. Tartı: 11 kg.",
+        "final_diagnosis": "Labial Yapışıklık (Sinekşi)",
+        "disposition": "Yeşil Alandan Topikal Östrojen ve Nazik Uygulama Eğitimi, Sonrasında Bariyer Merhem ile Taburculuk",
+        "case_pearl": "Bebeklik ve erken çocuklukta düşük östrojen düzeyi ve pişik gibi kronik irritasyonlar labia minoraların orta hatta ince, avasküler bir zarla yapışmasına yol açabilir. Klitoris ve diğer genital yapılar normaldir; bu ayrım konjenital anomalilerden ve cinsel gelişim bozukluklarından ayırmada temeldir. Asemptomatik olgularda tedavi gerekmez. İdrar akımı bozuluyorsa veya enfeksiyon varsa 2-6 hafta topikal östrojen ilk seçenektir; zorla ayırma ağrılıdır ve tekrar riskini artırır. Ayrılma sonrası bariyer merhem tekrarları azaltır.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Ağrı Yönetimi",
-                "question": "Bilinen kalıtsal kan hastalığı olan ve şiddetli ağrıyla gelen bu çocukta ilk yaklaşımınız nedir?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Vajina girişinin kapalı göründüğü ve idrar akımı değişen bu 18 aylık kızda muayenede neye dikkat edersiniz?",
                 "options": [
                     {
-                        "text": "Dehidratasyonu düzeltmek için iki kez 20 mL/kg serum fizyolojik bolusu vermek, ağrı kesiciyi sıvı tamamlanıp idrar çıkışı görüldükten sonra başlamak",
+                        "text": "Kapalı vajina girişinin cinsel istismara bağlı skar dokusu olduğunu varsayıp adli bildirimi yapmak ve genital muayeneyi adli tıp uzmanına bırakmak",
                         "is_correct": False,
-                        "scenario_update": "Hızlı sıvı yüklemesi sonrası solunum hızı arttı, satürasyon %92'ye düştü; ağrı tedavisi gecikti.",
-                        "teaching_point": "Aşırı sıvı akciğer komplikasyonunu tetikleyebilir; ağrı kesici sıvıyı beklemeden verilir."
+                        "scenario_update": "Adli muayenede travma bulgusu saptanmadı; aile yersiz şüphe nedeniyle ağır bir süreç yaşadı.",
+                        "teaching_point": "İnce, avasküler orta hat zarı tipik olarak edinsel benign bir durumdur; istismar şüphesi somut bulgulara dayanmalıdır."
                     },
                     {
-                        "text": "Vital bulgular, ağrı skoru, göğüs ve dalak muayenesini yapıp 30 dakika içinde intravenöz morfin vermek ve sık yeniden değerlendirmek",
+                        "text": "Labiaları nazikçe yanlara çekerek yapının niteliğini, idrar çıkış açıklığını, klitoris boyutunu, enfeksiyon veya travma bulgularını değerlendirmek ve istismar açısından öyküyü sorgulamak",
                         "is_correct": True,
-                        "explanation": "Şiddetli ağrı hızla opioidle tedavi edilir. Göğüs muayenesi akut göğüs sendromu, dalak boyutu sekestrasyon açısından önemlidir. Ateş ve nörolojik bulgu ayrı aciller gerektirir. NSAİİ böbrek fonksiyonu normalse eklenir.",
-                        "new_finding": "Vital Bulgular: Ateş 37.4°C, KTA 118/dk, SS 22/dk, SpO2 %96 (bazal %97), TA 108/66 mmHg. Konjonktivalar soluk, sklerada hafif sarılık. Akciğer sesleri doğal. Dalak ele gelmiyor. Nörolojik muayene normal. Alt ekstremite ve lomber bölgede yaygın hassasiyet, şişlik yok. Ağrı skoru 9/10. Morfin 0.1 mg/kg intravenöz verildi."
+                        "explanation": "Nazik lateral traksiyonla zarın inceliği, saydamlığı ve yerleşimi görülür. Klitoris boyutu cinsel gelişim bozukluklarını ayırır; enfeksiyon ve travma bulguları ile öykü istismar şüphesini değerlendirmek için gereklidir.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 98/dk, SS 22/dk. Sakin. Labia minoralar forşetten klitorise doğru orta hatta ince, yarı saydam, avasküler bir zarla birleşik; en üstte 2-3 mm'lik bir açıklık var. Klitoris normal boyutta. Labia majoralar normal, gonad ele gelmiyor. Vulvit, akıntı, ekimoz veya yırtık yok."
                     },
                     {
-                        "text": "Ağrının gerçekliğini anlamak için bir saat gözlemlemek ve ağrı kesici talebini bağımlılık riski açısından sorgulamak",
+                        "text": "Ambigus genitalya olasılığı nedeniyle muayeneyi yapmadan çocuk endokrinolojisine acil konsültasyon istemek ve kromozom analizi göndermek",
                         "is_correct": False,
-                        "scenario_update": "Analjezi gecikti; çocuğun ağrısı arttı ve aile güvenini kaybetti.",
-                        "teaching_point": "Bu hastalarda ağrı öznel bildirime göre tedavi edilir; analjezi gecikmesi sık ve önlenebilir bir hatadır."
+                        "scenario_update": "Konsültan muayenede klitorisin normal olduğunu ve endokrin tetkik gerekmediğini belirtti; aile gereksiz kaygı yaşadı.",
+                        "teaching_point": "Muayene yapılmadan endokrinolojik tetkik istenmez; normal klitoris ve gonad yokluğu kız iç genitalyasıyla uyumludur."
                     },
                     {
-                        "text": "Ağrıyı hafifletmek için ağrılı bölgelere buz uygulamak ve ağrı kesici olarak yalnızca intramüsküler diklofenak yapmak",
+                        "text": "Muayeneyi kısa tutup kapalı görünen yapıyı açmak için acil serviste pamuklu çubukla bastırarak zarı ayırmak ve ayrılan kenarlara antibiyotikli merhem sürmek",
                         "is_correct": False,
-                        "scenario_update": "Soğuk uygulama damar daralmasını artırdı ve ağrı kötüleşti; tek başına NSAİİ yetersiz kaldı.",
-                        "teaching_point": "Soğuk uygulama tetikleyicidir; şiddetli ağrıda opioid gerekir ve intramüsküler yol önerilmez."
+                        "scenario_update": "İşlem çocukta yoğun ağrı ve kanamaya neden oldu; çocuk sonraki muayenelerde çok korktu.",
+                        "teaching_point": "Zorla ayırma travmatiktir, ağrılıdır ve yeniden yapışma riski yüksektir."
                     }
                 ]
             },
             {
-                "stage_title": "Laboratuvar Değerlendirmesi",
-                "question": "Analjezi başlanan bu çocukta hangi tetkikler öncelikli olarak istenmelidir?",
+                "stage_title": "Tetkik Stratejisi",
+                "question": "İdrar akımı değişmiş, ateşsiz ve klitorisi normal olan bu çocukta hangi tetkik uygundur?",
                 "options": [
                     {
-                        "text": "Ağrılı bölgelerin tamamından direkt grafi çekmek ve kırık saptanmazsa analjeziyi azaltarak çocuğu taburcu etmeyi planlamak",
-                        "is_correct": False,
-                        "scenario_update": "Grafiler normal geldi; analjezi azaltılınca ağrı yeniden şiddetlendi.",
-                        "teaching_point": "Normal grafi ağrı krizini dışlamaz; analjezi klinik yanıta göre ayarlanır."
-                    },
-                    {
-                        "text": "Ağrının nedenini görmek için tüm vücut kemik sintigrafisi ve lomber manyetik rezonans çekmek, sonuçlara göre analjezi dozunu ayarlamak",
-                        "is_correct": False,
-                        "scenario_update": "Tetkikler gereksizdi; çocuk saatlerce görüntüleme biriminde bekletildi.",
-                        "teaching_point": "Tipik ağrı ataklarında ileri görüntüleme gerekmez; osteomiyelit şüphesinde seçici kullanılır."
-                    },
-                    {
-                        "text": "Yalnızca CRP ve prokalsitonin istemek, değerler yüksekse ağrıyı enfeksiyona bağlayıp geniş spektrumlu antibiyotik başlamak",
-                        "is_correct": False,
-                        "scenario_update": "Ateşsiz çocukta gereksiz antibiyotik başlandı; hemoglobin ve retikülosit değerlendirilmedi.",
-                        "teaching_point": "Ağrı krizinde inflamatuvar belirteçler yükselebilir; ateş yoksa antibiyotik gerekmez."
-                    },
-                    {
-                        "text": "Hemogram ve retikülosit sayısı, biyokimya, bilirubin, LDH ve kan grubu-tarama istemek; bazal değerlerle karşılaştırıp göğüs muayenesini tekrarlamak",
+                        "text": "Bozulan idrar akımı nedeniyle uygun yöntemle alınan idrardan tam idrar tetkiki yapmak, başka tetkik istememek",
                         "is_correct": True,
-                        "explanation": "Hb'nin bazalden belirgin düşmesi sekestrasyon veya aplastik krizi, düşük retikülosit parvovirüs B19'u düşündürür. Kan grubu olası transfüzyon için hazırlıktır. Göğüs ağrısı, ateş veya hipoksi gelişirse akciğer grafisi çekilir.",
-                        "new_finding": "Hb 7.6 g/dL (bazal 7.8), retikülosit %9.2, lökosit 13.800/mm³, trombosit 410.000/mm³. Total bilirubin 3.1 mg/dL (indirekt ağırlıklı), LDH 620 U/L, kreatinin 0.4 mg/dL. Kan grubu ve antikor taraması gönderildi. Morfin sonrası ağrı skoru 5/10."
+                        "explanation": "İdrar akımının engellenmesi ve vajinal göllenme idrar yolu enfeksiyonu riskini artırır. Tam idrar tetkiki eşlik eden enfeksiyonu gösterir; genital yapılar normal olduğu için endokrin veya görüntüleme tetkiki gerekmez.",
+                        "new_finding": "Tam idrar: dansite 1018, lökosit esteraz ve nitrit negatif, mikroskopide 1-2 lökosit. Enfeksiyon bulgusu yok."
+                    },
+                    {
+                        "text": "Cinsel gelişim bozukluğunu dışlamak için kromozom analizi, 17-OH progesteron, elektrolitler ve testosteron düzeyi istemek, sonuçlar çıkana kadar tedavi kararını ertelemek",
+                        "is_correct": False,
+                        "scenario_update": "Tetkikler normal geldi; çocuk birkaç hafta tedavisiz kaldı ve idrar akımı sorunu sürdü.",
+                        "teaching_point": "Klitoris ve labia majoraları normal çocukta cinsel gelişim bozukluğu tetkiki gerekmez."
+                    },
+                    {
+                        "text": "Herhangi bir tetkik istemeden zarın kendiliğinden açılacağını söyleyip çocuğu ergenliğe kadar izlem için aile hekimine yönlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "İdrar akımı bozuk olduğu halde enfeksiyon değerlendirilmedi ve tedavi önerilmedi.",
+                        "teaching_point": "Asemptomatik olgu izlenebilir; idrar akımı bozulmuşsa değerlendirme ve tedavi gerekir."
+                    },
+                    {
+                        "text": "Pelvik ultrasonografi ile uterus ve overleri, işeme sistoüretrografisi ile üretrayı değerlendirmek ve sonuçlara göre çocuk cerrahisi planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Ultrasonografi normal iç genitalya gösterdi; işeme sistoüretrografisi gereksiz kateterizasyon ve radyasyon içeriyordu.",
+                        "teaching_point": "Genital yapıları normal çocukta iç genital ve üriner görüntüleme gerekmez."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Hidroksiüre kullanan, soğuk ve sıvı azlığı sonrası yaygın kemik ağrısı başlayan, Hb bazale yakın, retikülositi yüksek ve göğüs bulgusu olmayan bu çocukta tanı nedir?",
+                "question": "Labia minoraların orta hatta ince, avasküler bir zarla birleştiği, klitorisi normal ve idrar akımı değişen bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "Parvovirüs B19 ilişkili aplastik kriz",
+                        "text": "İmperfore himen",
                         "is_correct": False,
-                        "scenario_update": "Retikülosit sayısı yüksek ve Hb düşmemiş.",
-                        "teaching_point": "Aplastik krizde retikülosit belirgin düşer ve Hb hızla azalır."
+                        "scenario_update": "Labia minoralar birbirine yapışık; himen düzeyinde bombeleşen bir zar yok.",
+                        "teaching_point": "İmperfore himen genellikle yenidoğanda veya menarş döneminde bombeleşen zarla saptanır."
                     },
                     {
-                        "text": "Akut göğüs sendromu",
+                        "text": "Vulvar liken skleroz",
                         "is_correct": False,
-                        "scenario_update": "Göğüs ağrısı, ateş, hipoksi ve akciğer bulgusu yok.",
-                        "teaching_point": "Akut göğüs sendromunda grafide yeni infiltrat ile ateş veya solunum bulgusu birlikte bulunur."
+                        "scenario_update": "Vulvada beyaz, atrofik, sekiz şeklinde plak ve kaşıntı yok.",
+                        "teaching_point": "Liken skleroz kaşıntılı, porselen beyazı atrofik plaklarla seyreder."
                     },
                     {
-                        "text": "Orak hücre hastalığında vazo-oklüzif ağrı krizi",
+                        "text": "Labial yapışıklık (sinekşi)",
                         "is_correct": True,
-                        "explanation": "Tetikleyici sonrası yaygın kemik ağrısı, bazal düzeyde Hb, yüksek retikülosit ve hemoliz bulguları ile göğüs ve dalak bulgusu olmaması akut vazo-oklüzif krizi doğrular.",
-                        "new_finding": "Tanı: Orak Hücre Anemisinde Akut Vazo-Oklüzif Ağrı Krizi."
+                        "explanation": "Düşük östrojen düzeyi ve kronik irritasyon zemininde labia minoraların orta hatta ince avasküler zarla birleşmesi edinsel labial yapışıklıktır.",
+                        "new_finding": "Tanı: Labial Yapışıklık (Sinekşi), idrar akımını etkileyen."
                     },
                     {
-                        "text": "Akut dalak sekestrasyonu",
+                        "text": "Konjenital adrenal hiperplazi",
                         "is_correct": False,
-                        "scenario_update": "Dalak ele gelmiyor ve Hb bazal değere yakın.",
-                        "teaching_point": "Dalak sekestrasyonunda dalak hızla büyür ve Hb bazalden ≥2 g/dL düşer."
+                        "scenario_update": "Klitoris normal, labioskrotal füzyon ve hiperpigmentasyon yok; doğumda genital yapı normalmiş.",
+                        "teaching_point": "Konjenital adrenal hiperplazide doğumdan itibaren klitoromegali ve labioskrotal füzyon görülür."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve İzlem",
-                "question": "Ağrısı kısmen gerileyen bu çocuğun yatış tedavisi nasıl olmalıdır?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "İdrar akımı bozulan bu çocuk için en uygun tedavi planı hangisidir?",
                 "options": [
                     {
-                        "text": "Oksijen satürasyonu normal olmasına karşın tüm hastalara rutin yüksek akımlı oksijen vermek ve intravenöz sıvıyı iki katı idamede tutmak",
-                        "is_correct": False,
-                        "scenario_update": "Fazla sıvı ile çocukta raller ve hipoksi gelişti.",
-                        "teaching_point": "Oksijen yalnızca hipokside verilir; sıvı idame hızını belirgin aşmamalıdır."
-                    },
-                    {
-                        "text": "Morfin hasta kontrollü analjezi ve düzenli NSAİİ vermek, idame sıvıyla devam etmek, saatlik teşvik spirometrisi ve satürasyon izlemi uygulamak",
+                        "text": "Topikal östrojenli kremi 2-6 hafta, günde 1-2 kez zar hattına pamuklu çubukla hafif bastırarak sürmek; açıldıktan sonra vazelinle bariyer sağlamak",
                         "is_correct": True,
-                        "explanation": "Düzenli analjezi ağrıyı kontrol eder. İdame sıvı dehidratasyonu düzeltir ancak akciğer ödemine yol açmaz. Teşvik spirometrisi atelektaziyi ve akut göğüs sendromunu önler. Opioid kullanırken sedasyon ve solunum izlenir.",
-                        "new_finding": "Hasta kontrollü analjezi, ibuprofen ve idame sıvı başlandı, teşvik spirometrisi öğretildi. 48. saatte ağrı skoru 3/10'a indi, oral analjeziye geçildi. Akut göğüs sendromu gelişmedi; dördüncü gün taburcu edildi."
+                        "explanation": "Topikal östrojen zarın incelmesini ve kendiliğinden ayrılmasını sağlar; hafif bası etkinliği artırır. Ayrılma sonrası bariyer merhem ve pişik bakımı tekrarı azaltır. Uzun kullanımda geçici meme tomurcuklanması ve labial pigmentasyon olabileceği anlatılır.",
+                        "new_finding": "Topikal östrojen ve uygulama tekniği anlatıldı. Üç hafta sonra zarın tamamen ayrıldığı, idrar akımının normale döndüğü görüldü; bariyer merhemle izleme alındı."
                     },
                     {
-                        "text": "Solunum depresyonu riski nedeniyle opioidleri kesip yalnızca parasetamol vermek ve hastayı yatakta hareketsiz tutmak",
+                        "text": "İdrar yolu enfeksiyonunu önlemek için üç ay düşük doz oral antibiyotik proflaksisi başlamak ve zarın kendiliğinden açılmasını beklemek",
                         "is_correct": False,
-                        "scenario_update": "Ağrı kontrol edilemedi; hareketsiz kalan çocukta yüzeyel solunum ve atelektazi gelişti.",
-                        "teaching_point": "Yeterli analjezi ve erken mobilizasyon akciğer komplikasyonlarını azaltır."
+                        "scenario_update": "Proflaksi zarı etkilemedi; idrar akımı bozukluğu sürdü ve çocukta gereksiz antibiyotik maruziyeti oldu.",
+                        "teaching_point": "Antibiyotik proflaksisi labial yapışmanın tedavisi değildir."
                     },
                     {
-                        "text": "Anemiyi düzeltmek için hemen 20 mL/kg eritrosit süspansiyonu vermek ve hemoglobini 12 g/dL'nin üzerine çıkarmak",
+                        "text": "Ailenin evde her bez değişiminde labiaları parmaklarıyla kuvvetle yanlara çekerek zarı yavaş yavaş açmasını ve sonrasında antiseptik solüsyonla silmesini önermek",
                         "is_correct": False,
-                        "scenario_update": "Yüksek hemoglobin kan viskozitesini artırdı ve ağrı kötüleşti.",
-                        "teaching_point": "Komplikasyonsuz ağrı krizinde transfüzyon endike değildir; hedef Hb 10 g/dL'yi aşmamalıdır."
+                        "scenario_update": "Ev içi zorlamalar çocukta ağrı, kanama ve bez değişiminden korku oluşturdu; yeniden yapışma gelişti.",
+                        "teaching_point": "Zorlayıcı manipülasyon ve antiseptikler irritasyonu artırarak tekrarı kolaylaştırır."
+                    },
+                    {
+                        "text": "Ağrısız ve hızlı çözüm için genel anestezi altında cerrahi olarak zarı ayırmak ve ardından ayrılan kenarları birkaç gün dikişle açık tutmak",
+                        "is_correct": False,
+                        "scenario_update": "Cerrahi ilk basamak tedavi değildi; çocuk gereksiz anestezi riskine maruz kaldı.",
+                        "teaching_point": "Cerrahi ayırma yalnızca topikal tedaviye dirençli ve semptomatik olgularda düşünülür."
                     }
                 ]
             }
@@ -272,132 +272,132 @@ CASES = [
     },
     {
         "id": "Y68",
-        "category": "👶 Yenidoğan Acilleri",
-        "age": "3 Günlük",
+        "category": "🧠 Nörolojik Belirtiler & Konvülziyon",
+        "age": "12 Yaşında",
         "gender": "Erkek",
-        "complaint": "Doğumdan sonraki ilk gün başlayan ve hızla koyulaşan sarılık, uykuya meyil ve emmede azalma",
-        "history": "Ailesi anlatıyor: 'Miadında, normal doğumla 3400 gram doğdu. Doğumdan yaklaşık 20 saat sonra yüzü sararmaya başladı, taburcu olurken söylemiştik ama kontrole çağırdılar. Sarılık bugün karnına ve bacaklarına yayıldı. Daha uykulu, emmesi azaldı.' Sadece anne sütü alıyor, günde 6 ıslak bez. Kaka rengi sarı. Annenin kan grubu O Rh pozitif, bebeğinki bilinmiyor. Ağabeyi de yenidoğanda ışık tedavisi almış. Tartı: 3180 g (doğum ağırlığının %6.5 altı).",
-        "final_diagnosis": "ABO Uyuşmazlığına Bağlı Ağır İndirekt Hiperbilirubinemi (Hemolitik Hastalık)",
-        "disposition": "Sarı Alanda Yoğun Fototerapi Başlanarak Kan Değişimi Hazırlığı ile Yenidoğan Yoğun Bakım Yatışı",
-        "case_pearl": "İlk 24 saatte başlayan sarılık her zaman patolojiktir ve en sık hemolitik hastalığa bağlıdır. Anne O, bebek A veya B grubu olduğunda direkt Coombs pozitifliği ABO uyuşmazlığını destekler. Tedavi eşikleri AAP 2022 kılavuzunda doğum haftası, saatlik yaş ve nörotoksisite risk faktörlerine (hemoliz, albümin <3 g/dL, sepsis, letarji) göre belirlenir. Bilirubin kan değişimi eşiğinin 2 mg/dL altına yaklaştığında 'eskalasyon bakımı' başlar: yoğun fototerapi, kan değişimi hazırlığı ve hemolizde İVİG. Akut bilirubin ensefalopatisi bulguları (hipertoni, opistotonus, tiz ağlama) varsa acil kan değişimi yapılır.",
+        "complaint": "Üç haftadır okul günleri öğleden sonra başlayan, başın çevresini saran sıkıştırıcı ağrı",
+        "history": "Ailesi anlatıyor: 'Üç haftadır hafta içi okuldan çıkınca bütün başını saran, sanki sıkı bir şapka takmış gibi künt bir ağrıdan yakınıyor. Zonklamıyor, bulantısı yok, ışıktan kaçmıyor. Ağrısına rağmen oynayabiliyor. Hafta sonları ve tatilde ağrısı olmuyor. Bu dönemde sınav hazırlığı yoğunlaştı; günde 5-6 saat telefon ve tablet başında, geceleri geç yatıyor, kahvaltı yapmıyor.' Sabah kusması, uykudan uyandıran ağrı veya görme yakınması yok. Tartı: 42 kg.",
+        "final_diagnosis": "Epizodik Gerilim Tipi Baş Ağrısı",
+        "disposition": "Yeşil Alandan Nörolojik Muayenenin Doğrulanması, Yaşam Tarzı Düzenlemesi, Sınırlı Analjezik ve Baş Ağrısı Günlüğü Eğitimi ile Taburculuk",
+        "case_pearl": "Bilateral, bası-sıkıştırma tarzında, hafif-orta şiddetli, günlük aktiviteyle artmayan, bulantısız ağrı gerilim tipi baş ağrısını düşündürür. Normal nörolojik muayene ve fundoskopide görüntüleme gerekmez. Tedavinin temeli tetikleyicilerin (uyku düzensizliği, öğün atlama, yetersiz sıvı, uzun ekran süresi, stres) düzenlenmesidir. Analjezikler (ibuprofen, parasetamol) haftada 2-3 günü geçmemelidir; aksi halde ilaç aşırı kullanım baş ağrısı gelişir.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Fizik Muayene",
-                "question": "İlk gün başlayan ve hızla artan sarılıkla gelen, uykulu bu 3 günlük bebekte ilk değerlendirmede neye odaklanırsınız?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Üç haftadır tekrarlayan baş ağrısı olan bu 12 yaşındaki çocukta muayenede neyi değerlendirirsiniz?",
                 "options": [
                     {
-                        "text": "Sarılığın derecesini deri rengine bakarak tahmin etmek, karnın altına inmediyse tetkik istemeden kontrole çağırmak",
+                        "text": "Uzun ekran kullanımının gözleri yorduğunu varsayarak yalnızca görme keskinliği ve göz muayenesine odaklanmak, gözlük reçetesi için çocuğu aynı gün göz polikliniğine yönlendirmek",
                         "is_correct": False,
-                        "scenario_update": "Görsel değerlendirme düzeyi olduğundan düşük tahmin etti; ölçüm yapılmadı.",
-                        "teaching_point": "Görsel değerlendirme güvenilir değildir; şüphede serum bilirubini ölçülmelidir."
+                        "scenario_update": "Nörolojik muayene ve kan basıncı ölçümü yapılmadı; göz muayenesi normal çıktı ve ağrı sürdü.",
+                        "teaching_point": "Kırma kusuru baş ağrısının nadir nedenidir; nörolojik muayene atlanmamalıdır."
                     },
                     {
-                        "text": "Uykuya meyil nedeniyle önce menenjiti dışlamak için lomber ponksiyon yapmak ve sarılığın değerlendirmesini ponksiyon sonucu çıktıktan sonraya bırakmak",
+                        "text": "Ağrı okul günleriyle ilişkili olduğu için okul kaçınmasını düşünüp muayeneyi kısa tutmak ve çocuk psikiyatrisine yönlendirme yapmak",
                         "is_correct": False,
-                        "scenario_update": "Lomber ponksiyon normal geldi; bu sürede sarılık düzeyi ölçülmedi.",
-                        "teaching_point": "Ağır sarılıklı letarjik yenidoğanda öncelik serum bilirubinini ölçüp tedaviye başlamaktır."
+                        "scenario_update": "Nörolojik muayene ve fundoskopi yapılmadan yönlendirme yapıldı; aile çocuğun ağrısının ciddiye alınmadığını düşündü.",
+                        "teaching_point": "Psikososyal etkenler önemlidir ancak önce sekonder nedenler muayeneyle dışlanmalıdır."
                     },
                     {
-                        "text": "Sarılığı anne sütüne bağlamak, emzirmeyi iki gün kesip mama vermelerini ve bebeği güneş ışığına çıkarmalarını önermek",
+                        "text": "Üç haftadır süren baş ağrısı nedeniyle muayeneden önce kontrastsız beyin tomografisi isteyip sonucu normalse göz doktoruna yönlendirmek",
                         "is_correct": False,
-                        "scenario_update": "Bebek eve gönderildi; ertesi gün tiz ağlama ve geriye kasılma ile getirildi.",
-                        "teaching_point": "İlk 24 saatte başlayan sarılık fizyolojik veya anne sütüne bağlı değildir; güneş ışığı tedavi değildir."
+                        "scenario_update": "Tomografi normal geldi; çocuk gereksiz radyasyona maruz kaldı ve nörolojik muayene yapılmamıştı.",
+                        "teaching_point": "Görüntüleme kararı muayene sonrasında, kırmızı bayraklara göre verilir."
                     },
                     {
-                        "text": "Vital bulgular ve hidrasyonu değerlendirmek; tonus, emme ve ağlamayı muayene edip sarılığın yaygınlığını ve hepatosplenomegaliyi incelemek",
+                        "text": "Kan basıncını ölçmek, görme keskinliğine ve fundoskopiye bakmak, kraniyal sinir, motor, serebellar ve yürüyüş muayenesi yapmak ve perikraniyal kas hassasiyetini değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Uykuya meyil ve emmede azalma bilirubin nörotoksisitesinin erken bulgusu olabilir. Hipertoni, opistotonus ve tiz ağlama ileri evreyi gösterir. Hepatosplenomegali hemolizi, ateş ve kötü görünüm sepsisi düşündürür.",
-                        "new_finding": "Vital Bulgular: Ateş 36.9°C, KTA 148/dk, SS 46/dk, SpO2 %98. Belirgin sarılık ayak tabanlarına kadar yayılmış. Hafif letarjik ancak uyarılabiliyor, emme refleksi zayıf; hipertoni, opistotonus ve tiz ağlama yok. Fontanel normal. Karaciğer 2 cm, dalak kot kavsinde ele geliyor. Sefal hematom yok."
+                        "explanation": "Hipertansiyon, papilödem, görme ve nörolojik bulgular sekonder nedenleri düşündürür. Perikraniyal kas hassasiyeti birincil baş ağrısı tipini destekleyen bir bulgudur.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 76/dk, TA 105/68 mmHg. Görme keskinliği her iki gözde 10/10. Fundoskopide optik disk sınırları keskin, venöz pulsasyon var. Kraniyal sinirler, motor-duyu, serebellar testler ve tandem yürüyüş normal. Trapez ve boyun arka kaslarında palpasyonla hassasiyet."
                     }
                 ]
             },
             {
-                "stage_title": "Laboratuvar Değerlendirmesi",
-                "question": "Bu bebekte hangi tetkikler öncelikli olarak istenmelidir?",
+                "stage_title": "Tetkik Kararı",
+                "question": "Nörolojik muayenesi, fundoskopisi ve kan basıncı normal olan bu çocukta tetkik yaklaşımınız nedir?",
                 "options": [
                     {
-                        "text": "Biliyer atreziyi dışlamak için hepatobiliyer sintigrafi ve karın ultrasonu istemek, sonuç gelene kadar fototerapiyi ertelemek",
+                        "text": "Ağrının nöbet eşdeğeri olabileceğini düşünüp elektroensefalografi istemek ve sonuç çıkana kadar ekran kullanımını tamamen yasaklamak",
                         "is_correct": False,
-                        "scenario_update": "Direkt bilirubin normal çıktı; sintigrafi gereksizdi ve tedavi gecikti.",
-                        "teaching_point": "Kolestaz tetkiki direkt bilirubin yüksekliğinde yapılır; indirekt sarılıkta fototerapi geciktirilmez."
+                        "scenario_update": "EEG normal geldi; tanıya katkısı olmadı ve ani yasak aile içi çatışmaya yol açtı.",
+                        "teaching_point": "EEG baş ağrısı değerlendirmesinde rutin değildir."
                     },
                     {
-                        "text": "Total ve direkt bilirubin, bebeğin kan grubu ve direkt Coombs testi, hemogram, retikülosit, yayma, albümin ve G6PD istemek",
+                        "text": "Tam kan sayımı, demir parametreleri, tiroid fonksiyonları, D vitamini ve sedimantasyon isteyip sonuçlara göre tedavi planlamak",
+                        "is_correct": False,
+                        "scenario_update": "Tetkikler normal geldi; yönetimi değiştirmedi ve çocuk yaşam tarzı önerileri almadan gönderildi.",
+                        "teaching_point": "Birincil baş ağrısı tablosunda rutin laboratuvar tetkiki tanıya katkı sağlamaz."
+                    },
+                    {
+                        "text": "Kırmızı bayrakların yokluğunu kayda geçirip tetkik istememek; uyku, öğün, sıvı, ekran süresi ve stres etkenlerini ayrıntılı sorgulamak",
                         "is_correct": True,
-                        "explanation": "Total bilirubin saatlik yaşa göre değerlendirilir. Direkt bilirubin kolestazı dışlar. Kan grubu ve Coombs immün hemolizi, yayma ve G6PD diğer hemoliz nedenlerini araştırır. Düşük albümin nörotoksisite riskini artırır.",
-                        "new_finding": "Total serum bilirubini 20.4 mg/dL (68. saat), direkt bilirubin 0.6 mg/dL. Bebek kan grubu A Rh pozitif, direkt Coombs pozitif. Hb 12.8 g/dL, retikülosit %8.6, yaymada sferositler. Albümin 3.2 g/dL, G6PD normal. Kan değişimi eşiği bu yaş ve risk için yaklaşık 21 mg/dL."
+                        "explanation": "Normal muayene ve kırmızı bayrak yokluğunda tanı kliniktir. Tetikleyicilerin ayrıntılı sorgulanması tedavinin temelini oluşturur.",
+                        "new_finding": "Tetkik istenmedi. Çocuğun gece 01:00'de yattığı, kahvaltı yapmadığı, okulda neredeyse hiç su içmediği ve sınav kaygısı yaşadığı öğrenildi."
                     },
                     {
-                        "text": "Yalnızca transkutanöz bilirubin ölçmek ve değer 15 mg/dL'nin üzerinde çıkarsa 24 saat sonra serum düzeyini tekrar değerlendirmek, bu sürede emzirmeyi sürdürmelerini önermek",
+                        "text": "Arka çukur kitlesini dışlamak için sedasyonsuz beyin manyetik rezonans görüntülemesi planlamak ve sonuç gelene kadar okula gitmemesini önermek",
                         "is_correct": False,
-                        "scenario_update": "Transkutanöz ölçüm yüksek düzeyde güvenilmez kaldı; tedavi bir gün gecikti.",
-                        "teaching_point": "Transkutanöz değer yüksekse veya tedavi eşiğine yakınsa serum bilirubini hemen ölçülmelidir."
-                    },
-                    {
-                        "text": "Konjenital hipotiroidiyi dışlamak için tiroid fonksiyon testleri göndermek ve sonuç gelene kadar bebeği taburcu etmek",
-                        "is_correct": False,
-                        "scenario_update": "Tiroid testleri normal geldi; evde sarılık arttı.",
-                        "teaching_point": "Hipotiroidi uzamış sarılığın nedenidir; erken başlayan hızlı sarılığı açıklamaz."
+                        "scenario_update": "MR randevusu haftalar sonrasına verildi; çocuk okuldan uzak kaldı ve kaygısı arttı.",
+                        "teaching_point": "Kırmızı bayrak yoksa görüntüleme yapılmaz; okula devam desteklenmelidir."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "İlk 24 saatte başlayan sarılığı, 68. saatte total bilirubini 20.4 mg/dL, annesi O, kendisi A grubu, direkt Coombs testi pozitif ve sferositleri olan bu bebekte tanı nedir?",
+                "question": "Bilateral, sıkıştırıcı, hafif-orta şiddetli, bulantısız, okul günleri tekrarlayan ve muayenesi normal olan bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "Anne sütü sarılığı",
+                        "text": "İdiyopatik intrakraniyal hipertansiyon",
                         "is_correct": False,
-                        "scenario_update": "Sarılık ilk 24 saatte başladı ve Coombs pozitif hemoliz var.",
-                        "teaching_point": "Anne sütü sarılığı ilk haftadan sonra ortaya çıkan, iyi görünümlü bebekte uzamış sarılıktır."
+                        "scenario_update": "Papilödem ve görme yakınması yok; ağrı hafta sonları kayboluyor.",
+                        "teaching_point": "İdiyopatik intrakraniyal hipertansiyonda papilödem tanının temelidir."
                     },
                     {
-                        "text": "Herediter sferositoz",
+                        "text": "Arka çukur tümörü",
                         "is_correct": False,
-                        "scenario_update": "Direkt Coombs pozitif ve anne-bebek kan grubu uyumsuz.",
-                        "teaching_point": "Herediter sferositozda Coombs negatiftir ve aile öyküsünde splenektomi veya anemi bulunur."
+                        "scenario_update": "Sabah kusması, uykudan uyandıran ağrı, ataksi veya papilödem yok.",
+                        "teaching_point": "Kafa içi kitlede ilerleyici ağrı ve nörolojik bulgular beklenir."
                     },
                     {
-                        "text": "ABO uyuşmazlığına bağlı hemolitik hiperbilirubinemi",
+                        "text": "Epizodik gerilim tipi baş ağrısı",
                         "is_correct": True,
-                        "explanation": "O grubu anne, A grubu bebek, pozitif direkt Coombs, retikülositoz, sferositler ve erken başlangıç ABO hemolitik hastalığını doğrular.",
-                        "new_finding": "Tanı: ABO Uyuşmazlığına Bağlı Ağır İndirekt Hiperbilirubinemi."
+                        "explanation": "Bilateral, bası tarzında, hafif-orta şiddetli, aktiviteyle artmayan ve bulantısız ağrı ile normal muayene ICHD-3 gerilim tipi baş ağrısı kriterlerini karşılar.",
+                        "new_finding": "Tanı: Epizodik Gerilim Tipi Baş Ağrısı."
                     },
                     {
-                        "text": "G6PD eksikliğine bağlı hemoliz",
+                        "text": "Aurasız migren",
                         "is_correct": False,
-                        "scenario_update": "G6PD düzeyi normal ve Coombs testi pozitif.",
-                        "teaching_point": "G6PD eksikliğinde Coombs negatiftir ve enzim düzeyi düşüktür."
+                        "scenario_update": "Ağrı zonklayıcı değil; bulantı, fotofobi ve fonofobi yok, aktivite ile artmıyor.",
+                        "teaching_point": "Migren genellikle zonklayıcı, orta-şiddetli ve bulantı veya ışık-ses hassasiyetiyle birliktedir."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve Yatış",
-                "question": "Bilirubini kan değişimi eşiğine yaklaşan bu bebeğin tedavi planı hangisidir?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu çocuğun tedavi ve izlem planı hangisidir?",
                 "options": [
                     {
-                        "text": "Standart fototerapiyi evde vermek, beslenmeyi artırmalarını önermek ve 24 saat sonra bilirubin kontrolüne çağırmak",
-                        "is_correct": False,
-                        "scenario_update": "Evde bilirubin 25 mg/dL'ye yükseldi; bebek hipertoni ile getirildi.",
-                        "teaching_point": "Hemolizli ve eşiğe yakın bebekte ev fototerapisi uygun değildir."
-                    },
-                    {
-                        "text": "Bilirubini düşürmek için fototerapi yerine bol miktarda %5 dekstrozlu su vermek ve fenobarbital başlamak",
-                        "is_correct": False,
-                        "scenario_update": "Dekstrozlu su hiponatremiye yol açtı ve bilirubin düşmedi.",
-                        "teaching_point": "Su veya dekstroz takviyesi bilirubini düşürmez; fenobarbital akut tedavide yer almaz."
-                    },
-                    {
-                        "text": "Bilirubin eşiğe yaklaştığı için fototerapi denemeden doğrudan acil kan değişimi yapmak ve emzirmeyi kalıcı olarak kesip mamaya geçirmek",
-                        "is_correct": False,
-                        "scenario_update": "Ensefalopati bulgusu olmayan bebekte hazırlıksız işlem komplikasyon riskini artırdı.",
-                        "teaching_point": "Ensefalopati yoksa önce yoğun fototerapi ve İVİG uygulanır; emzirme sürdürülür."
-                    },
-                    {
-                        "text": "Hemen yoğun fototerapi başlamak, kan değişimi için kan hazırlatmak, İVİG vermek ve bilirubini 2-3 saatte bir ölçmek",
+                        "text": "Düzenli uyku, kahvaltı, sıvı alımı ve ekran molaları önermek; ağrıda ibuprofen veya parasetamolü haftada en fazla 2-3 gün kullanmak ve baş ağrısı günlüğü tutmak",
                         "is_correct": True,
-                        "explanation": "Yoğun fototerapi bilirubini hızla düşürür. Kan değişimi eşiğine yaklaşılması eskalasyon bakımını gerektirir. İVİG immün hemolizi azaltarak kan değişimi gereksinimini düşürebilir. Bilirubin eşiği aşar veya ensefalopati bulgusu gelişirse kan değişimi yapılır.",
-                        "new_finding": "Yoğun fototerapi ve İVİG 0.5 g/kg verildi, kan değişimi için kan hazırlandı. Altıncı saatte bilirubin 17.1 mg/dL'ye geriledi ve kan değişimine gerek kalmadı. Bebek 72. saatte fototerapiden çıkarıldı; işitme taraması (ABR) planlandı."
+                        "explanation": "Yaşam tarzı düzenlemesi tedavinin temelidir. Analjeziklerin sınırlı kullanımı ilaç aşırı kullanım baş ağrısını önler; günlük, tetikleyicileri ve tedavi yanıtını izlemeyi sağlar. Stres yönetimi gerekirse okul rehberliğiyle desteklenir.",
+                        "new_finding": "Aileye yazılı öneriler verildi. İki hafta sonraki kontrolde uyku ve öğün düzeni oturmuş, ekran süresi azalmıştı; çocuk haftada yalnızca bir kez hafif ağrı tanımlıyordu."
+                    },
+                    {
+                        "text": "Boyun kaslarındaki hassasiyet için servikal grafi çekmek, fizik tedaviye yönlendirmek ve okulda ağrı olursa eve gönderilmesini önermek",
+                        "is_correct": False,
+                        "scenario_update": "Grafi normal geldi; okulda ağrı nedeniyle sık eve gönderilmek okul kaçınmasını pekiştirdi.",
+                        "teaching_point": "Görüntüleme gerekmez; ağrı sırasında okulda kalmak ve kısa mola desteklenmelidir."
+                    },
+                    {
+                        "text": "Ağrının tekrarlamasını önlemek için her gün düzenli olarak sabah ve akşam ibuprofen kullanmasını ve ağrı tamamen geçene kadar devam etmesini önermek",
+                        "is_correct": False,
+                        "scenario_update": "Bir ay düzenli analjezik kullanımı sonrası ağrı neredeyse her gün olmaya başladı.",
+                        "teaching_point": "Haftada 2-3 günden sık analjezik kullanımı ilaç aşırı kullanım baş ağrısına yol açar."
+                    },
+                    {
+                        "text": "Ağrıların sıklığı nedeniyle acil serviste koruyucu tedavi olarak gece amitriptilin başlamak, kas gevşetici eklemek ve iki ay sonraki kontrolde yanıta göre dozları artırmayı planlamak",
+                        "is_correct": False,
+                        "scenario_update": "İlaç sonrası gündüz uykululuk ve okul başarısında düşme gelişti; tetikleyiciler değiştirilmemişti.",
+                        "teaching_point": "Profilaktik ilaçlar sık ve yaşam kalitesini bozan ağrılarda, yaşam tarzı düzenlemesinden sonra poliklinikte planlanır."
                     }
                 ]
             }
@@ -405,132 +405,132 @@ CASES = [
     },
     {
         "id": "Y69",
-        "category": "💊 Toksikoloji & Metabolik / Endokrin Aciller",
-        "age": "14 Günlük",
-        "gender": "Kız",
-        "complaint": "Birkaç gündür artan kusma, emmeme, kilo kaybı ve bugün belirgin halsizlik-uyuşukluk",
-        "history": "Ailesi anlatıyor: 'Miadında, 3200 gram doğdu. Doğumda dış genital bölgesinin biraz farklı göründüğünü söylediler, kontrole çağırdılar ama gidemedik. Son üç gündür her beslenmeden sonra kusuyor, emmiyor. Bugün çok uyuşuk, ağlaması zayıf.' Ateş ve ishal yok. Kusmuk safralı değil. Anne-baba akraba. Tartı: 2850 g (doğum ağırlığının %11 altı).",
-        "final_diagnosis": "Tuz Kaybettiren Konjenital Adrenal Hiperplazi (21-Hidroksilaz Eksikliği) ve Adrenal Kriz",
-        "disposition": "Sarı Alanda Sıvı Resüsitasyonu, İntravenöz Hidrokortizon ve Hiperkalemi Tedavisi ile Yenidoğan Yoğun Bakım ve Çocuk Endokrinoloji Yatışı",
-        "case_pearl": "Yaşamın 1-3. haftasında kusma, dehidratasyon, hiponatremi, hiperkalemi ve hipoglisemi tuz kaybettiren 21-hidroksilaz eksikliğini düşündürür; kız bebekte virilize genitalya ipucudur, erkekte genital bulgu olmayabilir. Tanı için tedavi öncesi kortizol, 17-OH progesteron, ACTH ve renin örneği alınır ancak tedavi bekletilmez. Hidrokortizon 50-100 mg/m² intravenöz verilir; yüksek dozda mineralokortikoid etkisi de vardır. Pilor stenozunda ise hipokloremik hipokalemik alkaloz beklenir; hiperkalemi ayırıcı tanıda anahtardır.",
+        "category": "👂 Kulak Ağrısı & KBB",
+        "age": "7 Yaşında",
+        "gender": "Erkek",
+        "complaint": "Burun karıştırma sonrası sağ burun deliğinden yarım saattir süren taze kanama",
+        "history": "Annesi anlatıyor: 'Televizyon izlerken parmağıyla burnunu karıştırdı, sağ burnundan kan akmaya başladı. Panikle başını arkaya yatırdım, kanı yutup öğürdü ve pıhtılı kan çıkardı. Ensesine buz koyduk, kanama azaldı ama durmadı.' Kış aylarında evde kalorifer açık ve hava kuru. Daha önce birkaç kez kısa süreli burun kanaması olmuş. Vücutta morluk, diş eti kanaması yok. Ailede kanama hastalığı yok. İlaç kullanmıyor. Tartı: 24 kg.",
+        "final_diagnosis": "Anterior Epistaksis (Kiesselbach Pleksusu, Dijital Travma)",
+        "disposition": "Yeşil Alanda Doğru Bası Tekniğiyle Kanama Kontrolü, Mukoza Nemlendirme ve Önleme Eğitimi ile Taburculuk",
+        "case_pearl": "Çocuklarda burun kanamalarının büyük çoğunluğu septumun ön kısmındaki Kiesselbach pleksusundan kaynaklanır; burun karıştırma ve kuru hava en sık nedenlerdir. Doğru teknik: oturur pozisyonda, baş hafif öne eğik, burnun yumuşak kısmına 10-15 dakika kesintisiz bası. Baş geriye yatırılmaz. Kanama sürerse topikal vazokonstriktör, görünür damarda gümüş nitrat koterizasyonu, son seçenek olarak anterior tampon uygulanır. Kişisel ve ailesel kanama öyküsü yoksa koagülasyon tetkiki gerekmez.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Stabilizasyon",
-                "question": "Kusan, emmeyen ve uyuşuk bu 14 günlük bebekte ilk yaklaşımınız nedir?",
+                "stage_title": "İlk Müdahale ve Fizik Muayene",
+                "question": "Yarım saattir burnu kanayan bu 7 yaşındaki çocukta ilk yapılacak müdahale nedir?",
                 "options": [
                     {
-                        "text": "Reflü olduğunu düşünüp beslenme miktarını azaltmalarını, mamayı koyulaştırmalarını önermek ve iki gün sonra kontrole çağırmak",
+                        "text": "Çocuğun başını geriye yatırıp burun kökünü sıkmak, enseye buz koymaya devam etmek ve kanama durana kadar her iki dakikada bir basıyı kaldırıp kontrol etmek",
                         "is_correct": False,
-                        "scenario_update": "Evde bebek tepkisizleşti ve kardiyak arrest ile getirildi.",
-                        "teaching_point": "Kilo kaybı ve letarjisi olan kusan yenidoğan asla reflü kabul edilip gönderilmez."
+                        "scenario_update": "Çocuk kanı yutmaya devam etti ve kustu; sık kontrol nedeniyle pıhtı oluşamadı ve kanama sürdü.",
+                        "teaching_point": "Baş geriye yatırılmaz; bası burnun yumuşak kısmına uygulanmalı ve 10-15 dakika kesintisiz sürdürülmelidir."
                     },
                     {
-                        "text": "Uyuşukluk nedeniyle sepsis kabul edip ampisilin ve sefotaksim vermek, sıvı ve şeker değerlendirmesini kan ve idrar kültürü sonuçlarının sonrasına bırakmak",
+                        "text": "Kanama yarım saattir sürdüğü için öncelikle kan grubu, tam kan sayımı ve koagülasyon paneli almak ve damar yolu açarak sıvı başlatmak",
                         "is_correct": False,
-                        "scenario_update": "Antibiyotik verildi ancak hipoglisemi ve elektrolit bozukluğu fark edilmedi; bebek nöbet geçirdi.",
-                        "teaching_point": "Sepsis olasılığında da glukoz, perfüzyon ve elektrolitler aynı anda değerlendirilmelidir."
+                        "scenario_update": "Tetkik ve damar yolu işlemleri sırasında kimse burna bası yapmadı; kanama sürdü ve çocuk huzursuzlaştı.",
+                        "teaching_point": "Hemodinamisi stabil çocukta ilk adım doğrudan bası ile kanamayı durdurmaktır."
                     },
                     {
-                        "text": "Kusma nedeniyle pilor darlığını düşünüp önce batın ultrasonu istemek ve sonuç gelene kadar ağızdan beslenmeyi kesmek",
+                        "text": "Bası denemeden hemen her iki burun deliğine vazelinli gazlı bez ile anterior tampon yerleştirmek ve 48 saat sonra çıkarılmak üzere taburcu etmek",
                         "is_correct": False,
-                        "scenario_update": "Ultrason sırasında bebek bradikardik oldu; şok ve elektrolit bozukluğu tedavisiz kaldı.",
-                        "teaching_point": "Şoktaki yenidoğanda önce resüsitasyon yapılır; tanısal görüntüleme stabilizasyonu geciktirmemelidir."
+                        "scenario_update": "Tampon işlemi çocuk için çok ağrılı oldu ve mukozada ek travmaya neden oldu.",
+                        "teaching_point": "Tampon, basıya ve topikal tedaviye yanıt vermeyen kanamalarda son seçenektir."
                     },
                     {
-                        "text": "Perfüzyon ve dehidratasyonu değerlendirmek, kapiller kan şekeri ölçmek, monitörize edip damar yolu açmak ve genital bölgeyi muayene etmek",
+                        "text": "Çocuğu oturtup başını hafif öne eğdirmek, burnun yumuşak kısmına 10-15 dakika kesintisiz bası yapmak ve bu sırada vital bulguları ve kanama miktarını değerlendirmek",
                         "is_correct": True,
-                        "explanation": "Şok bulgusu ve hipoglisemi hemen tedavi edilmelidir. Monitör aritmiyi gösterir. Genital muayene etiyoloji için önemli bir ipucudur.",
-                        "new_finding": "Vital Bulgular: Ateş 36.4°C, KTA 186/dk, SS 52/dk, SpO2 %97, TA 58/30 mmHg, KDZ 4 sn, ekstremiteler soğuk ve alacalı. Fontanel çökük, mukozalar kuru. Letarjik. Kapiller kan şekeri 48 mg/dL. Monitörde sivri T dalgaları. Klitoromegali ve labioskrotal füzyon (Prader evre 3), gonad ele gelmiyor. Meme başı ve genital bölgede hiperpigmentasyon."
+                        "explanation": "Öne eğilme kanın yutulmasını ve aspirasyonu önler. Burun kanatlarına sürekli bası ön septumdaki kanama odağını doğrudan sıkıştırır. Vital bulgular kanamanın hemodinamik etkisini gösterir.",
+                        "new_finding": "Vital Bulgular: KTA 88/dk, SS 18/dk, SpO2 %100, TA 98/62 mmHg. Çocuk korkmuş ama stabil. 15 dakikalık kesintisiz bası sonrası kanama durdu. Anterior rinoskopide sağ septum ön kısmında küçük mukozal erozyon ve üzerinde pıhtı; mukoza kuru. Orofarinks arka duvarında akan kan yok. Ciltte peteşi, ekimoz yok; hepatosplenomegali yok."
                     }
                 ]
             },
             {
-                "stage_title": "Laboratuvar ve Acil Müdahale",
-                "question": "Şoktaki, hipoglisemik ve monitörde sivri T dalgaları olan bu bebekte tetkik ve ilk müdahale nasıl olmalıdır?",
+                "stage_title": "Tetkik Kararı",
+                "question": "Basıyla kanaması duran, ön septumda erozyon görülen ve kanama öyküsü olmayan bu çocukta tetkik yaklaşımınız nedir?",
                 "options": [
                     {
-                        "text": "Tüm tetkiklerin sonuçlarını bekleyip kesin tanı konunca sıvı ve hormon tedavisine başlamak, bu sürede ağızdan şekerli su verip yakından izlemek",
-                        "is_correct": False,
-                        "scenario_update": "Hormon sonuçları günler sürdü; bebek bu sürede kardiyak arrest geçirdi.",
-                        "teaching_point": "Krizde örnek saklanır ve tedavi sonuç beklenmeden hemen başlanır."
-                    },
-                    {
-                        "text": "Hiperkalemiyi düzeltmek için önce potasyum bağlayıcı reçine (sodyum polistiren sülfonat) rektal vermek ve etkisini beklemek",
-                        "is_correct": False,
-                        "scenario_update": "Reçinenin etkisi saatler aldı; bu sırada bebekte ventriküler aritmi gelişti.",
-                        "teaching_point": "EKG değişikliği olan hiperkalemide önce kalsiyum ile miyokard korunur; reçine yenidoğanda nekrotizan enterokolit riski taşır."
-                    },
-                    {
-                        "text": "Hiponatremiyi hızla düzeltmek için %3 NaCl ile sodyumu ilk 6 saatte 135 mEq/L'ye yükseltmek",
-                        "is_correct": False,
-                        "scenario_update": "Hızlı düzeltme sonrası bebekte nörolojik bozulma görüldü.",
-                        "teaching_point": "Kronik hiponatremi 24 saatte 8-10 mEq/L'yi aşmayacak şekilde düzeltilir; hipertonik salin yalnızca nöbette küçük dozlarda verilir."
-                    },
-                    {
-                        "text": "Tedavi öncesi kortizol, 17-OH progesteron ve renin için kan saklayıp elektrolit bakmak; 10 mL/kg SF bolusu ve %10 dekstroz vermek",
+                        "text": "Kişisel ve ailesel kanama öyküsünün, ilaç kullanımının ve sistemik kanama bulgularının yokluğunu kayda geçirip laboratuvar tetkiki istememek",
                         "is_correct": True,
-                        "explanation": "Tedavi öncesi saklanan kan tanıyı tedaviyi geciktirmeden doğrulamayı sağlar. İzotonik sıvı hipovolemi ve hiponatremiyi, dekstroz hipoglisemiyi düzeltir. Yenidoğanda bolus 10 mL/kg ve yeniden değerlendirmeyle tekrarlanır.",
-                        "new_finding": "Kan gazı: pH 7.21, HCO3 14 mEq/L. Na 116 mEq/L, K 7.6 mEq/L, Cl 88 mEq/L, glukoz 48 mg/dL, BUN 42 mg/dL. Tedavi öncesi kan saklandı (17-OH progesteron sonucu 1 hafta sonra 186 ng/mL geldi). İki bolus sonrası KDZ 3 sn, TA 66/38 mmHg; kan şekeri 92 mg/dL."
+                        "explanation": "Lokal nedeni açık, basıyla kontrol edilen ve diğer kanama bulguları (morluk, diş eti kanaması, ailede kanama hastalığı) olmayan anterior kanamada koagülasyon tetkikinin tanısal değeri düşüktür.",
+                        "new_finding": "Kanama bulgusu ve aile öyküsü yok; tetkik istenmedi. 20 dakikalık gözlemde kanama tekrarlamadı."
+                    },
+                    {
+                        "text": "Kan yutup kustuğu için gizli kanamayı değerlendirmek amacıyla hemoglobin takibi ve gaitada gizli kan testi istemek",
+                        "is_correct": False,
+                        "scenario_update": "Hemoglobin 12.6 g/dL geldi; gaitada gizli kan yutulan kan nedeniyle pozitif bulundu ve aile yanlış yönlendirildi.",
+                        "teaching_point": "Yutulan burun kanı gaitada gizli kan testini pozitifleştirir; bu durumda test yanıltıcıdır."
+                    },
+                    {
+                        "text": "Altta yatan kitle veya yabancı cismi dışlamak için paranazal sinüs tomografisi çekmek ve kulak burun boğaz konsültasyonu istemek",
+                        "is_correct": False,
+                        "scenario_update": "Tomografi normal geldi; kanama odağı rinoskopiyle zaten görülmüştü.",
+                        "teaching_point": "Tek taraflı kötü kokulu akıntı veya tekrarlayan şiddetli kanama yoksa görüntüleme gerekmez."
+                    },
+                    {
+                        "text": "Tekrarlayan kanama öyküsü nedeniyle tam kan sayımı, PT, aPTT ve von Willebrand paneli istemek ve sonuç gelene kadar çocuğu gözlemde tutmak",
+                        "is_correct": False,
+                        "scenario_update": "Tüm sonuçlar normal geldi; çocuk saatlerce bekletildi ve aile gereksiz kaygı yaşadı.",
+                        "teaching_point": "Kanama odağı belli, kısa süreli ve basıyla duran kanamada, diğer kanama bulguları yoksa tetkik gerekmez."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "İkinci haftada kusma, şok, Na 116, K 7.6 mEq/L, hipoglisemi, metabolik asidoz, virilize genitalya ve hiperpigmentasyonu olan bu kız bebekte tanı nedir?",
+                "question": "Burun karıştırma sonrası tek taraflı, basıyla duran, ön septumda erozyon görülen ve kanama bozukluğu bulgusu olmayan bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "Psödohipoaldosteronizm tip 1",
+                        "text": "Posterior epistaksis",
                         "is_correct": False,
-                        "scenario_update": "Genital virilizasyon ve hipoglisemi bu tabloyla açıklanmıyor.",
-                        "teaching_point": "Psödohipoaldosteronizmde tuz kaybı vardır ancak kortizol eksikliği ve virilizasyon yoktur."
+                        "scenario_update": "Kanama odağı ön septumda görüldü, farinks arka duvarından akış yok ve kanama basıyla durdu.",
+                        "teaching_point": "Posterior kanama çocukta nadirdir, genellikle şiddetlidir ve anterior basıyla durmaz."
                     },
                     {
-                        "text": "Tuz kaybettiren konjenital adrenal hiperplazi krizi",
+                        "text": "Von Willebrand hastalığı",
+                        "is_correct": False,
+                        "scenario_update": "Kişisel ve ailesel kanama öyküsü yok, morluk ve diş eti kanaması yok.",
+                        "teaching_point": "Kanama bozukluğu uzun süren, iki taraflı veya diğer bölgelerde kanamayla birlikte seyreden kanamalarda düşünülür."
+                    },
+                    {
+                        "text": "Anterior epistaksis (Kiesselbach pleksusu)",
                         "is_correct": True,
-                        "explanation": "Hiponatremi, hiperkalemi, hipoglisemi, şok ile kız bebekte virilizasyon ve hiperpigmentasyon 21-hidroksilaz eksikliğine bağlı tuz kaybettiren krizi gösterir.",
-                        "new_finding": "Tanı: Tuz Kaybettiren Konjenital Adrenal Hiperplazi (21-hidroksilaz eksikliği), adrenal kriz."
+                        "explanation": "Ön septumdaki Kiesselbach pleksusu çocuklarda burun kanamalarının en sık kaynağıdır; dijital travma ve kuru mukoza tipik tetikleyicilerdir.",
+                        "new_finding": "Tanı: Anterior Epistaksis (Kiesselbach Pleksusu, dijital travma ve kuru mukoza zemininde)."
                     },
                     {
-                        "text": "Geç başlangıçlı yenidoğan sepsisi",
+                        "text": "Juvenil nazofarenks anjiyofibromu",
                         "is_correct": False,
-                        "scenario_update": "Ateş yok; elektrolit tablosu ve virilizasyon sepsisle açıklanmıyor.",
-                        "teaching_point": "Sepsis hiponatremi yapabilir ancak belirgin hiperkalemi ve genital virilizasyonu açıklamaz."
-                    },
-                    {
-                        "text": "Hipertrofik pilor stenozu",
-                        "is_correct": False,
-                        "scenario_update": "Hiperkalemi ve asidoz var; pilor darlığında hipokalemik alkaloz beklenir.",
-                        "teaching_point": "Pilor stenozunda hipokloremik hipokalemik metabolik alkaloz görülür ve genital bulgu olmaz."
+                        "scenario_update": "Burun tıkanıklığı yok, kanama burun karıştırma ile tetiklenmiş ve ön septumdan kaynaklanıyor.",
+                        "teaching_point": "Anjiyofibrom ergen erkeklerde tek taraflı burun tıkanıklığı ve tekrarlayan şiddetli kanamayla seyreder."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve Yatış",
-                "question": "Bu bebeğin tedavisi nasıl olmalıdır?",
+                "stage_title": "Taburculuk ve Önleme Planı",
+                "question": "Kanaması duran bu çocuğun taburculuk önerileri hangisidir?",
                 "options": [
                     {
-                        "text": "İntravenöz hidrokortizon 50-100 mg/m² vermek; EKG değişikliği için kalsiyum glukonat yapmak, elektrolitleri sık izlemek",
+                        "text": "Tekrarlayan kanamaları önlemek için acil serviste her iki septum ön kısmına gümüş nitratla koterizasyon uygulamak ve bir hafta burun spreyi kullanmak",
+                        "is_correct": False,
+                        "scenario_update": "İki taraflı koterizasyon septum perforasyonu riski taşır; kanama durmuş ve aktif damar görülmüyordu.",
+                        "teaching_point": "Koterizasyon görünür damar veya basıya dirençli kanamada, tek taraflı ve uygun koşullarda yapılır."
+                    },
+                    {
+                        "text": "Kanama tekrarlarsa evde başını geriye yatırıp burun köküne buz uygulamalarını ve iki gün süreyle burnunu sümkürmemesini, sıcak içecekten kaçınmasını önermek",
+                        "is_correct": False,
+                        "scenario_update": "Bir sonraki kanamada aile yine başı geriye yatırdı; çocuk kanı yutup kustu ve kanama uzadı.",
+                        "teaching_point": "Yanlış tekniğin düzeltilmesi taburculuk eğitiminin en önemli parçasıdır."
+                    },
+                    {
+                        "text": "Burun mukozasına günde iki kez vazelin sürmek, oda havasını nemlendirmek, tırnakları kısa tutup burun karıştırmamak ve doğru bası tekniğini aileye göstermek",
                         "is_correct": True,
-                        "explanation": "Yüksek doz hidrokortizon hem glukokortikoid hem mineralokortikoid etki sağlar. Kalsiyum glukonat miyokardı korur; sıvı ve kortizol potasyumu düşürür. Stabilizasyon sonrası idame hidrokortizon, fludrokortizon ve tuz başlanır; aileye stres dozu eğitimi verilir.",
-                        "new_finding": "Hidrokortizon 25 mg intravenöz ve kalsiyum glukonat verildi. Sivri T dalgaları geriledi. 24 saatte Na 126, K 5.4 mEq/L oldu, kan şekeri stabil kaldı. Fludrokortizon ve tuz eklendi; karyotip 46,XX geldi."
+                        "explanation": "Mukozanın nemlendirilmesi ve dijital travmadan kaçınma tekrarı önlemede en etkili yöntemlerdir. Aile doğru bası tekniğini öğrendiğinde sonraki kanamaları evde durdurabilir; 20 dakikalık basıya yanıt vermeyen kanamada başvuru gerekir.",
+                        "new_finding": "Aileye bası tekniği uygulamalı gösterildi ve nemlendirme önerildi. Bir ay sonraki kontrolde yalnızca bir kez kısa süreli kanama olmuş ve evde basıyla durdurulmuştu."
                     },
                     {
-                        "text": "Hiperkalemi için insülin ve dekstrozu tek tedavi olarak vermek, hormon tedavisini genetik test sonucuna göre planlamak",
+                        "text": "Tekrarı önlemek için anterior tamponu 48 saat yerinde bırakmak, tampon süresince oral amoksisilin-klavulanat vermek ve çıkarmak için kontrole çağırmak",
                         "is_correct": False,
-                        "scenario_update": "Potasyum geçici düştü ancak hormon eksikliği sürdüğü için yeniden yükseldi ve hipotansiyon tekrarladı.",
-                        "teaching_point": "Altta yatan hormon eksikliği tedavi edilmeden elektrolit düzeltmeleri kalıcı olmaz."
-                    },
-                    {
-                        "text": "Deksametazonu tek doz verip hidrokortizon yerine idame tedavisi olarak sürdürmek ve sıvıyı kısıtlamak",
-                        "is_correct": False,
-                        "scenario_update": "Deksametazon mineralokortikoid etki sağlamadı; tuz kaybı ve hiperkalemi sürdü.",
-                        "teaching_point": "Deksametazonun mineralokortikoid etkisi yoktur ve yenidoğanda büyümeyi baskılar; tercih hidrokortizondur."
-                    },
-                    {
-                        "text": "Yalnızca oral fludrokortizon ve tuz takviyesi başlamak, glukokortikoidi endokrinoloji polikliniği görüşüne bırakmak",
-                        "is_correct": False,
-                        "scenario_update": "Kortizol eksikliği tedavi edilmedi; bebekte yeniden hipoglisemi ve hipotansiyon gelişti.",
-                        "teaching_point": "Krizde öncelik intravenöz hidrokortizondur; oral mineralokortikoid stabilizasyon sonrası eklenir."
+                        "scenario_update": "Kanaması durmuş çocuğa gereksiz tampon ve antibiyotik uygulandı; tampon nedeniyle ağız solunumu ve uyku sorunu yaşadı.",
+                        "teaching_point": "Kanaması duran çocukta tampon ve antibiyotik gerekmez."
                     }
                 ]
             }
@@ -538,132 +538,132 @@ CASES = [
     },
     {
         "id": "Y70",
-        "category": "💊 Toksikoloji & Metabolik / Endokrin Aciller",
-        "age": "11 Yaşında",
-        "gender": "Kız",
-        "complaint": "Sabah uyanınca başlayan şiddetli baş ağrısı, bulantı-kusma, baş dönmesi ve banyoda kısa süreli bayılma",
-        "history": "Ailesi anlatıyor: 'Kış tatilinde köydeki evimizdeyiz, odada sobayla ısınıyoruz, gece kapıyı pencereyi kapattık. Sabah kalkınca başı çok ağrıdı, kustu, banyoda birkaç saniye bayıldı. Bizim de başımız ağrıyor, küçük oğlum da kustu.' Ateş yok. Travma olmamış, düşerken başını çarpmamış. Kronik hastalığı yok. Tartı: 36 kg.",
-        "final_diagnosis": "Soba Kaynaklı Karbonmonoksit Zehirlenmesi (Senkop ile, Ağır)",
-        "disposition": "Sarı Alanda Geri Solumasız Maske ile %100 Oksijen, Hiperbarik Oksijen Merkezi ile Görüşme ve Aile Bireylerinin Birlikte Değerlendirilmesi",
-        "case_pearl": "Kışın soba, şofben veya mangal kullanılan kapalı ortamda aynı evde birden fazla kişinin baş ağrısı, bulantı ve baş dönmesi karbonmonoksit zehirlenmesini düşündürür. Standart nabız oksimetresi karboksihemoglobini oksihemoglobinden ayıramaz ve satürasyon yanıltıcı biçimde normal görünür. Tanı kooksimetreli kan gazıyla konur. Tedavi hemen %100 oksijendir (yarı ömrü ~5 saatten ~75 dakikaya iner). Bilinç kaybı-senkop, nörolojik bulgu, miyokard iskemisi, gebelik veya karboksihemoglobin >%25 hiperbarik oksijen için değerlendirme gerektirir. Gecikmiş nörolojik sekel açısından izlem önerilir.",
+        "category": "🌡️ Ateş & Döküntü / Enfeksiyon",
+        "age": "8 Yaşında",
+        "gender": "Erkek",
+        "complaint": "Sağ kolunda ve boynunda iki haftadır genişleyen, kenarları kabarık, hafif kaşıntılı kırmızı halka şeklinde lezyonlar",
+        "history": "Annesi anlatıyor: 'İki hafta önce sağ kolunda küçük kırmızı bir sivilce gibi başladı, gün geçtikçe madeni para büyüklüğünde bir halkaya dönüştü. Ortası soldu, kenarı kırmızı, kabarık ve pul pul. Şimdi boynunda da benzeri çıktı. Hafif kaşıntılı. Bir ay önce sokakta bulduğumuz yavru kediyi eve aldık, onun da kulak arkasında tüysüz bir yer var. Eczaneden aldığımız kortizonlu kremi sürünce kızarıklık azaldı ama halka büyümeye devam etti.' Ateş, eklem ağrısı veya kene ısırığı yok. Tartı: 26 kg.",
+        "final_diagnosis": "Tinea Korporis (Zoofilik Dermatofit Enfeksiyonu)",
+        "disposition": "Yeşil Alandan Topikal Antifungal, Kortizonlu Kremin Bırakılması ve Evcil Hayvanın Tedavisi Eğitimi ile Taburculuk",
+        "case_pearl": "Kenarı kabarık, pullu ve aktif, ortası soluk ve santrifüj genişleyen halka lezyon dermatofit enfeksiyonunu düşündürür; yavru kedi veya köpek sık bir kaynaktır (Microsporum canis). Tanı lezyon kenarından alınan kazıntının KOH incelemesiyle desteklenir. Topikal steroid kullanımı tabloyu maskeleyip yaygınlaştırabilir. Sınırlı lezyonlarda topikal terbinafin veya azol, lezyonun 1-2 cm ötesine kadar, temizlendikten sonra 1-2 hafta daha uygulanır. Saçlı deri tutulumu oral tedavi gerektirir; bu yüzden muayeneye mutlaka dahil edilmelidir.",
         "steps": [
             {
-                "stage_title": "İlk Değerlendirme ve Oksijenizasyon",
-                "question": "Sobalı kapalı odada uyuduktan sonra baş ağrısı, kusma ve bayılma ile gelen bu 11 yaşındaki kızda ilk yaklaşımınız nedir?",
+                "stage_title": "İlk Klinik Değerlendirme ve Fizik Muayene",
+                "question": "Genişleyen halka şeklinde lezyonları olan bu 8 yaşındaki çocukta muayenede neye dikkat edersiniz?",
                 "options": [
                     {
-                        "text": "Satürasyondan bağımsız olarak geri solumasız maskeyle %100 oksijen başlamak; bilinç, nörolojik muayene ve kardiyak ritmi değerlendirmek",
+                        "text": "Kortizonlu kreme kısmi yanıt verdiği için lezyonu egzama kabul edip daha güçlü bir topikal steroid reçete etmek ve iki hafta sonra kontrole çağırmak",
+                        "is_correct": False,
+                        "scenario_update": "Güçlü steroidle kızarıklık geçici azaldı ancak lezyonlar genişledi ve yenileri çıktı.",
+                        "teaching_point": "Topikal steroid mantar enfeksiyonunu maskeler ve yayılımını kolaylaştırır."
+                    },
+                    {
+                        "text": "Lezyonların sınırını, pul yapısını ve dağılımını incelemek, saçlı deriyi, tırnakları ve kasık bölgesini muayene etmek ve sistemik bulguları sorgulamak",
                         "is_correct": True,
-                        "explanation": "Kapalı ortamda yanma ürünlerine maruziyet şüphesinde oksijen hemen başlanır. Nörolojik bulgu, senkop ve miyokard tutulumu ağırlığı belirler. Monitörizasyon iskemi ve aritmiyi yakalar.",
-                        "new_finding": "Vital Bulgular: Ateş 36.7°C, KTA 118/dk, SS 24/dk, nabız oksimetresi SpO2 %99, TA 112/70 mmHg. GKS 15, hafif konfüzyon dışında nörolojik muayene normal, fokal defisit yok. Deri rengi normal. Monitörde sinüs taşikardisi. %100 oksijen başlandı."
+                        "explanation": "Kenarın aktif ve pullu, ortanın soluk olması ayırıcı tanıda belirleyicidir. Saçlı deri ve tırnak tutulumu topikal tedaviyle iyileşmez; varlığı tedavi seçimini değiştirir. Sistemik bulgular eritema migrans gibi diğer halka lezyonları ayırır.",
+                        "new_finding": "Vital Bulgular: Ateş 36.6°C, KTA 80/dk. Genel durumu iyi. Sağ ön kolda 3 cm çaplı, keskin sınırlı, kenarı kabarık, eritemli ve ince pullu, ortası soluk halka lezyon; boyun yan yüzünde 1.5 cm benzeri. Saçlı deride saç kaybı, pullanma veya kırık kıl yok. Tırnaklar ve kasık normal. Lenfadenopati, eklem bulgusu yok."
                     },
                     {
-                        "text": "Nabız oksimetresi %99 gösterdiği için oksijen gereksinimi olmadığını kabul edip baş ağrısı için intravenöz parasetamol vermek",
+                        "text": "Halka şeklindeki lezyonu Lyme hastalığı ile ilişkili kabul edip kene ısırığını yeniden sorgulamak ve muayene etmeden ampirik oral doksisiklin başlamak",
                         "is_correct": False,
-                        "scenario_update": "Oksijen verilmeyen çocukta baş ağrısı arttı ve bilinç bulanıklığı gelişti.",
-                        "teaching_point": "Bu tabloda standart oksimetri yanıltıcı biçimde normal görünebilir; satürasyona güvenilmez."
+                        "scenario_update": "Lezyonlar muayene edilmeden antibiyotik başlandı; pullu kenar ve kedi teması göz ardı edildi.",
+                        "teaching_point": "Eritema migransta pullanma beklenmez; halka lezyonlar ayrıntılı dermatolojik muayeneyle ayrılmalıdır."
                     },
                     {
-                        "text": "Bayılma nedeniyle önce kafa travmasını dışlamak için beyin tomografisi çekmek ve oksijeni tomografi sonrasına bırakmak",
+                        "text": "Kedideki tüysüz alan nedeniyle zoonotik bir enfeksiyon olabileceğini düşünüp çocuğu okuldan uzaklaştırmak ve kedinin evden çıkarılmasını önermek",
                         "is_correct": False,
-                        "scenario_update": "Tomografi normal geldi; oksijen tedavisi bir saat gecikti.",
-                        "teaching_point": "Travma öyküsü olmayan çocukta görüntüleme oksijen tedavisini geciktirmemelidir."
-                    },
-                    {
-                        "text": "Bayılmayı vazovagal senkop kabul edip çocuğu sırtüstü yatırmak, sıvı vermek ve ailenin geri kalanını değerlendirmeden taburcu etmek",
-                        "is_correct": False,
-                        "scenario_update": "Aile aynı eve döndü; gece kardeşi bilinç kaybıyla getirildi.",
-                        "teaching_point": "Aynı ortamdaki birden fazla kişide benzer yakınma ortak bir çevresel nedeni düşündürür."
+                        "scenario_update": "Çocuk muayene edilmeden okuldan uzaklaştırıldı; aile kediden ayrılmak zorunda kaldı.",
+                        "teaching_point": "Bu tabloda okul kısıtlaması gerekmez; evcil hayvan veteriner tarafından tedavi edilebilir."
                     }
                 ]
             },
             {
-                "stage_title": "Laboratuvar ve Kardiyak Değerlendirme",
-                "question": "Oksijen başlanan bu çocukta hangi tetkikler istenmelidir?",
+                "stage_title": "Tetkik Stratejisi",
+                "question": "Saçlı deri ve tırnakları normal, kenarı pullu halka lezyonları olan bu çocukta tanıyı desteklemek için hangi tetkiki yaparsınız?",
                 "options": [
                     {
-                        "text": "Baş ağrısı ve kusma nedeniyle lomber ponksiyon yapmak ve beyin omurilik sıvısında hücre ve protein bakmak",
+                        "text": "Kesin tanı için lezyonun ortasından 4 mm punch biyopsi alıp histopatoloji ve fungal kültüre göndermek, sonuç gelene kadar tedavi başlamamak",
                         "is_correct": False,
-                        "scenario_update": "Lomber ponksiyon normal geldi; asıl tanıyı koyduracak kan gazı istenmedi.",
-                        "teaching_point": "Ateşsiz ve ortak maruziyet öyküsü olan çocukta önce toksik neden araştırılmalıdır."
+                        "scenario_update": "Biyopsi sonucu iki hafta sonra çıktı; bu sürede lezyonlar genişledi.",
+                        "teaching_point": "Biyopsi tipik halka lezyonlarda gerekmez; kazıntı ve KOH yeterlidir. Lezyonun ortası en az verimli bölgedir."
                     },
                     {
-                        "text": "Kan gazında kooksimetriyle hemoglobin türlerini ölçmek; laktat, elektrolit, troponin ve 12 derivasyonlu EKG istemek",
+                        "text": "Halka şeklinde lezyonlarda Lyme serolojisi ve antinükleer antikor göndermek, sonuçlar negatifse dermatolojiye yönlendirmek",
+                        "is_correct": False,
+                        "scenario_update": "Seroloji negatif geldi; tanıyı destekleyen basit yatak başı tetkik yapılmamıştı.",
+                        "teaching_point": "Pullu kenarlı halka lezyonlarda ilk tetkik kazıntı ve KOH incelemesidir."
+                    },
+                    {
+                        "text": "Lezyonun kabarık kenarından lam veya bistüri sırtıyla kazıntı alıp yüzde 10-20 KOH ile hazırlanan preparatı mikroskopta incelemek",
                         "is_correct": True,
-                        "explanation": "Kooksimetri tanıyı koyar; venöz örnek yeterlidir. Laktat ve asidoz doku hipoksisini, troponin ve EKG miyokard hasarını gösterir. Kapalı yangın ortamında siyanür zehirlenmesi de düşünülmelidir.",
-                        "new_finding": "Venöz kan gazı kooksimetri: COHb %28.4, pH 7.32, HCO3 19 mEq/L, laktat 3.4 mmol/L. Troponin I 0.02 ng/mL (normal), kreatin kinaz normal. EKG sinüs taşikardisi, iskemik değişiklik yok. Gebelik testi negatif."
+                        "explanation": "Fungal elemanlar en yoğun olarak aktif kenarda bulunur. KOH keratini eriterek dallanan septalı hiflerin görülmesini sağlar; basit, hızlı ve ucuz bir yatak başı tetkiktir.",
+                        "new_finding": "Kenar kazıntısının KOH incelemesinde dallanan, septalı hifler ve artrokonidi zincirleri görüldü."
                     },
                     {
-                        "text": "Yalnızca parmak ucu nabız oksimetresiyle izlemek, değer %95'in üzerinde kaldıkça ek tetkik istememek",
+                        "text": "Lezyondan eküvyonla sürüntü alıp bakteriyel kültür ve antibiyogram göndermek, üreyen etkene göre topikal antibiyotik başlamak",
                         "is_correct": False,
-                        "scenario_update": "Satürasyon sürekli normal göründü; zehirlenmenin derecesi belirlenemedi.",
-                        "teaching_point": "Standart nabız oksimetresi bu tabloda zehirlenmenin derecesini göstermez."
-                    },
-                    {
-                        "text": "Arteriyel kan gazında yalnızca parsiyel oksijen basıncına bakmak, değer normalse zehirlenmeyi dışlamak",
-                        "is_correct": False,
-                        "scenario_update": "PaO2 normal geldi ve tanı dışlandı; çocuk eve gönderilmek üzereydi.",
-                        "teaching_point": "PaO2 çözünmüş oksijeni gösterir ve bu zehirlenmede normal olabilir; kooksimetri gerekir."
+                        "scenario_update": "Kültürde deri florası üredi; topikal antibiyotik lezyonları etkilemedi.",
+                        "teaching_point": "Bakteriyel kültür bu tabloda tanıya katkı sağlamaz."
                     }
                 ]
             },
             {
                 "stage_title": "Klinik Tanı",
-                "question": "Sobalı kapalı odada uyuduktan sonra baş ağrısı, kusma, senkop gelişen, aile bireyleri de etkilenen, SpO2'si normal ancak kooksimetride karboksihemoglobini %28.4 olan bu çocukta tanı nedir?",
+                "question": "Kedi teması sonrası kenarı kabarık ve pullu, ortası soluk, genişleyen halka lezyonları ve KOH'da septalı hifleri olan bu çocukta tanı nedir?",
                 "options": [
                     {
-                        "text": "Migren atağı (auralı)",
+                        "text": "Pitriyazis rozea",
                         "is_correct": False,
-                        "scenario_update": "Ailenin diğer bireyleri de etkilenmiş ve kan gazında belirgin anormallik var.",
-                        "teaching_point": "Migren aile bireylerinde aynı anda başlamaz ve laboratuvar anormalliği yapmaz."
+                        "scenario_update": "Gövdede çam ağacı dağılımı ve öncü madalyon plak yok; KOH pozitif.",
+                        "teaching_point": "Pitriyazis rozeada pullanma kenarın iç tarafında yaka şeklindedir ve KOH negatiftir."
                     },
                     {
-                        "text": "Karbonmonoksit zehirlenmesi",
+                        "text": "Granuloma anülare",
+                        "is_correct": False,
+                        "scenario_update": "Lezyonlar pullu ve kaşıntılı; granuloma anülarede pullanma olmaz.",
+                        "teaching_point": "Granuloma anülare pullanmayan, ten renginde papüllerden oluşan halkalarla seyreder."
+                    },
+                    {
+                        "text": "Tinea korporis",
                         "is_correct": True,
-                        "explanation": "Kapalı ortamda soba kullanımı, ailede ortak yakınmalar ve karboksihemoglobin %28.4 karbonmonoksit zehirlenmesini doğrular; senkop ağır zehirlenmeyi gösterir.",
-                        "new_finding": "Tanı: Soba Kaynaklı Karbonmonoksit Zehirlenmesi (senkop ile, ağır)."
+                        "explanation": "Santrifüj genişleyen, aktif pullu kenarlı halka lezyonlar, evcil hayvan teması ve KOH'da septalı hifler gövde-ekstremite dermatofit enfeksiyonunu doğrular.",
+                        "new_finding": "Tanı: Tinea Korporis (zoofilik, olası Microsporum canis)."
                     },
                     {
-                        "text": "Siyanür zehirlenmesi",
+                        "text": "Nummüler egzama",
                         "is_correct": False,
-                        "scenario_update": "Yangın veya duman maruziyeti yok; laktat yalnızca hafif yüksek.",
-                        "teaching_point": "Siyanür zehirlenmesi genellikle kapalı alan yangınlarında, belirgin laktik asidozla görülür."
-                    },
-                    {
-                        "text": "Viral gastroenterit",
-                        "is_correct": False,
-                        "scenario_update": "İshal ve ateş yok; kooksimetride belirgin anormallik var.",
-                        "teaching_point": "Ailede eş zamanlı kusma, baş ağrısı ve kapalı ortam öyküsü toksik maruziyeti düşündürür."
+                        "scenario_update": "Lezyonların ortası soluk, kenarı aktif ve KOH'da hif görüldü.",
+                        "teaching_point": "Nummüler egzamada lezyonun tamamı homojen eritemli ve sızıntılıdır."
                     }
                 ]
             },
             {
-                "stage_title": "Tedavi ve Yönlendirme",
-                "question": "Bu çocuğun tedavi ve izlem planı hangisidir?",
+                "stage_title": "Tedavi ve Taburculuk Planı",
+                "question": "Bu çocuğun tedavi planı hangisidir?",
                 "options": [
                     {
-                        "text": "%100 oksijeni sürdürüp hiperbarik oksijen merkezine danışmak; tüm aileyi değerlendirip kaynak giderilmeden eve dönülmemesini sağlamak",
+                        "text": "Topikal nistatin kremini günde üç kez bir hafta sürmek, lezyon geçmezse topikal mupirosin eklemek ve kedi ile temasın tamamen kesilmesini önermek",
+                        "is_correct": False,
+                        "scenario_update": "Nistatin dermatofitlere etkisiz olduğu için lezyonlar genişlemeye devam etti.",
+                        "teaching_point": "Nistatin yalnızca Candida'ya etkilidir; dermatofitlerde terbinafin veya azol kullanılır."
+                    },
+                    {
+                        "text": "Topikal terbinafin veya azolü lezyonun 1-2 cm ötesine kadar günde 1-2 kez sürmek, temizlendikten sonra 1-2 hafta sürdürmek, kortizonlu kremi bırakmak ve kediyi veterinere götürmek",
                         "is_correct": True,
-                        "explanation": "Senkop ve karboksihemoglobin >%25 hiperbarik oksijen için değerlendirme ölçütleridir; amaç gecikmiş nörolojik sekel riskini azaltmaktır. Aynı ortamdaki herkes kooksimetriyle taranmalıdır. Soba ve baca kontrolü ile ev dedektörü önerilir.",
-                        "new_finding": "Hiperbarik merkezle görüşüldü ve bir seans hiperbarik oksijen uygulandı. Dördüncü saatte karboksihemoglobin %3'e indi, baş ağrısı geçti. Diğer aile bireyleri de tedavi aldı. Bir ay sonra nörolojik kontrol planlandı."
+                        "explanation": "Sınırlı tutulumda topikal antifungal yeterlidir; klinik iyileşme sonrası devam etmek nüksü önler. Steroid enfeksiyonu yaygınlaştırır. Kaynak hayvan tedavi edilmezse yeniden bulaş olur; okul kısıtlaması gerekmez.",
+                        "new_finding": "Topikal terbinafin başlandı, steroid krem bırakıldı, kedi veterinerde tedavi edildi. Üç hafta sonraki kontrolde lezyonlar solmuş, pullanma kaybolmuştu."
                     },
                     {
-                        "text": "Belirtiler azaldığı için oksijeni kesip çocuğu ailesiyle birlikte aynı eve göndermek ve sobayı daha az yakmalarını önermek",
+                        "text": "Kaşıntı ve kızarıklığı hızla azaltmak için steroid-antifungal kombine krem önermek ve iyileşme görüldüğünde kremi hemen bırakmak",
                         "is_correct": False,
-                        "scenario_update": "Aile aynı ortama döndü; ertesi gece yeniden zehirlenme gelişti.",
-                        "teaching_point": "Kaynak giderilmeden ortama dönüş yinelemeye yol açar; aile bilgilendirilmelidir."
+                        "scenario_update": "Kombine krem lezyonu baskıladı ancak erken bırakılınca halkalar yeniden genişledi.",
+                        "teaching_point": "Steroid içeren kombinasyonlar dermatofit enfeksiyonlarında önerilmez; tedavi iyileşmeden sonra da sürdürülmelidir."
                     },
                     {
-                        "text": "Oksijeni nazal kanülle 2 L/dk'ya düşürmek ve karboksihemoglobin normale inene kadar çocuğu serviste yatırarak izlemek",
+                        "text": "Lezyonlar birden fazla olduğu için oral griseofulvin 20-25 mg/kg/gün dozunu 8 hafta vermek, karaciğer fonksiyon testleriyle izlemek ve tedavi bitene kadar okula gitmemesini önermek",
                         "is_correct": False,
-                        "scenario_update": "Düşük akımlı oksijenle karboksihemoglobin yavaş geriledi; baş ağrısı uzun sürdü.",
-                        "teaching_point": "Eliminasyonu hızlandırmak için en yüksek oksijen konsantrasyonu kullanılmalıdır."
-                    },
-                    {
-                        "text": "Zehirlenmeyi bağlamak için intravenöz hidroksokobalamin ve sodyum tiyosülfat vermek, oksijeni kesmek",
-                        "is_correct": False,
-                        "scenario_update": "Bu antidotlar bu tablonun tedavisi değildi; oksijen kesilince belirtiler arttı.",
-                        "teaching_point": "Hidroksokobalamin siyanür zehirlenmesinin antidotudur; bu tablonun tedavisi oksijendir."
+                        "scenario_update": "Sınırlı cilt lezyonu için uzun süreli sistemik tedavi gereksizdi; çocuk okuldan uzak kaldı.",
+                        "teaching_point": "Oral tedavi saçlı deri, tırnak veya yaygın-dirençli tutulumda gereklidir."
                     }
                 ]
             }
