@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { loadCase, shuffle } from '../lib.js'
 
 const Html = ({ html, as: Tag = 'span', className }) => (
   <Tag className={className} dangerouslySetInnerHTML={{ __html: html }} />
 )
+
+const CLOSE_MS = 280
 
 export default function Drawer({ caseId, onClose, onSolved }) {
   const [data, setData] = useState(null)
@@ -17,6 +19,26 @@ export default function Drawer({ caseId, onClose, onSolved }) {
   const closeRef = useRef(null)
   const bodyRef = useRef(null)
   const questionRef = useRef(null)
+  const [closing, setClosing] = useState(false)
+  const closingRef = useRef(false)
+  const closeTimer = useRef(null)
+  const onCloseRef = useRef(onClose)
+  onCloseRef.current = onClose
+
+  // Kayarak kapanma: önce çıkış animasyonu, sonra bileşeni kaldır
+  const close = useCallback(() => {
+    if (closingRef.current) return
+    closingRef.current = true
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    if (reduce) {
+      onCloseRef.current()
+      return
+    }
+    setClosing(true)
+    closeTimer.current = setTimeout(() => onCloseRef.current(), CLOSE_MS)
+  }, [])
+
+  useEffect(() => () => clearTimeout(closeTimer.current), [])
 
   useEffect(() => {
     let alive = true
@@ -34,14 +56,14 @@ export default function Drawer({ caseId, onClose, onSolved }) {
 
   useEffect(() => {
     closeRef.current?.focus()
-    const onKey = (e) => e.key === 'Escape' && onClose()
+    const onKey = (e) => e.key === 'Escape' && close()
     document.addEventListener('keydown', onKey)
     document.body.classList.add('no-scroll')
     return () => {
       document.removeEventListener('keydown', onKey)
       document.body.classList.remove('no-scroll')
     }
-  }, [onClose])
+  }, [close])
 
   const total = data?.steps.length ?? 0
   const finished = data && stepIdx >= total
@@ -118,8 +140,8 @@ export default function Drawer({ caseId, onClose, onSolved }) {
   const zone = data?.zone ?? (caseId.startsWith('S') ? 'yellow' : 'green')
 
   return (
-    <div className="drawer-layer">
-      <div className="backdrop" onClick={onClose} aria-hidden="true" />
+    <div className={`drawer-layer${closing ? ' is-closing' : ''}`}>
+      <div className="backdrop" onClick={close} aria-hidden="true" />
       <aside className={`drawer drawer-${zone}`} role="dialog" aria-modal="true" aria-labelledby="drawer-title">
         <div className="drawer-head">
           <div>
@@ -139,7 +161,7 @@ export default function Drawer({ caseId, onClose, onSolved }) {
               )}
             </h2>
           </div>
-          <button ref={closeRef} className="icon-button" onClick={onClose} aria-label="Kapat">
+          <button ref={closeRef} className="icon-button" onClick={close} aria-label="Kapat">
             ✕
           </button>
         </div>
@@ -209,7 +231,7 @@ export default function Drawer({ caseId, onClose, onSolved }) {
                     <p>{data.pearl}</p>
                   </div>
                   <div className="finale-actions">
-                    <button className="btn btn-primary" onClick={onClose}>
+                    <button className="btn btn-primary" onClick={close}>
                       Arşive dön
                     </button>
                     <button className="btn" onClick={restart}>

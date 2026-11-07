@@ -496,7 +496,7 @@ button {
   position: absolute;
   inset: 0;
   background: rgba(22, 21, 19, 0.38);
-  animation: fade 0.2s ease;
+  animation: fade 0.32s ease;
 }
 
 .drawer {
@@ -509,13 +509,19 @@ button {
   width: min(700px, 100vw);
   background: var(--paper);
   border-left: 2px solid var(--rule);
-  animation: slide 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slide-in 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
-@keyframes slide {
+@keyframes slide-in {
   from {
-    transform: translateX(40px);
-    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-out {
+  to {
+    transform: translateX(100%);
   }
 }
 
@@ -523,6 +529,25 @@ button {
   from {
     opacity: 0;
   }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Kapanış: panel sağa kayar, arka plan söner (süre Drawer.jsx CLOSE_MS ile eş) */
+.drawer-layer.is-closing {
+  pointer-events: none;
+}
+
+.drawer-layer.is-closing .drawer {
+  animation: slide-out 0.28s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+}
+
+.drawer-layer.is-closing .backdrop {
+  animation: fade-out 0.28s ease forwards;
 }
 
 .drawer-head {
