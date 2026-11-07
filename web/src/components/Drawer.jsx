@@ -16,6 +16,8 @@ export default function Drawer({ caseId, onClose, onSolved }) {
   const [feedback, setFeedback] = useState('')
   const [showHint, setShowHint] = useState(false)
   const [options, setOptions] = useState([])
+  // Her doğru kararın geri alınabilmesi için verilen açıklama yığını
+  const [trail, setTrail] = useState([])
   const closeRef = useRef(null)
   const bodyRef = useRef(null)
   const questionRef = useRef(null)
@@ -117,8 +119,12 @@ export default function Drawer({ caseId, onClose, onSolved }) {
     if (opt.correct) {
       setDetour(null)
       setFeedback(opt.explanation)
+      setTrail((t) => [...t, opt.explanation])
       if (opt.finding) {
-        setLogs((l) => [...l, { stage: step.title, finding: opt.finding, image: opt.image, caption: opt.imageCaption }])
+        setLogs((l) => [
+          ...l,
+          { step: stepIdx, stage: step.title, finding: opt.finding, image: opt.image, caption: opt.imageCaption },
+        ])
       }
       setStepIdx((i) => i + 1)
     } else {
@@ -127,8 +133,22 @@ export default function Drawer({ caseId, onClose, onSolved }) {
     }
   }
 
+  // Bir önceki aşamaya dön: son doğru kararı ve onunla gelen bulguyu geri al
+  const goBack = () => {
+    if (stepIdx === 0) return
+    const prev = stepIdx - 1
+    setLogs((l) => l.filter((log) => log.step < prev))
+    setTrail((t) => t.slice(0, prev))
+    setFeedback(trail[prev - 1] ?? '')
+    setDetour(null)
+    setShowHint(false)
+    setStepIdx(prev)
+    requestAnimationFrame(() => questionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+  }
+
   const restart = () => {
     setStepIdx(0)
+    setTrail([])
     setLogs([])
     setDetour(null)
     setFeedback('')
@@ -202,9 +222,14 @@ export default function Drawer({ caseId, onClose, onSolved }) {
               {logs.length > 0 && (
                 <section className="logs">
                   <p className="section-label">Dosya notları & tetkik sonuçları</p>
-                  {logs.map((log, i) => (
-                    <div key={i} className="log">
-                      <p className="log-stage">✓ {log.stage}</p>
+                  {logs.map((log) => {
+                    const fresh = log.step === stepIdx - 1
+                    return (
+                    <div key={log.step} className={`log${fresh ? ' log-new' : ''}`}>
+                      <p className="log-stage">
+                        ✓ {log.stage}
+                        {fresh && <span className="new-badge">Yeni bulgu</span>}
+                      </p>
                       <Html as="p" html={log.finding} />
                       {log.image && (
                         <figure className="log-figure">
@@ -213,7 +238,8 @@ export default function Drawer({ caseId, onClose, onSolved }) {
                         </figure>
                       )}
                     </div>
-                  ))}
+                    )
+                  })}
                 </section>
               )}
 
@@ -231,6 +257,9 @@ export default function Drawer({ caseId, onClose, onSolved }) {
                     <p>{data.pearl}</p>
                   </div>
                   <div className="finale-actions">
+                    <button className="btn" onClick={goBack}>
+                      ← Bir önceki adım
+                    </button>
                     <button className="btn btn-primary" onClick={close}>
                       Arşive dön
                     </button>
@@ -249,8 +278,13 @@ export default function Drawer({ caseId, onClose, onSolved }) {
                   </p>
 
                   {feedback && !detour && (
-                    <div className="feedback">
-                      <b>Doğru karar.</b> {feedback}
+                    <div className="feedback" key={stepIdx} role="status">
+                      <p className="feedback-head">
+                        <span className="feedback-check" aria-hidden="true">✓</span>
+                        Doğru karar · Aşama {stepIdx} tamamlandı
+                      </p>
+                      <p className="feedback-text">{feedback}</p>
+                      <p className="feedback-next">Sıradaki karar aşağıda ↓</p>
                     </div>
                   )}
 
@@ -286,9 +320,16 @@ export default function Drawer({ caseId, onClose, onSolved }) {
                           </li>
                         ))}
                       </ol>
-                      <button className="link-button hint-toggle" onClick={() => setShowHint((h) => !h)}>
-                        {showHint ? 'İpucunu gizle' : 'Klinik ipucu al'}
-                      </button>
+                      <div className="step-nav">
+                        {stepIdx > 0 && (
+                          <button className="link-button back-button" onClick={goBack}>
+                            ← Bir önceki adım
+                          </button>
+                        )}
+                        <button className="link-button hint-toggle" onClick={() => setShowHint((h) => !h)}>
+                          {showHint ? 'İpucunu gizle' : 'Klinik ipucu al'}
+                        </button>
+                      </div>
                       {showHint && (
                         <div className="hint">
                           {(() => {

@@ -45,6 +45,20 @@ def vitals_chips(case: dict) -> list:
     return [annotate_clinical_text(p, case["age"]) for p in parts]
 
 
+KTA_RE = re.compile(r"(?<![A-Za-z])KTA(?![A-Za-z])")
+
+
+def web_text(value):
+    """Web'de 'KTA' kısaltması anlaşılmıyor; ekranda 'Nabız' olarak göster."""
+    if isinstance(value, str):
+        return KTA_RE.sub("Nabız", value)
+    if isinstance(value, list):
+        return [web_text(v) for v in value]
+    if isinstance(value, dict):
+        return {k: (v if k in ("id", "image") else web_text(v)) for k, v in value.items()}
+    return value
+
+
 def export_case(case: dict) -> dict:
     age = case["age"]
     steps = []
@@ -104,7 +118,7 @@ def main():
     search = {}
     for case in all_cases:
         with open(os.path.join(cases_dir, f"{case['id']}.json"), "w", encoding="utf-8") as f:
-            json.dump(export_case(case), f, ensure_ascii=False, separators=(",", ":"))
+            json.dump(web_text(export_case(case)), f, ensure_ascii=False, separators=(",", ":"))
         index.append({
             "id": case["id"],
             "zone": "yellow" if case["id"].startswith("S") else "green",
