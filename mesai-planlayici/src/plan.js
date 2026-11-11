@@ -40,20 +40,28 @@ export function duration(minutes) {
  * @param {number} count   Şiftteki kişi sayısı
  * @param {number} parts   Kişi başına alan başına blok sayısı (1 = tek blok, 2 = ikiye böl ...)
  * @param {number} firstIndex  İlk kişinin harf sırası (sabah 0 -> A; akşam sabahın devamı)
+ * @param {number} yellowCount Sarı alanda aynı anda bulunacak kişi sayısı (1 veya 2)
  *
  * Kurallar:
- *  - Her an yeşilde 1, sarıda 1 kişi vardır; aynı kişi iki alanda birden olamaz.
+ *  - Her an yeşilde 1, sarıda 1 (seçilirse 2) kişi vardır; aynı kişi iki alanda birden olamaz.
  *  - Şift, kişi sayısı x parça kadar eşit dilime bölünür.
  *  - Çift kişi sayısında kişiler ikili eşleşir: A yeşil/B sarı, ardından B yeşil/A sarı.
  *  - Tek kişi sayısında döngü kullanılır: A/B, B/C, C/A ...
- *  - Herkes eşit sayıda yeşil ve sarı dilim alır, dolayısıyla süreler eşittir.
+ *  - Sarıda 2 kişi seçiliyse döngü: A yeşil/B+C sarı, B yeşil/C+D sarı ...
+ *    Herkes 1 yeşil + 2 sarı dilim alır; bu yüzden en az 3 kişi gerekir.
+ *  - Herkes eşit sayıda yeşil ve eşit sayıda sarı dilim alır, dolayısıyla süreler eşittir.
  */
-export function buildShiftPlan(shift, count, parts, firstIndex = 0) {
+export function buildShiftPlan(shift, count, parts, firstIndex = 0, yellowCount = 1) {
   const people = Array.from({ length: count }, (_, i) => letter(firstIndex + i))
-  if (count < 2) {
-    return { shift, people, slots: [], summary: [], error: count === 1
-      ? 'Tek kişiyle yeşil ve sarı alan aynı anda doldurulamaz. En az 2 kişi gerekir.'
-      : null }
+  const needed = 1 + yellowCount
+  if (count < needed) {
+    let error = null
+    if (count > 0) {
+      error = yellowCount === 2
+        ? `Yeşilde 1, sarıda 2 kişi için en az 3 kişi gerekir. Bu şiftte ${count} kişi var.`
+        : 'Tek kişiyle yeşil ve sarı alan aynı anda doldurulamaz. En az 2 kişi gerekir.'
+    }
+    return { shift, people, slots: [], summary: [], error }
   }
 
   const total = shift.end - shift.start
@@ -70,12 +78,15 @@ export function buildShiftPlan(shift, count, parts, firstIndex = 0) {
     const g = i % count
     const start = bound(i)
     const end = bound(i + 1)
-    slots.push({ start, end, minutes: end - start, green: people[g], yellow: people[partner(g)] })
+    const yellow = yellowCount === 2
+      ? [people[(g + 1) % count], people[(g + 2) % count]]
+      : [people[partner(g)]]
+    slots.push({ start, end, minutes: end - start, green: people[g], yellow })
   }
 
   const summary = people.map((name) => {
     const green = slots.filter((s) => s.green === name)
-    const yellow = slots.filter((s) => s.yellow === name)
+    const yellow = slots.filter((s) => s.yellow.includes(name))
     const sum = (arr) => arr.reduce((t, s) => t + s.minutes, 0)
     return { name, green, yellow, greenMin: sum(green), yellowMin: sum(yellow), totalMin: sum(green) + sum(yellow) }
   })
