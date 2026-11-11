@@ -9,6 +9,7 @@ import path from 'node:path'
 
 const MAX_MESSAGES = 12
 const MAX_CHARS = 800
+const TRUNCATED = '\n\n(Yanıt uzunluk sınırında kesildi; daha dar bir soru sorabilirsin.)'
 const PER_MINUTE = 8
 const PER_DAY = 60
 
@@ -94,7 +95,9 @@ export function systemPrompt(ctx) {
       ].join('\n')
   return [
     'Sen Türkiye’deki pediatrik acil serviste çalışan hekimlere eğitim veren deneyimli bir çocuk acil uzmanısın.',
-    'Aşağıdaki simülasyon vakası hakkında hekimin sorularını Türkçe, kısa ve net yanıtla (genelde 3-8 cümle ya da kısa madde listesi).',
+    'Aşağıdaki simülasyon vakası hakkında hekimin sorularını Türkçe, kısa ve net yanıtla.',
+    'UZUNLUK: En fazla ~180 kelime. Liste gerekiyorsa en önemli 5-7 maddeyi ver, her madde tek satır; ders kitabı gibi her şeyi sayma. Önce en kritik bilgiyi yaz.',
+    'Biçim: düz metin, gerekirse "- " ile madde ve **kalın**; başlık (#) ve tablo kullanma.',
     'Güncel kılavuzlara (AAP, ESPGHAN, NICE, GINA, ISPAD, Türk kılavuzları vb.) dayan; emin olmadığın bilgiyi uydurma, belirsizliği açıkça söyle.',
     'Doz verirken mg/kg ve maksimum dozu belirt; ilaç dozlarının kılavuzdan teyit edilmesi gerektiğini hatırlat.',
     'Vaka dışı konularda (tıp dışı sorular) kısa bir cümleyle vakaya dönülmesini öner.',
@@ -120,7 +123,7 @@ async function askGemini(system, messages) {
   for (const model of models) {
     const left = deadline - Date.now()
     if (left < 4000) break
-    const generationConfig = { temperature: 0.4, maxOutputTokens: 2048 }
+    const generationConfig = { temperature: 0.4, maxOutputTokens: 4096 }
     if (model.startsWith('gemini-2.5')) generationConfig.thinkingConfig = { thinkingBudget: 0 }
     if (model.startsWith('gemini-3')) generationConfig.thinkingConfig = { thinkingLevel: 'low' }
     let r
@@ -150,7 +153,10 @@ async function askGemini(system, messages) {
       if ([400, 404, 429, 500, 503].includes(r.status)) continue
       throw lastError
     }
-    const text = data?.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('').trim()
+    const cand = data?.candidates?.[0]
+    let text = cand?.content?.parts?.filter((p) => !p.thought).map((p) => p.text || '').join('').trim()
+    // Sınır yüzünden yarıda kesildiyse kullanıcıya belirt.
+    if (text && cand?.finishReason === 'MAX_TOKENS') text += TRUNCATED
     if (!text) {
       const reason = data?.candidates?.[0]?.finishReason || data?.promptFeedback?.blockReason || 'bilinmiyor'
       throw new Error(`${model}: boş yanıt (${reason})`)
@@ -175,7 +181,7 @@ async function askOpenRouter(system, messages) {
     body: JSON.stringify({
       models,
       temperature: 0.4,
-      max_tokens: 1200,
+      max_tokens: 2500,
       messages: [
         { role: 'system', content: system },
         ...messages.map((m) => ({ role: m.role === 'user' ? 'user' : 'assistant', content: m.text })),
@@ -184,7 +190,9 @@ async function askOpenRouter(system, messages) {
   })
   const data = await r.json().catch(() => ({}))
   if (!r.ok) throw new Error(data?.error?.message || `OpenRouter ${r.status}`)
-  const text = data?.choices?.[0]?.message?.content?.trim()
+  const choice = data?.choices?.[0]
+  let text = choice?.message?.content?.trim()
+  if (text && choice?.finish_reason === 'length') text += TRUNCATED
   if (!text) throw new Error('OpenRouter boş yanıt döndü')
   return text
 }
