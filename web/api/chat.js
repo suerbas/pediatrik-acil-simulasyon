@@ -110,12 +110,29 @@ export function systemPrompt(ctx) {
   ].join('\n')
 }
 
+// Gemma, sistem talimatı alanını desteklemez: talimat ilk kullanıcı mesajının başına eklenir.
+function geminiBody(model, system, messages, generationConfig) {
+  const contents = messages.map((m) => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.text }] }))
+  if (!model.startsWith('gemma')) return { systemInstruction: { parts: [{ text: system }] }, contents, generationConfig }
+  const first = [system, '', '--- SORU ---', contents[0].parts[0].text].join('\n')
+  contents[0] = { role: 'user', parts: [{ text: first }] }
+  return { contents, generationConfig }
+}
+
 async function askGemini(system, messages) {
   const key = process.env.GEMINI_API_KEY
   if (!key) throw Object.assign(new Error('no-key'), { code: 'no-key' })
   // Sırayla denenecek modeller; ilki yoğunsa, yavaşsa ya da kotası dolduysa sonrakine geçilir.
   // (2.0 Flash kaldırıldı; 2.5 Flash yeni kullanıcılara kapalı. İlk model yoğunsa kısa beklemeyle bir kez daha denenir.)
-  const models = [process.env.GEMINI_MODEL, 'gemini-3.8-flash', 'gemini-flash-latest', 'gemini-flash-lite-latest'].filter(
+  // Gemma modelleri de aynı anahtarla çalışır ve ücretsiz günlük kotaları Gemini'den çok daha yüksektir.
+  const models = [
+    process.env.GEMINI_MODEL,
+    'gemini-3.8-flash',
+    'gemini-flash-latest',
+    'gemini-flash-lite-latest',
+    'gemma-4-31b-it',
+    'gemma-3-27b-it',
+  ].filter(
     (m, i, a) => m && a.indexOf(m) === i,
   )
   const attempts = [...models]
@@ -135,11 +152,7 @@ async function askGemini(system, messages) {
         method: 'POST',
         headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
         signal: AbortSignal.timeout(Math.min(15_000, left)),
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: system }] },
-          contents: messages.map((m) => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.text }] })),
-          generationConfig,
-        }),
+        body: JSON.stringify(geminiBody(model, system, messages, generationConfig)),
       })
     } catch (err) {
       lastError = Object.assign(new Error(`${model}: zaman aşımı/bağlantı hatası (${err.name})`), { status: 504 })

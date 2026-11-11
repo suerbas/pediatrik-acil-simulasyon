@@ -36,6 +36,7 @@ export default function CaseChat({ caseId, step, finished }) {
   const [input, setInput] = useState('')
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
+  const [errorDetail, setErrorDetail] = useState('')
   const listRef = useRef(null)
   const inputRef = useRef(null)
 
@@ -54,6 +55,7 @@ export default function CaseChat({ caseId, step, finished }) {
     setMessages(next)
     setInput('')
     setError('')
+    setErrorDetail('')
     setBusy(true)
     try {
       const r = await fetch('/api/chat', {
@@ -62,7 +64,10 @@ export default function CaseChat({ caseId, step, finished }) {
         body: JSON.stringify({ caseId, step, messages: next }),
       })
       const data = await r.json().catch(() => ({}))
-      if (!r.ok) throw new Error(data.error || 'Asistan şu an yanıt veremiyor.')
+      if (!r.ok) {
+        setErrorDetail(data.detail || '')
+        throw new Error(data.error || 'Asistan şu an yanıt veremiyor.')
+      }
       setMessages((m) => [...m, { role: 'model', text: data.reply, model: data.model }])
     } catch (e) {
       setError(e.message === 'Failed to fetch' ? 'Bağlantı kurulamadı.' : e.message)
@@ -131,7 +136,17 @@ export default function CaseChat({ caseId, step, finished }) {
             )}
           </div>
 
-          {error && <p className="chat-error">{error}</p>}
+          {error && (
+            <div className="chat-error">
+              <p>{error}</p>
+              {errorDetail && (
+                <details>
+                  <summary>Teknik ayrıntı</summary>
+                  <p className="chat-error-detail">{errorDetail}</p>
+                </details>
+              )}
+            </div>
+          )}
 
           <form
             className="chat-form"

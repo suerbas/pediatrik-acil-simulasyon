@@ -1343,6 +1343,26 @@ button {
   font-size: 0.8rem;
 }
 
+.chat-error p {
+  margin: 0;
+}
+
+.chat-error summary {
+  margin-top: 4px;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+}
+
+.chat-error-detail {
+  margin-top: 4px !important;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  color: var(--ink-2);
+}
+
 .chat-form {
   display: flex;
   gap: 8px;
