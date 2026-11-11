@@ -108,21 +108,35 @@ export function systemPrompt(ctx) {
 async function askGemini(system, messages) {
   const key = process.env.GEMINI_API_KEY
   if (!key) throw Object.assign(new Error('no-key'), { code: 'no-key' })
-  // Sırayla denenecek modeller; ilki yoğunsa ya da kotası dolduysa sonrakine geçilir.
-  const models = [process.env.GEMINI_MODEL, 'gemini-flash-latest', 'gemini-2.5-flash', 'gemini-flash-lite-latest', 'gemini-2.0-flash'].filter(
+  // Sırayla denenecek modeller; ilki yoğunsa, yavaşsa ya da kotası dolduysa sonrakine geçilir.
+  // 2.5 Flash'ta "düşünme" kapatılır: yanıt birkaç saniyede gelir.
+  const models = [process.env.GEMINI_MODEL, 'gemini-2.5-flash', 'gemini-flash-latest', 'gemini-2.5-flash-lite', 'gemini-2.0-flash'].filter(
     (m, i, a) => m && a.indexOf(m) === i,
   )
+  const deadline = Date.now() + 50_000
   let lastError
   for (const model of models) {
-    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: system }] },
-        contents: messages.map((m) => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.text }] })),
-        generationConfig: { temperature: 0.4, maxOutputTokens: 2048 },
-      }),
-    })
+    const left = deadline - Date.now()
+    if (left < 4000) break
+    const generationConfig = { temperature: 0.4, maxOutputTokens: 2048 }
+    if (model.startsWith('gemini-2.5')) generationConfig.thinkingConfig = { thinkingBudget: 0 }
+    let r
+    try {
+      r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
+        signal: AbortSignal.timeout(Math.min(20_000, left)),
+        body: JSON.stringify({
+          systemInstruction: { parts: [{ text: system }] },
+          contents: messages.map((m) => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.text }] })),
+          generationConfig,
+        }),
+      })
+    } catch (err) {
+      lastError = Object.assign(new Error(`${model}: zaman aşımı/bağlantı hatası (${err.name})`), { status: 504 })
+      console.error('[chat] Gemini hatası', lastError.message)
+      continue
+    }
     const data = await r.json().catch(() => ({}))
     if (!r.ok) {
       lastError = Object.assign(new Error(`${model}: ${data?.error?.message || `HTTP ${r.status}`}`), { status: r.status })

@@ -24,7 +24,7 @@
   "functions": {
     "api/chat.js": {
       "includeFiles": "public/cases/**",
-      "maxDuration": 30
+      "maxDuration": 60
     }
   }
 }
