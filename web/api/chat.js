@@ -108,8 +108,8 @@ export function systemPrompt(ctx) {
 async function askGemini(system, messages) {
   const key = process.env.GEMINI_API_KEY
   if (!key) throw Object.assign(new Error('no-key'), { code: 'no-key' })
-  // Model adı tanınmazsa (404) sıradaki modele geç.
-  const models = [process.env.GEMINI_MODEL, 'gemini-flash-latest', 'gemini-2.5-flash', 'gemini-2.0-flash'].filter(
+  // Sırayla denenecek modeller; ilki yoğunsa ya da kotası dolduysa sonrakine geçilir.
+  const models = [process.env.GEMINI_MODEL, 'gemini-flash-latest', 'gemini-2.5-flash', 'gemini-flash-lite-latest', 'gemini-2.0-flash'].filter(
     (m, i, a) => m && a.indexOf(m) === i,
   )
   let lastError
@@ -127,7 +127,8 @@ async function askGemini(system, messages) {
     if (!r.ok) {
       lastError = Object.assign(new Error(`${model}: ${data?.error?.message || `HTTP ${r.status}`}`), { status: r.status })
       console.error('[chat] Gemini hatası', lastError.message)
-      if (r.status === 404) continue
+      // Model yok (404), aşırı yük (500/503) ya da o modelin kotası doldu (429): sıradaki modeli dene.
+      if ([404, 429, 500, 503].includes(r.status)) continue
       throw lastError
     }
     const text = data?.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('').trim()
