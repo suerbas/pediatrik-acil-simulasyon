@@ -3,7 +3,7 @@
 //   GEMINI_API_KEY      (zorunlu)   — https://aistudio.google.com/apikey
 //   GEMINI_MODEL        (isteğe bağlı, varsayılan: gemini-flash-latest)
 //   OPENROUTER_API_KEY  (isteğe bağlı yedek)
-//   OPENROUTER_MODEL    (isteğe bağlı; varsayılan sıra: ERNIE 5.5 Flash, Nemotron 3.5 Super VL — ikisi de :free)
+//   OPENROUTER_MODEL    (isteğe bağlı; varsayılan sıra: Gemma 4 31B, Nemotron 3 Ultra, ERNIE 5.5 Flash — hepsi :free)
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 
@@ -161,7 +161,7 @@ async function askGemini(system, messages) {
       const reason = data?.candidates?.[0]?.finishReason || data?.promptFeedback?.blockReason || 'bilinmiyor'
       throw new Error(`${model}: boş yanıt (${reason})`)
     }
-    return text
+    return { text, model: data?.modelVersion || model }
   }
   if (lastError) lastError.message = errors.join(' | ')
   throw lastError || new Error('Gemini için süre doldu')
@@ -171,7 +171,7 @@ async function askOpenRouter(system, messages) {
   const key = process.env.OPENROUTER_API_KEY
   if (!key) throw new Error('no-openrouter-key')
   // OpenRouter'ın yerleşik yedeklemesi: ilk model yanıt veremezse sıradakini kendisi dener.
-  const models = [process.env.OPENROUTER_MODEL, 'baidu/ernie-5.5-flash-preview:free', 'nvidia/nemotron-3.5-super-vl:free'].filter(
+  const models = [process.env.OPENROUTER_MODEL, 'google/gemma-4-31b-it:free', 'nvidia/nemotron-3-ultra-550b-a55b:free', 'baidu/ernie-5.5-flash-preview:free'].filter(
     (m, i, a) => m && a.indexOf(m) === i,
   )
   const r = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -194,7 +194,7 @@ async function askOpenRouter(system, messages) {
   let text = choice?.message?.content?.trim()
   if (text && choice?.finish_reason === 'length') text += TRUNCATED
   if (!text) throw new Error('OpenRouter boş yanıt döndü')
-  return text
+  return { text, model: data?.model || models[0] }
 }
 
 export async function POST(request) {
@@ -229,10 +229,12 @@ export async function POST(request) {
   const system = systemPrompt(buildContext(c, s))
 
   try {
-    return json(200, { reply: await askGemini(system, history), provider: 'gemini' })
+    const { text, model } = await askGemini(system, history)
+    return json(200, { reply: text, provider: 'gemini', model })
   } catch (e) {
     try {
-      return json(200, { reply: await askOpenRouter(system, history), provider: 'openrouter' })
+      const { text, model } = await askOpenRouter(system, history)
+      return json(200, { reply: text, provider: 'openrouter', model })
     } catch (e2) {
       if (e.code === 'no-key' && e2.message === 'no-openrouter-key')
         return json(503, { error: 'Vaka asistanı henüz yapılandırılmadı (API anahtarı eksik).' })

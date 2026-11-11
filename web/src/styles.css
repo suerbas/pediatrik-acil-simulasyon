@@ -1289,6 +1289,13 @@ button {
   border-bottom-left-radius: 3px;
 }
 
+.chat-model-tag {
+  margin: 6px 0 0;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--ink-3);
+}
+
 .chat-bullet {
   color: var(--blue);
   font-weight: 700;

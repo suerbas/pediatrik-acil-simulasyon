@@ -14,6 +14,20 @@ function Rich({ text }) {
   return <p className="chat-text" dangerouslySetInnerHTML={{ __html: html }} />
 }
 
+// Model kimliğini okunur ada çevirir: "google/gemma-4-31b-it:free" -> "Gemma 4 31B", "gemini-3.8-flash" -> "Gemini 3.8 Flash"
+const MODEL_NAMES = {
+  'google/gemma-4-31b-it': 'Gemma 4 31B',
+  'nvidia/nemotron-3-ultra-550b-a55b': 'Nemotron 3 Ultra',
+  'nvidia/nemotron-3.5-super-vl': 'Nemotron 3.5 Super VL',
+  'baidu/ernie-5.5-flash-preview': 'ERNIE 5.5 Flash',
+}
+function modelLabel(id) {
+  const base = id.replace(/:free$/, '')
+  if (MODEL_NAMES[base]) return `${MODEL_NAMES[base]} · OpenRouter`
+  if (base.startsWith('gemini-')) return base.split('-').map((w) => (/^\d/.test(w) ? w : w[0].toUpperCase() + w.slice(1))).join(' ')
+  return base
+}
+
 const SUGGESTIONS = ['Ayırıcı tanıda neleri düşünmeliyim?', 'Bu aşamada hangi kırmızı bayraklara bakmalıyım?']
 
 export default function CaseChat({ caseId, step, finished }) {
@@ -49,7 +63,7 @@ export default function CaseChat({ caseId, step, finished }) {
       })
       const data = await r.json().catch(() => ({}))
       if (!r.ok) throw new Error(data.error || 'Asistan şu an yanıt veremiyor.')
-      setMessages((m) => [...m, { role: 'model', text: data.reply }])
+      setMessages((m) => [...m, { role: 'model', text: data.reply, model: data.model }])
     } catch (e) {
       setError(e.message === 'Failed to fetch' ? 'Bağlantı kurulamadı.' : e.message)
       setMessages((m) => m.slice(0, -1))
@@ -98,7 +112,14 @@ export default function CaseChat({ caseId, step, finished }) {
             )}
             {messages.map((m, i) => (
               <div key={i} className={`chat-msg chat-${m.role}`}>
-                {m.role === 'user' ? <p className="chat-text">{m.text}</p> : <Rich text={m.text} />}
+                {m.role === 'user' ? (
+                  <p className="chat-text">{m.text}</p>
+                ) : (
+                  <>
+                    <Rich text={m.text} />
+                    {m.model && <p className="chat-model-tag">({modelLabel(m.model)})</p>}
+                  </>
+                )}
               </div>
             ))}
             {busy && (
