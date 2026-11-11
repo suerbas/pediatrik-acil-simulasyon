@@ -3,7 +3,7 @@
 //   GEMINI_API_KEY      (zorunlu)   — https://aistudio.google.com/apikey
 //   GEMINI_MODEL        (isteğe bağlı, varsayılan: gemini-flash-latest)
 //   OPENROUTER_API_KEY  (isteğe bağlı yedek)
-//   OPENROUTER_MODEL    (isteğe bağlı, varsayılan: nvidia/nemotron-3-nano-30b-a3b:free)
+//   OPENROUTER_MODEL    (isteğe bağlı; varsayılan sıra: ERNIE 5.5 Flash, Nemotron 3.5 Super VL — ikisi de :free)
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 
@@ -110,22 +110,25 @@ async function askGemini(system, messages) {
   if (!key) throw Object.assign(new Error('no-key'), { code: 'no-key' })
   // Sırayla denenecek modeller; ilki yoğunsa, yavaşsa ya da kotası dolduysa sonrakine geçilir.
   // 2.5 Flash'ta "düşünme" kapatılır: yanıt birkaç saniyede gelir.
-  const models = [process.env.GEMINI_MODEL, 'gemini-2.5-flash', 'gemini-flash-latest', 'gemini-2.5-flash-lite', 'gemini-2.0-flash'].filter(
+  // (Google'ın kendi hata mesajı gemini-3.8-flash'ı öneriyor; 2.0 Flash kaldırıldı.)
+  const models = [process.env.GEMINI_MODEL, 'gemini-3.8-flash', 'gemini-flash-lite-latest', 'gemini-flash-latest', 'gemini-2.5-flash'].filter(
     (m, i, a) => m && a.indexOf(m) === i,
   )
-  const deadline = Date.now() + 50_000
+  const deadline = Date.now() + 36_000
+  const errors = []
   let lastError
   for (const model of models) {
     const left = deadline - Date.now()
     if (left < 4000) break
     const generationConfig = { temperature: 0.4, maxOutputTokens: 2048 }
     if (model.startsWith('gemini-2.5')) generationConfig.thinkingConfig = { thinkingBudget: 0 }
+    if (model.startsWith('gemini-3')) generationConfig.thinkingConfig = { thinkingLevel: 'low' }
     let r
     try {
       r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
         method: 'POST',
         headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
-        signal: AbortSignal.timeout(Math.min(20_000, left)),
+        signal: AbortSignal.timeout(Math.min(15_000, left)),
         body: JSON.stringify({
           systemInstruction: { parts: [{ text: system }] },
           contents: messages.map((m) => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.text }] })),
@@ -135,14 +138,16 @@ async function askGemini(system, messages) {
     } catch (err) {
       lastError = Object.assign(new Error(`${model}: zaman aşımı/bağlantı hatası (${err.name})`), { status: 504 })
       console.error('[chat] Gemini hatası', lastError.message)
+      errors.push(lastError.message)
       continue
     }
     const data = await r.json().catch(() => ({}))
     if (!r.ok) {
       lastError = Object.assign(new Error(`${model}: ${data?.error?.message || `HTTP ${r.status}`}`), { status: r.status })
       console.error('[chat] Gemini hatası', lastError.message)
-      // Model yok (404), aşırı yük (500/503) ya da o modelin kotası doldu (429): sıradaki modeli dene.
-      if ([404, 429, 500, 503].includes(r.status)) continue
+      errors.push(lastError.message.slice(0, 120))
+      // Geçersiz ayar (400), model yok (404), aşırı yük (500/503) ya da kota (429): sıradaki modeli dene.
+      if ([400, 404, 429, 500, 503].includes(r.status)) continue
       throw lastError
     }
     const text = data?.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('').trim()
@@ -152,17 +157,23 @@ async function askGemini(system, messages) {
     }
     return text
   }
-  throw lastError
+  if (lastError) lastError.message = errors.join(' | ')
+  throw lastError || new Error('Gemini için süre doldu')
 }
 
 async function askOpenRouter(system, messages) {
   const key = process.env.OPENROUTER_API_KEY
   if (!key) throw new Error('no-openrouter-key')
+  // OpenRouter'ın yerleşik yedeklemesi: ilk model yanıt veremezse sıradakini kendisi dener.
+  const models = [process.env.OPENROUTER_MODEL, 'baidu/ernie-5.5-flash-preview:free', 'nvidia/nemotron-3.5-super-vl:free'].filter(
+    (m, i, a) => m && a.indexOf(m) === i,
+  )
   const r = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
+    signal: AbortSignal.timeout(22_000),
     headers: { 'content-type': 'application/json', authorization: `Bearer ${key}` },
     body: JSON.stringify({
-      model: process.env.OPENROUTER_MODEL || 'nvidia/nemotron-3-nano-30b-a3b:free',
+      models,
       temperature: 0.4,
       max_tokens: 1200,
       messages: [
@@ -214,11 +225,13 @@ export async function POST(request) {
   } catch (e) {
     try {
       return json(200, { reply: await askOpenRouter(system, history), provider: 'openrouter' })
-    } catch {
-      if (e.code === 'no-key') return json(503, { error: 'Vaka asistanı henüz yapılandırılmadı (GEMINI_API_KEY eksik).' })
+    } catch (e2) {
+      if (e.code === 'no-key' && e2.message === 'no-openrouter-key')
+        return json(503, { error: 'Vaka asistanı henüz yapılandırılmadı (API anahtarı eksik).' })
       if (e.status === 429) return json(429, { error: 'Günlük ücretsiz kota doldu. Yarın tekrar deneyin.' })
-      // Ayrıntı yalnızca sağlayıcının hata metnidir (anahtar içermez); sorun gidermeyi kolaylaştırır.
-      return json(502, { error: 'Asistan şu an yanıt veremiyor. Biraz sonra tekrar deneyin.', detail: String(e.message).slice(0, 300) })
+      // Ayrıntı yalnızca sağlayıcıların hata metnidir (anahtar içermez); sorun gidermeyi kolaylaştırır.
+      const detail = `Gemini: ${e.message} || OpenRouter: ${e2.message}`.slice(0, 600)
+      return json(502, { error: 'Asistan şu an yanıt veremiyor. Biraz sonra tekrar deneyin.', detail })
     }
   }
 }
