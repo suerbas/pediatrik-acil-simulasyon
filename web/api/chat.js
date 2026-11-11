@@ -91,7 +91,8 @@ export function systemPrompt(ctx) {
         'Vaka henüz tamamlanmadı. KESİN KURALLAR:',
         '- Şu anki aşamada hangi seçeneğin doğru olduğunu söyleme, ima etme, şıkları eleme.',
         '- Kesin tanıyı söyleme. Ayırıcı tanıyı ve düşünme yolunu tartışabilirsin.',
-        '- Kullanıcı cevabı isterse kibarca reddet; bunun yerine yol gösterici bir soru veya ilgili kılavuz ilkesini anlat. Panelde "Klinik ipucu al" butonu olduğunu hatırlat.',
+        '- Yalnızca kullanıcı açıkça "doğru şık hangisi / cevap ne / tanı ne" diye sorarsa kibarca reddet ve "Klinik ipucu al" butonunu hatırlat.',
+        '- İlaç, doz, tetkik, kılavuz, fizyopatoloji gibi genel tıbbi sorular SERBESTTİR: doğrudan ve tam yanıtla. Bu tür sorularda reddetme cümlesi, ipucu butonu hatırlatması ya da "şu aşamada yapılması gerekenler" listesi EKLEME.',
       ].join('\n')
   return [
     'Sen Türkiye’deki pediatrik acil serviste çalışan hekimlere eğitim veren deneyimli bir çocuk acil uzmanısın.',
@@ -100,7 +101,8 @@ export function systemPrompt(ctx) {
     'Biçim: düz metin, gerekirse "- " ile madde ve **kalın**; başlık (#) ve tablo kullanma.',
     'Güncel kılavuzlara (AAP, ESPGHAN, NICE, GINA, ISPAD, Türk kılavuzları vb.) dayan; emin olmadığın bilgiyi uydurma, belirsizliği açıkça söyle.',
     'Doz verirken mg/kg ve maksimum dozu belirt; ilaç dozlarının kılavuzdan teyit edilmesi gerektiğini hatırlat.',
-    'Vaka dışı konularda (tıp dışı sorular) kısa bir cümleyle vakaya dönülmesini öner.',
+    'Tıbbi her soru vakayla ilgili kabul edilir. Yalnızca tıpla hiç ilgisi olmayan sorularda (spor, siyaset vb.) kısa bir cümleyle vakaya dönülmesini öner.',
+    'Üslup: meslektaşa "sen" diye hitap et, tutarlı ol; "Kıymetli meslektaşım" gibi hitap ve süslü giriş cümleleri kullanma. Soruyu doğrudan yanıtlayarak başla; sorulmayan konuları ekleme.',
     rules,
     '',
     '--- VAKA BİLGİSİ (hekimin şu ana kadar gördükleri) ---',
@@ -114,7 +116,7 @@ async function askGemini(system, messages) {
   // Sırayla denenecek modeller; ilki yoğunsa, yavaşsa ya da kotası dolduysa sonrakine geçilir.
   // 2.5 Flash'ta "düşünme" kapatılır: yanıt birkaç saniyede gelir.
   // (Google'ın kendi hata mesajı gemini-3.8-flash'ı öneriyor; 2.0 Flash kaldırıldı.)
-  const models = [process.env.GEMINI_MODEL, 'gemini-3.8-flash', 'gemini-flash-lite-latest', 'gemini-flash-latest', 'gemini-2.5-flash'].filter(
+  const models = [process.env.GEMINI_MODEL, 'gemini-3.8-flash', 'gemini-flash-latest', 'gemini-2.5-flash', 'gemini-flash-lite-latest'].filter(
     (m, i, a) => m && a.indexOf(m) === i,
   )
   const deadline = Date.now() + 36_000
@@ -161,7 +163,7 @@ async function askGemini(system, messages) {
       const reason = data?.candidates?.[0]?.finishReason || data?.promptFeedback?.blockReason || 'bilinmiyor'
       throw new Error(`${model}: boş yanıt (${reason})`)
     }
-    return { text, model: data?.modelVersion || model }
+    return { text, model: data?.modelVersion || model, skipped: errors }
   }
   if (lastError) lastError.message = errors.join(' | ')
   throw lastError || new Error('Gemini için süre doldu')
@@ -229,8 +231,9 @@ export async function POST(request) {
   const system = systemPrompt(buildContext(c, s))
 
   try {
-    const { text, model } = await askGemini(system, history)
-    return json(200, { reply: text, provider: 'gemini', model })
+    const { text, model, skipped } = await askGemini(system, history)
+    // skipped: atlanan modellerin hata özetleri (arayüzde gösterilmez, sorun giderme için)
+    return json(200, { reply: text, provider: 'gemini', model, skipped })
   } catch (e) {
     try {
       const { text, model } = await askOpenRouter(system, history)
