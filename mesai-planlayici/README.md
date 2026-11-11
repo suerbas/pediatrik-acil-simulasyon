@@ -7,6 +7,7 @@ Yeşil ve sarı alan için eşit ve çakışmasız mesai paylaşımı yapan Reac
 - Kişiler harflerle gösterilir (sabah A'dan başlar, akşam sabahın devamından sürer).
 - Çift kişi sayısında ikili eşleşme: A yeşil/B sarı → B yeşil/A sarı.
 - Tek kişi sayısında döngü: A/B → B/C → C/A …
+- "Sarı alanda aynı anda: 2 kişi" seçeneği ile sarıda her an 2 kişi bulunur (A yeşil/B+C sarı → B yeşil/C+D sarı …). En az 3 kişi gerekir.
 - "2'ye böl" / "3'e böl" seçeneği ile her kişinin süresi parçalara bölünür (3 kişi → 6 kişilik gibi).
 
 ## Geliştirme
