@@ -108,21 +108,36 @@ export function systemPrompt(ctx) {
 async function askGemini(system, messages) {
   const key = process.env.GEMINI_API_KEY
   if (!key) throw Object.assign(new Error('no-key'), { code: 'no-key' })
-  const model = process.env.GEMINI_MODEL || 'gemini-flash-latest'
-  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
-    body: JSON.stringify({
-      systemInstruction: { parts: [{ text: system }] },
-      contents: messages.map((m) => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.text }] })),
-      generationConfig: { temperature: 0.4, maxOutputTokens: 2048 },
-    }),
-  })
-  const data = await r.json().catch(() => ({}))
-  if (!r.ok) throw Object.assign(new Error(data?.error?.message || `Gemini ${r.status}`), { status: r.status })
-  const text = data?.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('').trim()
-  if (!text) throw new Error('Gemini boş yanıt döndü')
-  return text
+  // Model adı tanınmazsa (404) sıradaki modele geç.
+  const models = [process.env.GEMINI_MODEL, 'gemini-flash-latest', 'gemini-2.5-flash', 'gemini-2.0-flash'].filter(
+    (m, i, a) => m && a.indexOf(m) === i,
+  )
+  let lastError
+  for (const model of models) {
+    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: system }] },
+        contents: messages.map((m) => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.text }] })),
+        generationConfig: { temperature: 0.4, maxOutputTokens: 2048 },
+      }),
+    })
+    const data = await r.json().catch(() => ({}))
+    if (!r.ok) {
+      lastError = Object.assign(new Error(`${model}: ${data?.error?.message || `HTTP ${r.status}`}`), { status: r.status })
+      console.error('[chat] Gemini hatası', lastError.message)
+      if (r.status === 404) continue
+      throw lastError
+    }
+    const text = data?.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('').trim()
+    if (!text) {
+      const reason = data?.candidates?.[0]?.finishReason || data?.promptFeedback?.blockReason || 'bilinmiyor'
+      throw new Error(`${model}: boş yanıt (${reason})`)
+    }
+    return text
+  }
+  throw lastError
 }
 
 async function askOpenRouter(system, messages) {
@@ -187,7 +202,8 @@ export async function POST(request) {
     } catch {
       if (e.code === 'no-key') return json(503, { error: 'Vaka asistanı henüz yapılandırılmadı (GEMINI_API_KEY eksik).' })
       if (e.status === 429) return json(429, { error: 'Günlük ücretsiz kota doldu. Yarın tekrar deneyin.' })
-      return json(502, { error: 'Asistan şu an yanıt veremiyor. Biraz sonra tekrar deneyin.' })
+      // Ayrıntı yalnızca sağlayıcının hata metnidir (anahtar içermez); sorun gidermeyi kolaylaştırır.
+      return json(502, { error: 'Asistan şu an yanıt veremiyor. Biraz sonra tekrar deneyin.', detail: String(e.message).slice(0, 300) })
     }
   }
 }
