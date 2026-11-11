@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { loadCase, shuffle } from '../lib.js'
+import CaseChat from './CaseChat.jsx'
 
 const Html = ({ html, as: Tag = 'span', className }) => (
   <Tag className={className} dangerouslySetInnerHTML={{ __html: html }} />
@@ -363,6 +364,8 @@ export default function Drawer({ caseId, onClose, onSolved }) {
                   )}
                 </section>
               )}
+
+              <CaseChat caseId={caseId} step={Math.min(stepIdx, total)} finished={!!finished} />
             </>
           )}
         </div>
