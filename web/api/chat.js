@@ -114,19 +114,20 @@ async function askGemini(system, messages) {
   const key = process.env.GEMINI_API_KEY
   if (!key) throw Object.assign(new Error('no-key'), { code: 'no-key' })
   // Sırayla denenecek modeller; ilki yoğunsa, yavaşsa ya da kotası dolduysa sonrakine geçilir.
-  // 2.5 Flash'ta "düşünme" kapatılır: yanıt birkaç saniyede gelir.
-  // (Google'ın kendi hata mesajı gemini-3.8-flash'ı öneriyor; 2.0 Flash kaldırıldı.)
-  const models = [process.env.GEMINI_MODEL, 'gemini-3.8-flash', 'gemini-flash-latest', 'gemini-2.5-flash', 'gemini-flash-lite-latest'].filter(
+  // (2.0 Flash kaldırıldı; 2.5 Flash yeni kullanıcılara kapalı. İlk model yoğunsa kısa beklemeyle bir kez daha denenir.)
+  const models = [process.env.GEMINI_MODEL, 'gemini-3.8-flash', 'gemini-flash-latest', 'gemini-flash-lite-latest'].filter(
     (m, i, a) => m && a.indexOf(m) === i,
   )
+  const attempts = [...models]
+  let retried = false
   const deadline = Date.now() + 36_000
   const errors = []
   let lastError
-  for (const model of models) {
+  for (let i = 0; i < attempts.length; i++) {
+    const model = attempts[i]
     const left = deadline - Date.now()
     if (left < 4000) break
     const generationConfig = { temperature: 0.4, maxOutputTokens: 4096 }
-    if (model.startsWith('gemini-2.5')) generationConfig.thinkingConfig = { thinkingBudget: 0 }
     if (model.startsWith('gemini-3')) generationConfig.thinkingConfig = { thinkingLevel: 'low' }
     let r
     try {
@@ -152,6 +153,11 @@ async function askGemini(system, messages) {
       console.error('[chat] Gemini hatası', lastError.message)
       errors.push(lastError.message.slice(0, 120))
       // Geçersiz ayar (400), model yok (404), aşırı yük (500/503) ya da kota (429): sıradaki modeli dene.
+      if (r.status === 503 && model === models[0] && !retried) {
+        retried = true
+        await new Promise((res) => setTimeout(res, 1500))
+        attempts.splice(i + 1, 0, model)
+      }
       if ([400, 404, 429, 500, 503].includes(r.status)) continue
       throw lastError
     }
