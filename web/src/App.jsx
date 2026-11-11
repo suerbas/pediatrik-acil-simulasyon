@@ -80,9 +80,9 @@ export default function App() {
       <header className="masthead">
         <div className="masthead-row">
           <h1 className="wordmark">
-            The Pediatric
+            Pediatrik Acil
             <br />
-            Emergency Archive
+            Vaka Arşivi
           </h1>
           <dl className="masthead-stats">
             <div>
@@ -183,7 +183,7 @@ export default function App() {
       )}
 
       <footer className="colophon">
-        <span>The Pediatric Emergency Archive</span>
+        <span>Pediatrik Acil Vaka Arşivi</span>
         <span>Eğitim amaçlıdır; klinik kararın yerini tutmaz.</span>
       </footer>
 
