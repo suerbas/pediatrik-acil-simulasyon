@@ -1,9 +1,9 @@
-// Vaka asistanı: Gemini (yedek: OpenRouter) ile vaka bağlamında soru-cevap.
+// Vaka asistanı: önce ERNIE (OpenRouter), sonra Gemini/Gemma, en son diğer OpenRouter modelleri.
 // API anahtarları yalnızca sunucuda durur (Vercel ortam değişkenleri):
 //   GEMINI_API_KEY      (zorunlu)   — https://aistudio.google.com/apikey
 //   GEMINI_MODEL        (isteğe bağlı, varsayılan: gemini-flash-latest)
 //   OPENROUTER_API_KEY  (isteğe bağlı yedek)
-//   OPENROUTER_MODEL    (isteğe bağlı; varsayılan sıra: Gemma 4 31B, Nemotron 3 Ultra, ERNIE 5.5 Flash — hepsi :free)
+//   PRIMARY_MODEL       (isteğe bağlı, ilk denenen OpenRouter modeli; varsayılan: baidu/ernie-5.5-flash-preview:free)
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 
@@ -137,7 +137,7 @@ async function askGemini(system, messages) {
   )
   const attempts = [...models]
   let retried = false
-  const deadline = Date.now() + 36_000
+  const deadline = Date.now() + 30_000
   const errors = []
   let lastError
   for (let i = 0; i < attempts.length; i++) {
@@ -188,16 +188,18 @@ async function askGemini(system, messages) {
   throw lastError || new Error('Gemini için süre doldu')
 }
 
-async function askOpenRouter(system, messages) {
+// Asistanın ilk tercihi (OpenRouter üzerinden). Yanıt veremezse Gemini zincirine geçilir.
+const PRIMARY_MODEL = process.env.PRIMARY_MODEL || 'baidu/ernie-5.5-flash-preview:free'
+// Gemini de başarısız olursa denenecek OpenRouter yedekleri.
+const OPENROUTER_FALLBACKS = ['google/gemma-4-31b-it:free', 'nvidia/nemotron-3-ultra-550b-a55b:free']
+
+async function askOpenRouter(system, messages, models, timeoutMs) {
   const key = process.env.OPENROUTER_API_KEY
   if (!key) throw new Error('no-openrouter-key')
-  // OpenRouter'ın yerleşik yedeklemesi: ilk model yanıt veremezse sıradakini kendisi dener.
-  const models = [process.env.OPENROUTER_MODEL, 'google/gemma-4-31b-it:free', 'nvidia/nemotron-3-ultra-550b-a55b:free', 'baidu/ernie-5.5-flash-preview:free'].filter(
-    (m, i, a) => m && a.indexOf(m) === i,
-  )
+  // models birden fazlaysa OpenRouter'ın yerleşik yedeklemesi sıradakini kendisi dener.
   const r = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
-    signal: AbortSignal.timeout(22_000),
+    signal: AbortSignal.timeout(timeoutMs),
     headers: { 'content-type': 'application/json', authorization: `Bearer ${key}` },
     body: JSON.stringify({
       models,
@@ -249,20 +251,29 @@ export async function POST(request) {
   const s = Math.max(0, Math.min(Number.isInteger(step) ? step : 0, c.steps.length))
   const system = systemPrompt(buildContext(c, s))
 
+  // 1) İlk tercih: ERNIE (OpenRouter)
+  let e0
+  try {
+    const { text, model } = await askOpenRouter(system, history, [PRIMARY_MODEL], 12_000)
+    return json(200, { reply: text, provider: 'openrouter', model })
+  } catch (err) {
+    e0 = err
+  }
+  // 2) Gemini / Gemma zinciri, 3) kalan OpenRouter yedekleri
   try {
     const { text, model, skipped } = await askGemini(system, history)
     // skipped: atlanan modellerin hata özetleri (arayüzde gösterilmez, sorun giderme için)
-    return json(200, { reply: text, provider: 'gemini', model, skipped })
+    return json(200, { reply: text, provider: 'gemini', model, skipped: [`${PRIMARY_MODEL}: ${e0.message}`.slice(0, 120), ...skipped] })
   } catch (e) {
     try {
-      const { text, model } = await askOpenRouter(system, history)
+      const { text, model } = await askOpenRouter(system, history, OPENROUTER_FALLBACKS, 14_000)
       return json(200, { reply: text, provider: 'openrouter', model })
     } catch (e2) {
       if (e.code === 'no-key' && e2.message === 'no-openrouter-key')
         return json(503, { error: 'Vaka asistanı henüz yapılandırılmadı (API anahtarı eksik).' })
       if (e.status === 429) return json(429, { error: 'Günlük ücretsiz kota doldu. Yarın tekrar deneyin.' })
       // Ayrıntı yalnızca sağlayıcıların hata metnidir (anahtar içermez); sorun gidermeyi kolaylaştırır.
-      const detail = `Gemini: ${e.message} || OpenRouter: ${e2.message}`.slice(0, 600)
+      const detail = `ERNIE: ${e0.message} || Gemini: ${e.message} || OpenRouter: ${e2.message}`.slice(0, 700)
       return json(502, { error: 'Asistan şu an yanıt veremiyor. Biraz sonra tekrar deneyin.', detail })
     }
   }
