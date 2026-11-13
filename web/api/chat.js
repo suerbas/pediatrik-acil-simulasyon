@@ -6,6 +6,7 @@
 //   (OpenRouter yedek sırası koddaki OPENROUTER_FALLBACKS listesindedir)
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
+import { pickGuidelines, formatGuidelines } from './guidelines.js'
 
 const MAX_MESSAGES = 12
 const MAX_CHARS = 800
@@ -84,7 +85,17 @@ export function buildContext(c, step) {
   return { text: lines.join('\n'), finished }
 }
 
-export function systemPrompt(ctx) {
+// Kılavuz kartları: tedavi ve doz yanıtları yalnızca bu özetlere dayanır.
+function guidelineBlock(cards) {
+  if (!cards.length)
+    return [
+      '--- KILAVUZ KARTLARI ---',
+      '(Bu soru için kılavuz kartı bulunamadı.)',
+    ].join('\n')
+  return ['--- KILAVUZ KARTLARI (doz ve tedavi için TEK kaynağın) ---', formatGuidelines(cards)].join('\n')
+}
+
+export function systemPrompt(ctx, cards = []) {
   const rules = ctx.finished
     ? 'Vaka tamamlandı; tanıyı, doğru kararları ve alternatifleri serbestçe tartışabilirsin.'
     : [
@@ -99,16 +110,21 @@ export function systemPrompt(ctx) {
     'Aşağıdaki simülasyon vakası hakkında hekimin sorularını Türkçe, kısa ve net yanıtla.',
     'UZUNLUK: En fazla ~180 kelime. Liste gerekiyorsa en önemli 5-7 maddeyi ver, her madde tek satır; ders kitabı gibi her şeyi sayma. Önce en kritik bilgiyi yaz.',
     'Biçim: düz metin, gerekirse "- " ile madde ve **kalın**; başlık (#) ve tablo kullanma.',
-    'Güncel kılavuzlara (AAP, ESPGHAN, NICE, GINA, ISPAD, Türk kılavuzları vb.) dayan; emin olmadığın bilgiyi uydurma, belirsizliği açıkça söyle.',
-    'Doz verirken mg/kg ve maksimum dozu belirt; emin olmadığın dozu yazma. İlaç dozlarının kılavuzdan teyit edilmesi gerektiğini tek kısa cümleyle hatırlat.',
+    'KILAVUZA BAĞLILIK (en önemli kural):',
+    '- İlaç, doz, tedavi basamağı, eşik değer ve tetkik önerisi yazarken YALNIZCA aşağıdaki KILAVUZ KARTLARI bölümündeki bilgiyi kullan. Kartta olmayan doz, sayı, ilaç önerisi ya da eşik değeri kendi bilginden EKLEME, tahmin etme, yuvarlama.',
+    '- Sorulan bilgi kartlarda yoksa (veya kart bulunamadıysa) bunu açıkça söyle: "Bu konuda kılavuz özetimde bilgi yok; yerel protokolünü veya ilgili kılavuzu kontrol et." Gerekirse kartta olan ilgili kısmı ver.',
+    '- Kartta "yerel protokolden teyit et" denen bilgiyi aynı uyarıyla aktar.',
+    '- Ayırıcı tanı, klinik düşünme yolu ve fizyopatoloji gibi doz/tedavi içermeyen konularda genel tıp bilgini kullanabilirsin; ama bu kısımlarda da sayı/doz verme.',
+    '- Karttan bilgi verdiysen yanıtın sonuna tek satır kaynak ekle: "Kaynak: <kartın Kaynak bilgisi>". Kart kullanmadıysan kılavuz adı uydurma.',
     'Tıbbi her soru vakayla ilgili kabul edilir. Yalnızca tıpla hiç ilgisi olmayan sorularda (spor, siyaset vb.) kısa bir cümleyle vakaya dönülmesini öner.',
     'Üslup: meslektaşa baştan sona yalnızca "sen" diye hitap et (ör. "teyit et", "protokolünü kontrol et"); hiçbir cümlede "siz", "-iniz/-ınız", "öneririm" gibi resmi kalıplara geçme. "Kıymetli meslektaşım" gibi hitap ve süslü giriş cümleleri kullanma. Soruyu doğrudan yanıtlayarak başla; sorulmayan konuları ekleme.',
     'Kısaltmalar: belirsiz kısaltma kullanma. Verilen sıvı için "IV sıvı" yaz ("SGA", "serum" yazma); damar yolu açmak için "damar yolu aç" yaz. Fosfenitoin dozunu "mg FE/kg (fenitoin eşdeğeri)" diye yaz. Yaygın olmayan kısaltmaları ilk geçtiği yerde açık yaz.',
-    'Kaynak gösterirken yalnızca konuyla ilgili kılavuzu an (ör. nöbet/status için AES, NICE, ILAE; gastroenterit için ESPGHAN); ilgisiz derneği kaynak gösterme.',
     rules,
     '',
     '--- VAKA BİLGİSİ (hekimin şu ana kadar gördükleri) ---',
     ctx.text,
+    '',
+    guidelineBlock(cards),
   ].join('\n')
 }
 
@@ -253,7 +269,11 @@ export async function POST(request) {
     return json(404, { error: 'Vaka bulunamadı.' })
   }
   const s = Math.max(0, Math.min(Number.isInteger(step) ? step : 0, c.steps.length))
-  const system = systemPrompt(buildContext(c, s))
+  const ctx = buildContext(c, s)
+  // Son iki kullanıcı sorusu + başvuru şikâyeti ile ilgili kılavuz kartlarını seç
+  const recent = history.filter((m) => m.role === 'user').slice(-2).map((m) => m.text).join(' ')
+  const cards = pickGuidelines(caseId, `${recent} ${c.complaint}`, { finished: ctx.finished })
+  const system = systemPrompt(ctx, cards)
 
   // 1) Gemini / Gemma zinciri, 2) OpenRouter yedekleri (ERNIE -> Gemma 4 -> Nemotron 3 Ultra)
   try {
