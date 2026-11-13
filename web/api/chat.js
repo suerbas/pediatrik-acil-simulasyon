@@ -1,9 +1,9 @@
-// Vaka asistanı: önce ERNIE (OpenRouter), sonra Gemini/Gemma, en son diğer OpenRouter modelleri.
+// Vaka asistanı: önce Gemini/Gemma, yanıt alınamazsa OpenRouter (ERNIE, Gemma 4, Nemotron 3 Ultra).
 // API anahtarları yalnızca sunucuda durur (Vercel ortam değişkenleri):
 //   GEMINI_API_KEY      (zorunlu)   — https://aistudio.google.com/apikey
 //   GEMINI_MODEL        (isteğe bağlı, varsayılan: gemini-flash-latest)
 //   OPENROUTER_API_KEY  (isteğe bağlı yedek)
-//   PRIMARY_MODEL       (isteğe bağlı, ilk denenen OpenRouter modeli; varsayılan: baidu/ernie-5.5-flash-preview:free)
+//   (OpenRouter yedek sırası koddaki OPENROUTER_FALLBACKS listesindedir)
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 
@@ -100,10 +100,11 @@ export function systemPrompt(ctx) {
     'UZUNLUK: En fazla ~180 kelime. Liste gerekiyorsa en önemli 5-7 maddeyi ver, her madde tek satır; ders kitabı gibi her şeyi sayma. Önce en kritik bilgiyi yaz.',
     'Biçim: düz metin, gerekirse "- " ile madde ve **kalın**; başlık (#) ve tablo kullanma.',
     'Güncel kılavuzlara (AAP, ESPGHAN, NICE, GINA, ISPAD, Türk kılavuzları vb.) dayan; emin olmadığın bilgiyi uydurma, belirsizliği açıkça söyle.',
-    'Doz verirken mg/kg ve maksimum dozu belirt; ilaç dozlarının kılavuzdan teyit edilmesi gerektiğini hatırlat.',
+    'Doz verirken mg/kg ve maksimum dozu belirt; emin olmadığın dozu yazma. İlaç dozlarının kılavuzdan teyit edilmesi gerektiğini tek kısa cümleyle hatırlat.',
     'Tıbbi her soru vakayla ilgili kabul edilir. Yalnızca tıpla hiç ilgisi olmayan sorularda (spor, siyaset vb.) kısa bir cümleyle vakaya dönülmesini öner.',
     'Üslup: meslektaşa baştan sona yalnızca "sen" diye hitap et (ör. "teyit et", "protokolünü kontrol et"); hiçbir cümlede "siz", "-iniz/-ınız", "öneririm" gibi resmi kalıplara geçme. "Kıymetli meslektaşım" gibi hitap ve süslü giriş cümleleri kullanma. Soruyu doğrudan yanıtlayarak başla; sorulmayan konuları ekleme.',
-    'Kısaltmalar: belirsiz kısaltma kullanma. Damar yolu sıvısı için her zaman "IV sıvı" yaz ("SGA", "serum" yazma); yaygın olmayan kısaltmaları ilk geçtiği yerde açık yaz.',
+    'Kısaltmalar: belirsiz kısaltma kullanma. Verilen sıvı için "IV sıvı" yaz ("SGA", "serum" yazma); damar yolu açmak için "damar yolu aç" yaz. Fosfenitoin dozunu "mg FE/kg (fenitoin eşdeğeri)" diye yaz. Yaygın olmayan kısaltmaları ilk geçtiği yerde açık yaz.',
+    'Kaynak gösterirken yalnızca konuyla ilgili kılavuzu an (ör. nöbet/status için AES, NICE, ILAE; gastroenterit için ESPGHAN); ilgisiz derneği kaynak gösterme.',
     rules,
     '',
     '--- VAKA BİLGİSİ (hekimin şu ana kadar gördükleri) ---',
@@ -138,7 +139,7 @@ async function askGemini(system, messages) {
   )
   const attempts = [...models]
   let retried = false
-  const deadline = Date.now() + 30_000
+  const deadline = Date.now() + 34_000
   const errors = []
   let lastError
   for (let i = 0; i < attempts.length; i++) {
@@ -189,10 +190,12 @@ async function askGemini(system, messages) {
   throw lastError || new Error('Gemini için süre doldu')
 }
 
-// Asistanın ilk tercihi (OpenRouter üzerinden). Yanıt veremezse Gemini zincirine geçilir.
-const PRIMARY_MODEL = process.env.PRIMARY_MODEL || 'baidu/ernie-5.5-flash-preview:free'
-// Gemini de başarısız olursa denenecek OpenRouter yedekleri.
-const OPENROUTER_FALLBACKS = ['google/gemma-4-31b-it:free', 'nvidia/nemotron-3-ultra-550b-a55b:free']
+// Gemini/Gemma zinciri başarısız olursa denenecek OpenRouter yedekleri (sırayla).
+const OPENROUTER_FALLBACKS = [
+  'baidu/ernie-5.5-flash-preview:free',
+  'google/gemma-4-31b-it:free',
+  'nvidia/nemotron-3-ultra-550b-a55b:free',
+]
 
 async function askOpenRouter(system, messages, models, timeoutMs) {
   const key = process.env.OPENROUTER_API_KEY
@@ -252,29 +255,21 @@ export async function POST(request) {
   const s = Math.max(0, Math.min(Number.isInteger(step) ? step : 0, c.steps.length))
   const system = systemPrompt(buildContext(c, s))
 
-  // 1) İlk tercih: ERNIE (OpenRouter)
-  let e0
-  try {
-    const { text, model } = await askOpenRouter(system, history, [PRIMARY_MODEL], 12_000)
-    return json(200, { reply: text, provider: 'openrouter', model })
-  } catch (err) {
-    e0 = err
-  }
-  // 2) Gemini / Gemma zinciri, 3) kalan OpenRouter yedekleri
+  // 1) Gemini / Gemma zinciri, 2) OpenRouter yedekleri (ERNIE -> Gemma 4 -> Nemotron 3 Ultra)
   try {
     const { text, model, skipped } = await askGemini(system, history)
     // skipped: atlanan modellerin hata özetleri (arayüzde gösterilmez, sorun giderme için)
-    return json(200, { reply: text, provider: 'gemini', model, skipped: [`${PRIMARY_MODEL}: ${e0.message}`.slice(0, 120), ...skipped] })
+    return json(200, { reply: text, provider: 'gemini', model, skipped })
   } catch (e) {
     try {
-      const { text, model } = await askOpenRouter(system, history, OPENROUTER_FALLBACKS, 14_000)
+      const { text, model } = await askOpenRouter(system, history, OPENROUTER_FALLBACKS, 22_000)
       return json(200, { reply: text, provider: 'openrouter', model })
     } catch (e2) {
       if (e.code === 'no-key' && e2.message === 'no-openrouter-key')
         return json(503, { error: 'Vaka asistanı henüz yapılandırılmadı (API anahtarı eksik).' })
       if (e.status === 429) return json(429, { error: 'Günlük ücretsiz kota doldu. Yarın tekrar deneyin.' })
       // Ayrıntı yalnızca sağlayıcıların hata metnidir (anahtar içermez); sorun gidermeyi kolaylaştırır.
-      const detail = `ERNIE: ${e0.message} || Gemini: ${e.message} || OpenRouter: ${e2.message}`.slice(0, 700)
+      const detail = `Gemini: ${e.message} || OpenRouter: ${e2.message}`.slice(0, 700)
       return json(502, { error: 'Asistan şu an yanıt veremiyor. Biraz sonra tekrar deneyin.', detail })
     }
   }
