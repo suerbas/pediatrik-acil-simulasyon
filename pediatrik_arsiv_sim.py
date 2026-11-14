@@ -863,68 +863,144 @@ def get_age_group(age_str: str) -> str:
     return "Pediatrik"
 
 
+def _age_months(age_str: str) -> float:
+    """Yaş metnini aya çevirir (bulunamazsa çok büyük değer döner)."""
+    a = age_str.lower()
+    m = re.search(r'(\d+(?:\.\d+)?)', a)
+    if not m:
+        return 999
+    n = float(m.group(1))
+    if "gün" in a or "gun" in a:
+        return n / 30
+    if "hafta" in a:
+        return n / 4.3
+    if "ay" in a:
+        return n
+    return n * 12
+
+
+_NEG_FOLLOW = ("olmayan", "yok", "degil", "olmaksizin")
+
+
+def _has_term(text: str, keywords, exclude=(), context: str = "") -> bool:
+    """
+    Sadeleştirilmiş metinde anahtar kelimeyi KELİME BAŞINDAN arar.
+    - "-sız/-siz/-suz" ile biten olumsuz biçimleri (ör. "ateşsiz", "dehidratasyonsuz") saymaz.
+    - Hemen ardından ("… bulgusu olmayan", "… yok") olumsuzlanan ifadeleri saymaz.
+    - exclude: metinde (veya context'te) geçerse etiketi hiç vermez (ör. "öksürük nöbeti").
+    """
+    if not text:
+        return False
+    whole = f"{text} {context}"
+    if any(e in whole for e in exclude):
+        return False
+    for kw in keywords:
+        for m in re.finditer(r'(?<![a-z0-9])' + re.escape(kw), text):
+            tail = re.match(r'[a-z0-9]*', text[m.end():]).group(0)
+            if tail.endswith(("siz", "suz")):
+                continue
+            nxt = re.findall(r'[a-z0-9]+', text[m.end() + len(tail):m.end() + len(tail) + 40])[:2]
+            if any(w in _NEG_FOLLOW for w in nxt):
+                continue
+            return True
+    return False
+
+
 def extract_card_tags(case: dict) -> list:
     """
     Tüm arşiv vakalarındaki ortak klinik noktaları, semptomları ve yaş gruplarını
     kapsamlı bir şekilde tarayarak her vaka için 3-5 adet zengin anahtar kelime üretir.
     """
-    tags = [get_age_group(case.get("age", ""))]
+    age_group = get_age_group(case.get("age", ""))
+    tags = [age_group]
+    comp = normalize_search_text(case.get("complaint", ""))
+    diag = normalize_search_text(case.get("final_diagnosis", ""))
+    young = age_group in ("Yenidoğan", "Süt Çocuğu") or _age_months(case.get("age", "")) <= 24
 
-    comp = case.get("complaint", "").lower()
-    cat = case.get("category", "").lower()
-    diag = case.get("final_diagnosis", "").lower()
-
-    # 1. Öncü Klinik Semptomlar (Öncelikli! Kullanıcılar semptomlara tıklar)
+    # 1. Belirti etiketleri: şikâyetten (gerekirse tanıdan). Anahtar kelimeler sadeleştirilmiş (ASCII) yazılır.
+    #    (etiket, anahtar kelimeler, hariç tutulan ifadeler)
     symptom_map = [
-        (["ateş", "febril", "sıcaklık"], "Ateş"),
-        (["kusma", "regürjit"], "Kusma"),
-        (["ishal", "diyare", "dışkılama"], "İshal"),
-        (["karın ağrı", "batın ağrı", "kolik"], "Karın Ağrısı"),
-        (["öksürük", "boğmaca"], "Öksürük"),
-        (["hırıltı", "wheezing", "hışıltı"], "Hırıltı"),
-        (["dispne", "nefes darlığı", "solunum sıkıntısı", "takipne", "stridor"], "Dispne"),
-        (["döküntü", "kızarıklık", "ürtiker", "peteşi", "purpura", "aft", "yara"], "Döküntü"),
-        (["nöbet", "konvülziyon", "kasılma"], "Konvülziyon"),
-        (["baş ağrı"], "Baş Ağrısı"),
-        (["baş dönmesi", "göz kararması", "senkop", "presenkop", "bayılma"], "Senkop / Baş Dönmesi"),
-        (["huzursuz", "ağlama", "katılma"], "Huzursuz Bebek"),
-        (["kulak ağrı", "kulak akınt", "otalji"], "Kulak Ağrısı"),
-        (["şişlik", "ödem", "lenfaden"], "Ödem"),
-        (["sarılık", "ikter"], "Sarılık"),
-        (["solukluk", "anemi", "halsizlik"], "Anemi / Solukluk"),
-        (["idrar", "işeme", "enürezis", "dizüri"], "Üriner / İdrar"),
-        (["kabız", "konstipasyon", "kaka yapamama"], "Konstipasyon"),
-        (["zehirlen", "toksik", "intoks", "ilaç alım"], "Zehirlenme"),
-        (["travma", "düşme", "çarpma", "burkulma", "kırık"], "Travma"),
-        (["dehidrat", "sıvı kaybı", "ağız kuruluğu"], "Dehidratasyon"),
+        ("Ateş", ["ates", "febril", "subfebril"], []),
+        ("Kusma", ["kusma", "kusan", "regurjit"], []),
+        ("İshal", ["ishal", "diyare", "sulu diski", "civik diski", "kanli diski", "dizanteri"],
+         ["onceki ishal"]),
+        ("Karın Ağrısı", ["karin agri", "batin agri", "karnina yayilan"], []),
+        ("Öksürük", ["oksuruk", "bogmaca"], []),
+        ("Hırıltı", ["hirilti", "hisilti", "wheezing"], []),
+        ("Dispne", ["dispne", "nefes darligi", "solunum sikintisi", "takipne", "stridor", "hizli nefes",
+                    "nefesinin yetme", "cekilme"], []),
+        ("Siyanoz / Apne", ["siyanoz", "morarma", "morarip", "morardi", "apne", "nefesi dur", "nefesinin dur"], []),
+        ("Döküntü", ["dokuntu", "urtiker", "kabariklik", "petesi", "purpura", "pisik", "ekzantem", "egzama",
+                     "ekzema", "dermatit", "impetigo", "varisella", "sucicegi", "kabarcik", "pitriyazis",
+                     "molluskum", "putur", "tinea", "skabiyez", "uyuz", "kizil", "kizamik", "eritema",
+                     "stevens", "haslanmis deri", "roseola", "pullu kizariklik"], ["onceki dokuntulu"]),
+        ("Ağız Yarası", ["aft", "stomatit", "herpanjina", "agiz icinde agrili yara", "agizda yara",
+                         "dudakta yara", "agiz icinde beyaz"], []),
+        ("Konvülziyon", ["nobet", "konvulziyon", "kasilma"], ["oksuruk nobet", "katilma nobet", "distoni"]),
+        ("Baş Ağrısı", ["bas agri"], []),
+        ("Senkop / Baş Dönmesi", ["bas donmesi", "goz kararmasi", "senkop", "presenkop", "bayilma", "bayilip",
+                                 "yere yigil"], []),
+        ("Kulak Ağrısı", ["kulak agri", "kulak akinti", "kulagini cek", "otalji", "otore"], []),
+        ("Şişlik / Ödem", ["sislik", "odem", "lenfaden"], ["karinda sislik", "karinda asiri sislik", "karinda ileri derecede sislik",
+                                                          "serebral odem", "odematoz"]),
+        ("Sarılık", ["sarilik", "ikter", "sararma", "sarardi", "sararan", "hiperbilirubin"], []),
+        ("Anemi / Solukluk", ["solukluk", "anemi"], []),
+        ("Üriner / İdrar", ["idrar", "iseme", "enurezis", "dizuri", "altini islat"], []),
+        ("Konstipasyon", ["kabiz", "konstipasyon", "diskilama guclug", "enkoprezis", "fekal impaksiyon"], []),
+        ("Zehirlenme", ["zehirlen", "intoksikasyon", "korozif", "serotonin sendrom", "sokmasi"], []),
+        ("Dehidratasyon", ["dehidrat", "sivi kaybi"], []),
     ]
+    # "Huzursuz Bebek" yalnızca 2 yaş altında anlamlı
+    if young:
+        symptom_map.append(("Huzursuz Bebek", ["huzursuz", "aglama", "aglayarak", "susmayan"], ["retrosternal huzursuz"]))
 
-    for keywords, label in symptom_map:
-        if any(k in comp or k in diag for k in keywords):
-            if label not in tags:
-                tags.append(label)
+    sym = [label for label, kws, excl in symptom_map
+           if _has_term(comp, kws, excl, diag) or _has_term(diag, kws, excl, comp)]
 
-    # 2. Sistem & Uzmanlık Alanı (GİS, Respiratuar, Enfeksiyon, Nöroloji, vb.)
+    # 2. Sistem etiketleri: yalnızca kesin tanıdan
     system_map = [
-        (["gastro", "gi̇s", "apandisit", "invajinasyon", "reflü", "hepat", "karın"], "GİS"),
-        (["solunum", "respiratuar", "bronşiolit", "krup", "astım", "pnömoni"], "Respiratuar"),
-        (["enfeksiyon", "sepsis", "menenjit", "viral", "bakteriyel"], "Enfeksiyon"),
-        (["nöroloj", "epilep", "menenjit", "ensefalit"], "Nöroloji"),
-        (["alerji", "anafilaksi", "atopik", "anjioödem"], "Alerji"),
-        (["kbb", "otit", "tonsil", "boğaz", "rinit", "farenjit"], "KBB"),
-        (["göz", "oftalm", "konjonktiv"], "Göz"),
-        (["renal", "ürolo", "nefrit", "piyelonefrit", "torsiyon"], "Nefro / Üro"),
-        (["toksik", "zehirlen", "intoks"], "Toksikoloji"),
-        (["eklem", "artrit", "sinovit", "ortopedi", "dadı dirseği"], "Ortopedi"),
-        (["hematol", "itp", "anemi", "lösemi", "trombosit"], "Hematoloji"),
+        ("GİS", ["gastro", "apandis", "invajinasyon", "intususepsiyon", "reflu", "hepatit", "karaciger", "pilor",
+                 "volvulus", "malrotasyon", "ileus", "bagirsak", "meckel", "kolit", "enterokolit", "colyak",
+                 "giardiyaz", "diyare", "kabizlik", "konstipasyon", "pankreatit", "diskezi", "gastrit",
+                 "laktoz", "kolik", "ketotik kusma", "mezenterik", "hirschsprung", "peritonit", "gastrik",
+                 "sigelloz", "enterobiyazis", "ozofagus", "proktokolit"], ["renal kolik", "mesane-bagirsak"]),
+        ("Respiratuar", ["bronsiolit", "bronsiyolit", "krup", "laringotrakeit", "astim", "pnomoni", "hisilti",
+                         "aspirasyon", "pnomotoraks", "ampiyem", "plevral", "bogmaca"], []),
+        ("Enfeksiyon", ["enfeksiyon", "sepsis", "septik", "menenjit", "ensefalit", "viral", "bakteriyel",
+                        "piyelonefrit", "selulit", "abse", "apse", "osteomiyelit", "bruselloz", "kanamali ates",
+                        "kizamik", "kizil", "sucicegi", "varisella", "kabakulak", "impetigo", "tinea", "kandid",
+                        "skabiyez", "molluskum", "roseola", "eritema infeksiyozum", "herpanjina",
+                        "el-ayak-agiz", "mononukleoz", "tuberkuloz", "bogmaca", "sigelloz", "giardiyaz",
+                        "enterobiyazis", "mastoidit", "konjonktivit", "febril notropeni", "sistit", "fasiit",
+                        "herpetikum", "otitis", "farenjit", "sinuzit", "rinosinuzit", "nazofarenjit"], ["alerjik konjonktivit"]),
+        ("Nöroloji", ["nobet", "konvulziyon", "epilep", "status", "menenjit", "ensefalit", "ataksi", "serebell",
+                      "migren", "bas agrisi", "guillain", "polinoropati", "paralizi", "distoni", "miyoklonus",
+                      "hidrosefali", "fossa", "serebral odem", "ensefalopati"], []),
+        ("Kardiyoloji", ["miyokardit", "kardit", "tasikardi", "aritmi", "uzun qt", "kawasaki", "perikardit",
+                         "kalp yetmez"], []),
+        ("Endokrin / Metabolik", ["diyabet", "diabetes", "ketoasidoz", "hipoglisemi", "adrenal", "hiperamonyemi",
+                                  "ure dongusu", "hiponatremi", "hipernatremi", "hipokalsemi", "rasitizm",
+                                  "ketotik"], []),
+        ("Alerji", ["alerji", "anafilaksi", "urtiker", "anjioodem", "atopik", "lokal reaksiyon"], []),
+        ("Göz", ["konjonktiv", "oftalm", "kornea", "hordeolum", "preseptal", "orbital", "nazolakrimal"], []),
+        ("KBB", ["otit", "tonsil", "farenjit", "nazofarenjit", "faringokonjonktival", "rinit", "sinuz", "rinosinuzit", "mastoid", "epistaksis", "peritonsiller",
+                 "retrofarenge", "parotit", "servikal lenfadenopati"], []),
+        ("Nefro / Üro", ["renal", "nefrit", "glomerulonefrit", "piyelonefrit", "nefrotik", "bobrek", "uretero",
+                         "urolit", "nefrolit", "sistit", "idrar yolu", "testis", "enurezis", "balanopostit",
+                         "vulvovajinit", "labial", "uremik"], []),
+        ("Toksikoloji", ["zehirlen", "intoksikasyon", "korozif", "serotonin sendrom", "sokmasi"], []),
+        ("Ortopedi", ["artrit", "poliartrit", "sinovit", "osteomiyelit", "tortikolis", "sakroiliit", "buyume agri"],
+         ["distoni"]),
+        ("Hematoloji", ["trombositopeni", "itp", "anemi", "losemi", "hemoliz", "orak hucre", "g6pd",
+                        "notropeni", "hemolitik"], ["hemolitik streptokok"]),
     ]
+    sysl = [label for label, kws, excl in system_map if _has_term(diag, kws, excl)]
 
-    for keywords, label in system_map:
-        if any(k in cat or k in diag or k in comp for k in keywords):
-            if label not in tags:
-                tags.append(label)
-
-    return tags[:5]
+    # Yaş + en fazla 3 belirti + en fazla 2 sistem etiketi
+    for label in sym[:3] + sysl[:2]:
+        if label not in tags:
+            tags.append(label)
+    return tags
 
 
 def normalize_search_text(text: str) -> str:

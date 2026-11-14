@@ -128,7 +128,8 @@ def main():
             "complaint": case["complaint"],
             "tags": arsiv.extract_card_tags(case),
         })
-        search[case["id"]] = arsiv.build_case_search_corpus(case)
+        # Arama metni ekranda görünenle aynı olsun (ör. "KTA" yerine "Nabız")
+        search[case["id"]] = arsiv.build_case_search_corpus(web_text(case))
 
     with open(os.path.join(WEB, "src", "data", "index.json"), "w", encoding="utf-8") as f:
         json.dump(index, f, ensure_ascii=False, separators=(",", ":"))

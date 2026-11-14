@@ -2,7 +2,7 @@ import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'rea
 import INDEX from './data/index.json'
 import CaseCard from './components/CaseCard.jsx'
 import Drawer from './components/Drawer.jsx'
-import { loadCase, loadSearchIndex, normalize, readSolved, readUrlState, writeSolved, writeUrlState } from './lib.js'
+import { loadCase, loadSearchIndex, makeMatcher, normalize, readSolved, readUrlState, writeSolved, writeUrlState } from './lib.js'
 
 const COUNTS = {
   all: INDEX.length,
@@ -43,15 +43,16 @@ export default function App() {
           normalize(c.category).includes(t),
       )
     }
-    // Aramadaki her kelime ayrı ayrı aranır; vakada hepsi geçmeli
-    const words = normalize(deferredQuery).split(/\s+/).filter(Boolean)
-    if (words.length) {
-      list = list.filter((c) => {
-        const text = searchIndex
-          ? searchIndex[c.id] || ''
-          : normalize(`${c.id} ${c.age} ${c.gender} ${c.category} ${c.complaint} ${c.tags.join(' ')}`)
-        return words.every((w) => text.includes(w))
-      })
+    // Aramadaki her kelime ayrı ayrı (kelime başından, eş anlamlı/farklı yazımlarıyla) aranır
+    const match = makeMatcher(deferredQuery)
+    if (match) {
+      list = list.filter((c) =>
+        match(
+          searchIndex
+            ? searchIndex[c.id] || ''
+            : normalize(`${c.id} ${c.age} ${c.gender} ${c.category} ${c.complaint} ${c.tags.join(' ')}`),
+        ),
+      )
     }
     return list
   }, [zone, tags, deferredQuery, searchIndex])
