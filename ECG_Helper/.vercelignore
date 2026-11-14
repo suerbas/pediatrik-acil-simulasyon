@@ -1,0 +1,12 @@
+# .vercelignore varken Vercel .gitignore'u dikkate almaz; bu yüzden liste eksiksiz tutulmalıdır.
+# Yerel FastAPI sunucusu Vercel'de kullanılmaz ve config.json API anahtarı içerebilir.
+backend/
+baslat.bat
+.claude/
+.env
+.env.*
+node_modules/
+frontend/node_modules/
+frontend/dist/
+__pycache__/
+*.pyc
