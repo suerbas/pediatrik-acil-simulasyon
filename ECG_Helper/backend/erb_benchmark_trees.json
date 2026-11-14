@@ -1,0 +1,882 @@
+{
+  "source_repo": "https://github.com/Jwoo5/ecg-reasoning-benchmark",
+  "paper_arxiv": "https://arxiv.org/abs/2603.14326",
+  "calibration_note": "One large square (5 mm) represents 0.2 seconds (200 ms) on the horizontal axis and 0.5 mV on the vertical axis.",
+  "diagnosis_count": 17,
+  "diagnoses": {
+    "anterior_ischemia": {
+      "target_dx": "anterior_ischemia",
+      "display_name": "Anterior Ischemia",
+      "initial_question": "Does this ECG suggest the presence of anterior ischemia?",
+      "sample_ptbxl_id": "21472",
+      "steps": [
+        {
+          "criterion": "Presence of ST-segment depression in anterior leads",
+          "finding_question": "Regarding the criterion you selected, does this ECG show ST-segment depression in at least two of the anterior leads, including leads V2, V3, and V4? Note that ST depression is defined as a depression of the J-point greater than 0.1mV (1mm) in lead V2, and greater than 0.07mV (0.7mm) in leads V3 and V4.",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show ST-segment depression? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead V2",
+                "Lead V3",
+                "Lead V4"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following waves can you observe the QRS complex with ST-segment depression? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[8.84s - 8.95s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "anterior_myocardial_infarction": {
+      "target_dx": "anterior_myocardial_infarction",
+      "display_name": "Anterior Myocardial Infarction",
+      "initial_question": "Does this ECG suggest the presence of anterior myocardial infarction?",
+      "sample_ptbxl_id": "20224",
+      "steps": [
+        {
+          "criterion": "Presence of ST-segment elevation in anterior leads",
+          "finding_question": "Regarding the criterion you selected, does this ECG show ST elevation in at least two of the anterior leads, including leads V1, V2, V3, and V4? Note that ST elevation is defined as an elevation of the J-point greater than 0.1mV (1mm) in these leads.",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show ST elevation? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead V1",
+                "Lead V2",
+                "Lead V3",
+                "Lead V4"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with ST elevation? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[6.40s - 6.52s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "complete_left_bundle_branch_block": {
+      "target_dx": "complete_left_bundle_branch_block",
+      "display_name": "Complete Left Bundle Branch Block",
+      "initial_question": "Does this ECG suggest the presence of complete left bundle branch block?",
+      "sample_ptbxl_id": "8411",
+      "steps": [
+        {
+          "criterion": "Prolongation of the QRS duration",
+          "finding_question": "Regarding the criterion you selected, is the QRS duration prolonged on this ECG? Note that a QRS duration is considered to be prolonged if it is greater than 120 milliseconds.",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you observe a QRS wave that demonstrates the prolonged QRS duration? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[8.24s - 8.39s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured QRS duration fall into?",
+              "example_answer": [
+                "[150ms - 160ms]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of a dominant S wave in leads V1 and V2",
+          "finding_question": "Regarding the criterion you selected, does this ECG show dominant S waves in leads V1 and V2, where the amplitude of the negative deflection in the QRS complex is greater than the amplitude of the positive deflection?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the leads V1 and V2, in which of the following segments can you observe the QRS complex with dominant S wave? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[0.73s - 0.89s]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of a positive monophasic QRS complex without a Q wave in lateral leads",
+          "finding_question": "Regarding the criterion you selected, does this ECG show positive monophasic QRS complexes without Q waves in at least two of leads I, aVL, and V6?",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show the positive monophasic QRS complexes without Q waves? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead I",
+                "Lead aVL",
+                "Lead V6"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the positive monophasic QRS complexes without Q waves? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[2.34s - 2.50s]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of a notched R wave in lateral leads",
+          "finding_question": "Regarding the criterion you selected, does this ECG show notched QRS complexes in any of the lateral leads, including leads I, aVL, V5, and V6?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "To verify that the lateral leads do not show a notched R wave, in which of the following segments can you locate the QRS complex in these leads? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[6.63s - 6.79s]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of a broad monophasic R wave with a prolonged R wave peak time in leads V5 and V6",
+          "finding_question": "Regarding the criterion you selected, does this ECG show broad monophasic R waves, with an R wave peak time of at least 55 ms, in any of leads V5 and V6?",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show the broad monophasic R waves with a prolonged R wave peak time? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead V5",
+                "Lead V6"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with broad monophasic R waves, accompanied by a prolonged R wave peak time? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[4.49s - 4.64s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "complete_right_bundle_branch_block": {
+      "target_dx": "complete_right_bundle_branch_block",
+      "display_name": "Complete Right Bundle Branch Block",
+      "initial_question": "Does this ECG suggest the presence of complete right bundle branch block?",
+      "sample_ptbxl_id": "7769",
+      "steps": [
+        {
+          "criterion": "Prolongation of the QRS duration",
+          "finding_question": "Regarding the criterion you selected, is the QRS duration prolonged on this ECG? Note that a QRS duration is considered to be prolonged if it is greater than 120 milliseconds.",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you observe a QRS wave that demonstrates the prolonged QRS duration? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[6.35s - 6.54s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured QRS duration fall into?",
+              "example_answer": [
+                "Above 160ms"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of an RSR' pattern in leads V1 and V2",
+          "finding_question": "Regarding the criterion you selected, does this ECG show an RSR' pattern in lead V1 or V2, where there is an additional positive deflection (r' or R') following the initial r or R wave?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "To verify that leads V1 and V2 do not show an RSR' pattern, in which of the following segments can you locate the QRS complex in these leads? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[6.35s - 6.54s]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of a broad monophasic R wave or qR pattern in lead V1",
+          "finding_question": "Regarding the criterion you selected, does this ECG show broad monophasic R waves or qR pattern in lead V1? Note that a broad monophasic R wave is defined as an R wave with a duration greater than 120 milliseconds and an R wave peak time greater than 55 milliseconds.",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the lead V1, in which of the following segments can you observe the QRS complex with broad monophasic R wave or qR pattern? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[1.14s - 1.32s]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of a slurred S wave in lateral leads",
+          "finding_question": "Regarding the criterion you selected, does this ECG show slurred S waves in at least two of the lateral leads, including leads I, aVL, V5, and V6? Note that a slurred S wave is defined as an S wave with a duration greater than that of the preceding R wave or greater than 40 milliseconds when there is a preceding R wave.",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show the slurred S waves? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead I",
+                "Lead aVL",
+                "Lead V5",
+                "Lead V6"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with slurred S wave? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[5.62s - 5.79s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "first_degree_av_block": {
+      "target_dx": "first_degree_av_block",
+      "display_name": "First Degree Av Block",
+      "initial_question": "Does this ECG suggest the presence of first degree AV block?",
+      "sample_ptbxl_id": "13665",
+      "steps": [
+        {
+          "criterion": "Evidence of consistent 1:1 atrioventricular conduction",
+          "finding_question": "Regarding the criterion you selected, looking at the overall rhythm, is every P wave, excluding those following premature beats, consistently followed by a QRS complex on this ECG?",
+          "grounding_steps": []
+        },
+        {
+          "criterion": "Prolongation of the PR interval",
+          "finding_question": "Regarding the criterion you selected, is the PR interval prolonged on this ECG? Note that a PR interval is considered to be prolonged if it is greater than 200 milliseconds.",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you observe a P wave that demonstrates the prolonged PR interval? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[5.62s - 5.81s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured PR interval fall into?",
+              "example_answer": [
+                "[230ms - 240ms]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "inferior_ischemia": {
+      "target_dx": "inferior_ischemia",
+      "display_name": "Inferior Ischemia",
+      "initial_question": "Does this ECG suggest the presence of inferior ischemia?",
+      "sample_ptbxl_id": "20084",
+      "steps": [
+        {
+          "criterion": "Presence of ST-segment depression in inferior leads",
+          "finding_question": "Regarding the criterion you selected, does this ECG show ST-segment depression in at least two of the inferior leads, including leads II, III, and aVF? Note that ST depression is defined as a depression of the J-point greater than 0.07mV (0.7mm) in these leads.",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show ST-segment depression? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead II",
+                "Lead III",
+                "Lead aVF"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with ST-segment depression? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[8.05s - 8.16s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "inferior_myocardial_infarction": {
+      "target_dx": "inferior_myocardial_infarction",
+      "display_name": "Inferior Myocardial Infarction",
+      "initial_question": "Does this ECG suggest the presence of inferior myocardial infarction?",
+      "sample_ptbxl_id": "1063",
+      "steps": [
+        {
+          "criterion": "Presence of ST-segment elevation in inferior leads",
+          "finding_question": "Regarding the criterion you selected, does this ECG show ST-segment elevation in at least two of the inferior leads, including leads II, III, and aVF? Note that ST elevation is defined as an elevation of the J-point greater than 0.1mV (1mm) in these leads.",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show ST-segment elevation? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead II",
+                "Lead III",
+                "Lead aVF"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with ST-segment elevation? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[8.56s - 8.67s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "lateral_ischemia": {
+      "target_dx": "lateral_ischemia",
+      "display_name": "Lateral Ischemia",
+      "initial_question": "Does this ECG suggest the presence of lateral ischemia?",
+      "sample_ptbxl_id": "17011",
+      "steps": [
+        {
+          "criterion": "Presence of ST-segment depression in lateral leads",
+          "finding_question": "Regarding the criterion you selected, does this ECG show ST-segment depression in at least two of the lateral leads, including leads I, aVL, V5, and V6? Note that ST depression is defined as a depression of the J-point greater than 0.07mV (0.7mm) in these leads.",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show ST-segment depression? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead I",
+                "Lead aVL",
+                "Lead V5",
+                "Lead V6"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with ST-segment depression? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[5.42s - 5.58s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "lateral_myocardial_infarction": {
+      "target_dx": "lateral_myocardial_infarction",
+      "display_name": "Lateral Myocardial Infarction",
+      "initial_question": "Does this ECG suggest the presence of lateral myocardial infarction?",
+      "sample_ptbxl_id": "2458",
+      "steps": [
+        {
+          "criterion": "Presence of ST-segment elevation in lateral leads",
+          "finding_question": "Regarding the criterion you selected, does this ECG show ST-segment elevation in at least two of the lateral leads, including leads I, aVL, V5, and V6? Note that ST elevation is defined as an elevation of the J-point greater than 0.1mV (1mm) in these leads.",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show ST-segment elevation? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead I",
+                "Lead aVL",
+                "Lead V5",
+                "Lead V6"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with ST-segment elevation? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[2.69s - 2.86s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "left_anterior_fascicular_block": {
+      "target_dx": "left_anterior_fascicular_block",
+      "display_name": "Left Anterior Fascicular Block",
+      "initial_question": "Does this ECG suggest the presence of left anterior fascicular block?",
+      "sample_ptbxl_id": "2288",
+      "steps": [
+        {
+          "criterion": "Presence of left bundle branch block",
+          "finding_question": "Regarding the criterion you selected, is left bundle branch block present on this ECG, including incomplete and complete LBBB?",
+          "grounding_steps": []
+        },
+        {
+          "criterion": "Presence of left axis deviation",
+          "finding_question": "Regarding the criterion you selected, does this ECG show left axis deviation, where the QRS axis is between -90 and -30 degrees?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you locate a QRS wave that would be used to calculate the QRS axis? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[3.67s - 3.78s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured QRS axis fall into?",
+              "example_answer": [
+                "[-90 degrees - -60 degrees]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of a qR pattern in leads I and aVL",
+          "finding_question": "Regarding the criterion you selected, does this ECG show a qR pattern in any of leads I and aVL?",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show the qR pattern? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead I",
+                "Lead aVL"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with qR pattern? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[6.48s - 6.58s]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of an rS pattern in leads II, III, and aVF",
+          "finding_question": "Regarding the criterion you selected, does this ECG show an rS pattern in any of leads II, III, and aVF?",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show the rS pattern? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead II",
+                "Lead III",
+                "Lead aVF"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with rS pattern? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[6.48s - 6.58s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "left_posterior_fascicular_block": {
+      "target_dx": "left_posterior_fascicular_block",
+      "display_name": "Left Posterior Fascicular Block",
+      "initial_question": "Does this ECG suggest the presence of left posterior fascicular block?",
+      "sample_ptbxl_id": "14371",
+      "steps": [
+        {
+          "criterion": "Presence of left bundle branch block",
+          "finding_question": "Regarding the criterion you selected, is left bundle branch block present on this ECG, including incomplete and complete LBBB?",
+          "grounding_steps": []
+        },
+        {
+          "criterion": "Presence of right axis deviation",
+          "finding_question": "Regarding the criterion you selected, does this ECG show right axis deviation, where the QRS axis is between +90 and +180 degrees?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you locate a QRS wave that would be used to calculate the QRS axis? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[7.68s - 7.83s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured QRS axis fall into?",
+              "example_answer": [
+                "[150 degrees - 180 degrees]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of an rS pattern in leads I and aVL",
+          "finding_question": "Regarding the criterion you selected, does this ECG show an rS pattern in any of leads I and aVL?",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show the rS pattern? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead I",
+                "Lead aVL"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with rS pattern? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[7.00s - 7.15s]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of a qR pattern in leads II, III, and aVF",
+          "finding_question": "Regarding the criterion you selected, does this ECG show a qR pattern in any of leads II, III, and aVF?",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show the qR pattern? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead II",
+                "Lead III",
+                "Lead aVF"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you observe the QRS complex with qR pattern? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[2.79s - 2.94s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "left_ventricular_hypertrophy": {
+      "target_dx": "left_ventricular_hypertrophy",
+      "display_name": "Left Ventricular Hypertrophy",
+      "initial_question": "Does this ECG suggest the presence of left ventricular hypertrophy?",
+      "sample_ptbxl_id": "10400",
+      "steps": [
+        {
+          "criterion": "R wave amplitude in lead aVL > 1.1mV",
+          "finding_question": "Regarding the criterion you selected, is the maximum R amplitude in lead aVL greater than 1.1mV? Note that R amplitude is the amplitude of the positive deflection in the QRS complex, measured from the baseline to the highest point of the QRS complex. Premature beats (e.g., PVCs) are excluded from this measurement.",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you locate a QRS wave to measure the R amplitude in lead aVL? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[7.76s - 7.86s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured R amplitude fall into?",
+              "example_answer": [
+                "[1.2mV - 1.3mV]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Sum of S amplitude in V1 and R amplitude in V5/V6 > 3.5mV",
+          "finding_question": "Regarding the criterion you selected, is the sum of the maximum S amplitude in lead V1 and the maximum R amplitude in lead V5 or V6 greater than 3.5mV? Note that S amplitude is the amplitude of the negative deflection in the QRS complex, measured from the baseline to the lowest point of the QRS complex. Premature beats (e.g., PVCs) are excluded from this measurement.",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you locate a QRS wave to measure the S amplitude in lead V1? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[7.76s - 7.86s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured S amplitude fall into?",
+              "example_answer": [
+                "Above 0.9mV"
+              ]
+            },
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show the larger R amplitude? Select the lead from the options below.",
+              "example_answer": [
+                "Lead V5"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you locate a QRS wave to measure the R amplitude in the selected lead? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[4.44s - 4.54s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured R amplitude fall into?",
+              "example_answer": [
+                "Above 1.2mV"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Cornell Product ((R amplitude in aVL + S amplitude in V3) x QRS duration) > 0.244mV*s",
+          "finding_question": "Regarding the criterion you selected, is the Cornell Product calculated on this ECG greater than 0.244mV*s? Note that the Cornell Product is calculated as the sum of the S amplitude in lead V3 and the R amplitude in lead aVL, multiplied by the QRS duration in seconds.",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you locate a QRS wave to measure the S amplitude in lead V3? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[7.76s - 7.86s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured S amplitude fall into?",
+              "example_answer": [
+                "Above 0.9mV"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you locate a QRS wave to measure the R amplitude in lead aVL? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[7.76s - 7.86s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured R amplitude fall into?",
+              "example_answer": [
+                "Above 0.9mV"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured QRS duration fall into?",
+              "example_answer": [
+                "[90ms - 100ms]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of an LV strain pattern in lateral leads",
+          "finding_question": "Regarding the criterion you selected, does this ECG show an LV strain, characterized by ST depression with T wave inversion, in any of the lateral leads (I, aVL, V5, and V6)?",
+          "grounding_steps": [
+            {
+              "question_type": "lead_grounding",
+              "question": "Which of the following leads show an LV strain pattern? Select all possible leads from the options below.",
+              "example_answer": [
+                "Lead I",
+                "Lead aVL",
+                "Lead V5",
+                "Lead V6"
+              ]
+            },
+            {
+              "question_type": "wave_grounding",
+              "question": "Within the selected leads, in which of the following segments can you locate the ST segment and T wave showing the LV strain pattern? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[3.41s - 3.80s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "premature_atrial_complex": {
+      "target_dx": "premature_atrial_complex",
+      "display_name": "Premature Atrial Complex",
+      "initial_question": "Does this ECG suggest the presence of typical premature atrial complex(es)?",
+      "sample_ptbxl_id": "7907",
+      "steps": [
+        {
+          "criterion": "Presence of premature beats",
+          "finding_question": "Regarding the criterion you selected, are there any premature beats on this ECG, where a QRS complex occurs earlier than expected time based on the preceding normal cycles?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you observe the premature beat? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[7.49s - 7.62s]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Absence of significant QRS prolongation in the premature beat compared to normal beats",
+          "finding_question": "Regarding the criterion you selected, for the QRS complex in the selected segment, is the QRS duration prolonged significantly compared to the normal beats on this ECG?",
+          "grounding_steps": [
+            {
+              "question_type": "measurement_grounding",
+              "question": "Which range does the measured QRS duration for the premature beat fall into?",
+              "example_answer": [
+                "[120ms - 130ms]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "premature_ventricular_complex": {
+      "target_dx": "premature_ventricular_complex",
+      "display_name": "Premature Ventricular Complex",
+      "initial_question": "Does this ECG suggest the presence of typical premature ventricular complex(es)?",
+      "sample_ptbxl_id": "9301",
+      "steps": [
+        {
+          "criterion": "Presence of premature beats",
+          "finding_question": "Regarding the criterion you selected, are there any premature beats on this ECG, where a QRS complex occurs earlier than expected time based on the preceding normal cycles?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you observe the premature beat? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[6.65s - 6.77s]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of significant QRS prolongation in the premature beat compared to normal beats",
+          "finding_question": "Regarding the criterion you selected, for the QRS complex in the selected segment, is the QRS duration prolonged significantly compared to the normal beats on this ECG?",
+          "grounding_steps": [
+            {
+              "question_type": "measurement_grounding",
+              "question": "Which range does the measured QRS duration for the premature beat fall into?",
+              "example_answer": [
+                "Below 130ms"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "right_ventricular_hypertrophy": {
+      "target_dx": "right_ventricular_hypertrophy",
+      "display_name": "Right Ventricular Hypertrophy",
+      "initial_question": "Does this ECG suggest the presence of right ventricular hypertrophy?",
+      "sample_ptbxl_id": "21487",
+      "steps": [
+        {
+          "criterion": "Presence of right bundle branch block",
+          "finding_question": "Regarding the criterion you selected, is right bundle branch block present on this ECG, including incomplete and complete RBBB?",
+          "grounding_steps": []
+        },
+        {
+          "criterion": "Presence of right axis deviation",
+          "finding_question": "Regarding the criterion you selected, does this ECG show right axis deviation, where the QRS axis is greater than +100 degrees?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you locate a QRS wave that would be used to calculate the QRS axis? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[3.38s - 3.47s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured QRS axis fall into? ",
+              "example_answer": [
+                "[90 degrees - 120 degrees]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of a dominant R wave in V1",
+          "finding_question": "Regarding the criterion you selected, does lead V1 show dominant R waves, where the amplitude of the positive deflection in the QRS complex is greater than the amplitude of the negative deflection?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you locate a QRS wave to measure the R amplitude in lead V1? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[8.35s - 8.45s]"
+              ]
+            },
+            {
+              "question_type": "measurement_grounding",
+              "question": "For the selected segment, which range does the measured R amplitude fall into?",
+              "example_answer": [
+                "[0.9mV - 1.2mV]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "second_degree_av_block": {
+      "target_dx": "second_degree_av_block",
+      "display_name": "Second Degree Av Block",
+      "initial_question": "Does this ECG suggest the presence of second degree AV block?",
+      "sample_ptbxl_id": "1222",
+      "steps": [
+        {
+          "criterion": "Occurrence of intermittent dropped beats",
+          "finding_question": "Regarding the criterion you selected, does this ECG show any possibility of dropped beats, where an RR interval is significantly longer than the preceding RR intervals?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "Which of the following intervals between two consecutive QRS waves represents this significantly longer interval? To ensure clear indexing, the '1st QRS wave' refers to the QRS wave located at [0.38s - 0.49s] in the ECG signal.",
+              "example_answer": [
+                "[3rd QRS wave - 4th QRS wave]"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Presence of a non-conducted P wave within the dropped interval",
+          "finding_question": "Regarding the criterion you selected, is a non-conducted P wave, which is not caused by a premature beat, visible within the prolonged RR interval that you identified?",
+          "grounding_steps": [
+            {
+              "question_type": "wave_grounding",
+              "question": "In which of the following segments can you observe the non-conducted P wave, specifically within the prolonged RR interval? The options below refer to time ranges on the ECG signal, provided in seconds.",
+              "example_answer": [
+                "[3.20s - 3.28s]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "third_degree_av_block": {
+      "target_dx": "third_degree_av_block",
+      "display_name": "Third Degree Av Block",
+      "initial_question": "Does this ECG suggest the presence of third degree AV block?",
+      "sample_ptbxl_id": "16151",
+      "steps": [
+        {
+          "criterion": "Presence of bradycardia (slow ventricular rate)",
+          "finding_question": "Regarding the criterion you selected, does this ECG show a slow heart rate? Note that a heart rate is considered to be slow if it is less than 70 beats per minute (bpm).",
+          "grounding_steps": [
+            {
+              "question_type": "measurement_grounding",
+              "question": "Which range does the measured heart rate fall into?",
+              "example_answer": [
+                "Below 30 bpm"
+              ]
+            }
+          ]
+        },
+        {
+          "criterion": "Regularity of the RR intervals",
+          "finding_question": "Regarding the criterion you selected, is the ventricular rhythm (the RR intervals) regular on this ECG?",
+          "grounding_steps": []
+        },
+        {
+          "criterion": "Presence of atrial fibrillation",
+          "finding_question": "Regarding the criterion you selected, does this ECG show fibrillatory waves with no visible P waves, suggesting atrial fibrillation?",
+          "grounding_steps": []
+        },
+        {
+          "criterion": "Presence of AV dissociation",
+          "finding_question": "Regarding the criterion you selected, is the atrial rhythm independent from the ventricular rhythm on this ECG?",
+          "grounding_steps": [
+            {
+              "question_type": "measurement_grounding",
+              "question": "Which of the following ranges does the measured atrial rate fall into?",
+              "example_answer": [
+                "[75 bpm - 90 bpm]"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
