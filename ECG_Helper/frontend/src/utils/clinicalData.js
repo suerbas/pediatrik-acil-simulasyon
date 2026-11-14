@@ -324,6 +324,7 @@ export function buildClinicalPrompt(patientContext = {}, caliperMeasurements = {
 5. Her bölge kırpmasının nasıl alındığı kendi etiketinde yazar; kırpma gönderilmediyse yalnızca tam görüntüyü kullan. Kırpma başlığına körü körüne güvenme: derivasyon kimliğini kağıttaki yazılı etiketlerden doğrula (bazı cihazlar etiketi trasenin üstüne, bazıları başına basar) ve emin olamadığın derivasyonu belirt.
 6. Görüntü kalitesi bir bulguyu değerlendirmeye yetmiyorsa tahmin yürütme; ilgili alana "Değerlendirilemedi" yaz ve duvar durumunu "UNASSESSED" olarak işaretle.
 7. Ekseni belirlemeden önce I, II ve aVF derivasyonlarında QRS'in net yönünü ayrı ayrı belirle (lead_i_polarity, lead_ii_polarity, lead_avf_polarity) ve ekseni bu üç derivasyondan türet. DII'de net QRS pozitifse eksen −30°'den daha sola olamaz; bu durumda sol aks deviasyonu deme.
+8. Bazal hat kaymasını her derivasyonda ayrı değerlendir; step1_calibration_quality.findings içinde belirgin kayma olan derivasyonları adlarıyla yaz. ST sapmasını her atımın kendi PR segmentine (ya da ardışık iki atımın PR segmentlerini birleştiren çizgiye) göre değerlendir. Belirgin kayma olan derivasyonlarda ST/T yorumu yapma; bir duvarın derivasyonlarının çoğunda belirgin kayma varsa o duvarı "UNASSESSED" işaretle ve nedenini st_segment alanına yaz. Kullanıcının "3 nokta" ile kaydettiği ST ölçümleri kaymadan arındırılmıştır; o derivasyon için kesin referans olarak kullan.
 
 === HASTA KLİNİK BİLGİLERİ ===
 - Yaş / Cinsiyet: ${age} / ${sex}

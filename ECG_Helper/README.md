@@ -15,6 +15,7 @@
   - Fare ve dokunmatik aynı Pointer Events akışını kullanır: dokunuş/tıklama nokta koyar, sürükleme kaydırır, iki parmak yakınlaştırır.
   - Yüklenen fotoğraflarda px/mm değeri yalnızca tahmindir; **Kalibre Et** ile yatayda 5 büyük kare (25 mm) işaretlenmeden ölçüm kaydedilemez.
   - Ölçümleri `PR`, `QRS`, `QT`, `R-R`, `ST Sapması` (işaretli: + elevasyon / − depresyon; 1. nokta izoelektrik hat, 2. nokta J noktası) olarak kaydedip LLM'e kesin referans gönderme.
+  - Bazal hat kaymasına dayanıklı **ST (3 Nokta)** ölçümü: bir atımın PR segmenti → J noktası → sonraki atımın PR segmenti; sapma iki PR noktasını birleştiren çizgiye göre hesaplanır ve derivasyon adıyla (`ST Sapması (V5)`) kaydedilir.
   - **Deterministik QTc:** Bazett ve Fridericia uygulama tarafından hesaplanır (kalp hızı 60-100/dk dışında Fridericia esas alınır). Erişkin eşikleri cinsiyete özgüdür — Erkek: sınırda 431-450, uzamış > 450 ms; Kadın: sınırda 451-470, uzamış > 470 ms (Goldenberg, Moss & Zareba 2006); >= 500 ms kritik. Cinsiyet girilmediyse veya hasta < 16 yaş ise bu durum yorumda belirtilir. Aynı mantık `backend/clinical_guidelines.py` ve `frontend/src/utils/clinicalData.js` dosyalarında birebir tutulmalıdır.
 - **6 Adımlı Klinik Muhakeme Motoru (`backend/ecg_reasoning_engine.py`):**
   1. Kalibrasyon & Kalite

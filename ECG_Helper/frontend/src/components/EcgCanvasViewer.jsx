@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import {
   Activity,
   Crop,
+  GitCommitHorizontal,
   Crosshair,
   Eye,
   EyeOff,
@@ -18,6 +19,29 @@ const MAX_ZOOM = 5.5;
 const TAP_SLOP_PX = 6;
 const PAPER_SPEEDS = [25, 50];
 const GAINS = [5, 10, 20];
+const ST_LEADS = ["I", "II", "III", "aVR", "aVL", "aVF", "V1", "V2", "V3", "V4", "V5", "V6"];
+
+/**
+ * 3 noktalı ST ölçümü: iki ardışık atımın PR (veya TP) segmentini birleştiren çizgi bazal hat kabul
+ * edilir ve J noktasındaki sapma bu çizgiye göre hesaplanır. Böylece atım içindeki doğrusal bazal hat
+ * kayması sahte ST sapması üretmez. Dönüş: dyMm (pozitif = elevasyon) ve çizim için baz noktası.
+ */
+export function computeStThreePoint(points, pxPerMm) {
+  if (!points || points.length < 3 || !(pxPerMm > 0)) return null;
+  const [a, j, c] = points;
+  const left = a.x <= c.x ? a : c;
+  const right = a.x <= c.x ? c : a;
+  if (right.x - left.x < 1 || j.x <= left.x || j.x >= right.x) {
+    return {
+      error:
+        "J noktası iki PR noktasının arasında olmalı: önce bir atımın PR segmenti, sonra J, sonra sonraki atımın PR segmenti.",
+    };
+  }
+  const t = (j.x - left.x) / (right.x - left.x);
+  const baseY = left.y + t * (right.y - left.y);
+  const dyMm = (baseY - j.y) / pxPerMm; // ekranda y aşağı doğru artar
+  return { dyMm, base: { x: j.x, y: baseY } };
+}
 
 const clampZoom = (z) => Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, Number(z.toFixed(2))));
 
@@ -42,6 +66,8 @@ export default function EcgCanvasViewer({
   const [showOverlay, setShowOverlay] = useState(false);
   const [caliperMode, setCaliperMode] = useState("off"); // "off" | "measure" | "calibrate" | "frame"
   const [frameLayout, setFrameLayout] = useState("3x4_rhythm"); // "3x4_rhythm" | "3x4"
+  const [stPts, setStPts] = useState([]); // 3 noktalı ST modu: [PR1, J, PR2]
+  const [stLead, setStLead] = useState("");
   const [pxPerMm, setPxPerMm] = useState(7.0);
   // Yüklenen fotoğraflarda px/mm yalnızca kaba bir tahmindir; kullanıcı kalibre edene kadar
   // ölçümler LLM'e "kesin referans" olarak kaydedilemez.
@@ -62,6 +88,7 @@ export default function EcgCanvasViewer({
   const gestureRef = useRef(null);
 
   const clearPoints = () => {
+    setStPts([]);
     setP1(null);
     setP2(null);
     setHoverPt(null);
@@ -70,6 +97,8 @@ export default function EcgCanvasViewer({
 
   useEffect(() => {
     setView({ zoom: 1, x: 0, y: 0 });
+    setStPts([]);
+    setStLead("");
     setP1(null);
     setP2(null);
     setHoverPt(null);
@@ -134,6 +163,10 @@ export default function EcgCanvasViewer({
     const pt = clientToNatural(clientX, clientY);
     if (!pt) return;
     setNotice("");
+    if (caliperMode === "st3") {
+      setStPts((prev) => (prev.length >= 3 ? [pt] : [...prev, pt]));
+      return;
+    }
     if (!p1 || p2) {
       setP1(pt);
       setP2(null);
@@ -309,6 +342,18 @@ export default function EcgCanvasViewer({
     }
   };
 
+  const st3 = caliperMode === "st3" ? computeStThreePoint(stPts, pxPerMm) : null;
+  let st3Metric = null;
+  if (st3 && !st3.error) {
+    const sign = st3.dyMm > 0.05 ? "+" : st3.dyMm < -0.05 ? "−" : "";
+    st3Metric = {
+      sign,
+      mm: Math.abs(st3.dyMm).toFixed(1),
+      mv: (Math.abs(st3.dyMm) * mvPerMm).toFixed(2),
+      label: sign === "+" ? "elevasyon" : sign === "−" ? "depresyon" : "izoelektrik",
+    };
+  }
+
   const savedKeys = Object.keys(caliperMeasurements || {});
   // Sabit oranlı fotoğraf kırpmaları kağıda uymayabileceği için gösterilmez
   const overlayCrops = ecgData?.crops_source === "auto_fixed" ? [] : ecgData?.lead_crops || [];
@@ -370,6 +415,20 @@ export default function EcgCanvasViewer({
           >
             <Crosshair size={14} />
             Kalibre Et
+          </button>
+
+          <button
+            type="button"
+            className={`btn btn-sm ${caliperMode === "st3" ? "btn-active" : ""}`}
+            onClick={() => {
+              clearPoints();
+              setCaliperMode((m) => (m === "st3" ? "off" : "st3"));
+            }}
+            disabled={!ecgData}
+            title="Bazal hat kaymasına dayanıklı ST ölçümü: PR segmenti, J noktası, sonraki atımın PR segmenti"
+          >
+            <GitCommitHorizontal size={14} />
+            ST (3 Nokta)
           </button>
 
           <button
@@ -548,6 +607,43 @@ export default function EcgCanvasViewer({
                 />
               )}
 
+              {caliperMode === "st3" && stPts.length > 0 && (
+                <>
+                  {stPts.length === 3 && (
+                    <line
+                      x1={stPts[0].x}
+                      y1={stPts[0].y}
+                      x2={stPts[2].x}
+                      y2={stPts[2].y}
+                      stroke="#f59e0b"
+                      strokeWidth={Math.max(1.5, 2 / view.zoom)}
+                      strokeDasharray="6 4"
+                    />
+                  )}
+                  {st3?.base && (
+                    <line
+                      x1={stPts[1].x}
+                      y1={stPts[1].y}
+                      x2={st3.base.x}
+                      y2={st3.base.y}
+                      stroke="#10b981"
+                      strokeWidth={Math.max(2, 3 / view.zoom)}
+                    />
+                  )}
+                  {stPts.map((pt, i) => (
+                    <circle
+                      key={i}
+                      cx={pt.x}
+                      cy={pt.y}
+                      r={Math.max(4, 6 / view.zoom)}
+                      fill={i === 1 ? "#10b981" : "#f59e0b"}
+                      stroke="#070c17"
+                      strokeWidth={2 / view.zoom}
+                    />
+                  ))}
+                </>
+              )}
+
               {caliperMode === "frame" && p1 && endPt && (
                 <rect
                   x={Math.min(p1.x, endPt.x)}
@@ -684,6 +780,65 @@ export default function EcgCanvasViewer({
             <span className="badge badge-amber">
               Derivasyon çerçevesi seçilmedi: model yalnızca tam görüntüyü görecek.
             </span>
+          )}
+
+          {caliperMode === "st3" && stPts.length < 3 && (
+            <span className="badge badge-cyan">
+              {stPts.length === 0
+                ? "ST (3 nokta): 1) Bir atımın PR segmentine dokunun."
+                : stPts.length === 1
+                ? "2) Aynı atımın J noktasına dokunun."
+                : "3) Sonraki atımın PR segmentine dokunun."}
+            </span>
+          )}
+
+          {caliperMode === "st3" && st3?.error && <span className="badge badge-amber">{st3.error}</span>}
+
+          {caliperMode === "st3" && st3Metric && (
+            <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+              <span className="badge badge-emerald mono">
+                ST (PR–PR bazal hattına göre): {st3Metric.sign}
+                {st3Metric.mm} mm ({st3Metric.sign}
+                {st3Metric.mv} mV) {st3Metric.label}
+              </span>
+              {!isCalibrated ? (
+                <span className="badge badge-amber">
+                  Kaydetmek için önce &quot;Kalibre Et&quot; ile 5 büyük kareyi işaretleyin.
+                </span>
+              ) : (
+                <>
+                  <select
+                    className="select"
+                    style={{ width: "auto", padding: "3px 6px", fontSize: "0.74rem" }}
+                    value={stLead}
+                    onChange={(e) => setStLead(e.target.value)}
+                    aria-label="ST ölçülen derivasyon"
+                  >
+                    <option value="">Derivasyon seçin</option>
+                    {ST_LEADS.map((l) => (
+                      <option key={l} value={l}>
+                        {l}
+                      </option>
+                    ))}
+                  </select>
+                  <button
+                    type="button"
+                    className="chip"
+                    disabled={!stLead}
+                    title={stLead ? "" : "Önce ölçtüğünüz derivasyonu seçin"}
+                    onClick={() => {
+                      saveMeasurement(
+                        `ST Sapması (${stLead})`,
+                        `${st3Metric.sign}${st3Metric.mm} mm (${st3Metric.sign}${st3Metric.mv} mV) ${st3Metric.label}; 3 nokta, ardışık PR segmentlerini birleştiren bazal hatta göre`
+                      );
+                      setStPts([]);
+                    }}
+                  >
+                    + ST Kaydet
+                  </button>
+                </>
+              )}
+            </div>
           )}
 
           {caliperMode === "measure" && !p1 && (
