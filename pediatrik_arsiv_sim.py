@@ -838,18 +838,20 @@ def get_all_cases():
 
 def get_age_group(age_str: str) -> str:
     age_lower = age_str.lower()
-    if "gün" in age_lower or "gun" in age_lower:
-        return "Yenidoğan"
-    if "hafta" in age_lower:
-        m = re.search(r'(\d+)', age_lower)
-        if m and int(m.group(1)) <= 4:
-            return "Yenidoğan"
-        return "Süt Çocuğu"
-    if "ay" in age_lower:
-        return "Süt Çocuğu"
     m = re.search(r'(\d+(?:\.\d+)?)', age_lower)
-    if m:
-        val = float(m.group(1))
+    num = float(m.group(1)) if m else None
+    # Yenidoğan: ilk 28 gün; süt çocuğu: 1-12 ay; oyun çağı: 1-6 yaş
+    if "gün" in age_lower or "gun" in age_lower:
+        return "Yenidoğan" if num is None or num <= 28 else "Süt Çocuğu"
+    if "hafta" in age_lower:
+        return "Yenidoğan" if num is not None and num <= 4 else "Süt Çocuğu"
+    if "ay" in age_lower and num is not None:
+        val = num / 12  # ayı yıla çevir (ör. 24 aylık -> 2 yaş)
+    elif num is not None:
+        val = num
+    else:
+        val = None
+    if val is not None:
         if val < 1.0:
             return "Süt Çocuğu"
         elif val < 6.0:
