@@ -1132,7 +1132,7 @@ export async function analyzeEcgClientOrServer({
     openrouter: {
       key: localConfig?.openrouter_api_key,
       label: "OpenRouter",
-      model: localConfig?.openrouter_model || "openai/gpt-4o",
+      model: localConfig?.openrouter_model || "google/gemini-3.8-flash",
       run: (apiKey, modelName) =>
         callOpenAiCompatibleBrowser({
           apiKey,

@@ -73,7 +73,7 @@ function resolveServerProvider(requestedProvider, requestedModel) {
         provider: "openrouter",
         apiKey: openrouterKey,
         baseUrl: (process.env.OPENROUTER_BASE_URL || "https://openrouter.ai/api/v1").replace(/\/+$/, ""),
-        model: model || process.env.OPENROUTER_MODEL || "openai/gpt-4o",
+        model: model || process.env.OPENROUTER_MODEL || "google/gemini-3.8-flash",
       };
     }
     if (prov === "gemini" && geminiKey) {

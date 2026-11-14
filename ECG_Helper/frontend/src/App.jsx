@@ -30,7 +30,7 @@ const LOCAL_CFG_KEY = "ecg_helper_config";
 
 const DEFAULT_LOCAL_CFG = {
   provider: "openrouter",
-  openrouter_model: "openai/gpt-4o",
+  openrouter_model: "google/gemini-3.8-flash",
   openrouter_base_url: "https://openrouter.ai/api/v1",
   openrouter_api_key: "",
   gemini_model: "gemini-2.0-flash",
@@ -146,7 +146,7 @@ export default function App() {
           setHasLocalFastApi(true);
           setStatus(h);
           setCfgProvider(h.provider || "openrouter");
-          setCfgOpenrouterModel(h.openrouter_model || "openai/gpt-4o");
+          setCfgOpenrouterModel(h.openrouter_model || "google/gemini-3.8-flash");
           setCfgOpenrouterBaseUrl(h.openrouter_base_url || "https://openrouter.ai/api/v1");
           setCfgGeminiModel(h.gemini_model || "gemini-2.0-flash");
           setCfgOpenaiModel(h.openai_model || "gpt-4o");
@@ -528,7 +528,7 @@ export default function App() {
                       className="input mono"
                       value={cfgOpenrouterModel}
                       onChange={(e) => setCfgOpenrouterModel(e.target.value)}
-                      placeholder="openai/gpt-4o, anthropic/claude-3.5-sonnet, qwen/qwen2.5-vl-72b-instruct"
+                      placeholder="google/gemini-3.8-flash, openai/gpt-6.1-terra, openai/gpt-6.1-sol"
                     />
                   </div>
                   <div className="field-group">

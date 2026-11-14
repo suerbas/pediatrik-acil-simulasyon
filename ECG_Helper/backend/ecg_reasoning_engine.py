@@ -137,7 +137,7 @@ class ECGReasoningEngine:
     DEFAULT_CONFIG: Dict[str, Any] = {
         "provider": "openrouter",
         "openrouter_api_key": "",
-        "openrouter_model": "openai/gpt-4o",
+        "openrouter_model": "google/gemini-3.8-flash",
         "openrouter_base_url": "https://openrouter.ai/api/v1",
         "gemini_api_key": "",
         "gemini_model": "gemini-2.0-flash",
@@ -199,7 +199,7 @@ class ECGReasoningEngine:
         active_key_configured = key_map.get(provider, False)
         return {
             "provider": provider,
-            "openrouter_model": cfg.get("openrouter_model", "openai/gpt-4o"),
+            "openrouter_model": cfg.get("openrouter_model", "google/gemini-3.8-flash"),
             "openrouter_base_url": cfg.get("openrouter_base_url", "https://openrouter.ai/api/v1"),
             "gemini_model": cfg.get("gemini_model", "gemini-2.0-flash"),
             "openai_model": cfg.get("openai_model", "gpt-4o"),
@@ -952,7 +952,7 @@ class ECGReasoningEngine:
             return parsed
 
         if provider == "openrouter" and cfg.get("openrouter_api_key"):
-            model_name = cfg.get("openrouter_model", "openai/gpt-4o")
+            model_name = cfg.get("openrouter_model", "google/gemini-3.8-flash")
             base_url = cfg.get("openrouter_base_url", "https://openrouter.ai/api/v1")
             try:
                 parsed = self._call_openrouter(cfg["openrouter_api_key"], model_name, base_url, prompt, images)
