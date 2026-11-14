@@ -397,7 +397,8 @@ button {
   color: var(--ink-2);
 }
 
-.tag:hover {
+.tag:hover,
+.tag.is-active {
   border-color: var(--ink);
   background: var(--ink);
   color: var(--paper);

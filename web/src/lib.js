@@ -71,17 +71,17 @@ export function readUrlState() {
   const zone = p.get('alan')
   return {
     zone: zone === 'yesil' ? 'green' : zone === 'sari' ? 'yellow' : 'all',
-    tag: p.get('etiket') || '',
+    tags: [...new Set(p.getAll('etiket').filter(Boolean))],
     query: p.get('ara') || '',
     caseId: p.get('vaka') || '',
   }
 }
 
-export function writeUrlState({ zone, tag, query, caseId }) {
+export function writeUrlState({ zone, tags, query, caseId }) {
   const p = new URLSearchParams()
   if (zone === 'green') p.set('alan', 'yesil')
   if (zone === 'yellow') p.set('alan', 'sari')
-  if (tag) p.set('etiket', tag)
+  for (const t of tags) p.append('etiket', t)
   if (query) p.set('ara', query)
   if (caseId) p.set('vaka', caseId)
   const qs = p.toString()

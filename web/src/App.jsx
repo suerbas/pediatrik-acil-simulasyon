@@ -14,7 +14,7 @@ const IDS = new Set(INDEX.map((c) => c.id))
 export default function App() {
   const initial = useMemo(readUrlState, [])
   const [zone, setZone] = useState(initial.zone)
-  const [tag, setTag] = useState(initial.tag)
+  const [tags, setTags] = useState(initial.tags)
   const [query, setQuery] = useState(initial.query)
   const [caseId, setCaseId] = useState(IDS.has(initial.caseId) ? initial.caseId : '')
   const [solved, setSolved] = useState(readSolved)
@@ -23,8 +23,8 @@ export default function App() {
   const deferredQuery = useDeferredValue(query.trim())
 
   useEffect(() => {
-    writeUrlState({ zone, tag, query: query.trim(), caseId })
-  }, [zone, tag, query, caseId])
+    writeUrlState({ zone, tags, query: query.trim(), caseId })
+  }, [zone, tags, query, caseId])
 
   useEffect(() => {
     if (deferredQuery && !searchIndex) loadSearchIndex().then(setSearchIndex).catch(() => {})
@@ -33,7 +33,8 @@ export default function App() {
   const filtered = useMemo(() => {
     let list = INDEX
     if (zone !== 'all') list = list.filter((c) => c.zone === zone)
-    if (tag) {
+    // Seçili etiketlerin HEPSİ vakada bulunmalı
+    for (const tag of tags) {
       const t = normalize(tag)
       list = list.filter(
         (c) =>
@@ -42,16 +43,18 @@ export default function App() {
           normalize(c.category).includes(t),
       )
     }
-    if (deferredQuery) {
-      const q = normalize(deferredQuery)
-      list = list.filter((c) =>
-        searchIndex
-          ? searchIndex[c.id]?.includes(q)
-          : normalize(`${c.id} ${c.age} ${c.gender} ${c.category} ${c.complaint} ${c.tags.join(' ')}`).includes(q),
-      )
+    // Aramadaki her kelime ayrı ayrı aranır; vakada hepsi geçmeli
+    const words = normalize(deferredQuery).split(/\s+/).filter(Boolean)
+    if (words.length) {
+      list = list.filter((c) => {
+        const text = searchIndex
+          ? searchIndex[c.id] || ''
+          : normalize(`${c.id} ${c.age} ${c.gender} ${c.category} ${c.complaint} ${c.tags.join(' ')}`)
+        return words.every((w) => text.includes(w))
+      })
     }
     return list
-  }, [zone, tag, deferredQuery, searchIndex])
+  }, [zone, tags, deferredQuery, searchIndex])
 
   const markSolved = useCallback((id) => {
     setSolved((prev) => {
@@ -63,13 +66,17 @@ export default function App() {
     })
   }, [])
 
-  const pickTag = useCallback((t) => {
-    setTag(t)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  // Etikete tıklamak onu filtreye ekler; seçiliyse çıkarır
+  const toggleTag = useCallback((t) => {
+    setTags((prev) => {
+      if (prev.includes(t)) return prev.filter((x) => x !== t)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return [...prev, t]
+    })
   }, [])
 
   const clearFilters = () => {
-    setTag('')
+    setTags([])
     setQuery('')
   }
 
@@ -143,17 +150,17 @@ export default function App() {
         <span>
           <b>{filtered.length}</b> vaka listeleniyor
         </span>
-        {tag && (
-          <button className="filter-pill" onClick={() => setTag('')}>
-            Etiket: <b>{tag}</b> <span aria-hidden="true">✕</span>
+        {tags.map((t) => (
+          <button key={t} className="filter-pill" onClick={() => toggleTag(t)} aria-label={`${t} etiketini kaldır`}>
+            Etiket: <b>{t}</b> <span aria-hidden="true">✕</span>
           </button>
-        )}
+        ))}
         {query.trim() && (
           <button className="filter-pill filter-pill-search" onClick={() => setQuery('')}>
             Arama: <b>“{query.trim()}”</b> <span aria-hidden="true">✕</span>
           </button>
         )}
-        {(tag || query.trim()) && (
+        {(tags.length > 0 || query.trim()) && (
           <button className="link-button" onClick={clearFilters}>
             Filtreleri temizle
           </button>
@@ -175,7 +182,8 @@ export default function App() {
               item={c}
               solved={solved.has(c.id)}
               onOpen={setCaseId}
-              onTag={pickTag}
+              onTag={toggleTag}
+              activeTags={tags}
               onPrefetch={loadCase}
             />
           ))}

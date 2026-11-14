@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-function CaseCard({ item, solved, onOpen, onTag, onPrefetch }) {
+function CaseCard({ item, solved, onOpen, onTag, onPrefetch, activeTags }) {
   const zoneLabel = item.zone === 'yellow' ? 'Sarı Alan' : 'Yeşil Alan'
   const open = () => onOpen(item.id)
 
@@ -21,11 +21,20 @@ function CaseCard({ item, solved, onOpen, onTag, onPrefetch }) {
       <p className="card-category">{item.category}</p>
       <p className="card-complaint">{item.complaint}</p>
       <div className="card-tags">
-        {item.tags.map((t) => (
-          <button key={t} className="tag" onClick={() => onTag(t)}>
-            {t}
-          </button>
-        ))}
+        {item.tags.map((t) => {
+          const active = activeTags.includes(t)
+          return (
+            <button
+              key={t}
+              className={`tag${active ? ' is-active' : ''}`}
+              aria-pressed={active}
+              title={active ? 'Filtreden çıkar' : 'Filtreye ekle'}
+              onClick={() => onTag(t)}
+            >
+              {t}
+            </button>
+          )
+        })}
       </div>
       <div className="card-foot" aria-hidden="true">
         <span>{solved ? 'Yeniden çöz' : 'İncele & çöz'}</span>
