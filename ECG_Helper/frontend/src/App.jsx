@@ -22,6 +22,7 @@ import {
 import {
   analyzeEcgClientOrServer,
   fetchServerlessStatus,
+  cropLeadsFromFrame,
   generateSyntheticEcgInBrowser,
   preprocessEcgInBrowser,
 } from "./utils/ecgClientEngine.js";
@@ -202,6 +203,8 @@ export default function App() {
       setEcgData({
         ...data,
         calibration: data.case?.calibration || null,
+        // Sentetik vakaların düzeni bilindiği için sabit oranlı kırpmalar doğru bölgelere denk gelir
+        crops_source: "synthetic",
       });
       if (data.case) {
         setPatientContext({
@@ -253,7 +256,9 @@ export default function App() {
         data = await preprocessEcgInBrowser(file);
       }
       if (session !== ecgSessionRef.current) return;
-      setEcgData(data);
+      // Gerçek fotoğraflarda sabit oranlı kırpmalar yanlış derivasyonlara denk gelebilir; hekim
+      // trase alanını çerçeveleyene kadar modele gönderilmez (yalnızca tam görüntü gider).
+      setEcgData({ ...data, crops_source: "auto_fixed" });
     } catch (err) {
       if (session === ecgSessionRef.current) {
         setEcgData(null);
@@ -276,6 +281,23 @@ export default function App() {
     });
   };
 
+  const handleFrameSelected = async (frame, layout) => {
+    if (!ecgData?.enhanced_b64) return;
+    const session = ecgSessionRef.current;
+    try {
+      const crops = await cropLeadsFromFrame(ecgData.enhanced_b64, frame, layout);
+      if (session !== ecgSessionRef.current) return;
+      setEcgData((prev) => (prev ? { ...prev, lead_crops: crops, crops_source: "manual_frame" } : prev));
+    } catch (err) {
+      if (session === ecgSessionRef.current) {
+        setErrorMsg(err.message || "Derivasyon çerçevesinden kırpma üretilemedi.");
+      }
+    }
+  };
+
+  // Sabit oranlı (çerçevesiz) fotoğraf kırpmaları modele gönderilmez
+  const cropsForModel = ecgData?.crops_source === "auto_fixed" ? [] : ecgData?.lead_crops || [];
+
   const handleRunAnalysis = async () => {
     if (!ecgData || isAnalyzing) return;
     const session = ecgSessionRef.current;
@@ -284,7 +306,7 @@ export default function App() {
     try {
       const result = await analyzeEcgClientOrServer({
         enhanced_b64: ecgData.enhanced_b64,
-        lead_crops: ecgData.lead_crops || [],
+        lead_crops: cropsForModel,
         quality: ecgData.quality || null,
         patient_context: patientContext,
         caliper_measurements: caliperMeasurements,
@@ -481,11 +503,12 @@ export default function App() {
             caliperMeasurements={caliperMeasurements}
             onSaveMeasurement={handleSaveMeasurement}
             onRemoveMeasurement={handleRemoveMeasurement}
+            onFrameSelected={handleFrameSelected}
           />
 
           <ReasoningStepper analysis={analysis} />
 
-          <LeadCropsGallery leadCrops={ecgData?.lead_crops} />
+          <LeadCropsGallery leadCrops={cropsForModel} source={ecgData?.crops_source} />
         </section>
       </main>
 

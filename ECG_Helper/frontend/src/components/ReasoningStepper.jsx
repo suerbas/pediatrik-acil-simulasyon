@@ -263,6 +263,12 @@ export default function ReasoningStepper({ analysis }) {
               <span className="kv-key">Derivasyon I</span>
               <span className="kv-val">{fmt(s3.lead_i_polarity)}</span>
             </div>
+            {s3.lead_ii_polarity && (
+              <div className="kv-row">
+                <span className="kv-key">Derivasyon II</span>
+                <span className="kv-val">{fmt(s3.lead_ii_polarity)}</span>
+              </div>
+            )}
             <div className="kv-row">
               <span className="kv-key">Derivasyon aVF</span>
               <span className="kv-val">{fmt(s3.lead_avf_polarity)}</span>

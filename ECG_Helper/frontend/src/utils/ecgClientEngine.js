@@ -204,46 +204,87 @@ function buildWaveformCanvas(enhCanvas) {
   return wfCanvas;
 }
 
-function cropLeadRegions(enhCanvas) {
-  const { width, height } = enhCanvas;
-  const regions = [
-    {
-      id: "col1_limb",
-      title: "I, II, III (Standart Ekstremite)",
-      leads: ["I", "II", "III"],
-      territory: "Ekstremite / İnferior (II, III) & Yüksek Lateral (I)",
-      bbox: [0.04, 0.1, 0.29, 0.74],
-    },
-    {
-      id: "col2_augmented",
-      title: "aVR, aVL, aVF (Artırılmış)",
-      leads: ["aVR", "aVL", "aVF"],
-      territory: "Ana Koroner (aVR) / Yüksek Lateral (aVL) / İnferior (aVF)",
-      bbox: [0.27, 0.1, 0.52, 0.74],
-    },
-    {
-      id: "col3_septal_ant",
-      title: "V1, V2, V3 (Septal / Anterior)",
-      leads: ["V1", "V2", "V3"],
-      territory: "Septal (V1-V2) & Anterior (V3) — LAD Alanı",
-      bbox: [0.5, 0.1, 0.75, 0.74],
-    },
-    {
-      id: "col4_ant_lat",
-      title: "V4, V5, V6 (Anterior / Lateral)",
-      leads: ["V4", "V5", "V6"],
-      territory: "Anterior (V4) & Apikal-Lateral (V5-V6) — LAD / LCx",
-      bbox: [0.73, 0.1, 0.97, 0.74],
-    },
-    {
-      id: "rhythm_strip",
-      title: "Ritim Şeridi (Uzun DII)",
-      leads: ["II (Ritim)"],
-      territory: "Hız, Ritim Düzeni, P Dalgası & AV İletim Analizi",
-      bbox: [0.04, 0.72, 0.97, 0.96],
-    },
+// Standart 3x4 + ritim şeridi düzenindeki 5 bölge. bbox yalnızca sabit oranlı (otomatik) kırpmada
+// kullanılır; kullanıcı çerçevesinde bölgeler çerçeveden hesaplanır.
+const LEAD_REGIONS = [
+  {
+    id: "col1_limb",
+    title: "I, II, III (Standart Ekstremite)",
+    leads: ["I", "II", "III"],
+    territory: "Ekstremite / İnferior (II, III) & Yüksek Lateral (I)",
+    bbox: [0.04, 0.1, 0.29, 0.74],
+  },
+  {
+    id: "col2_augmented",
+    title: "aVR, aVL, aVF (Artırılmış)",
+    leads: ["aVR", "aVL", "aVF"],
+    territory: "Ana Koroner (aVR) / Yüksek Lateral (aVL) / İnferior (aVF)",
+    bbox: [0.27, 0.1, 0.52, 0.74],
+  },
+  {
+    id: "col3_septal_ant",
+    title: "V1, V2, V3 (Septal / Anterior)",
+    leads: ["V1", "V2", "V3"],
+    territory: "Septal (V1-V2) & Anterior (V3) — LAD Alanı",
+    bbox: [0.5, 0.1, 0.75, 0.74],
+  },
+  {
+    id: "col4_ant_lat",
+    title: "V4, V5, V6 (Anterior / Lateral)",
+    leads: ["V4", "V5", "V6"],
+    territory: "Anterior (V4) & Apikal-Lateral (V5-V6) — LAD / LCx",
+    bbox: [0.73, 0.1, 0.97, 0.74],
+  },
+  {
+    id: "rhythm_strip",
+    title: "Ritim Şeridi (Uzun DII)",
+    leads: ["II (Ritim)"],
+    territory: "Hız, Ritim Düzeni, P Dalgası & AV İletim Analizi",
+    bbox: [0.04, 0.72, 0.97, 0.96],
+  },
+];
+
+/**
+ * Kullanıcının çerçevelediği trase alanını (piksel) 4 sütun + isteğe bağlı ritim şeridine böler ve
+ * normalize bbox'lar döndürür. Etiketler bazı cihazlarda trasenin üstüne, bazılarında soluna
+ * basıldığı için kırpmalara satır yüksekliğinin bir kısmı kadar pay eklenir.
+ * frame: {x1, y1, x2, y2} (doğal piksel), layout: "3x4_rhythm" | "3x4"
+ */
+export function computeFrameRegions(frame, layout, width, height) {
+  const fx1 = Math.min(frame.x1, frame.x2);
+  const fx2 = Math.max(frame.x1, frame.x2);
+  const fy1 = Math.min(frame.y1, frame.y2);
+  const fy2 = Math.max(frame.y1, frame.y2);
+  const hasRhythm = layout !== "3x4";
+  const rowH = (fy2 - fy1) / (hasRhythm ? 4 : 3);
+  const colW = (fx2 - fx1) / 4;
+  const padX = colW * 0.08;
+  const padY = rowH * 0.2;
+  const norm = (x1, y1, x2, y2) => [
+    Math.max(0, x1 / width),
+    Math.max(0, y1 / height),
+    Math.min(1, x2 / width),
+    Math.min(1, y2 / height),
   ];
 
+  const regions = [];
+  for (let c = 0; c < 4; c++) {
+    regions.push({
+      ...LEAD_REGIONS[c],
+      bbox: norm(fx1 + c * colW - padX, fy1 - padY, fx1 + (c + 1) * colW + padX, fy1 + 3 * rowH + padY),
+    });
+  }
+  if (hasRhythm) {
+    regions.push({
+      ...LEAD_REGIONS[4],
+      bbox: norm(fx1 - padX, fy1 + 3 * rowH - padY, fx2 + padX, fy2 + padY),
+    });
+  }
+  return regions;
+}
+
+function cropCanvasRegions(srcCanvas, regions, source) {
+  const { width, height } = srcCanvas;
   const crops = [];
   for (const reg of regions) {
     const [x1n, y1n, x2n, y2n] = reg.bbox;
@@ -256,7 +297,7 @@ function cropLeadRegions(enhCanvas) {
     cCanvas.width = cw;
     cCanvas.height = ch;
     const cCtx = cCanvas.getContext("2d");
-    cCtx.drawImage(enhCanvas, x1, y1, cw, ch, 0, 0, cw, ch);
+    cCtx.drawImage(srcCanvas, x1, y1, cw, ch, 0, 0, cw, ch);
 
     crops.push({
       id: reg.id,
@@ -264,10 +305,27 @@ function cropLeadRegions(enhCanvas) {
       leads: reg.leads,
       territory: reg.territory,
       bbox: reg.bbox,
+      source,
       image_b64: cCanvas.toDataURL("image/png"),
     });
   }
   return crops;
+}
+
+function cropLeadRegions(enhCanvas) {
+  return cropCanvasRegions(enhCanvas, LEAD_REGIONS, "auto_fixed");
+}
+
+/** Kullanıcı çerçevesinden (doğal piksel) derivasyon kırpmalarını üretir; kaynak görüntü data URI'dir. */
+export async function cropLeadsFromFrame(imageSrc, frame, layout) {
+  const img = await loadImageElement(imageSrc);
+  const width = img.naturalWidth || img.width;
+  const height = img.naturalHeight || img.height;
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+  canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+  return cropCanvasRegions(canvas, computeFrameRegions(frame, layout, width, height), "manual_frame");
 }
 
 export async function preprocessEcgInBrowser(fileOrDataUrl) {
@@ -954,6 +1012,18 @@ function validateLlmPayload(parsed) {
   return parsed;
 }
 
+/** Bölge kırpması için modele gönderilecek etiket; backend'deki _crop_label ile aynı metni üretir. */
+function cropLabel(index, crop) {
+  const title = crop.title || crop.id || "Bölge";
+  const how =
+    crop.source === "manual_frame"
+      ? "Kırpma, hekimin görüntü üzerinde çerçevelediği trase alanı 4 sütuna (ve ritim şeridine) bölünerek alınmıştır; " +
+        "kenarlarda komşu derivasyondan parçalar bulunabilir. Derivasyon kimliğini kağıt üzerindeki yazılı etiketlerle doğrula."
+      : "Kırpma standart 3x4 + ritim şeridi düzeni varsayılarak sabit oranlarla alınmıştır; " +
+        "derivasyon kimliğini kağıt üzerindeki yazılı etiketlerden doğrula.";
+  return `GÖRSEL ${index} — Yakınlaştırılmış bölge kırpması (beklenen içerik: ${title}). ${how}`;
+}
+
 /** Tam görüntü + bölge kırpmalarını, modele gönderilecek açıklayıcı etiketleriyle eşler. */
 function buildLabeledImages(enhancedB64, leadCrops) {
   const images = [];
@@ -966,10 +1036,7 @@ function buildLabeledImages(enhancedB64, leadCrops) {
   for (const crop of (leadCrops || []).slice(0, 5)) {
     if (!crop?.image_b64) continue;
     images.push({
-      label:
-        `GÖRSEL ${images.length + 1} — Yakınlaştırılmış bölge kırpması (beklenen içerik: ${crop.title || crop.id}). ` +
-        "Kırpma standart 3x4 + ritim şeridi düzeni varsayılarak sabit oranlarla alınmıştır; " +
-        "derivasyon kimliğini kağıt üzerindeki yazılı etiketlerden doğrula.",
+      label: cropLabel(images.length + 1, crop),
       uri: crop.image_b64,
     });
   }

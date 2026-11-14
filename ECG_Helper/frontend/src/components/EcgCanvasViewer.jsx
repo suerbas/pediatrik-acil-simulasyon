@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   Activity,
+  Crop,
   Crosshair,
   Eye,
   EyeOff,
@@ -32,13 +33,15 @@ export default function EcgCanvasViewer({
   caliperMeasurements,
   onSaveMeasurement,
   onRemoveMeasurement,
+  onFrameSelected,
 }) {
   const [viewMode, setViewMode] = useState("enhanced");
   const [view, setView] = useState({ zoom: 1, x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
 
   const [showOverlay, setShowOverlay] = useState(false);
-  const [caliperMode, setCaliperMode] = useState("off"); // "off" | "measure" | "calibrate"
+  const [caliperMode, setCaliperMode] = useState("off"); // "off" | "measure" | "calibrate" | "frame"
+  const [frameLayout, setFrameLayout] = useState("3x4_rhythm"); // "3x4_rhythm" | "3x4"
   const [pxPerMm, setPxPerMm] = useState(7.0);
   // Yüklenen fotoğraflarda px/mm yalnızca kaba bir tahmindir; kullanıcı kalibre edene kadar
   // ölçümler LLM'e "kesin referans" olarak kaydedilemez.
@@ -73,6 +76,7 @@ export default function EcgCanvasViewer({
     setNotice("");
     setPaperSpeed(25);
     setGain(10);
+    setCaliperMode((m) => (m === "frame" ? "off" : m));
     pointersRef.current.clear();
     gestureRef.current = null;
     if (ecgData?.calibration?.px_per_mm) {
@@ -134,6 +138,17 @@ export default function EcgCanvasViewer({
       setP1(pt);
       setP2(null);
       setHoverPt(null); // önceki ölçümden kalan imleç konumu yeni çizgiyi yanlış yere bağlamasın
+    } else if (caliperMode === "frame") {
+      setP1(null);
+      setP2(null);
+      setHoverPt(null);
+      if (Math.abs(pt.x - p1.x) < 40 || Math.abs(pt.y - p1.y) < 40) {
+        setNotice("Çerçeve çok küçük; trase alanının sol üst ve sağ alt köşelerini işaretleyin.");
+        return;
+      }
+      onFrameSelected?.({ x1: p1.x, y1: p1.y, x2: pt.x, y2: pt.y }, frameLayout);
+      setCaliperMode("off");
+      setShowOverlay(true);
     } else if (caliperMode === "calibrate") {
       // Eğik çekilmiş fotoğraflarda da doğru sonuç için iki nokta arası gerçek mesafe kullanılır
       const dist = Math.hypot(pt.x - p1.x, pt.y - p1.y);
@@ -295,6 +310,8 @@ export default function EcgCanvasViewer({
   };
 
   const savedKeys = Object.keys(caliperMeasurements || {});
+  // Sabit oranlı fotoğraf kırpmaları kağıda uymayabileceği için gösterilmez
+  const overlayCrops = ecgData?.crops_source === "auto_fixed" ? [] : ecgData?.lead_crops || [];
 
   return (
     <div className="panel">
@@ -357,9 +374,23 @@ export default function EcgCanvasViewer({
 
           <button
             type="button"
+            className={`btn btn-sm ${caliperMode === "frame" ? "btn-active" : ""}`}
+            onClick={() => {
+              clearPoints();
+              setCaliperMode((m) => (m === "frame" ? "off" : "frame"));
+            }}
+            disabled={!ecgData?.enhanced_b64}
+            title="Trase alanının sol üst ve sağ alt köşesini işaretleyerek derivasyon kırpmalarını kağıda göre yeniden alın"
+          >
+            <Crop size={14} />
+            Derivasyon Çerçevesi
+          </button>
+
+          <button
+            type="button"
             className={`btn btn-sm ${showOverlay ? "btn-active" : ""}`}
             onClick={() => setShowOverlay((s) => !s)}
-            disabled={!ecgData?.lead_crops?.length}
+            disabled={!overlayCrops.length}
           >
             {showOverlay ? <Eye size={14} /> : <EyeOff size={14} />}
             Derivasyon Bölgeleri
@@ -464,7 +495,7 @@ export default function EcgCanvasViewer({
               }}
             >
               {showOverlay &&
-                (ecgData?.lead_crops || []).map((crop, idx) => {
+                overlayCrops.map((crop, idx) => {
                   const [x1, y1, x2, y2] = crop.bbox;
                   const bx = x1 * imgNatural.w;
                   const by = y1 * imgNatural.h;
@@ -517,7 +548,20 @@ export default function EcgCanvasViewer({
                 />
               )}
 
-              {p1 && endPt && (
+              {caliperMode === "frame" && p1 && endPt && (
+                <rect
+                  x={Math.min(p1.x, endPt.x)}
+                  y={Math.min(p1.y, endPt.y)}
+                  width={Math.abs(endPt.x - p1.x)}
+                  height={Math.abs(endPt.y - p1.y)}
+                  fill="rgba(167,139,250,0.10)"
+                  stroke="#a78bfa"
+                  strokeWidth={Math.max(2, 3 / view.zoom)}
+                  strokeDasharray="8 5"
+                />
+              )}
+
+              {caliperMode !== "frame" && p1 && endPt && (
                 <>
                   <line
                     x1={p1.x}
@@ -608,6 +652,37 @@ export default function EcgCanvasViewer({
           {caliperMode === "calibrate" && (
             <span className="badge badge-amber">
               Kalibrasyon Modu: Yatayda 5 büyük karenin (25 mm) iki ucuna dokunun / tıklayın.
+            </span>
+          )}
+
+          {caliperMode === "frame" && (
+            <>
+              <label className="mono" style={{ fontSize: "0.74rem", color: "#94a3b8", display: "inline-flex", alignItems: "center", gap: 4 }}>
+                Düzen
+                <select
+                  className="select"
+                  style={{ width: "auto", padding: "3px 6px", fontSize: "0.74rem" }}
+                  value={frameLayout}
+                  onChange={(e) => setFrameLayout(e.target.value)}
+                  aria-label="Kağıt düzeni"
+                >
+                  <option value="3x4_rhythm">3×4 + ritim şeridi</option>
+                  <option value="3x4">3×4 (ritim şeridi yok)</option>
+                </select>
+              </label>
+              <span className="badge badge-cyan">
+                {!p1
+                  ? "Çerçeve: 1. satırın (DI, aVR, V1, V4) en üst-sol köşesine dokunun (etiketler dahil)."
+                  : frameLayout === "3x4"
+                  ? "Şimdi 3. satırın (DIII, aVF, V3, V6) sağ alt köşesine dokunun."
+                  : "Şimdi ritim şeridinin sağ alt köşesine dokunun."}
+              </span>
+            </>
+          )}
+
+          {caliperMode !== "frame" && ecgData?.crops_source === "auto_fixed" && (
+            <span className="badge badge-amber">
+              Derivasyon çerçevesi seçilmedi: model yalnızca tam görüntüyü görecek.
             </span>
           )}
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LayoutGrid, X, ZoomIn } from "lucide-react";
 
-export default function LeadCropsGallery({ leadCrops }) {
+export default function LeadCropsGallery({ leadCrops, source }) {
   const [selectedCrop, setSelectedCrop] = useState(null);
 
   if (!leadCrops || leadCrops.length === 0) {
@@ -14,7 +14,9 @@ export default function LeadCropsGallery({ leadCrops }) {
         <div className="panel-header">
           <h2 className="panel-title">
             <LayoutGrid size={16} color="#22d3ee" />
-            Otomatik Kırpılan Anatomik Derivasyon Bölgeleri
+            {source === "manual_frame"
+              ? "Hekim Çerçevesinden Kırpılan Derivasyon Bölgeleri"
+              : "Otomatik Kırpılan Anatomik Derivasyon Bölgeleri"}
           </h2>
           <span className="badge badge-muted">Büyütmek için karta tıklayın</span>
         </div>

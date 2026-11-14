@@ -314,15 +314,16 @@ export function buildClinicalPrompt(patientContext = {}, caliperMeasurements = {
     ? caliperInfo.summary_lines.join("\n")
     : "Kullanıcı dijital pergel ölçümü girmedi; görseldeki kalibrasyon ve karelerden tahmin yapın.";
 
-  return `Sen kıdemli bir kardiyoloji uzmanısın. Sana verilen tam 12 derivasyonlu EKG görüntüsünü ve yakınlaştırılmış bölgesel derivasyon kırpmalarını (I-III, aVR-aVF, V1-V3, V4-V6 ve Ritim Şeridi) inceleyerek adım adım klinik akıl yürütme (ECG-Reasoning-Benchmark protokolü) yapacaksın.
+  return `Sen kıdemli bir kardiyoloji uzmanısın. Sana verilen tam 12 derivasyonlu EKG görüntüsünü ve varsa yakınlaştırılmış bölgesel derivasyon kırpmalarını (I-III, aVR-aVF, V1-V3, V4-V6 ve Ritim Şeridi) inceleyerek adım adım klinik akıl yürütme (ECG-Reasoning-Benchmark protokolü) yapacaksın.
 
 ÖNEMLİ KURALLAR:
 1. Görüntüde gerçekten görmediğin hiçbir dalga değişikliğini varsayma (görsel doğrulama zorunludur).
 2. Eğer kullanıcı dijital pergel (caliper) ölçümleri sağladıysa, aralık ve hız hesaplarında bu ölçümleri kesin referans olarak kullan. "Uygulama Tarafından Hesaplanan QTc" satırı varsa QTc'yi yeniden hesaplama; verilen değeri ve yorumu aynen kullan.
 3. Doğrudan tanıya atlama; aşağıdaki 6 adımı ve erb_reasoning_chain alanını sırasıyla doldur ve SADECE geçerli bir JSON objesi döndür.
 4. Dil tamamen Türkçe, tıbbi terminoloji ise uluslararası kardiyoloji standardında olmalıdır.
-5. Bölge kırpmaları standart 3x4 + ritim şeridi düzeni varsayılarak sabit oranlarla alınmıştır. Kağıt düzeni farklıysa kırpma etiketlerine güvenme; derivasyonları görseldeki yazılı etiketlerden tanı ve emin olamadığın derivasyonu belirt.
+5. Her bölge kırpmasının nasıl alındığı kendi etiketinde yazar; kırpma gönderilmediyse yalnızca tam görüntüyü kullan. Kırpma başlığına körü körüne güvenme: derivasyon kimliğini kağıttaki yazılı etiketlerden doğrula (bazı cihazlar etiketi trasenin üstüne, bazıları başına basar) ve emin olamadığın derivasyonu belirt.
 6. Görüntü kalitesi bir bulguyu değerlendirmeye yetmiyorsa tahmin yürütme; ilgili alana "Değerlendirilemedi" yaz ve duvar durumunu "UNASSESSED" olarak işaretle.
+7. Ekseni belirlemeden önce I, II ve aVF derivasyonlarında QRS'in net yönünü ayrı ayrı belirle (lead_i_polarity, lead_ii_polarity, lead_avf_polarity) ve ekseni bu üç derivasyondan türet. DII'de net QRS pozitifse eksen −30°'den daha sola olamaz; bu durumda sol aks deviasyonu deme.
 
 === HASTA KLİNİK BİLGİLERİ ===
 - Yaş / Cinsiyet: ${age} / ${sex}
@@ -353,6 +354,7 @@ ${formatGuidelinesForPrompt()}
   "step3_axis": {
     "axis_classification": "Normal Eksen" | "Sol Aks Deviasyonu" | "Sağ Aks Deviasyonu" | "Aşırı Sağ Aks",
     "lead_i_polarity": "Pozitif / Bifazik / Negatif",
+    "lead_ii_polarity": "Pozitif / Bifazik / Negatif",
     "lead_avf_polarity": "Pozitif / Bifazik / Negatif",
     "summary": "Adım 3 eksen açıklaması"
   },
