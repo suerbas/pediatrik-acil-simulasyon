@@ -223,6 +223,10 @@ SPOILER_KEYWORDS_BY_ID = {
     "S98": ["serotonin", "serotonerjik"],
     "S99": ["opiat", "opioid", "haşhaş", "morfin"],
     "S100": ["datura", "tatula", "boru çiçeği", "antikolinerjik"],
+    "S101": ["süpüratif", "bakteriyel parotit", "parotit", "parotis", "sialadenit", "stensen"],
+    "S102": ["septik artrit", "kocher", "caird", "artrosentez", "eklem aspirasyonu"],
+    "Y101": ["biliyer atrezi", "kasai", "portoenterostomi"],
+    "Y102": ["karbonmonoksit", "karboksihemoglobin"],
 }
 
 

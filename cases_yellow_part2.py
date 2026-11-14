@@ -1091,16 +1091,27 @@ YELLOW_CASES_PART2 = [{'id': 'S11',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '13 Yaş',
   'gender': 'Erkek',
-  'complaint': 'Gece uykudan uyandıran sol kasık ve skrotumda ani başlayan şiddetli ağrı, şişlik, kızarıklık ve iki '
-               'kez kusma',
-  'history': "13 yaşındaki erkek hasta babası tarafından sabah 06:00'da Sarı Alana getiriliyor: 'Gece saat 03:00 "
-             'civarında sol kasığımda ve torbamda bıçak saplanır gibi çok şiddetli bir ağrıyla uyandım. Ağrının '
-             'şiddetinden iki kez kustum. Sol tarafım şişti ve kızardı, yürürken bacağımı hareket ettiremiyorum. '
-             "Ateşim, üşümem veya idrar yaparken yanmam olmadı.'",
-  'final_diagnosis': 'Akut Sol Testis Torsiyonu (Spermatik Kord Torsiyonu ve Akut Testiküler İskemi)',
+  'complaint': 'Otizm spektrum bozukluğu olan, konuşmayan çocukta gece başlayan durmaksızın ağlama, bağırma, kendine '
+               'vurma ve iki kez kusma',
+  'history': "Otizm spektrum bozukluğu tanılı, sözel iletişimi olmayan 13 yaşındaki erkek hasta sabah 06:00'da "
+             'annesiyle Yeşil Alana getiriliyor; triyajda yoğun ajitasyon nedeniyle Sarı Alana devrediliyor. Öyküyü '
+             "annesi veriyor: 'Gece 03:00 gibi çığlık atarak uyandı, o zamandan beri susmuyor. Başını duvara vuruyor, "
+             'kendi bacaklarını tokatlıyor, iki kez kustu. Elini sık sık karnının altına götürüyor ama dokunmamıza '
+             'izin vermiyor. Yürümek istemiyor, yatakta kıvrılıp yatıyor. Ateşi yok, ishali yok. Kabız kaldığında da '
+             'böyle huzursuz olur ama hiç bu kadar değil. Kalabalıktan ve dokunulmaktan hoşlanmaz, kulaklığını takınca '
+             "biraz sakinleşir.' Düzenli risperidon kullanıyor. Bilinen başka hastalığı yok.",
+  'final_diagnosis': 'Akut Sol Testis Torsiyonu (Spermatik Kord Torsiyonu ve Akut Testiküler İskemi; Sözel İletişimi '
+                     'Olmayan Otizmli Adölesan)',
   'disposition': 'Sarı Alanda Acil Renkli Doppler USG + Eş Zamanlı Çocuk Cerrahisi / Üroloji Konsültasyonu ile Altın 6 '
                  'Saat İçinde Acil Cerrahi Detorsiyon ve Bilateral Orşiopeksi',
-  'case_pearl': 'Akut skrotal ağrı ve kusma ile başvuran her çocuk ve adölesanda aksi kanıtlanana kadar testis '
+  'case_pearl': 'Sözel iletişimi olmayan otizmli çocukta ağrı çoğu zaman ağlama, bağırma, kendine vurma, uyku '
+                'bozukluğu, yeme reddi veya hareket etmek istememe gibi davranış değişiklikleriyle kendini gösterir. '
+                "Bu belirtileri 'davranış krizi' sayıp sedasyonla geçiştirmek, altta yatan cerrahi acillerin "
+                'atlanmasına yol açabilir (diagnostic overshadowing: belirtilerin bilinen tanıya bağlanması). Ebeveyn '
+                "çocuğun olağan davranışını en iyi bilen kişidir; 'hiç bu kadar değil' ifadesi ciddiye alınmalıdır. "
+                'Muayene sakin, az uyaranlı bir ortamda, ebeveyn yanında ve onun önerdiği yöntemlerle (kulaklık, '
+                'sevdiği nesne, adım adım anlatım) yapılmalı ve genital bölge dahil baştan ayağa sistematik olmalıdır. '
+                'Akut skrotal ağrı ve kusma ile başvuran her çocuk ve adölesanda aksi kanıtlanana kadar testis '
                 'torsiyonu düşünülmelidir. Fizik muayenede en duyarlı bulgu ipsilateral kremasterik refleks kaybıdır; '
                 'testisin skrotumda yüksek ve transvers (yatay) yerleşimi ile skrotal elevasyonla ağrının azalmaması '
                 '(negatif Prehn bulgusu) tanıyı destekler. Organın kurtarılabilmesi için altın pencere ilk 6 saattir '
@@ -1108,50 +1119,53 @@ YELLOW_CASES_PART2 = [{'id': 'S11',
                 'kordda girdap (whirlpool) görünümü tipiktir. Zemininde sıklıkla bilateral çan tokmağı (bell-clapper) '
                 'deformitesi bulunduğundan cerrahi eksplorasyonda detorsiyon sonrası mutlaka her iki testise bilateral '
                 'orşiopeksi yapılmalıdır.',
-  'steps': [{'stage_title': 'Sarı Alanda Akut Skrotal ve Genital Muayene',
-             'question': 'Gece uykudan uyandıran ani sol skrotal ağrı ve kusma ile başvuran 13 yaşındaki erkek hastada '
-                         'ilk fizik muayene yaklaşımınız ne olmalıdır?',
-             'options': [{'text': 'Her iki gonadı pozisyon, aks ve hassasiyet açısından muayene etmek, kremasterik '
-                                  'refleksi ve skrotal elevasyon yanıtını değerlendirmek',
+  'steps': [{'stage_title': 'Sarı Alanda İletişim ve Sistematik Muayene',
+             'question': "Konuşmayan, gece 03:00'ten beri ağlayıp bağıran, kendine vuran ve iki kez kusan otizmli 13 "
+                         'yaşındaki bu hastada ilk yaklaşımınız ne olmalıdır?',
+             'options': [{'text': 'Bağırma ve kendine vurmayı otizme bağlı davranış krizi olarak değerlendirip İM '
+                                  'midazolamla sakinleştirmek, sakinleşince muayene etmeden çocuk psikiyatrisine '
+                                  'yönlendirmek',
+                          'is_correct': False,
+                          'scenario_update': 'Sedasyonla sakinleşen hasta muayene edilmeden psikiyatri randevusu '
+                                             'verilerek gözleme alındı; saatler sonra annenin ısrarıyla bakıldığında '
+                                             'sol skrotum belirgin şiş ve morumsu renkteydi.',
+                          'teaching_point': 'Konuşamayan çocukta yeni ve olağandışı huzursuzluk önce organik bir ağrı '
+                                            'nedeni olarak düşünülmelidir; belirtileri bilinen tanıya bağlamak '
+                                            '(diagnostic overshadowing) cerrahi acilleri atlatır.'},
+                         {'text': 'Karnını tuttuğu ve kustuğu için yalnızca karın muayenesi yapıp ayakta direkt karın '
+                                  'grafisi ve tüm batın ultrasonografisi istemek, kasık ve genital muayeneyi ertelemek',
+                          'is_correct': False,
+                          'scenario_update': 'Karın grafisinde yalnızca kolonda gaita gölgeleri görüldü ve kabızlık '
+                                             'düşünüldü; batın ultrasonografisi sırası beklenirken geçen sürede iskemi '
+                                             'süresi uzadı.',
+                          'teaching_point': 'Elini karnının altına götüren ve kusan erkek çocukta kasık ve skrotum '
+                                            'muayenesi atlanmamalıdır; skrotal ağrı sıklıkla karın ağrısı gibi '
+                                            'yansır.'},
+                         {'text': 'Annesini yanında tutup sakin, az uyaranlı bir odada annenin önerdiği yöntemlerle '
+                                  'yaklaşmak; genital bölge dahil baştan ayağa sistematik muayene yapmak',
                           'is_correct': True,
-                          'explanation': 'Akut skrotal ağrıda gonadın yerleşim aksı, elevasyonla ağrının değişimi ve '
-                                         'kremasterik refleks varlığı vasküler acilleri inflamatuar süreçlerden ayırt '
-                                         'etmede en değerli muayene bulgularıdır.',
-                          'new_finding': 'Vital Bulgular: TA 124/78 mmHg, KTA 110/dk, Ateş 36.7°C. Fizik Muayene: Sol '
-                                         'hemiskrotum hiperemik ve ödemli; sol gonad skrotum üst polünde yüksek ve '
+                          'explanation': 'Sözel iletişimi olmayan çocukta ağrının kaynağını bulmanın yolu ebeveynin '
+                                         'rehberliğinde sakin bir ortamda yapılan tam ve sistematik muayenedir. Kusma '
+                                         've elin karnın altına götürülmesi, kasık ve skrotumun mutlaka muayene '
+                                         'edilmesini gerektirir.',
+                          'new_finding': 'Vital Bulgular: TA 124/78 mmHg, KTA 118/dk, Ateş 36.7°C, SpO2 %99. Işıkları '
+                                         'kısılmış odada, kulaklığı takılı ve annesi elini tutarken muayene edildi. '
+                                         'Kulak, boğaz, diş ve karın muayenesi doğal; karın palpasyonuna belirgin '
+                                         'tepki yok. Sol hemiskrotuma dokunulunca çığlık atıp bacaklarını kapatıyor. '
+                                         'Sol hemiskrotum hiperemik ve ödemli; sol gonad skrotum üst polünde yüksek ve '
                                          'transvers yerleşimli, palpasyonla ileri derecede hassas. Skrotal elevasyonla '
-                                         'ağrıda azalma olmadı. Sol kremasterik refleks alınamadı. Sağ gonad ve sağ '
-                                         'kremasterik refleks doğal, batın muayenesi rahat.'},
-                         {'text': 'Şiddetli ağrı nedeniyle genital palpasyonu erteleyip öncelikle İV metamizol sodyum '
-                                  've skrotuma sıcak kompres uygulayarak 1 saat sonra muayene etmek',
+                                         'huzursuzlukta azalma olmadı. Sol kremasterik refleks alınamadı. Sağ gonad ve '
+                                         'sağ kremasterik refleks doğal.'},
+                         {'text': 'İletişim kurulamadığı için İV metamizolle ağrıyı dindirip bir saat sonra yeniden '
+                                  'değerlendirmek, bu sürede anneyi bekleme salonuna alıp çocuğu yalnız izlemek',
                           'is_correct': False,
-                          'scenario_update': 'Muayene edilmeden uygulanan sıcak kompres ve bekleme süresi, dokunun '
-                                             'metabolik oksijen tüketimini artırarak geri dönüşsüz parankimal iskemi '
-                                             'süresini kısaltmış oldu.',
-                          'teaching_point': 'Akut skrotal ağrıda fizik muayene asla ertelenmemeli ve vasküler '
-                                            'perfüzyon bozukluğu dışlanmadan lokal sıcak uygulama kesinlikle '
-                                            'yapılmamalıdır.'},
-                         {'text': 'İdrar yolu enfeksiyonu ve epididimit ön tanısıyla skrotal refleks bakmadan orta '
-                                  'akım idrar örneği alıp ampirik İV seftriakson tedavisi başlamak',
-                          'is_correct': False,
-                          'scenario_update': 'İdrar tetkiki beklenen ve antibiyotik başlanan hastada geçen saatler '
-                                             'içinde sol skrotumdaki ödem arttı ve ağrı narkotik analjeziklere bile '
-                                             'yanıtsız hale geldi.',
-                          'teaching_point': 'Dizüri ve ateşi olmayan akut başlangıçlı skrotal ağrıda genital muayene '
-                                            've vasküler değerlendirme yapılmadan enfeksiyon tedavisiyle vakit '
-                                            'kaybedilmemelidir.'},
-                         {'text': 'Yansıyan renal kolik ve üreter taşını dışlamak amacıyla skrotal muayene öncesinde '
-                                  'hastaya hızlıca intravenöz hidrasyon başlayıp kontrastsız tüm batın tomografisi '
-                                  'çekmek',
-                          'is_correct': False,
-                          'scenario_update': 'Tomografi çekimi ve raporlanması için geçen sürede renal taş saptanmadı '
-                                             'ancak skrotal patolojiye yönelik kritik müdahale penceresi daraldı.',
-                          'teaching_point': 'Skrotuma vuran ağrıda öncelik her zaman dikkatli bir genital muayenedir; '
-                                            'muayene yapılmadan radyasyon içeren batın görüntülemelerine '
-                                            'yönelinmemelidir.'}]},
+                          'scenario_update': 'Annesinden ayrılan çocuğun ajitasyonu arttı, damar yolu çıktı ve muayene '
+                                             'bir saatten fazla gecikti.',
+                          'teaching_point': 'Otizmli çocukta ebeveyni ayırmak ajitasyonu artırır; analjezi verilebilir '
+                                            'ancak muayeneyi ertelemenin gerekçesi olmamalıdır.'}]},
             {'stage_title': 'Radyolojik Görüntüleme ve Zamanlama Stratejisi',
-             'question': 'Kremasterik refleks kaybı, sol gonadda yüksek-transvers yerleşim ve elevasyonla ağrının '
-                         'azalmaması saptanan 3. saatindeki hastada bir sonraki adımınız ne olmalıdır?',
+             'question': 'Kremasterik refleks kaybı, sol gonadda yüksek-transvers yerleşim ve elevasyonla '
+                         'huzursuzluğun azalmaması saptanan 3. saatindeki hastada bir sonraki adımınız ne olmalıdır?',
              'options': [{'text': 'Öncelikle tam kan sayımı, CRP, sedimantasyon ve idrar kültürü sonuçlarını beklemek, '
                                   'inflamatuar belirteçler normal gelirse radyolojik görüntüleme ve konsültasyon '
                                   'istemek',

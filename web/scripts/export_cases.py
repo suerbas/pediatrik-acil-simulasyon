@@ -48,6 +48,12 @@ def vitals_chips(case: dict) -> list:
 KTA_RE = re.compile(r"(?<![A-Za-z])KTA(?![A-Za-z])")
 
 
+SYSTEM_TAGS = {
+    "GİS", "Respiratuar", "Enfeksiyon", "Nöroloji", "Kardiyoloji", "Endokrin / Metabolik", "Alerji",
+    "Göz", "KBB", "Nefro / Üro", "Toksikoloji", "Ortopedi", "Hematoloji",
+}
+
+
 def web_text(value):
     """Web'de 'KTA' kısaltması anlaşılmıyor; ekranda 'Nabız' olarak göster."""
     if isinstance(value, str):
@@ -119,6 +125,7 @@ def main():
     for case in all_cases:
         with open(os.path.join(cases_dir, f"{case['id']}.json"), "w", encoding="utf-8") as f:
             json.dump(web_text(export_case(case)), f, ensure_ascii=False, separators=(",", ":"))
+        tags = arsiv.extract_card_tags(case)
         index.append({
             "id": case["id"],
             "zone": "yellow" if case["id"].startswith("S") else "green",
@@ -126,7 +133,9 @@ def main():
             "gender": case["gender"],
             "category": case["category"],
             "complaint": case["complaint"],
-            "tags": arsiv.extract_card_tags(case),
+            # Sistem etiketleri tanıdan üretildiği için ayrı tutulur; arayüz bunları vaka çözülünce gösterir
+            "tags": [t for t in tags if t not in SYSTEM_TAGS],
+            "systemTags": [t for t in tags if t in SYSTEM_TAGS],
         })
         # Arama metni ekranda görünenle aynı olsun (ör. "KTA" yerine "Nabız")
         search[case["id"]] = arsiv.build_case_search_corpus(web_text(case))

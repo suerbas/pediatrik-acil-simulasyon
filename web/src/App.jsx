@@ -34,11 +34,13 @@ export default function App() {
     let list = INDEX
     if (zone !== 'all') list = list.filter((c) => c.zone === zone)
     // Seçili etiketlerin HEPSİ vakada bulunmalı
+    // Tanıdan gelen sistem etiketleri yalnızca çözülmüş vakalarda görünür ve filtrelenir
+    const visibleTags = (c) => (solved.has(c.id) ? [...c.tags, ...c.systemTags] : c.tags)
     for (const tag of tags) {
       const t = normalize(tag)
       list = list.filter(
         (c) =>
-          c.tags.some((x) => normalize(x).includes(t)) ||
+          visibleTags(c).some((x) => normalize(x).includes(t)) ||
           normalize(c.complaint).includes(t) ||
           normalize(c.category).includes(t),
       )
@@ -55,7 +57,7 @@ export default function App() {
       )
     }
     return list
-  }, [zone, tags, deferredQuery, searchIndex])
+  }, [zone, tags, deferredQuery, searchIndex, solved])
 
   const markSolved = useCallback((id) => {
     setSolved((prev) => {

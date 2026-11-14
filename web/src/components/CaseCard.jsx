@@ -21,7 +21,7 @@ function CaseCard({ item, solved, onOpen, onTag, onPrefetch, activeTags }) {
       <p className="card-category">{item.category}</p>
       <p className="card-complaint">{item.complaint}</p>
       <div className="card-tags">
-        {item.tags.map((t) => {
+        {(solved ? [...item.tags, ...item.systemTags] : item.tags).map((t) => {
           const active = activeTags.includes(t)
           return (
             <button
