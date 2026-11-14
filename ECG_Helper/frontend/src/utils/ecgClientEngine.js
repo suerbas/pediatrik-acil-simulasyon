@@ -248,24 +248,38 @@ const LEAD_REGIONS = [
  * Kullanıcının çerçevelediği trase alanını (piksel) 4 sütun + isteğe bağlı ritim şeridine böler ve
  * normalize bbox'lar döndürür. Etiketler bazı cihazlarda trasenin üstüne, bazılarında soluna
  * basıldığı için kırpmalara satır yüksekliğinin bir kısmı kadar pay eklenir.
- * frame: {x1, y1, x2, y2} (doğal piksel), layout: "3x4_rhythm" | "3x4"
+ * frame: {x1, y1, x2, y2} (doğal piksel), layout: "3x4_rhythm" | "3x4" | "12x1"
  */
 export function computeFrameRegions(frame, layout, width, height) {
   const fx1 = Math.min(frame.x1, frame.x2);
   const fx2 = Math.max(frame.x1, frame.x2);
   const fy1 = Math.min(frame.y1, frame.y2);
   const fy2 = Math.max(frame.y1, frame.y2);
-  const hasRhythm = layout !== "3x4";
-  const rowH = (fy2 - fy1) / (hasRhythm ? 4 : 3);
-  const colW = (fx2 - fx1) / 4;
-  const padX = colW * 0.08;
-  const padY = rowH * 0.2;
   const norm = (x1, y1, x2, y2) => [
     Math.max(0, x1 / width),
     Math.max(0, y1 / height),
     Math.min(1, x2 / width),
     Math.min(1, y2 / height),
   ];
+
+  if (layout === "12x1") {
+    // Her derivasyon tam genişlikte tek satır (I, II, III, aVR, aVL, aVF, V1–V6). Ardışık üçlü satırlar
+    // aynı 4 bölgeye denk gelir; DII zaten 10 sn boyunca çizildiği için ayrı ritim şeridi yoktur.
+    // Bu düzende yüksek voltajlı göğüs derivasyonları komşu satıra taştığı için dikey pay daha geniştir.
+    const rowH = (fy2 - fy1) / 12;
+    const padX = (fx2 - fx1) * 0.02;
+    const padY = rowH * 0.5;
+    return LEAD_REGIONS.slice(0, 4).map((reg, g) => ({
+      ...reg,
+      bbox: norm(fx1 - padX, fy1 + g * 3 * rowH - padY, fx2 + padX, fy1 + (g + 1) * 3 * rowH + padY),
+    }));
+  }
+
+  const hasRhythm = layout !== "3x4";
+  const rowH = (fy2 - fy1) / (hasRhythm ? 4 : 3);
+  const colW = (fx2 - fx1) / 4;
+  const padX = colW * 0.08;
+  const padY = rowH * 0.2;
 
   const regions = [];
   for (let c = 0; c < 4; c++) {
@@ -283,7 +297,7 @@ export function computeFrameRegions(frame, layout, width, height) {
   return regions;
 }
 
-function cropCanvasRegions(srcCanvas, regions, source) {
+function cropCanvasRegions(srcCanvas, regions, source, layout = null) {
   const { width, height } = srcCanvas;
   const crops = [];
   for (const reg of regions) {
@@ -306,6 +320,7 @@ function cropCanvasRegions(srcCanvas, regions, source) {
       territory: reg.territory,
       bbox: reg.bbox,
       source,
+      ...(layout ? { layout } : {}),
       image_b64: cCanvas.toDataURL("image/png"),
     });
   }
@@ -325,7 +340,7 @@ export async function cropLeadsFromFrame(imageSrc, frame, layout) {
   canvas.width = width;
   canvas.height = height;
   canvas.getContext("2d").drawImage(img, 0, 0, width, height);
-  return cropCanvasRegions(canvas, computeFrameRegions(frame, layout, width, height), "manual_frame");
+  return cropCanvasRegions(canvas, computeFrameRegions(frame, layout, width, height), "manual_frame", layout);
 }
 
 export async function preprocessEcgInBrowser(fileOrDataUrl) {
@@ -1016,7 +1031,11 @@ function validateLlmPayload(parsed) {
 function cropLabel(index, crop) {
   const title = crop.title || crop.id || "Bölge";
   const how =
-    crop.source === "manual_frame"
+    crop.source === "manual_frame" && crop.layout === "12x1"
+      ? "Kırpma, hekimin görüntü üzerinde çerçevelediği 12x1 düzenli trase alanı (her derivasyon tam genişlikte tek satır) " +
+        "üçerli satır gruplarına bölünerek alınmıştır; yüksek voltajlı derivasyonlar komşu satıra taşabilir. " +
+        "Derivasyon kimliğini kağıt üzerindeki yazılı etiketlerle doğrula."
+      : crop.source === "manual_frame"
       ? "Kırpma, hekimin görüntü üzerinde çerçevelediği trase alanı 4 sütuna (ve ritim şeridine) bölünerek alınmıştır; " +
         "kenarlarda komşu derivasyondan parçalar bulunabilir. Derivasyon kimliğini kağıt üzerindeki yazılı etiketlerle doğrula."
       : "Kırpma standart 3x4 + ritim şeridi düzeni varsayılarak sabit oranlarla alınmıştır; " +

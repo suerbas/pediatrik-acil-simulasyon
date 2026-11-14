@@ -59,7 +59,13 @@ def _validate_llm_payload(parsed: Any) -> Dict[str, Any]:
 def _crop_label(index: int, crop: Dict[str, Any]) -> str:
     """Bölge kırpması için modele gönderilecek açıklayıcı etiketi üretir."""
     title = crop.get("title") or crop.get("id") or "Bölge"
-    if crop.get("source") == "manual_frame":
+    if crop.get("source") == "manual_frame" and crop.get("layout") == "12x1":
+        how = (
+            "Kırpma, hekimin görüntü üzerinde çerçevelediği 12x1 düzenli trase alanı (her derivasyon tam genişlikte tek satır) "
+            "üçerli satır gruplarına bölünerek alınmıştır; yüksek voltajlı derivasyonlar komşu satıra taşabilir. "
+            "Derivasyon kimliğini kağıt üzerindeki yazılı etiketlerle doğrula."
+        )
+    elif crop.get("source") == "manual_frame":
         how = (
             "Kırpma, hekimin görüntü üzerinde çerçevelediği trase alanı 4 sütuna (ve ritim şeridine) bölünerek alınmıştır; "
             "kenarlarda komşu derivasyondan parçalar bulunabilir. Derivasyon kimliğini kağıt üzerindeki yazılı etiketlerle doğrula."

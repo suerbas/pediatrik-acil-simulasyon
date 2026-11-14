@@ -65,7 +65,7 @@ export default function EcgCanvasViewer({
 
   const [showOverlay, setShowOverlay] = useState(false);
   const [caliperMode, setCaliperMode] = useState("off"); // "off" | "measure" | "calibrate" | "frame"
-  const [frameLayout, setFrameLayout] = useState("3x4_rhythm"); // "3x4_rhythm" | "3x4"
+  const [frameLayout, setFrameLayout] = useState("3x4_rhythm"); // "3x4_rhythm" | "3x4" | "12x1"
   const [stPts, setStPts] = useState([]); // 3 noktalı ST modu: [PR1, J, PR2]
   const [stLead, setStLead] = useState("");
   const [pxPerMm, setPxPerMm] = useState(7.0);
@@ -764,11 +764,16 @@ export default function EcgCanvasViewer({
                 >
                   <option value="3x4_rhythm">3×4 + ritim şeridi</option>
                   <option value="3x4">3×4 (ritim şeridi yok)</option>
+                  <option value="12x1">12×1 (her derivasyon tek satır)</option>
                 </select>
               </label>
               <span className="badge badge-cyan">
-                {!p1
+                {!p1 && frameLayout === "12x1"
+                  ? "Çerçeve: DI satırının en üst-sol köşesine dokunun (etiket dahil)."
+                  : !p1
                   ? "Çerçeve: 1. satırın (DI, aVR, V1, V4) en üst-sol köşesine dokunun (etiketler dahil)."
+                  : frameLayout === "12x1"
+                  ? "Şimdi V6 satırının sağ alt köşesine dokunun."
                   : frameLayout === "3x4"
                   ? "Şimdi 3. satırın (DIII, aVF, V3, V6) sağ alt köşesine dokunun."
                   : "Şimdi ritim şeridinin sağ alt köşesine dokunun."}
