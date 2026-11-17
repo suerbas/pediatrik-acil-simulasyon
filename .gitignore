@@ -41,3 +41,7 @@ Desktop.ini
 
 # Scratch test scripts and captures
 scratch/
+
+# ECG_Helper yerel notlar ve graphify ciktilari
+ECG_Helper/DEVIR_NOTU.md
+ECG_Helper/graphify-out/
