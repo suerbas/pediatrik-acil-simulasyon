@@ -409,7 +409,7 @@ CASES = [
         "age": "20 Aylık",
         "gender": "Kız",
         "complaint": "İki gündür ishal ve kusma; son üç saatte ateşsiz iki kez kasılma nöbeti",
-        "history": "Annesi anlatıyor: 'İki gündür günde 5-6 kez sulu ishal oluyor, dün üç kez kustu, bugün kusması azaldı. Ateşi hiç olmadı. Bugün öğlen ve az önce iki kez gözleri kaydı, kolları bacakları kasılıp titredi, bir dakika kadar sürdü. Arada kendine geldi, beni tanıdı, oyuncağıyla oynadı.' Kreşte birkaç çocukta ishal varmış. Daha önce nöbet öyküsü yok. Gelişimi normal. Aile öyküsünde epilepsi yok. Evde ilaç, kimyasal veya düşme öyküsü yok.",
+        "history": "Annesi anlatıyor: 'İki gündür günde 5-6 kez sulu ishal oluyor, dün üç kez kustu, bugün kusması azaldı. Ateşi hiç olmadı. Bugün öğlen ve az önce iki kez gözleri kaydı (bakış deviasyonu), kolları bacakları kasılıp titredi, bir dakika kadar sürdü. Arada kendine geldi, beni tanıdı, oyuncağıyla oynadı.' Kreşte birkaç çocukta ishal varmış. Daha önce nöbet öyküsü yok. Gelişimi normal. Aile öyküsünde epilepsi yok. Evde ilaç, kimyasal veya düşme öyküsü yok.",
         "final_diagnosis": "Hafif Gastroenteritle İlişkili Benign Afebril Konvülziyon (Norovirüs)",
         "disposition": "Sarı Alanda 24 Saatlik Gözlem ve Ağızdan Rehidratasyon Sonrası Antiepileptiksiz Taburculuk",
         "case_pearl": "Daha önce sağlıklı, 6 ay-3 yaş arası çocukta hafif gastroenteritin 1-5. günlerinde ortaya çıkan, ateşsiz, kısa ve kümelenme eğilimli jeneralize nöbetler benign bir tablodur. En sık rotavirüs ve norovirüs sorumludur. Elektrolitler, glukoz ve nörolojik muayene normaldir; BOS ve görüntüleme gerekmez. Nöbetler 24 saat içinde tekrarlayabilir. Uzun süreli antiepileptik gerekmez, prognoz mükemmeldir.",

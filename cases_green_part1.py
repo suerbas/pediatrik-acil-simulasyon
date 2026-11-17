@@ -1427,7 +1427,7 @@ GREEN_CASES_PART1 = [{'id': 'Y01',
   'age': '10 Yaş',
   'gender': 'Erkek',
   'complaint': 'Üç haftadır özellikle gece yatınca ve sabah kalkınca artan öksürük, burun tıkanıklığı ve geniz '
-               'akıntısı',
+               'akıntısı (postnazal akıntı)',
   'history': "Hasta kendisi anlatıyor: 'Doktor bey/hanım, gündüz okulda pek öksürmüyorum ama akşam yastığa başımı "
              'koyunca ve sabah uyanınca boğazımda bir şey gıdıklanıyor gibi öksürüyorum, sürekli boğazımı temizleme '
              'ihtiyacı hissediyorum. Burnum da çok kaşınıyor ve sabahları üst üste hapşırıyorum. Ateşim hiç çıkmadı, '

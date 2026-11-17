@@ -464,7 +464,7 @@ CASES = [
             "Sarı Alana tekerlekli sandalye ile hafif öne eğilmiş oturur pozisyonda getiriliyor. "
             "Çocuk kesik kesik kelimelerle 'Nefesim... yetmiyor...' diyebiliyor. Annesi anlatıyor: "
             "'Daha önce de kış aylarında tekrarlayan hışıltı atakları olmuştu ve evde inhaler kullanıyordu, "
-            "2 gündür nezleydi. Bu sabah nefes darlığı başladı, evde 2 puf mavi fısfısını (salbutamol) sıktık "
+            "2 gündür nezleydi (burun akıntısı, tıkanıklık). Bu sabah nefes darlığı başladı, evde 2 puf mavi fısfısını (salbutamol) sıktık "
             "ama hiç açılmadı, göğsünden ıslık sesi geliyor.'"
         ),
         "final_diagnosis": "Orta-Ağır Akut Astım Atağı (Viral ÜSYE Tetikli)",

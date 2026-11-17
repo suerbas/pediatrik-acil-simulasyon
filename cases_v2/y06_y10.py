@@ -583,7 +583,7 @@ CASES = [
         "category": "🫁 Hırıltı & Solunum Sıkıntısı",
         "age": "10 Yaş",
         "gender": "Erkek",
-        "complaint": "Üç haftadır özellikle gece yatınca ve sabah kalkınca artan öksürük, burun tıkanıklığı ve geniz akıntısı",
+        "complaint": "Üç haftadır özellikle gece yatınca ve sabah kalkınca artan öksürük, burun tıkanıklığı ve geniz akıntısı (postnazal akıntı)",
         "history": (
             "Hasta kendisi anlatıyor: 'Doktor bey/hanım, gündüz okulda pek öksürmüyorum ama akşam yastığa başımı "
             "koyunca ve sabah uyanınca boğazımda bir şey gıdıklanıyor gibi öksürüyorum, sürekli boğazımı "

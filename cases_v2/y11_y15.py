@@ -341,7 +341,7 @@ CASES = [
         "category": "🧠 Nörolojik Belirtiler & Konvülziyon",
         "age": "14 Yaş",
         "gender": "Kız",
-        "complaint": "Ayağa kalkınca olan baş dönmesi (dizziness) ve göz kararması",
+        "complaint": "Ayağa kalkınca olan baş dönmesi (dizziness) ve göz kararması (presenkop)",
         "history": (
             "Hasta kendisi anlatıyor: 'Bu sabah kahvaltı yapmadan okula gittim. Okul bahçesinde törende "
             "güneşin altında beklerken ve evde yataktan hızlı kalktığımda bir anda başım döndü, gözlerim "

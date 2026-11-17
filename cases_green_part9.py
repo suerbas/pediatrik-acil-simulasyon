@@ -12,7 +12,8 @@ GREEN_CASES_PART9 = [{'id': 'Y81',
   'history': "Annesi anlatıyor: 'Bebekliğinden beri yanaklarında ara ara kuruluk oluyordu. Bu kış çok arttı, dirsek ve "
              'diz içleri kıpkırmızı, geceleri kanatana kadar kaşıyor. Her gün köpüklü banyo yaptırıyorum, kremi seyrek '
              "sürüyorum. Kortizonlu krem verilmişti ama zararlı diye kullanmadım.' Ateş, sulu yara, içi su dolu "
-             "kabarcık yok. Ailede babada astım ve saman nezlesi var. Komşu 'süt ve yumurtayı kesin' demiş.",
+             "kabarcık yok. Ailede babada astım ve saman nezlesi (alerjik rinit) var. Komşu 'süt ve yumurtayı kesin' "
+             'demiş.',
   'final_diagnosis': 'Atopik Dermatit Alevlenmesi (Orta Şiddet, Enfeksiyonsuz)',
   'disposition': 'Nemlendirici, Topikal Kortikosteroid ve Cilt Bakım Eğitimiyle Yeşil Alandan Taburculuk',
   'case_pearl': 'Atopik dermatit tanısı kliniktir. Kaşıntı, yaşa özgü dağılım (küçük çocukta yüz ve ekstansör yüzler, '
@@ -662,8 +663,8 @@ GREEN_CASES_PART9 = [{'id': 'Y81',
   'complaint': 'Dünden beri yüksek ateş, kıvrandıran karın ağrısı ve günde on kez az miktarda kanlı-sümüksü dışkılama',
   'history': "Annesi anlatıyor: 'Dün öğlen ateşi 39.5°C'ye çıktı, karnına kramp girer gibi ağrıyor. Sonra çok sık "
              'tuvalete gitmeye başladı, her seferinde az miktarda kanlı, sümüklü dışkı yapıyor, ıkınıyor ama '
-             "çıkmıyor.' Kreşte iki çocukta da ishal varmış. Kusma bir kez olmuş. İdrarını yapıyor. Havale geçirmemiş. "
-             'Antibiyotik kullanmamış. Çiğ köfte veya az pişmiş et yemesi yok. Aşıları tam.',
+             "çıkmıyor.' Kreşte iki çocukta da ishal varmış. Kusma bir kez olmuş. İdrarını yapıyor. Havale (nöbet) "
+             'geçirmemiş. Antibiyotik kullanmamış. Çiğ köfte veya az pişmiş et yemesi yok. Aşıları tam.',
   'final_diagnosis': 'Şigelloz (Shigella sonnei Dizanterisi)',
   'disposition': 'Oral Azitromisin, Ağızdan Rehidratasyon ve Kreş Kısıtlamasıyla Yeşil Alandan Taburculuk',
   'case_pearl': 'Ateş, kramp tarzında karın ağrısı, tenezm ve sık, az miktarda kanlı-mukuslu dışkı dizanteriyi '

@@ -37,7 +37,7 @@ CASES = [
         "age": "4 Yaşında (16 kg)",
         "gender": "Kız",
         "complaint": "Dünden beri yüksek ateş, kıvrandıran karın ağrısı ve günde on kez az miktarda kanlı-sümüksü dışkılama",
-        "history": "Annesi anlatıyor: 'Dün öğlen ateşi 39.5°C'ye çıktı, karnına kramp girer gibi ağrıyor. Sonra çok sık tuvalete gitmeye başladı, her seferinde az miktarda kanlı, sümüklü dışkı yapıyor, ıkınıyor ama çıkmıyor.' Kreşte iki çocukta da ishal varmış. Kusma bir kez olmuş. İdrarını yapıyor. Havale geçirmemiş. Antibiyotik kullanmamış. Çiğ köfte veya az pişmiş et yemesi yok. Aşıları tam.",
+        "history": "Annesi anlatıyor: 'Dün öğlen ateşi 39.5°C'ye çıktı, karnına kramp girer gibi ağrıyor. Sonra çok sık tuvalete gitmeye başladı, her seferinde az miktarda kanlı, sümüklü dışkı yapıyor, ıkınıyor ama çıkmıyor.' Kreşte iki çocukta da ishal varmış. Kusma bir kez olmuş. İdrarını yapıyor. Havale (nöbet) geçirmemiş. Antibiyotik kullanmamış. Çiğ köfte veya az pişmiş et yemesi yok. Aşıları tam.",
         "final_diagnosis": "Şigelloz (Shigella sonnei Dizanterisi)",
         "disposition": "Oral Azitromisin, Ağızdan Rehidratasyon ve Kreş Kısıtlamasıyla Yeşil Alandan Taburculuk",
         "case_pearl": "Ateş, kramp tarzında karın ağrısı, tenezm ve sık, az miktarda kanlı-mukuslu dışkı dizanteriyi düşündürür. Antibiyotik öncesi dışkı kültürü ve Shiga toksin testi gönderilmelidir; STEC enfeksiyonunda antibiyotik HÜS riskini artırabilir. Kanlı ishalde hemogram ve kreatinin HÜS taraması için faydalıdır. Türkiye'de ampisilin ve trimetoprim-sülfametoksazol direnci yüksektir. İlk seçenek azitromisindir (ilk gün 12 mg/kg, ardından 4 gün 6 mg/kg). Antimotilite ajanlardan kaçınılır.",

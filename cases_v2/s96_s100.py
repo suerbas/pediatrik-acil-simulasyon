@@ -356,7 +356,7 @@ CASES = [
         "category": "⚡ Alerji, Zehirlenme & Diğer Aciller",
         "age": "3 Aylık (5.6 kg)",
         "gender": "Erkek",
-        "complaint": "Gaz sancısı için evde hazırlanan bitki çayı içirildikten sonra uyandırılamayan, nefesi yavaşlayan bebek",
+        "complaint": "Gaz sancısı (karın ağrısıyla ağlama atakları) için evde hazırlanan bitki çayı içirildikten sonra uyandırılamayan, nefesi yavaşlayan bebek",
         "history": "Ailesi Afyonkarahisar'ın bir köyünde yaşıyor. Annesi anlatıyor: 'Bebek geceleri çok ağlıyordu, babaannesi köyden getirdiği kurutulmuş bitki kozalarını kaynatıp çayından bir biberon içirdi, eskiden hep böyle yapılırmış. İki saat sonra derin uykuya daldı, uyanmıyor, nefesi çok yavaşladı, dudakları morardı.' Ateş, kusma, ishal yok. Daha önce sağlıklı, term doğmuş. Evde başka ilaç yok.",
         "final_diagnosis": "Haşhaş Kozası (Papaver somniferum) Çayına Bağlı Opiat Zehirlenmesi",
         "disposition": "Nalokson ile Solunum Depresyonunun Geri Döndürülmesi, Gerekirse Nalokson İnfüzyonu ve En Az 24 Saat Monitörlü Çocuk Yoğun Bakım İzlemi",

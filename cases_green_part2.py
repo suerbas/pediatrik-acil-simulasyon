@@ -186,7 +186,7 @@ GREEN_CASES_PART2 = [{'id': 'Y11',
   'category': '🧠 Nörolojik Belirtiler & Konvülziyon',
   'age': '14 Yaş',
   'gender': 'Kız',
-  'complaint': 'Ayağa kalkınca olan baş dönmesi (dizziness) ve göz kararması',
+  'complaint': 'Ayağa kalkınca olan baş dönmesi (dizziness) ve göz kararması (presenkop)',
   'history': "Hasta kendisi anlatıyor: 'Bu sabah kahvaltı yapmadan okula gittim. Okul bahçesinde törende güneşin "
              'altında beklerken ve evde yataktan hızlı kalktığımda bir anda başım döndü, gözlerim karardı ve '
              'kulaklarım uğuldadı. Oturunca 1-2 dakika içinde hemen geçti. Bayılıp yere düşmedim, kasılma olmadı, '
@@ -1020,10 +1020,10 @@ GREEN_CASES_PART2 = [{'id': 'Y11',
   'age': '9 Yaş',
   'gender': 'Erkek',
   'complaint': 'Karın ağrısı, iştahsızlık ve 2 kez kusma',
-  'history': "Annesi Yeşil Alan polikliniğine 'üşüttü, midesini bozdu' diyerek getiriyor: 'Dün akşam göbeğinin "
-             'etrafında başlayan bir karın ağrısı vardı, gece 2 kez kustu. Bu sabah ağrısı karnının sağ alt tarafına '
-             'indi. Çok sevdiği börekten bile bir lokma yemedi. Arabayla hastaneye gelirken kasislere girdikçe karnını '
-             "tutup inledi ve muayene odasına hafif öne eğilerek yavaş yavaş yürüdü.'",
+  'history': "Annesi Yeşil Alan polikliniğine 'üşüttü, midesini bozdu' (kusma ve karın ağrısı) diyerek getiriyor: 'Dün "
+             'akşam göbeğinin etrafında başlayan bir karın ağrısı vardı, gece 2 kez kustu. Bu sabah ağrısı karnının '
+             'sağ alt tarafına indi. Çok sevdiği börekten bile bir lokma yemedi. Arabayla hastaneye gelirken kasislere '
+             "girdikçe karnını tutup inledi ve muayene odasına hafif öne eğilerek yavaş yavaş yürüdü.'",
   'final_diagnosis': 'Akut Apandisit (Yeşil Alandan Sarı Alana Devir ve Cerrahi Yatış)',
   'disposition': 'Yeşil Alanda Saptanıp Sarı Alana Devir -> İV Sıvı/Analjezi/USG Doğrulaması -> Çocuk Cerrahisi Yatışı',
   'case_pearl': 'Göbek çevresinden (periumbilikal) başlayıp sağ alt kadrana (McBurney) göç eden ağrı, iştahsızlık '
@@ -1371,10 +1371,10 @@ GREEN_CASES_PART2 = [{'id': 'Y11',
   'age': '4.5 Aylık',
   'gender': 'Erkek',
   'complaint': 'Burun tıkanıklığı, öksürük ve bugün başlayan hızlı nefes alıp verme',
-  'history': "Annesi Yeşil Alana 'nezlesi ve öksürüğü var, şurup yazdırmak istiyorum' diyerek getiriyor: '3 gündür "
-             'burnu akıyordu ve hapşırıyordu. Ama bu sabahtan beri nefes alırken karnı ve kaburgalarının arası içeri '
-             'çöküyor, memeyi ağzına alıp 2-3 kez çekip nefes alamadığı için bırakıyor. Bez sayısı da bugün yarıya '
-             "düştü.'",
+  'history': "Annesi Yeşil Alana 'nezlesi (burun akıntısı) ve öksürüğü var, şurup yazdırmak istiyorum' diyerek "
+             "getiriyor: '3 gündür burnu akıyordu ve hapşırıyordu. Ama bu sabahtan beri nefes alırken karnı ve "
+             'kaburgalarının arası içeri çöküyor, memeyi ağzına alıp 2-3 kez çekip nefes alamadığı için bırakıyor. Bez '
+             "sayısı da bugün yarıya düştü.'",
   'final_diagnosis': 'Orta-Ağır Akut Bronşiolit (Hipoksemik ve Beslenme Güçlüğü Olan Süt Çocuğu)',
   'disposition': 'Yeşil Alanda Saptanıp Sarı Alana Devir -> Oksijen, Nazal Aspirasyon ve Hidrasyon -> Pediatri Servis '
                  'Yatışı',

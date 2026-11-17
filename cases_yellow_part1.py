@@ -501,9 +501,9 @@ YELLOW_CASES_PART1 = [{'id': 'S01',
   'complaint': 'Nefes darlığı, hışıltı, öksürük ve cümleleri tamamlayamama',
   'history': 'Sarı Alana tekerlekli sandalye ile hafif öne eğilmiş oturur pozisyonda getiriliyor. Çocuk kesik kesik '
              "kelimelerle 'Nefesim... yetmiyor...' diyebiliyor. Annesi anlatıyor: 'Daha önce de kış aylarında "
-             'tekrarlayan hışıltı atakları olmuştu ve evde inhaler kullanıyordu, 2 gündür nezleydi. Bu sabah nefes '
-             'darlığı başladı, evde 2 puf mavi fısfısını (salbutamol) sıktık ama hiç açılmadı, göğsünden ıslık sesi '
-             "geliyor.'",
+             'tekrarlayan hışıltı atakları olmuştu ve evde inhaler kullanıyordu, 2 gündür nezleydi (burun akıntısı, '
+             'tıkanıklık). Bu sabah nefes darlığı başladı, evde 2 puf mavi fısfısını (salbutamol) sıktık ama hiç '
+             "açılmadı, göğsünden ıslık sesi geliyor.'",
   'final_diagnosis': 'Orta-Ağır Akut Astım Atağı (Viral ÜSYE Tetikli)',
   'disposition': 'Sarı Alanda Oksijen + Ardışık Nebülize Salbutamol/İpratropium + Erken Sistemik Steroid Sonrası Yanıt '
                  'Değerlendirmesi ve Taburculuk',
@@ -1555,8 +1555,9 @@ YELLOW_CASES_PART1 = [{'id': 'S01',
   'gender': 'Erkek',
   'complaint': 'Sakin dururken bile duyulan tiz nefes alma sesi (stridor), kaba öksürük ve boyun çukurunda çekilme',
   'history': "Gece 03:30'da ailesi kucağında Sarı Alana getiriyor: 'Dün akşamdan beri sesi kısıktı ve hafif nezlesi "
-             'vardı, gece yarısı havlar gibi kaba bir öksürük başladı. Son 1 saattir hiç ağlamazken, kucağımızda sakin '
-             "otururken bile nefes alırken boğazından tiz bir ses çıkıyor ve boynunun çukuru içeri çöküyor.'",
+             '(burun akıntısı) vardı, gece yarısı havlar gibi kaba bir öksürük başladı. Son 1 saattir hiç ağlamazken, '
+             'kucağımızda sakin otururken bile nefes alırken boğazından tiz bir ses çıkıyor ve boynunun çukuru içeri '
+             "çöküyor.'",
   'final_diagnosis': 'Orta-Ağır Akut Viral Laringotrakeit (Orta-Ağır Krup)',
   'disposition': 'Sarı Alanda Nebülize L-Adrenalin + Tek Doz 0.6 mg/kg Deksametazon -> En Az 3-4 Saat Rebound Stridor '
                  'Gözlemi Sonrası Taburculuk',

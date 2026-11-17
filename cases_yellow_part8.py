@@ -274,9 +274,9 @@ YELLOW_CASES_PART8 = [{'id': 'S71',
   'gender': 'Erkek',
   'complaint': 'İki gündür artan nefes darlığı, bugün konuşurken nefesinin yetmemesi',
   'history': "Annesi anlatıyor: 'Astımı var, kontrol ilacını yazın havalar düzelince kendimiz kestik. İki gündür "
-             'nezleydi, öksürüyordu. Dün gece kurtarıcı spreyini 10 kez kullandı, az rahatladı. Sabah tekrar '
-             "kötüleşti, cümle kuramıyor.' Son bir yılda iki kez acile gelmiş, bir kez serviste yatmış, hiç yoğun "
-             'bakıma girmemiş. Ateş 37.9°C olmuş. Evde sigara içiliyor.',
+             'nezleydi (burun akıntısı, tıkanıklık), öksürüyordu. Dün gece kurtarıcı spreyini 10 kez kullandı, az '
+             "rahatladı. Sabah tekrar kötüleşti, cümle kuramıyor.' Son bir yılda iki kez acile gelmiş, bir kez "
+             'serviste yatmış, hiç yoğun bakıma girmemiş. Ateş 37.9°C olmuş. Evde sigara içiliyor.',
   'final_diagnosis': 'Ağır Akut Astım Atağı (İlk Basamak Tedaviye Yanıtsız, İV Magnezyum Sülfat Gerektiren)',
   'disposition': 'İV Magnezyum Sülfat Sonrası Sürekli Monitörizasyonla Pediatri Servisine, Kötüleşirse Yoğun Bakıma '
                  'Yatış',
@@ -669,10 +669,10 @@ YELLOW_CASES_PART8 = [{'id': 'S71',
   'age': '3 Yaşında (14 kg)',
   'gender': 'Kız',
   'complaint': 'Üç gündür ateş, dünden beri tuhaf davranışlar ve bugün sağ kolda başlayıp yayılan kasılma',
-  'history': "Annesi anlatıyor: 'Üç gündür ateşi var, nezle sandık. Dün akşamdan beri bizi tanımıyormuş gibi bakıyor, "
-             'anlamsız konuşuyor, sebepsiz ağlıyor. Bu sabah sağ kolu ve yüzünün sağ tarafı seğirmeye başladı, sonra '
-             "tüm vücudu kasıldı, beş dakika sürdü.' Kusma bir kez olmuş. Döküntü yok. Kafa travması, ilaç veya "
-             'zehirli madde erişimi yok. Aşıları tam. Daha önce nöbet geçirmemiş.',
+  'history': "Annesi anlatıyor: 'Üç gündür ateşi var, nezle (soğuk algınlığı) sandık. Dün akşamdan beri bizi "
+             'tanımıyormuş gibi bakıyor, anlamsız konuşuyor, sebepsiz ağlıyor. Bu sabah sağ kolu ve yüzünün sağ tarafı '
+             "seğirmeye başladı, sonra tüm vücudu kasıldı, beş dakika sürdü.' Kusma bir kez olmuş. Döküntü yok. Kafa "
+             'travması, ilaç veya zehirli madde erişimi yok. Aşıları tam. Daha önce nöbet geçirmemiş.',
   'final_diagnosis': 'Herpes Simpleks Virüs (HSV-1) Ensefaliti',
   'disposition': 'Yüksek Doz İV Asiklovir (21 Gün), Antiepileptik Tedavi ve Nörolojik İzlem İçin Çocuk Yoğun Bakım '
                  'Yatışı',
@@ -807,8 +807,8 @@ YELLOW_CASES_PART8 = [{'id': 'S71',
   'category': '🌡️ Ateş & Döküntü / Enfeksiyon',
   'age': '10 Yaşında (32 kg)',
   'gender': 'Kız',
-  'complaint': 'İki gündür yüksek titremeli ateş, sol böğür ağrısı, kusma ve bugün aşırı halsizlik ve ellerinin buz '
-               'gibi olması',
+  'complaint': 'İki gündür yüksek titremeli ateş, sol böğür ağrısı (yan ağrı), kusma ve bugün aşırı halsizlik ve '
+               'ellerinin buz gibi olması',
   'history': "Annesi anlatıyor: 'İki gündür 40'a çıkan titremeli ateşi var, sol yanı ağrıyor, iki kez kustu. Bu sabah "
              "kalkamadı, çok soluk, elleri ayakları buz gibi, sabahtan beri tuvalete gitmedi.' Bir yıl önce sık sık "
              "sol yan ağrısı olmuş, 'böbrekte genişleme var, takip edelim' denmiş ama kontrole gidilmemiş. Bilinen "

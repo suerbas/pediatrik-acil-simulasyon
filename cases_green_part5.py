@@ -745,7 +745,8 @@ GREEN_CASES_PART5 = [{'id': 'Y41',
   'category': '🤢 Karın Ağrısı, Kusma & İshal (GİS)',
   'age': '4 Yaşında',
   'gender': 'Kız',
-  'complaint': 'İki haftadır geçmeyen kötü kokulu cıvık ishal, karında şişkinlik ve gaz sancısı',
+  'complaint': 'İki haftadır geçmeyen kötü kokulu cıvık ishal, karında şişkinlik ve gaz sancısı (kramp tarzı karın '
+               'ağrısı)',
   'history': "Annesi anlatıyor: 'Yaklaşık iki hafta önce köydeki yazlıktan döndük, orada kuyu suyu içiyordu. Dönüşten "
              'birkaç gün sonra günde 3-4 kez açık renkli, çok kötü kokulu, köpüklü, yağlı gibi parlayan cıvık kaka '
              'yapmaya başladı. Kan görmedim. Karnı sürekli guruldıyor, çok geğiriyor, iştahı azaldı. Ateşi olmadı. '
@@ -1303,11 +1304,11 @@ GREEN_CASES_PART5 = [{'id': 'Y41',
   'age': '8 Yaşında',
   'gender': 'Kız',
   'complaint': 'Ateş için sık ibuprofen kullanımı sonrası başlayan mide yanması ve bir kez koyu renkli kusma',
-  'history': "Annesi anlatıyor: 'Üç gündür grip nedeniyle ateşi vardı; ateş düşmediği için günde 4-5 kez, çoğu zaman "
-             'aç karnına ibuprofen şurup verdim. Dün gece mide kazınması ve yanma başladı. Bu sabah bir kez az '
-             "miktarda kahve telvesi gibi koyu renkli kustu. Kakası siyah değil. Baş dönmesi veya bayılması olmadı.' "
-             'Ateşi bugün yok. Daha önce mide şikayeti yok. Kullanılan şurup 100 mg/5 mL; dozları ölçü kaşığıyla değil '
-             'çay kaşığıyla vermiş. Tartı: 26 kg.',
+  'history': "Annesi anlatıyor: 'Üç gündür grip (ateşli viral hastalık) nedeniyle ateşi vardı; ateş düşmediği için "
+             'günde 4-5 kez, çoğu zaman aç karnına ibuprofen şurup verdim. Dün gece mide kazınması ve yanma başladı. '
+             'Bu sabah bir kez az miktarda kahve telvesi gibi koyu renkli kustu. Kakası siyah değil. Baş dönmesi veya '
+             "bayılması olmadı.' Ateşi bugün yok. Daha önce mide şikayeti yok. Kullanılan şurup 100 mg/5 mL; dozları "
+             'ölçü kaşığıyla değil çay kaşığıyla vermiş. Tartı: 26 kg.',
   'final_diagnosis': 'NSAİİ (İbuprofen) İlişkili Akut Hemorajik Gastrit',
   'disposition': 'Yeşil Alandan NSAİİ Kesilmesi, Oral Proton Pompa İnhibitörü ve Kırmızı Bayrak Eğitimi ile Taburculuk',
   'case_pearl': 'Aç karnına ve sık aralıklarla kullanılan NSAİİ çocukta da mukozal hasara ve üst gastrointestinal '

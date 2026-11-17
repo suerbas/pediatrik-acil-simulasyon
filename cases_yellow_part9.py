@@ -676,9 +676,10 @@ YELLOW_CASES_PART9 = [{'id': 'S81',
   'gender': 'Erkek',
   'complaint': 'Altı haftadır sabahları olan baş ağrısı ve kusma, son bir haftadır yürürken sendeleme ve çift görme',
   'history': "Annesi anlatıyor: 'Bir buçuk aydır sabah uyanınca başım ağrıyor diyor, kahvaltıdan önce kusuyor, sonra "
-             'rahatlıyor. Mide üşütmesi dediler, iki kez ilaç verdiler. Bir haftadır sarhoş gibi yürüyor, düşüyor. Dün '
-             "televizyonu iki tane görüyorum dedi.' Son iki haftadır okulda yazısı bozulmuş, öğretmeni dikkatsizlikten "
-             'şikâyet etmiş. Ateş, yakın zamanda geçirilmiş enfeksiyon veya suçiçeği yok. Kafa travması yok.',
+             'rahatlıyor. Mide üşütmesi (kusma ve karın ağrısı) dediler, iki kez ilaç verdiler. Bir haftadır sarhoş '
+             "gibi yürüyor, düşüyor. Dün televizyonu iki tane görüyorum dedi.' Son iki haftadır okulda yazısı "
+             'bozulmuş, öğretmeni dikkatsizlikten şikâyet etmiş. Ateş, yakın zamanda geçirilmiş enfeksiyon veya '
+             'suçiçeği yok. Kafa travması yok.',
   'final_diagnosis': 'Posterior Fossa Tümörü (Olası Medulloblastom) ve Obstrüktif Hidrosefali',
   'disposition': 'Deksametazon ve Kafa İçi Basınç Önlemleriyle Acil Beyin Cerrahisi Konsültasyonu ve Yatış',
   'case_pearl': 'Çocuklarda beyin tümörlerinin çoğu posterior fossadadır. Sabah baş ağrısı, bulantısız kusma, uykudan '
@@ -813,7 +814,7 @@ YELLOW_CASES_PART9 = [{'id': 'S81',
              "gibi. Çok halsiz, sürekli uyumak istiyor.' Ailesi Aydın'da yaşıyor. Üç gün önce bahçeden toplanan taze "
              'baklayı çiğ ve pişmiş olarak bolca yemiş. Son günlerde ilaç kullanmamış, naftalin teması bilinmiyor. '
              'Ateş yok. İki yaşındayken de benzer daha hafif bir sararma olmuş, kendiliğinden geçmiş. Dayısında da '
-             "'kansızlık nöbetleri' varmış.",
+             "'kansızlık nöbetleri' (anemi atakları) varmış.",
   'final_diagnosis': 'G6PD Eksikliğinde Bakla Tüketimine Bağlı Akut İntravasküler Hemoliz (Favizm)',
   'disposition': 'Eritrosit Transfüzyonu, Hidrasyon ve Böbrek İzlemiyle Pediatri Servisine Yatış; Tetikleyicilerden '
                  'Kaçınma Eğitimi',

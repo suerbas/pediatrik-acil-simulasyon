@@ -156,7 +156,7 @@ CASES = [
         "gender": "Erkek",
         "complaint": "Karın ağrısı, iştahsızlık ve 2 kez kusma",
         "history": (
-            "Annesi Yeşil Alan polikliniğine 'üşüttü, midesini bozdu' diyerek getiriyor: 'Dün akşam "
+            "Annesi Yeşil Alan polikliniğine 'üşüttü, midesini bozdu' (kusma ve karın ağrısı) diyerek getiriyor: 'Dün akşam "
             "göbeğinin etrafında başlayan bir karın ağrısı vardı, gece 2 kez kustu. Bu sabah ağrısı karnının "
             "sağ alt tarafına indi. Çok sevdiği börekten bile bir lokma yemedi. Arabayla hastaneye gelirken "
             "kasislere girdikçe karnını tutup inledi ve muayene odasına hafif öne eğilerek yavaş yavaş "
@@ -448,7 +448,7 @@ CASES = [
         "gender": "Erkek",
         "complaint": "Burun tıkanıklığı, öksürük ve bugün başlayan hızlı nefes alıp verme",
         "history": (
-            "Annesi Yeşil Alana 'nezlesi ve öksürüğü var, şurup yazdırmak istiyorum' diyerek getiriyor: '3 "
+            "Annesi Yeşil Alana 'nezlesi (burun akıntısı) ve öksürüğü var, şurup yazdırmak istiyorum' diyerek getiriyor: '3 "
             "gündür burnu akıyordu ve hapşırıyordu. Ama bu sabahtan beri nefes alırken karnı ve "
             "kaburgalarının arası içeri çöküyor, memeyi ağzına alıp 2-3 kez çekip nefes alamadığı için "
             "bırakıyor. Bez sayısı da bugün yarıya düştü.'"

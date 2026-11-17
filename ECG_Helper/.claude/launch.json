@@ -6,6 +6,24 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--prefix", "frontend", "--", "--port", "5183", "--strictPort"],
       "port": 5183
+    },
+    {
+      "name": "saboteur",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "C:\\Users\\Suat\\OneDrive\\Desktop\\Saboteur", "--", "--port", "5193", "--strictPort"],
+      "port": 5193
+    },
+    {
+      "name": "saboteur-prod",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview", "--prefix", "C:\\Users\\Suat\\OneDrive\\Desktop\\Saboteur", "--", "--port", "5194", "--strictPort"],
+      "port": 5194
+    },
+    {
+      "name": "saboteur-server",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "server", "--prefix", "C:\\Users\\Suat\\OneDrive\\Desktop\\Saboteur"],
+      "port": 8787
     }
   ]
 }

@@ -244,7 +244,7 @@ CASES = [
         "age": "11 Yaşında (36 kg)",
         "gender": "Erkek",
         "complaint": "İki gündür artan nefes darlığı, bugün konuşurken nefesinin yetmemesi",
-        "history": "Annesi anlatıyor: 'Astımı var, kontrol ilacını yazın havalar düzelince kendimiz kestik. İki gündür nezleydi, öksürüyordu. Dün gece kurtarıcı spreyini 10 kez kullandı, az rahatladı. Sabah tekrar kötüleşti, cümle kuramıyor.' Son bir yılda iki kez acile gelmiş, bir kez serviste yatmış, hiç yoğun bakıma girmemiş. Ateş 37.9°C olmuş. Evde sigara içiliyor.",
+        "history": "Annesi anlatıyor: 'Astımı var, kontrol ilacını yazın havalar düzelince kendimiz kestik. İki gündür nezleydi (burun akıntısı, tıkanıklık), öksürüyordu. Dün gece kurtarıcı spreyini 10 kez kullandı, az rahatladı. Sabah tekrar kötüleşti, cümle kuramıyor.' Son bir yılda iki kez acile gelmiş, bir kez serviste yatmış, hiç yoğun bakıma girmemiş. Ateş 37.9°C olmuş. Evde sigara içiliyor.",
         "final_diagnosis": "Ağır Akut Astım Atağı (İlk Basamak Tedaviye Yanıtsız, İV Magnezyum Sülfat Gerektiren)",
         "disposition": "İV Magnezyum Sülfat Sonrası Sürekli Monitörizasyonla Pediatri Servisine, Kötüleşirse Yoğun Bakıma Yatış",
         "case_pearl": "Ağır atakta çocuk tek kelimeyle konuşur, yardımcı solunum kaslarını kullanır, SpO2 %92'nin altındadır ve PEF beklenenin %50'sinin altındadır. Sessiz akciğer, siyanoz, bilinç değişikliği ve normal ya da yükselen pCO2 yaşamı tehdit eden bulgulardır. Tedavi oksijen, ilk saatte üç kez salbutamol ve ipratropiyum, erken sistemik kortikosteroiddir. Yanıt yetersizse İV magnezyum sülfat (40-50 mg/kg, en fazla 2 g, 20 dakikada) verilir. Rutin akciğer grafisi ve antibiyotik gerekmez. Sedatif ilaçlar kontrendikedir.",

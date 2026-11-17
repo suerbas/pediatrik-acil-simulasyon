@@ -10,8 +10,8 @@ GREEN_CASES_PART8 = [{'id': 'Y71',
   'complaint': "Üç gündür 39°C'ye çıkan ateş, boğaz ağrısı ve iki gözde kızarıklık",
   'history': "Annesi anlatıyor: 'Üç gündür ateşi 39°C'ye çıkıyor, ateş düşürücüyle iniyor. Boğazı ağrıyor, yemek yemek "
              "istemiyor. Dün iki gözü de kızardı, sulanıyor ama çapak yok. Burnu akıyor.' Kreşe gidiyor, sınıfta "
-             "birkaç çocukta 'göz nezlesi' varmış. Hafta sonu kapalı yüzme havuzuna gitmişler. Döküntü, ishal yok. "
-             'Aşıları tam. Tartı: 17 kg.',
+             "birkaç çocukta 'göz nezlesi' (göz kızarıklığı ve akıntısı) varmış. Hafta sonu kapalı yüzme havuzuna "
+             'gitmişler. Döküntü, ishal yok. Aşıları tam. Tartı: 17 kg.',
   'final_diagnosis': 'Faringokonjonktival Ateş (Adenovirüs Enfeksiyonu)',
   'disposition': 'Destek Tedavisi ve Hijyen Önerileriyle Yeşil Alandan Taburculuk',
   'case_pearl': 'Ateş, farenjit ve bilateral eksüdasız konjonktivitin birlikteliği adenovirüse bağlı '
@@ -273,10 +273,10 @@ GREEN_CASES_PART8 = [{'id': 'Y71',
   'age': '7 Yaşında',
   'gender': 'Kız',
   'complaint': 'On iki gündür geçmeyen burun akıntısı, burun tıkanıklığı ve gündüz de süren öksürük',
-  'history': "Annesi anlatıyor: 'Nezle ile başladı, iki haftaya yakın oldu, hiç düzelmedi. Burnundan sarı-yeşil koyu "
-             "akıntı geliyor, ağzı açık uyuyor, gündüz de öksürüyor. Ateşi ilk iki gün 38°C idi, sonra olmadı.' Baş "
-             'ağrısı hafif, göz çevresinde şişlik, görme bozukluğu ve kusma yok. Son bir ayda antibiyotik kullanmamış. '
-             'Astım veya alerji öyküsü yok. Tartı: 24 kg.',
+  'history': "Annesi anlatıyor: 'Nezle (burun akıntısı, tıkanıklık) ile başladı, iki haftaya yakın oldu, hiç "
+             'düzelmedi. Burnundan sarı-yeşil koyu akıntı geliyor, ağzı açık uyuyor, gündüz de öksürüyor. Ateşi ilk '
+             "iki gün 38°C idi, sonra olmadı.' Baş ağrısı hafif, göz çevresinde şişlik, görme bozukluğu ve kusma yok. "
+             'Son bir ayda antibiyotik kullanmamış. Astım veya alerji öyküsü yok. Tartı: 24 kg.',
   'final_diagnosis': 'Akut Bakteriyel Rinosinüzit (Persistan Seyirli)',
   'disposition': 'Yüksek Doz Amoksisilin ve 72 Saat Sonra Yeniden Değerlendirme Önerisiyle Yeşil Alandan Taburculuk',
   'case_pearl': 'AAP 2013 kılavuzuna göre tanı kliniktir: (1) 10 günü aşan ve düzelmeyen burun akıntısı veya gündüz '
@@ -532,10 +532,10 @@ GREEN_CASES_PART8 = [{'id': 'Y71',
   'gender': 'Erkek',
   'complaint': 'İki gündür artan öksürük, hırıltılı solunum ve geceleri öksürükle uyanma',
   'history': "Annesi anlatıyor: 'Üç yıldır astım tanısı var, koruyucu inhaler sprey verilmişti ama iyi olunca "
-             'bıraktık. Üç gün önce nezle oldu, sonra öksürük ve hırıltı başladı. Evde mavi spreyi günde 3-4 kez '
-             "kullandık, biraz rahatlıyor ama birkaç saat sonra tekrar başlıyor.' Konuşurken nefesi kesilmiyor, "
-             'oynuyor. Daha önce yoğun bakım yatışı yok. Son bir yılda bir kez acil başvurusu olmuş. Evde sigara '
-             'içiliyor.',
+             'bıraktık. Üç gün önce nezle (burun akıntısı) oldu, sonra öksürük ve hırıltı başladı. Evde mavi spreyi '
+             "günde 3-4 kez kullandık, biraz rahatlıyor ama birkaç saat sonra tekrar başlıyor.' Konuşurken nefesi "
+             'kesilmiyor, oynuyor. Daha önce yoğun bakım yatışı yok. Son bir yılda bir kez acil başvurusu olmuş. Evde '
+             'sigara içiliyor.',
   'final_diagnosis': 'Viral Enfeksiyonla Tetiklenen Hafif-Orta Astım Atağı',
   'disposition': 'Oral Kortikosteroid, Kontrol Edici İnhaler Tedavi ve Yazılı Eylem Planıyla Yeşil Alandan Taburculuk',
   'case_pearl': "GINA'ya göre hafif-orta atakta çocuk cümle kurabilir, ajite değildir, SpO2 ≥%92'dir. Tedavi ilk "
@@ -665,11 +665,12 @@ GREEN_CASES_PART8 = [{'id': 'Y71',
   'category': '🫁 Hırıltı & Solunum Sıkıntısı',
   'age': '2.5 Yaşında (13 kg)',
   'gender': 'Kız',
-  'complaint': 'Nezleden iki gün sonra başlayan öksürük ve hırıltılı solunum',
+  'complaint': 'Nezleden (burun akıntısı, tıkanıklık) iki gün sonra başlayan öksürük ve hırıltılı solunum',
   'history': "Annesi anlatıyor: 'Bu yıl üçüncü kez oluyor. Her seferinde nezle ile başlıyor, iki gün sonra hırıltı "
              'geliyor, bir hafta sürüyor. Aralarda hiç öksürmüyor, koşup oynarken veya gülerken nefesi daralmıyor, '
              "geceleri rahat uyuyor.' Egzaması ve besin alerjisi yok. Anne ve babada astım yok. Önceki ataklarda "
-             "'bronşit' denilerek şurup ve antibiyotik verilmiş. Boğulma veya yabancı cisim öyküsü yok. Ateşi 37.8°C.",
+             "'bronşit' (hışıltılı atak) denilerek şurup ve antibiyotik verilmiş. Boğulma veya yabancı cisim öyküsü "
+             'yok. Ateşi 37.8°C.',
   'final_diagnosis': 'Okul Öncesi Epizodik Viral Hışıltı',
   'disposition': 'Aralayıcı ve Maskeyle Gerektiğinde Salbutamol, Yazılı Plan ve Çocuk Göğüs Hastalıkları/Aile Hekimi '
                  'Takibiyle Taburculuk',
@@ -800,9 +801,9 @@ GREEN_CASES_PART8 = [{'id': 'Y71',
   'complaint': "Dün akşamdan beri 39.5°C'ye çıkan ateş",
   'history': "Annesi çok endişeli: 'Dün akşam başladı, 39.5°C ölçtüm. Parasetamol ve ibuprofeni ikişer saatte bir "
              'dönüşümlü veriyorum, ateş düşünce oynuyor ama yükselince halsizleşiyor. Gece de uyandırıp ilaç verdim. '
-             "Ateşten havale geçirmesinden korkuyorum.' Öksürük, burun akıntısı, kusma, ishal, döküntü yok. Su içiyor, "
-             'bezleri ıslak. Aşıları (pnömokok ve Hib dahil) tam. Sünnet olmuş. Daha önce idrar yolu enfeksiyonu yok. '
-             'Ablası iki gün önce ateşli bir hastalık geçirmiş.',
+             "Ateşten havale (nöbet) geçirmesinden korkuyorum.' Öksürük, burun akıntısı, kusma, ishal, döküntü yok. Su "
+             'içiyor, bezleri ıslak. Aşıları (pnömokok ve Hib dahil) tam. Sünnet olmuş. Daha önce idrar yolu '
+             'enfeksiyonu yok. Ablası iki gün önce ateşli bir hastalık geçirmiş.',
   'final_diagnosis': 'Odak Saptanmayan Ateş (Olası Viral Enfeksiyon), Düşük Risk',
   'disposition': 'Ateş Yönetimi Eğitimi ve 48 Saat İçinde Yeniden Değerlendirme Önerisiyle Yeşil Alandan Taburculuk',
   'case_pearl': 'Aşıları tam, iyi görünen 3-36 aylık çocukta odak saptanmayan ateşin çoğu viraldir; konjuge aşılar '

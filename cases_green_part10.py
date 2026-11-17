@@ -144,8 +144,8 @@ GREEN_CASES_PART10 = [{'id': 'Y91',
   'history': "Annesi anlatıyor: 'Birkaç gündür memeyi alıyor, birkaç saniye emip ağlayarak bırakıyor. Dilinde ve "
              'yanaklarının içinde beyaz lekeler var, silmeye çalıştım çıkmadı. Bez bölgesinde de kırmızılık var. Benim '
              "meme uçlarım da çok acıyor, emzirirken yanma ve batma oluyor.' Ateş yok. Bezleri günde 6-7 kez "
-             'ıslanıyor. Bir ay önce annenin meme iltihabı için antibiyotik kullandığı öğreniliyor. Bebek emzik '
-             'kullanıyor. Kilo alımı düzenli.',
+             'ıslanıyor. Bir ay önce annenin meme iltihabı (mastit) için antibiyotik kullandığı öğreniliyor. Bebek '
+             'emzik kullanıyor. Kilo alımı düzenli.',
   'final_diagnosis': 'Oral Kandidiyazis (Pamukçuk), Bez Bölgesi Kandidiyazisi ve Annede Meme Ucu Kandidiyazisi',
   'disposition': 'Bebeğe Oral Nistatin, Anneye Topikal Antifungal ve Emzirmeye Devam Önerisiyle Yeşil Alandan '
                  'Taburculuk',
@@ -908,10 +908,10 @@ GREEN_CASES_PART10 = [{'id': 'Y91',
   'age': '7 Aylık (8.2 kg)',
   'gender': 'Erkek',
   'complaint': 'Üç gündür burun akıntısı, iki gündür öksürük ve göğüsten hırıltı sesi',
-  'history': "Annesi anlatıyor: 'Ablası kreşten nezle getirdi. Üç gündür burnu akıyor, iki gündür öksürüyor, göğsünden "
-             'hırıltı geliyor. Burnu tıkalıyken emerken biraz zorlanıyor ama yine de her seferinde biberonunun çoğunu '
-             "bitiriyor. Altı bez ıslattı.' Ateşi 37.8°C olmuş. Daha önce hırıltı atağı yok. Term doğmuş, kalp "
-             'hastalığı yok. Evde sigara içiliyor. Morarma, nefes durması olmamış.',
+  'history': "Annesi anlatıyor: 'Ablası kreşten nezle (soğuk algınlığı) getirdi. Üç gündür burnu akıyor, iki gündür "
+             'öksürüyor, göğsünden hırıltı geliyor. Burnu tıkalıyken emerken biraz zorlanıyor ama yine de her '
+             "seferinde biberonunun çoğunu bitiriyor. Altı bez ıslattı.' Ateşi 37.8°C olmuş. Daha önce hırıltı atağı "
+             'yok. Term doğmuş, kalp hastalığı yok. Evde sigara içiliyor. Morarma, nefes durması olmamış.',
   'final_diagnosis': 'Hafif Akut Bronşiolit (Evde İzlenebilir)',
   'disposition': 'Nazal Lavaj, Destek Tedavisi, Uyarı Bulguları Eğitimi ve 24-48 Saat Sonra Kontrolle Yeşil Alandan '
                  'Taburculuk',
@@ -1037,7 +1037,7 @@ GREEN_CASES_PART10 = [{'id': 'Y91',
   'history': "Babası anlatıyor: 'Üç gündür ateşi 39'a çıkıyor, ateş düşürücüyle düşüyor ama tekrar yükseliyor. "
              "Öksürüğü arttı. Bugün öksürünce sağ yanım ağrıyor dedi. İştahı azaldı ama su içiyor, tuvalete gidiyor.' "
              'Kusma, ishal yok. Daha önce hastaneye yatışı olmamış. Aşıları tam (pnömokok aşısı dahil). Astım yok. '
-             'Kardeşi bir hafta önce nezle geçirmiş.',
+             'Kardeşi bir hafta önce nezle (soğuk algınlığı) geçirmiş.',
   'final_diagnosis': 'Komplike Olmayan, Ayaktan Tedavi Edilebilir Toplum Kökenli Bakteriyel Pnömoni (Sağ Alt Lob)',
   'disposition': 'Yüksek Doz Oral Amoksisilin ve 48 Saat Sonra Kontrolle Yeşil Alandan Taburculuk',
   'case_pearl': 'Okul öncesi çocukta yüksek ateş, takipne ve lokal ince raller bakteriyel pnömoniyi düşündürür. '

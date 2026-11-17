@@ -406,9 +406,9 @@ YELLOW_CASES_PART10 = [{'id': 'S91',
   'gender': 'Kız',
   'complaint': 'İki gündür ateş, ağızda yaralar, gözlerde yanma ve gövdeden yayılan, içi su toplayan döküntü',
   'history': "Annesi anlatıyor: 'İki hafta önce ilk kez nöbet geçirdi, karbamazepin başlandı. Dört gün önce ateşi, "
-             'boğaz ağrısı ve halsizliği oldu, grip sandık. Dün göğsünde koyu kırmızı lekeler çıktı, bugün yayıldı, '
-             'bazılarının ortası kabarıp su topladı. Dudakları yara oldu, yemek yiyemiyor, gözleri yanıyor, çişini '
-             "yaparken yanıyor.' Daha önce ilaç alerjisi bilinmiyor.",
+             'boğaz ağrısı ve halsizliği oldu, grip (ateşli viral hastalık) sandık. Dün göğsünde koyu kırmızı lekeler '
+             'çıktı, bugün yayıldı, bazılarının ortası kabarıp su topladı. Dudakları yara oldu, yemek yiyemiyor, '
+             "gözleri yanıyor, çişini yaparken yanıyor.' Daha önce ilaç alerjisi bilinmiyor.",
   'final_diagnosis': 'Karbamazepine Bağlı Stevens-Johnson Sendromu (Vücut Yüzeyinin <%10 Epidermal Ayrılması)',
   'disposition': 'Sorumlu İlacın Kesilmesi, Alternatif Antiepileptik ve Multidisipliner Destek Tedavisiyle Yanık '
                  'Ünitesi veya Çocuk Yoğun Bakıma Yatış',
@@ -1070,8 +1070,8 @@ YELLOW_CASES_PART10 = [{'id': 'S91',
   'category': '⚡ Alerji, Zehirlenme & Diğer Aciller',
   'age': '3 Aylık (5.6 kg)',
   'gender': 'Erkek',
-  'complaint': 'Gaz sancısı için evde hazırlanan bitki çayı içirildikten sonra uyandırılamayan, nefesi yavaşlayan '
-               'bebek',
+  'complaint': 'Gaz sancısı (karın ağrısıyla ağlama atakları) için evde hazırlanan bitki çayı içirildikten sonra '
+               'uyandırılamayan, nefesi yavaşlayan bebek',
   'history': "Ailesi Afyonkarahisar'ın bir köyünde yaşıyor. Annesi anlatıyor: 'Bebek geceleri çok ağlıyordu, "
              'babaannesi köyden getirdiği kurutulmuş bitki kozalarını kaynatıp çayından bir biberon içirdi, eskiden '
              'hep böyle yapılırmış. İki saat sonra derin uykuya daldı, uyanmıyor, nefesi çok yavaşladı, dudakları '

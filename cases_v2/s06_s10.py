@@ -543,7 +543,7 @@ CASES = [
         "age": "2 Yaş",
         "gender": "Erkek",
         "complaint": "Sakin dururken bile duyulan tiz nefes alma sesi (stridor), kaba öksürük ve boyun çukurunda çekilme",
-        "history": "Gece 03:30'da ailesi kucağında Sarı Alana getiriyor: 'Dün akşamdan beri sesi kısıktı ve hafif nezlesi vardı, gece yarısı havlar gibi kaba bir öksürük başladı. Son 1 saattir hiç ağlamazken, kucağımızda sakin otururken bile nefes alırken boğazından tiz bir ses çıkıyor ve boynunun çukuru içeri çöküyor.'",
+        "history": "Gece 03:30'da ailesi kucağında Sarı Alana getiriyor: 'Dün akşamdan beri sesi kısıktı ve hafif nezlesi (burun akıntısı) vardı, gece yarısı havlar gibi kaba bir öksürük başladı. Son 1 saattir hiç ağlamazken, kucağımızda sakin otururken bile nefes alırken boğazından tiz bir ses çıkıyor ve boynunun çukuru içeri çöküyor.'",
         "final_diagnosis": "Orta-Ağır Akut Viral Laringotrakeit (Orta-Ağır Krup)",
         "disposition": "Sarı Alanda Nebülize L-Adrenalin + Tek Doz 0.6 mg/kg Deksametazon -> En Az 3-4 Saat Rebound Stridor Gözlemi Sonrası Taburculuk",
         "case_pearl": "İstirahatte (çocuk sakinken) duyulan inspiratuar stridor ve suprasternal/interkostal çekilmeler Orta-Ağır Krup (Westley skoru ≥3) göstergesidir. Tedavide tek doz Deksametazon (0.6 mg/kg oral/İM) ile birlikte Nebülize L-Adrenalin (0.5 mL/kg, maks 5 mL, 1:1000) uygulanır. Nebülize adrenalinin etkisi ~2 saatte sona erip rebound stridor gelişebileceğinden hasta en az 3-4 saat Sarı Alanda gözlemlenmeden taburcu edilmez.",
