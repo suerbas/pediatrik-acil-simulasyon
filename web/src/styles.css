@@ -1410,3 +1410,42 @@ button {
     transition: none !important;
   }
 }
+
+/* Başa dön tuşu */
+.to-top {
+  position: fixed;
+  left: 50%;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  animation: to-top-in 0.18s ease-out;
+}
+.to-top:hover {
+  background: var(--ink);
+  color: var(--card);
+}
+.to-top:active {
+  transform: translateX(-50%) translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+.to-top:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+@keyframes to-top-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .to-top { animation: none; }
+}
