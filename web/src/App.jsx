@@ -99,9 +99,7 @@ export default function App() {
       <header className="masthead">
         <div className="masthead-row">
           <h1 className="wordmark">
-            Pediatrik Acil
-            <br />
-            Vaka Arşivi
+            Pediatrik Acil Vaka Arşivi
           </h1>
           <dl className="masthead-stats">
             <div>
